@@ -308,7 +308,7 @@
 </li>
 </ol>
 <p><img alt="" src="../_attachments/figure2.png" /></p>
-<div class="admonition note">
+<div class="admonition tip">
 <p class="admonition-title">DEPRECATED VERSION</p>
 <p>You may ignore the deprecated version of "Ansible language support" that was previously published by Tomasz Maciazek. The only official (and installable) Ansible extension is the one published by Red Hat itself (with a blue checkmark).</p>
 </div>
@@ -368,18 +368,51 @@
 <p>Once connected to your personal GitHub account, the left side of the VS Code interface will populate with any published code repositories ("repos") that are already associated with the account. If you have only registered with GitHub for this lab, this section may appear as empty.</p>
 <p>To begin experimenting with IBM watsonx Code Assistant for Red Hat Ansible Lightspeed's generative AI capabilities, we first need access to some Ansible Playbooks to generate Tasks with. Playbooks have already been prepared ahead of time for the Ansible Lightspeed Tech Preview, which we will make use of here.</p>
 <ol start="13">
-<li>
-<p>With the GitHub Extension tab open in VS Code, click the <strong>Create Pull Request</strong> icon near the top-left of the interface. The following screenshot shows where to perform the action. A "pull" request in GitHub is essentially a request to replicate code from the cloud-hosted repository into the local (VS Code and local machine) environment.</p>
-</li>
-<li>
-<p>Now you must specify the public repository from which to "pull" data. Copy and paste the following URL into the taskbar at the top of the VS Code interface, as shown in the following screenshot.</p>
-</li>
+<li>A "pull" request in GitHub is essentially a request to replicate code from the cloud-hosted repository into the local (VS Code and local machine) environment. To perform a pull request with VS Code, do either of the following actions (depending on your operating system):</li>
 </ol>
-<p><strong>Pull Request URL</strong>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>https://github.com/craig-br/lightspeed-demos.git
+<ul>
+<li>
+<p><strong>Windows</strong>: With the GitHub Extension tab open in VS Code, press <code>CTRL</code> + <code>Shift</code> + <code>P</code> to open an executable console at the top of VS Code.</p>
+</li>
+<li>
+<p><strong>macOS</strong>: With the GitHub Extension tab open in VS Code, press <code>COMMAND</code> + <code>Shift</code> + <code>P</code> to open an executable console at the top of VS Code.</p>
+</li>
+</ul>
+<p>The remainder of the instructions are the same for all operating systems.</p>
+<p>Enter into the terminal prompt the following instruction:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git:clone
 </code></pre></div></p>
 <p>On your keyboard, hit Return/Enter to confirm.</p>
 <p><img alt="" src="../_attachments/figure10.png" /></p>
+<hr />
+<ol start="14">
+<li>Now you must specify the public repository from which to clone the data. Copy and paste the following URL into the terminal prompt:</li>
+</ol>
+<p><strong>Pull Request URL</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>https://github.com/craig-br/lightspeed-demos.git
+</code></pre></div></p>
+<p>On your keyboard, hit Return/Enter to confirm.</p>
+<p><img alt="" src="../_attachments/figure11.png" /></p>
+<hr />
+<ol start="15">
+<li>
+<p>You will be asked to select (using your local machine's file browser) the destination for where the cloned data will be saved locally. Select a directory (Documents, Desktop, or your preference) and then confirm by clicking <strong>Select as Repository Destination</strong> to kick off the replication from GitHub to your local machine.</p>
+</li>
+<li>
+<p>A prompt will appear asking <code>Would you like to open the cloned repository, or add it to the current workspace?</code> to which you should click <strong>Open</strong>.</p>
+</li>
+<li>
+<p>You will be asked <code>Do you trust the authors of the files in this folder?</code> to which you should click <strong>Yes, I trust the authors</strong>.</p>
+</li>
+<li>
+<p>The replication of Ansible Playbooks to your local machine from GitHub is now complete. You can inspect the contents of the repository using the Explorer tab (the first icon in the left-hand navigator), as shown in the following screenshot.</p>
+</li>
+</ol>
+<p><img alt="" src="../_attachments/figure12.png" /></p>
+<div class="admonition tip">
+<p class="admonition-title">LOCAL REPLICAS</p>
+<p>The replicated/cloned GitHub files are a <em>local</em> replica, meaning that you may safely edit and change the contents of this folder on your local machine without any impact to the <em>master</em> copy on GitHub. Have fun and experiment!</p>
+</div>
 <hr />
 
 
