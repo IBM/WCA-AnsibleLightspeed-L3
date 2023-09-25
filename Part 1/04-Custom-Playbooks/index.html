@@ -398,12 +398,12 @@
 </code></pre></div></p>
 <p>Two tabs are presented below. The first <code>AI-Generated Code</code> tab shows the output from running Ansible Lightspeed's generative AI capabilities on an unmodified version of this Playbook. The second <code>Solution Code</code> tab shows the expected Task code that was written (and commented out) by a human to perform the same task. In theory, the suggested code <em>should</em> be as good— or even superior to —the manually-written solution code. </p>
 <p>Let's examine that theory in practice:</p>
-<p>``` AI-Generated Code
+<p>``` AI-Generated Code fct_label="AI-Generated Code"
     - name: Write the apache config file
       ansible.builtin.copy:
         content: "{{ <em>content</em> }}"
         dest: /etc/httpd/conf.d/000-default.conf
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>``` Solution Code
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>``` Solution Code fct_label=&quot;Solution Code&quot;
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    - name: Write the apache config file
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>      ansible.builtin.template:
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        src: /srv/httpd.j2
