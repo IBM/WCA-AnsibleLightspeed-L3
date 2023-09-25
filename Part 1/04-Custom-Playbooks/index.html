@@ -320,6 +320,44 @@
 
 <h1 id="hands-on-generating-playbook-tasks-with-ibm-watsonx-code-assistant-for-ansible-lightspeed"><strong>Hands-on:</strong> Generating Playbook Tasks with IBM watsonx Code Assistant for Ansible Lightspeed</h1>
 <hr />
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">CUSTOM PLAYBOOK #1 - Install an nginx webserver and launch the service</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>``` yaml</p>
+</div>
+</div>
+</div>
+<h1 id="ansible-playbook-install-an-nginx-webserver-and-launch-the-service">ANSIBLE PLAYBOOK - Install an nginx webserver and launch the service</h1>
+<h1 id="author-deepak-c-shetty-deepakcshettyinibmcom">AUTHOR — Deepak C. Shetty (deepakcshetty@in.ibm.com)</h1>
+<h1 id="_1"></h1>
+<h1 id="module-makes-use-of-the-yum-package-manager-as-well-as-the">Module makes use of the 'yum' package manager, as well as the</h1>
+<h1 id="template-and-service-ansible-modulesm-for-installing-the">'template' and 'service' Ansible modulesm for installing the</h1>
+<h1 id="nginx-application-stack-with-a-customized-indexhtml-file">nginx application stack with a customized index.html file.</h1>
+<ul>
+<li>name: Install nginx
+  hosts: webserver</li>
+</ul>
+<p>tasks:
+    - name: Add epel-release repo
+      yum:
+        name: epel-release
+        state: present</p>
+<div class="highlight"><pre><span></span><code>- name: Install nginx
+  yum:
+    name: nginx
+    state: present
+
+- name: Insert index page
+  template:
+    src: index.html
+    dest: /usr/share/nginx/html/index.html
+
+- name: Start nginx service
+  service:
+    name: nginx
+    state: started
+```
+</code></pre></div>
 <p>Playbook #1
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a># ANSIBLE PLAYBOOK - Install an nginx webserver and launch the service
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a># AUTHOR — Deepak C. Shetty (deepakcshetty@in.ibm.com)
@@ -390,7 +428,7 @@
 <a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>        name: postgresql
 <a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>        state: started
 </code></pre></div></p>
-<h1 id="_1"></h1>
+<h1 id="_2"></h1>
 <h1 id="precision-is-key-for-natural-language-prompts"><strong>Precision is key for natural language prompts</strong></h1>
 <hr />
 <p>Consider the following Task, which prompts Ansible to create ("write") a configuration file for an Apache webserver:
@@ -398,7 +436,7 @@
 </code></pre></div></p>
 <p>Two tabs are presented below. The first <code>AI-Generated Code</code> tab shows the output from running Ansible Lightspeed's generative AI capabilities on an unmodified version of this Playbook. The second <code>Solution Code</code> tab shows the expected Task code that was written (and commented out) by a human to perform the same task. In theory, the suggested code <em>should</em> be as good— or even superior to —the manually-written solution code. </p>
 <p>Let's examine that theory in practice:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">AI-Generated Code</label><label for="__tabbed_1_2">Solution Code</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">AI-Generated Code</label><label for="__tabbed_2_2">Solution Code</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file</span><span class="w"></span>
@@ -426,7 +464,7 @@ The precision with which the Playbook author describes the automation Task in na
 </div>
 <p>In general, the more ambiguous the Task description given, the greater the likelihood that Ansible Lightspeed will misinterpret the author's intent and suggest unwanted Ansible automation jobs. To help disambiguate our intention, we as Playbook authors can use more precise natural language terms and descriptions.</p>
 <p>Let's slightly modify the Task description (within the <code>- name:</code> line) and observe how the AI-generated code suggestions are modified as a result:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">AI-Generated Code</label><label for="__tabbed_2_2">Solution Code</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">AI-Generated Code</label><label for="__tabbed_3_2">Solution Code</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file with mode 0644</span><span class="w"></span>
