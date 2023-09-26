@@ -456,16 +456,17 @@ The precision with which the Playbook author describes the automation Task in na
 </div>
 </div>
 <hr />
-<p>The output is closer to the expected on the latest iteration, but still out of alignment in some aspects. The AI-generated code suggestions now correctly include the <code>06444</code> read/write/execute permissions that were requested. However, an incorrect destination was suggested (instead of a source) and the <code>content</code> field is a mismatch to the request entirely. One other observation is that the suggested code is invoking the 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>ansible.builtin.**copy**
-</code></pre></div>
+<p>The output is closer to the expected on the latest iteration, but still out of alignment in some aspects. The AI-generated code suggestions now correctly include the <code>06444</code> read/write/execute permissions that were requested. However, an incorrect destination was suggested (instead of a source) and the <code>content</code> field is a mismatch to the request entirely. One other observation is that the suggested code is invoking the <code>markdown
+ansible.builtin.**copy**</code>
 package, instead of the expected 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>ansible.builtin.**template**
-</code></pre></div>
-package.</p>
-<p>What happens if we adjust the Task's natural language description to explicitly invoke the <code>.template</code> package? Adjust the Task description to the following and then re-generate the code block using Ansible Lightspeed:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file using mode 0644 from template</span><span class="w"></span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>ansible.builtin.**template**```
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>package.
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>What happens if we adjust the Task&#39;s natural language description to explicitly invoke the ```.template``` package? Adjust the Task description to the following and then re-generate the code block using Ansible Lightspeed:
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>``` yaml
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="k">-</span> name: Write the apache config file using mode 0644 from template
+</code></pre></div></p>
 
 
 
