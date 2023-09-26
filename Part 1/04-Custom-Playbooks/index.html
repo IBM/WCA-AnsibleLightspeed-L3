@@ -379,6 +379,14 @@
 <a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span><span class="w"></span>
 <a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">started</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
+<hr />
+<h1 id="_1"></h1>
+<h1 id="precision-is-key-for-disambiguation-of-natural-language-prompts"><strong>Precision</strong> is key for disambiguation of natural language prompts.</h1>
+<hr />
+<p>The following Playbook contains 2 sets of tasks: 
+1. Task 1 (<code>Lines 5-20</code>) checks whether or not web server software is up to date and runs the update if necessary.
+2. Task 2 (<code>Lines 22-36</code>) checks whether or not database server software is up to date and runs the update if necessary.</p>
+<hr />
 <div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">CUSTOM PLAYBOOK #2 - Invoke 2 modules to automatically update 2 types of servers</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block"></div>
@@ -457,10 +465,7 @@
 <a id="__codelineno-1-36" name="__codelineno-1-36"></a><span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">started</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 <hr />
-<h1 id="_1"></h1>
-<h1 id="precision-is-key-for-disambiguation-of-natural-language-prompts"><strong>Precision</strong> is key for disambiguation of natural language prompts.</h1>
-<hr />
-<p>Consider the following Task, which prompts Ansible to create ("write") a configuration file for an Apache webserver:
+<p>Consider the following Task (<code>Line 16</code>), which prompts Ansible to create ("write") a configuration file for an Apache webserver:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file</span><span class="w"></span>
 </code></pre></div></p>
 <p>Two tabs are presented below. The first <code>AI-Generated Code</code> tab shows the output from running Ansible Lightspeed's generative AI capabilities on an unmodified version of this Playbook. The second <code>Solution Code</code> tab shows the expected Task code that was written (and commented out) by a human to perform the same task. In theory, the suggested code <em>should</em> be as good— or even superior to —the manually-written solution code. </p>
