@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#macro-rendering-error" class="md-skip">
+        <a href="#_1" class="md-skip">
           Skip to content
         </a>
       
@@ -307,20 +307,507 @@
                 
 
 
-<h1 id="macro-rendering-error"><em>Macro Rendering Error</em></h1>
-<p><strong>UndefinedError</strong>: 'ec2_facts' is undefined</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Traceback (most recent call last):
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  File &quot;/opt/homebrew/lib/python3.9/site-packages/mkdocs_macros/plugin.py&quot;, line 480, in render
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    return md_template.render(**page_variables)
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  File &quot;/opt/homebrew/lib/python3.9/site-packages/jinja2/environment.py&quot;, line 1301, in render
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    self.environment.handle_exception()
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  File &quot;/opt/homebrew/lib/python3.9/site-packages/jinja2/environment.py&quot;, line 936, in handle_exception
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    raise rewrite_traceback_stack(source=source)
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  File &quot;&lt;template&gt;&quot;, line 466, in top-level template code
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  File &quot;/opt/homebrew/lib/python3.9/site-packages/jinja2/environment.py&quot;, line 485, in getattr
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    return getattr(obj, attribute)
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>jinja2.exceptions.UndefinedError: &#39;ec2_facts&#39; is undefined
+<h1 id="_1"></h1>
+<h1 id="advanced-deploying-an-aws-ec2-vpc-and-wordpress-via-ansible-lightspeed"><strong>Advanced</strong>: Deploying an AWS EC2 VPC and WordPress via Ansible Lightspeed</h1>
+<p>To conclude the Level 3 Technical Sales education on IBM watsonx Code Assistant for Red Hat Ansible Lightspeed, you have been provided with a complete instruction set for deploying a <strong>LIVE</strong> environment on Amazon Web Services (AWS) consisting of a <strong><a href="https://wordpress.com" target="_blank">WordPress</a></strong> web application running atop an <strong><a href="https://aws.amazon.com/ec2/" target="_blank">Amazon EC2 VPC</a></strong>.</p>
+<ul>
+<li>
+<p>The deployment of the environments will be conducted entirely using Red Hat Ansible automation, executed on your local machine and deployed to AWS cloud.</p>
+</li>
+<li>
+<p>The generation of the Ansible Tasks and code required to automate these deployments will be created using the Generative AI capabilities of the Ansible Lightspeed extension for VS Code.</p>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">COSTS</p>
+<p>Be aware that deploying a live Amazon EC2 instance on AWS <strong>does</strong> incur real-world charges which are the responsibility of the individual to pay for. If you wish to go ahead with deploying the live environment— <strong>which you are encouraged, but NOT REQUIRED, to complete</strong> —you will need to do so on your personal AWS account, with any potential billings and charges incurred to your personal credit card.</p>
+<p>The billing associated with an Amazon EC2 <code>t2.small</code> instance and other services needed for the demo is <strong>minimal</strong>: on-demand hourly rate of <strong>$0.023 USD</strong> at the time of publication.</p>
+<p><a href="https://aws.amazon.com/ec2/pricing/on-demand/" target="_blank">Additional AWS pricing details and plans are available online.</a></p>
+</div>
+<p>Ansible Playbooks have been prepared ahead of time in a public GitHub repository and are available for your use at the links below. Once the two YAML files are available on your local machine, open them with VS Code and follow along with the instructions below.</p>
+<hr />
+<p><img alt="" src="../_attachments/figure25.png" /></p>
+<hr />
+<p><strong>TEMPLATE (<code>.yml</code>)</strong>: <a href="https://github.com/bienko/WCA-Lightspeed-L3/blob/main/TEMPLATE.yml" target="_blank">https://github.com/bienko/WCA-Lightspeed-L3/blob/main/TEMPLATE.yml</a></p>
+<ul>
+<li>The <code>TEMPLATE.yml</code> Playbook contains the skeleton of the application you will ultimately build. Playbook structure, key variables, Task descriptions, and comments are provided. Use the Generative AI capabilities of Ansible Lightspeed to fill out the details of the various Ansible Tasks, then compare the results with the <code>SOLUTION.yml</code> file below.</li>
+</ul>
+<p><strong>SOLUTION (<code>.yml</code>)</strong>: <a href="https://github.com/bienko/WCA-Lightspeed-L3/blob/main/SOLUTION.yml" target="_blank">https://github.com/bienko/WCA-Lightspeed-L3/blob/main/SOLUTION.yml</a></p>
+<ul>
+<li>The <code>SOLUTION.yml</code> Playbook contains the complete set of Ansible Playbook instructions needed to fully deploy a live EC2 VPC instance on AWS and host a WordPress application within that environment. You will need to replace certain variables (indicated by comments in the code) with details specific to your personal AWS account and environment. Afterwards, you can— and are encouraged to —execute the Playbook with Ansible and deploy a <strong>live</strong>, at-cost instance to your personal AWS account.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">DOWNLOAD .yml FILES TO DESKTOP</p>
+<p>You can easily downlod the <code>TEMPLATE</code> and <code>SOLUTION</code> <em>.yml</em> files to your local machine.</p>
+<p><img alt="" loading="lazy" src="../_attachments/figure26.png" width="400" /></p>
+<p>Navigate to the GitHub links provided (above) and click the <strong>Download raw file</strong> button.</p>
+</div>
+<hr />
+<h1 id="_2"></h1>
+<h1 id="use-ansible-lightspeed-to-generate-code-with-the-template-playbook-then-compare-against-the-solution-playbook-to-evaluate-the-results">Use Ansible Lightspeed to <strong>generate code with the TEMPLATE Playbook</strong>, then compare against the SOLUTION Playbook to evaluate the results.</h1>
+<hr />
+<p>In the steps ahead, you will use Ansible Lightspeed's AI-generated code suggestions to populate the contents of Tasks within the <code>TEMPLATE.yml</code> Playbook. There are 14 Tasks in total and we will examine them each in turn.</p>
+<p>For each Task, a tabbed code snippet is provided within this lab documentation to make it easy for you to toggle between the <code>TEMPLATE</code> (the Task prior to AI-generated code suggestions) and the proper <code>SOLUTION</code> (the Task as it should be written for a successful deployment to AWS).</p>
+<p>Compare the AI-generated code suggestions you receive in VS Code with the expected <code>SOLUTION</code> code. You <em>will</em> find that there are occassional discrepancies and variables that need to be adjusted. Generative AI can save us tremendous amounts of time and effort by automating the creation of powerful blocks of code— as you will observe in generating these tasks —but it still requires a degree of human supervision and double-checking. However, the time saved with hands on keyboard is enormous and the potential for the future is boundless.</p>
+<hr />
+<div class="admonition tip">
+<p class="admonition-title">VS CODE EXTENSION</p>
+<p>You may need to copy and paste the contents of the <code>TEMPLATE.yml</code> file into a <strong>New File...</strong> within the Lightspeed project used for the previous Level 3 modules in order for the VS Code extension to engage.</p>
+</div>
+<ol>
+<li>
+<p>Open the <code>TEMPLATE.yml</code> Playbook in VS Code and ensure that the Ansible Lightspeed extension is active.</p>
+</li>
+<li>
+<p>Scroll down <strong>MODULE 1</strong> (Line 4) and take note of the comments, as well as the <code>&lt;PLACEHOLDER&gt;</code> values. If you wish to fully deploy this environment to AWS, you will need to register for an AWS account, create an IAM (Identity Access Management) user, and associate an SSH key with the necessary permissions to access the account. These values will then be substituted in your code for the <code>aws_access_key</code> and <code>aws_secret_key</code> variables.</p>
+</li>
+</ol>
+<p>Instructions on how to sign up for AWS and create those keys will be included at the end of this module, and you will be reminded at that time to update these variables. However, for now, let's focus on generating the Ansible Tasks.</p>
+<ol start="3">
+<li>Continue scrolling down until you reach <strong>TASK 1</strong> (Line 18) for the creation of a virtual private cloud (VPC) named 'wordpress'. Generate the Task code within VS Code and compare your results with the <code>SOLUTION</code> tab.</li>
+</ol>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">TEMPLATE</label><label for="__tabbed_1_2">SOLUTION</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># TASK 1</span><span class="w"></span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">#   Creation of a virtual private cloud (VPC) named &#39;wordpress&#39;.</span><span class="w"></span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">#   Should have value 10.0.0.0/16 associated with cidr_block.</span><span class="w"></span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create VPC named wordpress</span><span class="w"></span>
 </code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># TASK 1</span><span class="w"></span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">#   Creation of a virtual private cloud (VPC) named &#39;wordpress&#39;.</span><span class="w"></span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">#   Should have value 10.0.0.0/16 associated with cidr_block.</span><span class="w"></span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create VPC named wordpress</span><span class="w"></span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">amazon.aws.ec2_vpc_net</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wordpress</span><span class="w"></span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nt">cidr_block</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.0.0.0/16</span><span class="w"></span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span><span class="w"></span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wordpress_vpc</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">TAGS</p>
+<p>One element of AI-generated Task code that you may find yourself frequently needing to update are tags and other naming conventions, such as the <code>register: wordpress_vpc</code> pair in <strong>TASK 1</strong>. While the Ansible Lightspeed extension will remember the context of variables that are <em>already</em> named within the Playbook, it will struggle with how to name <em>new</em> variables — like <code>wordpress_vpc</code>. Take note, however, that as you generate code for the other Tasks in the Playbook that <code>wordpress_vpc</code> will be recalled and referenced.</p>
+</div>
+<hr />
+<ol start="4">
+<li>After validating the previous code block, continue scrolling down until you reach <strong>TASK 2</strong> (Line 23) for the creation of a security group which allows network traffic over SSH and HTTP/s. Generate, evaluate, and refine the Task code as needed.</li>
+</ol>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">TEMPLATE</label><label for="__tabbed_2_2">SOLUTION</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># TASK 2</span><span class="w"></span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1">#   Creation of the security group which allows traffic over SSH and HTTP/s</span><span class="w"></span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1">#   TCP ports 80-80, 443-443, 22-22</span><span class="w"></span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create and register wordpress_vpc VPC security group allow SSH and HTTP</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">#   Creation of the security group which allows traffic over SSH and HTTP/s</span><span class="w"></span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1">#   TCP ports 80-80, 443-443, 22-22</span><span class="w"></span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create and register wordpress_vpc VPC security group allow SSH and HTTP</span><span class="w"></span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">amazon.aws.ec2_security_group</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wordpress</span><span class="w"></span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Allow SSH and HTTP/HTTPS</span><span class="w"></span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="nt">vpc_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{</span><span class="nv"> </span><span class="s">{</span><span class="nv"> </span><span class="s">wordpress_vpc.vpc.id</span><span class="nv"> </span><span class="s">}</span><span class="nv"> </span><span class="s">}&quot;</span><span class="w"> </span><span class="c1"># Ignore extra space between { { cbaracters.</span><span class="w"></span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="nt">rules</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">proto</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tcp</span><span class="w"></span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">        </span><span class="nt">from_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span><span class="w"></span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">        </span><span class="nt">to_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span><span class="w"></span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">        </span><span class="nt">cidr_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0.0.0/0</span><span class="w"></span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">proto</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tcp</span><span class="w"></span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">        </span><span class="nt">from_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">443</span><span class="w"></span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">        </span><span class="nt">to_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">443</span><span class="w"></span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">        </span><span class="nt">cidr_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0.0.0/0</span><span class="w"></span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">proto</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tcp</span><span class="w"></span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">        </span><span class="nt">from_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">22</span><span class="w"></span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">        </span><span class="nt">to_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">22</span><span class="w"></span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">        </span><span class="nt">cidr_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0.0.0/0</span><span class="w"></span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">  </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wordpress_sg</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<p>Notice that the <code>wordpress_vpc</code> attribute which was registered in TASK 2 has been referenced in the creation of the <code>vpc_id</code> in TASK 3. Ignore the additional space between adjacent <code>{``{</code> characters that are included in SOLUTION code tabs — these are included only to allow rendering of the code block in GitHub and are not intended as part of the finalized code.</p>
+<ol start="5">
+<li>Continue scrolling down until you reach <strong>TASK 3</strong> (Line 28) for the creation of an internet gateway for the wordpress VPC. Generate, evaluate, and refine the Task code as needed.</li>
+</ol>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">TEMPLATE</label><label for="__tabbed_3_2">SOLUTION</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># TASK 3</span><span class="w"></span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1">#   Creation of an internet gateway for the wordpress VPC</span><span class="w"></span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create internet gateway for VPC wordpress_vpc</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># TASK 3</span><span class="w"></span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1">#   Creation of an internet gateway for the wordpress VPC</span><span class="w"></span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create internet gateway for VPC wordpress_vpc</span><span class="w"></span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="nt">amazon.aws.ec2_vpc_igw</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nt">vpc_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{</span><span class="nv"> </span><span class="s">{</span><span class="nv"> </span><span class="s">wordpress_vpc.vpc.id</span><span class="nv"> </span><span class="s">}</span><span class="nv"> </span><span class="s">}&quot;</span><span class="w"></span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span><span class="w"></span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wordpress_igw</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<ol start="6">
+<li>Continue down to <strong>TASK 4</strong> (Line 32) for the creation of an AWS network subnet for the WordPress VPC.</li>
+</ol>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">TEMPLATE</label><label for="__tabbed_4_2">SOLUTION</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># TASK 4</span><span class="w"></span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1">#   Creation of a network subnet for the wordpress VPC</span><span class="w"></span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create subnet in wordpress_vpc</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># TASK 4</span><span class="w"></span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1">#   Creation of a network subnet for the wordpress VPC</span><span class="w"></span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create subnet in wordpress_vpc</span><span class="w"></span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span><span class="nt">amazon.aws.ec2_vpc_subnet</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span><span class="w"></span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="nt">vpc_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{</span><span class="nv"> </span><span class="s">{</span><span class="nv"> </span><span class="s">wordpress_vpc.vpc.id</span><span class="nv"> </span><span class="s">}</span><span class="nv"> </span><span class="s">}&quot;</span><span class="w"></span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">    </span><span class="nt">cidr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.0.0.0/16</span><span class="w"></span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">  </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wordpress_subnet</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<ol start="7">
+<li>Continue down to <strong>TASK 5</strong> (Line 36) for the creation of a routing table associated with wordpress VPC's subnet and internet gateway.</li>
+</ol>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">TEMPLATE</label><label for="__tabbed_5_2">SOLUTION</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># TASK 5</span><span class="w"></span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1">#   Creation of a routing table associated with wordpress VPC&#39;s subnet and internet gateway</span><span class="w"></span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create route table for subnet and gateway wordpress_igw</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># TASK 5</span><span class="w"></span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="c1">#   Creation of a routing table associated with wordpress VPC&#39;s subnet and internet gateway</span><span class="w"></span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create route table for subnet and gateway wordpress_igw</span><span class="w"></span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">  </span><span class="nt">amazon.aws.ec2_vpc_route_table</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span><span class="w"></span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="nt">vpc_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{</span><span class="nv"> </span><span class="s">{</span><span class="nv"> </span><span class="s">wordpress_vpc.vpc.id</span><span class="nv"> </span><span class="s">}</span><span class="nv"> </span><span class="s">}&quot;</span><span class="w"></span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">    </span><span class="nt">tags</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">      </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sg_public</span><span class="w"></span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">      </span><span class="nt">Project</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">phoenix</span><span class="w"></span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">    </span><span class="nt">subnets</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;{</span><span class="nv"> </span><span class="s">{</span><span class="nv"> </span><span class="s">wordpress_subnet.subnet.id</span><span class="nv"> </span><span class="s">}</span><span class="nv"> </span><span class="s">}&quot;</span><span class="w"></span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">    </span><span class="nt">routes</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0.0.0/0</span><span class="w"></span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">        </span><span class="nt">gateway_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{</span><span class="nv"> </span><span class="s">{</span><span class="nv"> </span><span class="s">wordpress_igw.gateway_id</span><span class="nv"> </span><span class="s">}</span><span class="nv"> </span><span class="s">}&quot;</span><span class="w"></span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">  </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wordpress_route_table</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<p>As you can observe, Ansible Lightspeed can be "creative" with its choice of tags and identifiers. You are welcome to adjust these to your liking, or even eliminate them from the Task code altogether. In the majority of cases these tags and identifiers are used for organization and tracking purposes, but not necessarily anything critical to the functioning of the Ansible Playbook or the infrastructure it is automating.</p>
+<ol start="8">
+<li>Continue further down until you reach <strong>TASK 6</strong> (Line 40), which is one of the more consequential steps in the Playbook as it involves the creation of the Amazon EC2 <code>t2.small</code> instance on AWS according to the settings defined in Tasks 1-5.</li>
+</ol>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">TEMPLATE</label><label for="__tabbed_6_2">SOLUTION</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># TASK 6</span><span class="w"></span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="c1">#   Creation of an EC2 t2.small instance with attributes defined in Tasks 1-5</span><span class="w"></span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1">#   Amazon Machine Image (ami) image_id: ami-026ebd4cfe2c043b2</span><span class="w"></span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c1">#   Registered to Red Hat Enterprise Linux 9 (HVM, 64-bit x86) image</span><span class="w"></span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="c1">#   Replace `key_name:` value with your EC2 .pem keypair - DO NOT include .pem as part of filename</span><span class="w"></span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="c1">#   Use &#39;chmod 400&#39; to change file permissions of .pem file before executing Playbook</span><span class="w"></span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create t2.small instance named wordpress in wordpress_subnet assign public ip</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># TASK 6</span><span class="w"></span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="c1">#   Creation of an EC2 t2.small instance with attributes defined in Tasks 1-5</span><span class="w"></span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="c1">#   Amazon Machine Image (ami) image_id: ami-026ebd4cfe2c043b2</span><span class="w"></span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c1">#   Registered to Red Hat Enterprise Linux 9 (HVM, 64-bit x86) image</span><span class="w"></span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="c1">#   Replace `key_name:` value with your EC2 .pem keypair - DO NOT include .pem as part of filename</span><span class="w"></span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="c1">#   Use &#39;chmod 400&#39; to change file permissions of .pem file before executing Playbook</span><span class="w"></span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create t2.small instance named wordpress in wordpress_subnet assign public ip</span><span class="w"></span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">  </span><span class="nt">amazon.aws.ec2_instance</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wordpress</span><span class="w"></span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">      </span><span class="nt">image_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ami-026ebd4cfe2c043b2&quot;</span><span class="w"></span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">      </span><span class="nt">instance_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">t2.small</span><span class="w"></span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">      </span><span class="nt">vpc_subnet_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{</span><span class="nv"> </span><span class="s">{</span><span class="nv"> </span><span class="s">wordpress_subnet.subnet.id</span><span class="nv"> </span><span class="s">}</span><span class="nv"> </span><span class="s">}&quot;</span><span class="w"></span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">      </span><span class="nt">security_groups</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{</span><span class="nv"> </span><span class="s">{</span><span class="nv"> </span><span class="s">wordpress_sg.group_id</span><span class="nv"> </span><span class="s">}</span><span class="nv"> </span><span class="s">}&quot;</span><span class="w"></span>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">      </span><span class="nt">network</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="w">        </span><span class="nt">assign_public_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="w">      </span><span class="nt">key_name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;bienko-key&quot;</span><span class="w"></span>
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="w">      </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">running</span><span class="w"></span>
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="w">  </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wordpress_server</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<p>Note that the <code>image_id</code> and <code>ami</code> values correspond to a specific Amazon Machine Image (ami) for Red Hat Enterprise Linux 9. Hundreds of alternative operating system images are available to select from on AWS, so you may modify this if you so choose; however, for the purposes of deploying WordPress it will make no meaningful difference.</p>
+<p>The pair <code>key_name: "bienko-key"</code> relates to an EC2 instance key (SSH) that you will need to create before attempting to deploy an EC2 instance via Ansible. Instructions for how to create that key will be given at the end of this module for those who wish to deploy a live environment of their own.</p>
+<ol start="9">
+<li>Continue down to <strong>TASK 7</strong> (Line 48). You will notice that in both the <code>TEMPLATE</code> and <code>SOLUTION</code> versions of the Playbook that this Task is fully defined already. Despite repeated attempts at describing the Task to be generated, Ansible Lightspeed in its pre-GA Technical Preview form was unable to generate all of the actions needed to carry out this task. Over time the service will doubtlessly be able to handle this particular task — but for now, leave this as a hard-coded element within your Playbook and do not attempt to recreate the task with code generation.</li>
+</ol>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">TEMPLATE</label><label for="__tabbed_7_2">SOLUTION</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># TASK 7</span><span class="w"></span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="c1">#   This section has been hard-coded ahead of time.</span><span class="w"></span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="c1">#   DO NOT regenerate using AI-suggested code.</span><span class="w"></span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c1">#   Replace `ansible_ssh_private_key_file` value with path on local machine to SSH key — INCLUDE .pem as part of filename</span><span class="w"></span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="c1">#   Use &#39;chmod 400&#39; to change file permissions of .pem file before executing Playbook</span><span class="w"></span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Add host to inventory using tunnel using wordpress_instance public ip and ansible user ec2-user</span><span class="w"></span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">  </span><span class="nt">ansible.builtin.add_host</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wordpress</span><span class="w"></span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">    </span><span class="nt">ansible_host</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{</span><span class="nv"> </span><span class="s">{</span><span class="nv"> </span><span class="s">wordpress_server.instances[0].public_ip_address</span><span class="nv"> </span><span class="s">}</span><span class="nv"> </span><span class="s">}&quot;</span><span class="w"></span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">    </span><span class="nt">ansible_user</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ec2-user</span><span class="w"></span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">    </span><span class="nt">ansible_ssh_private_key_file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;bienko-key.pem&quot;</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># TASK 7</span><span class="w"></span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="c1">#   This section has been hard-coded ahead of time.</span><span class="w"></span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="c1">#   DO NOT regenerate using AI-suggested code.</span><span class="w"></span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="c1">#   Replace `ansible_ssh_private_key_file` value with path on local machine to SSH key — INCLUDE .pem as part of filename</span><span class="w"></span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="c1">#   Use &#39;chmod 400&#39; to change file permissions of .pem file before executing Playbook</span><span class="w"></span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Add host to inventory using tunnel using wordpress_instance public ip and ansible user ec2-user</span><span class="w"></span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">  </span><span class="nt">ansible.builtin.add_host</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wordpress</span><span class="w"></span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">    </span><span class="nt">ansible_host</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{</span><span class="nv"> </span><span class="s">{</span><span class="nv"> </span><span class="s">wordpress_server.instances[0].public_ip_address</span><span class="nv"> </span><span class="s">}</span><span class="nv"> </span><span class="s">}&quot;</span><span class="w"></span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">    </span><span class="nt">ansible_user</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ec2-user</span><span class="w"></span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">    </span><span class="nt">ansible_ssh_private_key_file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;bienko-key.pem&quot;</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">MODIFICATIONS REQUIRED</p>
+<p>Although <strong>TASK 7</strong> does not require Ansible Lightspeed to generate any code suggestions, it <em>does</em> require the user to modify the value of the <code>ansible_ssh_private_key_file</code> attribute. Set this attribute to the directory path where the private SSH key (<code>.pem</code> file) is located on your local machine. Be sure to include the <code>.pem</code> filetype as part of the value and also ensure you have changed the permissions on the file (using Terminal and executing the <code>chmod 400 bienko-key.pem</code> instruction) before attempting to run the Playbook.</p>
+</div>
+<hr />
+<ol start="10">
+<li>Scrolling further down the Playbook you will "enter" <code>MODULE B</code> (Line 60), made up Ansible Tasks concerned with installing and configuring WordPress on the newly-provisioned AWS EC2 (VPC) instance. Locate <strong>TASK 8</strong> (Line 67) which waits for a connection to be established to the EC2 instance before advancing the sequence of automation tasks.</li>
+</ol>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">TEMPLATE</label><label for="__tabbed_8_2">SOLUTION</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># TASK 8</span><span class="w"></span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="c1">#   Wait for a connection to be established to the EC2 instance.</span><span class="w"></span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Wait for connection</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># TASK 8</span><span class="w"></span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="c1">#   Wait for a connection to be established to the EC2 instance.</span><span class="w"></span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Wait for connection</span><span class="w"></span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">  </span><span class="nt">ansible.builtin.wait_for_connection</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">    </span><span class="nt">delay</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w"></span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">    </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<ol start="11">
+<li>Next, continue further down the Playbook and locate <strong>TASK 9</strong> (Line 71) which commences installation of the necessary drivers and services on Amazon EC2 once a connection to the instance has been established.</li>
+</ol>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">TEMPLATE</label><label for="__tabbed_9_2">SOLUTION</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># TASK 9</span><span class="w"></span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="c1">#   After connecting, begin installation of necessary drivers and services.</span><span class="w"></span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install httpd, php, php-mysqli, and mariadb-server</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># TASK 9</span><span class="w"></span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="c1">#   After connecting, begin installation of necessary drivers and services.</span><span class="w"></span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install httpd, php, php-mysqli, and mariadb-server</span><span class="w"></span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">  </span><span class="nt">ansible.builtin.package</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">httpd</span><span class="w"></span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">php</span><span class="w"></span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">php-mysqlnd</span><span class="w"></span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mariadb-server</span><span class="w"></span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<ol start="12">
+<li>Scroll down further until you locate <strong>TASK 10</strong> (Line 75) which is responsible for downloading and decompressing (unarchiving) WordPress installation contents onto the EC2 instance.</li>
+</ol>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">TEMPLATE</label><label for="__tabbed_10_2">SOLUTION</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1"># TASK 10</span><span class="w"></span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="c1">#   Download and decompress (unarchive) WordPress contents on EC2 instance.</span><span class="w"></span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Download and unarchive wordpress</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1"># TASK 10</span><span class="w"></span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="c1">#   Download and decompress (unarchive) WordPress contents on EC2 instance.</span><span class="w"></span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Download and unarchive wordpress</span><span class="w"></span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">  </span><span class="nt">ansible.builtin.unarchive</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">    </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://wordpress.org/latest.tar.gz</span><span class="w"></span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/www/html</span><span class="w"></span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">    </span><span class="nt">remote_src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">    </span><span class="nt">creates</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/www/html/wordpress</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<ol start="13">
+<li>Afterwards, locate <strong>TASK 11</strong> (Line 79) which sets the ownership attributes for the WordPress environment on Amazon EC2 and prepares it for hosting via Apache webserver.</li>
+</ol>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">TEMPLATE</label><label for="__tabbed_11_2">SOLUTION</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1"># TASK 11</span><span class="w"></span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="c1">#   Set owner attributes for WordPress environment.</span><span class="w"></span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Change owner of /var/www/html/wordpress to apache:apache</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1"># TASK 11</span><span class="w"></span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="c1">#   Set owner attributes for WordPress environment.</span><span class="w"></span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Change owner of /var/www/html/wordpress to apache:apache</span><span class="w"></span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">  </span><span class="nt">ansible.builtin.file</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/www/html</span><span class="w"></span>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apache</span><span class="w"></span>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w">    </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apache</span><span class="w"></span>
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="w">    </span><span class="nt">recurse</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<ol start="14">
+<li>Further down the Playbook, locate <strong>TASK 12</strong> (Line 83) which deploys the services installed in Task 9.</li>
+</ol>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">TEMPLATE</label><label for="__tabbed_12_2">SOLUTION</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c1"># TASK 12</span><span class="w"></span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="c1">#   Deploy services installed in Task 9.</span><span class="w"></span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Start and enable httpd, php-fpm and mariadb services</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="c1"># TASK 12</span><span class="w"></span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="c1">#   Deploy services installed in Task 9.</span><span class="w"></span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Start and enable httpd, php-fpm and mariadb services</span><span class="w"></span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">  </span><span class="nt">ansible.builtin.service</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{</span><span class="nv"> </span><span class="s">{</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">}</span><span class="nv"> </span><span class="s">}&quot;</span><span class="w"></span>
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">started</span><span class="w"></span>
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="w">  </span><span class="nt">loop</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">httpd</span><span class="w"></span>
+<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">php-fpm</span><span class="w"></span>
+<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mariadb</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<ol start="15">
+<li>
+<p><code>MODULE C</code> (Line 87) of the Playbook covers the final set of operations. It is responsible for ensuring that WordPress is deployed on the newly-provisioned AWS EC2 (VPC) instance and that the WordPress web page is accessible to the user. As you did previously in Step 2, you will need to replace the <code>&lt;PLACEHOLDER&gt;</code> values and <code>region</code> details on Lines 96-98 if you want to fully deploy this application into a live AWS environment.</p>
+</li>
+<li>
+<p>Locate <strong>TASK 13</strong> (Line 101) which is responsible for gathering facts about AWS EC2 (VPC) instance and the deployed WordPress application that is running atop of it.</p>
+</li>
+</ol>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">TEMPLATE</label><label for="__tabbed_13_2">SOLUTION</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c1"># TASK 13</span><span class="w"></span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="c1">#   Gather facts about AWS EC2 (VPC) instance and deployed WordPress application.</span><span class="w"></span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Gather ec2 instance info for tag name wordpress</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="c1"># TASK 13</span><span class="w"></span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="c1">#   Gather facts about AWS EC2 (VPC) instance and deployed WordPress application.</span><span class="w"></span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Gather ec2 instance info for tag name wordpress</span><span class="w"></span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">  </span><span class="nt">amazon.aws.ec2_instance_info</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">    </span><span class="nt">filters</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">tag:Name</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wordpress</span><span class="w"></span>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="w">      </span><span class="nt">instance-state-name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">running</span><span class="w"></span>
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="w">  </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ec2_facts</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<ol start="17">
+<li>Finally, you have arrived at the final step in the Playbook configuration: <strong>TASK 14</strong> (Line 105), which is responsible for hosting the WordPress web application and making it accessible to user.</li>
+</ol>
+<div class="tabbed-set tabbed-alternate" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">TEMPLATE</label><label for="__tabbed_14_2">SOLUTION</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="c1"># TASK 14</span><span class="w"></span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="c1">#   Host the WordPress web application and make accessible to user.</span><span class="w"></span>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Debug ec2_facts public dns name</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="c1"># TASK 14</span><span class="w"></span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="c1">#   Host the WordPress web application and make accessible to user.</span><span class="w"></span>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Debug ec2_facts public dns name</span><span class="w"></span>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">  </span><span class="nt">ansible.builtin.debug</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="w">    </span><span class="nt">msg</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{</span><span class="nv"> </span><span class="s">{</span><span class="nv"> </span><span class="s">ec2_facts.instances[0].public_dns_name</span><span class="nv"> </span><span class="s">}</span><span class="nv"> </span><span class="s">}/wordpress/readme.html&quot;</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<p>Congratulations on making it this far! At this stage, your Playbook is in fact ready for execution. However, there are still some preparation that you need to do before this Playbook can be used to automate deployment of the WordPress application into a live Amazon EC2 environment.</p>
+<p>If you wish to go ahead with the deployment (<strong>RECOMMENDED</strong>) on your personal AWS account, follow along with the steps that follow. Otherwise, you are welcome to conclude the hands-on component here and follow the Level 3 accreditation steps (depending on your role).</p>
+<div class="admonition warning">
+<p class="admonition-title">LEVEL 3 ACCREDITATION</p>
+<p><strong>IBMers</strong> should take the time now to prepare for and record their Stand &amp; Deliver presentations for Level 3 accreditation. Be sure to follow the evaluation criteria that is outlined in this documentation.</p>
+<p><strong>Business Partners</strong> should follow the learning plan links on IBM Training to complete a multiple-choice examination for Level 3 accreditation.</p>
+</div>
+<hr />
+<h1 id="_3"></h1>
+<h1 id="to-deploy-a-live-amazon-ec2-instance-and-wordpress-application-follow-along-with-the-steps-ahead">To deploy a live Amazon EC2 instance and WordPress application, follow along with the steps ahead.</h1>
+<hr />
+<ol start="18">
+<li>If you have not registered for an AWS account previously, you need to do so now before advancing. You will need to supply a personal credit card for billing expenses. If you have an existing Amazon account, your AWS account can be linked to that profile if you so choose.</li>
+</ol>
+<p><strong>AWS Registration</strong>: <a href="https://aws.amazon.com/resources/create-account/" target="_blank">https://aws.amazon.com/resources/create-account/</a></p>
+<hr />
+<ol start="19">
+<li>In order to execute the Ansible Playbook on your local machine, you will need to install Ansible locally. Users can do so either through downloading the necessary binaries from Ansible.com or by executing the following instructions in a Terminal window (macOS):</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>brew install ansible
+</code></pre></div>
+<hr />
+<div class="admonition tip">
+<p class="admonition-title">MISSING HOMEBREW?</p>
+<p>If you do not have the Homebrew package manager ("brew") installed in a macOS environment, execute the following instruction inside a Terminal console:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;
+</code></pre></div>
+Wait for the installation to conclude and then retry the instructions from <strong>Step 19</strong>.</p>
+</div>
+<p>Follow the prompts until you receive confirmation that Ansible is installed and available locally.</p>
+<hr />
 
 
 
