@@ -789,11 +789,6 @@
 <h1 id="to-deploy-a-live-amazon-ec2-instance-and-wordpress-application-on-aws-follow-along-with-the-steps-ahead">To deploy a <strong>live</strong> Amazon EC2 instance and WordPress application on AWS, follow along with the steps ahead.</h1>
 <hr />
 <ol start="18">
-<li>If you have not registered for an AWS account previously, you need to do so now before advancing. You will need to supply a personal credit card for billing expenses. If you have an existing Amazon account, your AWS account can be linked to that profile if you so choose.</li>
-</ol>
-<p><strong>AWS Registration</strong>: <a href="https://aws.amazon.com/resources/create-account/" target="_blank">https://aws.amazon.com/resources/create-account/</a></p>
-<hr />
-<ol start="19">
 <li>In order to execute the Ansible Playbook on your local machine, you will need to install Ansible locally. Users can do so either through downloading the necessary binaries from Ansible.com or by executing the following instructions in a Terminal window (macOS):</li>
 </ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>brew install ansible
@@ -806,7 +801,26 @@
 Wait for the installation to conclude and then retry the instructions from <strong>Step 19</strong>.</p>
 </div>
 <p>Follow the prompts until you receive confirmation that Ansible is installed and available locally.</p>
+<hr />
+<ol start="19">
+<li>If you have not registered for an AWS account previously, you need to do so now before advancing. You will need to supply a personal credit card for billing expenses. If you have an existing Amazon account, your AWS account can be linked to that profile if you so choose.</li>
+</ol>
+<p><strong>AWS Registration</strong>: <a href="https://aws.amazon.com/resources/create-account/" target="_blank">https://aws.amazon.com/resources/create-account/</a></p>
+<hr />
+<ol start="20">
+<li>With a registered AWS account, you next need to navigate from the AWS dashboard into the <strong>Identity and Access Management (IAM)</strong> tool. You can search for this using the <strong>Search</strong> bar at the top of the screen and entering <code>IAM</code>.</li>
+</ol>
 <p><img alt="" loading="lazy" src="../_attachments/figure27.png" width="600" /></p>
+<hr />
+<ol start="21">
+<li>
+<p>Once inside the IAM tool, look along the left-side of the interface and drill down into <strong>Users</strong>.</p>
+</li>
+<li>
+<p>Click the <strong>Create User</strong> orange button located in the top-right corner of the interface.</p>
+</li>
+</ol>
+<p><img alt="" loading="lazy" src="../_attachments/figure28.png" width="600" /></p>
 <hr />
 
 
