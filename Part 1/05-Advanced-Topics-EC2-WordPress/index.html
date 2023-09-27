@@ -351,12 +351,14 @@
 <p>Compare the AI-generated code suggestions you receive in VS Code with the expected <code>SOLUTION</code> code. You <em>will</em> find that there are occassional discrepancies and variables that need to be adjusted. Generative AI can save us tremendous amounts of time and effort by automating the creation of powerful blocks of code— as you will observe in generating these tasks —but it still requires a degree of human supervision and double-checking. However, the time saved with hands on keyboard is enormous and the potential for the future is boundless.</p>
 <hr />
 <ol>
-<li>
-<p>Open the <code>TEMPLATE.yml</code> Playbook in VS Code and ensure that the Ansible Lightspeed extension is active. You may need to copy and paste the contents of the <code>TEMPLATE.yml</code> file into a <strong>New File...</strong> within the Lightspeed project you worked with for the previous modules in order for the extension to engage.</p>
-</li>
-<li>
-<p>Scroll down <strong>MODULE 1</strong> (Line 4) and take note of the comments, as well as the <code>&lt;PLACEHOLDER&gt;</code> values. If you wish to fully deploy this environment to AWS, you will need to register for an AWS account, create an IAM (Identity Access Management) user, and associate an SSH key with the necessary permissions to access the account. These values will then be substituted in your code for the <code>aws_access_key</code> and <code>aws_secret_key</code> variables.</p>
-</li>
+<li>Open the <code>TEMPLATE.yml</code> Playbook in VS Code and ensure that the Ansible Lightspeed extension is active.</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">ANSIBLE LIGHTSPEED EXTENSION</p>
+<p>You may need to copy and paste the contents of the <code>TEMPLATE.yml</code> file into a <strong>New File...</strong> within the Lightspeed project used for the previous Level 3 modules in order for the VS Code extension to engage.</p>
+</div>
+<ol start="2">
+<li>Scroll down <strong>MODULE 1</strong> (Line 4) and take note of the comments, as well as the <code>&lt;PLACEHOLDER&gt;</code> values. If you wish to fully deploy this environment to AWS, you will need to register for an AWS account, create an IAM (Identity Access Management) user, and associate an SSH key with the necessary permissions to access the account. These values will then be substituted in your code for the <code>aws_access_key</code> and <code>aws_secret_key</code> variables.</li>
 </ol>
 <p>Instructions on how to sign up for AWS and create those keys will be included at the end of this module, and you will be reminded at that time to update these variables. However, for now, let's focus on generating the Ansible Tasks.</p>
 <ol start="3">
