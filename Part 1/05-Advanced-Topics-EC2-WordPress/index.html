@@ -346,6 +346,56 @@
 <h1 id="_2"></h1>
 <h1 id="use-ansible-lightspeed-to-generate-code-with-the-template-playbook-then-compare-against-the-solution-playbook-to-evaluate-the-results">Use Ansible Lightspeed to <strong>generate code with the TEMPLATE Playbook</strong>, then compare against the SOLUTION Playbook to evaluate the results.</h1>
 <hr />
+<p>In the steps ahead, you will use Ansible Lightspeed's AI-generated code suggestions to populate the contents of Tasks within the <code>TEMPLATE.yml</code> Playbook. There are 14 Tasks in total and we will examine them each in turn.</p>
+<p>For each Task, a tabbed code snippet is provided within this lab documentation to make it easy for you to toggle between the TEMPLATE (the Task prior to AI-generated code suggestions) and the proper SOLUTION (the Task as it should be written for a successful deployment to AWS).</p>
+<p>Compare the AI-generated code suggestions you receive in VS Code with the expected SOLUTION code. You <em>will</em> find that there are occassional discrepancies and variables that need to be adjusted. Generative AI can save us tremendous amounts of time and effort by automating the creation of powerful blocks of code— as you will observe in generating these tasks —but it still requires a degree of human supervision and double-checking. However, the time saved with hands on keyboard is enormous and the potential for the future is boundless.</p>
+<hr />
+<ol>
+<li>
+<p>Open the <code>TEMPLATE.yml</code> Playbook in VS Code and ensure that the Ansible Lightspeed extension is active. You may need to copy and paste the contents of the <code>TEMPLATE.yml</code> file into a <strong>New File...</strong> within the Lightspeed project you worked with for the previous modules in order for the extension to engage.</p>
+</li>
+<li>
+<p>Scroll down <strong>MODULE 1</strong> (Line 4) and take note of the comments, as well as the <code>&lt;PLACEHOLDER&gt;</code> values. If you wish to fully deploy this environment to AWS, you will need to register for an AWS account, create an IAM (Identity Access Management) user, and associated an SSH key with the necessary permissions to access the account. These values will then be substituted in your code for the <code>aws_access_key</code> and <code>aws_secret_key</code> variables. Instructions on how to sign up for AWS and create those keys will be included at the end of this module, and you will be reminded at that time to update these variables. However, for now, let's focus on generating the Ansible Tasks.</p>
+</li>
+<li>
+<p>Continue scrolling down until you reach <strong>TASK 1</strong> (Line 18) for the creation of a virtual private cloud (VPC) named 'wordpress'. Generate the Task code within VS Code and compare your results with the <code>SOLUTION</code> tab.</p>
+</li>
+</ol>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">TEMPLATE</label><label for="__tabbed_1_2">SOLUTION</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1"># TASK 1</span><span class="w"></span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="c1">#   Creation of a virtual private cloud (VPC) named &#39;wordpress&#39;.</span><span class="w"></span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1">#   Should have value 10.0.0.0/16 associated with cidr_block.</span><span class="w"></span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create VPC named wordpress</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span>
+<span class="normal"><a href="#__codelineno-1-7">7</a></span>
+<span class="normal"><a href="#__codelineno-1-8">8</a></span>
+<span class="normal"><a href="#__codelineno-1-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1"># TASK 1</span><span class="w"></span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="c1">#   Creation of a virtual private cloud (VPC) named &#39;wordpress&#39;.</span><span class="w"></span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="c1">#   Should have value 10.0.0.0/16 associated with cidr_block.</span><span class="w"></span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create VPC named wordpress</span><span class="w"></span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">  </span><span class="nt">amazon.aws.ec2_vpc_net</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wordpress</span><span class="w"></span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">    </span><span class="nt">cidr_block</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.0.0.0/16</span><span class="w"></span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span><span class="w"></span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">  </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wordpress_vpc</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<hr />
 
 
 
