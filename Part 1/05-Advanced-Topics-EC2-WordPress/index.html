@@ -869,6 +869,10 @@ Wait for the installation to conclude and then retry the instructions from <stro
 <p>Record the <code>Secret Access Key</code>, which will replace the <code>&lt;PLACEHOLDER&gt;</code> value assigned to <code>aws_secret_key</code> in <strong>Step 2</strong> and <strong>Step 15</strong> of this lab guide.</p>
 </li>
 </ul>
+<ol start="27">
+<li>Take note at this time as well about the <strong>Region</strong> in which your AWS account is located. You can easily look up this information by examining the URL in your web browser address bar, as shown below. <strong>RECORD</strong> the name of the region, as this will replace the <code>region</code> value assigned to your Ansible Playbook.</li>
+</ol>
+<p><img alt="" loading="lazy" src="../_attachments/figure31.png" width="600" /></p>
 <div class="admonition warning">
 <p class="admonition-title">MODIFY YOUR PLAYBOOKS</p>
 <p>Replace the <code>&lt;PLACEHOLDER&gt;</code> values for variables <code>aws_access_key</code> and <code>aws_secret_key</code> with the <code>Access Key</code> and <code>Secret Access Key</code>, respectively.</p>
@@ -880,8 +884,28 @@ Wait for the installation to conclude and then retry the instructions from <stro
 <p>Located on Lines 13, 14, 179, and 180 of the <code>SOLUTION.yml</code> Playbook.</p>
 </li>
 </ul>
+<p>Replace the value for variable <code>region</code> with the region assigned to your unique AWS account.</p>
+<ul>
+<li>
+<p>Located on Lines 15 and 98 of the <code>TEMPLATE.yml</code> Playbook.</p>
+</li>
+<li>
+<p>Located on Lines 15 and 181 of the <code>SOLUTION.yml</code> Playbook.</p>
+</li>
+</ul>
 </div>
 <hr />
+<ol start="28">
+<li>
+<p>Next, you'll need to create an SSH <strong>Key Pair</strong> with authorization to interact with (and ultimately deploy) Amazon EC2 instances. Return to the search bar at the top of the AWS interface and enter <code>EC2</code>. Drill down into the <strong>Amazon EC2</strong> service page from the results.</p>
+</li>
+<li>
+<p>From the left-hand navigation bar, drill down into the <strong>Network &amp; Security</strong> &gt; <strong>Key Pairs</strong> tab.</p>
+</li>
+<li>
+<p>Click the orange <strong>Create key pair</strong> button in the top-right of the page.</p>
+</li>
+</ol>
 
 
 
