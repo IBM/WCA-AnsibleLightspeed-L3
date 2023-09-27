@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#macro-rendering-error" class="md-skip">
           Skip to content
         </a>
       
@@ -307,96 +307,20 @@
                 
 
 
-<h1 id="_1"></h1>
-<h1 id="advanced-deploying-an-aws-ec2-vpc-and-wordpress-via-ansible-lightspeed"><strong>Advanced</strong>: Deploying an AWS EC2 VPC and WordPress via Ansible Lightspeed</h1>
-<p>To conclude the Level 3 Technical Sales education on IBM watsonx Code Assistant for Red Hat Ansible Lightspeed, you have been provided with a complete instruction set for deploying a <strong>LIVE</strong> environment on Amazon Web Services (AWS) consisting of a <strong><a href="https://wordpress.com" target="_blank">WordPress</a></strong> web application running atop an <strong><a href="https://aws.amazon.com/ec2/" target="_blank">Amazon EC2 VPC</a></strong>.</p>
-<ul>
-<li>
-<p>The deployment of the environments will be conducted entirely using Red Hat Ansible automation, executed on your local machine and deployed to AWS cloud.</p>
-</li>
-<li>
-<p>The generation of the Ansible Tasks and code required to automate these deployments will be created using the Generative AI capabilities of the Ansible Lightspeed extension for VS Code.</p>
-</li>
-</ul>
-<div class="admonition warning">
-<p class="admonition-title">COSTS</p>
-<p>Be aware that deploying a live Amazon EC2 instance on AWS <strong>does</strong> incur real-world charges which are the responsibility of the individual to pay for. If you wish to go ahead with deploying the live environment— <strong>which you are encouraged, but NOT REQUIRED, to complete</strong> —you will need to do so on your personal AWS account, with any potential billings and charges incurred to your personal credit card.</p>
-<p>The billing associated with an Amazon EC2 <code>t2.small</code> instance and other services needed for the demo is <strong>minimal</strong>: on-demand hourly rate of <strong>$0.023 USD</strong> at the time of publication.</p>
-<p><a href="https://aws.amazon.com/ec2/pricing/on-demand/" target="_blank">Additional AWS pricing details and plans are available online.</a></p>
-</div>
-<p>Ansible Playbooks have been prepared ahead of time in a public GitHub repository and are available for your use at the links below. Once the two YAML files are available on your local machine, open them with VS Code and follow along with the instructions below.</p>
-<hr />
-<p><img alt="" src="../_attachments/figure25.png" /></p>
-<hr />
-<p><strong>TEMPLATE (<code>.yml</code>)</strong>: <a href="https://github.com/bienko/WCA-Lightspeed-L3/blob/main/TEMPLATE.yml" target="_blank">https://github.com/bienko/WCA-Lightspeed-L3/blob/main/TEMPLATE.yml</a></p>
-<ul>
-<li>The <code>TEMPLATE.yml</code> Playbook contains the skeleton of the application you will ultimately build. Playbook structure, key variables, Task descriptions, and comments are provided. Use the Generative AI capabilities of Ansible Lightspeed to fill out the details of the various Ansible Tasks, then compare the results with the <code>SOLUTION.yml</code> file below.</li>
-</ul>
-<p><strong>SOLUTION (<code>.yml</code>)</strong>: <a href="https://github.com/bienko/WCA-Lightspeed-L3/blob/main/SOLUTION.yml" target="_blank">https://github.com/bienko/WCA-Lightspeed-L3/blob/main/SOLUTION.yml</a></p>
-<ul>
-<li>The <code>SOLUTION.yml</code> Playbook contains the complete set of Ansible Playbook instructions needed to fully deploy a live EC2 VPC instance on AWS and host a WordPress application within that environment. You will need to replace certain variables (indicated by comments in the code) with details specific to your personal AWS account and environment. Afterwards, you can— and are encouraged to —execute the Playbook with Ansible and deploy a <strong>live</strong>, at-cost instance to your personal AWS account.</li>
-</ul>
-<div class="admonition tip">
-<p class="admonition-title">DOWNLOAD .yml FILES TO DESKTOP</p>
-<p>You can easily downlod the <code>TEMPLATE</code> and <code>SOLUTION</code> <em>.yml</em> files to your local machine.</p>
-<p><img alt="" loading="lazy" src="../_attachments/figure26.png" width="400" /></p>
-<p>Navigate to the GitHub links provided (above) and click the <strong>Download raw file</strong> button.</p>
-</div>
-<hr />
-<h1 id="_2"></h1>
-<h1 id="use-ansible-lightspeed-to-generate-code-with-the-template-playbook-then-compare-against-the-solution-playbook-to-evaluate-the-results">Use Ansible Lightspeed to <strong>generate code with the TEMPLATE Playbook</strong>, then compare against the SOLUTION Playbook to evaluate the results.</h1>
-<hr />
-<p>In the steps ahead, you will use Ansible Lightspeed's AI-generated code suggestions to populate the contents of Tasks within the <code>TEMPLATE.yml</code> Playbook. There are 14 Tasks in total and we will examine them each in turn.</p>
-<p>For each Task, a tabbed code snippet is provided within this lab documentation to make it easy for you to toggle between the <code>TEMPLATE</code> (the Task prior to AI-generated code suggestions) and the proper <code>SOLUTION</code> (the Task as it should be written for a successful deployment to AWS).</p>
-<p>Compare the AI-generated code suggestions you receive in VS Code with the expected <code>SOLUTION</code> code. You <em>will</em> find that there are occassional discrepancies and variables that need to be adjusted. Generative AI can save us tremendous amounts of time and effort by automating the creation of powerful blocks of code— as you will observe in generating these tasks —but it still requires a degree of human supervision and double-checking. However, the time saved with hands on keyboard is enormous and the potential for the future is boundless.</p>
-<hr />
-<div class="admonition tip">
-<p class="admonition-title">VS CODE EXTENSION</p>
-<p>You may need to copy and paste the contents of the <code>TEMPLATE.yml</code> file into a <strong>New File...</strong> within the Lightspeed project used for the previous Level 3 modules in order for the VS Code extension to engage.</p>
-</div>
-<ol>
-<li>
-<p>Open the <code>TEMPLATE.yml</code> Playbook in VS Code and ensure that the Ansible Lightspeed extension is active.</p>
-</li>
-<li>
-<p>Scroll down <strong>MODULE 1</strong> (Line 4) and take note of the comments, as well as the <code>&lt;PLACEHOLDER&gt;</code> values. If you wish to fully deploy this environment to AWS, you will need to register for an AWS account, create an IAM (Identity Access Management) user, and associate an SSH key with the necessary permissions to access the account. These values will then be substituted in your code for the <code>aws_access_key</code> and <code>aws_secret_key</code> variables.</p>
-</li>
-</ol>
-<p>Instructions on how to sign up for AWS and create those keys will be included at the end of this module, and you will be reminded at that time to update these variables. However, for now, let's focus on generating the Ansible Tasks.</p>
-<ol start="3">
-<li>Continue scrolling down until you reach <strong>TASK 1</strong> (Line 18) for the creation of a virtual private cloud (VPC) named 'wordpress'. Generate the Task code within VS Code and compare your results with the <code>SOLUTION</code> tab.</li>
-</ol>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">TEMPLATE</label><label for="__tabbed_1_2">SOLUTION</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># TASK 1</span><span class="w"></span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">#   Creation of a virtual private cloud (VPC) named &#39;wordpress&#39;.</span><span class="w"></span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">#   Should have value 10.0.0.0/16 associated with cidr_block.</span><span class="w"></span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create VPC named wordpress</span><span class="w"></span>
+<h1 id="macro-rendering-error"><em>Macro Rendering Error</em></h1>
+<p><strong>UndefinedError</strong>: 'wordpress_vpc' is undefined</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Traceback (most recent call last):
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  File &quot;/opt/homebrew/lib/python3.9/site-packages/mkdocs_macros/plugin.py&quot;, line 480, in render
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    return md_template.render(**page_variables)
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  File &quot;/opt/homebrew/lib/python3.9/site-packages/jinja2/environment.py&quot;, line 1301, in render
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    self.environment.handle_exception()
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  File &quot;/opt/homebrew/lib/python3.9/site-packages/jinja2/environment.py&quot;, line 936, in handle_exception
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    raise rewrite_traceback_stack(source=source)
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  File &quot;&lt;template&gt;&quot;, line 117, in top-level template code
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  File &quot;/opt/homebrew/lib/python3.9/site-packages/jinja2/environment.py&quot;, line 485, in getattr
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    return getattr(obj, attribute)
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>jinja2.exceptions.UndefinedError: &#39;wordpress_vpc&#39; is undefined
 </code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># TASK 1</span><span class="w"></span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">#   Creation of a virtual private cloud (VPC) named &#39;wordpress&#39;.</span><span class="w"></span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">#   Should have value 10.0.0.0/16 associated with cidr_block.</span><span class="w"></span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create VPC named wordpress</span><span class="w"></span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">amazon.aws.ec2_vpc_net</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wordpress</span><span class="w"></span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nt">cidr_block</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.0.0.0/16</span><span class="w"></span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span><span class="w"></span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wordpress_vpc</span><span class="w"></span>
-</code></pre></div>
-</div>
-</div>
-</div>
-<hr />
-<div class="admonition tip">
-<p class="admonition-title">TAGS</p>
-<p>One element of AI-generated Task code that you may find yourself frequently needing to update are tags and other naming conventions, such as the <code>register: wordpress_vpc</code> pair in <strong>TASK 1</strong>. While the Ansible Lightspeed extension will remember the context of variables that are <em>already</em> named within the Playbook, it will struggle with how to name <em>new</em> variables — like <code>wordpress_vpc</code>. Take note, however, that as you generate code for the other Tasks in the Playbook that <code>wordpress_vpc</code> will be recalled and referenced.</p>
-</div>
-<ol start="4">
-<li>Next</li>
-</ol>
 
 
 
