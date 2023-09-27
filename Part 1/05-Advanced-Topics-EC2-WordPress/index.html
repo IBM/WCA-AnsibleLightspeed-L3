@@ -413,7 +413,7 @@
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">amazon.aws.ec2_security_group</span><span class="p">:</span><span class="w"></span>
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wordpress</span><span class="w"></span>
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Allow SSH and HTTP/HTTPS</span><span class="w"></span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="nt">vpc_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="err">\</span><span class="s">{</span><span class="err">\</span><span class="s">{</span><span class="nv"> </span><span class="s">wordpress_vpc.vpc.id</span><span class="nv"> </span><span class="err">\</span><span class="s">}</span><span class="err">\</span><span class="s">}&quot;</span><span class="w"> </span><span class="c1"># Ignore extra escape characters...</span><span class="w"></span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="nt">vpc_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{</span><span class="nv"> </span><span class="s">{</span><span class="nv"> </span><span class="s">wordpress_vpc.vpc.id</span><span class="nv"> </span><span class="s">}</span><span class="nv"> </span><span class="s">}&quot;</span><span class="w"> </span><span class="c1"># Ignore extra space between { { cbaracters.</span><span class="w"></span>
 <a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="nt">rules</span><span class="p">:</span><span class="w"></span>
 <a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">proto</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tcp</span><span class="w"></span>
 <a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">        </span><span class="nt">from_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span><span class="w"></span>
@@ -433,7 +433,7 @@
 </div>
 </div>
 <hr />
-<p>Notice that the <code>wordpress_vpc</code> attribute which was registered in Task 2 has been referenced in the creation of the <code>vpc_id</code> in Task 3. Ignore the additional <code>\</code> escape characters that are included in the rendering of SOLUTION — these are included only to allow rendering of the code block in GitHub and are not intended as part of the finalized code.</p>
+<p>Notice that the <code>wordpress_vpc</code> attribute which was registered in TASK 2 has been referenced in the creation of the <code>vpc_id</code> in TASK 3. Ignore the additional space between adjacent <code>{``{</code> characters that are included in SOLUTION code tabs — these are included only to allow rendering of the code block in GitHub and are not intended as part of the finalized code.</p>
 <ol start="5">
 <li>Continue scrolling down until you reach <strong>TASK 3</strong> (Line 28) for the creation of an internet gateway for the wordpress VPC. Generate, evaluate, and refine the Task code as needed.</li>
 </ol>
@@ -450,7 +450,7 @@
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1">#   Creation of an internet gateway for the wordpress VPC</span><span class="w"></span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create internet gateway for VPC wordpress_vpc</span><span class="w"></span>
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="nt">amazon.aws.ec2_vpc_igw</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nt">vpc_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="err">\</span><span class="s">{</span><span class="err">\</span><span class="s">{</span><span class="nv"> </span><span class="s">wordpress_vpc.vpc.id</span><span class="nv"> </span><span class="err">\</span><span class="s">}</span><span class="err">\</span><span class="s">}&quot;</span><span class="w"></span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nt">vpc_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{</span><span class="nv"> </span><span class="s">{</span><span class="nv"> </span><span class="s">wordpress_vpc.vpc.id</span><span class="nv"> </span><span class="s">}</span><span class="nv"> </span><span class="s">}&quot;</span><span class="w"></span>
 <a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span><span class="w"></span>
 <a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wordpress_igw</span><span class="w"></span>
 </code></pre></div>
@@ -483,7 +483,38 @@
 </div>
 </div>
 <hr />
-<p>.</p>
+<ol start="7">
+<li>Continue down to <strong>TASK 5</strong> (Line 36) for the creation of a routing table associated with wordpress VPC's subnet and internet gateway.</li>
+</ol>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">TEMPLATE</label><label for="__tabbed_5_2">SOLUTION</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># TASK 5</span><span class="w"></span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1">#   Creation of a routing table associated with wordpress VPC&#39;s subnet and internet gateway</span><span class="w"></span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create route table for subnet and gateway wordpress_igw</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># TASK 5</span><span class="w"></span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="c1">#   Creation of a routing table associated with wordpress VPC&#39;s subnet and internet gateway</span><span class="w"></span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create route table for subnet and gateway wordpress_igw</span><span class="w"></span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">  </span><span class="nt">amazon.aws.ec2_vpc_route_table</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span><span class="w"></span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="nt">vpc_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{</span><span class="nv"> </span><span class="s">{</span><span class="nv"> </span><span class="s">wordpress_vpc.vpc.id</span><span class="nv"> </span><span class="s">}</span><span class="nv"> </span><span class="s">}&quot;</span><span class="w"></span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">    </span><span class="nt">tags</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">      </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sg_public</span><span class="w"></span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">      </span><span class="nt">Project</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">phoenix</span><span class="w"></span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">    </span><span class="nt">subnets</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;{</span><span class="nv"> </span><span class="s">{</span><span class="nv"> </span><span class="s">wordpress_subnet.subnet.id</span><span class="nv"> </span><span class="s">}</span><span class="nv"> </span><span class="s">}&quot;</span><span class="w"></span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">    </span><span class="nt">routes</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0.0.0/0</span><span class="w"></span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">        </span><span class="nt">gateway_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{</span><span class="nv"> </span><span class="s">{</span><span class="nv"> </span><span class="s">wordpress_igw.gateway_id</span><span class="nv"> </span><span class="s">}</span><span class="nv"> </span><span class="s">}&quot;</span><span class="w"></span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">  </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wordpress_route_table</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
 
 
 
