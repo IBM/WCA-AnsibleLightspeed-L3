@@ -975,6 +975,30 @@ Wait for the installation to conclude and then retry the instructions from <stro
 <h1 id="_5"></h1>
 <h1 id="cleaning-up-and-conclusion">Cleaning up and conclusion</h1>
 <hr />
+<p>After you have recorded your Stand &amp; Deliver presentations (IBMers only) and are ready to retire your environment, you will need to return to the AWS Dashboard to terminate the EC2 instance and hosted WordPress application.</p>
+<div class="admonition warning">
+<p class="admonition-title">COSTS</p>
+<p>It is essential that you terminate and deprovision the EC2 instance at the conclusion of the hands on lab. Otherwise, your personal AWS account will continue to be billed for as long as the resources are provisioned.</p>
+</div>
+<hr />
+<ol start="38">
+<li>
+<p>You can monitor your Amazon EC2 instance from the EC2 dashboard. At the top of the page, locate the <strong>Resources</strong> table and drill down into the <strong>Instances (running)</strong> tab.</p>
+</li>
+<li>
+<p>Details about your EC2 environment are summarized within the <strong>Instances</strong> table. Click the name of your EC2's <code>Instance ID</code> to expose additional details and management options.</p>
+</li>
+</ol>
+<p><img alt="" src="../_attachments/figure35.png" /></p>
+<hr />
+<ol start="40">
+<li>In the top-right corner of the interface, click the <strong>Instance state</strong> button and select <strong>Terminate instance</strong> from the drop-down menu.</li>
+</ol>
+<p><img alt="" loading="lazy" src="../_attachments/figure36.png" width="400" /></p>
+<hr />
+<ol start="41">
+<li>Confirm the deprovisioning request by clicking the orange <strong>Terminate</strong> button. All storage associated with the EC2 instance will automatically be deleted. Terminating an instance cannot be undone once underway.</li>
+</ol>
 
 
 
