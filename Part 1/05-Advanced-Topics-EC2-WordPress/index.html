@@ -999,6 +999,17 @@ Wait for the installation to conclude and then retry the instructions from <stro
 <ol start="41">
 <li>Confirm the deprovisioning request by clicking the orange <strong>Terminate</strong> button. All storage associated with the EC2 instance will automatically be deleted. Terminating an instance cannot be undone once underway.</li>
 </ol>
+<hr />
+<ol start="42">
+<li>It is recommended that you delete all of the <strong>Security Groups</strong> (3 total) and <strong>Key Pairs</strong> (1 total) associated with the EC2 instance. To do so, return to the EC2 Dashboard and follow a similar procedure to Steps 38-41.</li>
+</ol>
+<hr />
+<ol start="43">
+<li>Search for <code>IAM</code> in the AWS taskbar to return to the <strong>Identity Access Management</strong> panel. If you wish to further secure your AWS account, delete all unwanted users or consider reducing the user's privilege from AdministratorAccess to a more restrictive class.</li>
+</ol>
+<hr />
+<p>That concludes the hands-on components to this Level 3 course, but your learning and experimentation doesn't need to end here. Continue to experiment with generating Tasks for Ansible Playbooks. If you have worked extensively with Ansible previously, try recreating Tasks you've written previously from old Playbooks using generative AI (just be careful not to use confidential/sensitive information as part of those tests) – see if you can spot the differences or improvements made from the code recommendations.</p>
+<p>Feel free to reach out to the authors of this coursework if you have suggestions of Tasks or code generation techniques that you'd like to see included in future iterations of this hands-on training.</p>
 
 
 
