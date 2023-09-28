@@ -593,7 +593,7 @@
 </div>
 </div>
 <div class="admonition warning">
-<p class="admonition-title">MODIFICATIONS REQUIRED</p>
+<p class="admonition-title">PLAYBOOK MODIFICATIONS REQUIRED</p>
 <p>Although <strong>TASK 7</strong> does not require Ansible Lightspeed to generate any code suggestions, it <em>does</em> require the user to modify the value of the <code>ansible_ssh_private_key_file</code> attribute. Set this attribute to the directory path where the private SSH key (<code>.pem</code> file) is located on your local machine. Be sure to include the <code>.pem</code> filetype as part of the value and also ensure you have changed the permissions on the file (using Terminal and executing the <code>chmod 400 bienko-key.pem</code> instruction) before attempting to run the Playbook.</p>
 </div>
 <hr />
@@ -875,7 +875,7 @@ Wait for the installation to conclude and then retry the instructions from <stro
 <p><img alt="" loading="lazy" src="../_attachments/figure31.png" width="400" /></p>
 <p><strong>RECORD</strong> the name of the region, as this will replace the <code>region</code> value assigned to the Playbook.</p>
 <div class="admonition warning">
-<p class="admonition-title">MODIFY YOUR PLAYBOOKS</p>
+<p class="admonition-title">PLAYBOOK MODIFICATIONS REQUIRED</p>
 <p>Replace the <code>&lt;PLACEHOLDER&gt;</code> values for variables <code>aws_access_key</code> and <code>aws_secret_key</code> with the <code>Access Key</code> and <code>Secret Access Key</code>, respectively.</p>
 <ul>
 <li>
@@ -928,7 +928,7 @@ Wait for the installation to conclude and then retry the instructions from <stro
 <li>The web browser will redirect to a page where you can view details about the newly-created Key Pair for EC2. <strong>Download</strong> the <code>.pem</code> file to your local device, preferably to the same directory that your Ansible Playbooks are located.</li>
 </ol>
 <div class="admonition warning">
-<p class="admonition-title">MODIFY YOUR PLAYBOOKS</p>
+<p class="admonition-title">PLAYBOOK MODIFICATIONS REQUIRED</p>
 <p>The value of <code>ansible_ssh_private_key_file</code> must be updated within your Playbooks to account for the full path to the <code>.pem</code> file on your local machine. If you save the Key Pair file to the same directory that your Ansible Playbooks are located within, you do not need to qualify the value with anything more than the name of the file (<code>bienko-key.pem</code>). If it is saved in a <em>different</em> directory, you will need to spell out the full path + file name.</p>
 <p>Update the value of <code>ansible_ssh_private_key_file</code> in the following locations:</p>
 <ul>
