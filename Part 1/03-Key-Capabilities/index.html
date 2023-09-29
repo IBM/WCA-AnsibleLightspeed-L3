@@ -666,10 +666,10 @@
 <h1 id="section-on-explainability">SECTION ON EXPLAINABILITY</h1>
 <hr />
 <p>To enable <strong>Content Source Matching</strong> capabilities within Ansible Lightspeed, navigate to the top-line menu for VS Code and drill down into <strong>View</strong> &gt; <strong>Open View...</strong> as shown below.</p>
-<p><img alt="" src="_attachments/figure20.png" /></p>
+<p><img alt="" src="../_attachments/figure20.png" /></p>
 <hr />
 <p>The taskbar along the top of the VS Code interface will now highlight, awaiting a prompt. Enter <code>view Lightspeed Training Matches</code> and hit the <code>Return</code> key to confirm the selection.</p>
-<p><img alt="" src="_attachments/figure21.png" /></p>
+<p><img alt="" src="../_attachments/figure21.png" /></p>
 <hr />
 <p>At this point, all future generative AI tasks— such as asking Ansible Lightspeed to generate the code for a Task —will now open a panel at the bottom of the VS Code interface displaying a variety of options: <code>Problems</code>, <code>Output</code>, <code>Debug Console</code>, <code>Terminal</code>, <code>Ports</code>, <code>Comments</code>, and most importantly <code>Ansible:Lightspeed Training Matches</code>.</p>
 <p>Let's experiment with generating some lines of code and inspecting the <code>Ansible:Lightspeed Training Matches</code> tab to observe this code explainability feature in action.</p>
@@ -702,11 +702,20 @@
 <a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Start and enable postgresql service</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 <hr />
-<p><img alt="" src="_attachments/figure22.png" /></p>
+<p>Within your VS Code environment, attempt to generate code for the task on <strong>Line 7</strong>: <code>- name: Install postgresql-server</code>. The resulting code should look like the following:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install postgresql-server</span><span class="w"></span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">ansible.builtin.package</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgresql-server</span><span class="w"></span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span><span class="w"></span>
+</code></pre></div>
+<p>Of particular interest to us at this time is the code attribution details associated with this recommendation, which will be appearing in the panel at the bottom of the VS Code interface once the code recommendation is finalized. You will need to <strong>accept</strong> the AI-generated code suggestions (using the <code>TAB</code> key) <em>before</em> the content source matching tab will populate with details about the code's origins.</p>
+<p><img alt="" src="../_attachments/figure22.png" /></p>
+<p><img alt="" src="../_attachments/figure23.png" /></p>
 <hr />
-<p><img alt="" src="_attachments/figure23.png" /></p>
-<hr />
-<p><img alt="" src="_attachments/figure24.png" /></p>
+<p>The three most likely content sources used in the training the IBM watsonx Code Assistant for Red Hat Ansible Lightspeed model— which produced the AI-generated code recommendations —are listed within the <code>Training Matches</code> tab.</p>
+<p>Clicking the arrow icon to the left of each attribution will expand further details about the source. Information about the <code>URL</code>, <code>Path</code>, <code>Data Source</code>, <code>License</code>, <code>Ansible type</code>, and <code>Score</code> will be presented (where available) under each listing. Red Hat-certified and maintained collections, as well as contributors to open source projects on Ansible Galaxy, are the primary sources for Ansible Lightspeed model training and are the content sources you are most likely to see matched to AI-generated code recommendations.</p>
+<p>Drilling down into the <code>URL</code> field will redirect your web browser back to the precise collections and sources on Ansible Galaxy from which the code recommendations were derived. Here you can learn much richer details about the status of the project, any associated open source repositories involved (such as GitHub), contributions and activities ongoing with the code base, the author(s) involved, and many more intricacies.</p>
+<p><img alt="" src="../_attachments/figure24.png" /></p>
 <hr />
 
 
