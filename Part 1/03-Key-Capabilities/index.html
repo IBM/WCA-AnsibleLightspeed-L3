@@ -313,7 +313,7 @@
 <p><img alt="" src="../_attachments/figure37.png" /></p>
 <hr />
 <p>The process of creating AI-generated <strong>code recommendations</strong> is as simple as modifying the natural language (plain English) Task descriptions of Ansible jobs, which always start with <code>- name: natural language description</code> and are often preceded with some <code># Comments</code> documentation inside the Technical Preview assets, and then allowing the Generative AI to handle the rest.</p>
-<div class="admonition note">
+<div class="admonition tip">
 <p class="admonition-title">ANSIBLE TASKS</p>
 <p>At the time of publication, IBM watsonx Code Assistant for Red Hat Ansible Lightspeed can only generate code for <strong>Ansible Tasks</strong>. In future releases, it will be capable of generating many other components of Ansible Playbooks.</p>
 </div>
@@ -399,6 +399,26 @@
 <a id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="w">        </span><span class="c1"># # 4b. Save the Playbook.</span><span class="w"></span>
 <a id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Wait 15 seconds port 9090</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">CREATING NEW YAML FILES</p>
+<p>If you wish to create a new YAML Playbook within your VS Code environment, rather than using the code already imported from the Ansible Lightspeed repository on GitHub, you can do so by following these steps:</p>
+<ol>
+<li>
+<p>Copy the contents above to clipboard using the button in the top-right corner of the code block.
+<img alt="" loading="lazy" src="../_attachments/figure18.png" width="400" /></p>
+</li>
+<li>
+<p>Return to your VS Code environment. In the top-left corner of the interface, with your Ansible Lightspeed folder selected, click the <strong>New File...</strong> button.
+<img alt="" loading="lazy" src="../_attachments/figure19.png" width="400" /></p>
+</li>
+<li>
+<p>Name the file to a description of your choosing, ending with <code>.yml</code> as the filetype. Set it to <code>CustomPlaybook.yml</code>, for example.</p>
+</li>
+<li>
+<p>Paste the clipboard contents into the YAML file and follow along with the suggestions below.</p>
+</li>
+</ol>
+</div>
 <hr />
 <p>The Playbook code above warrants some explanation before we move on with modifications:</p>
 <ul>
