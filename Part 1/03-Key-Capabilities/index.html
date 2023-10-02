@@ -481,8 +481,32 @@
 </div>
 <p>The AI-generated code recommendation will copy <a href="https://github.com/craig-br/demos/blob/main/blogs/lightspeed_tech_preview_jun2023/files/cockpit.conf" target="_blank"><code>cockpit.conf</code></a> to the target host. Take note of the fact that the recommendation included the <code>mode:</code> module argument and set the Linux file permissions to <code>0644</code>, neither of which were things explicitly requested in the Task <code>-name</code> description but are both additions which <em>significantly</em> enhance the efficacy and safety of the Task.</p>
 <p>These additional recommendations stem from a robust example of setting file permissions for the <a href="https://docs.ansible.com/ansible/latest/collections/ansible/builtin/copy_module.html" target="_blank"><code>ansible.builtin.copy</code></a> module, a recommended best practice that Lightspeed carried into this AI-generated code recommendation as well.</p>
+<p>You may continue generating Task blocks on this Playbook if you wish. When ready to proceed, continue along with the lab documentation below.</p>
 <hr />
-<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">CUSTOM PLAYBOOK #1 - Install an nginx webserver and launch the service</label></div>
+<h1 id="_2"></h1>
+<h1 id="content-source-matching-and-attribution-attempts-to-match-code-recommendations-to-ansible-galaxy-sources-projects-and-contributors-for-data-provenance"><strong>Content source matching and attribution</strong> attempts to match code recommendations to Ansible Galaxy sources (projects and contributors) for data provenance.</h1>
+<hr />
+<p>A powerful capable within IBM watsonx Code Assistant for Red Hat Ansible Lightspeed is <strong>Content Source Matching</strong> (often referred to as "code explainability"), which attempts to match AI-generated code suggestions to training data and sources that were utilized in generating the suggested Task code. For the Technical Preview (pre-GA) release of the service, the extent of these capabilities are fairly rudimentary — identifying Ansible Galaxy packages and contributors where available for each line of AI-generated code.</p>
+<p>These code attribution suggestions are created using a <strong>k-NN</strong> (<a href="https://www.ibm.com/topics/knn#:~:text=Next%20steps-,K%2DNearest%20Neighbors%20Algorithm,of%20an%20individual%20data%20point." target="_blank">K-Nearest Neighbors</a>) algorithm that examines Ansible Galaxy and training data repositories in search of the nearest related content to the AI-generated code suggestions.</p>
+<hr />
+<p><img alt="" src="../_attachments/figure38.png" /></p>
+<div class="admonition tip">
+<p class="admonition-title">PROJECTED CAPABILITIES</p>
+<p>In the future, it is anticipated that clients will be able to supply Ansible Lightspeed with a Playbook and ask <em>"where did this generated code come from and who was its author?"</em> The service may potentially gain the ability to "comment" and document mark-up lines (or blocks) of code, <em>explaining</em> to users in plain English what functions of code are performing — work traditionally left to the developer or author, but an area often neglected or lacking in many organization's code bases.</p>
+</div>
+<hr />
+<p>To enable <strong>Content Source Matching</strong> capabilities within Ansible Lightspeed, navigate to the top-line menu for VS Code and drill down into <strong>View</strong> &gt; <strong>Open View...</strong> as shown below.</p>
+<hr />
+<p><img alt="" loading="lazy" src="../_attachments/figure20.png" width="600" /></p>
+<hr />
+<p>The taskbar along the top of the VS Code interface will now highlight, awaiting a prompt. Enter <code>view Lightspeed Training Matches</code> and hit the <code>Return</code> key to confirm the selection.</p>
+<hr />
+<p><img alt="" loading="lazy" src="../_attachments/figure21.png" width="600" /></p>
+<hr />
+<p>At this point, all future generative AI tasks— such as asking Ansible Lightspeed to generate the code for a Task —will now open a panel at the bottom of the VS Code interface displaying a variety of options: <code>Problems</code>, <code>Output</code>, <code>Debug Console</code>, <code>Terminal</code>, <code>Ports</code>, <code>Comments</code>, and most importantly <code>Ansible:Lightspeed Training Matches</code>.</p>
+<p>Let's experiment with generating some lines of code and inspecting the <code>Ansible:Lightspeed Training Matches</code> tab to observe this code explainability feature in action.</p>
+<p>Open the following Ansible Playbook within your Lightspeed repository, or copy and paste the following code template into a <strong>New File...</strong> within your VS Code environment.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">lightspeed-demos-main/playbooks/infra/install_pgsql_and_pgadmin/demo_install_pgsql.yml</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block"></div>
 </div>
@@ -497,50 +521,275 @@
 <span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-5-10">10</a></span>
-<span class="normal"><a href="#__codelineno-5-11">11</a></span>
-<span class="normal"><a href="#__codelineno-5-12">12</a></span>
-<span class="normal"><a href="#__codelineno-5-13">13</a></span>
-<span class="normal"><a href="#__codelineno-5-14">14</a></span>
-<span class="normal"><a href="#__codelineno-5-15">15</a></span>
-<span class="normal"><a href="#__codelineno-5-16">16</a></span>
-<span class="normal"><a href="#__codelineno-5-17">17</a></span>
-<span class="normal"><a href="#__codelineno-5-18">18</a></span>
-<span class="normal"><a href="#__codelineno-5-19">19</a></span>
-<span class="normal"><a href="#__codelineno-5-20">20</a></span>
-<span class="normal"><a href="#__codelineno-5-21">21</a></span>
-<span class="normal"><a href="#__codelineno-5-22">22</a></span>
-<span class="normal"><a href="#__codelineno-5-23">23</a></span>
-<span class="normal"><a href="#__codelineno-5-24">24</a></span>
-<span class="normal"><a href="#__codelineno-5-25">25</a></span>
-<span class="normal"><a href="#__codelineno-5-26">26</a></span>
-<span class="normal"><a href="#__codelineno-5-27">27</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="c1"># ANSIBLE PLAYBOOK - Install an nginx webserver and launch the service</span><span class="w"></span>
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="c1"># AUTHOR — Deepak C. Shetty (deepakcshetty@in.ibm.com)</span><span class="w"></span>
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a>
-<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="nn">---</span><span class="w"></span>
-<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install nginx</span><span class="w"></span>
-<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">webserver</span><span class="w"></span>
-<a id="__codelineno-5-7" name="__codelineno-5-7"></a>
-<a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Add epel-release repo</span><span class="w"></span>
-<a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="w">      </span><span class="nt">yum</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">epel-release</span><span class="w"></span>
-<a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span><span class="w"></span>
-<a id="__codelineno-5-13" name="__codelineno-5-13"></a>
-<a id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install nginx</span><span class="w"></span>
-<a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="w">      </span><span class="nt">yum</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span><span class="w"></span>
-<a id="__codelineno-5-17" name="__codelineno-5-17"></a><span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span><span class="w"></span>
-<a id="__codelineno-5-18" name="__codelineno-5-18"></a>
-<a id="__codelineno-5-19" name="__codelineno-5-19"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Insert index page</span><span class="w"></span>
-<a id="__codelineno-5-20" name="__codelineno-5-20"></a><span class="w">      </span><span class="nt">template</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-5-21" name="__codelineno-5-21"></a><span class="w">        </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.html</span><span class="w"></span>
-<a id="__codelineno-5-22" name="__codelineno-5-22"></a><span class="w">        </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/usr/share/nginx/html/index.html</span><span class="w"></span>
-<a id="__codelineno-5-23" name="__codelineno-5-23"></a>
-<a id="__codelineno-5-24" name="__codelineno-5-24"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Start nginx service</span><span class="w"></span>
-<a id="__codelineno-5-25" name="__codelineno-5-25"></a><span class="w">      </span><span class="nt">service</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-5-26" name="__codelineno-5-26"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span><span class="w"></span>
-<a id="__codelineno-5-27" name="__codelineno-5-27"></a><span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">started</span><span class="w"></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="nn">---</span><span class="w"></span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Configure Database servers</span><span class="w"></span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">databases</span><span class="w"></span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install postgresql-server</span><span class="w"></span>
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run postgresql setup command</span><span class="w"></span>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Start and enable postgresql service</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
+<hr />
+<p>Within your VS Code environment, attempt to generate code for the task on <strong>Line 7</strong>. The resulting code should look like the following:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install postgresql-server</span><span class="w"></span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">ansible.builtin.package</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgresql-server</span><span class="w"></span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span><span class="w"></span>
+</code></pre></div>
+<p>Of particular interest to us at this time is the code attribution details associated with this recommendation, which will be appearing in the panel at the bottom of the VS Code interface once the code recommendation is finalized. You will need to <strong>accept</strong> the AI-generated code suggestions (using the <code>TAB</code> key) <em>before</em> the content source matching tab will populate with details about the code's origins.</p>
+<hr />
+<p><img alt="" loading="lazy" src="../_attachments/figure22.png" width="600" /></p>
+<p><img alt="" loading="lazy" src="../_attachments/figure23.png" width="600" /></p>
+<hr />
+<p>The three most likely content sources used in the training the IBM watsonx Code Assistant for Red Hat Ansible Lightspeed model— which produced the AI-generated code recommendations —are listed within the <code>Training Matches</code> tab.</p>
+<p>Clicking the arrow icon to the left of each attribution will expand further details about the source. Information about the <code>URL</code>, <code>Path</code>, <code>Data Source</code>, <code>License</code>, <code>Ansible type</code>, and <code>Score</code> will be presented (where available) under each listing. Red Hat-certified and maintained collections, as well as contributors to open source projects on Ansible Galaxy, are the primary sources for Ansible Lightspeed model training and are the content sources you are most likely to see matched to AI-generated code recommendations.</p>
+<p>Drilling down into the <code>URL</code> field will redirect your web browser back to the precise collections and sources on Ansible Galaxy from which the code recommendations were derived. Here you can learn much richer details about the status of the project, any associated open source repositories involved (such as GitHub), contributions and activities ongoing with the code base, the author(s) involved, and many more intricacies.</p>
+<hr />
+<p><img alt="" loading="lazy" src="../_attachments/figure24.png" width="400" /></p>
+<hr />
+<h1 id="_3"></h1>
+<h1 id="post-processing-of-task-descriptions-and-yaml-file-contents-helps-generate-contextually-aware-accurate-ansible-content-suggestions"><strong>Post-processing</strong> of Task descriptions and YAML file contents helps generate contextually aware, accurate Ansible content suggestions.</h1>
+<hr />
+<p><img alt="" src="../_attachments/figure39.png" /></p>
+<p>Another element of code generation that Ansible Lightspeed excels at is understanding <strong>context</strong> within the Playbook it is operating with. If a variable or attribute is defined earlier within that Playbook, it will be recalled and referenced— where it makes sense to do so —in the generation of subsequent lines of code. You may have noticed this already in your experimentations with AI-generated code suggestions. However, one way for us to make this feature quite obvious is to take a previously-generated block of Task code, update the value assigned to a named variable <em>earlier</em> in the Playbook code, and then regenerate the Task block. In theory, the newly-generated Task block will use the updated variable name (and differ from how the code block was originally generated).</p>
+<p>Test out this theory by first examining <strong>Line 26</strong> and <strong>Line 33</strong> of the followining Playbook:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">lightspeed-demos-main/playbooks/cloud/aws/demo_provision_ec2_instance.yml</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
+</div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span>
+<span class="normal"><a href="#__codelineno-7-12">12</a></span>
+<span class="normal"><a href="#__codelineno-7-13">13</a></span>
+<span class="normal"><a href="#__codelineno-7-14">14</a></span>
+<span class="normal"><a href="#__codelineno-7-15">15</a></span>
+<span class="normal"><a href="#__codelineno-7-16">16</a></span>
+<span class="normal"><a href="#__codelineno-7-17">17</a></span>
+<span class="normal"><a href="#__codelineno-7-18">18</a></span>
+<span class="normal"><a href="#__codelineno-7-19">19</a></span>
+<span class="normal"><a href="#__codelineno-7-20">20</a></span>
+<span class="normal"><a href="#__codelineno-7-21">21</a></span>
+<span class="normal"><a href="#__codelineno-7-22">22</a></span>
+<span class="normal"><a href="#__codelineno-7-23">23</a></span>
+<span class="normal"><a href="#__codelineno-7-24">24</a></span>
+<span class="normal"><a href="#__codelineno-7-25">25</a></span>
+<span class="normal"><a href="#__codelineno-7-26">26</a></span>
+<span class="normal"><a href="#__codelineno-7-27">27</a></span>
+<span class="normal"><a href="#__codelineno-7-28">28</a></span>
+<span class="normal"><a href="#__codelineno-7-29">29</a></span>
+<span class="normal"><a href="#__codelineno-7-30">30</a></span>
+<span class="normal"><a href="#__codelineno-7-31">31</a></span>
+<span class="normal"><a href="#__codelineno-7-32">32</a></span>
+<span class="normal"><a href="#__codelineno-7-33">33</a></span>
+<span class="normal"><a href="#__codelineno-7-34">34</a></span>
+<span class="normal"><a href="#__codelineno-7-35">35</a></span>
+<span class="normal"><a href="#__codelineno-7-36">36</a></span>
+<span class="normal"><a href="#__codelineno-7-37">37</a></span>
+<span class="normal"><a href="#__codelineno-7-38">38</a></span>
+<span class="normal"><a href="#__codelineno-7-39">39</a></span>
+<span class="normal"><a href="#__codelineno-7-40">40</a></span>
+<span class="normal"><a href="#__codelineno-7-41">41</a></span>
+<span class="normal"><a href="#__codelineno-7-42">42</a></span>
+<span class="normal"><a href="#__codelineno-7-43">43</a></span>
+<span class="normal"><a href="#__codelineno-7-44">44</a></span>
+<span class="normal"><a href="#__codelineno-7-45">45</a></span>
+<span class="normal"><a href="#__codelineno-7-46">46</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="nn">---</span><span class="w"></span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EC2 Cloud Operations</span><span class="w"></span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span><span class="w"></span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="w">  </span><span class="nt">connection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span><span class="w"></span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="w">  </span><span class="nt">gather_facts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="w">  </span><span class="nt">module_defaults</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="w">    </span><span class="nt">group/aws</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="w">      </span><span class="nt">region</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">us-east-1</span><span class="w"></span>
+<a id="__codelineno-7-10" name="__codelineno-7-10"></a>
+<a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="w">  </span><span class="c1"># vars:</span><span class="w"></span>
+<a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="w">  </span><span class="c1">#   ec2_instance:</span><span class="w"></span>
+<a id="__codelineno-7-13" name="__codelineno-7-13"></a><span class="w">  </span><span class="c1">#     name: lightspeed-instance-01</span><span class="w"></span>
+<a id="__codelineno-7-14" name="__codelineno-7-14"></a><span class="w">  </span><span class="c1">#     key_name: lightspeed-keypair</span><span class="w"></span>
+<a id="__codelineno-7-15" name="__codelineno-7-15"></a><span class="w">  </span><span class="c1">#     image_id: ami-016eb5d644c333ccb # RHEL 9 us-east-1</span><span class="w"></span>
+<a id="__codelineno-7-16" name="__codelineno-7-16"></a><span class="w">  </span><span class="c1">#     tags:</span><span class="w"></span>
+<a id="__codelineno-7-17" name="__codelineno-7-17"></a><span class="w">  </span><span class="c1">#       function: lightspeed-demo</span><span class="w"></span>
+<a id="__codelineno-7-18" name="__codelineno-7-18"></a><span class="w">  </span><span class="c1">#     security_group: secgroup-lightspeed</span><span class="w"></span>
+<a id="__codelineno-7-19" name="__codelineno-7-19"></a>
+<a id="__codelineno-7-20" name="__codelineno-7-20"></a><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-7-21" name="__codelineno-7-21"></a><span class="w">        </span><span class="c1"># TASK 1</span><span class="w"></span>
+<a id="__codelineno-7-22" name="__codelineno-7-22"></a><span class="w">        </span><span class="c1"># # 1a. Uncomment task description below and generate a task suggestion.</span><span class="w"></span>
+<a id="__codelineno-7-23" name="__codelineno-7-23"></a><span class="w">        </span><span class="c1"># #     Note - Best practices: The suggestion used the Fully Qualified Collection name.</span><span class="w"></span>
+<a id="__codelineno-7-24" name="__codelineno-7-24"></a><span class="w">        </span><span class="c1"># #     Note - Context: Ansible Lightspeed used the Playbook name &quot;EC2 Cloud Operations&quot; to use the correct &quot;amazon.aws.ec2_vpc_subnet_info&quot; module.</span><span class="w"></span>
+<a id="__codelineno-7-25" name="__codelineno-7-25"></a>
+<a id="__codelineno-7-26" name="__codelineno-7-26"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Gather subnet info tag:Name subnet-lightspeed</span><span class="w"></span>
+<a id="__codelineno-7-27" name="__codelineno-7-27"></a>
+<a id="__codelineno-7-28" name="__codelineno-7-28"></a><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain"># TASK 2</span><span class="w"></span>
+<a id="__codelineno-7-29" name="__codelineno-7-29"></a><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">#</span><span class="w"> </span><span class="c1"># 2a. Uncomment task description below and generate a task suggestion.</span><span class="w"></span>
+<a id="__codelineno-7-30" name="__codelineno-7-30"></a><span class="w">        </span><span class="c1"># #     Note - Context: The suggestion included the previous task&#39;s registered variable in the suggestion.</span><span class="w"></span>
+<a id="__codelineno-7-31" name="__codelineno-7-31"></a><span class="w">        </span><span class="c1"># #     Note - Accuracy: The suggestion provides the correct key value from the previously task&#39;s registered variable.</span><span class="w"></span>
+<a id="__codelineno-7-32" name="__codelineno-7-32"></a>
+<a id="__codelineno-7-33" name="__codelineno-7-33"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create vpc_subnet_id var</span><span class="w"></span>
+<a id="__codelineno-7-34" name="__codelineno-7-34"></a>
+<a id="__codelineno-7-35" name="__codelineno-7-35"></a><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain"># TASK 3</span><span class="w"></span>
+<a id="__codelineno-7-36" name="__codelineno-7-36"></a><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">#</span><span class="w"> </span><span class="c1"># 3a. Uncomment task description &quot;Provision t3.micro instance&quot; below and generate a task suggestion.</span><span class="w"></span>
+<a id="__codelineno-7-37" name="__codelineno-7-37"></a><span class="w">        </span><span class="c1"># #     Note - Efficiency: The suggestion provides practical variable examples to improve efficiency.</span><span class="w"></span>
+<a id="__codelineno-7-38" name="__codelineno-7-38"></a>
+<a id="__codelineno-7-39" name="__codelineno-7-39"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Provision t3.micro instance</span><span class="w"></span>
+<a id="__codelineno-7-40" name="__codelineno-7-40"></a>
+<a id="__codelineno-7-41" name="__codelineno-7-41"></a><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">#</span><span class="w"> </span><span class="c1"># 3b. Remove the above task and suggestion.</span><span class="w"></span>
+<a id="__codelineno-7-42" name="__codelineno-7-42"></a><span class="w">        </span><span class="c1"># #     Uncomment 2nd task description &quot;Provision t3.micro instance using ec2_instance var&quot;.</span><span class="w"></span>
+<a id="__codelineno-7-43" name="__codelineno-7-43"></a><span class="w">        </span><span class="c1"># #     Generate an updated suggestion.</span><span class="w"></span>
+<a id="__codelineno-7-44" name="__codelineno-7-44"></a><span class="w">        </span><span class="c1"># #     Note - Context: The updated suggestion includes the &quot;ec2_instance variable fields in the suggestion&quot;</span><span class="w"></span>
+<a id="__codelineno-7-45" name="__codelineno-7-45"></a>
+<a id="__codelineno-7-46" name="__codelineno-7-46"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Provision t3.micro instance using ec2_instance var</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<hr />
+<p>The highlighted Tasks are responsible for gathering information about a subnet that is to be provisioned and then created a VPC definition based on those details.</p>
+<ul>
+<li>
+<p>The first round of AI-generated code for the task on <strong>Line 26</strong> produces a code block with a <code>register: subnet_info</code> line — the result of which is to assign this record to a variable named <code>subnet_info</code>. Nothing terribly complicated or surprising about that.</p>
+</li>
+<li>
+<p>The AI-generated code that follows for the task on <strong>Line 33</strong> recommends a code block with <code>vpc_subnet_id: "{ { subnet_info.subnets[0].subnet_id } }"</code> as the value associated with the VPC's subnet ID. Critically, the variable <code>subnet_info</code> that was generated in the previous Task is also referenced in the second Task. This demonstrates the contextual awareness of Ansible Lightspeed in action.</p>
+</li>
+</ul>
+<p><img alt="" loading="lazy" src="../_attachments/figure40.png" width="600" /></p>
+<p>But we may further validate this capability by <strong>changing</strong> the name of the variable that was generated from the task on <strong>Line 26</strong> and observing how the task block on <strong>Line 33</strong> is altered upon regeneration.</p>
+<p>Change the name of variable <code>subnet_info</code> instead to <code>subnet_name</code>, delete the code block recommendations under <strong>Line 33</strong>, and then regenerate the task.</p>
+<p><img alt="" loading="lazy" src="../_attachments/figure41.png" width="600" /></p>
+<p>You will immediately notice that the new block of task code references the variable <code>subnet_name</code> that was modified just a moment ago. Once again, Ansible Lightspeed has generated code suggestions that take into account the altered context and variables of the Playbook. You may attempt adjusting other variables within the Playbook and test how these modifications impact the generation of future blocks of Task code.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">lightspeed-demos-main/playbooks/infra/install_pgsql_and_pgadmin/demo_pgadmin_podman.yml</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
+</div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-8-10">10</a></span>
+<span class="normal"><a href="#__codelineno-8-11">11</a></span>
+<span class="normal"><a href="#__codelineno-8-12">12</a></span>
+<span class="normal"><a href="#__codelineno-8-13">13</a></span>
+<span class="normal"><a href="#__codelineno-8-14">14</a></span>
+<span class="normal"><a href="#__codelineno-8-15">15</a></span>
+<span class="normal"><a href="#__codelineno-8-16">16</a></span>
+<span class="normal"><a href="#__codelineno-8-17">17</a></span>
+<span class="normal"><a href="#__codelineno-8-18">18</a></span>
+<span class="normal"><a href="#__codelineno-8-19">19</a></span>
+<span class="normal"><a href="#__codelineno-8-20">20</a></span>
+<span class="normal"><a href="#__codelineno-8-21">21</a></span>
+<span class="normal"><a href="#__codelineno-8-22">22</a></span>
+<span class="normal"><a href="#__codelineno-8-23">23</a></span>
+<span class="normal"><a href="#__codelineno-8-24">24</a></span>
+<span class="normal"><a href="#__codelineno-8-25">25</a></span>
+<span class="normal"><a href="#__codelineno-8-26">26</a></span>
+<span class="normal"><a href="#__codelineno-8-27">27</a></span>
+<span class="normal"><a href="#__codelineno-8-28">28</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="nn">---</span><span class="w"></span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Configure pgadmin container</span><span class="w"></span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">webservers</span><span class="w"></span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="w">  </span><span class="nt">vars</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="w">    </span><span class="nt">pgadmin_service_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-pgadmin</span><span class="w"></span>
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a>
+<a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="w">    </span><span class="nt">pgadmin_container</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pgadmin</span><span class="w"></span>
+<a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="w">      </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="w">      </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker.io/dpage/pgadmin4:7.5</span><span class="w"></span>
+<a id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="w">      </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">started</span><span class="w"></span>
+<a id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="w">      </span><span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-8-15" name="__codelineno-8-15"></a><span class="w">        </span><span class="nt">PGADMIN_DEFAULT_EMAIL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">student@example.com</span><span class="w"></span>
+<a id="__codelineno-8-16" name="__codelineno-8-16"></a><span class="w">        </span><span class="nt">PGADMIN_DEFAULT_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">learn_ansible</span><span class="w"></span>
+<a id="__codelineno-8-17" name="__codelineno-8-17"></a><span class="w">      </span><span class="nt">generate_systemd</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-8-18" name="__codelineno-8-18"></a><span class="w">        </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/systemd/system/</span><span class="w"></span>
+<a id="__codelineno-8-19" name="__codelineno-8-19"></a><span class="w">        </span><span class="nt">container_prefix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span><span class="w"></span>
+<a id="__codelineno-8-20" name="__codelineno-8-20"></a><span class="w">        </span><span class="nt">restart_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span><span class="w"></span>
+<a id="__codelineno-8-21" name="__codelineno-8-21"></a><span class="w">      </span><span class="nt">ports</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-8-22" name="__codelineno-8-22"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8083:80</span><span class="w"></span>
+<a id="__codelineno-8-23" name="__codelineno-8-23"></a><span class="w">      </span><span class="nt">network</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bridge</span><span class="w"></span>
+<a id="__codelineno-8-24" name="__codelineno-8-24"></a>
+<a id="__codelineno-8-25" name="__codelineno-8-25"></a><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-8-26" name="__codelineno-8-26"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run podman container using pgadmin_container var</span><span class="w"></span>
+<a id="__codelineno-8-27" name="__codelineno-8-27"></a>
+<a id="__codelineno-8-28" name="__codelineno-8-28"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Start, enable and reload daemon for {{ pgadmin_service_name }}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<hr />
+<div class="tabbed-set tabbed-alternate" data-tabs="7:1"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">CUSTOM PLAYBOOK #1 - Install an nginx webserver and launch the service</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
+</div>
+<h2 id="1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17-18-19-20-21-22-23-24-25-26-27-ansible-playbook-install-an-nginx-webserver-and-launch-the-service-author-deepak-c-shetty-deepakcshettyinibmcom-name-install-nginx-hosts-webserver-tasks-name-add-epel-release-repo-yum-name-epel-release-state-present-name-install-nginx-yum-name-nginx-state-present-name-insert-index-page-template-src-indexhtml-dest-usrsharenginxhtmlindexhtml-name-start-nginx-service-service-name-nginx-state-started"><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-9-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-9-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-9-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-9-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-9-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-9-10">10</a></span>
+<span class="normal"><a href="#__codelineno-9-11">11</a></span>
+<span class="normal"><a href="#__codelineno-9-12">12</a></span>
+<span class="normal"><a href="#__codelineno-9-13">13</a></span>
+<span class="normal"><a href="#__codelineno-9-14">14</a></span>
+<span class="normal"><a href="#__codelineno-9-15">15</a></span>
+<span class="normal"><a href="#__codelineno-9-16">16</a></span>
+<span class="normal"><a href="#__codelineno-9-17">17</a></span>
+<span class="normal"><a href="#__codelineno-9-18">18</a></span>
+<span class="normal"><a href="#__codelineno-9-19">19</a></span>
+<span class="normal"><a href="#__codelineno-9-20">20</a></span>
+<span class="normal"><a href="#__codelineno-9-21">21</a></span>
+<span class="normal"><a href="#__codelineno-9-22">22</a></span>
+<span class="normal"><a href="#__codelineno-9-23">23</a></span>
+<span class="normal"><a href="#__codelineno-9-24">24</a></span>
+<span class="normal"><a href="#__codelineno-9-25">25</a></span>
+<span class="normal"><a href="#__codelineno-9-26">26</a></span>
+<span class="normal"><a href="#__codelineno-9-27">27</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="c1"># ANSIBLE PLAYBOOK - Install an nginx webserver and launch the service</span><span class="w"></span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="c1"># AUTHOR — Deepak C. Shetty (deepakcshetty@in.ibm.com)</span><span class="w"></span>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="nn">---</span><span class="w"></span>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install nginx</span><span class="w"></span>
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">webserver</span><span class="w"></span>
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a>
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Add epel-release repo</span><span class="w"></span>
+<a id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="w">      </span><span class="nt">yum</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">epel-release</span><span class="w"></span>
+<a id="__codelineno-9-12" name="__codelineno-9-12"></a><span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span><span class="w"></span>
+<a id="__codelineno-9-13" name="__codelineno-9-13"></a>
+<a id="__codelineno-9-14" name="__codelineno-9-14"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install nginx</span><span class="w"></span>
+<a id="__codelineno-9-15" name="__codelineno-9-15"></a><span class="w">      </span><span class="nt">yum</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-9-16" name="__codelineno-9-16"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span><span class="w"></span>
+<a id="__codelineno-9-17" name="__codelineno-9-17"></a><span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span><span class="w"></span>
+<a id="__codelineno-9-18" name="__codelineno-9-18"></a>
+<a id="__codelineno-9-19" name="__codelineno-9-19"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Insert index page</span><span class="w"></span>
+<a id="__codelineno-9-20" name="__codelineno-9-20"></a><span class="w">      </span><span class="nt">template</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-9-21" name="__codelineno-9-21"></a><span class="w">        </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.html</span><span class="w"></span>
+<a id="__codelineno-9-22" name="__codelineno-9-22"></a><span class="w">        </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/usr/share/nginx/html/index.html</span><span class="w"></span>
+<a id="__codelineno-9-23" name="__codelineno-9-23"></a>
+<a id="__codelineno-9-24" name="__codelineno-9-24"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Start nginx service</span><span class="w"></span>
+<a id="__codelineno-9-25" name="__codelineno-9-25"></a><span class="w">      </span><span class="nt">service</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-9-26" name="__codelineno-9-26"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span><span class="w"></span>
+<a id="__codelineno-9-27" name="__codelineno-9-27"></a><span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">started</span><span class="w"></span>
+</code></pre></div></td></tr></table></div></h2>
 <div class="admonition warning">
 <p class="admonition-title">TELEMETRY DATA COLLECTION</p>
 <p>IBM and Red Hat strongly advocate for and put into practice full transparency about what content is collected— what is known as "<strong>telemetry data</strong>" —to improve the quality of service for AI offerings such as IBM watsonx Code Assistant for Red Hat Ansible Lightspeed.</p>
@@ -575,254 +824,6 @@
 <p>Telemetry data may be kept indefinitely for product improvement. Users are not able to request that their telemetry be purged. Clients may disable the Ansible Lightspeed service to prevent further telemetry from being sent to the service. Red Hat and IBM do not claim any copyright or other intellectual property rights to the suggestions generated by IBM watsonx Code Assistant for Red Hat Ansible Lightspeed.</p>
 <p>Additional details can be located within the Terms of Service for the offering: <a href="https://docs.ai.ansible.redhat.com/tos/" target="_blank">https://docs.ai.ansible.redhat.com/tos/</a></p>
 </div>
-<hr />
-<h1 id="_2"></h1>
-<h1 id="content-source-matching-and-attribution-attempts-to-match-code-recommendations-to-ansible-galaxy-sources-projects-and-contributors-for-data-provenance"><strong>Content source matching and attribution</strong> attempts to match code recommendations to Ansible Galaxy sources (projects and contributors) for data provenance.</h1>
-<hr />
-<p>A powerful capable within IBM watsonx Code Assistant for Red Hat Ansible Lightspeed is <strong>Content Source Matching</strong> (often referred to as "code explainability"), which attempts to match AI-generated code suggestions to training data and sources that were utilized in generating the suggested Task code. For the Technical Preview (pre-GA) release of the service, the extent of these capabilities are fairly rudimentary — identifying Ansible Galaxy packages and contributors where available for each line of AI-generated code.</p>
-<p>These code attribution suggestions are created using a <strong>k-NN</strong> (<a href="https://www.ibm.com/topics/knn#:~:text=Next%20steps-,K%2DNearest%20Neighbors%20Algorithm,of%20an%20individual%20data%20point." target="_blank">K-Nearest Neighbors</a>) algorithm that examines Ansible Galaxy and training data repositories in search of the nearest related content to the AI-generated code suggestions.</p>
-<hr />
-<p><img alt="" src="../_attachments/figure38.png" /></p>
-<div class="admonition tip">
-<p class="admonition-title">PROJECTED CAPABILITIES</p>
-<p>In the future, it is anticipated that clients will be able to supply Ansible Lightspeed with a Playbook and ask <em>"where did this generated code come from and who was its author?"</em> The service may potentially gain the ability to "comment" and document mark-up lines (or blocks) of code, <em>explaining</em> to users in plain English what functions of code are performing — work traditionally left to the developer or author, but an area often neglected or lacking in many organization's code bases.</p>
-</div>
-<hr />
-<p>To enable <strong>Content Source Matching</strong> capabilities within Ansible Lightspeed, navigate to the top-line menu for VS Code and drill down into <strong>View</strong> &gt; <strong>Open View...</strong> as shown below.</p>
-<hr />
-<p><img alt="" loading="lazy" src="../_attachments/figure20.png" width="600" /></p>
-<hr />
-<p>The taskbar along the top of the VS Code interface will now highlight, awaiting a prompt. Enter <code>view Lightspeed Training Matches</code> and hit the <code>Return</code> key to confirm the selection.</p>
-<hr />
-<p><img alt="" loading="lazy" src="../_attachments/figure21.png" width="600" /></p>
-<hr />
-<p>At this point, all future generative AI tasks— such as asking Ansible Lightspeed to generate the code for a Task —will now open a panel at the bottom of the VS Code interface displaying a variety of options: <code>Problems</code>, <code>Output</code>, <code>Debug Console</code>, <code>Terminal</code>, <code>Ports</code>, <code>Comments</code>, and most importantly <code>Ansible:Lightspeed Training Matches</code>.</p>
-<p>Let's experiment with generating some lines of code and inspecting the <code>Ansible:Lightspeed Training Matches</code> tab to observe this code explainability feature in action.</p>
-<p>Open the following Ansible Playbook within your Lightspeed repository, or copy and paste the following code template into a <strong>New File...</strong> within your VS Code environment.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">lightspeed-demos-main/playbooks/infra/install_pgsql_and_pgadmin/demo_install_pgsql.yml</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block"></div>
-</div>
-</div>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-6-10">10</a></span>
-<span class="normal"><a href="#__codelineno-6-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="nn">---</span><span class="w"></span>
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Configure Database servers</span><span class="w"></span>
-<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">databases</span><span class="w"></span>
-<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
-<a id="__codelineno-6-5" name="__codelineno-6-5"></a>
-<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install postgresql-server</span><span class="w"></span>
-<a id="__codelineno-6-8" name="__codelineno-6-8"></a>
-<a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run postgresql setup command</span><span class="w"></span>
-<a id="__codelineno-6-10" name="__codelineno-6-10"></a>
-<a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Start and enable postgresql service</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
-<hr />
-<p>Within your VS Code environment, attempt to generate code for the task on <strong>Line 7</strong>. The resulting code should look like the following:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install postgresql-server</span><span class="w"></span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">ansible.builtin.package</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgresql-server</span><span class="w"></span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span><span class="w"></span>
-</code></pre></div>
-<p>Of particular interest to us at this time is the code attribution details associated with this recommendation, which will be appearing in the panel at the bottom of the VS Code interface once the code recommendation is finalized. You will need to <strong>accept</strong> the AI-generated code suggestions (using the <code>TAB</code> key) <em>before</em> the content source matching tab will populate with details about the code's origins.</p>
-<hr />
-<p><img alt="" loading="lazy" src="../_attachments/figure22.png" width="600" /></p>
-<p><img alt="" loading="lazy" src="../_attachments/figure23.png" width="600" /></p>
-<hr />
-<p>The three most likely content sources used in the training the IBM watsonx Code Assistant for Red Hat Ansible Lightspeed model— which produced the AI-generated code recommendations —are listed within the <code>Training Matches</code> tab.</p>
-<p>Clicking the arrow icon to the left of each attribution will expand further details about the source. Information about the <code>URL</code>, <code>Path</code>, <code>Data Source</code>, <code>License</code>, <code>Ansible type</code>, and <code>Score</code> will be presented (where available) under each listing. Red Hat-certified and maintained collections, as well as contributors to open source projects on Ansible Galaxy, are the primary sources for Ansible Lightspeed model training and are the content sources you are most likely to see matched to AI-generated code recommendations.</p>
-<p>Drilling down into the <code>URL</code> field will redirect your web browser back to the precise collections and sources on Ansible Galaxy from which the code recommendations were derived. Here you can learn much richer details about the status of the project, any associated open source repositories involved (such as GitHub), contributions and activities ongoing with the code base, the author(s) involved, and many more intricacies.</p>
-<hr />
-<p><img alt="" loading="lazy" src="../_attachments/figure24.png" width="400" /></p>
-<hr />
-<h1 id="_3"></h1>
-<h1 id="post-processing-of-task-descriptions-and-yaml-file-contents-helps-generate-contextually-aware-accurate-ansible-content-suggestions"><strong>Post-processing</strong> of Task descriptions and YAML file contents helps generate contextually aware, accurate Ansible content suggestions.</h1>
-<hr />
-<p><img alt="" src="../_attachments/figure39.png" /></p>
-<p>Another element of code generation that Ansible Lightspeed excels at is understanding <strong>context</strong> within the Playbook it is operating with. If a variable or attribute is defined earlier within that Playbook, it will be recalled and referenced— where it makes sense to do so —in the generation of subsequent lines of code. You may have noticed this already in your experimentations with AI-generated code suggestions. However, one way for us to make this feature quite obvious is to take a previously-generated block of Task code, update the value assigned to a named variable <em>earlier</em> in the Playbook code, and then regenerate the Task block. In theory, the newly-generated Task block will use the updated variable name (and differ from how the code block was originally generated).</p>
-<p>Test out this theory by first examining <strong>Line 26</strong> and <strong>Line 33</strong> of the followining Playbook:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">lightspeed-demos-main/playbooks/cloud/aws/demo_provision_ec2_instance.yml</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block"></div>
-</div>
-</div>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-8-10">10</a></span>
-<span class="normal"><a href="#__codelineno-8-11">11</a></span>
-<span class="normal"><a href="#__codelineno-8-12">12</a></span>
-<span class="normal"><a href="#__codelineno-8-13">13</a></span>
-<span class="normal"><a href="#__codelineno-8-14">14</a></span>
-<span class="normal"><a href="#__codelineno-8-15">15</a></span>
-<span class="normal"><a href="#__codelineno-8-16">16</a></span>
-<span class="normal"><a href="#__codelineno-8-17">17</a></span>
-<span class="normal"><a href="#__codelineno-8-18">18</a></span>
-<span class="normal"><a href="#__codelineno-8-19">19</a></span>
-<span class="normal"><a href="#__codelineno-8-20">20</a></span>
-<span class="normal"><a href="#__codelineno-8-21">21</a></span>
-<span class="normal"><a href="#__codelineno-8-22">22</a></span>
-<span class="normal"><a href="#__codelineno-8-23">23</a></span>
-<span class="normal"><a href="#__codelineno-8-24">24</a></span>
-<span class="normal"><a href="#__codelineno-8-25">25</a></span>
-<span class="normal"><a href="#__codelineno-8-26">26</a></span>
-<span class="normal"><a href="#__codelineno-8-27">27</a></span>
-<span class="normal"><a href="#__codelineno-8-28">28</a></span>
-<span class="normal"><a href="#__codelineno-8-29">29</a></span>
-<span class="normal"><a href="#__codelineno-8-30">30</a></span>
-<span class="normal"><a href="#__codelineno-8-31">31</a></span>
-<span class="normal"><a href="#__codelineno-8-32">32</a></span>
-<span class="normal"><a href="#__codelineno-8-33">33</a></span>
-<span class="normal"><a href="#__codelineno-8-34">34</a></span>
-<span class="normal"><a href="#__codelineno-8-35">35</a></span>
-<span class="normal"><a href="#__codelineno-8-36">36</a></span>
-<span class="normal"><a href="#__codelineno-8-37">37</a></span>
-<span class="normal"><a href="#__codelineno-8-38">38</a></span>
-<span class="normal"><a href="#__codelineno-8-39">39</a></span>
-<span class="normal"><a href="#__codelineno-8-40">40</a></span>
-<span class="normal"><a href="#__codelineno-8-41">41</a></span>
-<span class="normal"><a href="#__codelineno-8-42">42</a></span>
-<span class="normal"><a href="#__codelineno-8-43">43</a></span>
-<span class="normal"><a href="#__codelineno-8-44">44</a></span>
-<span class="normal"><a href="#__codelineno-8-45">45</a></span>
-<span class="normal"><a href="#__codelineno-8-46">46</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="nn">---</span><span class="w"></span>
-<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EC2 Cloud Operations</span><span class="w"></span>
-<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span><span class="w"></span>
-<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">  </span><span class="nt">connection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span><span class="w"></span>
-<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">  </span><span class="nt">gather_facts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
-<a id="__codelineno-8-6" name="__codelineno-8-6"></a>
-<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="w">  </span><span class="nt">module_defaults</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="w">    </span><span class="nt">group/aws</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="w">      </span><span class="nt">region</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">us-east-1</span><span class="w"></span>
-<a id="__codelineno-8-10" name="__codelineno-8-10"></a>
-<a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="w">  </span><span class="c1"># vars:</span><span class="w"></span>
-<a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="w">  </span><span class="c1">#   ec2_instance:</span><span class="w"></span>
-<a id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="w">  </span><span class="c1">#     name: lightspeed-instance-01</span><span class="w"></span>
-<a id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="w">  </span><span class="c1">#     key_name: lightspeed-keypair</span><span class="w"></span>
-<a id="__codelineno-8-15" name="__codelineno-8-15"></a><span class="w">  </span><span class="c1">#     image_id: ami-016eb5d644c333ccb # RHEL 9 us-east-1</span><span class="w"></span>
-<a id="__codelineno-8-16" name="__codelineno-8-16"></a><span class="w">  </span><span class="c1">#     tags:</span><span class="w"></span>
-<a id="__codelineno-8-17" name="__codelineno-8-17"></a><span class="w">  </span><span class="c1">#       function: lightspeed-demo</span><span class="w"></span>
-<a id="__codelineno-8-18" name="__codelineno-8-18"></a><span class="w">  </span><span class="c1">#     security_group: secgroup-lightspeed</span><span class="w"></span>
-<a id="__codelineno-8-19" name="__codelineno-8-19"></a>
-<a id="__codelineno-8-20" name="__codelineno-8-20"></a><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-8-21" name="__codelineno-8-21"></a><span class="w">        </span><span class="c1"># TASK 1</span><span class="w"></span>
-<a id="__codelineno-8-22" name="__codelineno-8-22"></a><span class="w">        </span><span class="c1"># # 1a. Uncomment task description below and generate a task suggestion.</span><span class="w"></span>
-<a id="__codelineno-8-23" name="__codelineno-8-23"></a><span class="w">        </span><span class="c1"># #     Note - Best practices: The suggestion used the Fully Qualified Collection name.</span><span class="w"></span>
-<a id="__codelineno-8-24" name="__codelineno-8-24"></a><span class="w">        </span><span class="c1"># #     Note - Context: Ansible Lightspeed used the Playbook name &quot;EC2 Cloud Operations&quot; to use the correct &quot;amazon.aws.ec2_vpc_subnet_info&quot; module.</span><span class="w"></span>
-<a id="__codelineno-8-25" name="__codelineno-8-25"></a>
-<a id="__codelineno-8-26" name="__codelineno-8-26"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Gather subnet info tag:Name subnet-lightspeed</span><span class="w"></span>
-<a id="__codelineno-8-27" name="__codelineno-8-27"></a>
-<a id="__codelineno-8-28" name="__codelineno-8-28"></a><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain"># TASK 2</span><span class="w"></span>
-<a id="__codelineno-8-29" name="__codelineno-8-29"></a><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">#</span><span class="w"> </span><span class="c1"># 2a. Uncomment task description below and generate a task suggestion.</span><span class="w"></span>
-<a id="__codelineno-8-30" name="__codelineno-8-30"></a><span class="w">        </span><span class="c1"># #     Note - Context: The suggestion included the previous task&#39;s registered variable in the suggestion.</span><span class="w"></span>
-<a id="__codelineno-8-31" name="__codelineno-8-31"></a><span class="w">        </span><span class="c1"># #     Note - Accuracy: The suggestion provides the correct key value from the previously task&#39;s registered variable.</span><span class="w"></span>
-<a id="__codelineno-8-32" name="__codelineno-8-32"></a>
-<a id="__codelineno-8-33" name="__codelineno-8-33"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create vpc_subnet_id var</span><span class="w"></span>
-<a id="__codelineno-8-34" name="__codelineno-8-34"></a>
-<a id="__codelineno-8-35" name="__codelineno-8-35"></a><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain"># TASK 3</span><span class="w"></span>
-<a id="__codelineno-8-36" name="__codelineno-8-36"></a><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">#</span><span class="w"> </span><span class="c1"># 3a. Uncomment task description &quot;Provision t3.micro instance&quot; below and generate a task suggestion.</span><span class="w"></span>
-<a id="__codelineno-8-37" name="__codelineno-8-37"></a><span class="w">        </span><span class="c1"># #     Note - Efficiency: The suggestion provides practical variable examples to improve efficiency.</span><span class="w"></span>
-<a id="__codelineno-8-38" name="__codelineno-8-38"></a>
-<a id="__codelineno-8-39" name="__codelineno-8-39"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Provision t3.micro instance</span><span class="w"></span>
-<a id="__codelineno-8-40" name="__codelineno-8-40"></a>
-<a id="__codelineno-8-41" name="__codelineno-8-41"></a><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">#</span><span class="w"> </span><span class="c1"># 3b. Remove the above task and suggestion.</span><span class="w"></span>
-<a id="__codelineno-8-42" name="__codelineno-8-42"></a><span class="w">        </span><span class="c1"># #     Uncomment 2nd task description &quot;Provision t3.micro instance using ec2_instance var&quot;.</span><span class="w"></span>
-<a id="__codelineno-8-43" name="__codelineno-8-43"></a><span class="w">        </span><span class="c1"># #     Generate an updated suggestion.</span><span class="w"></span>
-<a id="__codelineno-8-44" name="__codelineno-8-44"></a><span class="w">        </span><span class="c1"># #     Note - Context: The updated suggestion includes the &quot;ec2_instance variable fields in the suggestion&quot;</span><span class="w"></span>
-<a id="__codelineno-8-45" name="__codelineno-8-45"></a>
-<a id="__codelineno-8-46" name="__codelineno-8-46"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Provision t3.micro instance using ec2_instance var</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
-<hr />
-<p>The highlighted Tasks are responsible for gathering information about a subnet that is to be provisioned and then created a VPC definition based on those details.</p>
-<ul>
-<li>
-<p>The first round of AI-generated code for the task on <strong>Line 26</strong> produces a code block with a <code>register: subnet_info</code> line — the result of which is to assign this record to a variable named <code>subnet_info</code>. Nothing terribly complicated or surprising about that.</p>
-</li>
-<li>
-<p>The AI-generated code that follows for the task on <strong>Line 33</strong> recommends a code block with <code>vpc_subnet_id: "{ { subnet_info.subnets[0].subnet_id } }"</code> as the value associated with the VPC's subnet ID. Critically, the variable <code>subnet_info</code> that was generated in the previous Task is also referenced in the second Task. This demonstrates the contextual awareness of Ansible Lightspeed in action.</p>
-</li>
-</ul>
-<p><img alt="" loading="lazy" src="../_attachments/figure40.png" width="600" /></p>
-<p>But we may further validate this capability by <strong>changing</strong> the name of the variable that was generated from the task on <strong>Line 26</strong> and observing how the task block on <strong>Line 33</strong> is altered upon regeneration.</p>
-<p>Change the name of variable <code>subnet_info</code> instead to <code>subnet_name</code>, delete the code block recommendations under <strong>Line 33</strong>, and then regenerate the task.</p>
-<p><img alt="" loading="lazy" src="../_attachments/figure41.png" width="600" /></p>
-<p>You will immediately notice that the new block of task code references the variable <code>subnet_name</code> that was modified just a moment ago. Once again, Ansible Lightspeed has generated code suggestions that take into account the altered context and variables of the Playbook. You may attempt adjusting other variables within the Playbook and test how these modifications impact the generation of future blocks of Task code.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="7:1"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">lightspeed-demos-main/playbooks/infra/install_pgsql_and_pgadmin/demo_pgadmin_podman.yml</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block"></div>
-</div>
-</div>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-9-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-9-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-9-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-9-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-9-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-9-10">10</a></span>
-<span class="normal"><a href="#__codelineno-9-11">11</a></span>
-<span class="normal"><a href="#__codelineno-9-12">12</a></span>
-<span class="normal"><a href="#__codelineno-9-13">13</a></span>
-<span class="normal"><a href="#__codelineno-9-14">14</a></span>
-<span class="normal"><a href="#__codelineno-9-15">15</a></span>
-<span class="normal"><a href="#__codelineno-9-16">16</a></span>
-<span class="normal"><a href="#__codelineno-9-17">17</a></span>
-<span class="normal"><a href="#__codelineno-9-18">18</a></span>
-<span class="normal"><a href="#__codelineno-9-19">19</a></span>
-<span class="normal"><a href="#__codelineno-9-20">20</a></span>
-<span class="normal"><a href="#__codelineno-9-21">21</a></span>
-<span class="normal"><a href="#__codelineno-9-22">22</a></span>
-<span class="normal"><a href="#__codelineno-9-23">23</a></span>
-<span class="normal"><a href="#__codelineno-9-24">24</a></span>
-<span class="normal"><a href="#__codelineno-9-25">25</a></span>
-<span class="normal"><a href="#__codelineno-9-26">26</a></span>
-<span class="normal"><a href="#__codelineno-9-27">27</a></span>
-<span class="normal"><a href="#__codelineno-9-28">28</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="nn">---</span><span class="w"></span>
-<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Configure pgadmin container</span><span class="w"></span>
-<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">webservers</span><span class="w"></span>
-<a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
-<a id="__codelineno-9-5" name="__codelineno-9-5"></a>
-<a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="w">  </span><span class="nt">vars</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="w">    </span><span class="nt">pgadmin_service_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-pgadmin</span><span class="w"></span>
-<a id="__codelineno-9-8" name="__codelineno-9-8"></a>
-<a id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="w">    </span><span class="nt">pgadmin_container</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pgadmin</span><span class="w"></span>
-<a id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="w">      </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
-<a id="__codelineno-9-12" name="__codelineno-9-12"></a><span class="w">      </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker.io/dpage/pgadmin4:7.5</span><span class="w"></span>
-<a id="__codelineno-9-13" name="__codelineno-9-13"></a><span class="w">      </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">started</span><span class="w"></span>
-<a id="__codelineno-9-14" name="__codelineno-9-14"></a><span class="w">      </span><span class="nt">env</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-9-15" name="__codelineno-9-15"></a><span class="w">        </span><span class="nt">PGADMIN_DEFAULT_EMAIL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">student@example.com</span><span class="w"></span>
-<a id="__codelineno-9-16" name="__codelineno-9-16"></a><span class="w">        </span><span class="nt">PGADMIN_DEFAULT_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">learn_ansible</span><span class="w"></span>
-<a id="__codelineno-9-17" name="__codelineno-9-17"></a><span class="w">      </span><span class="nt">generate_systemd</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-9-18" name="__codelineno-9-18"></a><span class="w">        </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/systemd/system/</span><span class="w"></span>
-<a id="__codelineno-9-19" name="__codelineno-9-19"></a><span class="w">        </span><span class="nt">container_prefix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span><span class="w"></span>
-<a id="__codelineno-9-20" name="__codelineno-9-20"></a><span class="w">        </span><span class="nt">restart_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span><span class="w"></span>
-<a id="__codelineno-9-21" name="__codelineno-9-21"></a><span class="w">      </span><span class="nt">ports</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-9-22" name="__codelineno-9-22"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8083:80</span><span class="w"></span>
-<a id="__codelineno-9-23" name="__codelineno-9-23"></a><span class="w">      </span><span class="nt">network</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bridge</span><span class="w"></span>
-<a id="__codelineno-9-24" name="__codelineno-9-24"></a>
-<a id="__codelineno-9-25" name="__codelineno-9-25"></a><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-9-26" name="__codelineno-9-26"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run podman container using pgadmin_container var</span><span class="w"></span>
-<a id="__codelineno-9-27" name="__codelineno-9-27"></a>
-<a id="__codelineno-9-28" name="__codelineno-9-28"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Start, enable and reload daemon for {{ pgadmin_service_name }}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
 
 
 
