@@ -326,7 +326,9 @@
 <p>Locate from the results the <code>Ansible</code> service published by <code>Red Hat</code>. Click the blue <strong>Install</strong> icon located to the right.</p>
 </li>
 </ol>
-<p><img alt="" loading="lazy" src="../_attachments/figure2.png" width="400" /></p>
+<p>You may receieve <code>Do you want to allow untrusted files in this window?</code> to which you should respond by clicking the blue <strong>Open</strong> button.</p>
+<p><img alt="" loading="lazy" src="../_attachments/figure2.png" width="400" />
+<img alt="" loading="lazy" src="../_attachments/figure42.png" width="400" /></p>
 <div class="admonition tip">
 <p class="admonition-title">DEPRECATED VERSION</p>
 <p>You may ignore the deprecated version of "Ansible language support" that was previously published by Tomasz Maciazek. The only official (and installable) Ansible extension is the one published by Red Hat's verified account.</p>
@@ -347,6 +349,11 @@
 <li>A settings panel for the Ansible extension will fill the screen. From the top-left corner of the interface, look for a switch to toggle between <code>User</code> and <code>Workspace</code>. Select the <strong>Workspace</strong> option.</li>
 </ol>
 <p><img alt="" loading="lazy" src="../_attachments/figure4.png" width="400" /></p>
+<p>!!! tip "MISSING 'Workspace'</p>
+<div class="highlight"><pre><span></span><code>Some versions of VS Code appear to be missing the &#39;Workspace&#39; option within the Settings panel — possibly because of company-mandated restrictions that limit levels of access on company-managed devices. If this tab is missing under your Extension settings, return to **Step 5** and click **Apply Extension to All Profiles** and *then* click **Extension Settings**. Proceed with the steps below but ignore the component about locating the Workspace tab.
+
+![](_attachments/figure43.png){: loading=lazy width=&quot;400&quot;}
+</code></pre></div>
 <hr />
 <ol start="7">
 <li>Scroll down the list of settings until you locate the fields <code>Ansible &gt; Lightspeed</code> and <code>Ansible &gt; Lightspeed &gt; Suggestions</code>. By default, these will be disabled. Click the checkmark icons to the left of <strong>BOTH</strong> entries to <strong>ENABLE</strong> <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> Tech Preview features within the VS Code environment.</li>
@@ -477,8 +484,25 @@
 <p><img alt="" loading="lazy" src="../_attachments/figure17.png" width="600" /></p>
 <div class="admonition tip">
 <p class="admonition-title">PYTHON LIBRARY</p>
-<p>The VS Code environment also requires that Python 3.9.13 (or higher) be activated as part of the workspace. Look for a <code>Python</code> tile adjacent to the <code>Ansible</code> tile along the bottom-right corner of the VS Code interface. If it is not set, click the tile and select Python 3.9.13 (or higher).</p>
+<p>The VS Code environment also requires that Python 3.9.13 (or higher) be activated as part of the workspace. Look for a <code>Python</code> tile adjacent to the <code>Ansible</code> tile along the bottom-right corner of the VS Code interface. If it is not set, click the tile and select Python 3.11.5 64-bit.</p>
+<ol>
+<li>Click the gold-colored <code>Select python environment</code> button at the bottom-right of the interface.</li>
+</ol>
+<p><img alt="" loading="lazy" src="../_attachments/figure44.png" width="400" /></p>
+<ol start="2">
+<li>From the console at the top of the VS Code environment, select the recommended <code>Python 3.11.5 64-bit</code> option and hit <code>Return</code> to confirm.</li>
+</ol>
+<p><img alt="" loading="lazy" src="../_attachments/figure45.png" width="400" /></p>
+<ol start="3">
+<li>Inspect the bottom-right of the interface again to confirm that the Python library has been set.</li>
+</ol>
+<p><img alt="" loading="lazy" src="../_attachments/figure46.png" width="400" /></p>
+<ol start="4">
+<li>You may safely ignore warnings about <code>Ansible-lint</code> and <code>Command failed: ...</code> if those have appeared as pop-ups towards the bottom of the interface.</li>
+</ol>
+<p><img alt="" loading="lazy" src="../_attachments/figure47.png" width="400" /></p>
 </div>
+<hr />
 <p>Well done. Your VS Code environment is now fully configured and ready for experimentation using generative AI techniques. In the following section, we will review the evaluation criteria for how IBM technical sellers and business partners receive accreditation for completing the Level 3 material.</p>
 
 
