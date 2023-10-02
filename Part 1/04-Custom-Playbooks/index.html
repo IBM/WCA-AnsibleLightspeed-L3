@@ -309,7 +309,29 @@
 
 <h1 id="hands-on-customizing-ansible-tasks-with-ibm-watsonx-code-assistant-for-ansible-lightspeed"><strong>Hands-on:</strong> Customizing Ansible Tasks with IBM watsonx Code Assistant for Ansible Lightspeed</h1>
 <hr />
-<p>In the following module, you will begin experimentating with customized Ansible Playbooks and testing how changes to Ansible Task natural language descriptions impacts the recommended code produced by Generative AI. A sample Playbook is supplied for you below.</p>
+<p>In the following module, you will begin experimentating with customized Ansible Playbooks and testing how changes to Ansible Task natural language descriptions impacts the recommended code produced by Generative AI.</p>
+<p>A sample Playbook is supplied for you below.</p>
+<hr />
+<details class="note">
+<summary>CLICK FOR MORE — CREATING NEW YAML FILES</summary>
+<p>To create a new YAML Playbook within your VS Code environment:</p>
+<ol>
+<li>Copy the contents above to clipboard using the button in the top-right corner of the code block.</li>
+</ol>
+<p><img alt="" loading="lazy" src="../_attachments/figure18.png" width="400" /></p>
+<ol start="2">
+<li>Return to your VS Code environment. In the top-left corner of the interface, with your Ansible Lightspeed folder selected, click the <strong>New File...</strong> button.</li>
+</ol>
+<p><img alt="" loading="lazy" src="../_attachments/figure19.png" width="400" /></p>
+<ol start="3">
+<li>
+<p>Name the file to a description of your choosing, ending with <code>.yml</code> as the filetype. Set it to <code>CustomPlaybook.yml</code>, for example.</p>
+</li>
+<li>
+<p>Paste the clipboard contents into the YAML file and follow along with the suggestions below.</p>
+</li>
+</ol>
+</details>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">CUSTOM PLAYBOOK #1 - Invoke 2 modules to automatically update 2 types of servers</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block"></div>
@@ -385,26 +407,7 @@
 <a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgresql</span><span class="w"></span>
 <a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">started</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
-<details class="note">
-<summary>CLICK FOR MORE — CREATING NEW YAML FILES</summary>
-<p>To create a new YAML Playbook within your VS Code environment:</p>
-<ol>
-<li>Copy the contents above to clipboard using the button in the top-right corner of the code block.</li>
-</ol>
-<p><img alt="" loading="lazy" src="../_attachments/figure18.png" width="400" /></p>
-<ol start="2">
-<li>Return to your VS Code environment. In the top-left corner of the interface, with your Ansible Lightspeed folder selected, click the <strong>New File...</strong> button.</li>
-</ol>
-<p><img alt="" loading="lazy" src="../_attachments/figure19.png" width="400" /></p>
-<ol start="3">
-<li>
-<p>Name the file to a description of your choosing, ending with <code>.yml</code> as the filetype. Set it to <code>CustomPlaybook.yml</code>, for example.</p>
-</li>
-<li>
-<p>Paste the clipboard contents into the YAML file and follow along with the suggestions below.</p>
-</li>
-</ol>
-</details>
+<hr />
 <h1 id="_1"></h1>
 <h1 id="precision-is-key-for-disambiguation-of-natural-language-prompts"><strong>Precision</strong> is key for disambiguation of natural language prompts.</h1>
 <hr />
