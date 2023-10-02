@@ -414,13 +414,13 @@
 <p><strong>Custom Playbook #1</strong> (above) contains 2 sets of tasks: </p>
 <ol>
 <li>
-<p>Task 1 (<code>Lines 5-20</code>) checks whether or not web server software is up to date and runs the update if necessary.</p>
+<p>Task 1 (<strong>Lines 5-20</strong>) checks whether or not web server software is up to date and runs the update if necessary.</p>
 </li>
 <li>
-<p>Task 2 (<code>Lines 22-36</code>) checks whether or not database server software is up to date and runs the update if necessary.</p>
+<p>Task 2 (<strong>Lines 22-36</strong>) checks whether or not database server software is up to date and runs the update if necessary.</p>
 </li>
 </ol>
-<p>Consider the following Task (<code>Line 16</code>), which prompts Ansible to create ("write") a configuration file for an Apache webserver:
+<p>Consider the following Task (<strong>Line 16</strong>), which prompts Ansible to create ("write") a configuration file for an Apache webserver:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file</span><span class="w"></span>
 </code></pre></div></p>
 <p>Two tabs are presented below. The first <code>AI-Generated Code</code> tab shows the output from running Ansible Lightspeed's generative AI capabilities on an unmodified version of this Playbook. The second <code>Solution Code</code> tab shows the expected Task code that was written (and commented out) by a human to perform the same task. In theory, the suggested code <em>should</em> be as good— or even superior to —the manually-written solution code. </p>
@@ -528,13 +528,13 @@ package, instead of the expected <code>ansible.builtin.template</code> package.<
 <p>Annoyingly, the request to generate "<em>from template</em>" appears to have been misinterpreted once again. Looking at the syntax of the natural language description gives us some clues as to why</p>
 <ul>
 <li>
-<p><code>Line 1 of AI-Generated Code</code>, if you consider it the same way as a natural language processor would, is essentially a string of individual tokens. Every word, number, or character separated by a whitespace (a "tokenizer") is a "token." In our example, <code>mode</code> and <code>0644</code> are separate tokens — and we expect that the natural language capabilities will understand the implied link between these two. But we can make this linkage more explicit by being more exact with how we describe these two elements in the next iteration. Next time, we'll write them as a single token with a very explicit linkage by using <code>mode='0644'</code> and compare the results.</p>
+<p><strong>Line 1</strong> of <code>AI-Generated Code</code>, if you consider it the same way as a natural language processor would, is essentially a string of individual tokens. Every word, number, or character separated by a whitespace (a "tokenizer") is a "token." In our example, <code>mode</code> and <code>0644</code> are separate tokens — and we expect that the natural language capabilities will understand the implied link between these two. But we can make this linkage more explicit by being more exact with how we describe these two elements in the next iteration. Next time, we'll write them as a single token with a very explicit linkage by using <code>mode='0644'</code> and compare the results.</p>
 </li>
 <li>
-<p><code>Line 2 of AI-Generated Code</code> once again failed to invoke the expected <code>ansible.builtin.template</code> package. At this stage, you may speculate that the reason for this is the ambiguity created by the separate <code>mode</code> and <code>0644</code> tokens that were described previously. We will observe on the next generative iteration whether disambiguation of those two tokens helps clarify the meaning of the <code>from template</code> tokens.</p>
+<p><strong>Line 2</strong> of <code>AI-Generated Code</code> once again failed to invoke the expected <code>ansible.builtin.template</code> package. At this stage, you may speculate that the reason for this is the ambiguity created by the separate <code>mode</code> and <code>0644</code> tokens that were described previously. We will observe on the next generative iteration whether disambiguation of those two tokens helps clarify the meaning of the <code>from template</code> tokens.</p>
 </li>
 <li>
-<p>The <code>mode:</code>, <code>src:</code>, and <code>dest:</code> fields from <code>Lines 3-5 of Solution Code</code> are incorrect or missing.</p>
+<p>The <code>mode:</code>, <code>src:</code>, and <code>dest:</code> fields from <strong>Lines 3-5</strong> of <code>Solution Code</code> are incorrect or missing.</p>
 </li>
 </ul>
 <p>For a third time, let's adjust the natural language description of the Task to the following and then re-generate the code block using Ansible Lightspeed:</p>
