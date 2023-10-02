@@ -423,13 +423,13 @@
 <p>The Playbook code above warrants some explanation before we move on with modifications:</p>
 <ul>
 <li>
-<p><code>Line 2</code> essentially marks the beginning of the Playbook instructions, the purpose of which is to automate the process of installing and configuring Cockpit for Red Hat Ansible.</p>
+<p><strong>Line 2</strong> essentially marks the beginning of the Playbook instructions, the purpose of which is to automate the process of installing and configuring Cockpit for Red Hat Ansible.</p>
 </li>
 <li>
-<p><code>Lines 2-3</code> define variables that will remain static throughout the remainder of the Playbook. These variables will be referenced by the AI-generated code suggestions at a later stage. This is a key capability of the offering and one which we will go into much finer details on later.</p>
+<p><strong>Lines 2-3</strong> define variables that will remain static throughout the remainder of the Playbook. These variables will be referenced by the AI-generated code suggestions at a later stage. This is a key capability of the offering and one which we will go into much finer details on later.</p>
 </li>
 <li>
-<p><code>Lines 6-9</code> are variables which have been <em>commented out</em> and therefore are invisible to the execution of the Ansible script <strong>and</strong> not examined by Ansible Lightspeed for context when generating code recommendations. We will experiment shortly with how removing the <code>#</code> comment blocks impacts the recommendations of task block code. "Uncommenting" these lines of code will make them viable for execution and will be considered as valid Playbook "context" for AI code generation.</p>
+<p><strong>Lines 6-9</strong> are variables which have been <em>commented out</em> and therefore are invisible to the execution of the Ansible script <strong>and</strong> not examined by Ansible Lightspeed for context when generating code recommendations. We will experiment shortly with how removing the <code>#</code> comment blocks impacts the recommendations of task block code. "Uncommenting" these lines of code will make them viable for execution and will be considered as valid Playbook "context" for AI code generation.</p>
 </li>
 </ul>
 <div class="admonition tip">
@@ -669,10 +669,13 @@
 <p>But we may further validate this capability by <strong>changing</strong> the name of the variable that was generated from the task on <strong>Line 26</strong> and observing how the task block on <strong>Line 33</strong> is altered upon regeneration.</p>
 <p>Change the name of variable <code>subnet_info</code> instead to <code>subnet_name</code>, delete the code block recommendations under <strong>Line 33</strong>, and then regenerate the task.</p>
 <p><img alt="" loading="lazy" src="../_attachments/figure41.png" width="600" /></p>
-<p>You will immediately notice that the new block of task code references the variable <code>subnet_name</code> that was modified just a moment ago. Once again, Ansible Lightspeed has generated code suggestions that take into account the altered context and variables of the Playbook. You may attempt adjusting other variables within the Playbook and test how these modifications impact the generation of future blocks of Task code.</p>
+<p>You will immediately notice that the new block of task code references the variable <code>subnet_name</code> that was modified just a moment ago. Once again, Ansible Lightspeed has generated code suggestions that take into account the altered context and variables of the Playbook.</p>
+<p>Try adjusting other variables within the Playbook and test how these modifications impact the generation of future blocks of Task code.</p>
 <hr />
-<div class="admonition warning">
-<p class="admonition-title">TELEMETRY DATA COLLECTION</p>
+<p>In the following section, you will begin experimentating with customized Ansible Playbooks and testing how changes to Ansible Task natural language descriptions impacts the recommended code produced by Generative AI.</p>
+<p>Before continuing, it's worth reading up on how the Technical Preview for Ansible Lightspeed extension within VS Code collects data for training and improvement purposes — something known as <strong>telemetry data collection</strong>. It is something to be mindful of before creating your own customized Playbooks or supplying your own code for testing purposes. </p>
+<details class="warning">
+<summary>CLICK FOR MORE — TELEMETRY DATA COLLECTION</summary>
 <p>IBM and Red Hat strongly advocate for and put into practice full transparency about what content is collected— what is known as "<strong>telemetry data</strong>" —to improve the quality of service for AI offerings such as IBM watsonx Code Assistant for Red Hat Ansible Lightspeed.</p>
 <p>The service automatically collects recommendations, usage telemetry, and Ansible Playbook state through automated events. IBM watsonx Code Assistant for Red Hat Ansible Lightspeed telemetry is used to improve the service over time. Telemetry data that is collected will be shared with Red Hat and IBM. Clients can opt out of this data sharing by disabling (within VS Code) the IBM watsonx Code Assistant for Red Hat Ansible Lightspeed setting in the Ansible VS Code extension. Opting-out of telemetry data sharing does not remove telemetry data already sent to Red Hat and IBM.</p>
 <p>The telemetry data shared with Red Hat and IBM are selected to be anonymized where applicable and as unobtrusive as possible. Metrics collected include the following:</p>
@@ -704,7 +707,7 @@
 </ul>
 <p>Telemetry data may be kept indefinitely for product improvement. Users are not able to request that their telemetry be purged. Clients may disable the Ansible Lightspeed service to prevent further telemetry from being sent to the service. Red Hat and IBM do not claim any copyright or other intellectual property rights to the suggestions generated by IBM watsonx Code Assistant for Red Hat Ansible Lightspeed.</p>
 <p>Additional details can be located within the Terms of Service for the offering: <a href="https://docs.ai.ansible.redhat.com/tos/" target="_blank">https://docs.ai.ansible.redhat.com/tos/</a></p>
-</div>
+</details>
 
 
 
