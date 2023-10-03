@@ -488,8 +488,8 @@
 </div>
 </div>
 </div>
-<p>The AI-generated code recommendation will copy <a href="https://github.com/craig-br/demos/blob/main/blogs/lightspeed_tech_preview_jun2023/files/cockpit.conf" target="_blank"><code>cockpit.conf</code></a> to the target host. Take note of the fact that the recommendation included the <code>mode:</code> module argument and set the Linux file permissions to <code>0644</code>, neither of which were things explicitly requested in the Task <code>-name</code> description but are both additions which <em>significantly</em> enhance the efficacy and safety of the Task.</p>
-<p>These additional recommendations stem from a robust example of setting file permissions for the <a href="https://docs.ansible.com/ansible/latest/collections/ansible/builtin/copy_module.html" target="_blank"><code>ansible.builtin.copy</code></a> module, a recommended best practice from the Ansible Galaxy and Red Hat communities that Lightspeed carried into this AI-generated code recommendation as well.</p>
+<p>The AI-generated code recommendation will copy <a href="https://github.com/craig-br/demos/blob/main/blogs/lightspeed_tech_preview_jun2023/files/cockpit.conf" target="_blank"><code>cockpit.conf</code></a> to the target host.</p>
+<p>Take note of the fact that the recommendation included the <code>mode:</code> argument and set the Linux file permissions to <code>0644</code>, neither of which were things explicitly requested in the Task <code>-name</code> description, but are both additions which adhere to best practices around defining Ansible automaton tasks. These additional recommendations stem from a robust example of setting file permissions for the <a href="https://docs.ansible.com/ansible/latest/collections/ansible/builtin/copy_module.html" target="_blank"><code>ansible.builtin.copy</code></a> module, a recommended best practice from the Ansible Galaxy and Red Hat communities that Lightspeed carried into this AI-generated code recommendation as well.</p>
 <p>You may continue generating Task blocks on this Playbook if you wish. When ready to proceed, follow along with the lab documentation below.</p>
 <hr />
 <h1 id="_1"></h1>
