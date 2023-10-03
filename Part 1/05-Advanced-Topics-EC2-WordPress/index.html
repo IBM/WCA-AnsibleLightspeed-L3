@@ -310,10 +310,10 @@
 <h1 id="_1"></h1>
 <h1 id="advanced-deploying-a-live-aws-ec2-instance-and-wordpress-application-via-ansible"><strong>Advanced</strong>: Deploying a live AWS EC2 instance and WordPress application via Ansible</h1>
 <hr />
-<p>To conclude the Level 3 Technical Sales education on IBM watsonx Code Assistant for Red Hat Ansible Lightspeed, you have been provided with a complete instruction set for deploying a <strong>LIVE</strong> environment on Amazon Web Services (AWS) consisting of a <strong><a href="https://wordpress.com" target="_blank">WordPress</a></strong> web application running atop an <strong><a href="https://aws.amazon.com/ec2/" target="_blank">Amazon EC2 VPC</a></strong>.</p>
+<p>To conclude the Level 3 Technical Sales education on <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em>, you have been provided with a complete set of instructions for deploying a <strong>LIVE</strong> environment on Amazon Web Services (AWS) consisting of a <strong><a href="https://wordpress.com" target="_blank">WordPress</a></strong> web application running atop an <strong><a href="https://aws.amazon.com/ec2/" target="_blank">Amazon EC2 VPC</a></strong>.</p>
 <ul>
 <li>
-<p>The deployment of the environments will be conducted entirely using Red Hat Ansible automation, executed on your local machine and deployed to AWS cloud.</p>
+<p>The deployment of the environments will be conducted entirely using Red Hat Ansible automation, executed on your local machine, and deployed to AWS cloud.</p>
 </li>
 <li>
 <p>The generation of the Ansible Tasks and code required to automate these deployments will be created using the Generative AI capabilities of the Ansible Lightspeed extension for VS Code.</p>
@@ -322,7 +322,7 @@
 <div class="admonition warning">
 <p class="admonition-title">COSTS</p>
 <p>Be aware that deploying a live Amazon EC2 instance on AWS <strong>does</strong> incur real-world charges which are the responsibility of the individual to pay for. If you wish to go ahead with deploying the live environment— <strong>which you are encouraged, but NOT REQUIRED, to complete</strong> —you will need to do so on your personal AWS account, with any potential billings and charges incurred to your personal credit card.</p>
-<p>The billing associated with an Amazon EC2 <code>t2.small</code> instance and other services needed for the demo is <strong>minimal</strong>: on-demand hourly rate of <strong>$0.023 USD</strong> at the time of publication. Running the fully-deployed WordPress and EC2 environments for 24 hours cost USD $2.03 in billing.</p>
+<p>The billing associated with an Amazon EC2 <code>t2.small</code> instance and other services needed for the demo is <strong>minimal</strong>: an on-demand hourly rate of <strong>$0.023 USD</strong> at the time of publication. Running the fully-deployed WordPress and EC2 environments for 24 hours cost USD $2.03 in billing when testing for publication.</p>
 <p><a href="https://aws.amazon.com/ec2/pricing/on-demand/" target="_blank">Additional AWS pricing details and plans are available online.</a></p>
 </div>
 <p>Ansible Playbooks have been prepared ahead of time in a public GitHub repository and are available for your use at the links below. Once the two YAML files are available on your local machine, open them with VS Code and follow along with the instructions below.</p>
@@ -353,7 +353,7 @@
 <hr />
 <div class="admonition tip">
 <p class="admonition-title">VS CODE EXTENSION</p>
-<p>You may need to copy and paste the contents of the <code>TEMPLATE.yml</code> file into a <strong>New File...</strong> within the Lightspeed project used for the previous Level 3 modules in order for the VS Code extension to engage.</p>
+<p>You may need to copy and paste the contents of the <code>TEMPLATE.yml</code> file into a <strong>New File...</strong> within the same Lightspeed project directory that was used for the prevous lab modules in order for the VS Code extension to engage.</p>
 </div>
 <ol>
 <li>
@@ -519,7 +519,7 @@
 <hr />
 <p>As you can observe, Ansible Lightspeed can be "creative" with its choice of tags and identifiers. You are welcome to adjust these to your liking, or even eliminate them from the Task code altogether. In the majority of cases these tags and identifiers are used for organization and tracking purposes, but not necessarily anything critical to the functioning of the Ansible Playbook or the infrastructure it is automating.</p>
 <ol start="8">
-<li>Continue further down until you reach <strong>TASK 6</strong> (Line 40), which is one of the more consequential steps in the Playbook as it involves the creation of the Amazon EC2 <code>t2.small</code> instance on AWS according to the settings defined in Tasks 1-5.</li>
+<li>Continue further down until you reach <strong>TASK 6</strong> (Line 40), which is one of the more consequential steps in the Playbook as it involves the creation of the Amazon EC2 <code>t2.small</code> instance on AWS according to the settings defined in TASKS 1-5.</li>
 </ol>
 <div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">TEMPLATE</label><label for="__tabbed_6_2">SOLUTION</label></div>
 <div class="tabbed-content">
@@ -558,7 +558,7 @@
 </div>
 <hr />
 <p>Note that the <code>image_id</code> and <code>ami</code> values correspond to a specific Amazon Machine Image (ami) for Red Hat Enterprise Linux 9. Hundreds of alternative operating system images are available to select from on AWS, so you may modify this if you so choose; however, for the purposes of deploying WordPress it will make no meaningful difference.</p>
-<p>The pair <code>key_name: "bienko-key"</code> relates to an EC2 instance key (SSH) that you will need to create before attempting to deploy an EC2 instance via Ansible. Instructions for how to create that key will be given at the end of this module for those who wish to deploy a live environment of their own.</p>
+<p>The pair <code>key_name: "bienko-key"</code> relates to an EC2 instance key (SSH) that you will need to create before attempting to deploy an EC2 instance via Ansible. Instructions for how to create that key will be given at the end of this module for those who wish to deploy a live environment.</p>
 <ol start="9">
 <li>Continue down to <strong>TASK 7</strong> (Line 48). You will notice that in both the <code>TEMPLATE</code> and <code>SOLUTION</code> versions of the Playbook that this Task is fully defined already. Despite repeated attempts at describing the Task to be generated, Ansible Lightspeed in its pre-GA Technical Preview form was unable to generate all of the actions needed to carry out this task. Over time the service will doubtlessly be able to handle this particular task — but for now, leave this as a hard-coded element within your Playbook and do not attempt to recreate the task with code generation.</li>
 </ol>
@@ -700,7 +700,7 @@
 </div>
 <hr />
 <ol start="14">
-<li>Further down the Playbook, locate <strong>TASK 12</strong> (Line 83) which deploys the services installed in Task 9.</li>
+<li>Further down the Playbook, locate <strong>TASK 12</strong> (Line 83) which deploys the services installed in TASK 9.</li>
 </ol>
 <div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">TEMPLATE</label><label for="__tabbed_12_2">SOLUTION</label></div>
 <div class="tabbed-content">
@@ -758,7 +758,7 @@
 </div>
 <hr />
 <ol start="17">
-<li>Finally, you have arrived at the final step in the Playbook configuration: <strong>TASK 14</strong> (Line 105), which is responsible for hosting the WordPress web application and making it accessible to user.</li>
+<li>Finally, you have arrived at the final step in the Playbook configuration: <strong>TASK 14</strong> (Line 105), which is responsible for hosting the WordPress web app and making it accessible to users.</li>
 </ol>
 <div class="tabbed-set tabbed-alternate" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">TEMPLATE</label><label for="__tabbed_14_2">SOLUTION</label></div>
 <div class="tabbed-content">
@@ -779,19 +779,19 @@
 </div>
 </div>
 <hr />
-<p>Congratulations on making it this far! At this stage, your Playbook is in fact ready for execution. However, there are still some preparation that you need to do before this Playbook can be used to automate deployment of the WordPress application into a live Amazon EC2 environment.</p>
-<p>If you wish to go ahead with the deployment (<strong>RECOMMENDED</strong>) on your personal AWS account, follow along with the steps that follow. Otherwise, you are welcome to conclude the hands-on component here and follow the Level 3 accreditation steps (depending on your role).</p>
+<p>Congratulations on making it this far! At this stage, your Playbook is ready for execution. However, there are still some preparation that you need to do before this Playbook can be used to automate deployment of the WordPress application into a live Amazon EC2 environment.</p>
+<p>If you wish to go ahead with the deployment (<strong>RECOMMENDED</strong>) on your personal AWS account, follow along with lab guide steps. Otherwise, you are welcome to conclude the hands-on component here and follow the <a href="https://ibm.github.io/WCA-AnsibleLightspeed-L3/Part%201/02-Evaluation-Criteria/" target="_blank">Level 3 accreditation</a> steps (depending on your role).</p>
 <div class="admonition warning">
 <p class="admonition-title">LEVEL 3 ACCREDITATION</p>
-<p><strong>IBMers</strong> should take the time now to prepare for and record their Stand &amp; Deliver presentations for Level 3 accreditation. Be sure to follow the evaluation criteria that is outlined in this documentation.</p>
-<p><strong>Business Partners</strong> should follow the learning plan links on IBM Training to complete a multiple-choice examination for Level 3 accreditation.</p>
+<p><strong>IBMers</strong> should take the time now to prepare for and record their <a href="https://ibm.github.io/WCA-AnsibleLightspeed-L3/Part%201/02-Evaluation-Criteria/" target="_blank">Stand &amp; Deliver</a> presentations for Level 3 accreditation. Be sure to follow the evaluation criteria that is outlined in this documentation.</p>
+<p><strong>Business Partners</strong> should follow the <a href="https://ibm.github.io/WCA-AnsibleLightspeed-L3/Part%201/02-Evaluation-Criteria/" target="_blank">learning plan links</a> on IBM Training to complete a multiple-choice examination for Level 3 accreditation.</p>
 </div>
 <hr />
 <h1 id="_3"></h1>
 <h1 id="to-deploy-a-live-amazon-ec2-instance-and-wordpress-application-on-aws-follow-along-with-the-steps-below">To deploy a <strong>live</strong> Amazon EC2 instance and WordPress application on AWS, follow along with the steps below.</h1>
 <hr />
 <ol start="18">
-<li>In order to execute the Ansible Playbook on your local machine, you will need to install Ansible locally. Users can do so either through downloading the necessary binaries from Ansible.com or by executing the following instructions in a Terminal window (macOS):</li>
+<li>In order to execute the Ansible Playbook on your local machine, you will need to install Ansible locally. Red Hat provides <a href="https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html" target="_blank">extensive online documentation</a> for how to go about installing Ansible. The authors of your lab guide recommend doing so by executing the following instructions in a Terminal window (macOS), or equivalent steps using <a href="https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3" target="_blank">PowerShell</a> (Windows):</li>
 </ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>brew install ansible
 </code></pre></div>
@@ -800,7 +800,7 @@
 <p>If you do not have the Homebrew package manager ("brew") installed in a macOS environment, execute the following instruction inside a Terminal console:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;
 </code></pre></div>
-Wait for the installation to conclude and then retry the instructions from <strong>Step 19</strong>.</p>
+Wait for the installation to conclude and then retry the instructions from Step 18.</p>
 </div>
 <p>Follow the prompts until you receive confirmation that Ansible is installed and available locally.</p>
 <hr />
@@ -829,7 +829,7 @@ Wait for the installation to conclude and then retry the instructions from <stro
 </ol>
 <ul>
 <li>
-<p>Set <code>Username</code> to a name of your choosing ('Bienko').</p>
+<p>Set <code>Username</code> to a name of your choosing.</p>
 </li>
 <li>
 <p>Click <strong>Next</strong> to advance the configuration tool.</p>
@@ -914,7 +914,7 @@ Wait for the installation to conclude and then retry the instructions from <stro
 </ol>
 <ul>
 <li>
-<p><code>Name</code> can be set to a value of your choosing ('bienko-key')</p>
+<p><code>Name</code> can be set to a value of your choosing</p>
 </li>
 <li>
 <p><code>Key pair type</code> set to <strong>RSA</strong></p>
@@ -927,7 +927,7 @@ Wait for the installation to conclude and then retry the instructions from <stro
 <p><img alt="" src="../_attachments/figure32.png" /></p>
 <hr />
 <ol start="32">
-<li>The web browser will redirect to a page where you can view details about the newly-created Key Pair for EC2. <strong>Download</strong> the <code>.pem</code> file to your local device, preferably to the same directory that your Ansible Playbooks are located.</li>
+<li>The web browser will redirect to a page where you can view details about the newly-created Key Pair for EC2. <strong>Download</strong> the <code>.pem</code> file to your local device, preferably to the same directory that your <code>TEMPLATE.yml</code> and <code>SOLUTION.yml</code> Playbooks are located within.</li>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">PLAYBOOK MODIFICATIONS REQUIRED</p>
@@ -951,21 +951,21 @@ Wait for the installation to conclude and then retry the instructions from <stro
 </code></pre></div>
 <hr />
 <h1 id="_4"></h1>
-<h1 id="executing-the-ansible-playbook"><strong>Executing the Ansible Playbook</strong></h1>
+<h1 id="executing-the-ansible-playbook">Executing the Ansible Playbook</h1>
 <hr />
 <p>At last, you are ready to execute the Playbook and use Ansible automation to deploy both an Amazon EC2 instance and a WordPress web application.</p>
 <ol start="34">
-<li>With the Terminal console, navigate to the directory (<code>cd</code>) where both the Ansible Playbook and your <code>KeyPair.pem</code> file are located. You may use either the <code>TEMPLATE.yml</code> Playbook that you customized or the <code>SOLUTION.yml</code> Playbook for executing the Ansible automation tasks.</li>
+<li>With the Terminal console, navigate to the directory (<code>cd</code>) where both the Ansible Playbook and your <code>KeyPair.pem</code> file are located. You may use either the <code>TEMPLATE.yml</code> Playbook that you customized or the <code>SOLUTION.yml</code> Playbook for executing the Ansible automation tasks. Regardless of the Playbook being used, you must modify the Playbook with the necessary AWS security and account credentials information.</li>
 </ol>
 <p>When ready, execute the following instruction with the Terminal console:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>ansible-playbook TEMPLATE.yml
 </code></pre></div></p>
 <ol start="35">
-<li>Monitor the console's output as the Ansible Playbook iterates across each of the Tasks customized earlier. A fantastic feature of Ansible's automation is that should any of the Tasks fail, the steps involved in that Task can be re-tried in subsequent runs; likewise, Tasks which executed successfully won't be repeated, but checked and skipped instead.</li>
+<li>Monitor the console's output as the Ansible Playbook iterates across each of the Tasks customized earlier. A fantastic feature of Ansible's automation is that if any of the Tasks should fail, the steps involved in that Task can be re-tried in subsequent runs; likewise, Tasks which executed successfully won't be repeated, but are validated and skipped instead.</li>
 </ol>
 <p>If you encounter errors during the litany of automation tasks, return to the Playbook and attempt to debug the issue. Re-issue the instruction in Step 34 to console to attempt the Ansible Playbook execution again. Continue iterating in this manner until all 14 Tasks have been successfully executed.</p>
 <ol start="36">
-<li>After successfully deploying the Amazon EC2 environment and instantiating a WordPress application, the console will return a URL as part of Task 14's <code>[debug]</code> output. Copy the URL to clipboard and then paste it into your web browser to access the WordPress application.</li>
+<li>After successfully deploying the Amazon EC2 environment and instantiating a WordPress application, the console will return a URL to the Terminal's output as part of Task 14's <code>[debug]</code> instruction. Copy the URL to clipboard and then paste it into your web browser to access the WordPress application.</li>
 </ol>
 <p><img alt="" loading="lazy" src="../_attachments/figure33.png" width="600" /></p>
 <hr />
@@ -975,14 +975,13 @@ Wait for the installation to conclude and then retry the instructions from <stro
 <p><img alt="" loading="lazy" src="../_attachments/figure34.png" width="600" /></p>
 <hr />
 <h1 id="_5"></h1>
-<h1 id="cleaning-up-and-conclusion"><strong>Cleaning up and conclusion</strong></h1>
+<h1 id="cleaning-up-and-conclusion">Cleaning up and conclusion</h1>
 <hr />
-<p>After you have recorded your Stand &amp; Deliver presentations (IBMers only) and are ready to retire your environment, you will need to return to the AWS Dashboard to terminate the EC2 instance and hosted WordPress application.</p>
+<p>After you have recorded your <a href="https://ibm.github.io/WCA-AnsibleLightspeed-L3/Part%201/02-Evaluation-Criteria/" target="_blank">Stand &amp; Deliver presentations</a> (IBM technical sellers only) and are ready to retire your environment, you will need to return to the AWS Dashboard to terminate the EC2 instance and hosted WordPress application.</p>
 <div class="admonition warning">
 <p class="admonition-title">COSTS</p>
 <p>It is essential that you terminate and deprovision the EC2 instance at the conclusion of the hands on lab. Otherwise, your personal AWS account will continue to be billed for as long as the resources are provisioned.</p>
 </div>
-<hr />
 <ol start="38">
 <li>
 <p>You can monitor your Amazon EC2 instance from the EC2 dashboard. At the top of the page, locate the <strong>Resources</strong> table and drill down into the <strong>Instances (running)</strong> tab.</p>
@@ -1010,8 +1009,8 @@ Wait for the installation to conclude and then retry the instructions from <stro
 </li>
 </ol>
 <hr />
-<p>That concludes the hands-on components to this Level 3 course, but your learning and experimentation doesn't need to end here. Continue to experiment with generating Tasks for Ansible Playbooks. If you have worked extensively with Ansible previously, try recreating Tasks you've written previously from old Playbooks using generative AI (just be careful not to use confidential/sensitive information as part of those tests) – see if you can spot the differences or improvements made from the code recommendations.</p>
-<p>Feel free to reach out to the authors of this coursework if you have suggestions of Tasks or code generation techniques that you'd like to see included in future iterations of this hands-on training.</p>
+<p>That concludes the hands-on components to this Level 3 course, but your learning and experimentation doesn't need to end here. Continue to experiment with generating Tasks for Ansible Playbooks. If you have worked extensively with Ansible previously, try recreating Tasks you've written previously from old Playbooks using generative AI — just be careful not to use confidential or sensitive information as part of those tests. See if you can spot the differences or improvements made from the AI-generated code recommendations.</p>
+<p>Feel free to reach out to the authors of this coursework if you have suggestions for Tasks or code generation techniques that you'd like to see included in future iterations of this hands-on training.</p>
 
 
 
