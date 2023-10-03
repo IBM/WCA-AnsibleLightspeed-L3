@@ -432,6 +432,10 @@
 <p>Afterwards, Line 15 should look like the following — beginning with a single <code>TAB</code> indentation:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install cockpit package</span><span class="w"></span>
 </code></pre></div></p>
+<div class="admonition tip">
+<p class="admonition-title">INDENTATION LEVELS AND WHITESPACE</p>
+<p>Ansible and YAML Playbooks are very sensitive to whitespacing and indentation. Indentations (such as the <code>TAB</code> in this example) denote different nesting and hierarchies within the YAML structure. You can use whitespaces (<code></code>) instead of <code>TAB</code> if you prefer, but be sure to keep your indentations consistent: keep using <code>TAB</code> or <code></code> for indenting lines of code, but don't intermix the two.</p>
+</div>
 <hr />
 <ol start="4">
 <li>Now you are ready to begin generating code. Place your cursor at the end of <strong>Line 15</strong> and hit <code>Return</code>. Wait for Ansible Lightspeed to engage and generate the suggested (in <em>italicized text</em>) code blocks for executing the task.</li>
