@@ -575,7 +575,7 @@
 <p>Another element of code generation that Ansible Lightspeed excels at is understanding <strong>context</strong> within the Playbook it is executing against. If a variable or attribute is defined earlier within that Playbook, it will be recalled and referenced— where it makes sense to do so —in the generation of subsequent lines of code. You may have noticed this already in your experimentations with AI-generated code suggestions.</p>
 <p>However, one way for us to make this feature quite obvious is to take a previously-generated block of Task code, update the value assigned to a named variable <em>earlier</em> in the Playbook, and then regenerate the Task block. In theory, the newly-generated Task block will use the updated variable name (and differ from how the code block was originally generated).</p>
 <ol start="11">
-<li>Test out this theory by first examining <strong>Line 26</strong> and <strong>Line 33</strong> of the followining Playbook:</li>
+<li>Test out this theory by first examining <strong>Line 26</strong> and <strong>Line 33</strong> of the following <code>demo_provision_ec2_instance.yml</code> Playbook:</li>
 </ol>
 <div class="tabbed-set tabbed-alternate" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">lightspeed-demos-main/playbooks/cloud/aws/demo_provision_ec2_instance.yml</label></div>
 <div class="tabbed-content">
