@@ -310,6 +310,25 @@
 <h1 id="customizing-tasks-with-ibm-watsonx-code-assistant-for-ansible-lightspeed">Customizing Tasks with IBM watsonx Code Assistant for Ansible Lightspeed</h1>
 <hr />
 <p>In the following module, you will begin experimentating with customized Ansible Playbooks and testing how changes to Ansible Task natural language descriptions impacts the recommended code produced by Generative AI.</p>
+<div class="admonition warning">
+<p class="admonition-title">UNPREDICTABLE RESULTS FROM GENERATIVE AI AND LLMs</p>
+<p>A consequence of using Generative AI and Large Language Models (LLMs) is that the recommended code output of these systems will never be 100% consistent for each and every execution. This is both the strength and weakness of LLMs. As you will observe in this module, even a slight modification to the Task description or the smallest change to how a Playbook is structured— the descriptions used, the variables set, and so on —will influence the AI-generated code.</p>
+<p>The iterative process that you will go through in this module can be viewed in two different ways:</p>
+<ol>
+<li>
+<p>On the one hand, it shows the sensitivity of these generative AI models to even the most nuanced change in <strong>natural language prompts</strong> — for good or bad. Generative AI can produce tremendous work and that output is further guided along by best practices built-in from Red Hat and IBM. But in the end, the AI can only infer user intent from the natural language descriptions supplied to it. The more clearly you define your Task descriptions and intent, the more likely that Ansible Lightspeed will correctly generate code that mirrors that intent; conversely, the less precise your are, the more likely it will misinterpret and miss the mark. Precision <em>is</em> key to the disambiguation of natural language prompts.</p>
+</li>
+<li>
+<p>Human feedback and <strong>humans-in-the-loop</strong> are essential to these formative stages of Generative AI. As offerings like <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> achieve general availability (GA) status and exit the Tech Preview phase, the natural language processing capabilities of the service will continue to refine and improve. Additional packages, functions, and training data from Ansible Galaxy (as well as other sources) are continuously being added to the service's Foundation Models, which will in turn continually improve the AI-generated code recommendations made to users. Feedback can be directly supplied via the Ansible Lightspeed extension for VS Code and <a href="https://docs.ai.ansible.redhat.com/contributing/#ansible-galaxy" target="_blank">additional ways to support model training are documented online</a>.</p>
+</li>
+</ol>
+<p>The take-away here is that <strong>your results may vary</strong>: they may differ from the "Solution Code" in these examples, and they may even differ in your own code between generating task code the first time and re-generating it a second time. Keep this in mind as you work through the following examples and understand that it is not a bug, but rather a consequence of working with Generative AI in general. The precision with which the Playbook author describes the automation Task in natural language will determine the accuracy and effectiveness of Ansible Lightspeed's generated code suggestions.</p>
+</div>
+<hr />
+<h1 id="_1"></h1>
+<h1 id="precision-is-key-for-disambiguation-of-natural-language-prompts"><strong>Precision</strong> is key for disambiguation of natural language prompts.</h1>
+<hr />
+<p>A sample Playbook is supplied for you below. Copy and paste the following code template into a <strong>New File...</strong> within your VS Code environment.</p>
 <details class="note">
 <summary>CLICK TO EXPAND — HOW TO CREATE NEW <code>YAML</code> FILES</summary>
 <p>To create a new YAML Playbook within a VS Code environment:</p>
@@ -320,7 +339,15 @@
 <p><strong>c.</strong> Name the file to a description of your choosing, ending with <code>.yml</code> as the filetype. Set it to <code>CustomPlaybook.yml</code>, for example. Save it to one of the directories in the cloned <code>lightspeed-demos</code> folder, such as inside of <code>/lightspeed-demos/playbooks/</code>.</p>
 <p><strong>d.</strong> Paste the clipboard contents into the YAML file and follow along with the suggestions below.</p>
 </details>
-<p>A sample Playbook is supplied for you below. Copy and paste the following code template into a <strong>New File...</strong> within your VS Code environment.</p>
+<p><strong>Custom Playbook #1</strong> (below) contains 2 sets of tasks: </p>
+<ol>
+<li>
+<p>Task 1 (<strong>Lines 5-19</strong>) checks whether or not web server software is up to date and runs the update if necessary.</p>
+</li>
+<li>
+<p>Task 2 (<strong>Lines 22-35</strong>) checks whether or not database server software is up to date and runs the update if necessary.</p>
+</li>
+</ol>
 <hr />
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">CUSTOM PLAYBOOK #1 - Invoke 2 modules to automatically update 2 types of servers</label></div>
 <div class="tabbed-content">
@@ -398,19 +425,7 @@
 <a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">started</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 <hr />
-<h1 id="_1"></h1>
-<h1 id="precision-is-key-for-disambiguation-of-natural-language-prompts"><strong>Precision</strong> is key for disambiguation of natural language prompts.</h1>
-<hr />
-<p><strong>Custom Playbook #1</strong> (above) contains 2 sets of tasks: </p>
-<ol>
-<li>
-<p>Task 1 (<strong>Lines 5-19</strong>) checks whether or not web server software is up to date and runs the update if necessary.</p>
-</li>
-<li>
-<p>Task 2 (<strong>Lines 22-35</strong>) checks whether or not database server software is up to date and runs the update if necessary.</p>
-</li>
-</ol>
-<p>Consider the following Task (<strong>Line 15</strong>), which prompts Ansible to create ("write") a configuration file for an Apache webserver:
+<p>Consider the task on <strong>Line 15</strong>, which prompts Ansible to create ("write") a configuration file for an Apache webserver:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file</span><span class="w"></span>
 </code></pre></div></p>
 <p>Two tabs are presented below. The first <code>AI-Generated Code</code> tab shows the output from running Ansible Lightspeed's generative AI capabilities on an unmodified version of this Playbook. The second <code>Solution Code</code> tab shows the expected Task code that was written by a human programmer to perform the same task. In theory, the AI-generated code <em>should</em> be as good— or even superior to —the manually-written solution code. </p>
@@ -443,13 +458,6 @@
 </div>
 <hr />
 <p>As you can see, the AI-generated code in the first tab misses the mark in a few areas. In fact, it appears to have misunderstood the task in quite a few ways. There is no corresponding value to <code>_content_</code> that can be located within the Ansible Playbook, at least not any which you (the author) have defined ahead of time. Such a result is unexpected and does not match the intention of writing an Apache configuration file according to best practices. Similarly, the destination has been inferred differently and the access permissions that should have been applied to the config file (again - according to Red Hat best practices) are missing altogether.</p>
-<div class="admonition warning">
-<p class="admonition-title">WHY THE UNEXPECTED RESULTS?</p>
-<p>Something has gone wrong — is Ansible Lightspeed at fault? The root cause of the error, in fact, is <strong>human</strong>.
-The precision with which the Playbook author describes the automation Task in natural language will determine the accuracy and effectiveness of Ansible Lightspeed's generated code suggestions.</p>
-<p>Another consequence of using Generative AI and Large Language Models (LLMs) is that the output of these systems will never be 100% consistent, each and every execution or generation. This is both the strength and weakness of LLMs. As we are demonstrating with these slight modifications to the Task description, even the smallest change to how a Playbook is structured — the descriptions used, the variables set, anything change to the Playbook really —will influence the AI-generated code.</p>
-<p>The take-away here is that your results may vary: they may differ from the "Solution Code" in these examples, and they may even differ in your own code between generating task code the first time and re-generating it a second time. Keep this in mind as you work through the following examples and understand that it is not a bug, but rather a consequence of working with Generative AI in general.</p>
-</div>
 <p>In general, the more ambiguous the Task description given, the greater the likelihood that Ansible Lightspeed will misinterpret the author's intent and suggest unwanted Ansible automation jobs. To help disambiguate our intention, Playbook authors must use more precise natural language terms and descriptions.</p>
 <p>Let's slightly modify the Task description. Try revising the Task <code>-name: ...</code> description to the following, hit <code>Return</code>, and accept the generated results with the <code>TAB</code> key:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file with mode 0644</span><span class="w"></span>
@@ -567,16 +575,6 @@ package, instead of the expected <code>ansible.builtin.template</code> package.<
 </div>
 <hr />
 <p>The resulting code suggestions from a simple tweak of <code>mode 0644</code> to <code>mode='0644'</code> to disambiguate the purpose of the Task is far better than previous iterations. Not only was the <code>mode:</code> variable correctly set, but the generative AI code correctly picked up on the intention to invoke the Ansible <code>builtin.template</code> package.</p>
-<p>The iterative process we have gone through with this example can be viewed in two different ways.</p>
-<ol>
-<li>
-<p>On the one hand, it shows the sensitivity of these generative AI models to even the most nuanced change in <strong>natural language prompts</strong> — for good or bad. Generative AI can produce tremendous work and that output is further guided along by best practices built-in from Red Hat and IBM. But in the end, the AI can only infer user intent from the natural language descriptions supplied to it. The more clearly you define your Task descriptions and intent, the more likely that Ansible Lightspeed will correctly generate code that mirrors that intent; conversely, the less precise your are, the more likely it will misinterpret and miss the mark. Precision <em>is</em> key to the disambiguation of natural language prompts.</p>
-</li>
-<li>
-<p>Human feedback and <strong>humans-in-the-loop</strong> are essential to these formative stages of Generative AI. As offerings like <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> achieve general availability (GA) status and exit the Tech Preview phase, the natural language processing capabilities of the service will continue to refine and improve. Additional packages, functions, and training data from Ansible Galaxy (as well as other sources) are continuously being added to the service's Foundation Models, which will in turn continually improve the AI-generated code recommendations made to users. Feedback can be directly supplied via the Ansible Lightspeed extension for VS Code and <a href="https://docs.ai.ansible.redhat.com/contributing/#ansible-galaxy" target="_blank">additional ways to support model training are documented online</a>.</p>
-</li>
-</ol>
-<hr />
 <p>In the following module, you will craft a fully-functional Ansible Playbook for the automated deployment of an Amazon EC2 instance and WordPress application — deployable from your local machine into a live AWS environment.</p>
 
 
