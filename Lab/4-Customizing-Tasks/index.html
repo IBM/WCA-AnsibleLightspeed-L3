@@ -338,15 +338,7 @@
 <p><strong>c.</strong> Name the file to a description of your choosing, ending with <code>.yml</code> as the filetype. Set it to <code>CustomPlaybook.yml</code>, for example. Save it to one of the directories in the cloned <code>lightspeed-demos</code> folder, such as inside of <code>/lightspeed-demos/playbooks/</code>.</p>
 <p><strong>d.</strong> Paste the clipboard contents into the YAML file and follow along with the suggestions below.</p>
 </details>
-<p><strong>Custom Playbook #1</strong> (below) contains 2 sets of tasks: </p>
-<ul>
-<li>
-<p>Task 1 (<strong>Lines 5-19</strong>) checks whether or not web server software is up to date and runs the update if necessary.</p>
-</li>
-<li>
-<p>Task 2 (<strong>Lines 22-35</strong>) checks whether or not database server software is up to date and runs the update if necessary.</p>
-</li>
-</ul>
+<hr />
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">CUSTOM PLAYBOOK #1 - Invoke 2 modules to automatically update 2 types of servers</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block"></div>
@@ -422,7 +414,15 @@
 <a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgresql</span><span class="w"></span>
 <a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">started</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
-<hr />
+<p><strong>Custom Playbook #1</strong> (above) contains 2 sets of tasks: </p>
+<ul>
+<li>
+<p>Task 1 (<strong>Lines 5-19</strong>) checks whether or not web server software is up to date and runs the update if necessary.</p>
+</li>
+<li>
+<p>Task 2 (<strong>Lines 22-35</strong>) checks whether or not database server software is up to date and runs the update if necessary.</p>
+</li>
+</ul>
 <p>Consider the task on <strong>Line 15</strong>, which prompts Ansible to create ("write") a configuration file for an Apache webserver:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file</span><span class="w"></span>
 </code></pre></div></p>
