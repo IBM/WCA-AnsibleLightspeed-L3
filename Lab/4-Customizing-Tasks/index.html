@@ -310,28 +310,18 @@
 <h1 id="customizing-tasks-with-ibm-watsonx-code-assistant-for-ansible-lightspeed">Customizing Tasks with IBM watsonx Code Assistant for Ansible Lightspeed</h1>
 <hr />
 <p>In the following module, you will begin experimentating with customized Ansible Playbooks and testing how changes to Ansible Task natural language descriptions impacts the recommended code produced by Generative AI.</p>
+<details class="note">
+<summary>CLICK TO EXPAND — HOW TO CREATE NEW <code>YAML</code> FILES</summary>
+<p>To create a new YAML Playbook within a VS Code environment:</p>
+<p><strong>a.</strong> Copy the contents of the Playbook to clipboard using the button in the top-right corner of the lab guide code block.</p>
+<p><img alt="" loading="lazy" src="../_attachments/figure18.png" width="400" /></p>
+<p><strong>b.</strong> Return to your VS Code environment. In the top-left corner of the interface, with your Ansible Lightspeed folder selected, click the <strong>New File...</strong> button.</p>
+<p><img alt="" loading="lazy" src="../_attachments/figure19.png" width="400" /></p>
+<p><strong>c.</strong> Name the file to a description of your choosing, ending with <code>.yml</code> as the filetype. Set it to <code>CustomPlaybook.yml</code>, for example. Save it to one of the directories in the cloned <code>lightspeed-demos</code> folder, such as inside of <code>/lightspeed-demos/playbooks/</code>.</p>
+<p><strong>d.</strong> Paste the clipboard contents into the YAML file and follow along with the suggestions below.</p>
+</details>
 <p>A sample Playbook is supplied for you below. Copy and paste the following code template into a <strong>New File...</strong> within your VS Code environment.</p>
 <hr />
-<div class="admonition note">
-<p class="admonition-title">CREATING NEW YAML FILES</p>
-<p>To create a new YAML Playbook within a VS Code environment:</p>
-<ol>
-<li>Copy the contents of the Playbook to clipboard using the button in the top-right corner of the lab guide code block.</li>
-</ol>
-<p><img alt="" loading="lazy" src="../_attachments/figure18.png" width="400" /></p>
-<ol start="2">
-<li>Return to your VS Code environment. In the top-left corner of the interface, with your Ansible Lightspeed folder selected, click the <strong>New File...</strong> button.</li>
-</ol>
-<p><img alt="" loading="lazy" src="../_attachments/figure19.png" width="400" /></p>
-<ol start="3">
-<li>
-<p>Name the file to a description of your choosing, ending with <code>.yml</code> as the filetype. Set it to <code>CustomPlaybook.yml</code>, for example.</p>
-</li>
-<li>
-<p>Paste the clipboard contents into the YAML file and follow along with the suggestions below.</p>
-</li>
-</ol>
-</div>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">CUSTOM PLAYBOOK #1 - Invoke 2 modules to automatically update 2 types of servers</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block"></div>
@@ -420,7 +410,7 @@
 <p>Task 2 (<strong>Lines 22-36</strong>) checks whether or not database server software is up to date and runs the update if necessary.</p>
 </li>
 </ol>
-<p>Consider the following Task (<strong>Line 16</strong>), which prompts Ansible to create ("write") a configuration file for an Apache webserver:
+<p>Consider the following Task (<strong>Line 15</strong>), which prompts Ansible to create ("write") a configuration file for an Apache webserver:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file</span><span class="w"></span>
 </code></pre></div></p>
 <p>Two tabs are presented below. The first <code>AI-Generated Code</code> tab shows the output from running Ansible Lightspeed's generative AI capabilities on an unmodified version of this Playbook. The second <code>Solution Code</code> tab shows the expected Task code that was written by a human programmer to perform the same task. In theory, the AI-generated code <em>should</em> be as good— or even superior to —the manually-written solution code. </p>
@@ -453,10 +443,12 @@
 </div>
 <hr />
 <p>As you can see, the AI-generated code in the first tab misses the mark in a few areas. In fact, it appears to have misunderstood the task in quite a few ways. There is no corresponding value to <code>_content_</code> that can be located within the Ansible Playbook, at least not any which you (the author) have defined ahead of time. Such a result is unexpected and does not match the intention of writing an Apache configuration file according to best practices. Similarly, the destination has been inferred differently and the access permissions that should have been applied to the config file (again - according to Red Hat best practices) are missing altogether.</p>
-<div class="admonition tip">
+<div class="admonition warning">
 <p class="admonition-title">WHY THE UNEXPECTED RESULTS?</p>
 <p>Something has gone wrong — is Ansible Lightspeed at fault? The root cause of the error, in fact, is <strong>human</strong>.
 The precision with which the Playbook author describes the automation Task in natural language will determine the accuracy and effectiveness of Ansible Lightspeed's generated code suggestions.</p>
+<p>Another consequence of using Generative AI and Large Language Models (LLMs) is that the output of these systems will never be 100% consistent, each and every execution or generation. This is both the strength and weakness of LLMs. As we are demonstrating with these slight modifications to the Task description, even the smallest change to how a Playbook is structured — the descriptions used, the variables set, anything change to the Playbook really —will influence the AI-generated code.</p>
+<p>The take-away here is that your results may vary: they may differ from the "Solution Code" in these examples, and they may even differ in your own code between generating task code the first time and re-generating it a second time. Keep this in mind as you work through the following examples and understand that it is not a bug, but rather a consequence of working with Generative AI in general.</p>
 </div>
 <p>In general, the more ambiguous the Task description given, the greater the likelihood that Ansible Lightspeed will misinterpret the author's intent and suggest unwanted Ansible automation jobs. To help disambiguate our intention, Playbook authors must use more precise natural language terms and descriptions.</p>
 <p>Let's slightly modify the Task description. Try revising the Task <code>-name: ...</code> description to the following, hit <code>Return</code>, and accept the generated results with the <code>TAB</code> key:</p>
