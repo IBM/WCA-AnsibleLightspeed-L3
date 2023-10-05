@@ -413,7 +413,7 @@
 <p><strong>Line 2</strong> essentially marks the beginning of the Playbook instructions, the purpose of which is to automate the process of installing and configuring <a href="https://www.redhat.com/en/blog/automate-rhel-web-console-deployments-cockpit-and-certificate-rhel-system-roles" target="_blank">Cockpit</a> for Red Hat Ansible.</p>
 </li>
 <li>
-<p><strong>Lines 2-3</strong> define variables that will remain static throughout the remainder of the Playbook. These variables will be referenced by the AI-generated code suggestions at a later stage. This is a key capability of the offering and one which we will go into much finer details on later.</p>
+<p><strong>Lines 3-4</strong> define variables that will remain static throughout the remainder of the Playbook. These variables will be referenced by the AI-generated code suggestions at a later stage. This is a key capability of the offering and one which we will go into much finer details on later.</p>
 </li>
 <li>
 <p><strong>Lines 6-9</strong> are variables which have been <em>commented out</em> and therefore are invisible to the execution of the Ansible script <strong>and</strong> not examined by Ansible Lightspeed for context when generating code recommendations. We will experiment shortly with how removing the <code>#</code> comment blocks impacts the recommendations of task block code. "Uncommenting" these lines of code will make them viable for execution and these lines will afterwards be considered as valid Playbook "context" for AI code generation.</p>
