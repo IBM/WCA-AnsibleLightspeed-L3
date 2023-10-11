@@ -326,7 +326,7 @@
 </div>
 <p>Ansible Playbooks have been prepared ahead of time in a public GitHub repository and are available for your use at the links below. Once the two YAML files are available on your local machine, open them with VS Code and follow along with the instructions below.</p>
 <hr />
-<p><img alt="" src="../_attachments/figure25.png" /></p>
+<p><img alt="" src="_attachments/figure25.png" /></p>
 <hr />
 <p><strong>TEMPLATE (<code>.yml</code>)</strong>: <a href="https://github.com/bienko/WCA-Lightspeed-L3/blob/main/TEMPLATE.yml" target="_blank">https://github.com/bienko/WCA-Lightspeed-L3/blob/main/TEMPLATE.yml</a></p>
 <ul>
@@ -339,7 +339,7 @@
 <div class="admonition tip">
 <p class="admonition-title">DOWNLOAD .yml FILES TO DESKTOP</p>
 <p>You can easily downlod the <code>TEMPLATE</code> and <code>SOLUTION</code> <em>.yml</em> files to your local machine.</p>
-<p><img alt="" loading="lazy" src="../_attachments/figure26.png" width="400" /></p>
+<p><img alt="" loading="lazy" src="_attachments/figure26.png" width="400" /></p>
 <p>Navigate to the GitHub links provided (above) and click the <strong>Download raw file</strong> button.</p>
 </div>
 <hr />
@@ -811,7 +811,7 @@ Wait for the installation to conclude and then retry the instructions from Step 
 <ol start="20">
 <li>With a registered AWS account, you next need to navigate from the AWS dashboard into the <strong>Identity and Access Management (IAM)</strong> tool. You can search for this using the <strong>Search</strong> bar at the top of the screen and entering <code>IAM</code>.</li>
 </ol>
-<p><img alt="" loading="lazy" src="../_attachments/figure27.png" width="600" /></p>
+<p><img alt="" loading="lazy" src="_attachments/figure27.png" width="600" /></p>
 <hr />
 <ol start="21">
 <li>
@@ -821,7 +821,7 @@ Wait for the installation to conclude and then retry the instructions from Step 
 <p>Click the <strong>Create User</strong> orange button located in the top-right corner of the interface.</p>
 </li>
 </ol>
-<p><img alt="" loading="lazy" src="../_attachments/figure28.png" width="600" /></p>
+<p><img alt="" loading="lazy" src="_attachments/figure28.png" width="600" /></p>
 <hr />
 <ol start="23">
 <li>Within the <strong>Create User</strong> panel, specify your user details and permissions.</li>
@@ -847,7 +847,7 @@ Wait for the installation to conclude and then retry the instructions from Step 
 </li>
 </ul>
 <p>Continue following the prompts until the User has been created.</p>
-<p><img alt="" src="../_attachments/figure29.png" /></p>
+<p><img alt="" src="_attachments/figure29.png" /></p>
 <hr />
 <ol start="24">
 <li>
@@ -857,7 +857,7 @@ Wait for the installation to conclude and then retry the instructions from Step 
 <p>Drill down into the <strong>Access Keys</strong> category and click the <strong>Create Access Key</strong> button located below the (empty) table.</p>
 </li>
 </ol>
-<p><img alt="" src="../_attachments/figure30.png" /></p>
+<p><img alt="" src="_attachments/figure30.png" /></p>
 <hr />
 <ol start="26">
 <li>A secret access key will be created and the web browser will reload to show you details about that key. <strong>RECORD THIS INFORMATION</strong> to a notepad. Details about the secret access key can only be viewed or downloaded at the time the key is created (now). It cannot be recovered afterwards. However, if you lose your key details, all is not lost — you can always create a new secret access key at a later time.</li>
@@ -873,7 +873,7 @@ Wait for the installation to conclude and then retry the instructions from Step 
 <ol start="27">
 <li>Take note at this time as well about the <strong>Region</strong> in which your AWS account is located. You can easily look up this information by examining the URL in your web browser address bar, as shown below (<code>us-east-1</code>).</li>
 </ol>
-<p><img alt="" loading="lazy" src="../_attachments/figure31.png" width="400" /></p>
+<p><img alt="" loading="lazy" src="_attachments/figure31.png" width="400" /></p>
 <p><strong>RECORD</strong> the name of the region, as this will replace the <code>region</code> value assigned to the Playbook.</p>
 <div class="admonition warning">
 <p class="admonition-title">PLAYBOOK MODIFICATIONS REQUIRED</p>
@@ -923,7 +923,7 @@ Wait for the installation to conclude and then retry the instructions from Step 
 </li>
 </ul>
 <p>When satisfied, click the orange <strong>Create key pair</strong> button.</p>
-<p><img alt="" src="../_attachments/figure32.png" /></p>
+<p><img alt="" src="_attachments/figure32.png" /></p>
 <hr />
 <ol start="32">
 <li>The web browser will redirect to a page where you can view details about the newly-created Key Pair for EC2. <strong>Download</strong> the <code>.pem</code> file to your local device, preferably to the same directory that your <code>TEMPLATE.yml</code> and <code>SOLUTION.yml</code> Playbooks are located within.</li>
@@ -966,12 +966,12 @@ Wait for the installation to conclude and then retry the instructions from Step 
 <ol start="36">
 <li>After successfully deploying the Amazon EC2 environment and instantiating a WordPress application, the console will return a URL to the Terminal's output as part of Task 14's <code>[debug]</code> instruction. Copy the URL to clipboard and then paste it into your web browser to access the WordPress application.</li>
 </ol>
-<p><img alt="" loading="lazy" src="../_attachments/figure33.png" width="600" /></p>
+<p><img alt="" loading="lazy" src="_attachments/figure33.png" width="600" /></p>
 <hr />
 <ol start="37">
 <li>If your web browser loads the quick-start page for WordPress, you have successfully deployed the application and its supporting EC2 environment — entirely using Generative AI and Ansible automation. <strong>Well done!</strong></li>
 </ol>
-<p><img alt="" loading="lazy" src="../_attachments/figure34.png" width="600" /></p>
+<p><img alt="" loading="lazy" src="_attachments/figure34.png" width="600" /></p>
 <hr />
 <h1 id="_4"></h1>
 <h1 id="cleaning-up-and-conclusion">Cleaning up and conclusion</h1>
@@ -989,12 +989,12 @@ Wait for the installation to conclude and then retry the instructions from Step 
 <p>Details about your EC2 environment are summarized within the <strong>Instances</strong> table. Click the name of your EC2's <code>Instance ID</code> to expose additional details and management options.</p>
 </li>
 </ol>
-<p><img alt="" src="../_attachments/figure35.png" /></p>
+<p><img alt="" src="_attachments/figure35.png" /></p>
 <hr />
 <ol start="40">
 <li>In the top-right corner of the interface, click the <strong>Instance state</strong> button and select <strong>Terminate instance</strong> from the drop-down menu.</li>
 </ol>
-<p><img alt="" loading="lazy" src="../_attachments/figure36.png" width="400" /></p>
+<p><img alt="" loading="lazy" src="_attachments/figure36.png" width="400" /></p>
 <hr />
 <ol start="41">
 <li>
