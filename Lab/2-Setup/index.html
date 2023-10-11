@@ -344,8 +344,40 @@
 <p>Ignore the deprecated version of "Ansible language support" that was previously published by Tomasz Maciazek. The only official (and installable) Ansible extension is the one published by Red Hat's verified account.</p>
 </div>
 <hr />
-<p>To begin experimenting with <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em>'s generative AI capabilities, you will first need access to some Ansible Playbooks to generate Tasks with. Playbooks have already been prepared ahead of time for the Ansible Lightspeed Technical Preview, which you will make use of here.</p>
 <ol start="4">
+<li>Next, you will need to register for an account with <a href="https://github.com" target="_blank">GitHub</a>. If you already have an account registered with GitHub, you may skip ahead to Step 5.</li>
+</ol>
+<p><strong>Register</strong>: <a href="https://github.com" target="_blank">https://github.com</a></p>
+<p>GitHub, Inc. is a platform and cloud-based service for software development and version control using <strong>Git</strong>, allowing developers to store and manage their code. Like VS Code, it is also owned by Microsoft Corporation.</p>
+<p><img alt="" src="../_attachments/figure6.png" /></p>
+<hr />
+<p>With a registered GitHub account, you are now ready to add the GitHub extension for VS Code to your local machine. This will follow a very similar process to what you performed earlier for installing the Ansible extension for VS Code.</p>
+<ol start="5">
+<li>
+<p>Select the <strong>Extensions</strong> tab from the left-side of the VS Code interface and search for <code>GitHub Pull Requests</code>.</p>
+</li>
+<li>
+<p>Click the <strong>Install</strong> icon to add the extension to your VS Code environment. Integration with VS Code should only take a moment to complete.</p>
+</li>
+</ol>
+<p><img alt="" loading="lazy" src="../_attachments/figure7.png" width="400" /></p>
+<hr />
+<ol start="7">
+<li>With the GitHub extension now available within VS Code, you must authorize and link the service to your personal GitHub account. Notice that in the left-hand interface of the VS Code environment, there are now icons (further down from the Extensions tab) for <code>Ansible</code> and <code>GitHub</code>.</li>
+</ol>
+<p>Click the <code>GitHub</code> tab. In the top-left of the interface, locate and click the a blue button to <strong>Open Folder</strong>. You will then be prompted to <strong>Sign In</strong> using your personal GitHub credentials.</p>
+<p><img alt="" loading="lazy" src="../_attachments/figure48.png" width="400" />
+<img alt="" loading="lazy" src="../_attachments/figure8.png" width="200" /></p>
+<hr />
+<ol start="8">
+<li>A web browser tab will open, directing you to log in to GitHub using the personal account you registered in Step 4.</li>
+</ol>
+<p>After authenticating, you will be asked to <strong>Authorize Visual-Studio-Code</strong> for access to your GitHub account. Do so by clicking the green icon and accepting any prompts.</p>
+<p>VS Code will ask <code>"Allow an extension to open this URI?"</code> to which you should click <strong>Open</strong> (and toggle <em>"Don't ask again for this extension"</em> if you would rather not see future prompts).</p>
+<p><img alt="" loading="lazy" src="../_attachments/figure9.png" width="400" /></p>
+<hr />
+<p>To begin experimenting with <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em>'s generative AI capabilities, you will first need access to some Ansible Playbooks to generate Tasks with. Playbooks have already been prepared ahead of time for the Ansible Lightspeed Technical Preview, which you will make use of here.</p>
+<ol start="9">
 <li>Click the <strong>Explorer</strong> button at the top of the left-hand VS Code interface. Depending on your VS Code environment, the Explorer tab will look one of two ways.</li>
 </ol>
 <p><strong>CLICK TO EXPAND</strong> whichever one of the two options best describes your situation and follow the instructions given:</p>
@@ -396,7 +428,7 @@
 <hr />
 <p>After completing the steps in the expandable window, continue with the instructions that follow down the remainder of this lab guide page. Regardless of whether you are new to VS Code or have used VS Code previously, the remainder of the steps remain the same.</p>
 <hr />
-<ol start="5">
+<ol start="10">
 <li>
 <p>You will be asked to select (using your local machine's file browser) the destination for where the cloned data will be saved locally. Select a directory (Documents, Desktop, or your preference) and then confirm by clicking <strong>Select as Repository Destination</strong> to kick off the replication from GitHub to your local machine.</p>
 </li>
@@ -417,7 +449,7 @@
 <p><img alt="" loading="lazy" src="../_attachments/figure12.png" width="400" /></p>
 <hr />
 <p>Next, you'll need to activate your Ansible Lightspeed Technical Preview extension for VS Code. </p>
-<ol start="9">
+<ol start="14">
 <li>
 <p>Return to the <strong>Extensions</strong> tab that you accessed in Step 1 and look for the installed Ansible extension from the list. </p>
 </li>
@@ -430,18 +462,18 @@
 </ol>
 <p><img alt="" loading="lazy" src="../_attachments/figure3.png" width="400" /></p>
 <hr />
-<ol start="12">
+<ol start="17">
 <li>A settings panel for Ansible will fill the screen. From the top-left corner of the interface, look for a switch to toggle between <code>User</code> and <code>Workspace</code>. Select the <strong>Workspace</strong> option.</li>
 </ol>
 <p><img alt="" loading="lazy" src="../_attachments/figure4.png" width="400" /></p>
 <hr />
-<ol start="13">
+<ol start="18">
 <li>Scroll down the list of settings until you locate the fields <code>Ansible &gt; Lightspeed</code> and <code>Ansible &gt; Lightspeed &gt; Suggestions</code>. By default, these will be disabled. Click the checkmark icons to the left of <strong>BOTH</strong> entries to <strong>ENABLE</strong> <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> Tech Preview features within the VS Code environment.</li>
 </ol>
 <p>The settings will automatically be applied without needing to confirm or "save" manually. Close the Settings tab using the X icon along the top of the taskbar to proceed.</p>
 <p><img alt="" loading="lazy" src="../_attachments/figure5.png" width="400" /></p>
 <hr />
-<ol start="14">
+<ol start="19">
 <li>
 <p>Click the Ansible icon from the left-hand interface of the VS Code environment (look for the large "A" icon).</p>
 </li>
@@ -450,7 +482,7 @@
 </li>
 </ol>
 <p><img alt="" loading="lazy" src="../_attachments/figure13.png" width="200" /></p>
-<ol start="16">
+<ol start="21">
 <li>
 <p>A prompt will appear stating that <code>The extension Ansible wants to sign in using Ansible Lightspeed</code> to which you should click <strong>Allow</strong>. You will then be asked about opening an external website, to which you should reply <strong>Open</strong>.</p>
 </li>
@@ -464,12 +496,12 @@
 </div>
 <p><img alt="" loading="lazy" src="../_attachments/figure14.png" width="400" /></p>
 <hr />
-<ol start="18">
+<ol start="23">
 <li>You will be asked to <code>Authorize Ansible Lightspeed for VS Code</code> to which you should click <strong>Authorize</strong>.</li>
 </ol>
 <p><img alt="" loading="lazy" src="../_attachments/figure15.png" width="400" /></p>
 <hr />
-<ol start="19">
+<ol start="24">
 <li>
 <p>A prompt will appear inside VS Code asking <code>Allow an extension to open this URI?</code> to which you should click <strong>Open</strong>.</p>
 </li>
