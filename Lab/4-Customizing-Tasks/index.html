@@ -268,8 +268,23 @@
   
   
     <li class="md-nav__item">
-      <a href="../5-Advanced-Topics-EC2-WordPress/" class="md-nav__link">
-        Deploying an AWS EC2 Instance and WordPress Application
+      <a href="../5-Part1-Required/" class="md-nav__link">
+        (REQUIRED) Preparing an AWS EC2 Instance and WordPress Application
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6-Part2-Optional/" class="md-nav__link">
+        (OPTIONAL) Deploying a Live AWS Application
       </a>
     </li>
   
@@ -485,7 +500,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file</span><span class="w"></span>
 </code></pre></div></p>
 <ol start="2">
-<li><strong>Generate</strong> AI-recommended code for the task on <strong>Line 12</strong> using the WCA extension for VS Code. Accept the recommendation using <code>TAB</code> and then follow along with the lab instructions that follow.</li>
+<li><strong>Generate</strong> AI-recommended code for the task on <strong>Line 12</strong> using the WCA extension for VS Code. Accept the recommendation by pressing <code>TAB</code> and then follow along with the lab instructions that follow.</li>
 </ol>
 <hr />
 <p>Two tabs are presented below. The first <code>AI-Generated Code</code> tab shows the output from running WCA's generative AI capabilities on an unmodified version of this Playbook (Step 2). The second <code>Solution Code</code> tab shows the expected Task code that was written by a human programmer to perform the same task. In theory, the AI-generated code <em>should</em> be as good— or even superior to —the manually-written solution code. </p>
@@ -554,7 +569,7 @@
 </div>
 </div>
 <hr />
-<p>The output is closer to the expected on the latest iteration, but still out of alignment in some aspects. The AI-generated code suggestions now correctly include the <code>0644</code> read/write/execute permissions that were requested. However, an incorrect destination was suggested (instead of a source) and the <code>content</code> field is a mismatch to the request entirely. One other observation is that the suggested code is invoking the <code>ansible.builtin.copy</code>
+<p>The output is closer to the <code>SOLUTION</code> on the latest iteration, but still out of alignment in some aspects. The AI-generated code suggestions now correctly include the <code>0644</code> read/write/execute permissions that were requested. However, an incorrect destination was suggested (instead of a source) and the <code>content</code> field is a mismatch to the request entirely. One other observation is that the suggested code is invoking the <code>ansible.builtin.copy</code>
 package, instead of the expected <code>ansible.builtin.template</code> package.</p>
 <ol start="4">
 <li>What happens if we adjust the Task's natural language description to explicitly invoke the <code>.template</code> package? Adjust the Task description to the following and then re-generate the code block using WCA:</li>
@@ -603,7 +618,7 @@ package, instead of the expected <code>ansible.builtin.template</code> package.<
 </ul>
 <hr />
 <ol start="5">
-<li>Once again, let's adjust the natural language description of the Task to the following and then re-generate the code block using WCA:</li>
+<li>Once again, adjust the natural language description of the Task to the following and then re-generate the code block using WCA:</li>
 </ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file using mode=&#39;0644&#39; from template</span><span class="w"></span>
 </code></pre></div>
@@ -680,13 +695,13 @@ package, instead of the expected <code>ansible.builtin.template</code> package.<
       
       
         
-        <a href="../5-Advanced-Topics-EC2-WordPress/" class="md-footer__link md-footer__link--next" aria-label="Next: Deploying an AWS EC2 Instance and WordPress Application" rel="next">
+        <a href="../5-Part1-Required/" class="md-footer__link md-footer__link--next" aria-label="Next: (REQUIRED) Preparing an AWS EC2 Instance and WordPress Application" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Deploying an AWS EC2 Instance and WordPress Application
+              (REQUIRED) Preparing an AWS EC2 Instance and WordPress Application
             </div>
           </div>
           <div class="md-footer__button md-icon">

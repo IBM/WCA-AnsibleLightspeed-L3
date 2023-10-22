@@ -17,7 +17,7 @@
     
     
       
-        <title>Deploying an AWS EC2 Instance and WordPress Application - IBM watsonx Code Assistant for Red Hat Ansible Lightspeed - Technical Sales Level 3</title>
+        <title>(REQUIRED) Preparing an AWS EC2 Instance and WordPress Application - IBM watsonx Code Assistant for Red Hat Ansible Lightspeed - Technical Sales Level 3</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#advanced-deploying-a-live-aws-ec2-instance-and-wordpress-application-via-ansible" class="md-skip">
+        <a href="#part-1-required-preparing-an-aws-ec2-instance-and-wordpress-application-via-ansible" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Deploying an AWS EC2 Instance and WordPress Application
+              (REQUIRED) Preparing an AWS EC2 Instance and WordPress Application
             
           </span>
         </div>
@@ -268,9 +268,24 @@
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Deploying an AWS EC2 Instance and WordPress Application
+        (REQUIRED) Preparing an AWS EC2 Instance and WordPress Application
       </a>
       
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6-Part2-Optional/" class="md-nav__link">
+        (OPTIONAL) Deploying a Live AWS Application
+      </a>
     </li>
   
 
@@ -307,15 +322,16 @@
                 
 
 
-<h1 id="advanced-deploying-a-live-aws-ec2-instance-and-wordpress-application-via-ansible"><strong>Advanced</strong>: Deploying a live AWS EC2 instance and WordPress application via Ansible</h1>
+<h1 id="part-1-required-preparing-an-aws-ec2-instance-and-wordpress-application-via-ansible"><strong>Part 1 (REQUIRED)</strong>: Preparing an AWS EC2 instance and WordPress application via Ansible</h1>
 <hr />
-<p>To conclude the Level 3 Technical Sales education on <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> (<strong>WCA</strong>), you will be provided with a complete set of instructions for deploying a <strong>LIVE</strong> Amazon Web Services (AWS) environment with Ansible automation, consisting of a <strong><a href="https://wordpress.com" target="_blank">WordPress</a></strong> web application running atop an <strong><a href="https://aws.amazon.com/ec2/" target="_blank">Amazon EC2 VPC</a></strong>.</p>
+<p>To conclude the Level 3 Technical Sales education on <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> (<strong>WCA</strong>), we have provided a complete set of instructions for how to deploy a <strong>LIVE</strong> Amazon Web Services (AWS) environment with Ansible automation, consisting of a <strong><a href="https://wordpress.com" target="_blank">WordPress</a></strong> web application running atop an <strong><a href="https://aws.amazon.com/ec2/" target="_blank">Amazon EC2 VPC</a></strong>.</p>
+<p>Due to costs that will be incurred from a real-world deployment, this section has been structured into two parts. <strong>IBMers and Business partners are only required to complete Part 1 (REQUIRED)— this section you are currently reading —for Level 3 accreditation.</strong> The next section, Part 2 (OPTIONAL), is <strong>NOT</strong> required — although it comes highly recommended.</p>
 <ul>
 <li>
-<p>The deployment of the environments will be conducted entirely using Red Hat Ansible automation, executed on your local machine, and deployed to AWS cloud.</p>
+<p><strong>Part 1 (REQUIRED)</strong>: The generation of the Ansible Tasks and code required to automate these deployments will be created using the Generative AI capabilities of the WCA extension for VS Code.</p>
 </li>
 <li>
-<p>The generation of the Ansible Tasks and code required to automate these deployments will be created using the Generative AI capabilities of the WCA extension for VS Code.</p>
+<p><strong>Part 2 (OPTIONAL)</strong>: The deployment of the environments will be conducted entirely using Red Hat Ansible automation, executed on your local machine, and deployed to AWS cloud.</p>
 </li>
 </ul>
 <div class="admonition warning">
@@ -778,235 +794,16 @@
 </div>
 </div>
 <hr />
+<h1 id="_2"></h1>
+<h1 id="next-steps">Next steps</h1>
 <p>Congratulations on making it this far! At this stage, your Playbook is ready for execution. However, there are still some preparation that you need to do before this Playbook can be used to automate deployment of the WordPress application into a live Amazon EC2 environment.</p>
-<p>If you wish to go ahead with the deployment (<strong>RECOMMENDED</strong>) on your personal AWS account, follow along with lab guide steps. Otherwise, you are welcome to conclude the hands-on component here and follow the <a href="https://ibm.github.io/WCA-AnsibleLightspeed-L3/Lab/1-Evaluation/" target="_blank">Level 3 accreditation</a> steps (depending on your role).</p>
+<p>If you wish to go ahead with the deployment (<strong>highly recommended</strong>) on your personal AWS account, follow along with lab guide steps in Part 2 (OPTIONAL).</p>
+<p>Otherwise, you are welcome to conclude the hands-on component here and follow the <a href="https://ibm.github.io/WCA-AnsibleLightspeed-L3/Lab/1-Evaluation/" target="_blank">Level 3 accreditation</a> steps (depending on your role).</p>
 <div class="admonition warning">
 <p class="admonition-title">LEVEL 3 ACCREDITATION</p>
 <p><strong>IBMers</strong> should take the time now to prepare for and record their <a href="https://ibm.github.io/WCA-AnsibleLightspeed-L3/Lab/1-Evaluation//" target="_blank">Stand &amp; Deliver</a> presentations for Level 3 accreditation. Be sure to follow the evaluation criteria that is outlined in this documentation.</p>
 <p><strong>Business Partners</strong> should follow the <a href="https://ibm.github.io/WCA-AnsibleLightspeed-L3/Lab/1-Evaluation/" target="_blank">learning plan links</a> on IBM Training to complete a multiple-choice examination for Level 3 accreditation.</p>
 </div>
-<hr />
-<h1 id="_2"></h1>
-<h1 id="to-deploy-a-live-amazon-ec2-instance-and-wordpress-application-on-aws-follow-along-with-the-steps-below">To deploy a <strong>live</strong> Amazon EC2 instance and WordPress application on AWS, follow along with the steps below.</h1>
-<hr />
-<ol start="18">
-<li>In order to execute the Ansible Playbook on your local machine, you will need to install Ansible locally. Red Hat provides <a href="https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html" target="_blank">extensive online documentation</a> for how to go about installing Ansible. The authors of your lab guide recommend doing so by executing the following instructions in a Terminal window (macOS), or equivalent steps using <a href="https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3" target="_blank">PowerShell</a> (Windows):</li>
-</ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>brew install ansible
-</code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">MISSING HOMEBREW?</p>
-<p>If you do not have the Homebrew package manager ("brew") installed in a macOS environment, execute the following instruction inside a Terminal console:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;
-</code></pre></div>
-Wait for the installation to conclude and then retry the instructions from Step 18.</p>
-</div>
-<p>Follow the prompts until you receive confirmation that Ansible is installed and available locally.</p>
-<hr />
-<ol start="19">
-<li>If you have not registered for an AWS account previously, you need to do so now before advancing. You will need to supply a personal credit card for billing expenses. If you have an existing Amazon account, your AWS account can be linked to that profile if you so choose.</li>
-</ol>
-<p><strong>AWS Registration</strong>: <a href="https://aws.amazon.com/resources/create-account/" target="_blank">https://aws.amazon.com/resources/create-account/</a></p>
-<hr />
-<ol start="20">
-<li>With a registered AWS account, you next need to navigate from the AWS dashboard into the <strong>Identity and Access Management (IAM)</strong> tool. You can search for this using the <strong>Search</strong> bar at the top of the screen and entering <code>IAM</code>.</li>
-</ol>
-<p><img alt="" loading="lazy" src="../_attachments/figure27.png" width="600" /></p>
-<hr />
-<ol start="21">
-<li>
-<p>Once inside the IAM tool, look along the left-side of the interface and drill down into <strong>Users</strong>.</p>
-</li>
-<li>
-<p>Click the <strong>Create User</strong> orange button located in the top-right corner of the interface.</p>
-</li>
-</ol>
-<p><img alt="" loading="lazy" src="../_attachments/figure28.png" width="600" /></p>
-<hr />
-<ol start="23">
-<li>Within the <strong>Create User</strong> panel, specify your user details and permissions.</li>
-</ol>
-<ul>
-<li>
-<p>Set <code>Username</code> to a name of your choosing.</p>
-</li>
-<li>
-<p>Click <strong>Next</strong> to advance the configuration tool.</p>
-</li>
-<li>
-<p>Under <strong>Set Permissions</strong> &gt; <strong>Permission Options</strong>, select the <code>Add user to group</code> tile.</p>
-</li>
-<li>
-<p>Click the <strong>Set permissions boundary - <em>optional</em></strong> tile to expand additional permission options.</p>
-</li>
-<li>
-<p>Toggle the checkmark next to the <strong>Use a permissions boundary to control the maximum permissions</strong> option.</p>
-</li>
-<li>
-<p>Under <strong>Permissions Policies</strong>, search the table for the <code>AdministratorAccess</code> policy and <strong>enable</strong> that policy. You may receive warnings against doing so — ignore those for now.</p>
-</li>
-</ul>
-<p>Continue following the prompts until the User has been created.</p>
-<p><img alt="" src="../_attachments/figure29.png" /></p>
-<hr />
-<ol start="24">
-<li>
-<p>Once the User has been created, your web browser will reopen the User panel of the IAM tool. Here you can see various details about the User, including their <strong>Security Credentials</strong> and any keys associated with the User. This section will be empty given that you have only just now created the User.</p>
-</li>
-<li>
-<p>Drill down into the <strong>Access Keys</strong> category and click the <strong>Create Access Key</strong> button located below the (empty) table.</p>
-</li>
-</ol>
-<p><img alt="" src="../_attachments/figure30.png" /></p>
-<hr />
-<ol start="26">
-<li>A secret access key will be created and the web browser will reload to show you details about that key. <strong>RECORD THIS INFORMATION</strong> to a notepad. Details about the secret access key can only be viewed or downloaded at the time the key is created (now). It cannot be recovered afterwards. However, if you lose your key details, all is not lost — you can always create a new secret access key at a later time.</li>
-</ol>
-<ul>
-<li>
-<p>Record the <code>Access Key</code>, which will be used to replace the <code>&lt;PLACEHOLDER&gt;</code> value assigned to <code>aws_access_key</code> in <strong>Step 2</strong> and <strong>Step 15</strong> of this lab guide.</p>
-</li>
-<li>
-<p>Record the <code>Secret Access Key</code>, which will replace the <code>&lt;PLACEHOLDER&gt;</code> value assigned to <code>aws_secret_key</code> in <strong>Step 2</strong> and <strong>Step 15</strong> of this lab guide.</p>
-</li>
-</ul>
-<ol start="27">
-<li>Take note at this time as well about the <strong>Region</strong> in which your AWS account is located. You can easily look up this information by examining the URL in your web browser address bar, as shown below (<code>us-east-1</code>).</li>
-</ol>
-<p><img alt="" loading="lazy" src="../_attachments/figure31.png" width="400" /></p>
-<p><strong>RECORD</strong> the name of the region, as this will replace the <code>region</code> value assigned to the Playbook.</p>
-<div class="admonition warning">
-<p class="admonition-title">PLAYBOOK MODIFICATIONS REQUIRED</p>
-<p>Replace the <code>&lt;PLACEHOLDER&gt;</code> values for variables <code>aws_access_key</code> and <code>aws_secret_key</code> with the <code>Access Key</code> and <code>Secret Access Key</code>, respectively.</p>
-<ul>
-<li>
-<p>Lines 13, 14, 96, and 97 of the <code>TEMPLATE.yml</code> Playbook</p>
-</li>
-<li>
-<p>Lines 13, 14, 179, and 180 of the <code>SOLUTION.yml</code> Playbook</p>
-</li>
-</ul>
-<p>Replace the value for variable <code>region</code> with the region assigned to your unique AWS account.</p>
-<ul>
-<li>
-<p>Lines 15 and 98 of the <code>TEMPLATE.yml</code> Playbook</p>
-</li>
-<li>
-<p>Lines 15 and 181 of the <code>SOLUTION.yml</code> Playbook</p>
-</li>
-</ul>
-</div>
-<hr />
-<ol start="28">
-<li>
-<p>Next, you'll need to create an SSH <strong>Key Pair</strong> with authorization to interact with (and ultimately deploy) Amazon EC2 instances. Return to the search bar at the top of the AWS interface and enter <code>EC2</code>. Drill down into the <strong>Amazon EC2</strong> service page from the results.</p>
-</li>
-<li>
-<p>From the left-hand navigation bar, drill down into the <strong>Network &amp; Security</strong> &gt; <strong>Key Pairs</strong> tab.</p>
-</li>
-<li>
-<p>Click the orange <strong>Create key pair</strong> button in the top-right of the page.</p>
-</li>
-<li>
-<p>A configuration tool will ask for additional information about the Key Pair:</p>
-</li>
-</ol>
-<ul>
-<li>
-<p><code>Name</code> can be set to a value of your choosing</p>
-</li>
-<li>
-<p><code>Key pair type</code> set to <strong>RSA</strong></p>
-</li>
-<li>
-<p><code>Private key file format</code> set to <strong>.pem</strong></p>
-</li>
-</ul>
-<p>When satisfied, click the orange <strong>Create key pair</strong> button.</p>
-<p><img alt="" src="../_attachments/figure32.png" /></p>
-<hr />
-<ol start="32">
-<li>The web browser will redirect to a page where you can view details about the newly-created Key Pair for EC2. <strong>Download</strong> the <code>.pem</code> file to your local device, preferably to the same directory that your <code>TEMPLATE.yml</code> and <code>SOLUTION.yml</code> Playbooks are located within.</li>
-</ol>
-<div class="admonition warning">
-<p class="admonition-title">PLAYBOOK MODIFICATIONS REQUIRED</p>
-<p>The value of <code>ansible_ssh_private_key_file</code> must be updated within your Playbooks to account for the full path to the <code>.pem</code> file on your local machine. If you save the Key Pair file to the same directory that your Ansible Playbooks are located within, you do not need to qualify the value with anything more than the name of the file (<code>bienko-key.pem</code>). If it is saved in a <em>different</em> directory, you will need to spell out the full path + file name.</p>
-<p>Update the value of <code>ansible_ssh_private_key_file</code> in the following locations:</p>
-<ul>
-<li>
-<p>Line 58 of the <code>TEMPLATE.yml</code> Playbook</p>
-</li>
-<li>
-<p>Line 113 of the <code>SOLUTION.yml</code> Playbook</p>
-</li>
-</ul>
-</div>
-<hr />
-<ol start="33">
-<li>It is necessary to adjust the permissions assigned to the Key Pair file (on your local machine) before attempting to connect via Ansible to AWS. Open a Terminal console on your local machine and navigate (<code>cd</code>) to the directory in which the Key Pair file is saved.</li>
-</ol>
-<p>Execute the following to adjust the permissions assigned to the <code>.pem</code> file:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>chmod 400 filename.pem
-</code></pre></div>
-<hr />
-<h1 id="_3"></h1>
-<h1 id="executing-the-ansible-playbook">Executing the Ansible Playbook</h1>
-<hr />
-<p>At last, you are ready to execute the Playbook and use Ansible automation to deploy both an Amazon EC2 instance and a WordPress web application.</p>
-<ol start="34">
-<li>With the Terminal console, navigate to the directory (<code>cd</code>) where both the Ansible Playbook and your <code>KeyPair.pem</code> file are located. You may use either the <code>TEMPLATE.yml</code> Playbook that you customized or the <code>SOLUTION.yml</code> Playbook for executing the Ansible automation tasks. Regardless of the Playbook being used, you must modify the Playbook with the necessary AWS security and account credentials information.</li>
-</ol>
-<p>When ready, execute the following instruction with the Terminal console:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>ansible-playbook TEMPLATE.yml
-</code></pre></div></p>
-<ol start="35">
-<li>Monitor the console's output as the Ansible Playbook iterates across each of the Tasks customized earlier. A fantastic feature of Ansible's automation is that if any of the Tasks should fail, the steps involved in that Task can be re-tried in subsequent runs; likewise, Tasks which executed successfully won't be repeated, but are validated and skipped instead.</li>
-</ol>
-<p>If you encounter errors during the litany of automation tasks, return to the Playbook and attempt to debug the issue. Re-issue the instruction in Step 34 to console to attempt the Ansible Playbook execution again. Continue iterating in this manner until all 14 Tasks have been successfully executed.</p>
-<ol start="36">
-<li>After successfully deploying the Amazon EC2 environment and instantiating a WordPress application, the console will return a URL to the Terminal's output as part of Task 14's <code>[debug]</code> instruction. Copy the URL to clipboard and then paste it into your web browser to access the WordPress application.</li>
-</ol>
-<p><img alt="" loading="lazy" src="../_attachments/figure33.png" width="600" /></p>
-<hr />
-<ol start="37">
-<li>If your web browser loads the quick-start page for WordPress, you have successfully deployed the application and its supporting EC2 environment — entirely using Generative AI and Ansible automation. <strong>Well done!</strong></li>
-</ol>
-<p><img alt="" loading="lazy" src="../_attachments/figure34.png" width="600" /></p>
-<hr />
-<h1 id="_4"></h1>
-<h1 id="cleaning-up-and-conclusion">Cleaning up and conclusion</h1>
-<hr />
-<p>After you have recorded your <a href="https://ibm.github.io/WCA-AnsibleLightspeed-L3/Lab/1-Evaluation/" target="_blank">Stand &amp; Deliver presentations</a> (IBM technical sellers only) and are ready to retire your environment, you will need to return to the AWS Dashboard to terminate the EC2 instance and hosted WordPress application.</p>
-<div class="admonition warning">
-<p class="admonition-title">COSTS</p>
-<p>It is essential that you terminate and deprovision the EC2 instance at the conclusion of the hands on lab. Otherwise, your personal AWS account will continue to be billed for as long as the resources are provisioned.</p>
-</div>
-<ol start="38">
-<li>
-<p>You can monitor your Amazon EC2 instance from the EC2 dashboard. At the top of the page, locate the <strong>Resources</strong> table and drill down into the <strong>Instances (running)</strong> tab.</p>
-</li>
-<li>
-<p>Details about your EC2 environment are summarized within the <strong>Instances</strong> table. Click the name of your EC2's <code>Instance ID</code> to expose additional details and management options.</p>
-</li>
-</ol>
-<p><img alt="" src="../_attachments/figure35.png" /></p>
-<hr />
-<ol start="40">
-<li>In the top-right corner of the interface, click the <strong>Instance state</strong> button and select <strong>Terminate instance</strong> from the drop-down menu.</li>
-</ol>
-<p><img alt="" loading="lazy" src="../_attachments/figure36.png" width="400" /></p>
-<hr />
-<ol start="41">
-<li>
-<p>Confirm the deprovisioning request by clicking the orange <strong>Terminate</strong> button. All storage associated with the EC2 instance will automatically be deleted. Terminating an instance cannot be undone once underway.</p>
-</li>
-<li>
-<p>It is recommended that you delete all of the <strong>Security Groups</strong> (3 total) and <strong>Key Pairs</strong> (1 total) associated with the EC2 instance. To do so, return to the EC2 Dashboard and follow a similar procedure to Steps 38-41.</p>
-</li>
-<li>
-<p>Search for <code>IAM</code> in the AWS taskbar to return to the <strong>Identity Access Management</strong> panel. If you wish to further secure your AWS account, delete all unwanted users or consider reducing the user's privilege from AdministratorAccess to a more restrictive class.</p>
-</li>
-</ol>
 <hr />
 <p>That concludes the hands-on components to this Level 3 course, but your learning and experimentation doesn't need to end here. Continue to experiment with generating Tasks for Ansible Playbooks. If you have worked extensively with Ansible previously, try recreating Tasks you've written previously from old Playbooks using generative AI — just be careful not to use confidential or sensitive information as part of those tests. See if you can spot the differences or improvements made from the AI-generated code recommendations.</p>
 <p>Feel free to reach out to the authors of this coursework if you have suggestions for Tasks or code generation techniques that you'd like to see included in future iterations of this hands-on training.</p>
@@ -1042,6 +839,21 @@ Wait for the installation to conclude and then retry the instructions from Step 
           </div>
         </a>
       
+      
+        
+        <a href="../6-Part2-Optional/" class="md-footer__link md-footer__link--next" aria-label="Next: (OPTIONAL) Deploying a Live AWS Application" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              (OPTIONAL) Deploying a Live AWS Application
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
       
     </nav>
   
