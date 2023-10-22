@@ -267,9 +267,40 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          (OPTIONAL) Deploying a Live AWS EC2 Instance and WordPress Application
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         (OPTIONAL) Deploying a Live AWS EC2 Instance and WordPress Application
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#once-the-two-yaml-files-have-been-downloaded-to-your-local-machine-open-them-with-vs-code-and-follow-along-with-the-instructions-below" class="md-nav__link">
+    Once the two YAML files have been downloaded to your local machine, open them with VS Code and follow along with the instructions below.
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -294,6 +325,21 @@
   
     
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#once-the-two-yaml-files-have-been-downloaded-to-your-local-machine-open-them-with-vs-code-and-follow-along-with-the-instructions-below" class="md-nav__link">
+    Once the two YAML files have been downloaded to your local machine, open them with VS Code and follow along with the instructions below.
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -328,9 +374,15 @@
 <p>The billing associated with an Amazon EC2 <code>t2.small</code> instance and other services needed for the demo is <strong>minimal</strong>: an on-demand hourly rate of <strong>$0.023 USD</strong> at the time of publication. Running the fully-deployed WordPress and EC2 environments for 24 hours cost USD $2.03 in billing when testing for publication.</p>
 <p><a href="https://aws.amazon.com/ec2/pricing/on-demand/" target="_blank">Additional AWS pricing details and plans are available online.</a></p>
 </div>
-<p>Ansible Playbooks have been prepared ahead of time in a public GitHub repository and are available for your use at the links below. Once the two YAML files are available on your local machine, open them with VS Code and follow along with the instructions below.</p>
+<p>Ansible Playbooks to support this demo were prepared ahead of time in a public GitHub repository and are available for your use at the links below.</p>
 <hr />
 <p><img alt="" src="../_attachments/figure25.png" /></p>
+<div class="admonition tip">
+<p class="admonition-title">DOWNLOAD .yml FILES TO DESKTOP</p>
+<p>You can easily downlod the <code>TEMPLATE</code> and <code>SOLUTION</code> <em>.yml</em> files to your local machine.</p>
+<p><img alt="" loading="lazy" src="../_attachments/figure26.png" width="400" /></p>
+<p>Navigate to the GitHub links provided (above) and click the <strong>Download raw file</strong> button.</p>
+</div>
 <hr />
 <p><strong>TEMPLATE (<code>.yml</code>)</strong>: <a href="https://github.com/bienko/WCA-Lightspeed-L3/blob/main/TEMPLATE.yml" target="_blank">https://github.com/bienko/WCA-Lightspeed-L3/blob/main/TEMPLATE.yml</a></p>
 <ul>
@@ -340,23 +392,17 @@
 <ul>
 <li>The <code>SOLUTION.yml</code> Playbook contains the complete set of Ansible Playbook instructions needed to fully deploy a live EC2 VPC instance on AWS and host a WordPress application within that environment. You will need to replace certain variables (indicated by comments in the code) with details specific to your personal AWS account and environment. Afterwards, you can— and are encouraged to —execute the Playbook with Ansible and deploy a <strong>live</strong>, at-cost instance to your personal AWS account.</li>
 </ul>
-<div class="admonition tip">
-<p class="admonition-title">DOWNLOAD .yml FILES TO DESKTOP</p>
-<p>You can easily downlod the <code>TEMPLATE</code> and <code>SOLUTION</code> <em>.yml</em> files to your local machine.</p>
-<p><img alt="" loading="lazy" src="../_attachments/figure26.png" width="400" /></p>
-<p>Navigate to the GitHub links provided (above) and click the <strong>Download raw file</strong> button.</p>
-</div>
-<hr />
+<h2 id="once-the-two-yaml-files-have-been-downloaded-to-your-local-machine-open-them-with-vs-code-and-follow-along-with-the-instructions-below">Once the two YAML files have been downloaded to your local machine, open them with VS Code and follow along with the instructions below.</h2>
 <h1 id="_1"></h1>
 <h1 id="use-wca-to-generate-code-with-the-template-playbook-then-compare-against-the-solution-playbook-to-evaluate-the-results">Use WCA to <strong>generate code with the TEMPLATE Playbook</strong>, then compare against the SOLUTION Playbook to evaluate the results.</h1>
 <hr />
-<p>In the steps ahead, you will use WCA's AI-generated code suggestions to populate the contents of Tasks within the <code>TEMPLATE.yml</code> Playbook. There are 14 Tasks in total and we will examine them each in turn.</p>
+<p>In the steps ahead, you will use WCA's AI-generated code suggestions to populate the contents of Tasks within the <code>TEMPLATE.yml</code> Playbook. There are 14 Tasks in total and we will examine them each in sequence.</p>
 <p>For each Task, a tabbed code snippet is provided within this lab documentation to make it easy for you to toggle between the <code>TEMPLATE</code> (the Task prior to AI-generated code suggestions) and the proper <code>SOLUTION</code> (the Task as it should be written for a successful deployment to AWS).</p>
-<p>Compare the AI-generated code suggestions you receive in VS Code with the expected <code>SOLUTION</code> code. You <em>will</em> find that there are occassional discrepancies and variables that need to be adjusted. Generative AI can save us tremendous amounts of time and effort by automating the creation of powerful blocks of code— as you will observe in generating these tasks —but it still requires a degree of human supervision and double-checking. However, the time saved with hands on keyboard is enormous and the potential for the future is boundless.</p>
+<p>Compare the AI-generated code suggestions you receive in VS Code with the expected <code>SOLUTION</code> code. You <em>will</em> find that there are occassional discrepancies and variables that need to be adjusted. Generative AI can save you tremendous amounts of time and effort by automating the creation of powerful blocks of code— as you will observe in generating these tasks —but it still requires a degree of human supervision and double-checking. However, the time saved with hands on keyboard is enormous and the potential for the future is boundless.</p>
 <hr />
 <div class="admonition tip">
 <p class="admonition-title">VS CODE EXTENSION</p>
-<p>You may need to copy and paste the contents of the <code>TEMPLATE.yml</code> file into a <strong>New File...</strong> within the same Lightspeed project directory that was used for the previous lab modules in order for the VS Code extension to engage.</p>
+<p>You may need to copy and paste the contents of the <code>TEMPLATE.yml</code> file into a <strong>New File...</strong> within the same Lightspeed project directory that was used for the previous lab modules in order for the VS Code extension to engage. Instructions for how to create new files in VS Code are given in previous sections of this hands-on lab.</p>
 </div>
 <ol>
 <li>
