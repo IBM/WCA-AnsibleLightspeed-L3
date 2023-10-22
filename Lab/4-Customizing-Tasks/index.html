@@ -343,7 +343,6 @@
 <p><strong>d.</strong> Paste the clipboard contents into the YAML file and follow along with the suggestions below.</p>
 </details>
 <hr />
-<p><strong>CUSTOM PLAYBOOK #1 - Invoke 2 modules to automatically update 2 types of servers</strong></p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">TEMPLATE</label><label for="__tabbed_1_2">SOLUTION</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -368,7 +367,7 @@
 <span class="normal"><a href="#__codelineno-0-19">19</a></span>
 <span class="normal"><a href="#__codelineno-0-20">20</a></span>
 <span class="normal"><a href="#__codelineno-0-21">21</a></span>
-<span class="normal"><a href="#__codelineno-0-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1"># ANSIBLE PLAYBOOK — Invoke 2 modules to automatically update 2 types of servers.</span><span class="w"></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1"># CUSTOM PLAYBOOK #1 — Invoke 2 modules to automatically update 2 types of servers.</span><span class="w"></span>
 <a id="__codelineno-0-2" name="__codelineno-0-2"></a>
 <a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="nn">---</span><span class="w"></span>
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="c1"># Task 1</span><span class="w"></span>
@@ -427,7 +426,7 @@
 <span class="normal"><a href="#__codelineno-1-32">32</a></span>
 <span class="normal"><a href="#__codelineno-1-33">33</a></span>
 <span class="normal"><a href="#__codelineno-1-34">34</a></span>
-<span class="normal"><a href="#__codelineno-1-35">35</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1"># ANSIBLE PLAYBOOK — Invoke 2 modules to automatically update 2 types of servers.</span><span class="w"></span>
+<span class="normal"><a href="#__codelineno-1-35">35</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1"># CUSTOM PLAYBOOK #1 — Invoke 2 modules to automatically update 2 types of servers.</span><span class="w"></span>
 <a id="__codelineno-1-2" name="__codelineno-1-2"></a>
 <a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="nn">---</span><span class="w"></span>
 <a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="c1"># Task 1</span><span class="w"></span>
@@ -467,17 +466,18 @@
 </div>
 </div>
 <hr />
-<p><strong>Custom Playbook #1</strong> (above) contains two sets of tasks: </p>
+<p><strong>CUSTOM PLAYBOOK #1</strong> (above) contains two sets of tasks:
+<em>Note: line numbers reference the <code>TEMPLATE</code> Playbook.</em> </p>
 <ul>
 <li>
-<p>Task 1 (<strong>Lines 5-19</strong>) checks whether or not web server software is up to date and runs the update if necessary.</p>
+<p>Task 1 (<strong>Lines 5-12</strong>) checks whether or not web server software is up to date and runs the update if necessary.</p>
 </li>
 <li>
-<p>Task 2 (<strong>Lines 22-35</strong>) checks whether or not database server software is up to date and runs the update if necessary.</p>
+<p>Task 2 (<strong>Lines 15-22</strong>) checks whether or not database server software is up to date and runs the update if necessary.</p>
 </li>
 </ul>
 <hr />
-<p>Consider the task on <strong>Line 15</strong>, which prompts Ansible to create ("write") a configuration file for an Apache webserver:
+<p>Consider the task on <strong>Line 12</strong>, which prompts Ansible to create ("write") a configuration file for an Apache webserver:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file</span><span class="w"></span>
 </code></pre></div></p>
 <p>Two tabs are presented below. The first <code>AI-Generated Code</code> tab shows the output from running WCA's generative AI capabilities on an unmodified version of this Playbook. The second <code>Solution Code</code> tab shows the expected Task code that was written by a human programmer to perform the same task. In theory, the AI-generated code <em>should</em> be as good— or even superior to —the manually-written solution code. </p>
