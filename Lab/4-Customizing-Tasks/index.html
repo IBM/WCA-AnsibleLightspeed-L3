@@ -311,7 +311,7 @@
 <hr />
 <p><div class="video-container"><iframe src="../_videos/customizing.mp4" style="position: relative; width: 100%; height: 22.172vw" frameborder="0" allowfullscreen></iframe></div></p>
 <hr />
-<p>In the following module, you will begin experimentating with customized Ansible Playbooks and testing how changes to an Ansible Task's natural language descriptions can impact the recommended code produced by <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> (<strong>WCA</strong>).</p>
+<p>In the following section, you will begin experimentating with customized Ansible Playbooks and testing how changes to an Ansible Task's natural language descriptions can impact the recommended code produced by <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> (<strong>WCA</strong>).</p>
 <div class="admonition warning">
 <p class="admonition-title">UNPREDICTABLE RESULTS FROM GENERATIVE AI AND LLMs</p>
 <p>A consequence of using Generative AI and Large Language Models (LLMs) is that the recommended code output of these systems will never be 100% consistent for each and every execution. For this reason, LLMs are referred to as "non-deterministic" systems — as opposed to "deterministic" systems. This is both a strength and weakness of LLMs. As you will observe in this module, even a slight modification to the Task description or the smallest change to how a Playbook is structured— the descriptions used, the variables set, and so on —will influence AI-generated code recommendations.</p>
@@ -453,8 +453,9 @@
 </div>
 </div>
 <hr />
+<p>A sample <strong>CUSTOM PLAYBOOK #1</strong> (above) has been prepared for you.</p>
 <ol>
-<li>A sample <strong>CUSTOM PLAYBOOK #1</strong> (above) has been prepared for you. Copy and paste the code from the <code>TEMPLATE</code> tab into a <strong>New File...</strong> within your VS Code environment.</li>
+<li>Copy and paste the code from the <code>TEMPLATE</code> tab into a <strong>New File...</strong> within your VS Code environment.</li>
 </ol>
 <details class="note">
 <summary>CLICK TO EXPAND — HOW TO CREATE NEW <code>YAML</code> FILES</summary>
@@ -483,7 +484,11 @@
 <p>Consider the task on <strong>Line 12</strong>, which prompts Ansible to create ("write") a configuration file for an Apache webserver:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file</span><span class="w"></span>
 </code></pre></div></p>
-<p>Two tabs are presented below. The first <code>AI-Generated Code</code> tab shows the output from running WCA's generative AI capabilities on an unmodified version of this Playbook. The second <code>Solution Code</code> tab shows the expected Task code that was written by a human programmer to perform the same task. In theory, the AI-generated code <em>should</em> be as good— or even superior to —the manually-written solution code. </p>
+<ol start="2">
+<li><strong>Generate</strong> AI-recommended code for the task on <strong>Line 12</strong> using the WCA extension for VS Code. Accept the recommendation using <code>TAB</code> and then follow along with the lab instructions that follow.</li>
+</ol>
+<hr />
+<p>Two tabs are presented below. The first <code>AI-Generated Code</code> tab shows the output from running WCA's generative AI capabilities on an unmodified version of this Playbook (Step 2). The second <code>Solution Code</code> tab shows the expected Task code that was written by a human programmer to perform the same task. In theory, the AI-generated code <em>should</em> be as good— or even superior to —the manually-written solution code. </p>
 <p>Let's examine that theory in practice:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">AI-Generated Code</label><label for="__tabbed_2_2">Solution Code</label></div>
 <div class="tabbed-content">
@@ -514,7 +519,9 @@
 <hr />
 <p>As you can see, the AI-generated code in the first tab misses the mark in a few areas. In fact, it appears to have misunderstood the task in quite a few ways. There is no corresponding value to <code>_content_</code> that can be located within the Ansible Playbook, at least not any which you (the author) have defined ahead of time. Such a result is unexpected and does not match the intention of writing an Apache configuration file according to best practices. Similarly, the destination has been inferred differently and the access permissions that should have been applied to the config file (again - according to Red Hat best practices) are missing altogether.</p>
 <p>In general, the more ambiguous the Task description given, the greater the likelihood that WCA will misinterpret the author's intent and suggest unwanted Ansible automation jobs. To help disambiguate our intention, Playbook authors must use more precise natural language terms and descriptions.</p>
-<p>Let's slightly modify the Task description. Try revising the Task <code>-name: ...</code> description to the following, hit <code>Return</code>, and accept the generated results with the <code>TAB</code> key:</p>
+<ol start="3">
+<li>Let's slightly modify the Task description. Try revising the Task <code>-name: ...</code> description to the following, hit <code>Return</code>, and accept the generated results with the <code>TAB</code> key:</li>
+</ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file with mode 0644</span><span class="w"></span>
 </code></pre></div>
 <p>Compare how the AI-generated code suggestions match (or don't) the expected code solution:</p>
@@ -549,7 +556,9 @@
 <hr />
 <p>The output is closer to the expected on the latest iteration, but still out of alignment in some aspects. The AI-generated code suggestions now correctly include the <code>0644</code> read/write/execute permissions that were requested. However, an incorrect destination was suggested (instead of a source) and the <code>content</code> field is a mismatch to the request entirely. One other observation is that the suggested code is invoking the <code>ansible.builtin.copy</code>
 package, instead of the expected <code>ansible.builtin.template</code> package.</p>
-<p>What happens if we adjust the Task's natural language description to explicitly invoke the <code>.template</code> package? Adjust the Task description to the following and then re-generate the code block using WCA:</p>
+<ol start="4">
+<li>What happens if we adjust the Task's natural language description to explicitly invoke the <code>.template</code> package? Adjust the Task description to the following and then re-generate the code block using WCA:</li>
+</ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file using mode 0644 from template</span><span class="w"></span>
 </code></pre></div>
 <p>Once again, compare the AI-generated code suggestions to the expected code solution:</p>
@@ -592,10 +601,13 @@ package, instead of the expected <code>ansible.builtin.template</code> package.<
 <p>The <code>mode:</code>, <code>src:</code>, and <code>dest:</code> fields from <strong>Lines 3-5</strong> of <code>Solution Code</code> are incorrect or missing.</p>
 </li>
 </ul>
-<p>For a third time, let's adjust the natural language description of the Task to the following and then re-generate the code block using WCA:</p>
+<hr />
+<ol start="5">
+<li>Once again, let's adjust the natural language description of the Task to the following and then re-generate the code block using WCA:</li>
+</ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file using mode=&#39;0644&#39; from template</span><span class="w"></span>
 </code></pre></div>
-<p>Once again, compare the AI-generated code suggestions to the expected code solution:</p>
+<p>Compare the AI-generated code suggestions to the expected code solution:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">AI-Generated Code</label><label for="__tabbed_5_2">Solution Code</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -630,6 +642,9 @@ package, instead of the expected <code>ansible.builtin.template</code> package.<
 </div>
 <hr />
 <p>The resulting code suggestions from a simple tweak of <code>mode 0644</code> to <code>mode='0644'</code> to disambiguate the purpose of the Task is far better than previous iterations. Not only was the <code>mode:</code> variable correctly set, but the generative AI code correctly picked up on the intention to invoke the Ansible <code>builtin.template</code> package.</p>
+<hr />
+<h1 id="_2"></h1>
+<h1 id="next-steps">Next steps</h1>
 <p>In the following module, you will craft a fully-functional Ansible Playbook for the automated deployment of an Amazon EC2 instance and WordPress application — deployable from your local machine into a live AWS environment.</p>
 
 
