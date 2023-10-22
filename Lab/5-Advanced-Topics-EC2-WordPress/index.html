@@ -328,15 +328,9 @@
 <p>The billing associated with an Amazon EC2 <code>t2.small</code> instance and other services needed for the demo is <strong>minimal</strong>: an on-demand hourly rate of <strong>$0.023 USD</strong> at the time of publication. Running the fully-deployed WordPress and EC2 environments for 24 hours cost USD $2.03 in billing when testing for publication.</p>
 <p><a href="https://aws.amazon.com/ec2/pricing/on-demand/" target="_blank">Additional AWS pricing details and plans are available online.</a></p>
 </div>
-<p>Ansible Playbooks to support this demo were prepared ahead of time in a public GitHub repository and are available for your use at the links below.</p>
 <hr />
+<p>Ansible Playbooks to support this demo were prepared ahead of time in a public GitHub repository and are available for your use at the links below.</p>
 <p><img alt="" src="../_attachments/figure25.png" /></p>
-<div class="admonition tip">
-<p class="admonition-title">DOWNLOAD .yml FILES TO DESKTOP</p>
-<p>You can easily downlod the <code>TEMPLATE</code> and <code>SOLUTION</code> <em>.yml</em> files to your local machine.</p>
-<p><img alt="" loading="lazy" src="../_attachments/figure26.png" width="400" /></p>
-<p>Navigate to the GitHub links provided (above) and click the <strong>Download raw file</strong> button.</p>
-</div>
 <hr />
 <p><strong>TEMPLATE (<code>.yml</code>)</strong>: <a href="https://github.com/bienko/WCA-Lightspeed-L3/blob/main/TEMPLATE.yml" target="_blank">https://github.com/bienko/WCA-Lightspeed-L3/blob/main/TEMPLATE.yml</a></p>
 <ul>
@@ -347,6 +341,12 @@
 <li>The <code>SOLUTION.yml</code> Playbook contains the complete set of Ansible Playbook instructions needed to fully deploy a live EC2 VPC instance on AWS and host a WordPress application within that environment. You will need to replace certain variables (indicated by comments in the code) with details specific to your personal AWS account and environment. Afterwards, you can— and are encouraged to —execute the Playbook with Ansible and deploy a <strong>live</strong>, at-cost instance to your personal AWS account.</li>
 </ul>
 <p>Once the two YAML files have been downloaded to your local machine, open them with VS Code and follow along with the instructions below.</p>
+<div class="admonition tip">
+<p class="admonition-title">DOWNLOAD .yml FILES TO DESKTOP</p>
+<p>You can easily downlod the <code>TEMPLATE</code> and <code>SOLUTION</code> <em>.yml</em> files to your local machine.</p>
+<p><img alt="" loading="lazy" src="../_attachments/figure26.png" width="400" /></p>
+<p>Navigate to the GitHub links provided (above) and click the <strong>Download raw file</strong> button.</p>
+</div>
 <hr />
 <h1 id="_1"></h1>
 <h1 id="use-wca-to-generate-code-with-the-template-playbook-then-compare-against-the-solution-playbook-to-evaluate-the-results">Use WCA to <strong>generate code with the TEMPLATE Playbook</strong>, then compare against the SOLUTION Playbook to evaluate the results.</h1>
