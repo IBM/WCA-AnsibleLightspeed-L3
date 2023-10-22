@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#customizing-tasks-with-ibm-watsonx-code-assistant-for-ansible-lightspeed" class="md-skip">
+        <a href="#customizing-tasks-with-ibm-watsonx-code-assistant-for-red-hat-ansible-lightspeed" class="md-skip">
           Skip to content
         </a>
       
@@ -307,31 +307,33 @@
                 
 
 
-<h1 id="customizing-tasks-with-ibm-watsonx-code-assistant-for-ansible-lightspeed">Customizing Tasks with IBM watsonx Code Assistant for Ansible Lightspeed</h1>
+<h1 id="customizing-tasks-with-ibm-watsonx-code-assistant-for-red-hat-ansible-lightspeed">Customizing Tasks with IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</h1>
 <hr />
 <p><div class="video-container"><iframe src="../_videos/customizing.mp4" style="position: relative; width: 100%; height: 22.172vw" frameborder="0" allowfullscreen></iframe></div></p>
 <hr />
-<p>In the following module, you will begin experimentating with customized Ansible Playbooks and testing how changes to Ansible Task natural language descriptions impacts the recommended code produced by Generative AI.</p>
+<p>In the following module, you will begin experimentating with customized Ansible Playbooks and testing how changes to Ansible Task natural language descriptions impacts the recommended code produced by <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> (<strong>WCA</strong>).</p>
 <div class="admonition warning">
 <p class="admonition-title">UNPREDICTABLE RESULTS FROM GENERATIVE AI AND LLMs</p>
-<p>A consequence of using Generative AI and Large Language Models (LLMs) is that the recommended code output of these systems will never be 100% consistent for each and every execution. This is both a strength and weakness of LLMs. As you will observe in this module, even a slight modification to the Task description or the smallest change to how a Playbook is structured— the descriptions used, the variables set, and so on —will influence AI-generated code.</p>
+<p>A consequence of using Generative AI and Large Language Models (LLMs) is that the recommended code output of these systems will never be 100% consistent for each and every execution. For this reason, LLMs are referred to as "non-deterministic" systems — as opposed to "deterministic" systems. This is both a strength and weakness of LLMs. As you will observe in this module, even a slight modification to the Task description or the smallest change to how a Playbook is structured— the descriptions used, the variables set, and so on —will influence AI-generated code recommendations.</p>
 <p>The iterative process that you will go through in this module can be viewed in two different ways:</p>
 <ol>
 <li>
-<p>On the one hand, it shows the sensitivity of these generative AI models to even the most nuanced change in <strong>natural language prompts</strong> — for good or bad. Generative AI can produce tremendous work and that output is further guided along by best practices built-in from Red Hat and IBM. But in the end, the AI can only infer user intent from the natural language descriptions supplied to it. The more clearly a user defines their Task descriptions and intent, the more likely that Ansible Lightspeed will correctly generate code which mirrors that intent; conversely, the less precise those descriptions are, the more likely Ansible Lightspeed will misinterpret and miss the mark. Precision <em>is</em> key to the disambiguation of natural language prompts.</p>
+<p>On the one hand, it shows the sensitivity of Generative AI models to even the most nuanced change in <strong>natural language prompts</strong> — for good or bad. Generative AI can produce tremendous work and that output is further guided along by best practices built-in from Red Hat and IBM. But in the end, the AI can only infer user intent from the natural language descriptions supplied to it. The more clearly a user defines their Task descriptions and intent, the more likely that WCA will correctly generate code which mirrors that intent; conversely, the less precise those descriptions are, the more likely WCA will misinterpret and miss the mark. Precision <em>is</em> key to the disambiguation of natural language prompts.</p>
 </li>
 <li>
-<p>Human feedback and <strong>humans-in-the-loop</strong> are essential to these formative stages of Generative AI. As offerings like <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> achieve general availability (GA) status and exit the Technical Preview phase, the natural language processing capabilities of the service will continue to refine and improve. Additional packages, functions, and training data from Ansible Galaxy (as well as other sources) are continuously being added to the service's Foundation Models, which will in turn continually improve the AI-generated code recommendations made to users. Feedback can be directly supplied via the Ansible Lightspeed extension for VS Code and <a href="https://docs.ai.ansible.redhat.com/contributing/#ansible-galaxy" target="_blank">additional ways to support model training are documented online</a>.</p>
+<p>Human feedback and <strong>humans-in-the-loop</strong> are essential to these formative stages of Generative AI. As offerings like WCA mature, the natural language processing capabilities of the service will continue to be refined and improved. Additional packages, functions, and training data from Ansible Galaxy (as well as other sources) are continuously being added to the product's Foundation Models, which will in turn continually improve the AI-generated code recommendations made to users. Feedback can be directly supplied via the WCA extension for VS Code and <a href="https://docs.ai.ansible.redhat.com/contributing/#ansible-galaxy" target="_blank">additional ways to support model training are documented online</a>.</p>
 </li>
 </ol>
-<p>The take-away here is that <strong>your results may vary</strong>: they may differ from the "Solution Code" presented in these examples. Keep this in mind as you work through the following examples and understand that it is not a bug, but rather a consequence of working with Generative AI in general. The precision with which the Playbook author describes the automation Task in natural language will determine the accuracy and effectiveness of Ansible Lightspeed's generated code suggestions.</p>
+<p>The take-away here is that <strong>your results may vary</strong>: they may differ from the "Solution Code" presented in these examples. Keep this in mind as you work through the examples in this section and understand that it is not a bug, but rather a consequence of working with Generative AI in general. The precision with which the Playbook author describes the automation Task in natural language will determine the accuracy and effectiveness of WCA's generated code suggestions.</p>
 </div>
+<hr />
 <h1 id="_1"></h1>
 <h1 id="precision-is-key-for-disambiguation-of-natural-language-prompts"><strong>Precision</strong> is key for disambiguation of natural language prompts.</h1>
 <hr />
 <p>A sample Playbook is supplied for you below. Copy and paste the following code template into a <strong>New File...</strong> within your VS Code environment.</p>
 <details class="note">
 <summary>CLICK TO EXPAND — HOW TO CREATE NEW <code>YAML</code> FILES</summary>
+<p><strong>Note:</strong> You need to copy and paste the contents of the Playbook into a <strong>New File...</strong> within the <em>same</em> Lightspeed project directory that was used for the previous lab modules in order for the VS Code extension to engage.</p>
 <p>To create a new YAML Playbook within a VS Code environment:</p>
 <p><strong>a.</strong> Copy the contents of the Playbook to clipboard using the button in the top-right corner of the lab guide code block.</p>
 <p><img alt="" loading="lazy" src="../_attachments/figure18.png" width="400" /></p>
@@ -430,7 +432,7 @@
 <p>Consider the task on <strong>Line 15</strong>, which prompts Ansible to create ("write") a configuration file for an Apache webserver:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file</span><span class="w"></span>
 </code></pre></div></p>
-<p>Two tabs are presented below. The first <code>AI-Generated Code</code> tab shows the output from running Ansible Lightspeed's generative AI capabilities on an unmodified version of this Playbook. The second <code>Solution Code</code> tab shows the expected Task code that was written by a human programmer to perform the same task. In theory, the AI-generated code <em>should</em> be as good— or even superior to —the manually-written solution code. </p>
+<p>Two tabs are presented below. The first <code>AI-Generated Code</code> tab shows the output from running WCA's generative AI capabilities on an unmodified version of this Playbook. The second <code>Solution Code</code> tab shows the expected Task code that was written by a human programmer to perform the same task. In theory, the AI-generated code <em>should</em> be as good— or even superior to —the manually-written solution code. </p>
 <p>Let's examine that theory in practice:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">AI-Generated Code</label><label for="__tabbed_2_2">Solution Code</label></div>
 <div class="tabbed-content">
@@ -460,7 +462,7 @@
 </div>
 <hr />
 <p>As you can see, the AI-generated code in the first tab misses the mark in a few areas. In fact, it appears to have misunderstood the task in quite a few ways. There is no corresponding value to <code>_content_</code> that can be located within the Ansible Playbook, at least not any which you (the author) have defined ahead of time. Such a result is unexpected and does not match the intention of writing an Apache configuration file according to best practices. Similarly, the destination has been inferred differently and the access permissions that should have been applied to the config file (again - according to Red Hat best practices) are missing altogether.</p>
-<p>In general, the more ambiguous the Task description given, the greater the likelihood that Ansible Lightspeed will misinterpret the author's intent and suggest unwanted Ansible automation jobs. To help disambiguate our intention, Playbook authors must use more precise natural language terms and descriptions.</p>
+<p>In general, the more ambiguous the Task description given, the greater the likelihood that WCA will misinterpret the author's intent and suggest unwanted Ansible automation jobs. To help disambiguate our intention, Playbook authors must use more precise natural language terms and descriptions.</p>
 <p>Let's slightly modify the Task description. Try revising the Task <code>-name: ...</code> description to the following, hit <code>Return</code>, and accept the generated results with the <code>TAB</code> key:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file with mode 0644</span><span class="w"></span>
 </code></pre></div>
@@ -496,7 +498,7 @@
 <hr />
 <p>The output is closer to the expected on the latest iteration, but still out of alignment in some aspects. The AI-generated code suggestions now correctly include the <code>0644</code> read/write/execute permissions that were requested. However, an incorrect destination was suggested (instead of a source) and the <code>content</code> field is a mismatch to the request entirely. One other observation is that the suggested code is invoking the <code>ansible.builtin.copy</code>
 package, instead of the expected <code>ansible.builtin.template</code> package.</p>
-<p>What happens if we adjust the Task's natural language description to explicitly invoke the <code>.template</code> package? Adjust the Task description to the following and then re-generate the code block using Ansible Lightspeed:</p>
+<p>What happens if we adjust the Task's natural language description to explicitly invoke the <code>.template</code> package? Adjust the Task description to the following and then re-generate the code block using WCA:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file using mode 0644 from template</span><span class="w"></span>
 </code></pre></div>
 <p>Once again, compare the AI-generated code suggestions to the expected code solution:</p>
@@ -539,7 +541,7 @@ package, instead of the expected <code>ansible.builtin.template</code> package.<
 <p>The <code>mode:</code>, <code>src:</code>, and <code>dest:</code> fields from <strong>Lines 3-5</strong> of <code>Solution Code</code> are incorrect or missing.</p>
 </li>
 </ul>
-<p>For a third time, let's adjust the natural language description of the Task to the following and then re-generate the code block using Ansible Lightspeed:</p>
+<p>For a third time, let's adjust the natural language description of the Task to the following and then re-generate the code block using WCA:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file using mode=&#39;0644&#39; from template</span><span class="w"></span>
 </code></pre></div>
 <p>Once again, compare the AI-generated code suggestions to the expected code solution:</p>

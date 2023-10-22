@@ -309,13 +309,13 @@
 
 <h1 id="advanced-deploying-a-live-aws-ec2-instance-and-wordpress-application-via-ansible"><strong>Advanced</strong>: Deploying a live AWS EC2 instance and WordPress application via Ansible</h1>
 <hr />
-<p>To conclude the Level 3 Technical Sales education on <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em>, you will be provided with a complete set of instructions for deploying a <strong>LIVE</strong> Amazon Web Services (AWS) environment with Ansible automation, consisting of a <strong><a href="https://wordpress.com" target="_blank">WordPress</a></strong> web application running atop an <strong><a href="https://aws.amazon.com/ec2/" target="_blank">Amazon EC2 VPC</a></strong>.</p>
+<p>To conclude the Level 3 Technical Sales education on <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> (<strong>WCA</strong>), you will be provided with a complete set of instructions for deploying a <strong>LIVE</strong> Amazon Web Services (AWS) environment with Ansible automation, consisting of a <strong><a href="https://wordpress.com" target="_blank">WordPress</a></strong> web application running atop an <strong><a href="https://aws.amazon.com/ec2/" target="_blank">Amazon EC2 VPC</a></strong>.</p>
 <ul>
 <li>
 <p>The deployment of the environments will be conducted entirely using Red Hat Ansible automation, executed on your local machine, and deployed to AWS cloud.</p>
 </li>
 <li>
-<p>The generation of the Ansible Tasks and code required to automate these deployments will be created using the Generative AI capabilities of the Ansible Lightspeed extension for VS Code.</p>
+<p>The generation of the Ansible Tasks and code required to automate these deployments will be created using the Generative AI capabilities of the WCA extension for VS Code.</p>
 </li>
 </ul>
 <div class="admonition warning">
@@ -330,7 +330,7 @@
 <hr />
 <p><strong>TEMPLATE (<code>.yml</code>)</strong>: <a href="https://github.com/bienko/WCA-Lightspeed-L3/blob/main/TEMPLATE.yml" target="_blank">https://github.com/bienko/WCA-Lightspeed-L3/blob/main/TEMPLATE.yml</a></p>
 <ul>
-<li>The <code>TEMPLATE.yml</code> Playbook contains the skeleton of the application you will ultimately build. Playbook structure, key variables, Task descriptions, and comments are provided. Use the Generative AI capabilities of Ansible Lightspeed to fill out the details of the various Ansible Tasks, then compare the results with the <code>SOLUTION.yml</code> file below.</li>
+<li>The <code>TEMPLATE.yml</code> Playbook contains the skeleton of the application you will ultimately build. Playbook structure, key variables, Task descriptions, and comments are provided. Use the Generative AI capabilities of WCA to fill out the details of the various Ansible Tasks, then compare the results with the <code>SOLUTION.yml</code> file below.</li>
 </ul>
 <p><strong>SOLUTION (<code>.yml</code>)</strong>: <a href="https://github.com/bienko/WCA-Lightspeed-L3/blob/main/SOLUTION.yml" target="_blank">https://github.com/bienko/WCA-Lightspeed-L3/blob/main/SOLUTION.yml</a></p>
 <ul>
@@ -344,9 +344,9 @@
 </div>
 <hr />
 <h1 id="_1"></h1>
-<h1 id="use-ansible-lightspeed-to-generate-code-with-the-template-playbook-then-compare-against-the-solution-playbook-to-evaluate-the-results">Use Ansible Lightspeed to <strong>generate code with the TEMPLATE Playbook</strong>, then compare against the SOLUTION Playbook to evaluate the results.</h1>
+<h1 id="use-wca-to-generate-code-with-the-template-playbook-then-compare-against-the-solution-playbook-to-evaluate-the-results">Use WCA to <strong>generate code with the TEMPLATE Playbook</strong>, then compare against the SOLUTION Playbook to evaluate the results.</h1>
 <hr />
-<p>In the steps ahead, you will use Ansible Lightspeed's AI-generated code suggestions to populate the contents of Tasks within the <code>TEMPLATE.yml</code> Playbook. There are 14 Tasks in total and we will examine them each in turn.</p>
+<p>In the steps ahead, you will use WCA's AI-generated code suggestions to populate the contents of Tasks within the <code>TEMPLATE.yml</code> Playbook. There are 14 Tasks in total and we will examine them each in turn.</p>
 <p>For each Task, a tabbed code snippet is provided within this lab documentation to make it easy for you to toggle between the <code>TEMPLATE</code> (the Task prior to AI-generated code suggestions) and the proper <code>SOLUTION</code> (the Task as it should be written for a successful deployment to AWS).</p>
 <p>Compare the AI-generated code suggestions you receive in VS Code with the expected <code>SOLUTION</code> code. You <em>will</em> find that there are occassional discrepancies and variables that need to be adjusted. Generative AI can save us tremendous amounts of time and effort by automating the creation of powerful blocks of code— as you will observe in generating these tasks —but it still requires a degree of human supervision and double-checking. However, the time saved with hands on keyboard is enormous and the potential for the future is boundless.</p>
 <hr />
@@ -516,7 +516,7 @@
 </div>
 </div>
 <hr />
-<p>As you can observe, Ansible Lightspeed can be "creative" with its choice of tags and identifiers. You are welcome to adjust these to your liking, or even eliminate them from the Task code altogether. In the majority of cases these tags and identifiers are used for organization and tracking purposes, but not necessarily anything critical to the functioning of the Ansible Playbook or the infrastructure it is automating.</p>
+<p>As you can observe, WCA can be "creative" with its choice of tags and identifiers. You are welcome to adjust these to your liking, or even eliminate them from the Task code altogether. In the majority of cases these tags and identifiers are used for organization and tracking purposes, but not necessarily anything critical to the functioning of the Ansible Playbook or the infrastructure it is automating.</p>
 <ol start="8">
 <li>Continue further down until you reach <strong>TASK 6</strong> (Line 40), which is one of the more consequential steps in the Playbook as it involves the creation of the Amazon EC2 <code>t2.small</code> instance on AWS according to the settings defined in TASKS 1-5.</li>
 </ol>
@@ -559,7 +559,7 @@
 <p>Note that the <code>image_id</code> and <code>ami</code> values correspond to a specific Amazon Machine Image (ami) for Red Hat Enterprise Linux 9. Hundreds of alternative operating system images are available to select from on AWS, so you may modify this if you so choose; however, for the purposes of deploying WordPress it will make no meaningful difference.</p>
 <p>The pair <code>key_name: "bienko-key"</code> relates to an EC2 instance key (SSH) that you will need to create before attempting to deploy an EC2 instance via Ansible. Instructions for how to create that key will be given at the end of this module for those who wish to deploy a live environment.</p>
 <ol start="9">
-<li>Continue down to <strong>TASK 7</strong> (Line 48). You will notice that in both the <code>TEMPLATE</code> and <code>SOLUTION</code> versions of the Playbook that this Task is fully defined already. Despite repeated attempts at describing the Task to be generated, Ansible Lightspeed in its pre-GA Technical Preview form was unable to generate all of the actions needed to carry out this task. Over time the service will doubtlessly be able to handle this particular task — but for now, leave this as a hard-coded element within your Playbook and do not attempt to recreate the task with code generation.</li>
+<li>Continue down to <strong>TASK 7</strong> (Line 48). You will notice that in both the <code>TEMPLATE</code> and <code>SOLUTION</code> versions of the Playbook that this Task is fully defined already. Despite repeated attempts at describing the Task to be generated, WCA in its pre-GA Technical Preview form was unable to generate all of the actions needed to carry out this task. Over time the service will doubtlessly be able to handle this particular task — but for now, leave this as a hard-coded element within your Playbook and do not attempt to recreate the task with code generation.</li>
 </ol>
 <div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">TEMPLATE</label><label for="__tabbed_7_2">SOLUTION</label></div>
 <div class="tabbed-content">
@@ -595,7 +595,7 @@
 </div>
 <div class="admonition warning">
 <p class="admonition-title">PLAYBOOK MODIFICATIONS REQUIRED</p>
-<p>Although <strong>TASK 7</strong> does not require Ansible Lightspeed to generate any code suggestions, it <em>does</em> require the user to modify the value of the <code>ansible_ssh_private_key_file</code> attribute. Set this attribute to the directory path where the private SSH key (<code>.pem</code> file) is located on your local machine. Be sure to include the <code>.pem</code> filetype as part of the value and also ensure you have changed the permissions on the file (using Terminal and executing the <code>chmod 400 bienko-key.pem</code> instruction) before attempting to run the Playbook.</p>
+<p>Although <strong>TASK 7</strong> does not require WCA to generate any code suggestions, it <em>does</em> require the user to modify the value of the <code>ansible_ssh_private_key_file</code> attribute. Set this attribute to the directory path where the private SSH key (<code>.pem</code> file) is located on your local machine. Be sure to include the <code>.pem</code> filetype as part of the value and also ensure you have changed the permissions on the file (using Terminal and executing the <code>chmod 400 bienko-key.pem</code> instruction) before attempting to run the Playbook.</p>
 </div>
 <hr />
 <ol start="10">

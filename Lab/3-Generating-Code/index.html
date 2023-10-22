@@ -311,7 +311,7 @@
 <hr />
 <p><div class="video-container"><iframe src="../_videos/generating.mp4" style="position: relative; width: 100%; height: 22.172vw" frameborder="0" allowfullscreen></iframe></div></p>
 <hr />
-<p>In the following section, you will experiment with three of the key capabilities of <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em>:</p>
+<p>In the following section, you will experiment with three of the key capabilities of <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> (<strong>WCA</strong>):</p>
 <ul>
 <li>AI-generated code recommendations</li>
 <li>Content source matching and source attribution</li>
@@ -323,7 +323,7 @@
 <div class="admonition tip">
 <p class="admonition-title">ANSIBLE TASKS</p>
 <p>An <em>Ansible Task</em> is a statement in Ansible's automation script (the YAML-based Playbooks we have been working with) that declares a single action to be executed. This might be installing a package, copying a file, or shutting down a service on a remote machine. Each <em>Task</em> represents an idempotent operation (an action that can be repeated multiple times and deliver the same result every time) that aligns the remote managed node to the specified state, ensuring consistency across multiple executions.</p>
-<p>At the time of publication, <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> can only generate code for <strong>Ansible Tasks</strong>. In future releases, it will be capable of generating many other components of an Ansible Playbook.</p>
+<p>At the time of publication, WCA can only generate code for <strong>Ansible Tasks</strong>. In future releases, it will be capable of generating many other components of an Ansible Playbook.</p>
 </div>
 <p>The process of creating AI-generated <strong>code recommendations</strong> is as simple as modifying the natural language (plain English) Task descriptions of an action that is to be executed, which always start with <code>- name:</code> and followed by some description of the task to be performed. Ansible Tasks are often preceded with some <code>#</code> comments or documentation — particularly inside the Technical Preview assets. After the natural language description of the automation Task has been set, Generative AI handles the rest.</p>
 <ol>
@@ -419,7 +419,7 @@
 <p><strong>Lines 3-4</strong> define variables that will remain static throughout the remainder of the Playbook. These variables will be referenced by the AI-generated code suggestions at a later stage. This is a key capability of the offering and one which you will go into much finer details on later.</p>
 </li>
 <li>
-<p><strong>Lines 6-9</strong> are variables which have been <em>commented out</em> and therefore are invisible to the execution of the Ansible script <strong>and</strong> not examined by Ansible Lightspeed for context when generating code recommendations. You will experiment with how removing the <code>#</code> comment blocks impacts the recommendations of task block code. "Uncommenting" these lines of code will make them viable for execution and these lines will afterwards be considered as valid Playbook "context" for AI code generation.</p>
+<p><strong>Lines 6-9</strong> are variables which have been <em>commented out</em> and therefore are invisible to the execution of the Ansible script <strong>and</strong> not examined by WCA for context when generating code recommendations. You will experiment with how removing the <code>#</code> comment blocks impacts the recommendations of task block code. "Uncommenting" these lines of code will make them viable for execution and these lines will afterwards be considered as valid Playbook "context" for AI code generation.</p>
 </li>
 </ul>
 <hr />
@@ -438,7 +438,7 @@
 </ul>
 <hr />
 <ol start="3">
-<li>To generate code for the Task using Ansible Lightspeed, first <strong>uncomment</strong> the line of code (remove <code>#</code> characters from the start of a line). Highlight the line(s) of code you wish to uncomment and then press <code>CMD</code>+<code>/</code> for macOS or <code>CTRL</code>+<code>/</code> for Windows. You can repeat those keystrokes with the line(s) selected to toggle between commenting or uncommenting lines of code. <em>Tip: commented out lines of code in VS Code will appear as green text.</em></li>
+<li>To generate code for the Task using WCA, first <strong>uncomment</strong> the line of code (remove <code>#</code> characters from the start of a line). Highlight the line(s) of code you wish to uncomment and then press <code>CMD</code>+<code>/</code> for macOS or <code>CTRL</code>+<code>/</code> for Windows. You can repeat those keystrokes with the line(s) selected to toggle between commenting or uncommenting lines of code. <em>Tip: commented out lines of code in VS Code will appear as green text.</em></li>
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">INDENTATION LEVELS AND WHITESPACE</p>
@@ -449,7 +449,7 @@
 </code></pre></div></p>
 <hr />
 <ol start="4">
-<li>Now you are ready to begin generating code. Place your cursor at the end of <strong>Line 15</strong> and hit <code>Return</code>. Wait for Ansible Lightspeed to engage and generate the suggested (in <em>grey, italicized text</em>) code blocks for executing the task.</li>
+<li>Now you are ready to begin generating code. Place your cursor at the end of <strong>Line 15</strong> and hit <code>Return</code>. Wait for WCA to engage and generate the suggested (in <em>grey, italicized text</em>) code blocks for executing the task.</li>
 </ol>
 <p>This temporary code suggestion is entirely generated by AI. As a user, you have the option to either accept the code recommendation as-given by pressing <code>TAB</code> on your keyboard <em>OR</em> you can modify the recommended code by highlighting and replacing the italicized text.</p>
 <hr />
@@ -473,8 +473,8 @@
 </div>
 </div>
 </div>
-<p>As part of the plain-text description of the Task, Ansible Lightspeed was asked to include the “cockpit” Role, part of the <a href="https://access.redhat.com/articles/3050101" target="_blank">Red Hat Enterprise Linux System Roles</a> Certified Content Collection. The AI-generated code suggestion invoked the <a href="https://docs.ansible.com/ansible/latest/collections_guide/collections_using_playbooks.html" target="_blank">Fully Qualified Collection Name</a> (<strong>FQCN</strong>) - <code>ansible.builtin.package</code>.</p>
-<p>Making use of FQCNs where possible is a recommended best practice and is a prime example of the many ways in which the offering infuses post-processing capabilities within the AI-generated code produced by <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em>. </p>
+<p>As part of the plain-text description of the Task, WCA was asked to include the <code>Cockpit</code> Role, part of the <a href="https://access.redhat.com/articles/3050101" target="_blank">Red Hat Enterprise Linux System Roles</a> Certified Content Collection. The AI-generated code suggestion invoked the <a href="https://docs.ansible.com/ansible/latest/collections_guide/collections_using_playbooks.html" target="_blank">Fully Qualified Collection Name</a> (<strong>FQCN</strong>) - <code>ansible.builtin.package</code>.</p>
+<p>Making use of FQCNs where possible is a recommended best practice and is a prime example of the many ways in which the offering infuses post-processing capabilities within the AI-generated code produced by WCA. </p>
 <hr />
 <ol start="6">
 <li>Additional examples of infusing best-practices into AI-generated code recommendations can be found in the following <code>Task 2</code> (<strong>Line 21</strong>). Generate the task code block as you did previously, accept the AI-suggested code as given using <code>TAB</code>, and once again compare your results with the <code>SOLUTION</code> tab below.</li>
@@ -507,16 +507,16 @@
 <h1 id="_1"></h1>
 <h1 id="content-source-matching-and-attribution-attempts-to-match-code-recommendations-to-ansible-galaxy-sources-projects-and-contributors-for-data-provenance"><strong>Content source matching and attribution</strong> attempts to match code recommendations to Ansible Galaxy sources (projects and contributors) for data provenance.</h1>
 <hr />
-<p>A powerful capability within <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> is <strong>Content Source Matching</strong> (often referred to as "code explainability"), which attempts to match AI-generated code suggestions to the training data and sources that were utilized in generating the suggested Task code.</p>
+<p>A powerful capability within WCA is <strong>Content Source Matching</strong> (often referred to as "code explainability"), which attempts to match AI-generated code suggestions to the training data and sources that were utilized in generating the suggested Task code.</p>
 <p>These code attribution suggestions are created using a <strong>k-NN</strong> (<a href="https://www.ibm.com/topics/knn#:~:text=Next%20steps-,K%2DNearest%20Neighbors%20Algorithm,of%20an%20individual%20data%20point." target="_blank">K-Nearest Neighbors</a>) algorithm that examines Ansible Galaxy and training data repositories in search of the nearest related content to the AI-generated code suggestions.</p>
 <div class="admonition tip">
 <p class="admonition-title">PROJECTED CAPABILITIES</p>
-<p>In the future, it is anticipated that clients will be able to supply Ansible Lightspeed with a Playbook and ask <em>"Where did this generated code come from and who was its author?"</em> The service may potentially gain the ability to "comment" and document lines (or blocks) of code, <em>explaining</em> to users in plain English what functions the code is performing — work traditionally left to the developer or author to document via a comment, but an area which is nevertheless often neglected or lacking in many organization's code bases.</p>
+<p>In the future, it is anticipated that clients will be able to supply WCA with a Playbook and ask <em>"Where did this generated code come from and who was its author?"</em> The service may potentially gain the ability to "comment" and document lines (or blocks) of code, <em>explaining</em> to users in plain English what functions the code is performing — work traditionally left to the developer or author to document via a comment, but an area which is nevertheless often neglected or lacking in many organization's code bases.</p>
 </div>
 <p><img alt="" src="../_attachments/figure38.png" /></p>
 <hr />
 <ol start="7">
-<li>To enable <strong>Content Source Matching</strong> capabilities within Ansible Lightspeed, navigate to the main menu bar (very top of your screen) for VS Code and drill down into <strong>View</strong> &gt; <strong>Open View...</strong> as shown below.</li>
+<li>To enable <strong>Content Source Matching</strong> capabilities within WCA, navigate to the main menu bar (very top of your screen) for VS Code and drill down into <strong>View</strong> &gt; <strong>Open View...</strong> as shown below.</li>
 </ol>
 <hr />
 <p><img alt="" loading="lazy" src="../_attachments/figure20.png" width="600" /></p>
@@ -527,7 +527,7 @@
 <hr />
 <p><img alt="" loading="lazy" src="../_attachments/figure21.png" width="600" /></p>
 <hr />
-<p>At this point, all future generative AI tasks— such as prompting <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> to generate the code for a Task —will now open a panel at the bottom of the VS Code interface displaying a variety of options: <code>Problems</code>, <code>Output</code>, <code>Debug Console</code>, <code>Terminal</code>, <code>Ports</code>, <code>Comments</code>, and most importantly <code>Ansible:Lightspeed Training Matches</code>.</p>
+<p>At this point, all future generative AI tasks— such as prompting WCA to generate the code for a Task —will now open a panel at the bottom of the VS Code interface displaying a variety of options: <code>Problems</code>, <code>Output</code>, <code>Debug Console</code>, <code>Terminal</code>, <code>Ports</code>, <code>Comments</code>, and most importantly <code>Ansible:Lightspeed Training Matches</code>.</p>
 <p>Let's experiment with generating some lines of code and inspecting the <code>Ansible:Lightspeed Training Matches</code> tab to observe this code explainability feature in action.</p>
 <ol start="9">
 <li>Open the following Ansible Playbook within your Lightspeed repository, or copy and paste the following code template into a <strong>New File...</strong> within your VS Code environment.</li>
@@ -598,7 +598,7 @@
 <h1 id="post-processing-of-task-descriptions-and-yaml-file-contents-helps-generate-contextually-aware-accurate-ansible-content-suggestions"><strong>Post-processing</strong> of Task descriptions and YAML file contents helps generate contextually aware, accurate Ansible content suggestions.</h1>
 <hr />
 <p><img alt="" src="../_attachments/figure39.png" /></p>
-<p>Another element of code generation that Ansible Lightspeed excels at is understanding <strong>context</strong> within the Playbook it is executing against. If a variable or attribute is defined earlier within that Playbook, it will be recalled and referenced— where it makes sense to do so —in the generation of subsequent lines of code. You may have noticed this already in your experimentations with AI-generated code suggestions.</p>
+<p>Another element of code generation that WCA excels at is understanding <strong>context</strong> within the Playbook it is executing against. If a variable or attribute is defined earlier within that Playbook, it will be recalled and referenced— where it makes sense to do so —in the generation of subsequent lines of code. You may have noticed this already in your experimentations with AI-generated code suggestions.</p>
 <p>However, one way to make this feature quite obvious is to take a previously-generated block of Task code, update the value assigned to a named variable <em>earlier</em> in the Playbook, and then regenerate the Task code block. In theory, the newly-generated Task block will use the updated variable name (and differ from how the code block was originally generated).</p>
 <ol start="11">
 <li>Test out this theory by first examining <strong>Line 26</strong> and <strong>Line 33</strong> of the following <code>demo_provision_ec2_instance.yml</code> Playbook. The full directory path is included (blue header) below:</li>
@@ -701,7 +701,7 @@
 <a id="__codelineno-9-46" name="__codelineno-9-46"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Provision t3.micro instance using ec2_instance var</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 <hr />
-<p><em>Note: for convenience, the Playbook Tasks (<code>- name:</code>) have been un-commented within this lab guide. You will need to un-comment these Tasks within the cloned GitHub repository files in order to make them visible to Ansible Lightspeed for code generation.</em></p>
+<p><em>Note: for convenience, the Playbook Tasks (<code>- name:</code>) have been un-commented within this lab guide. You will need to un-comment these Tasks within the cloned GitHub repository files in order to make them visible to WCA for code generation.</em></p>
 <p><code>TASK 1</code> (Line 26) and <code>TASK 2</code> (Line 33) are responsible for gathering information about a network subnet that is to be provisioned and then creating a virtual private cloud (VPC) definition based on those details.</p>
 <hr />
 <ol start="12">
@@ -712,7 +712,7 @@
 <p>The first round of AI-generated code for the task on <strong>Line 26</strong> produces a code block with a <code>register: subnet_info</code> line — the result of which is to assign this VPC definition to a variable <code>subnet_info</code>. Nothing terribly complicated or surprising about that.</p>
 </li>
 <li>
-<p>The AI-generated code that follows for the task on <strong>Line 33</strong> recommends a code block with <code>vpc_subnet_id: "{ { subnet_info.subnets[0].subnet_id } }"</code> as the value associated with the VPC's subnet ID. Critically, the variable <code>subnet_info</code> that was generated in the previous Task is also referenced in the second Task. This demonstrates the contextual awareness of Ansible Lightspeed in action.</p>
+<p>The AI-generated code that follows for the task on <strong>Line 33</strong> recommends a code block with <code>vpc_subnet_id: "{ { subnet_info.subnets[0].subnet_id } }"</code> as the value associated with the VPC's subnet ID. Critically, the variable <code>subnet_info</code> that was generated in the previous Task is also referenced in the second Task. This demonstrates the contextual awareness of WCA in action.</p>
 </li>
 </ul>
 <p><img alt="" loading="lazy" src="../_attachments/figure40.png" width="600" /></p>
@@ -721,11 +721,11 @@
 <li>Change the name of variable <code>subnet_info</code> instead to <code>subnet_name</code>, delete the code block recommendations under <strong>Line 33</strong>, and then regenerate the task on <strong>Line 33</strong>.</li>
 </ol>
 <p><img alt="" loading="lazy" src="../_attachments/figure41.png" width="600" /></p>
-<p>You will immediately notice that the new block of task code references the variable <code>subnet_name</code> that was modified just a moment ago. Once again, <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> has generated code suggestions that take into account the altered context and variables of the Playbook.</p>
+<p>You will immediately notice that the new block of task code references the variable <code>subnet_name</code> that was modified just a moment ago. Once again, WCA has generated code suggestions that take into account the altered context and variables of the Playbook.</p>
 <p>Try adjusting other variables within the Playbook and test how these modifications impact the generation of later blocks of Task code in the Playbook.</p>
 <hr />
-<p>In the next section, you will begin experimentating with customized Ansible Playbooks and testing how changes to Ansible Task natural language descriptions impacts the recommended code produced by <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em>.</p>
-<p>Before continuing, it's worth reading up on how the Ansible Lightspeed extension within VS Code collects data for training and improvement purposes — something known as <strong>telemetry data collection</strong>. It is something to be mindful of before creating your own customized Playbooks or supplying your own code for testing purposes. </p>
+<p>In the next section, you will begin experimentating with customized Ansible Playbooks and testing how changes to Ansible Task natural language descriptions impacts the recommended code produced by WCA.</p>
+<p>Before continuing, it's worth reading up on how the WCA extension within VS Code collects data for training and improvement purposes — something known as <strong>telemetry data collection</strong>. It is something to be mindful of before creating your own customized Playbooks or supplying your own code for testing purposes. </p>
 <details class="warning">
 <summary>CLICK FOR MORE — TELEMETRY DATA COLLECTION</summary>
 <p>IBM and Red Hat strongly advocate for and put into practice full transparency about what content is collected— what is known as "<strong>telemetry data</strong>" —to improve the quality of service for AI offerings such as <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em>.</p>
