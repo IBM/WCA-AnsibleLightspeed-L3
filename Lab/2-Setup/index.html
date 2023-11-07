@@ -389,7 +389,7 @@
 <p>With the GitHub extension now available within VS Code, you must authorize and link the service to your personal GitHub account. Notice that in the left-hand interface of the VS Code environment, there are now icons (further down from the Extensions tab) for <code>Ansible</code> and <code>GitHub</code>.</p>
 <ol start="7">
 <li>
-<p>Click the <code>GitHub</code> tab from the list of icons along the left-hand side of the VS Code interface, as shown in the following screenshot. In the top-left of the interface, locate and click the blue button to <strong>Open Folder</strong>. You will then be prompted to <strong>Sign In</strong> using your personal GitHub credentials.</p>
+<p>Click the <code>GitHub</code> tab from the list of icons along the left-hand side of the VS Code interface, as shown in the following screenshot. In the top-left of the interface, locate and click the blue button to <strong>Open Folder</strong>. You will then be prompted to <strong>Sign In</strong> using your GitHub credentials.</p>
 <p><br/>
 <img alt="" loading="lazy" src="../_attachments/figure8.png" width="200" />
 <img alt="" loading="lazy" src="../_attachments/figure48.png" width="400" /></p>
@@ -397,18 +397,22 @@
 </ol>
 <hr />
 <ol start="8">
-<li>A web browser tab will open, directing you to log in to GitHub using the personal account you registered in Step 4.</li>
-</ol>
+<li>
+<p>A web browser tab will open, directing you to log in to GitHub using the personal account you registered in Step 4.</p>
 <p>After authenticating, you will be asked to <strong>Authorize Visual-Studio-Code</strong> for access to your GitHub account. Do so by clicking the green icon and accepting any prompts. You will notice a progress bar in the bottom-right of the VS Code interface — this process wraps up quickly.</p>
 <p>VS Code will ask <code>"Allow an extension to open this URI?"</code> — click <strong>Open</strong> (and toggle <em>"Don't ask again for this extension"</em> if you would rather not see future prompts).</p>
-<p><img alt="" loading="lazy" src="../_attachments/figure9.png" width="400" /></p>
+<p><br/>
+<img alt="" loading="lazy" src="../_attachments/figure9.png" width="400" /></p>
+</li>
+</ol>
 <hr />
 <p>To begin experimenting with WCA's generative AI capabilities, you will first need access to some Ansible Playbooks to generate Tasks with. Playbooks have already been prepared ahead of time for the Ansible Lightspeed Technical Preview, which you will make use of here.</p>
 <ol start="9">
-<li>Click the <strong>Explorer</strong> button at the top of the left-hand VS Code interface. Depending on your VS Code environment, the Explorer tab will look one of two ways.</li>
-</ol>
+<li>
+<p>Click the <strong>Explorer</strong> button at the top of the left-hand VS Code interface. Depending on your VS Code environment, the Explorer tab will look one of two ways.</p>
 <p><strong>CLICK TO EXPAND</strong> whichever one of the two options best describes your situation and follow the instructions given:</p>
-<hr />
+</li>
+</ol>
 <details class="tip">
 <summary>I AM NEW TO <em>VS CODE</em></summary>
 <p>If you are working within a new installation of VS Code, the <strong>Explorer</strong> tab will display <code>NO FOLDER OPENED</code> and give options to either <strong>Open Folder</strong> or <strong>Clone Repository</strong>.</p>
@@ -465,12 +469,12 @@
 <li>
 <p>You will be asked <code>Do you trust the authors of the files in this folder?</code> — click <strong>Yes, I trust the authors</strong>.</p>
 </li>
+<li>
+<p>The replication of Ansible Playbooks to your local machine from GitHub is now complete. You can inspect the contents of the repository using the Explorer tab (the first icon in the left-hand navigator), as shown in the following screenshot.</p>
+<p><br/>
+<img alt="" loading="lazy" src="../_attachments/figure12.png" width="400" /></p>
+</li>
 </ol>
-<hr />
-<ol start="13">
-<li>The replication of Ansible Playbooks to your local machine from GitHub is now complete. You can inspect the contents of the repository using the Explorer tab (the first icon in the left-hand navigator), as shown in the following screenshot.</li>
-</ol>
-<p><img alt="" loading="lazy" src="../_attachments/figure12.png" width="400" /></p>
 <div class="admonition tip">
 <p class="admonition-title">LOCAL REPLICAS</p>
 <p>The cloned GitHub files are a <em>local</em> replica, meaning that you may safely edit and change the contents of this folder on your local machine without any impact to the <em>master</em> copy on GitHub. Have fun and experiment!</p>
@@ -478,10 +482,13 @@
 <hr />
 <p>Next, you'll need to activate your Ansible Lightspeed Technical Preview extension for VS Code. </p>
 <ol start="14">
-<li>Return to the <strong>Extensions</strong> tab that you accessed in Step 1 and look for the installed Ansible extension from the list. </li>
+<li>
+<p>Return to the <strong>Extensions</strong> tab that you accessed in Step 1 and look for the installed Ansible extension from the list. </p>
+<p><br/>
+<img alt="" loading="lazy" src="../_attachments/figure3.png" width="600" /></p>
+</li>
 </ol>
 <hr />
-<p><img alt="" loading="lazy" src="../_attachments/figure3.png" width="600" /></p>
 <ol start="15">
 <li>
 <p>Click the mechanical "cog" icon (as shown), located on the right side of the Ansible service tile.</p>
@@ -489,18 +496,21 @@
 <li>
 <p>From the dropdown list of options, click <strong>Extension Settings</strong>.</p>
 </li>
+<li>
+<p>A settings panel for Ansible will fill the screen. From the top-left corner of the interface, look for a switch to toggle between <code>User</code> and <code>Workspace</code>. Select the <strong>Workspace</strong> option.</p>
+<p><br/>
+<img alt="" loading="lazy" src="../_attachments/figure4.png" width="600" /></p>
+</li>
 </ol>
-<hr />
-<ol start="17">
-<li>A settings panel for Ansible will fill the screen. From the top-left corner of the interface, look for a switch to toggle between <code>User</code> and <code>Workspace</code>. Select the <strong>Workspace</strong> option.</li>
-</ol>
-<p><img alt="" loading="lazy" src="../_attachments/figure4.png" width="600" /></p>
 <hr />
 <ol start="18">
-<li>Scroll down the list of settings until you locate the fields <code>Ansible &gt; Lightspeed</code> and <code>Ansible &gt; Lightspeed &gt; Suggestions</code>. By default, these will be disabled. Click the checkmark icons to the left of <strong>BOTH</strong> entries to <strong>ENABLE</strong> <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> Tech Preview features within the VS Code environment.</li>
-</ol>
+<li>
+<p>Scroll down the list of settings until you locate the fields <code>Ansible &gt; Lightspeed</code> and <code>Ansible &gt; Lightspeed &gt; Suggestions</code>. By default, these will be disabled. Click the checkmark icons to the left of <strong>BOTH</strong> entries to <strong>ENABLE</strong> <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> Tech Preview features within the VS Code environment.</p>
 <p>The settings will automatically be applied without needing to confirm or "save" manually. Close the Settings tab using the <code>X</code> icon along the top of the taskbar to proceed.</p>
-<p><img alt="" loading="lazy" src="../_attachments/figure5.png" width="600" /></p>
+<p><br/>
+<img alt="" loading="lazy" src="../_attachments/figure5.png" width="600" /></p>
+</li>
+</ol>
 <hr />
 <ol start="19">
 <li>
@@ -508,23 +518,26 @@
 </li>
 <li>
 <p>A panel will open displaying details about <code>Ansible Lightspeed Login</code>. Click the blue <strong>Connect</strong> button to launch the authorization tool.</p>
+<p><br/>
+<img alt="" loading="lazy" src="../_attachments/figure13.png" width="200" /></p>
 </li>
-</ol>
-<p><img alt="" loading="lazy" src="../_attachments/figure13.png" width="200" /></p>
-<ol start="21">
 <li>
 <p>A prompt will appear stating that <code>The extension Ansible wants to sign in using Ansible Lightspeed</code> — click <strong>Allow</strong>. You will then be asked about opening an external website — click <strong>Open</strong>.</p>
 </li>
 <li>
 <p>Your web browser will then load to a page asking you to login. Click the <strong>Log in with GitHub</strong> option. <strong>Accept</strong> any license agreements that accompany the log in request.</p>
+<p><br/>
+<img alt="" loading="lazy" src="../_attachments/figure14.png" width="400" /></p>
 </li>
 </ol>
-<p><img alt="" loading="lazy" src="../_attachments/figure14.png" width="400" /></p>
 <hr />
 <ol start="23">
-<li>You will be asked to <code>Authorize Ansible Lightspeed for VS Code</code> — click <strong>Authorize</strong>.</li>
+<li>
+<p>You will be asked to <code>Authorize Ansible Lightspeed for VS Code</code> — click <strong>Authorize</strong>.</p>
+<p><br/>
+<img alt="" loading="lazy" src="../_attachments/figure15.png" width="400" /></p>
+</li>
 </ol>
-<p><img alt="" loading="lazy" src="../_attachments/figure15.png" width="400" /></p>
 <hr />
 <ol start="24">
 <li>
@@ -541,21 +554,27 @@
 <p class="admonition-title">PYTHON DRIVERS ARE MISSING?</p>
 <p>The Ansible Lightspeed extension for VS Code requires that <code>Python 3.11.5</code> be activated as part of the workspace. Look for a <code>Python</code> tile adjacent to the <code>Ansible</code> tile along the bottom-right corner of the VS Code interface. If it is not set, <strong>click</strong> the tile and select <code>Python 3.11.5 64-bit</code>.</p>
 <ol>
-<li>Click the gold-colored <code>Select python environment</code> button at the bottom-right of the interface.</li>
+<li>
+<p>Click the gold-colored <code>Select python environment</code> button at the bottom-right of the interface.</p>
+<p><br/>
+<img alt="" loading="lazy" src="../_attachments/figure44.png" width="400" /></p>
+</li>
+<li>
+<p>From the console at the top of the VS Code environment, select the recommended <code>Python 3.11.5 64-bit</code> option and hit <code>Return</code> to confirm.</p>
+<p><br/>
+<img alt="" loading="lazy" src="../_attachments/figure45.png" width="600" /></p>
+</li>
+<li>
+<p>Inspect the bottom-right of the interface again to confirm that the Python library has been set.</p>
+<p><br/>
+<img alt="" loading="lazy" src="../_attachments/figure46.png" width="400" /></p>
+</li>
+<li>
+<p>If you continue to receive errors messages about <code>Ansible-lint is not available</code> or <code>Command failed: ...</code> you can safely ignore those warnings. Click the <code>X</code> icon next to the pop-up to dismiss the messages.</p>
+<p><br/>
+<img alt="" loading="lazy" src="../_attachments/figure47.png" width="400" /></p>
+</li>
 </ol>
-<p><img alt="" loading="lazy" src="../_attachments/figure44.png" width="400" /></p>
-<ol start="2">
-<li>From the console at the top of the VS Code environment, select the recommended <code>Python 3.11.5 64-bit</code> option and hit <code>Return</code> to confirm.</li>
-</ol>
-<p><img alt="" loading="lazy" src="../_attachments/figure45.png" width="600" /></p>
-<ol start="3">
-<li>Inspect the bottom-right of the interface again to confirm that the Python library has been set.</li>
-</ol>
-<p><img alt="" loading="lazy" src="../_attachments/figure46.png" width="400" /></p>
-<ol start="4">
-<li>If you continue to receive errors messages about <code>Ansible-lint is not available</code> or <code>Command failed: ...</code> you can safely ignore those warnings. Click the <code>X</code> icon next to the pop-up to dismiss the messages.</li>
-</ol>
-<p><img alt="" loading="lazy" src="../_attachments/figure47.png" width="400" /></p>
 </div>
 <hr />
 <h1 id="_1"></h1>
