@@ -816,7 +816,8 @@ Wait for the installation to conclude and then retry the instructions from Step 
 <ol start="20">
 <li>With a registered AWS account, you next need to navigate from the AWS dashboard into the <strong>Identity and Access Management (IAM)</strong> tool. You can search for this using the <strong>Search</strong> bar at the top of the screen and entering <code>IAM</code>.</li>
 </ol>
-<p><img alt="" loading="lazy" src="../_attachments/figure27.png" width="600" /></p>
+<p><br/>
+  <img alt="" loading="lazy" src="../_attachments/figure27.png" width="600" /></p>
 <hr />
 <ol start="21">
 <li>
@@ -826,7 +827,8 @@ Wait for the installation to conclude and then retry the instructions from Step 
 <p>Click the <strong>Create User</strong> orange button located in the top-right corner of the interface.</p>
 </li>
 </ol>
-<p><img alt="" loading="lazy" src="../_attachments/figure28.png" width="600" /></p>
+<p><br/>
+  <img alt="" loading="lazy" src="../_attachments/figure28.png" width="600" /></p>
 <hr />
 <ol start="23">
 <li>Within the <strong>Create User</strong> panel, specify your user details and permissions.</li>
@@ -878,8 +880,9 @@ Wait for the installation to conclude and then retry the instructions from Step 
 <ol start="27">
 <li>Take note at this time as well about the <strong>Region</strong> in which your AWS account is located. You can easily look up this information by examining the URL in your web browser address bar, as shown below (<code>us-east-1</code>).</li>
 </ol>
-<p><img alt="" loading="lazy" src="../_attachments/figure31.png" width="400" /></p>
-<p><strong>RECORD</strong> the name of the region, as this will replace the <code>region</code> value assigned to the Playbook.</p>
+<p><br/>
+  <img alt="" loading="lazy" src="../_attachments/figure31.png" width="400" /></p>
+<p><strong>RECORD</strong> the region's name, as it will replace the <code>region</code> value assigned to the Playbook.</p>
 <div class="admonition warning">
 <p class="admonition-title">PLAYBOOK MODIFICATIONS REQUIRED</p>
 <p>Replace the <code>&lt;PLACEHOLDER&gt;</code> values for variables <code>aws_access_key</code> and <code>aws_secret_key</code> with the <code>Access Key</code> and <code>Secret Access Key</code>, respectively.</p>
@@ -961,9 +964,9 @@ Wait for the installation to conclude and then retry the instructions from Step 
 <ol start="34">
 <li>With the Terminal console, navigate to the directory (<code>cd</code>) where both the Ansible Playbook and your <code>KeyPair.pem</code> file are located. You may use either the <code>TEMPLATE.yml</code> Playbook that you customized or the <code>SOLUTION.yml</code> Playbook for executing the Ansible automation tasks. Regardless of the Playbook being used, you must modify the Playbook with the necessary AWS security and account credentials information.</li>
 </ol>
-<p>When ready, execute the following instruction with the Terminal console:
+<p>When ready, execute the following instruction with the Terminal console:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>ansible-playbook TEMPLATE.yml
-</code></pre></div></p>
+</code></pre></div>
 <ol start="35">
 <li>Monitor the console's output as the Ansible Playbook iterates across each of the Tasks customized earlier. A fantastic feature of Ansible's automation is that if any of the Tasks should fail, the steps involved in that Task can be re-tried in subsequent runs; likewise, Tasks which executed successfully won't be repeated, but are validated and skipped instead.</li>
 </ol>
@@ -971,7 +974,8 @@ Wait for the installation to conclude and then retry the instructions from Step 
 <ol start="36">
 <li>After successfully deploying the Amazon EC2 environment and instantiating a WordPress application, the console will return a URL to the Terminal's output as part of Task 14's <code>[debug]</code> instruction. Copy the URL to clipboard and then paste it into your web browser to access the WordPress application.</li>
 </ol>
-<p><img alt="" loading="lazy" src="../_attachments/figure33.png" width="600" /></p>
+<p><br/>
+  <img alt="" loading="lazy" src="../_attachments/figure33.png" width="600" /></p>
 <hr />
 <ol start="37">
 <li>If your web browser loads the quick-start page for WordPress, you have successfully deployed the application and its supporting EC2 environment — entirely using Generative AI and Ansible automation. <strong>Well done!</strong></li>
@@ -999,7 +1003,8 @@ Wait for the installation to conclude and then retry the instructions from Step 
 <ol start="40">
 <li>In the top-right corner of the interface, click the <strong>Instance state</strong> button and select <strong>Terminate instance</strong> from the drop-down menu.</li>
 </ol>
-<p><img alt="" loading="lazy" src="../_attachments/figure36.png" width="400" /></p>
+<p><br/>
+  <img alt="" loading="lazy" src="../_attachments/figure36.png" width="400" /></p>
 <hr />
 <ol start="41">
 <li>
