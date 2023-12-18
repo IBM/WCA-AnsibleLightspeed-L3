@@ -326,9 +326,10 @@
 <hr />
 <p>Before getting started with <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> (<strong>WCA</strong>), you must install <strong>Visual Studio Code</strong> (commonly referred to as <strong>VS Code</strong>) on your local machine.</p>
 <p>VS Code is a code editor built on open source technology that is free to use and published by Microsoft. Distributions are available for both Windows and macOS operating systems.</p>
-<p><strong>Download</strong>: <a href="https://code.visualstudio.com" target="_blank">https://code.visualstudio.com</a></p>
-<p>Select the latest <strong>Stable Build</strong> release availabe for your machine's operating system.</p>
-<p>Follow along with the installer wizard steps and continue with the hands-on lab instructions after VS Code is successfully running on your local machine.</p>
+<div class="highlight"><pre><span></span><code>- **Download**: &lt;a href=&quot;https://code.visualstudio.com&quot; target=&quot;_blank&quot;&gt;https://code.visualstudio.com&lt;/a&gt;
+- Select the latest **Stable Build** release availabe for your machine&#39;s operating system.
+- Follow along with the installer wizard steps and continue with the hands-on lab instructions after VS Code is successfully running on your local machine.
+</code></pre></div>
 <p><img alt="" loading="lazy" src="../_attachments/figure1.png" width="600" /></p>
 <hr />
 <ol>
@@ -352,17 +353,18 @@
 </li>
 </ol>
 <hr />
-<div class="highlight"><pre><span></span><code>You may receive two different prompts during the installation process:
-
-- `Do you trust the authors of the files in this workspace?` to which you should respond by clicking **Trust Workspace &amp; Install**.
-
-- `Do you want to allow untrusted files in this window?` to which you should respond by clicking **Open**.
-
-&lt;br/&gt;
-![](_attachments/figure42.png){: loading=lazy width=&quot;300&quot;}
-
-Once the Ansible extension has been successfully added to VS Code, close any *Welcome* tabs that open and look for Ansible under the *Installed* services in the *Extensions* panel. Look for the &quot;A&quot; (for Ansible) logo along the left hand side of the interface.
-</code></pre></div>
+<p>You may receive two different prompts during the installation process:</p>
+<ul>
+<li>
+<p><code>Do you trust the authors of the files in this workspace?</code> — click <strong>Trust Workspace &amp; Install</strong>.</p>
+</li>
+<li>
+<p><code>Do you want to allow untrusted files in this window?</code> — click <strong>Open</strong>.</p>
+</li>
+</ul>
+<p><br/>
+<img alt="" loading="lazy" src="../_attachments/figure42.png" width="300" /></p>
+<p>Once the Ansible extension has been successfully added to VS Code, close any <em>Welcome</em> tabs that open and look for Ansible under the <em>Installed</em> services in the <em>Extensions</em> panel. Look for the "A" (for Ansible) logo along the left hand side of the interface.</p>
 <hr />
 <ol start="4">
 <li>
@@ -373,8 +375,7 @@ Once the Ansible extension has been successfully added to VS Code, close any *We
 </ol>
 <p><img alt="" src="../_attachments/figure6.png" /></p>
 <hr />
-<div class="highlight"><pre><span></span><code>With a registered GitHub account, you are now ready to add the GitHub extension for VS Code to your local machine. This will follow a very similar process to what you performed earlier for installing the Ansible extension for VS Code.
-</code></pre></div>
+<p>With a registered GitHub account, you are now ready to add the GitHub extension for VS Code to your local machine. This will follow a very similar process to what you performed earlier for installing the Ansible extension for VS Code.</p>
 <ol start="5">
 <li>Select the <strong>Extensions</strong> tab from the left-side of the VS Code interface and search for <code>GitHub Pull Requests</code>.</li>
 </ol>
@@ -387,8 +388,7 @@ Once the Ansible extension has been successfully added to VS Code, close any *We
 </li>
 </ol>
 <hr />
-<div class="highlight"><pre><span></span><code>With the GitHub extension now available within VS Code, you must authorize and link the service to your personal GitHub account. Notice that in the left-hand interface of the VS Code environment, there are now icons (further down from the Extensions tab) for ```Ansible``` and ```GitHub```.
-</code></pre></div>
+<p>With the GitHub extension now available within VS Code, you must authorize and link the service to your personal GitHub account. Notice that in the left-hand interface of the VS Code environment, there are now icons (further down from the Extensions tab) for <code>Ansible</code> and <code>GitHub</code>.</p>
 <ol start="7">
 <li>
 <p>Click the <code>GitHub</code> tab from the list of icons along the left-hand side of the VS Code interface, as shown in the following screenshot. In the top-left of the interface, locate and click the blue button to <strong>Open Folder</strong>. You will then be prompted to <strong>Sign In</strong> using your GitHub credentials.</p>
@@ -408,8 +408,7 @@ Once the Ansible extension has been successfully added to VS Code, close any *We
 </li>
 </ol>
 <hr />
-<div class="highlight"><pre><span></span><code>To begin experimenting with WCA&#39;s generative AI capabilities, you will first need access to some Ansible Playbooks to generate Tasks with. Playbooks have already been prepared ahead of time for the Ansible Lightspeed extension.
-</code></pre></div>
+<p>To begin experimenting with WCA's generative AI capabilities, you will first need access to some Ansible Playbooks to generate Tasks with. Playbooks have already been prepared ahead of time for the Ansible Lightspeed extension.</p>
 <ol start="9">
 <li>
 <p>Click the <strong>Explorer</strong> button at the top of the left-hand VS Code interface. Depending on your VS Code environment, the Explorer tab will look one of two ways.</p>
@@ -490,8 +489,7 @@ Once the Ansible extension has been successfully added to VS Code, close any *We
 <p>The cloned GitHub files are a <em>local</em> replica, meaning that you may safely edit and change the contents of this folder on your local machine without any impact to the <em>master</em> copy on GitHub. Have fun and experiment!</p>
 </div>
 <hr />
-<div class="highlight"><pre><span></span><code>Next, you&#39;ll need to activate your Ansible Lightspeed Technical Preview extension for VS Code.
-</code></pre></div>
+<p>Next, you'll need to activate your Ansible Lightspeed Technical Preview extension for VS Code. </p>
 <ol start="14">
 <li>
 <p>Return to the <strong>Extensions</strong> tab that you accessed in Step 1 and look for the installed Ansible extension from the list. </p>
