@@ -46,7 +46,16 @@
 
     
     
-  </head>
+   <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -323,7 +332,7 @@
 <p>Historically, these early pioneering techniques of AI models have progressed from simple probabilistic models into increasingly sophisticated systems, building upon concepts like neural networks and deep learning techniques. Today, technologies like Generative AI showcase not only the ability to perform analysis, but also tremendous capacity for creation. Even the creation of application code and automation tasks.</p>
 <p>The advent of Foundation Models and Generative AI, given their remarkable performance and extensibility to a wide range of tasks, has brought about an inflection point in AI. Recognizing the significance of the moment, IBM enterprise clients are actively evaluating and seeking to incorporate Foundation Models into critical business workflows and applications — anything and everything which might involve generation, summarization, classification, and so many other use cases.</p>
 <hr />
-<p><img alt="" src="_attachments/figure1.png" /></p>
+<p><a class="glightbox" href="_attachments/figure1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="_attachments/figure1.png" /></a></p>
 <hr />
 <h1 id="_2"></h1>
 <h1 id="the-notion-of-automating-the-generation-of-ansible-playbook-code-with-ai-stems-from-the-challenges-and-bottlenecks-often-faced-by-developers-tasked-with-traditional-manual-creation-of-playbooks"><strong>The notion of automating the generation of Ansible Playbook code with AI</strong> stems from the challenges and bottlenecks often faced by developers tasked with traditional, manual creation of Playbooks.</h1>
@@ -338,7 +347,7 @@
 <p>As we will see, productized versions of Generative AI models can provide a natural language prompt to users which in turn is understood and translated by the AI models into the necessary Ansible Task code. For example, a user might describe a desired system state in plain language ("I want a Playbook to install and start the Apache web server") and the model will generate the appropriate Ansible Tasks for a Playbook.</p>
 <p>All of this achieved without physically writing code or requiring much programming expertise. Not only does this speed up the automation process by cutting the time needed to author Playbooks, but it also democratizes access to automation in general. Even those within a company with limited Ansible or programming expertise will be able to produce effective Playbooks. There are plenty of caveats of course, and thorough validation and testing of AI-generated code will be needed before being put into production. However, the productivity gains and broadening of skillsets within an organization can be tremendous. And as a whole, Generative AI brings the original goals of Red Hat Ansible Automation Platform (the democratization of automation for everything) that much closer to a reality.</p>
 <hr />
-<p><img alt="" src="_attachments/figure2.png" /></p>
+<p><a class="glightbox" href="_attachments/figure2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="_attachments/figure2.png" /></a></p>
 <hr />
 <h1 id="_3"></h1>
 <h1 id="the-material-covered-in-this-level-3-technical-coursework-is-intended-to-prepare-ibm-and-business-partner-technical-sellers-with-the-skills-necessary-to-demonstrate-ansible-playbook-task-creation-using-the-generative-ai-capabilities-of-ibm-watsonx-code-assistant-for-red-hat-ansible-lightspeed-wca"><strong>The material covered in this Level 3 technical coursework</strong> is intended to prepare IBM and business partner technical sellers with the skills necessary to demonstrate Ansible Playbook task creation using the generative AI capabilities of <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> (<strong>WCA</strong>).</h1>
@@ -447,5 +456,5 @@
       <script src="assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

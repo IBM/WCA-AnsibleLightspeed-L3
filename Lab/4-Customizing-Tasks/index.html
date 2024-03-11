@@ -46,7 +46,16 @@
 
     
     
-  </head>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -462,9 +471,9 @@
 <p><strong>Note:</strong> You need to copy and paste the contents of the Playbook into a <strong>New File...</strong> within the <em>same</em> Lightspeed project directory that was used for the previous lab modules in order for the VS Code extension to engage.</p>
 <p>To create a new YAML Playbook within a VS Code environment:</p>
 <p><strong>a.</strong> Copy the contents of the Playbook to clipboard using the button in the top-right corner of the lab guide code block.</p>
-<p><img alt="" loading="lazy" src="../_attachments/figure18.png" width="400" /></p>
+<p><a class="glightbox" href="../_attachments/figure18.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure18.png" width="400" /></a></p>
 <p><strong>b.</strong> Return to your VS Code environment. In the top-left corner of the interface, with your Ansible Lightspeed folder selected, click the <strong>New File...</strong> button.</p>
-<p><img alt="" loading="lazy" src="../_attachments/figure19.png" width="400" /></p>
+<p><a class="glightbox" href="../_attachments/figure19.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure19.png" width="400" /></a></p>
 <p><strong>c.</strong> Name the file to a description of your choosing, ending with <code>.yml</code> as the filetype. Set it to <code>CustomPlaybook.yml</code>, for example. Save it to one of the directories in the cloned <code>lightspeed-demos</code> folder, such as inside of <code>/lightspeed-demos/playbooks/</code>.</p>
 <p><strong>d.</strong> Paste the clipboard contents into the YAML file and follow along with the suggestions below.</p>
 </details>
@@ -729,5 +738,5 @@ package, instead of the expected <code>ansible.builtin.template</code> package.<
       <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
