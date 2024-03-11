@@ -1,0 +1,645 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="IBM watsonx Code Assistant for Red Hat Ansible Lightspeed - Technical Sales Level 3">
+      
+      
+        <meta name="author" content="Christopher Bienko (cdbienko@us.ibm.com)">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.1">
+    
+    
+      
+        <title>Prerequisites and Setup - IBM watsonx Code Assistant for Red Hat Ansible Lightspeed - Technical Sales Level 3</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#prerequisites-and-setup" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="IBM watsonx Code Assistant for Red Hat Ansible Lightspeed - Technical Sales Level 3" class="md-header__button md-logo" aria-label="IBM watsonx Code Assistant for Red Hat Ansible Lightspeed - Technical Sales Level 3" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IBM watsonx Code Assistant for Red Hat Ansible Lightspeed - Technical Sales Level 3
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Prerequisites and Setup
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="IBM watsonx Code Assistant for Red Hat Ansible Lightspeed - Technical Sales Level 3" class="md-nav__button md-logo" aria-label="IBM watsonx Code Assistant for Red Hat Ansible Lightspeed - Technical Sales Level 3" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    IBM watsonx Code Assistant for Red Hat Ansible Lightspeed - Technical Sales Level 3
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1-Evaluation/" class="md-nav__link">
+        Evaluation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-Setup/" class="md-nav__link">
+        Setup
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-Generating-Code/" class="md-nav__link">
+        Generating Code
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-Customizing-Tasks/" class="md-nav__link">
+        Customizing Tasks
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5-Advanced-Topics-EC2-WordPress/" class="md-nav__link">
+        (OPTIONAL) Deploying a Live AWS EC2 Instance and WordPress Application
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="prerequisites-and-setup">Prerequisites and Setup</h1>
+<hr />
+<div class="admonition warning">
+<p class="admonition-title">SIMPLIFIED SETUP WITH IBM TECHNOLOGY ZONE</p>
+<p>Via the <strong>IBM Technology Zone</strong>, IBM technical sellers and business partners can reserve a "Jumpbox" Linux virtual machine (VM) with VS Code and <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> pre-installed. Minor setup and replication of sample code is still required, but using this environment will simplify many of the following prerequisite steps and potentially eliminate any technical hiccups that may occur along the way. It is the recommended path for getting started with the hands-on lab material.</p>
+<p><strong>LINK:</strong> <a href="https://techzone.ibm.com/collection/ibm-watson-x-code-assistant-for-ansible-lightspeed/environments" target="_blank">https://techzone.ibm.com/collection/ibm-watson-x-code-assistant-for-ansible-lightspeed/environments</a></p>
+<p>Click on the <strong>Environments</strong> tab along the left side of the IBM Technology Zone interface, then the blue <strong>Reserve</strong> button for the <code>Main WCA for Ansible Demo: Visual Studio Desktop 1.2</code> tile. Follow along with the reservation wizard instructions and documentation provided on the <a href="https://techzone.ibm.com/collection/ibm-watson-x-code-assistant-for-ansible-lightspeed/environments" target="_blank">IBM Technology Zone page</a>.</p>
+<ul>
+<li>
+<p>If using the IBM Technology Zone, skip to <strong>Step 9</strong> and follow along with the guide from that point onwards.</p>
+</li>
+<li>
+<p>Otherwise, follow the complete set of instructions below to prepare a lab environment on your local machine.</p>
+</li>
+</ul>
+</div>
+<hr />
+<p>Before getting started with <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> (<strong>WCA</strong>), you must install <strong>Visual Studio Code</strong> (commonly referred to as <strong>VS Code</strong>) on your local machine.</p>
+<p>VS Code is a code editor built on open source technology that is free to use and published by Microsoft. Distributions are available for both Windows and macOS operating systems.</p>
+<ul>
+<li><strong>Download</strong>: <a href="https://code.visualstudio.com" target="_blank">https://code.visualstudio.com</a></li>
+<li>Select the latest <strong>Stable Build</strong> release availabe for your machine's operating system.</li>
+<li>Follow along with the installer wizard steps and continue with the hands-on lab instructions after VS Code is successfully running on your local machine.</li>
+</ul>
+<p><img alt="" src="../_attachments/figure1.png" /></p>
+<hr />
+<ol>
+<li>
+<p>Open the VS Code app and locate the sidebar along the left-side of the interface. Click the <strong>Extensions</strong> icon (as shown in the screenshot below) to open the marketplace of Microsoft services and open source technologies that can be integrated with VS Code.</p>
+<p><br/>
+<img alt="" loading="lazy" src="../_attachments/figure2.png" width="400" /></p>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">DEPRECATED VERSION</p>
+<p>Ignore the deprecated version of "Ansible language support" that was previously published by Tomasz Maciazek. The only official (and installable) Ansible extension is the one published by Red Hat's verified account.</p>
+</div>
+<hr />
+<ol start="2">
+<li>At the top of the Extensions panel is a search bar. Search here for <code>Ansible</code>.</li>
+</ol>
+<hr />
+<ol start="3">
+<li>
+<p>Locate from the results the <code>Ansible</code> service published by <code>Red Hat</code>.</p>
+<p>Click the blue <strong>Install</strong> icon located to the right. Installation of the Ansible extension for VS Code should only take a moment.</p>
+<p>You may receive two different prompts during the installation process:</p>
+<ul>
+<li>
+<p><code>Do you trust the authors of the files in this workspace?</code>: select <strong>Trust Workspace &amp; Install</strong>.</p>
+</li>
+<li>
+<p><code>Do you want to allow untrusted files in this window?</code>: select <strong>Open</strong>.</p>
+</li>
+</ul>
+<p><img alt="" loading="lazy" src="../_attachments/figure42.png" width="400" /></p>
+<p>Once the Ansible extension has been successfully added to VS Code, close any <em>Welcome</em> tabs that open and look for Ansible under the <em>Installed</em> services in the <em>Extensions</em> panel. Look for the "A" (for Ansible) logo along the left hand side of the interface.</p>
+</li>
+</ol>
+<hr />
+<ol start="4">
+<li>
+<p>Next, you will need to register for an account with <a href="https://github.com" target="_blank">GitHub</a>. If you already have an account registered with GitHub, you may skip ahead to Step 5.</p>
+<p><strong>Register</strong>: <a href="https://github.com" target="_blank">https://github.com</a></p>
+<p>GitHub, Inc. is a platform and cloud-based service for software development and version control using <strong>Git</strong>, allowing developers to store and manage their code. Like VS Code, it is also owned by Microsoft Corporation.</p>
+<p><img alt="" src="../_attachments/figure6.png" /></p>
+</li>
+</ol>
+<hr />
+<ol start="5">
+<li>
+<p>With a registered GitHub account, you are now ready to add the GitHub extension for VS Code to your local machine. This will follow a very similar process to what you performed earlier for installing the Ansible extension for VS Code.</p>
+<p>Select the <strong>Extensions</strong> tab from the left-side of the VS Code interface and search for <code>GitHub Pull Requests</code>.</p>
+</li>
+</ol>
+<hr />
+<ol start="6">
+<li>
+<p>Click the <strong>Install</strong> icon to add the extension to your VS Code environment. Integration with VS Code should only take a moment to complete.</p>
+<p><br/>
+<img alt="" loading="lazy" src="../_attachments/figure7.png" width="600" /></p>
+</li>
+</ol>
+<hr />
+<ol start="7">
+<li>
+<p>With the GitHub extension now available within VS Code, you must authorize and link the service to your personal GitHub account. Notice that in the left-hand interface of the VS Code environment, there are now icons (further down from the Extensions tab) for <code>Ansible</code> and <code>GitHub</code>.</p>
+<p>Click the <code>GitHub</code> tab from the list of icons along the left-hand side of the VS Code interface, as shown in the following screenshot. In the top-left of the interface, locate and click the blue button to <strong>Open Folder</strong>. You will then be prompted to <strong>Sign In</strong> using your GitHub credentials.</p>
+<p><br/>
+<img alt="" loading="lazy" src="../_attachments/figure8.png" width="200" />
+<img alt="" loading="lazy" src="../_attachments/figure48.png" width="400" /></p>
+</li>
+</ol>
+<hr />
+<ol start="8">
+<li>
+<p>A web browser tab will open, directing you to log in to GitHub using the personal account you registered in Step 4.</p>
+<p>After authenticating, you will be asked to <strong>Authorize Visual-Studio-Code</strong> for access to your GitHub account. Do so by clicking the green icon and accepting any prompts. You will notice a progress bar in the bottom-right of the VS Code interface — this process wraps up quickly.</p>
+<p>VS Code will ask <code>"Allow an extension to open this URI?"</code> — click <strong>Open</strong> (and toggle <em>"Don't ask again for this extension"</em> if you would rather not see future prompts).</p>
+<p><br/>
+<img alt="" loading="lazy" src="../_attachments/figure9.png" width="400" /></p>
+</li>
+</ol>
+<hr />
+<p>To begin experimenting with WCA's generative AI capabilities, you will first need access to some Ansible Playbooks to generate Tasks with. Playbooks have already been prepared ahead of time for the Ansible Lightspeed extension.</p>
+<ol start="9">
+<li>
+<p>Click the <strong>Explorer</strong> button at the top of the left-hand VS Code interface. Depending on your VS Code environment, the Explorer tab will look one of two ways.</p>
+<p></br>
+<strong>CLICK TO EXPAND</strong> whichever one of the two options best describes your situation and follow the instructions given:</p>
+</li>
+</ol>
+<details class="tip">
+<summary>I AM NEW TO <em>VS CODE</em></summary>
+<p>If you are working within a new installation of VS Code, the <strong>Explorer</strong> tab will display <code>NO FOLDER OPENED</code> and give options to either <strong>Open Folder</strong> or <strong>Clone Repository</strong>.</p>
+<p><img alt="" loading="lazy" src="../_attachments/figure49.png" width="200" /></p>
+<ol>
+<li>
+<p>Click the <strong>Clone Repository</strong> button, which will open an executable console at the top of VS Code.</p>
+</li>
+<li>
+<p>You must specify the public GitHub repository from which to "clone" the Ansible Lightspeed Technical Preview collection. A clone request in GitHub is essentially a request to replicate code from the cloud-hosted repository into the local (VS Code) environment.</p>
+<p>Enter into the console the following address and press <code>Return</code> to confirm:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>https://github.com/craig-br/lightspeed-demos.git
+</code></pre></div>
+</li>
+</ol>
+</details>
+<details class="note">
+<summary>I HAVE USED <em>VS CODE</em> BEFORE</summary>
+<p>If you have worked with VS Code before and have added projects or folders to the environment previously, those folders (and their contents) will be displayed within the <strong>Explorer</strong> tab. However, you still need to clone (replicate) the Ansible Lightspeed Technical Preview collection from GitHub to a folder on your local machine. A "clone" request in GitHub is essentially a request to replicate code from the cloud-hosted repository into the local (VS Code and local machine) environment.</p>
+<ol>
+<li>
+<p>To perform a clone request with VS Code, perform the following action (depending on your operating system):</p>
+<ul>
+<li>
+<p><strong>Windows</strong>: Press <code>CTRL</code> + <code>Shift</code> + <code>P</code> to open an executable console at the top of VS Code.</p>
+</li>
+<li>
+<p><strong>macOS</strong>: Press <code>COMMAND</code> + <code>Shift</code> + <code>P</code> to open an executable console at the top of VS Code.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Enter into the console the following instruction and hit <code>Return</code> to confirm:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git:clone
+</code></pre></div>
+</li>
+<li>
+<p>Now you must specify the public repository from which to clone the data. Copy and paste the following URL into the console and hit <code>Return</code> to confirm:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>https://github.com/craig-br/lightspeed-demos.git
+</code></pre></div>
+</li>
+</ol>
+</details>
+<p>After completing the steps in the expandable window, continue with the instructions that follow down the remainder of this lab guide page. Regardless of whether you are new to VS Code or have used VS Code previously, the remainder of the steps remain the same.</p>
+<hr />
+<ol start="10">
+<li>
+<p>You will be asked to select (using your local machine's file browser) the destination for where the cloned data will be saved locally.</p>
+<p>Select a directory (Documents, Desktop, or your preference) and then confirm by clicking <strong>Select as Repository Destination</strong> to kick off the replication from GitHub to your local machine.</p>
+</li>
+</ol>
+<hr />
+<ol start="11">
+<li>A prompt will appear asking <code>Would you like to open the cloned repository, or add it to the current workspace?</code> — click <strong>Open</strong>.</li>
+</ol>
+<hr />
+<ol start="12">
+<li>You will be asked <code>Do you trust the authors of the files in this folder?</code> — click <strong>Yes, I trust the authors</strong>.</li>
+</ol>
+<hr />
+<ol start="13">
+<li>
+<p>The replication of Ansible Playbooks to your local machine from GitHub is now complete. You can inspect the contents of the repository using the <em>Explorer</em> tab (the first icon in the left-hand navigator), as shown in the following screenshot.</p>
+<p><br/>
+<img alt="" loading="lazy" src="../_attachments/figure12.png" width="600" /></p>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">LOCAL REPLICAS</p>
+<p>The cloned GitHub files are a <em>local</em> replica, meaning that you may safely edit and change the contents of this folder on your local machine without any impact to the <em>master</em> copy on GitHub. Have fun and experiment!</p>
+</div>
+<hr />
+<ol start="14">
+<li>
+<p>Return to the <strong>Extensions</strong> tab that you accessed in Step 1 and look for the installed Ansible extension from the list. </p>
+<p><br/>
+<img alt="" loading="lazy" src="../_attachments/figure3.png" width="600" /></p>
+</li>
+</ol>
+<hr />
+<ol start="15">
+<li>Click the mechanical "cog" icon (as shown), located on the right side of the Ansible service tile.</li>
+</ol>
+<hr />
+<ol start="16">
+<li>From the dropdown list of options, click <strong>Extension Settings</strong>.</li>
+</ol>
+<hr />
+<ol start="17">
+<li>
+<p>A settings panel for Ansible will fill the screen. From the top-left corner of the interface, look for a switch to toggle between <code>User</code> and <code>Workspace</code>. Select the <strong>Workspace</strong> option.</p>
+<p><br/>
+<img alt="" loading="lazy" src="../_attachments/figure4.png" width="600" /></p>
+</li>
+</ol>
+<hr />
+<ol start="18">
+<li>
+<p>Scroll down the list of settings until you locate the fields <code>Ansible &gt; Lightspeed</code> and <code>Ansible &gt; Lightspeed &gt; Suggestions</code>. By default, these will be disabled.</p>
+<p>Click the checkmark icons to the left of <strong>BOTH</strong> entries to <strong>ENABLE</strong> <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> features within the VS Code environment.</p>
+<p>The settings will automatically be applied without needing to confirm or "save" manually. Close the Settings tab using the <code>X</code> icon along the top of the taskbar to proceed.</p>
+<p><br/>
+<img alt="" loading="lazy" src="../_attachments/figure5.png" width="600" /></p>
+</li>
+</ol>
+<hr />
+<ol start="19">
+<li>Click the Ansible icon from the left-hand interface of the VS Code environment (look for the large "A" icon).</li>
+</ol>
+<hr />
+<ol start="20">
+<li>
+<p>A panel will open displaying details about <code>Ansible Lightspeed Login</code>. Click the blue <strong>Connect</strong> button to launch the authorization tool.</p>
+<p><br/>
+<img alt="" loading="lazy" src="../_attachments/figure13.png" width="200" /></p>
+</li>
+</ol>
+<hr />
+<ol start="21">
+<li>A prompt will appear stating that <code>The extension Ansible wants to sign in using Ansible Lightspeed</code> — click <strong>Allow</strong>. You will then be asked about opening an external website — click <strong>Open</strong>.</li>
+</ol>
+<hr />
+<ol start="22">
+<li>
+<p>Your web browser will then load to a page asking you to login. Click the <strong>Log in with GitHub</strong> option. <strong>Accept</strong> any license agreements that accompany the log in request.</p>
+<p><br/>
+<img alt="" loading="lazy" src="../_attachments/figure14.png" width="400" /></p>
+</li>
+</ol>
+<hr />
+<ol start="23">
+<li>
+<p>You will be asked to <code>Authorize Ansible Lightspeed for VS Code</code> — click <strong>Authorize</strong>.</p>
+<p><br/>
+<img alt="" loading="lazy" src="../_attachments/figure15.png" width="400" /></p>
+</li>
+</ol>
+<hr />
+<ol start="24">
+<li>A prompt will appear inside VS Code asking <code>Allow an extension to open this URI?</code> — click <strong>Open</strong>.</li>
+</ol>
+<hr />
+<ol start="25">
+<li>
+<p>Time to open your first YAML file from the cloned GitHub repository and validate that Ansible Lightspeed has been set up properly.</p>
+<p>Click the <strong>Explorer</strong> tab on the top-left corner of the VS Code interface.</p>
+<p>Drill down into the <code>lightspeed-demos-main/playbooks/infra/install_cockpit/</code> directory and double-click the <code>demo_install_cockpit.yml</code> YAML file to edit the contents.</p>
+</li>
+</ol>
+<details class="warning">
+<summary>PYTHON DRIVERS ARE MISSING?</summary>
+<p>The Ansible Lightspeed extension for VS Code requires that <code>Python 3.11.5</code> be activated as part of the workspace. Look for a <code>Python</code> tile adjacent to the <code>Ansible</code> tile along the bottom-right corner of the VS Code interface. If it is not set, <strong>click</strong> the tile and select <code>Python 3.11.5 64-bit</code>.</p>
+<ol>
+<li>
+<p>Click the gold-colored <code>Select python environment</code> button at the bottom-right of the interface.</p>
+<p><br/>
+<img alt="" loading="lazy" src="../_attachments/figure44.png" width="400" />
+<br/></p>
+</li>
+<li>
+<p>From the console at the top of the VS Code environment, select the recommended <code>Python 3.11.5 64-bit</code> option and hit <code>Return</code> to confirm.</p>
+<p><br/>
+<img alt="" loading="lazy" src="../_attachments/figure45.png" width="400" />
+<br/></p>
+</li>
+<li>
+<p>Inspect the bottom-right of the interface again to confirm that the Python library has been set.</p>
+<p><br/>
+<img alt="" loading="lazy" src="../_attachments/figure46.png" width="400" />
+<br/></p>
+</li>
+<li>
+<p>If you continue to receive errors messages about <code>Ansible-lint is not available</code> or <code>Command failed: ...</code> you can safely ignore those warnings. Click the <code>X</code> icon next to the pop-up to dismiss the messages.</p>
+<p><br/>
+<img alt="" loading="lazy" src="../_attachments/figure47.png" width="400" />
+<br/></p>
+</li>
+</ol>
+</details>
+<hr />
+<ol start="26">
+<li>Look in the bottom-right hand corner of the VS Code editor for a tile labelled <code>Ansible</code> will have appeared. This indicates that Ansible (and Ansible Lightspeed) are now activated for this particular workspace.</li>
+</ol>
+<hr />
+<h1 id="_1"></h1>
+<h1 id="next-steps">Next steps</h1>
+<p>Your VS Code environment is now fully configured and ready for experimentation using generative AI techniques. In the following section, you will review the evaluation criteria for how IBMers and business partners receive accreditation for completing the Level 3 material.</p>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023-2024 IBM
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+    
+  </body>
+</html>
