@@ -319,8 +319,8 @@
 <h1 id="optional-deploying-a-live-aws-ec2-instance-and-wordpress-application-via-ansible"><strong>OPTIONAL</strong>: Deploying a live AWS EC2 instance and WordPress application via Ansible</h1>
 <hr />
 <div class="admonition note">
-<p class="admonition-title">THIS SECTION IS NOT REQUIRED FOR LEVEL 3 ACCREDITATION</p>
-<p>IBM technical sellers and business partners are <strong>NOT</strong> required to complete this section to receive Level 3 accreditation. However, it is highly recommended by the authors that you attempt the material, given the tremendous demonstration value it provides for clients.</p>
+<p class="admonition-title">THIS SECTION IS NOT REQUIRED FOR LEVEL 3 CREDIT</p>
+<p>IBM technical sellers and business partners are <strong>NOT</strong> required to complete this section to receive Level 3 credit. However, it is highly recommended by the authors that you attempt the material, given the tremendous demonstration value it provides for clients.</p>
 </div>
 <p>To conclude the Level 3 Technical Sales education on <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> (<strong>WCA</strong>), you will be provided with a complete set of instructions for deploying a <strong>LIVE</strong> Amazon Web Services (AWS) environment with Ansible automation, consisting of a <strong><a href="https://wordpress.com" target="_blank">WordPress</a></strong> web application running atop an <strong><a href="https://aws.amazon.com/ec2/" target="_blank">Amazon EC2 VPC</a></strong>.</p>
 <ul>
@@ -573,7 +573,7 @@
 <p>Note that the <code>image_id</code> and <code>ami</code> values correspond to a specific Amazon Machine Image (ami) for Red Hat Enterprise Linux 9. Hundreds of alternative operating system images are available to select from on AWS, so you may modify this if you so choose; however, for the purposes of deploying WordPress it will make no meaningful difference.</p>
 <p>The pair <code>key_name: "bienko-key"</code> relates to an EC2 instance key (SSH) that you will need to create before attempting to deploy an EC2 instance via Ansible. Instructions for how to create that key will be given at the end of this module for those who wish to deploy a live environment.</p>
 <ol start="9">
-<li>Continue down to <strong>TASK 7</strong> (Line 48). You will notice that in both the <code>TEMPLATE</code> and <code>SOLUTION</code> versions of the Playbook that this Task is fully defined already. Despite repeated attempts at describing the Task to be generated, WCA in its pre-GA Technical Preview form was unable to generate all of the actions needed to carry out this task. Over time the service will doubtlessly be able to handle this particular task — but for now, leave this as a hard-coded element within your Playbook and do not attempt to recreate the task with code generation.</li>
+<li>Continue down to <strong>TASK 7</strong> (Line 48). You will notice that in both the <code>TEMPLATE</code> and <code>SOLUTION</code> versions of the Playbook that this Task is fully defined already. For now, leave this as a hard-coded element within your Playbook and do not attempt to recreate the task with code generation.</li>
 </ol>
 <div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">TEMPLATE</label><label for="__tabbed_7_2">SOLUTION</label></div>
 <div class="tabbed-content">
@@ -793,11 +793,11 @@
 </div>
 <hr />
 <p>Congratulations on making it this far! At this stage, your Playbook is ready for execution. However, there are still some preparation that you need to do before this Playbook can be used to automate deployment of the WordPress application into a live Amazon EC2 environment.</p>
-<p>If you wish to go ahead with the deployment (<strong>RECOMMENDED</strong>) on your personal AWS account, follow along with lab guide steps. Otherwise, you are welcome to conclude the hands-on component here and follow the <a href="https://ibm.github.io/WCA-AnsibleLightspeed-L3/Lab/1-Evaluation/" target="_blank">Level 3 accreditation</a> steps (depending on your role).</p>
+<p>If you wish to go ahead with the deployment (<strong>RECOMMENDED</strong>) on your personal AWS account, follow along with lab guide steps. Otherwise, you are welcome to conclude the hands-on component here and follow the <a href="https://ibm.github.io/WCA-AnsibleLightspeed-L3/Lab/1-Evaluation/" target="_blank">Level 3 skills evaluation</a> steps (depending on your role).</p>
 <div class="admonition warning">
-<p class="admonition-title">LEVEL 3 ACCREDITATION</p>
-<p><strong>IBMers</strong> should take the time now to prepare for and record their <a href="https://ibm.github.io/WCA-AnsibleLightspeed-L3/Lab/1-Evaluation//" target="_blank">Stand &amp; Deliver</a> presentations for Level 3 accreditation. Be sure to follow the evaluation criteria that is outlined in this documentation.</p>
-<p><strong>Business Partners</strong> should follow the <a href="https://ibm.github.io/WCA-AnsibleLightspeed-L3/Lab/1-Evaluation/" target="_blank">learning plan links</a> on IBM Training to complete a multiple-choice examination for Level 3 accreditation.</p>
+<p class="admonition-title">LEVEL 3 CREDIT</p>
+<p><strong>IBMers</strong> should take the time now to prepare for and record their <a href="https://ibm.github.io/WCA-AnsibleLightspeed-L3/Lab/1-Evaluation//" target="_blank">Stand &amp; Deliver</a> presentations for Level 3 credit. Be sure to follow the evaluation criteria that is outlined in this documentation.</p>
+<p><strong>Business Partners</strong> should follow the <a href="https://ibm.github.io/WCA-AnsibleLightspeed-L3/Lab/1-Evaluation/" target="_blank">learning plan links</a> on IBM Training to complete a multiple-choice examination for Level 3 credit.</p>
 </div>
 <hr />
 <h1 id="_2"></h1>
