@@ -617,6 +617,7 @@
 <p><a class="glightbox" href="../_attachments/figure39.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/figure39.png" /></a></p>
 <p>Another element of code generation that WCA excels at is understanding <strong>context</strong> within the Playbook it is executing against. If a variable or attribute is defined earlier within that Playbook, it will be recalled and referenced— where it makes sense to do so —in the generation of subsequent lines of code. You may have noticed this already in your experimentations with AI-generated code suggestions.</p>
 <p>However, one way to make this feature quite obvious is to take a previously-generated block of Task code, update the value assigned to a named variable <em>earlier</em> in the Playbook, and then regenerate the Task code block. In theory, the newly-generated Task block will use the updated variable name (and differ from how the code block was originally generated).</p>
+<hr />
 <ol start="11">
 <li>Test out this theory by first examining <strong>Line 26</strong> and <strong>Line 33</strong> of the following <code>demo_provision_ec2_instance.yml</code> Playbook. The full directory path is included (blue header) below:</li>
 </ol>
@@ -735,6 +736,7 @@
 <p>Now try <strong>changing</strong> the name of the variable that was generated from <code>TASK 1</code> on <strong>Line 26</strong> and observing how the <code>TASK 2</code> block on <strong>Line 33</strong> is altered after deleting the previously-generated <code>TASK 2</code> content and <strong>re-generating</strong> the code block.</p>
 </li>
 </ul>
+<hr />
 <ol start="13">
 <li>
 <p>Change the name of variable <code>subnet_info</code> instead to <code>subnet_name</code>, delete the code block recommendations under <strong>Line 33</strong>, and then regenerate the task on <strong>Line 33</strong>.</p>
