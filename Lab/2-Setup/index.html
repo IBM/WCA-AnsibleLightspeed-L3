@@ -458,8 +458,8 @@
 <hr />
 <ol start="10">
 <li>
-<p>It's recommended that you first verify that the Lightspeed extension has been authenticated and activated.</p>
-<p>Click the <strong>Ansible</strong><sup>[A]</sup> extension (denoted by the large <code>A</code> icon) from the left-hand interface.</p>
+<p>If this is your first time logging into the VM, you must authenticate and activate the Ansible Lightspeed extension for VS Code.</p>
+<p>Click the <strong>Ansible</strong><sup>[A]</sup> extension (denoted by the large <code>A</code> icon) from the left-hand interface open expose details about the Ansible plug-in.</p>
 <p><br/>
 <a class="glightbox" href="../_attachments/setup10.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup10.png" width="600" /></a></p>
 </li>
@@ -467,7 +467,78 @@
 <hr />
 <ol start="11">
 <li>
-<p>Verify<sup>[A]</sup> that the environment is logged in as <code>wca-ibm-demo-us...</code> and that the <code>User Type: Licensed</code>.</p>
+<p>In the bottom-right corner of the interface<sup>[A]</sup>, you may receieve a notification stating that <code>You must be logged in to use the Ansible Lightspeed</code>, which confirms that the Ansible Lightspeed service still needs to be activated for this VM environment.</p>
+<p>Additionally, along the left-hand side of the interface<sup>[B]</sup>, you will also receive a welcome notice attached to the <code>Ansible Lightspeed Login</code> panel.</p>
+<ul>
+<li>
+<p>Click either the <strong>Connect</strong><sup>[C]</sup> or <strong>Login</strong> buttons to proceed with authentication and activation of the plugin</p>
+</li>
+<li>
+<p>When prompted with <code>The extension Ansible wants to sign in using Ansible Lightspeed</code>, click <strong>Allow</strong><sup>[D]</sup> </p>
+</li>
+</ul>
+<p><br/>
+<a class="glightbox" href="../_attachments/setup20.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup20.png" width="600" /></a></p>
+<p><br/>
+<a class="glightbox" href="../_attachments/setup21.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup21.png" width="600" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="12">
+<li>
+<p>Firefox web browser will open within the VM and redirect to a Red Hat authentication page, as shown below.</p>
+<ul>
+<li>
+<p>Click <strong>Log in with Red Hat</strong><sup>[A]</sup></p>
+</li>
+<li>
+<p>Note that the page load may be sluggish or slow — please be patient and give it a few moments before retrying this step</p>
+</li>
+</ul>
+<p><br/>
+<a class="glightbox" href="../_attachments/setup22.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup22.png" width="600" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="13">
+<li>
+<p>The VM environment already has access credentials saved to Firefox's keychain. Use the stored username and password to authenticate the Ansible Lightspeed plugin with Red Hat.</p>
+<ul>
+<li>
+<p>Click the stored <code>ibm-wxca-demo-user-1</code> account for <strong>Red Hat login or email</strong></p>
+</li>
+<li>
+<p>Click the same <code>ibm-wxca-demo-user-1</code> account when prompted for a <strong>Password</strong></p>
+</li>
+<li>
+<p>Log in when ready</p>
+</li>
+</ul>
+<p><br/>
+<a class="glightbox" href="../_attachments/setup23.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup23.png" width="600" /></a></p>
+<p><br/>
+<a class="glightbox" href="../_attachments/setup24.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup24.png" width="600" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="14">
+<li>
+<p>A pop-up notification will ask to <code>Authorize Ansible Lightspeed for VS Code</code>. Click <strong>Authorize</strong> to proceed.</p>
+<div class="admonition warning">
+<p class="admonition-title">FAILURE TO LOGIN OR TIMED OUT</p>
+<p>If the authentication procedure in Steps 11-13 takes too long (over 60 seconds), activation of the plugin will be "timed out" and the VS Code environment will display an error message<sup>[B]</sup> in the bottom-right corner of the interface.</p>
+<p>Click the <strong>Connect</strong><sup>[C]</sup> button as shown and repeat Steps 12-13 as before. The login process should run smoother (and faster) on the second attempt.</p>
+</div>
+<p><br/>
+<a class="glightbox" href="../_attachments/setup25.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup25.png" width="600" /></a></p>
+<p><br/>
+<a class="glightbox" href="../_attachments/setup26.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup26.png" width="600" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="15">
+<li>
+<p>Verify<sup>[A]</sup> that the environment is logged in as <code>wca-ibm-demo-user-1</code> and that the <code>User Type: Licensed</code>.</p>
 <p><br/>
 <a class="glightbox" href="../_attachments/setup11.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup11.png" width="600" /></a></p>
 </li>
