@@ -333,12 +333,12 @@
 
 <h1 id="prerequisites-and-setup">Prerequisites and Setup</h1>
 <hr />
-<p>Before getting started with <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> (<strong>WCA</strong>), you must install <strong>Visual Studio Code</strong> (commonly referred to as <strong>VS Code</strong>) on your local machine.</p>
-<p>VS Code is a code editor built on open source technology that is free to use and published by Microsoft. Distributions are available for both Windows and macOS operating systems.</p>
+<p>Before getting started with <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> (<strong>WCA</strong>), you must install and configure <strong>Visual Studio Code</strong> (commonly referred to as <strong>VS Code</strong>) on your local machine. </p>
 <hr />
 <ol>
 <li>
-<p>Select the latest <strong>Stable Build</strong> release of VS Code availabe for your machine's operating system using the <strong>Download</strong> link below.</p>
+<p>Select the latest <strong>Stable Build</strong> release of VS Code availabe for your machine's operating system using the link below.</p>
+<p></br></p>
 <div class="admonition warning">
 <p><strong>Download</strong>: <a href="https://code.visualstudio.com" target="_blank">https://code.visualstudio.com</a></p>
 </div>
@@ -349,18 +349,33 @@ Follow along with the installer wizard steps and continue with the hands-on lab 
 <hr />
 <ol start="2">
 <li>
-<p>Open the VS Code app and locate the sidebar along the left-side of the interface. Click the <strong>Extensions</strong> icon (as shown in the screenshot below) to open the marketplace of Microsoft services and open source technologies that can be integrated with VS Code.</p>
-<p><br/>
-<a class="glightbox" href="../_attachments/figure2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure2.png" width="400" /></a></p>
+<p>Launch the VS Code application and take note of the sidebar along the left-side of the interface.</p>
+<ul>
+<li>
+<p>Click the <strong>Extensions</strong> icon<sup>[A]</sup> to open the marketplace of services and open source technologies that can be integrated with VS Code</p>
+</li>
+<li>
+<p>If you have used VS Code previously, extensions that have already been integrated with the environment will be listed along the left side</p>
+</li>
+</ul>
 </li>
 </ol>
-<div class="admonition warning">
-<p class="admonition-title">DEPRECATED VERSION</p>
-<p>Ignore the deprecated version of "Ansible language support" that was previously published by Tomasz Maciazek. The only official (and installable) Ansible extension is the one published by Red Hat's verified account.</p>
-</div>
 <hr />
-<ol start="2">
-<li>At the top of the Extensions panel is a search bar. Search here for <code>Ansible</code>.</li>
+<ol start="3">
+<li>
+<p>At the top of the Extensions panel is a search bar.</p>
+<ul>
+<li>
+<p>Type <code>Ansible</code> into the search bar<sup>[A]</sup>, hit ++Return++ and wait for the list of extensions to filter</p>
+</li>
+<li>
+<p>Click the blue <strong>Install</strong> button<sup>[B]</sup> for the official <em>Ansible</em> extension for VS Code, published by <em>Red Hat</em> (blue checkmark)</p>
+</li>
+<li>
+<p>Installation should only take a moment and then an <em>Extension:Ansible</em> welcome panel will open</p>
+</li>
+</ul>
+</li>
 </ol>
 <hr />
 <ol start="3">
