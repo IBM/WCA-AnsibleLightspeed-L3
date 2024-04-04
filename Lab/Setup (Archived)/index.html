@@ -637,9 +637,27 @@
 <h1 id="_4"></h1>
 <h1 id="troubleshooting-and-support">Troubleshooting and Support</h1>
 <p>As you settle in to the environment and begin your training, you may encounter unexpected warnings or errors. Many of these can be safely ignored or can be easily rectified. This section will serve as a running list of frequently asked questions and troubleshooting techniques. Click on any of the following topics for additional details.</p>
+<hr />
+<details class="warning">
+<summary>FAILED TO CONNECT TO THE SERVER</summary>
+<p>This warning will occur when the Ansible plugin for VS Code needs to be re-authenticated with WCA. It can occur after an extended period of inactivity or a system restart. For example, if your lab environment is running inside a VM, pausing or restarting the VM may produce this error.</p>
+<p>To re-authenticate:</p>
+<ul>
+<li>
+<p><strong>Sign out</strong> from the <em>VS Code</em> application by clicking the User icon<sup>[A]</sup> in the bottom-left corner of the interface, hover over your username, and then click <strong>Sign Out</strong></p>
+</li>
+<li>
+<p><strong>If you are running this environment inside a virtual machine (VM)</strong>, closing and restarting the VM <em>will not</em> resolve the issue — you must sign out from the <em>VS Code</em> application, not the VM</p>
+</li>
+<li>
+<p>Once logged out, follow from <em>Step 7</em> of the <em>Setup &amp; Troubleshooting</em> to re-authenticate with WCA</p>
+</li>
+</ul>
+</details>
+<hr />
 <details class="warning">
 <summary>PYTHON DRIVERS ARE MISSING</summary>
-<p>The WCA extension for VS Code requires that Python drivers are included within the workspace. These are usually configured within VS Code by default, but can be easily set if necessary. Look for a <code>Python</code> tile adjacent to the <code>Ansible</code> tile along the bottom-right corner of the VS Code interface. If it is not set, <strong>click</strong> the tile and select <code>Python 3.11.5 64-bit</code>.</p>
+<p>The WCA extension for VS Code requires that Python drivers are included within the workspace. These are usually configured within VS Code by default, but can be easily set if necessary. Look for a <code>Python</code> tile adjacent to the <code>Ansible</code> tile along the bottom-right corner of the VS Code interface. If it is not set, <strong>click</strong> the tile and select the <code>Python 3.11.5 64-bit</code> drivers.</p>
 <ul>
 <li>
 <p>Click the gold-colored <code>Select python environment</code> button at the bottom-right of the interface</p>
