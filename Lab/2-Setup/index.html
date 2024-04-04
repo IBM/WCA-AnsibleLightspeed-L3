@@ -587,6 +587,117 @@
 At this stage, the hands-on environment has been fully configured.</p>
 <hr />
 <h1 id="_2"></h1>
+<h1 id="troubleshooting-and-support">Troubleshooting and support</h1>
+<p>As you settle in to the environment and begin your training, you may encounter unexpected warnings or errors. Many of these can be safely ignored or can be easily rectified. This section will serve as a running list of frequently asked questions and troubleshooting techniques. Click on any of the following topics for additional details.</p>
+<hr />
+<details class="quote">
+<summary>FAILED TO CONNECT TO THE SERVER</summary>
+<p>This warning will occur when the Ansible plugin for VS Code needs to be re-authenticated with WCA. It can occur after an extended period of inactivity or a system restart. For example, if your lab environment is running inside a VM, pausing or restarting the VM may produce this error.</p>
+<p>To re-authenticate:</p>
+<ul>
+<li>
+<p><strong>Sign out</strong> from the <em>VS Code</em> application by clicking the User icon<sup>[A]</sup> in the bottom-left corner of the interface, hover over your username, and then click <strong>Sign Out</strong><sup>[B]</sup></p>
+</li>
+<li>
+<p><strong>If you are running this environment inside a virtual machine (VM)</strong>, closing and restarting the VM <em>will not</em> resolve the issue — you must sign out from the <em>VS Code</em> application, not the VM</p>
+</li>
+<li>
+<p>Once logged out, follow from <em>Step 7</em> of the <em>Setup &amp; Troubleshooting</em> to re-authenticate with WCA</p>
+</li>
+</ul>
+<p><br/>
+<a class="glightbox" href="../_attachments/troubleshooting-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-1.png" width="600" /></a></p>
+</details>
+<details class="quote">
+<summary>ANSIBLE LIGHTSPEED IS MISSING OR CODE RECOMMENDATIONS ARE NOT GENERATING</summary>
+<p>Ansible Lightspeed and WCA will only generate code recommendations for <em>Ansible Playbooks</em> and <em>YAML</em> files. VS Code will typically auto-detect the programming language of the document you're working with, but on occassion you may need to manually specify the language. Even if working with a YAML file, you'll still need to specify the language mode as <code>Ansible</code> for the Lightspeed plugin to engage.</p>
+<p>To set the language mode correctly:</p>
+<ul>
+<li>
+<p>In the bottom-right corner of the VS Code interface, hover over the <strong>Select Language Mode</strong> toggle<sup>[A]</sup></p>
+</li>
+<li>
+<p>A console will appear at the top of VS Code with a drop-down list of options<sup>[B]</sup></p>
+</li>
+<li>
+<p>Click <code>Ansible</code> from the suggested languages, or enter the text yourself and hit <span class="keys"><kbd class="key-enter">Enter</kbd></span></p>
+</li>
+<li>
+<p>Confirm that the Select Language Mode toggle in the bottom-right corner displays <code>Ansible</code></p>
+</li>
+</ul>
+<p><br/>
+<a class="glightbox" href="../_attachments/troubleshooting-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-2.png" width="600" /></a></p>
+<p><a class="glightbox" href="../_attachments/troubleshooting-3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-3.png" width="600" /></a></p>
+</details>
+<details class="quote">
+<summary>ANSIBLE-LINT IS NOT AVAILABLE</summary>
+<p><code>ansible-lint</code> checks playbooks for practices and behavior that could potentially be improved and can fix some of the most common ones for you. It will constantly check your Ansible syntax as you type and provide recommendations for how to improve it.</p>
+<p>You can safely <strong>ignore</strong> this error if it occurs during the lab exercises.</p>
+<p><br/>
+<a class="glightbox" href="../_attachments/troubleshooting-4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-4.png" width="600" /></a></p>
+</details>
+<details class="quote">
+<summary>RED <em>ANSIBLE</em> ICON ALONG BOTTOM-RIGHT INTERFACE</summary>
+<p>The <em>Ansible</em> extension for VS Code will check your local machine to determine if Red Hat Ansible has been installed locally. If you have not set up Ansible (the standalone version) on your local machine previously, this tile will display as red.</p>
+<p>You can safely <strong>ignore</strong> this error if it occurs during the lab exercises.</p>
+<p><br/>
+<a class="glightbox" href="../_attachments/troubleshooting-5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-5.png" width="600" /></a></p>
+</details>
+<details class="quote">
+<summary>CANNOT SET PROPERTIES OF UNDEFINED (SETTING 'currentModelValue')</summary>
+<p>Make sure that the <strong>Model ID Override</strong> field is set to <code>empty</code> in your Ansible for VS Code extension settings.</p>
+<p>To verify this:</p>
+<ul>
+<li>
+<p>Click the <strong>Extensions</strong> tab<sup>[A]</sup> along the left-hand interface</p>
+</li>
+<li>
+<p>Click the <strong>Manage</strong> icon<sup>[B]</sup> on the right side of the <em>Ansible</em> extension tile, then drill down into <strong>Extension Settings</strong><sup>[C]</sup></p>
+</li>
+<li>
+<p>Add the text <code>Model</code> to the search filter<sup>[D]</sup> at the top of the Extension Settings panel</p>
+</li>
+<li>
+<p>Clear the input field<sup>[E]</sup> of any model IDs and leave it blank</p>
+</li>
+<li>
+<p>Close the Extension Settings panel by clicking <code>X</code> and return to the Ansible Playbook</p>
+</li>
+</ul>
+<p><br/>
+<a class="glightbox" href="../_attachments/troubleshooting-6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-6.png" width="600" /></a></p>
+<p><a class="glightbox" href="../_attachments/troubleshooting-7.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-7.png" width="600" /></a></p>
+<p><a class="glightbox" href="../_attachments/troubleshooting-8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-8.png" width="600" /></a></p>
+</details>
+<details class="quote">
+<summary>SPAWN C:\Windows\system32\cmd.exe ENOENT</summary>
+<p>This warning is not related to Ansible or WCA. You can safely <strong>ignore</strong> this error if it occurs during the lab exercises.</p>
+<p><br/>
+<a class="glightbox" href="../_attachments/troubleshooting-9.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-9.png" width="600" /></a></p>
+</details>
+<details class="quote">
+<summary>PYTHON DRIVERS ARE MISSING</summary>
+<p>The WCA extension for VS Code requires that Python drivers are included within the workspace. These are usually configured within VS Code by default, but can be easily set if necessary. Look for a <code>Python</code> tile adjacent to the <code>Ansible</code> tile along the bottom-right corner of the VS Code interface. If it is not set, <strong>click</strong> the tile and select the <code>Python 3.11.5 64-bit</code> drivers.</p>
+<ul>
+<li>
+<p>Click the gold-colored <code>Select python environment</code> button at the bottom-right of the interface</p>
+</li>
+<li>
+<p>From the console at the top of the VS Code environment, select the recommended <code>Python 3.11.5 64-bit</code> option and hit <span class="keys"><kbd class="key-enter">Enter</kbd></span> to confirm</p>
+<p><br/>
+<a class="glightbox" href="../_attachments/figure44.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure44.png" width="300" /></a></p>
+<p><a class="glightbox" href="../_attachments/figure45.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure45.png" width="300" /></a></p>
+</li>
+</ul>
+</details>
+<details class="quote">
+<summary>COPY AND PASTE INSTRUCTIONS INTO A VIRTUAL MACHINE</summary>
+<p>If you are running the lab environment inside a virtual machine (VM), it might not be possible to "paste" lab instructions from your local machine's clipboard directly into the VM.</p>
+<p>If you wish to copy and paste instructions directly from the lab documentation, it is recommended that you open the GitHub instructions <strong>inside</strong> the VM's web browser (Firefox). This will allow you to copy instructions to the VM's clipboard and paste instructions inside the VS Code editor.</p>
+</details>
+<hr />
+<h1 id="_3"></h1>
 <h1 id="next-steps">Next steps</h1>
 <p>The following section will cover the fundamentals of AI-recommended code generation for Ansible Tasks.</p>
 
