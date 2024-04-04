@@ -638,7 +638,7 @@
 <h1 id="troubleshooting-and-support">Troubleshooting and Support</h1>
 <p>As you settle in to the environment and begin your training, you may encounter unexpected warnings or errors. Many of these can be safely ignored or can be easily rectified. This section will serve as a running list of frequently asked questions and troubleshooting techniques. Click on any of the following topics for additional details.</p>
 <hr />
-<details class="warning">
+<details class="quote">
 <summary>FAILED TO CONNECT TO THE SERVER</summary>
 <p>This warning will occur when the Ansible plugin for VS Code needs to be re-authenticated with WCA. It can occur after an extended period of inactivity or a system restart. For example, if your lab environment is running inside a VM, pausing or restarting the VM may produce this error.</p>
 <p>To re-authenticate:</p>
@@ -654,17 +654,17 @@
 </li>
 </ul>
 </details>
-<details class="warning">
+<details class="quote">
 <summary>ANSIBLE-LINT IS NOT AVAILABLE</summary>
 <p><code>ansible-lint</code> checks playbooks for practices and behavior that could potentially be improved and can fix some of the most common ones for you. It will constantly check your Ansible syntax as you type and provide recommendations for how to improve it.</p>
 <p>You can safely <strong>ignore</strong> this error if it occurs during the lab exercises.</p>
 </details>
-<details class="warning">
+<details class="quote">
 <summary>RED <em>ANSIBLE</em> ICON ALONG BOTTOM-RIGHT INTERFACE</summary>
 <p>The <em>Ansible</em> extension for VS Code will check your local machine to determine if Red Hat Ansible has been installed locally. If you have not set up Ansible (the standalone version) on your local machine previously, this tile will display as red.</p>
 <p>You can safely <strong>ignore</strong> this error if it occurs during the lab exercises.</p>
 </details>
-<details class="warning">
+<details class="quote">
 <summary>CANNOT SET PROPERTIES OF UNDEFINED (SETTING 'currentModelValue')</summary>
 <p>Make sure that the <strong>Model ID Override</strong> field is set to <code>empty</code> in your Ansible for VS Code extension settings. To verify this:</p>
 <ul>
@@ -685,11 +685,11 @@
 </li>
 </ul>
 </details>
-<details class="warning">
+<details class="quote">
 <summary>SPAWN C:\Windows\system32\cmd.exe ENOENT</summary>
 <p>This warning is not related to Ansible or WCA. You can safely <strong>ignore</strong> this error if it occurs during the lab exercises.</p>
 </details>
-<details class="warning">
+<details class="quote">
 <summary>PYTHON DRIVERS ARE MISSING</summary>
 <p>The WCA extension for VS Code requires that Python drivers are included within the workspace. These are usually configured within VS Code by default, but can be easily set if necessary. Look for a <code>Python</code> tile adjacent to the <code>Ansible</code> tile along the bottom-right corner of the VS Code interface. If it is not set, <strong>click</strong> the tile and select the <code>Python 3.11.5 64-bit</code> drivers.</p>
 <ul>
@@ -704,7 +704,7 @@
 </li>
 </ul>
 </details>
-<details class="warning">
+<details class="quote">
 <summary>COPY AND PASTE INSTRUCTIONS INTO A VIRTUAL MACHINE</summary>
 <p>If you are running the lab environment inside a virtual machine (VM), it might not be possible to "paste" lab instructions from your local machine's clipboard directly into the VM.</p>
 <p>If you wish to copy and paste instructions directly from the lab documentation, it is recommended that you open the GitHub instructions <strong>inside</strong> the VM's web browser (Firefox). This will allow you to copy instructions to the VM's clipboard and paste instructions inside the VS Code editor.</p>
