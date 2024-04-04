@@ -336,7 +336,7 @@
 <hr />
 <ol>
 <li>
-<p>Select the latest <strong>Stable Build</strong> release of VS Code availabe for your machine's operating system using the link below.</p>
+<p>Download the latest <strong>Stable Build</strong><sup>[A]</sup> release of VS Code availabe for your machine's operating system using the link below.</p>
 <div class="admonition warning">
 <p><strong>Download</strong>: <a href="https://code.visualstudio.com" target="_blank">https://code.visualstudio.com</a></p>
 </div>
@@ -369,8 +369,8 @@
 <p>Click the blue <strong>Install</strong> button<sup>[B]</sup> for the official <em>Ansible</em> extension for VS Code, published by <em>Red Hat</em> (blue checkmark)</p>
 </li>
 </ul>
-<details class="note">
-<summary>CLICK TO EXPAND — PROMPTS DURING INSTALLATION PROCESS</summary>
+<div class="admonition note">
+<p class="admonition-title">INSTALLATION PROMPTS</p>
 <p>You may receive two different prompts during the installation process:</p>
 <ul>
 <li>
@@ -383,13 +383,13 @@
 <p>Installation of the Ansible extension for VS Code should only take a moment — an <em>Extension:Ansible</em> welcome panel will open when it is finished</p>
 </li>
 </ul>
-</details>
+</div>
 </li>
 </ol>
 <hr />
 <ol start="4">
 <li>
-<p>Once the Ansible extension has been successfully integrated with VS Code, close any <em>Welcome</em> tabs that open and look for Ansible under the <em>Installed</em> services in the <strong>Extensions</strong> panel.</p>
+<p>Once the Ansible extension has been integrated with VS Code, close any <em>Welcome</em> tabs that open and look for Ansible under the <em>Installed</em> services in the <strong>Extensions</strong> panel.</p>
 <ul>
 <li>
 <p>Click the <strong>Manage</strong> ("cogwheel") icon located just to the right of the Ansible tile<sup>[A]</sup></p>
@@ -457,6 +457,80 @@
 </li>
 </ul>
 </div>
+</li>
+</ol>
+<hr />
+<ol start="7">
+<li>
+<p>Return to the VS Code editor and click the <strong>Ansible</strong> plugin<sup>[A]</sup> (denoted by the <code>A</code> logo) on the left-hand side of the interface.</p>
+<ul>
+<li>
+<p>Two panels will open along the left side of the interface</p>
+</li>
+<li>
+<p>Within the <em>Ansible Lightspeed Login</em> panel, click the blue <strong>Connect</strong> button<sup>[B]</sup></p>
+</li>
+<li>
+<p><code>The extension *Ansible* wants to sign in using Ansible Lightspeed</code>: click <strong>Allow</strong><sup>[C]</sup></p>
+</li>
+<li>
+<p><code>Do you want Code to open the external website?</code>: click <strong>Open</strong><sup>[D]</sup></p>
+</li>
+</ul>
+</li>
+</ol>
+<hr />
+<ol start="8">
+<li>
+<p>A web browser will load with the header <code>Log in to Ansible Lightspeed with IBM watsonx Code Assistant</code> — this is where you will supply your registration details recorded in <em>Step 6</em> in order to authenticate the VS Code plugin with WCA.</p>
+<ul>
+<li>
+<p>Click the <strong>Log in with Red Hat</strong> button<sup>[A]</sup></p>
+</li>
+<li>
+<p>If you had previously logged in to Red Hat with your browser, you might not be asked again for those credentials</p>
+</li>
+<li>
+<p>If you <em>are</em> asked to provide a <code>Username</code> and <code>Password</code>, supply the values recorded in <em>Step 6</em></p>
+</li>
+</ul>
+</li>
+</ol>
+<hr />
+<ol start="9">
+<li>
+<p>After logging in with Red Hat, you will be prompted to <code>Authorize Ansible Lightspeed for VS Code</code>:</p>
+<ul>
+<li>
+<p>Click <strong>Authorize</strong><sup>[A]</sup></p>
+</li>
+<li>
+<p><code>Do you want to allow this website to open *Visual Studio Code*?</code>: click <strong>Allow</strong><sup>[B]</sup></p>
+</li>
+<li>
+<p>VS Code will then prompt <code>Allow *Ansible* extension to open this URL?</code>: click <strong>Open</strong><sup>[C]</sup></p>
+</li>
+</ul>
+</li>
+</ol>
+<hr />
+<ol start="10">
+<li>
+<p>At this stage, the Ansible extension for VS Code is now authenticated and connected to WCA.</p>
+<ul>
+<li>
+<p>Verify<sup>[A]</sup> that the environment is logged in as your unique <code>Username</code> and that the <code>User Type: Licensed</code></p>
+</li>
+<li>
+<p>A notification pop-up will also appear in the bottom-right corner of the VS Code interface confirming the successful login<sup>[A]</sup></p>
+</li>
+</ul>
+<details class="warning">
+<summary>CLICK TO EXPAND — FAILURE TO LOGIN OR TIMED OUT</summary>
+<p>If the authentication procedure in <em>Steps 7-9</em> takes too long , activation of the plugin will be "timed out" and the VS Code environment will display an error message<sup>[B]</sup> in the bottom-right corner.</p>
+<p>Click the <strong>Connect</strong><sup>[C]</sup> button as shown and repeat <em>Steps 7-9</em> as before. The login process should run smoother (and faster) on the second attempt.</p>
+<p><a class="glightbox" href="../_attachments/setup26.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup26.png" width="600" /></a></p>
+</details>
 </li>
 </ol>
 <hr />
