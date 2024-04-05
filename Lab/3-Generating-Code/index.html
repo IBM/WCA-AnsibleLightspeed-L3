@@ -332,26 +332,42 @@
 
 
 <h1 id="generating-code-with-ibm-watsonx-code-assistant-for-red-hat-ansible-lightspeed">Generating Code with IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</h1>
-<hr />
 <p><div class="video-container"><iframe src="../_videos/generating.mp4" style="position: relative; width: 100%; height: 22.172vw" frameborder="0" allowfullscreen></iframe></div></p>
-<hr />
+<div class="admonition quote">
+<p>Christopher Bienko (<em>IBM, Learning Content Development</em>) demonstrates WCA capabilities for code generation, content source matching, and post-processing.</p>
+</div>
 <p>In the following section, you will experiment with three of the key capabilities of <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> (<strong>WCA</strong>):</p>
 <ul>
 <li>AI-generated code recommendations</li>
 <li>Content source matching and source attribution</li>
 <li>Post-processing of AI-generated code for adherence to best practices</li>
 </ul>
-<p>Once you have learned the fundamentals of generating Task code blocks, you'll be ready to shape the AI-generated code recommendations in the <a href="https://ibm.github.io/WCA-AnsibleLightspeed-L3/Lab/4-Customizing-Tasks/" target="_blank">Customizing Tasks</a> module and automate the deployment of a full infrastructure stack in the concluding <a href="https://ibm.github.io/WCA-AnsibleLightspeed-L3/Lab/5-Advanced-Topics-EC2-WordPress/" target="_blank">Deploying an AWS EC2 Instance and WordPress Application</a> module.</p>
+<p>Once you have learned the fundamentals of generating Task code blocks, you'll be ready to shape the AI-generated code recommendations in the <a href="https://ibm.github.io/WCA-AnsibleLightspeed-L3/Lab/4-Customizing-Tasks/" target="_blank">Customizing Tasks</a> module.</p>
 <hr />
 <p><a class="glightbox" href="../_attachments/lightspeed.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/lightspeed.gif" /></a></p>
 <div class="admonition note">
 <p class="admonition-title">ANSIBLE TASKS</p>
-<p>An <em>Ansible Task</em> is a statement in Ansible's automation script (the YAML-based Playbooks we have been working with) that declares a single action to be executed. This might be installing a package, copying a file, or shutting down a service on a remote machine. Each <em>Task</em> represents an idempotent operation (an action that can be repeated multiple times and deliver the same result every time) that aligns the remote managed node to the specified state, ensuring consistency across multiple executions.</p>
-<p>At the time of publication, WCA can only generate code for <strong>Ansible Tasks</strong>. In future releases, it will be capable of generating many other components of an Ansible Playbook.</p>
+<p>An <em>Ansible Task</em> is a statement in Ansible's automation script (the YAML-based Playbooks we have been working with) that declares a single action to be executed. This might be installing a package, copying a file, or shutting down a service on a remote machine. Each <em>Task</em> represents an idempotent operation (an action that can be repeated multiple times and deliver the same result every time) that aligns the remote managed node to the specified state. Idempotent operations also ensure consistency across multiple executions, guaranteeing the same steps are taken on each execution of the task.</p>
+<p>At the time of publication, WCA can only generate code for <strong>Ansible Tasks</strong>. This includes both <em>single-task</em> and <em>multi-task</em> code generation. In future releases, it will be capable of generating many other components of an Ansible Playbook.</p>
 </div>
-<p>The process of creating AI-generated <strong>code recommendations</strong> is as simple as modifying the natural language (plain English) Task descriptions of an action that is to be executed, which always start with <code>- name:</code> and followed by some description of the task to be performed. Ansible Tasks are often preceded with some <code>#</code> comments or documentation. After the natural language description of the automation Task has been set, Generative AI handles the rest.</p>
+<hr />
+<h1 id="ai-generated-code-recommendations-for-single-tasks">AI-generated code recommendations for single tasks</h1>
+<p>The process of creating AI-generated <strong>code recommendations</strong> is as simple as modifying the natural language (plain English) Task descriptions of an action that is to be executed, which always start with <code>- name:</code> and followed by some description of the task to be performed. Ansible Tasks are often preceded with some <code>#</code> comments or documentation. After the natural language description of the automation Task has been set by the user, WCA handles the rest.</p>
+<p>WCA is also capable of generating multiple Ansible Tasks from more complex natural language descriptions— what is referred to as <strong>multi-task</strong> code generation —which you will experiment with later in this module. However, to get started, let's begin with the basics of generating code for <strong>single-task</strong> use cases.</p>
+<hr />
 <ol>
-<li>Let's begin by opening the <code>~/Documents/ansible-wca-demo-kit/install and configure Cockpit using Ansible/install_cockpit_single-task.yml</code> YAML file from the list of assets in the Explorer browser.</li>
+<li>
+<p>Begin by opening the <code>../install and configure Cockpit using Ansible/install_cockpit_single-task.yml</code> Playbook from the list of assets in the Explorer browser.</p>
+<ul>
+<li>Click the <strong>Explorer</strong> tab from the left-hand interface<sup>[A]</sup></li>
+<li>Drill down into the <code>Install and configure Cockpit using Ansible</code> subdirectory<sup>[B]</sup></li>
+<li>Double-click the <code>install_cockpit_single-task.yml</code> Playbook</li>
+</ul>
+<p><a class="glightbox" href="../_attachments/Generating-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/Generating-1.png" width="600" /></a></p>
+<div class="admonition quote">
+<p>If this is your first time editing the Playbook, you may notice red highlighting within the editor reminding you that the <code>tasks:</code> section contains no valid <code>-name:</code> task definitions. This is part of WCA's code validation process which runs automatically and alerts users to syntax errors in their code. You can safely ignore these warnings for now, as you will be un-commenting and generating valid <code>-name:</code> task definitions in the following steps.</p>
+</div>
+</li>
 </ol>
 <hr />
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">~/Documents/ansible-wca-demo-kit/install and configure Cockpit using Ansible/install_cockpit_single-task.yml</label></div>
