@@ -349,17 +349,18 @@
 <h1 id="generating-code-with-ibm-watsonx-code-assistant-for-red-hat-ansible-lightspeed">Generating Code with IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</h1>
 <p><div class="video-container"><iframe src="../_videos/generating.mp4" style="position: relative; width: 100%; height: 22.172vw" frameborder="0" allowfullscreen></iframe></div></p>
 <div class="admonition quote">
-<p>Christopher Bienko (<em>IBM, Learning Content Development</em>) demonstrates IBM watsonx Code Assistant's capabilities for code generation for single-task and multi-task Ansible Playbook operations.</p>
+<p>Christopher Bienko (<em>IBM, Learning Content Development</em>) demonstrates IBM watsonx Code Assistant's capabilities for code generation for single task and multi-task Ansible Playbook operations.</p>
 </div>
 <p><br/></p>
 <p>An <strong>Ansible Task</strong> is a statement in Ansible's automation script (the YAML-based Playbooks we have been working with) that declares a single action to be executed. This might be installing a package, copying a file, or shutting down a service on a remote machine. Each <em>Task</em> represents an idempotent operation (an action that can be repeated multiple times and deliver the same result every time) that aligns the remote managed node to the specified state. Idempotent operations also ensure consistency across multiple executions, guaranteeing the same steps are taken on each execution of the task.</p>
 <p>At the time of publication, WCA will only generate code for <strong>Ansible Tasks</strong>. This includes both <em>single task</em> and <em>multi-task</em> code generation. In future releases, it will be capable of generating many other components of Playbooks.</p>
-<p>Once you have learned the fundamentals of generating Task code blocks, you'll be ready to shape and tailor the AI-generated code recommendations using WCA's advanced tuning capabilities. Before that, however, let's begin by examining how to generate code for single task Ansible Playbook operations.</p>
+<p>Once you have learned the fundamentals of generating Task code blocks, you'll be ready to shape and tailor the AI-generated code recommendations using WCA's advanced tuning capabilities.</p>
 <hr />
 <p><a class="glightbox" href="../_attachments/lightspeed.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/lightspeed.gif" /></a></p>
+<hr />
 <h1 id="ai-generated-code-for-single-tasks">AI-generated code for single tasks</h1>
 <p>The process of creating AI-generated <strong>code recommendations</strong> is as simple as modifying the natural language (plain English) Task descriptions of an action that is to be executed, which always start with <code>- name:</code> and followed by some description of the task to be performed. Ansible Tasks are often preceded with some <code>#</code> comments or documentation. After the natural language description of the automation Task has been set by the user, WCA handles the rest.</p>
-<p>WCA is also capable of generating multiple Ansible Tasks from more complex natural language descriptions— what is referred to as <strong>multi-task</strong> code generation —which you will experiment with later in this module. However, to get started, let's begin with the basics of generating code for <strong>single-task</strong> use cases.</p>
+<p>WCA is also capable of generating multiple Ansible Tasks from more complex natural language descriptions— what is referred to as <strong>multi-task</strong> code generation —which you will experiment with later in this module. However, to get started, let's begin with the basics of generating code for <strong>single task</strong> use cases.</p>
 <hr />
 <ol>
 <li>
