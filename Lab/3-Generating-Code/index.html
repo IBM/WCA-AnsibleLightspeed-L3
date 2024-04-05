@@ -471,19 +471,21 @@ In the following section, you will experiment with three of the key capabilities
 </ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">    </span><span class="c1"># - name: Install cockpit package</span><span class="w"></span>
 </code></pre></div>
-<p>Pay attention to the indentation and characters used on <strong>Line 15</strong>, which in sequence from left to right are as follows:</p>
-<ul>
-<li>begins with a <span class="keys"><kbd class="key-tab">Tab</kbd></span> indentation</li>
-<li>a <code>#</code> character to "comment out" the line contents</li>
-<li>a whitespace <span class="keys"><kbd class="key-space">Space</kbd></span> character</li>
-<li><code>- name:</code> which signifies the start of a Task definition</li>
-<li>and finally the natural language description of the Task</li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">INDENTATION LEVELS AND WHITESPACE</p>
-<p>Similarly to Python, Ansible and YAML-based Playbooks are very sensitive to whitespacing and indentation. Indentations (such as the <span class="keys"><kbd class="key-tab">Tab</kbd></span> in this example) denote different hierarchies and code nesting levels within the YAML structure.</p>
-<p>You may use <span class="keys"><kbd class="key-space">Space</kbd></span> instead of <span class="keys"><kbd class="key-tab">Tab</kbd></span> if you prefer, but be sure to <strong>use indentations consistently</strong>: choose to use either <span class="keys"><kbd class="key-tab">Tab</kbd></span> or <span class="keys"><kbd class="key-space">Space</kbd></span> for indenting lines of code, and do not interchange between the two.</p>
-</div>
+<hr />
+<div class="highlight"><pre><span></span><code>Pay attention to the indentation and characters used on **Line 15**, which in sequence from left to right are as follows:
+
+- begins with a ++tab++ indentation
+- a `#` character to &quot;comment out&quot; the line contents
+- a whitespace ++space++ character
+- `- name: ` which signifies the start of a Task definition
+- and finally the natural language description of the Task
+
+!!! note &quot;INDENTATION LEVELS AND WHITESPACE&quot;
+
+    Similarly to Python, Ansible and YAML-based Playbooks are very sensitive to whitespacing and indentation. Indentations (such as the ++tab++ in this example) denote different hierarchies and code nesting levels within the YAML structure.
+
+    You may use ++space++ instead of ++tab++ if you prefer, but be sure to **use indentations consistently**: choose to use either ++tab++ or ++space++ for indenting lines of code, and do not interchange between the two.
+</code></pre></div>
 <hr />
 <ol start="3">
 <li>
