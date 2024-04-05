@@ -17,7 +17,7 @@
     
     
       
-        <title>Generating Code - IBM watsonx Code Assistant for Red Hat Ansible Lightspeed - Technical Sales Level 3</title>
+        <title>Generating Code with IBM watsonx Code Assistant for Red Hat Ansible Lightspeed - IBM watsonx Code Assistant for Red Hat Ansible Lightspeed - Technical Sales Level 3</title>
       
     
     
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Generating Code
+              Generating Code with IBM watsonx Code Assistant for Red Hat Ansible Lightspeed
             
           </span>
         </div>
@@ -192,7 +192,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../1-introduction.md" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -207,7 +207,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1-Evaluation/" class="md-nav__link">
+      <a href="../../2-evaluation/" class="md-nav__link">
         Evaluation
       </a>
     </li>
@@ -222,7 +222,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2-Setup/" class="md-nav__link">
+      <a href="../../3-setup/" class="md-nav__link">
         Setup & Troubleshooting
       </a>
     </li>
@@ -235,21 +235,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../4-generating/" class="md-nav__link">
         Generating Code
       </a>
-      
     </li>
   
 
@@ -262,7 +252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4-Customizing-Tasks/" class="md-nav__link">
+      <a href="../../5-customizing.md" class="md-nav__link">
         Customizing Tasks
       </a>
     </li>
@@ -277,7 +267,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../5-Advanced-Topics-EC2-WordPress/" class="md-nav__link">
+      <a href="../../6-optional/" class="md-nav__link">
         (OPTIONAL) Deploying a Live AWS EC2 Instance and WordPress Application
       </a>
     </li>
@@ -292,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Setup%20%28Archived%29/" class="md-nav__link">
+      <a href="../../archived/" class="md-nav__link">
         /
       </a>
     </li>
@@ -568,7 +558,7 @@ Afterwards, <strong>Line 15</strong> should look like the following — beginnin
 </div>
 <p>The AI-generated code recommendation will copy <a href="https://github.com/craig-br/demos/blob/main/blogs/lightspeed_tech_preview_jun2023/files/cockpit.conf" target="_blank"><code>cockpit.conf</code></a> to the target host.</p>
 <p>Take note of the fact that the recommendation included the <code>mode:</code> argument and set the Linux file permissions to <code>0644</code>, neither of which were things explicitly requested in the Task <code>-name</code> description, but are both additions which adhere to best practices around defining Ansible automaton tasks. Setting a file permission to <code>0644</code> specifies read and write permissions for User and Group levels within the Linux OS, and provides only read permissions to all others.</p>
-<p>These additional recommendations stem from a robust example of setting file permissions for the <a href="https://docs.ansible.com/ansible/latest/collections/ansible/builtin/copy_module.html" target="_blank"><code>ansible.builtin.copy</code></a> module, a recommended best practice from the Ansible Galaxy and Red Hat communities that Lightspeed carried into this AI-generated code recommendation as well.</p>
+<p>These additional recommendations stem from a robust example of setting file permissions for the <a href="https://docs.ansible.com/ansible/latest/collections/ansible/builtin/copy_module.html" target="_blank"><code>ansible.builtin.copy</code></a> module, a recommended best practice from the Ansible Galaxy and Red Hat communities that Lightspeed included in the AI-generated code as well.</p>
 <p>You may continue generating Task blocks using the <code>install_cockpit_single-task.yml</code> Playbook if you wish — this is optional, as you will not be returning to this Playbook at a later time. When ready to proceed, follow along with the lab documentation below.</p>
 <hr />
 <h1 id="_1"></h1>
@@ -869,42 +859,6 @@ Afterwards, <strong>Line 15</strong> should look like the following — beginnin
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../2-Setup/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Setup &amp; Troubleshooting" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Setup & Troubleshooting
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../4-Customizing-Tasks/" class="md-footer__link md-footer__link--next" aria-label="Next: Customizing Tasks" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Customizing Tasks
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

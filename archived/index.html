@@ -1,0 +1,856 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="IBM watsonx Code Assistant for Red Hat Ansible Lightspeed - Technical Sales Level 3">
+      
+      
+        <meta name="author" content="Christopher Bienko (cdbienko@us.ibm.com)">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.1">
+    
+    
+      
+        <title>/ - IBM watsonx Code Assistant for Red Hat Ansible Lightspeed - Technical Sales Level 3</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#installation-of-visual-studio-code-and-extensions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="IBM watsonx Code Assistant for Red Hat Ansible Lightspeed - Technical Sales Level 3" class="md-header__button md-logo" aria-label="IBM watsonx Code Assistant for Red Hat Ansible Lightspeed - Technical Sales Level 3" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IBM watsonx Code Assistant for Red Hat Ansible Lightspeed - Technical Sales Level 3
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              /
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="IBM watsonx Code Assistant for Red Hat Ansible Lightspeed - Technical Sales Level 3" class="md-nav__button md-logo" aria-label="IBM watsonx Code Assistant for Red Hat Ansible Lightspeed - Technical Sales Level 3" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    IBM watsonx Code Assistant for Red Hat Ansible Lightspeed - Technical Sales Level 3
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1-introduction.md" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-evaluation/" class="md-nav__link">
+        Evaluation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-setup/" class="md-nav__link">
+        Setup & Troubleshooting
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-generating/" class="md-nav__link">
+        Generating Code
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5-customizing.md" class="md-nav__link">
+        Customizing Tasks
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6-optional/" class="md-nav__link">
+        (OPTIONAL) Deploying a Live AWS EC2 Instance and WordPress Application
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        /
+      </a>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="installation-of-visual-studio-code-and-extensions">Installation of Visual Studio Code and Extensions</h1>
+<h1 id="_1"></h1>
+<p>Before getting started with <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> (<strong>WCA</strong>), you will first setup <em>Visual Studio Code</em> (commonly referred to as <strong>VS Code</strong>) on a local machine. This will provide an integrated development environment for experimenting with WCA's generative AI capabilities.</p>
+<hr />
+<ol>
+<li>
+<p>Download the latest <strong>Stable Build</strong><sup>[A]</sup> release of VS Code availabe for your machine's operating system using the link below.</p>
+<div class="admonition warning">
+<p><strong>Download</strong>: <a href="https://code.visualstudio.com" target="_blank">https://code.visualstudio.com</a></p>
+</div>
+<p>Follow along with the installer wizard steps and continue with the hands-on lab instructions once VS Code is running on your local machine.</p>
+<p><br/>
+<a class="glightbox" href="../_attachments/setuptroubleshoot-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-1.png" width="600" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="2">
+<li>
+<p>Launch the VS Code application and take note of the sidebar along the left-side.</p>
+<ul>
+<li>
+<p>Click the <strong>Extensions</strong> icon<sup>[A]</sup> to open the marketplace of services and open source technologies that can be integrated with VS Code</p>
+</li>
+<li>
+<p>If you have used VS Code previously, extensions that have already been integrated with the environment will be listed along the left side</p>
+</li>
+</ul>
+<p><br/>
+<a class="glightbox" href="../_attachments/setuptroubleshoot-2a.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-2a.png" width="600" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="3">
+<li>
+<p>At the top of the <strong>Extensions</strong> panel is a search bar:</p>
+<ul>
+<li>
+<p>Type <code>Ansible</code> into the search bar<sup>[A]</sup> and then hit <span class="keys"><kbd class="key-enter">Enter</kbd></span></p>
+</li>
+<li>
+<p>Click the blue <strong>Install</strong> button<sup>[B]</sup> for the official <em>Ansible</em> extension for VS Code, published by <em>Red Hat</em> (blue checkmark)</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">INSTALLATION PROMPTS</p>
+<p>You may receive two different prompts during the installation process:</p>
+<ul>
+<li>
+<p><code>Do you trust the authors of the files in this workspace?</code>: select <strong>Trust Workspace &amp; Install</strong></p>
+</li>
+<li>
+<p><code>Do you want to allow untrusted files in this window?</code>: select <strong>Open</strong></p>
+</li>
+<li>
+<p>Installation of the Ansible extension for VS Code should only take a moment — an <em>Extension:Ansible</em> welcome panel will open when it is finished</p>
+</li>
+</ul>
+</div>
+<p><br/>
+<a class="glightbox" href="../_attachments/setuptroubleshoot-3a.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-3a.png" width="600" /></a></p>
+<p><a class="glightbox" href="../_attachments/setuptroubleshoot-3b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-3b.png" width="600" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="4">
+<li>
+<p>Once the Ansible extension has been integrated with VS Code, close any <em>Welcome</em> tabs that open and look for Ansible under the <em>Installed</em> services in the <strong>Extensions</strong> panel.</p>
+<ul>
+<li>
+<p>Click the <strong>Manage</strong> ("cogwheel") icon located just to the right of the Ansible tile<sup>[A]</sup></p>
+</li>
+<li>
+<p>From the drop-down options, click <strong>Extension Settings</strong><sup>[B]</sup></p>
+</li>
+</ul>
+<p><br/>
+<a class="glightbox" href="../_attachments/setuptroubleshoot-4a.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-4a.png" width="600" /></a></p>
+<p><a class="glightbox" href="../_attachments/setuptroubleshoot-4b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-4b.png" width="600" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="5">
+<li>
+<p><em>Settings</em> for the Ansible extension will be displayed within a new panel.</p>
+<ul>
+<li>
+<p>Ensure that <strong>User</strong><sup>[A]</sup> is selected at the top of the panel — do not edit <em>Workspace</em></p>
+</li>
+<li>
+<p>Using the search bar<sup>[B]</sup> at the top of the panel, add the text <code>Lightspeed</code> to filter the available options</p>
+</li>
+<li>
+<p><strong>Check</strong> the option for <code>Ansible &gt; Lightspeed</code><sup>[C]</sup> </p>
+</li>
+<li>
+<p><strong>Check</strong> the option for <code>Ansible &gt; Lightspeed: Suggestions</code><sup>[D]</sup></p>
+</li>
+<li>
+<p><strong>Check</strong> the option for <code>Ansible &gt; Lightspeed: Disable Content Suggestion Header</code><sup>[E]</sup></p>
+</li>
+<li>
+<p>Changes to <em>Settings</em> are automatically saved and applied – click the <code>X</code> button in the top-left corner of the panel's tab</p>
+</li>
+</ul>
+<p><br/>
+<a class="glightbox" href="../_attachments/setuptroubleshoot-5a.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-5a.png" width="600" /></a></p>
+</li>
+</ol>
+<hr />
+<h1 id="_2"></h1>
+<h1 id="accessing-your-red-hat-credentials-and-authenticating-with-wca">Accessing your Red Hat credentials and authenticating with WCA</h1>
+<p><strong>Red Hat credentials</strong> will already have been emailed to you prior to starting this hands-on material, as part of the registration process. The invitation email will have a header similar to <code>Red Hat Login Email Verification</code>, addressed from a <code>no-reply@redhat.com</code> account.</p>
+<p>Locate this email in your inbox and follow along with the steps below to authenticate the VS Code extension with the <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> (WCA) environment that has been pre-provisioned for this training.</p>
+<hr />
+<ol start="6">
+<li>
+<p>Click the <strong>URL</strong><sup>[A]</sup> located within the body of the invitation email to finalize your account registration with the WCA environment.</p>
+<ul>
+<li>
+<p>An <em>Email Confirmation</em> page will load within your web browser</p>
+</li>
+<li>
+<p><strong>Record</strong> the value of <code>Red Hat login</code> to a notepad for reference later</p>
+</li>
+<li>
+<p><strong>Create</strong> a new <code>Password</code> and <strong>record</strong> this to a notepad for reference later</p>
+</li>
+<li>
+<p>When ready, click <strong>Save</strong><sup>[B]</sup> to finalize registration</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">REGISTRATION IS REQUIRED</p>
+<ul>
+<li>
+<p>If you already have a personal account with Red Hat, <strong>you must still register for a new account</strong> using the invitation URL provided</p>
+</li>
+<li>
+<p><strong>Do not</strong> attempt to use a personal Red Hat account in the later steps of the <em>Setup &amp; Troubleshooting</em> guide, as that account will not have access to the WCA services needed to perform the training</p>
+</li>
+<li>
+<p>Red Hat accounts created for this training will be de-authorized and deleted after the hands-on training period has ended</p>
+</li>
+</ul>
+</div>
+<p><br/>
+<a class="glightbox" href="../_attachments/setuptroubleshoot-6a.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-6a.png" width="600" /></a></p>
+<p><a class="glightbox" href="../_attachments/setuptroubleshoot-6b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-6b.png" width="600" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="7">
+<li>
+<p>Return to the VS Code editor and click the <strong>Ansible</strong> plugin<sup>[A]</sup> (denoted by the <code>A</code> logo) on the left-hand side of the interface.</p>
+<ul>
+<li>
+<p>Two panels will open along the left side of the interface</p>
+</li>
+<li>
+<p>Within the <em>Ansible Lightspeed Login</em> panel, click the blue <strong>Connect</strong> button<sup>[B]</sup></p>
+</li>
+<li>
+<p><code>The extension Ansible wants to sign in using Ansible Lightspeed</code>: click <strong>Allow</strong><sup>[C]</sup></p>
+</li>
+<li>
+<p><code>Do you want Code to open the external website?</code>: click <strong>Open</strong><sup>[D]</sup></p>
+</li>
+</ul>
+<p><br/>
+<a class="glightbox" href="../_attachments/setuptroubleshoot-7a.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-7a.png" width="600" /></a></p>
+<p><a class="glightbox" href="../_attachments/setuptroubleshoot-7b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-7b.png" width="600" /></a></p>
+<p><a class="glightbox" href="../_attachments/setuptroubleshoot-7c.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-7c.png" width="600" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="8">
+<li>
+<p>A web browser will load with the header <code>Log in to Ansible Lightspeed with IBM watsonx Code Assistant</code> — this is where you will supply your registration details recorded in <em>Step 6</em> in order to authenticate the VS Code plugin with WCA.</p>
+<ul>
+<li>
+<p>Click the <strong>Log in with Red Hat</strong> button<sup>[A]</sup></p>
+</li>
+<li>
+<p>If you had previously logged in to Red Hat with your browser, you might not be asked again for those credentials</p>
+</li>
+<li>
+<p>If you <em>are</em> asked to provide a <code>Username</code> and <code>Password</code>, supply the values recorded in <em>Step 6</em> of this module</p>
+</li>
+</ul>
+<p><br/>
+<a class="glightbox" href="../_attachments/setuptroubleshoot-8a.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-8a.png" width="600" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="9">
+<li>
+<p>After logging in with Red Hat, the web browser will display the prompt to <code>Authorize Ansible Lightspeed for VS Code</code>.</p>
+<ul>
+<li>
+<p>Click <strong>Authorize</strong><sup>[A]</sup></p>
+</li>
+<li>
+<p><code>Do you want to allow this website to open Visual Studio Code?</code>: click <strong>Allow</strong><sup>[B]</sup></p>
+</li>
+<li>
+<p><code>Allow Ansible extension to open this URL?</code>: click <strong>Open</strong><sup>[C]</sup></p>
+</li>
+</ul>
+<p><br/>
+<a class="glightbox" href="../_attachments/setuptroubleshoot-9a.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-9a.png" width="600" /></a></p>
+<p><a class="glightbox" href="../_attachments/setuptroubleshoot-9b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-9b.png" width="600" /></a></p>
+<p><a class="glightbox" href="../_attachments/setuptroubleshoot-9c.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-9c.png" width="600" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="10">
+<li>
+<p>At this stage, the Ansible extension for VS Code is now authenticated and connected to <em>IBM watsonx Code Assistant</em>.</p>
+<ul>
+<li>
+<p>Verify<sup>[A]</sup> that the environment is logged in as your unique <code>Username</code> and that the <code>User Type: Licensed</code></p>
+</li>
+<li>
+<p>A notification pop-up will also appear in the bottom-right corner of the VS Code interface confirming the successful login</p>
+</li>
+</ul>
+<p><br/>
+<a class="glightbox" href="../_attachments/setuptroubleshoot-10.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-10.png" width="600" /></a></p>
+<details class="warning">
+<summary>CLICK TO EXPAND — FAILURE TO LOGIN OR TIMED OUT</summary>
+<ul>
+<li>
+<p>If the authentication procedure in <em>Steps 7-9</em> takes too long, activation of the plugin will be "timed out" and the VS Code environment will display an error message<sup>[B]</sup> in the bottom-right corner</p>
+</li>
+<li>
+<p>Click the <strong>Connect</strong><sup>[C]</sup> button as shown and repeat <em>Steps 7-9</em> as before; the login process should run smoother (and faster) on the second attempt</p>
+<p><br/>
+<a class="glightbox" href="../_attachments/setup26.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup26.png" width="600" /></a></p>
+</li>
+</ul>
+</details>
+</li>
+</ol>
+<hr />
+<h1 id="_3"></h1>
+<h1 id="preparing-the-ansible-playbook-materials">Preparing the Ansible Playbook materials</h1>
+<p>To begin experimenting with WCA's generative AI capabilities, you will first need access to some Ansible Playbooks to generate Tasks with. Playbook templates have already been prepared ahead of time for this training so that you can get straight to work.</p>
+<hr />
+<ol start="11">
+<li>
+<p>Click the <strong>Explorer</strong> button at the top of the left-hand VS Code interface. Depending on your VS Code environment, the Explorer tab will look one of two ways. <strong>Click to expand</strong> whichever one of the two options best describes your situation and follow the instructions.</p>
+<details class="tip">
+<summary>I AM NEW TO <em>VS CODE</em></summary>
+<p>If you are working within a new installation of VS Code, the <strong>Explorer</strong> tab<sup>[A]</sup> will display <code>NO FOLDER OPENED</code> and give options to either <em>Open Folder</em> or <em>Clone Repository</em>. You must specify the public GitHub repository from which to "clone" the Ansible Playbook templates into the local (VS Code) environment. A "clone" request in GitHub is essentially a request to replicate code from the cloud-hosted repository into the local environment.</p>
+<ul>
+<li>
+<p>Click the <strong>Clone Repository</strong> button<sup>[B]</sup>, which will open an executable console<sup>[C]</sup> at the top of VS Code</p>
+</li>
+<li>
+<p>You must specify the public GitHub repository from which to "clone" the Ansible Playbook templates into the local (VS Code) environment</p>
+<p>Enter following GitHub repository address into the console and hit <span class="keys"><kbd class="key-enter">Enter</kbd></span> to confirm:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>https://github.com/chetan-hireholi/ansible-wca-demo-kit
+</code></pre></div>
+</li>
+<li>
+<p>If prompted <code>Would you like to open the cloned repository?</code>: click <strong>Open</strong><sup>[D]</sup></p>
+</li>
+<li>
+<p>If prompted <code>Do you trust the authors of the files in this folder?</code>: click <strong>Yes, I trust the authors</strong><sup>[E]</sup></p>
+</li>
+</ul>
+<p><br/>
+<a class="glightbox" href="../_attachments/setuptroubleshoot-11a.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-11a.png" width="600" /></a></p>
+<p><a class="glightbox" href="../_attachments/setuptroubleshoot-11b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-11b.png" width="600" /></a></p>
+<p><a class="glightbox" href="../_attachments/setuptroubleshoot-11c.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-11c.png" width="600" /></a></p>
+<p><a class="glightbox" href="../_attachments/setuptroubleshoot-11d.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-11d.png" width="600" /></a></p>
+</details>
+<details class="note">
+<summary>I HAVE USED <em>VS CODE</em> BEFORE</summary>
+<p>If you have worked with VS Code before and have added projects or folders to the environment previously, those folders (and their contents) will be displayed within the <strong>Explorer</strong> tab. However, you still need to clone (replicate) the Ansible Playbook templates from GitHub to a folder on your local machine. A "clone" request in GitHub is essentially a request to replicate code from the cloud-hosted repository into the local environment.</p>
+<ul>
+<li>
+<p>To perform a clone request with VS Code, perform the following action (depending on your operating system):</p>
+<ol>
+<li>
+<p><strong>Windows</strong>: Press <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-p">P</kbd></span> to open an executable console at the top of VS Code</p>
+</li>
+<li>
+<p><strong>macOS</strong>: Press <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-p">P</kbd></span> to open an executable console at the top of VS Code</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Enter following command into the console and hit <span class="keys"><kbd class="key-enter">Enter</kbd></span> to confirm:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git:clone
+</code></pre></div>
+</li>
+<li>
+<p>Next, specify the public repository from which to clone the Ansible Playbook templates. Enter following GitHub repository address into the console and hit <span class="keys"><kbd class="key-enter">Enter</kbd></span> to confirm:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>https://github.com/chetan-hireholi/ansible-wca-demo-kit
+</code></pre></div>
+</li>
+</ul>
+</details>
+<div class="admonition warning">
+<p>Regardless of whether you are new to VS Code or have used VS Code previously, the remainder of the steps in the <em>Setup &amp; Troubleshooting</em> module are the same.</p>
+</div>
+</li>
+</ol>
+<hr />
+<ol start="12">
+<li>
+<p>Confirm that the working directory<sup>[A]</sup> is now set to <code>ansible-wca-demo-kit</code> and that it contains files similar to those listed in the screenshot below.</p>
+<p><br/>
+<a class="glightbox" href="../_attachments/setup13.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup13.png" width="600" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="13">
+<li>
+<p>As a final step, verify that the VM has access to the latest demo code by performing the following <code>git fetch</code> and <code>git pull</code> commands:</p>
+<ul>
+<li>
+<p>From the top of the VM interface, drill down into <strong>View</strong> and then <strong>Command Palette</strong><sup>[A]</sup></p>
+</li>
+<li>
+<p>Into the pop-up console<sup>[B]</sup>, type <code>git fetch</code>, hit <span class="keys"><kbd class="key-enter">Enter</kbd></span>, and wait for the operation to finish</p>
+</li>
+<li>
+<p>Open the console once again, type <code>git pull</code>, and then hit <span class="keys"><kbd class="key-enter">Enter</kbd></span></p>
+</li>
+<li>
+<p>At this stage, the hands-on environment has been fully configured</p>
+</li>
+</ul>
+<p><br/>
+<a class="glightbox" href="../_attachments/setup19a.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup19a.png" width="600" /></a></p>
+<p><a class="glightbox" href="../_attachments/setup19b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup19b.png" width="600" /></a></p>
+</li>
+</ol>
+<hr />
+<h1 id="_4"></h1>
+<h1 id="troubleshooting-and-support">Troubleshooting and support</h1>
+<p>As you settle in to the environment and begin your training, you may encounter unexpected warnings or errors. Many of these can be safely ignored or can be easily rectified. This section will serve as a running list of frequently asked questions and troubleshooting techniques. Click on any of the following topics for additional details.</p>
+<hr />
+<details class="quote">
+<summary>FAILED TO CONNECT TO THE SERVER</summary>
+<p>This warning will occur when the Ansible plugin for VS Code needs to be re-authenticated with WCA. It can occur after an extended period of inactivity or a system restart. For example, if your lab environment is running inside a VM, pausing or restarting the VM may produce this error.</p>
+<p>To re-authenticate:</p>
+<ul>
+<li>
+<p><strong>Sign out</strong> from the <em>VS Code</em> application by clicking the User icon<sup>[A]</sup> in the bottom-left corner of the interface, hover over your username, and then click <strong>Sign Out</strong><sup>[B]</sup></p>
+</li>
+<li>
+<p><strong>If you are running this environment inside a virtual machine (VM)</strong>, closing and restarting the VM <em>will not</em> resolve the issue — you must sign out from the <em>VS Code</em> application, not the VM</p>
+</li>
+<li>
+<p>Once logged out, follow from <em>Step 7</em> of the <em>Setup &amp; Troubleshooting</em> to re-authenticate with WCA</p>
+</li>
+</ul>
+<p><br/>
+<a class="glightbox" href="../_attachments/troubleshooting-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-1.png" width="600" /></a></p>
+</details>
+<details class="quote">
+<summary>ANSIBLE LIGHTSPEED IS MISSING OR CODE RECOMMENDATIONS ARE NOT GENERATING</summary>
+<p>Ansible Lightspeed and WCA will only generate code recommendations for <em>Ansible Playbooks</em> and <em>YAML</em> files. VS Code will typically auto-detect the programming language of the document you're working with, but on occassion you may need to manually specify the language. Even if working with a YAML file, you'll still need to specify the language mode as <code>Ansible</code> for the Lightspeed plugin to engage.</p>
+<p>To set the language mode correctly:</p>
+<ul>
+<li>
+<p>In the bottom-right corner of the VS Code interface, hover over the <strong>Select Language Mode</strong> toggle<sup>[A]</sup></p>
+</li>
+<li>
+<p>A console will appear at the top of VS Code with a drop-down list of options<sup>[B]</sup></p>
+</li>
+<li>
+<p>Click <code>Ansible</code> from the suggested languages, or enter the text yourself and hit <span class="keys"><kbd class="key-enter">Enter</kbd></span></p>
+</li>
+<li>
+<p>Confirm that the Select Language Mode toggle in the bottom-right corner displays <code>Ansible</code></p>
+</li>
+</ul>
+<p><br/>
+<a class="glightbox" href="../_attachments/troubleshooting-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-2.png" width="600" /></a></p>
+<p><a class="glightbox" href="../_attachments/troubleshooting-3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-3.png" width="600" /></a></p>
+</details>
+<details class="quote">
+<summary>ANSIBLE-LINT IS NOT AVAILABLE</summary>
+<p><code>ansible-lint</code> checks playbooks for practices and behavior that could potentially be improved and can fix some of the most common ones for you. It will constantly check your Ansible syntax as you type and provide recommendations for how to improve it.</p>
+<p>You can safely <strong>ignore</strong> this error if it occurs during the lab exercises.</p>
+<p><br/>
+<a class="glightbox" href="../_attachments/troubleshooting-4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-4.png" width="600" /></a></p>
+</details>
+<details class="quote">
+<summary>RED <em>ANSIBLE</em> ICON ALONG BOTTOM-RIGHT INTERFACE</summary>
+<p>The <em>Ansible</em> extension for VS Code will check your local machine to determine if Red Hat Ansible has been installed locally. If you have not set up Ansible (the standalone version) on your local machine previously, this tile will display as red.</p>
+<p>You can safely <strong>ignore</strong> this error if it occurs during the lab exercises.</p>
+<p><br/>
+<a class="glightbox" href="../_attachments/troubleshooting-5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-5.png" width="600" /></a></p>
+</details>
+<details class="quote">
+<summary>CANNOT SET PROPERTIES OF UNDEFINED (SETTING 'currentModelValue')</summary>
+<p>Make sure that the <strong>Model ID Override</strong> field is set to <code>empty</code> in your Ansible for VS Code extension settings.</p>
+<p>To verify this:</p>
+<ul>
+<li>
+<p>Click the <strong>Extensions</strong> tab<sup>[A]</sup> along the left-hand interface</p>
+</li>
+<li>
+<p>Click the <strong>Manage</strong> icon<sup>[B]</sup> on the right side of the <em>Ansible</em> extension tile, then drill down into <strong>Extension Settings</strong><sup>[C]</sup></p>
+</li>
+<li>
+<p>Add the text <code>Model</code> to the search filter<sup>[D]</sup> at the top of the Extension Settings panel</p>
+</li>
+<li>
+<p>Clear the input field<sup>[E]</sup> of any model IDs and leave it blank</p>
+</li>
+<li>
+<p>Close the Extension Settings panel by clicking <code>X</code> and return to the Ansible Playbook</p>
+</li>
+</ul>
+<p><br/>
+<a class="glightbox" href="../_attachments/troubleshooting-6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-6.png" width="600" /></a></p>
+<p><a class="glightbox" href="../_attachments/troubleshooting-7.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-7.png" width="600" /></a></p>
+<p><a class="glightbox" href="../_attachments/troubleshooting-8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-8.png" width="600" /></a></p>
+</details>
+<details class="quote">
+<summary>SPAWN C:\Windows\system32\cmd.exe ENOENT</summary>
+<p>This warning is not related to Ansible or WCA. You can safely <strong>ignore</strong> this error if it occurs during the lab exercises.</p>
+<p><br/>
+<a class="glightbox" href="../_attachments/troubleshooting-9.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-9.png" width="600" /></a></p>
+</details>
+<details class="quote">
+<summary>PYTHON DRIVERS ARE MISSING</summary>
+<p>The WCA extension for VS Code requires that Python drivers are included within the workspace. These are usually configured within VS Code by default, but can be easily set if necessary. Look for a <code>Python</code> tile adjacent to the <code>Ansible</code> tile along the bottom-right corner of the VS Code interface. If it is not set, <strong>click</strong> the tile and select the <code>Python 3.11.5 64-bit</code> drivers.</p>
+<ul>
+<li>
+<p>Click the gold-colored <code>Select python environment</code> button at the bottom-right of the interface</p>
+</li>
+<li>
+<p>From the console at the top of the VS Code environment, select the recommended <code>Python 3.11.5 64-bit</code> option and hit <span class="keys"><kbd class="key-enter">Enter</kbd></span> to confirm</p>
+<p><br/>
+<a class="glightbox" href="../_attachments/figure44.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure44.png" width="300" /></a></p>
+<p><a class="glightbox" href="../_attachments/figure45.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure45.png" width="300" /></a></p>
+</li>
+</ul>
+</details>
+<details class="quote">
+<summary>COPY AND PASTE INSTRUCTIONS INTO A VIRTUAL MACHINE</summary>
+<p>If you are running the lab environment inside a virtual machine (VM), it might not be possible to "paste" lab instructions from your local machine's clipboard directly into the VM.</p>
+<p>If you wish to copy and paste instructions directly from the lab documentation, it is recommended that you open the GitHub instructions <strong>inside</strong> the VM's web browser (Firefox). This will allow you to copy instructions to the VM's clipboard and paste instructions inside the VS Code editor.</p>
+</details>
+<hr />
+<h1 id="_5"></h1>
+<h1 id="next-steps">Next steps</h1>
+<p>The following section will cover the fundamentals of AI-recommended code generation for Ansible Playbooks using <em>IBM watsonx Code Assistant</em>.</p>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../6-optional/" class="md-footer__link md-footer__link--prev" aria-label="Previous: (OPTIONAL) Deploying a Live AWS EC2 Instance and WordPress Application" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              (OPTIONAL) Deploying a Live AWS EC2 Instance and WordPress Application
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023-2024 IBM
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "content.code.annotate"], "search": "../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
