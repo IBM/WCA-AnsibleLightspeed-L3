@@ -336,7 +336,8 @@
 <div class="admonition quote">
 <p>Christopher Bienko (<em>IBM, Learning Content Development</em>) demonstrates WCA capabilities for code generation, content source matching, and post-processing.</p>
 </div>
-<p>In the following section, you will experiment with three of the key capabilities of <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> (<strong>WCA</strong>):</p>
+<p><br/>
+In the following section, you will experiment with three of the key capabilities of <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> (<strong>WCA</strong>):</p>
 <ul>
 <li>AI-generated code recommendations</li>
 <li>Content source matching and source attribution</li>
@@ -348,7 +349,7 @@
 <div class="admonition note">
 <p class="admonition-title">ANSIBLE TASKS</p>
 <p>An <em>Ansible Task</em> is a statement in Ansible's automation script (the YAML-based Playbooks we have been working with) that declares a single action to be executed. This might be installing a package, copying a file, or shutting down a service on a remote machine. Each <em>Task</em> represents an idempotent operation (an action that can be repeated multiple times and deliver the same result every time) that aligns the remote managed node to the specified state. Idempotent operations also ensure consistency across multiple executions, guaranteeing the same steps are taken on each execution of the task.</p>
-<p>At the time of publication, WCA can only generate code for <strong>Ansible Tasks</strong>. This includes both <em>single-task</em> and <em>multi-task</em> code generation. In future releases, it will be capable of generating many other components of an Ansible Playbook.</p>
+<p>At the time of publication, WCA will only generate code for <strong>Ansible Tasks</strong>. This includes both <em>single-task</em> and <em>multi-task</em> code generation. In future releases, it will be capable of generating many other components of Playbooks.</p>
 </div>
 <hr />
 <h1 id="ai-generated-code-recommendations-for-single-tasks">AI-generated code recommendations for single tasks</h1>
@@ -357,14 +358,16 @@
 <hr />
 <ol>
 <li>
-<p>Begin by opening the <code>../install and configure Cockpit using Ansible/install_cockpit_single-task.yml</code> Playbook from the list of assets in the Explorer browser.</p>
+<p>Begin by opening the <code>install_cockpit_single-task.yml</code> Playbook from the list of assets in the Explorer browser.</p>
 <ul>
 <li>Click the <strong>Explorer</strong> tab from the left-hand interface<sup>[A]</sup></li>
 <li>Drill down into the <code>Install and configure Cockpit using Ansible</code> subdirectory<sup>[B]</sup></li>
 <li>Double-click the <code>install_cockpit_single-task.yml</code> Playbook</li>
+<li>A replica of the Playbook code is also included below in the documentation</li>
 </ul>
-<p><a class="glightbox" href="../_attachments/Generating-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/Generating-1.png" width="600" /></a></p>
-<div class="admonition quote">
+<p><br/>
+<a class="glightbox" href="../_attachments/Generating-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/Generating-1.png" width="300" /></a></p>
+<div class="admonition quote inline">
 <p>If this is your first time editing the Playbook, you may notice red highlighting within the editor reminding you that the <code>tasks:</code> section contains no valid <code>-name:</code> task definitions. This is part of WCA's code validation process which runs automatically and alerts users to syntax errors in their code. You can safely ignore these warnings for now, as you will be un-commenting and generating valid <code>-name:</code> task definitions in the following steps.</p>
 </div>
 </li>
