@@ -358,7 +358,7 @@
 <hr />
 <p><a class="glightbox" href="../_attachments/lightspeed.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/lightspeed.gif" /></a></p>
 <hr />
-<h1 id="ai-generated-code-for-single-tasks">AI-generated code for single tasks</h1>
+<h1 id="generating-code-for-single-task-ansible-operations">Generating code for single task Ansible operations</h1>
 <p>The process of creating AI-generated <strong>code recommendations</strong> is as simple as modifying the natural language (plain English) Task descriptions of an action that is to be executed, which always start with <code>- name:</code> and followed by some description of the task to be performed. Ansible Tasks are often preceded with some <code>#</code> comments or documentation. After the natural language description of the automation Task has been set by the user, WCA handles the rest.</p>
 <p>WCA is also capable of generating multiple Ansible Tasks from more complex natural language descriptions— what is referred to as <strong>multi-task</strong> code generation —which you will experiment with later in this module. However, to get started, let's begin with the basics of generating code for <strong>single task</strong> use cases.</p>
 <hr />
@@ -577,6 +577,7 @@ Afterwards, <strong>Line 15</strong> should look like the following — beginnin
 <p>These additional recommendations stem from a robust example of setting file permissions for the <a href="https://docs.ansible.com/ansible/latest/collections/ansible/builtin/copy_module.html" target="_blank"><code>ansible.builtin.copy</code></a> module, a recommended best practice from the Ansible Galaxy and Red Hat communities that Lightspeed included in the AI-generated code as well.</p>
 <p>You may continue generating Task blocks using the <code>install_cockpit_single-task.yml</code> Playbook if you wish — this is optional, as you will not be returning to this Playbook at a later time. When ready to proceed, follow along with the lab documentation below.</p>
 <hr />
+<h1 id="generating-code-for-multi-task-ansible-operations">Generating code for multi-task Ansible operations</h1>
 <h1 id="next-steps">Next steps</h1>
 <p>The following module will examine in detail WCA's post-processing and content source attribution capabilities.</p>
 
