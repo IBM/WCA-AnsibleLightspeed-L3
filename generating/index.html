@@ -578,7 +578,53 @@ Afterwards, <strong>Line 15</strong> should look like the following — beginnin
 <p>These additional recommendations stem from a robust example of setting file permissions for the <a href="https://docs.ansible.com/ansible/latest/collections/ansible/builtin/copy_module.html" target="_blank"><code>ansible.builtin.copy</code></a> module, a recommended best practice from the Ansible Galaxy and Red Hat communities that Lightspeed included in the AI-generated code as well.</p>
 <p>You may continue generating Task blocks using the <code>install_cockpit_single-task.yml</code> Playbook if you wish — this is optional, as you will not be returning to this Playbook at a later time. When ready to proceed, follow along with the lab documentation below.</p>
 <hr />
+<h1 id="_2"></h1>
 <h1 id="generating-code-for-multi-task-ansible-operations">Generating code for multi-task Ansible operations</h1>
+<p>Up to this point, we've kept a narrow aperture on AI-generated task suggestions — examining and experimenting with generating Ansible code task by task, one at a time. However, a powerful WCA feature is the ability to combine multiple task descriptions into a single natural language prompt; in turn, WCA is able to parse that instruction, decompose the instruction into discrete Ansible Task parts, and return a complete code recommendation for achieving the author's intended goal.</p>
+<p>Synatically, multiple tasks are combined into a single natural language expression through the use of ampersand (<code>%</code>) characters. Simply write out all the automation task descriptions on a single line, separating each description with a <code>%</code> character.</p>
+<hr />
+<ol start="7">
+<li>
+<p>To illustrate, let's look at a multi-task Ansible Playbook: <code>install_cockpit_multi-task.yml</code></p>
+<p>The contents of this Playbook should look familiar to you already: it is essentially the same Playbook examined in <em>Steps 1-6</em> (<code>install_cockpit_single-task.yml</code>), re-written in an equivalent multi-task expression. Each of the Task descriptions from the previous Playbook have been consolidated into a single description on <strong>Line 12</strong>, separated by <code>%</code> characters.</p>
+</li>
+</ol>
+<hr />
+<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">~/Documents/ansible-wca-demo-kit/install and configure Cockpit using Ansible/install_cockpit_multi-task.yml</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
+</div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span>
+<span class="normal"><a href="#__codelineno-7-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="nn">---</span><span class="w"></span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install and configure Cockpit</span><span class="w"></span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rhel</span><span class="w"></span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="w">  </span><span class="nt">module_defaults</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="w">    </span><span class="nt">ansible.builtin.service</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="w">      </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">started</span><span class="w"></span>
+<a id="__codelineno-7-10" name="__codelineno-7-10"></a>
+<a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="w">    </span><span class="c1"># Install cockpit package &amp; Copy cockpit.conf.j2 to /etc/cockpit &amp; Start and enable service &amp; Wait 15 seconds port 9090</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<hr />
+<ol start="8">
+<li>One critical distinction</li>
+</ol>
+<hr />
+<h1 id="_3"></h1>
 <h1 id="next-steps">Next steps</h1>
 <p>The following module will examine in detail WCA's post-processing and content source attribution capabilities.</p>
 
