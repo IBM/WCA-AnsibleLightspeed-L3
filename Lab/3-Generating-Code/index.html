@@ -352,7 +352,7 @@ In the following section, you will experiment with three of the key capabilities
 <p>At the time of publication, WCA will only generate code for <strong>Ansible Tasks</strong>. This includes both <em>single-task</em> and <em>multi-task</em> code generation. In future releases, it will be capable of generating many other components of Playbooks.</p>
 </div>
 <hr />
-<h1 id="ai-generated-code-recommendations-for-single-tasks">AI-generated code recommendations for single tasks</h1>
+<h1 id="ai-generated-code-for-single-tasks">AI-generated code for single tasks</h1>
 <p>The process of creating AI-generated <strong>code recommendations</strong> is as simple as modifying the natural language (plain English) Task descriptions of an action that is to be executed, which always start with <code>- name:</code> and followed by some description of the task to be performed. Ansible Tasks are often preceded with some <code>#</code> comments or documentation. After the natural language description of the automation Task has been set by the user, WCA handles the rest.</p>
 <p>WCA is also capable of generating multiple Ansible Tasks from more complex natural language descriptions— what is referred to as <strong>multi-task</strong> code generation —which you will experiment with later in this module. However, to get started, let's begin with the basics of generating code for <strong>single-task</strong> use cases.</p>
 <hr />
@@ -365,11 +365,11 @@ In the following section, you will experiment with three of the key capabilities
 <li>Double-click the <code>install_cockpit_single-task.yml</code> Playbook</li>
 <li>A replica of the Playbook code is also included below in the documentation</li>
 </ul>
-<p><br/>
-<a class="glightbox" href="../_attachments/Generating-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/Generating-1.png" width="300" /></a></p>
+<p><br/></p>
 <div class="admonition quote inline">
 <p>If this is your first time editing the Playbook, you may notice red highlighting within the editor reminding you that the <code>tasks:</code> section contains no valid <code>-name:</code> task definitions. This is part of WCA's code validation process which runs automatically and alerts users to syntax errors in their code. You can safely ignore these warnings for now, as you will be un-commenting and generating valid <code>-name:</code> task definitions in the following steps.</p>
 </div>
+<p><a class="glightbox" href="../_attachments/Generating-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/Generating-1.png" width="300" /></a></p>
 </li>
 </ol>
 <hr />
