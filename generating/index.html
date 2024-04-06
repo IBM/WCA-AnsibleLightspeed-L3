@@ -622,11 +622,12 @@ Afterwards, <strong>Line 15</strong> should look like the following — beginnin
 <hr />
 <ol start="8">
 <li>
-<p>There are <strong>two crucial distinctions</strong> between <em>single task</em> and <em>multi-task</em> code generation: formatting and execution.</p>
+<p>There are two crucial distinctions between <em>single task</em> and <em>multi-task</em> code generation: formatting and execution.</p>
 <ul>
 <li><strong>Formatting</strong>: Notice that <strong>Line 12</strong> does not begin with <code>-name:</code>, as was the case with single task descriptions</li>
 <li><strong>Execution</strong>: In order to generate AI code recommendations for multi-task descriptions, <strong>Line 12</strong> must <em>stay commented out</em> (the <code>#</code> needs to remain at the start of the line)</li>
 </ul>
+<p><br/></p>
 <p>What is the rationale behind this? When WCA's generative AI capabilities parse <strong>Line 12</strong>, its output will include multiple <code>-name:</code> tasks, each containing potentially multiple lines of instructions, based on how many <code>%</code>-delineated task descriptions are included on the line. Therefore, the way in which the code generation step is executed on <strong>Line 12</strong> is a consequence of the formatting decision. Execution of a code generation step on a commented-out line containing <code>%</code> delineators is recognized by WCA as a unique case that will be acted upon as a multi-task statement.</p>
 </li>
 </ol>
@@ -634,6 +635,7 @@ Afterwards, <strong>Line 15</strong> should look like the following — beginnin
 <ol start="9">
 <li>
 <p>Place your cursor at the end of <strong>Line 12</strong>, and without removing the <code>#</code> character, press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute the code generation step. Be aware that generating code for multi-task descriptions will take longer compared to a single task.</p>
+<p><br/></p>
 <p>Compare the <code>MULTI-TASK</code> solution tab with the <code>SINGLE TASK</code> solution (copied over from <em>Step 6</em>). How did the multi-task code generation fare compared to the single task approach?</p>
 </li>
 </ol>
@@ -782,7 +784,8 @@ Afterwards, <strong>Line 15</strong> should look like the following — beginnin
 <ol start="10">
 <li>
 <p>Comparing the two results, the only notable difference between the two approaches are <strong>Lines 27-29</strong> using the <code>SINGLE TASK</code> generative AI approach. Both the <code>SINGLE TASK</code> and <code>MULTI-TASK</code> suggestions for that particular task <em>satisfy</em> the request made by the user. However, whether the single task or multi-task approach resulted in a better code suggestion is up to the judgement of the programmer. 90% of the remaining code was identical between the two approaches and was achieved in far fewer lines of code and typing using the multi-task approach.</p>
-<p>The variability of generative AI suggestions is a fascinating topic and one that we will dive more deeply into in the module ahead.</p>
+<p><br/></p>
+<p>The variability of generative AI suggestions is a fascinating topic and one that we will dive more deeply into with the module ahead.</p>
 </li>
 </ol>
 <hr />
@@ -851,7 +854,7 @@ Afterwards, <strong>Line 15</strong> should look like the following — beginnin
 </code></pre></div></td></tr></table></div>
 <hr />
 <ol start="12">
-<li>First, configure the Playbook for single task generation by adding the following code as <strong>Line 5</strong> (remembering to properly indent with <span class="keys"><kbd class="key-tab">Tab</kbd></span> or <span class="keys"><kbd class="key-space">Space</kbd></span> characters):</li>
+<li>First, configure the Playbook for single task generation by adding the following code snippet into <strong>Line 5</strong> (remembering to properly indent with <span class="keys"><kbd class="key-tab">Tab</kbd></span> or <span class="keys"><kbd class="key-space">Space</kbd></span> characters):</li>
 </ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">create vpc named demo</span><span class="w"></span>
 </code></pre></div>
@@ -905,11 +908,13 @@ Afterwards, <strong>Line 15</strong> should look like the following — beginnin
 <ol start="14">
 <li>
 <p>Record your results from <em>Step 13</em> to a notepad so that you can compare the results later.</p>
+<p><br/></p>
 <p>Now it's time to re-write the Playbook for multi-task code generation. The beauty of natural language statements is that your approach can be as terse or verbose as you want. The more verbose and descriptive, the more <em>prescriptive</em> you can be in terms of influencing the AI-generated code recommendations from WCA.</p>
-<p>This topic of <em>"prompt tuning"</em> will be explored in much greater detail in the following module. But for now, try <strong>replacing</strong> the code inside <code>create_ec2_single_multi.yml</code> with the <code>TEMPLATE</code> code block. Place your cursor at the end of <strong>Line 5</strong> (remember not to remove the <code>#</code> character) and hit <span class="keys"><kbd class="key-enter">Enter</kbd></span>. Compare your results to the <code>SOLUTION</code> tab.</p>
+<p><br/></p>
+<p>This topic of <em>"prompt tuning"</em> will be explored in much greater detail in the following module. But for now, try <strong>replacing</strong> the code inside <code>create_ec2_single_multi.yml</code> with the <code>TEMPLATE</code> code block. Place your cursor at the end of <strong>Line 5</strong> (remember not to remove the <code>#</code> character) and hit <span class="keys"><kbd class="key-enter">Enter</kbd></span>. Compare your results to the <code>SOLUTION</code> tab and to the result from <em>Step 13</em>.</p>
 <div class="admonition warning">
 <p class="admonition-title">TIMEOUT WARNING</p>
-<p>It may take several moments for WCA to process and return code recommendations for a multi-task description as complex as this one. If you receive a time-out warning, try executing the code generation step (<span class="keys"><kbd class="key-enter">Enter</kbd></span>) again.</p>
+<p>It may take several moments for WCA to process and return code recommendations for a multi-task description as complex as this one. If you receive a time-out warning, try executing the code generation step by pressing <span class="keys"><kbd class="key-enter">Enter</kbd></span> a second time.</p>
 </div>
 </li>
 </ol>
