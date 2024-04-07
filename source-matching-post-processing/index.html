@@ -377,8 +377,10 @@
 </li>
 </ol>
 <hr />
-<p>After making this configuration change to VS Code, all future generative AI tasks— such as prompting WCA to generate the code for a Task —will now open a panel at the bottom of the VS Code interface displaying a variety of options: <code>Problems</code>, <code>Output</code>, <code>Debug Console</code>, <code>Terminal</code>, <code>Ports</code>, and most importantly <code>Ansible</code>. It is under the <code>Ansible</code> tab that content source matching results will be displayed.</p>
-<p>Experiment with generating some lines of code and inspecting the <code>Ansible</code> tab to observe this code explainability feature in action.</p>
+<div class="highlight"><pre><span></span><code>After making this configuration change to VS Code, all future generative AI tasks— such as prompting WCA to generate the code for a Task —will now open a panel at the bottom of the VS Code interface displaying a variety of options: `Problems`, `Output`, `Debug Console`, `Terminal`, `Ports`, and most importantly `Ansible`. It is under the `Ansible` tab that content source matching results will be displayed.
+
+Experiment with generating some lines of code and inspecting the `Ansible` tab to observe this code explainability feature in action.
+</code></pre></div>
 <hr />
 <ol start="3">
 <li>Open the <code>install_pgsql-single-task.yml</code> Ansible Playbook, which is included within the <code>ansible-wca-demo-kit</code> directory. The full location of the Playbook, as well as the contents, are available in the code block below.</li>
@@ -424,28 +426,43 @@
 </code></pre></div></td></tr></table></div>
 <hr />
 <ol start="4">
-<li>Generate a code recommendation for the task on <strong>Line 7</strong> by placing your cursor at the end of the line and hitting <span class="keys"><kbd class="key-enter">Enter</kbd></span>. The resulting code should look like the following:</li>
+<li>
+<p>Generate a code recommendation for the task on <strong>Line 7</strong> by placing your cursor at the end of the line and hitting <span class="keys"><kbd class="key-enter">Enter</kbd></span>.</p>
+<ul>
+<li>
+<p>Pay attention to the code attribution details associated with this recommendation, which will be appearing under the <code>Ansible</code> tab at the bottom of the VS Code interface once the code recommendation is finalized.</p>
+</li>
+<li>
+<p>You will need to <strong>accept</strong> the AI-generated code suggestions (using the <span class="keys"><kbd class="key-tab">Tab</kbd></span> key) <em>before</em> the <code>Ansible</code> content source matching tab will populate with details about the code's origins.</p>
+</li>
+</ul>
+</li>
 </ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install postgresql-server</span><span class="w"></span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">ansible.builtin.package</span><span class="p">:</span><span class="w"></span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgresql-server</span><span class="w"></span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span><span class="w"></span>
 </code></pre></div>
-<p>Pay attention to the code attribution details associated with this recommendation, which will be appearing under the <code>Ansible</code> tab at the bottom of the VS Code interface once the code recommendation is finalized.</p>
 <hr />
 <p><a class="glightbox" href="../_attachments/contentmatching3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/contentmatching3.png" width="600" /></a></p>
 <p><a class="glightbox" href="../_attachments/contentmatching4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/contentmatching4.png" width="600" /></a></p>
 <hr />
-<p>You will need to <strong>accept</strong> the AI-generated code suggestions (using the <span class="keys"><kbd class="key-tab">Tab</kbd></span> key) <em>before</em> the <code>Ansible</code> content source matching tab will populate with details about the code's origins.</p>
-<p><br/></p>
-<p><a class="glightbox" href="../_attachments/contentmatching5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/contentmatching5.png" width="600" /></a></p>
-<p><br/></p>
+<ol start="5">
+<li>
 <p>The three most likely content sources used in training the WCA model— which produced the AI-generated code recommendations —are listed within the <code>Ansible</code> tab<sup>[A]</sup>. Recall from earlier that these code attribution suggestions are created using a <strong>k-NN</strong>  algorithm that searches <strong>Ansible Galaxy</strong> repositories for the nearest related content to the AI-generated code suggestions.</p>
 <p>Clicking the arrow icon to the left of each attribution<sup>[B]</sup> will expand further details about the source. Information about the <code>URL</code>, <code>Path</code>, <code>Data Source</code>, <code>License</code>, <code>Ansible Type</code>, and <code>Score</code> are displayed (where available) under each listing. Red Hat-certified and maintained collections, as well as contributors to open source projects on Ansible Galaxy, are the primary sources for Ansible Lightspeed model training and are the content sources you are most likely to see matched to AI-generated code recommendations.</p>
-<p><br/></p>
-<p><a class="glightbox" href="../_attachments/contentmatching6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/contentmatching6.png" width="600" /></a></p>
-<p><br/></p>
+<p><br/>
+<a class="glightbox" href="../_attachments/contentmatching5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/contentmatching5.png" width="600" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="6">
+<li>
 <p>Drilling down into the <code>URL</code> field will redirect your web browser back to the precise collections and sources on Ansible Galaxy from which the code recommendations were derived. Here you can learn much richer details about the status of the project, any associated open source repositories involved (such as GitHub), contributions and activities ongoing with the code base, the author(s) involved, and many more intricacies.</p>
+<p><br/>
+<a class="glightbox" href="../_attachments/contentmatching6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/contentmatching6.png" width="600" /></a></p>
+</li>
+</ol>
 <hr />
 <h1 id="_4"></h1>
 <h1 id="post-processing-of-task-descriptions-and-yaml-file-contents-helps-generate-contextually-aware-accurate-ansible-content-suggestions"><strong>Post-processing</strong> of Task descriptions and YAML file contents helps generate contextually aware, accurate Ansible content suggestions.</h1>
