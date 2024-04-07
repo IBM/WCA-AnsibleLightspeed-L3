@@ -638,7 +638,7 @@
 <p>The first round of WCA-generated code for the task on <strong>Line 26</strong> produces a code block<sup>[A]</sup> with a <code>register: subnet_info</code> line, the result of which is to assign this VPC definition to a variable <code>subnet_info</code>. Nothing terribly complicated or surprising about that.</p>
 </li>
 <li>
-<p>The WCA-generated code that follows for the task on <strong>Line 33</strong> recommends a code block<sup>[B]</sup> with <code>vpc_subnet_id: "{ { subnet_info.subnets[0].subnet_id } }"</code> as the value associated with the VPC's subnet ID. Critically, the variable <code>subnet_info</code> that was generated in the previous Task is also referenced in the second Task. This demonstrates the contextual awareness of WCA in action.</p>
+<p>The WCA-generated code that follows for the task on <strong>Line 38</strong> (previously <em>Line 33</em> in the raw template) recommends a code block<sup>[B]</sup> with <code>vpc_subnet_id: "{ { subnet_info.subnets[0].subnet_id } }"</code> as the value associated with the VPC's subnet ID. Critically, the variable <code>subnet_info</code> that was generated in the previous Task is also referenced in the second Task. This demonstrates the contextual awareness of WCA in action.</p>
 </li>
 </ul>
 <p><br/>
@@ -649,20 +649,18 @@
 <hr />
 <ol start="10">
 <li>
-<p>Change the name of variable <code>subnet_info</code> instead to <code>subnet_name</code>, delete the code block recommendations under <strong>Line 33</strong>, and then regenerate the task on <strong>Line 33</strong>. Observe how the <code>TASK 2</code> block on <strong>Line 33</strong> is altered after deleting the previously-generated <code>TASK 2</code> content and <strong>re-generating</strong> the code block.</p>
+<p>Change the name of variable <code>subnet_info</code> instead to <code>subnet_name</code> on <strong>Line 26</strong>. Then delete the code block recommendations under <strong>Line 38</strong> and regenerate the task.</p>
 <ul>
 <li>
-<p>Notice that the new block<sup>[A]</sup> of task code references the variable <code>subnet_name</code> that was modified just a moment ago.</p>
+<p>Notice that the new block<sup>[A]</sup> of <code>TASK 2</code> now references the variable <code>subnet_name</code> that was modified just a moment ago in <code>TASK 1</code></p>
 </li>
 <li>
-<p>WCA has generated code suggestions that take into account the <strong>modified context and variables</strong> of the Playbook.</p>
-</li>
-<li>
-<p>Try adjusting other variables within the Playbook and test how these modifications impact the generation of later blocks of Task code in the Playbook.</p>
+<p>WCA has generated code for <code>TASK 2</code> that takes into account the <strong>modified context and variables</strong> from <code>TASK 1</code> of the Playbook</p>
 </li>
 </ul>
 <p><br/>
 <a class="glightbox" href="../_attachments/contentmatching9.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/contentmatching9.png" width="600" /></a></p>
+<p>Continue experimenting with WCA's post-processing and contextual awareness capabilities. Try adjusting other variables within the Playbook and study how these modifications impact the generation of later blocks of Task code within the Playbook. </p>
 </li>
 </ol>
 <hr />
