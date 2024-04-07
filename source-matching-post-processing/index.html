@@ -381,46 +381,7 @@
 <p>Experiment with generating some lines of code and inspecting the <code>Ansible</code> tab to observe this code explainability feature in action.</p>
 <hr />
 <ol start="3">
-<li>
-<p>Open the following Ansible Playbook within your Explorer directory, or copy and paste the following code template into a <strong>New File...</strong> within your VS Code environment.</p>
-<details class="quote">
-<summary>HOW TO CREATE NEW <code>YAML</code> PLAYBOOKS</summary>
-<p><strong>Note:</strong> You need to copy and paste the contents of the Playbook into a <strong>New File...</strong> within the <em>same</em> Lightspeed project directory that was used for the previous lab modules in order for the VS Code extension to engage.</p>
-<p>To create a new YAML Playbook within a VS Code environment:</p>
-<p><strong>a.</strong> Copy the contents of the Playbook to clipboard using the button in the top-right corner of the lab guide code block.</p>
-<p><a class="glightbox" href="../_attachments/figure18.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure18.png" width="400" /></a></p>
-<p><strong>b.</strong> Return to your VS Code environment. In the top-left corner of the interface, with your Ansible Lightspeed folder selected, click the <strong>New File...</strong> button.</p>
-<p><a class="glightbox" href="../_attachments/figure19.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure19.png" width="400" /></a></p>
-<p><strong>c.</strong> Name the file to a description of your choosing, ending with <code>.yml</code> as the filetype. Set it to <code>CustomPlaybook.yml</code>, for example. Save it to one of the directories in the <code>ansible-wca-demo-kit</code> folder.</p>
-<p><strong>d.</strong> Paste the clipboard contents into the YAML file and follow along with the suggestions below.</p>
-</details>
-<details class="quote">
-<summary>COPY AND PASTE CODE WITHIN THE VM</summary>
-<p>Information "copied" to your local machine's clipboard cannot be "pasted" directly into the virtual machine (VM) environment or VS Code. If you wish to copy and paste instructions directly from the lab documentation, it is recommended that you open the GitHub instructions <strong>inside</strong> the VM's web browser (Firefox). This will allow you to copy instructions to the VM's clipboard and paste instructions inside the VS Code editor.</p>
-</details>
-<details class="quote">
-<summary>ANSIBLE LIGHTSPEED IS MISSING OR CODE RECOMMENDATIONS ARE NOT GENERATING</summary>
-<p>Ansible Lightspeed and WCA will only generate code recommendations for <em>Ansible Playbooks</em> and <em>YAML</em> files. VS Code will typically auto-detect the programming language of the document you're working with, but on occassion you may need to manually specify the language. Even if working with a YAML file, you'll still need to specify the language mode as <code>Ansible</code> for the Lightspeed plugin to engage.</p>
-<p>To set the language mode correctly:</p>
-<ul>
-<li>
-<p>In the bottom-right corner of the VS Code interface, hover over the <strong>Select Language Mode</strong> toggle<sup>[A]</sup></p>
-</li>
-<li>
-<p>A console will appear at the top of VS Code with a drop-down list of options<sup>[B]</sup></p>
-</li>
-<li>
-<p>Click <code>Ansible</code> from the suggested languages, or enter the text yourself and hit <span class="keys"><kbd class="key-enter">Enter</kbd></span></p>
-</li>
-<li>
-<p>Confirm that the Select Language Mode toggle in the bottom-right corner displays <code>Ansible</code></p>
-</li>
-</ul>
-<p><br/>
-<a class="glightbox" href="../_attachments/troubleshooting-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-2.png" width="600" /></a></p>
-<p><a class="glightbox" href="../_attachments/troubleshooting-3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-3.png" width="600" /></a></p>
-</details>
-</li>
+<li>Open the <code>install_pgsql-single-task.yml</code> Ansible Playbook, which is included within the <code>ansible-wca-demo-kit</code> directory. The full location of the Playbook, as well as the contents, are available in the code block below.</li>
 </ol>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">~/Documents/ansible-wca-demo-kit/install and configure PostgreSQL and PGAdmin container/install_pgsql-single-task.yml</label></div>
 <div class="tabbed-content">
@@ -495,11 +456,47 @@
 <p>However, one way to make this feature quite obvious is to take a previously-generated block of Task code, update the value assigned to a named variable <em>earlier</em> in the Playbook, and then regenerate the Task code block. In theory, the newly-generated Task block will use the updated variable name (and differ from how the code block was originally generated).</p>
 <hr />
 <ol start="5">
-<li>Test out this theory by first examining <strong>Line 26</strong> and <strong>Line 33</strong> of the following <code>demo_provision_ec2_instance.yml</code> Playbook.</li>
+<li>
+<p>Test out this theory by first examining <strong>Line 26</strong> and <strong>Line 33</strong> of the following <code>demo_provision_ec2_instance.yml</code> Playbook.</p>
+<details class="quote">
+<summary>HOW TO CREATE NEW <code>YAML</code> PLAYBOOKS</summary>
+<p><strong>Note:</strong> You need to copy and paste the contents of the Playbook into a <strong>New File...</strong> within the <em>same</em> Lightspeed project directory that was used for the previous lab modules in order for the VS Code extension to engage.</p>
+<p>To create a new YAML Playbook within a VS Code environment:</p>
+<p><strong>a.</strong> Copy the contents of the Playbook to clipboard using the button in the top-right corner of the lab guide code block.</p>
+<p><a class="glightbox" href="../_attachments/figure18.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure18.png" width="400" /></a></p>
+<p><strong>b.</strong> Return to your VS Code environment. In the top-left corner of the interface, with your Ansible Lightspeed folder selected, click the <strong>New File...</strong> button.</p>
+<p><a class="glightbox" href="../_attachments/figure19.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure19.png" width="400" /></a></p>
+<p><strong>c.</strong> Name the file to a description of your choosing, ending with <code>.yml</code> as the filetype. Set it to <code>CustomPlaybook.yml</code>, for example. Save it to one of the directories in the <code>ansible-wca-demo-kit</code> folder.</p>
+<p><strong>d.</strong> Paste the clipboard contents into the YAML file and follow along with the suggestions below.</p>
+</details>
+<details class="quote">
+<summary>COPY AND PASTE CODE WITHIN THE VM</summary>
+<p>Information "copied" to your local machine's clipboard cannot be "pasted" directly into the virtual machine (VM) environment or VS Code. If you wish to copy and paste instructions directly from the lab documentation, it is recommended that you open the GitHub instructions <strong>inside</strong> the VM's web browser (Firefox). This will allow you to copy instructions to the VM's clipboard and paste instructions inside the VS Code editor.</p>
+</details>
+<details class="quote">
+<summary>ANSIBLE LIGHTSPEED IS MISSING OR CODE RECOMMENDATIONS ARE NOT GENERATING</summary>
+<p>Ansible Lightspeed and WCA will only generate code recommendations for <em>Ansible Playbooks</em> and <em>YAML</em> files. VS Code will typically auto-detect the programming language of the document you're working with, but on occassion you may need to manually specify the language. Even if working with a YAML file, you'll still need to specify the language mode as <code>Ansible</code> for the Lightspeed plugin to engage.</p>
+<p>To set the language mode correctly:</p>
+<ul>
+<li>
+<p>In the bottom-right corner of the VS Code interface, hover over the <strong>Select Language Mode</strong> toggle<sup>[A]</sup></p>
+</li>
+<li>
+<p>A console will appear at the top of VS Code with a drop-down list of options<sup>[B]</sup></p>
+</li>
+<li>
+<p>Click <code>Ansible</code> from the suggested languages, or enter the text yourself and hit <span class="keys"><kbd class="key-enter">Enter</kbd></span></p>
+</li>
+<li>
+<p>Confirm that the Select Language Mode toggle in the bottom-right corner displays <code>Ansible</code></p>
+</li>
+</ul>
+<p><br/>
+<a class="glightbox" href="../_attachments/troubleshooting-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-2.png" width="600" /></a></p>
+<p><a class="glightbox" href="../_attachments/troubleshooting-3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-3.png" width="600" /></a></p>
+</details>
+</li>
 </ol>
-<div class="admonition warning">
-<p>You will need to create the Playbook within the <code>ansible-wca-demo-kit</code> directory — the original playbook is no longer part of the ITZ demo environment by default in the <em>v1.3</em> image. Copy and paste the following code template into a <strong>New File...</strong> within your VS Code environment.</p>
-</div>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">demo_provision_ec2_instance.yml</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block"></div>
