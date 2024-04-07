@@ -372,15 +372,21 @@
 <ol start="2">
 <li>
 <p>The console<sup>[A]</sup> along the top of the VS Code interface is now activated and awaiting a prompt. Enter <code>Lightspeed Training Matches</code> and hit <span class="keys"><kbd class="key-enter">Enter</kbd></span> to confirm the selection.</p>
+<ul>
+<li>
+<p>After making this configuration change to VS Code, all requests for WCA to generate code recommendations will now open a panel at the bottom of the VS Code interface</p>
+</li>
+<li>
+<p>It is under the <code>Ansible</code> tab that <strong>content source matching</strong> results will be displayed</p>
+</li>
+<li>
+<p>Other tabs will also displayed for variety of options: <code>Problems</code>, <code>Output</code>, <code>Debug Console</code>, <code>Terminal</code>, and <code>Ports</code></p>
+</li>
+</ul>
 <p><br/>
 <a class="glightbox" href="../_attachments/contentmatching2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/contentmatching2.png" width="600" /></a></p>
 </li>
 </ol>
-<hr />
-<div class="highlight"><pre><span></span><code>After making this configuration change to VS Code, all future generative AI tasks— such as prompting WCA to generate the code for a Task —will now open a panel at the bottom of the VS Code interface displaying a variety of options: `Problems`, `Output`, `Debug Console`, `Terminal`, `Ports`, and most importantly `Ansible`. It is under the `Ansible` tab that content source matching results will be displayed.
-
-Experiment with generating some lines of code and inspecting the `Ansible` tab to observe this code explainability feature in action.
-</code></pre></div>
 <hr />
 <ol start="3">
 <li>Open the <code>install_pgsql-single-task.yml</code> Ansible Playbook, which is included within the <code>ansible-wca-demo-kit</code> directory. The full location of the Playbook, as well as the contents, are available in the code block below.</li>
