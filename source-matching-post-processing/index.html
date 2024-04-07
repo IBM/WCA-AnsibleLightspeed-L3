@@ -463,21 +463,24 @@
 </code></pre></div></td></tr></table></div>
 <hr />
 <ol start="4">
-<li>Generate a code recommendation for the task on <strong>Line 7</strong>. The resulting code should look like the following:</li>
+<li>Generate a code recommendation for the task on <strong>Line 7</strong> by placing your cursor at the end of the line and hitting <span class="keys"><kbd class="key-enter">Enter</kbd></span>. The resulting code should look like the following:</li>
 </ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install postgresql-server</span><span class="w"></span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">ansible.builtin.package</span><span class="p">:</span><span class="w"></span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgresql-server</span><span class="w"></span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span><span class="w"></span>
 </code></pre></div>
-<p>Pay attention to the code attribution details associated with this recommendation, which will be appearing under the <code>Ansible</code> tab at the bottom of the VS Code interface once the code recommendation is finalized. You will need to <strong>accept</strong> the AI-generated code suggestions (using the <span class="keys"><kbd class="key-tab">Tab</kbd></span> key) <em>before</em> the <code>Ansible</code> content source matching tab will populate with details about the code's origins.</p>
+<p>Pay attention to the code attribution details associated with this recommendation, which will be appearing under the <code>Ansible</code> tab at the bottom of the VS Code interface once the code recommendation is finalized.</p>
 <hr />
 <p><a class="glightbox" href="../_attachments/contentmatching3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/contentmatching3.png" width="600" /></a></p>
 <p><a class="glightbox" href="../_attachments/contentmatching4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/contentmatching4.png" width="600" /></a></p>
-<p><a class="glightbox" href="../_attachments/contentmatching5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/contentmatching5.png" width="600" /></a></p>
 <hr />
-<p>The three most likely content sources used in training the WCA model— which produced the AI-generated code recommendations —are listed within the <code>Ansible</code> tab. Recall from earlier that these code attribution suggestions are created using a <strong>k-NN</strong>  algorithm that searches <strong>Ansible Galaxy</strong> repositories for the nearest related content to the AI-generated code suggestions.</p>
-<p>Clicking the arrow icon to the left of each attribution will expand further details about the source. Information about the <code>URL</code>, <code>Path</code>, <code>Data Source</code>, <code>License</code>, <code>Ansible Type</code>, and <code>Score</code> are displayed (where available) under each listing. Red Hat-certified and maintained collections, as well as contributors to open source projects on Ansible Galaxy, are the primary sources for Ansible Lightspeed model training and are the content sources you are most likely to see matched to AI-generated code recommendations.</p>
+<p>You will need to <strong>accept</strong> the AI-generated code suggestions (using the <span class="keys"><kbd class="key-tab">Tab</kbd></span> key) <em>before</em> the <code>Ansible</code> content source matching tab will populate with details about the code's origins.</p>
+<p><br/></p>
+<p><a class="glightbox" href="../_attachments/contentmatching5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/contentmatching5.png" width="600" /></a></p>
+<p><br/></p>
+<p>The three most likely content sources used in training the WCA model— which produced the AI-generated code recommendations —are listed within the <code>Ansible</code> tab<sup>[A]</sup>. Recall from earlier that these code attribution suggestions are created using a <strong>k-NN</strong>  algorithm that searches <strong>Ansible Galaxy</strong> repositories for the nearest related content to the AI-generated code suggestions.</p>
+<p>Clicking the arrow icon to the left of each attribution<sup>[B]</sup> will expand further details about the source. Information about the <code>URL</code>, <code>Path</code>, <code>Data Source</code>, <code>License</code>, <code>Ansible Type</code>, and <code>Score</code> are displayed (where available) under each listing. Red Hat-certified and maintained collections, as well as contributors to open source projects on Ansible Galaxy, are the primary sources for Ansible Lightspeed model training and are the content sources you are most likely to see matched to AI-generated code recommendations.</p>
 <p><br/></p>
 <p><a class="glightbox" href="../_attachments/contentmatching6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/contentmatching6.png" width="600" /></a></p>
 <p><br/></p>
