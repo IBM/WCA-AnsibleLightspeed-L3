@@ -363,7 +363,7 @@
 <hr />
 <ol>
 <li>
-<p>To enable <strong>Content Source Matching</strong> capabilities within WCA, navigate to the main menu bar (very top of your screen) for VS Code and drill down into <strong>View</strong> &gt; <strong>Open View...</strong>:</p>
+<p>To enable <strong>Content Source Matching</strong> capabilities within WCA, navigate to the main menu bar<sup>[A]</sup> for VS Code and drill down into <strong>View</strong> &gt; <strong>Open View...</strong></p>
 <p><br/>
 <a class="glightbox" href="../_attachments/contentmatching1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/contentmatching1.png" width="600" /></a></p>
 </li>
@@ -371,21 +371,56 @@
 <hr />
 <ol start="2">
 <li>
-<p>The console along the top of the VS Code interface is now activated and awaiting a prompt. Enter <code>view Lightspeed Training Matches</code> and hit the <code>Return</code> key to confirm the selection.</p>
+<p>The console<sup>[A]</sup> along the top of the VS Code interface is now activated and awaiting a prompt. Enter <code>Lightspeed Training Matches</code> and hit <span class="keys"><kbd class="key-enter">Enter</kbd></span> to confirm the selection.</p>
 <p><br/>
-<a class="glightbox" href="../_attachments/contentmatching1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/contentmatching1.png" width="600" /></a></p>
+<a class="glightbox" href="../_attachments/contentmatching2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/contentmatching2.png" width="600" /></a></p>
 </li>
 </ol>
 <hr />
-<p>After making this configuration change to VS Code, all future generative AI tasks— such as prompting WCA to generate the code for a Task —will now open a panel at the bottom of the VS Code interface displaying a variety of options: <code>Problems</code>, <code>Output</code>, <code>Debug Console</code>, <code>Terminal</code>, <code>Ports</code>, <code>Comments</code>, and most importantly <code>Ansible:Lightspeed Training Matches</code>.</p>
-<p>Let's experiment with generating some lines of code and inspecting the <code>Ansible:Lightspeed Training Matches</code> tab to observe this code explainability feature in action.</p>
+<p>After making this configuration change to VS Code, all future generative AI tasks— such as prompting WCA to generate the code for a Task —will now open a panel at the bottom of the VS Code interface displaying a variety of options: <code>Problems</code>, <code>Output</code>, <code>Debug Console</code>, <code>Terminal</code>, <code>Ports</code>, and most importantly <code>Ansible</code>. It is under the <code>Ansible</code> tab that content source matching results will be displayed.</p>
+<p>Experiment with generating some lines of code and inspecting the <code>Ansible</code> tab to observe this code explainability feature in action.</p>
 <hr />
-<div class="admonition warning">
-<p class="admonition-title">COPY AND PASTE CODE WITHIN THE VIRTUAL MACHINE</p>
-<p>Information "copied" to your local machine's clipboard cannot be "pasted" directly into the virtual machine (VM) environment or VS Code. If you wish to copy and paste instructions directly from the lab documentation, it is recommended that you open the GitHub instructions <strong>inside</strong> the VM's web browser (Firefox). This will allow you to copy instructions to the VM's clipboard and paste instructions inside the VS Code editor.</p>
-</div>
 <ol start="3">
-<li>Open the following Ansible Playbook within your Explorer directory, or copy and paste the following code template into a <strong>New File...</strong> within your VS Code environment.</li>
+<li>
+<p>Open the following Ansible Playbook within your Explorer directory, or copy and paste the following code template into a <strong>New File...</strong> within your VS Code environment.</p>
+<details class="quote">
+<summary>HOW TO CREATE NEW <code>YAML</code> PLAYBOOKS</summary>
+<p><strong>Note:</strong> You need to copy and paste the contents of the Playbook into a <strong>New File...</strong> within the <em>same</em> Lightspeed project directory that was used for the previous lab modules in order for the VS Code extension to engage.</p>
+<p>To create a new YAML Playbook within a VS Code environment:</p>
+<p><strong>a.</strong> Copy the contents of the Playbook to clipboard using the button in the top-right corner of the lab guide code block.</p>
+<p><a class="glightbox" href="../_attachments/figure18.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure18.png" width="400" /></a></p>
+<p><strong>b.</strong> Return to your VS Code environment. In the top-left corner of the interface, with your Ansible Lightspeed folder selected, click the <strong>New File...</strong> button.</p>
+<p><a class="glightbox" href="../_attachments/figure19.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure19.png" width="400" /></a></p>
+<p><strong>c.</strong> Name the file to a description of your choosing, ending with <code>.yml</code> as the filetype. Set it to <code>CustomPlaybook.yml</code>, for example. Save it to one of the directories in the <code>ansible-wca-demo-kit</code> folder.</p>
+<p><strong>d.</strong> Paste the clipboard contents into the YAML file and follow along with the suggestions below.</p>
+</details>
+<details class="quote">
+<summary>COPY AND PASTE CODE WITHIN THE VM</summary>
+<p>Information "copied" to your local machine's clipboard cannot be "pasted" directly into the virtual machine (VM) environment or VS Code. If you wish to copy and paste instructions directly from the lab documentation, it is recommended that you open the GitHub instructions <strong>inside</strong> the VM's web browser (Firefox). This will allow you to copy instructions to the VM's clipboard and paste instructions inside the VS Code editor.</p>
+</details>
+<details class="quote">
+<summary>ANSIBLE LIGHTSPEED IS MISSING OR CODE RECOMMENDATIONS ARE NOT GENERATING</summary>
+<p>Ansible Lightspeed and WCA will only generate code recommendations for <em>Ansible Playbooks</em> and <em>YAML</em> files. VS Code will typically auto-detect the programming language of the document you're working with, but on occassion you may need to manually specify the language. Even if working with a YAML file, you'll still need to specify the language mode as <code>Ansible</code> for the Lightspeed plugin to engage.</p>
+<p>To set the language mode correctly:</p>
+<ul>
+<li>
+<p>In the bottom-right corner of the VS Code interface, hover over the <strong>Select Language Mode</strong> toggle<sup>[A]</sup></p>
+</li>
+<li>
+<p>A console will appear at the top of VS Code with a drop-down list of options<sup>[B]</sup></p>
+</li>
+<li>
+<p>Click <code>Ansible</code> from the suggested languages, or enter the text yourself and hit <span class="keys"><kbd class="key-enter">Enter</kbd></span></p>
+</li>
+<li>
+<p>Confirm that the Select Language Mode toggle in the bottom-right corner displays <code>Ansible</code></p>
+</li>
+</ul>
+<p><br/>
+<a class="glightbox" href="../_attachments/troubleshooting-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-2.png" width="600" /></a></p>
+<p><a class="glightbox" href="../_attachments/troubleshooting-3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-3.png" width="600" /></a></p>
+</details>
+</li>
 </ol>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">~/Documents/ansible-wca-demo-kit/install and configure PostgreSQL and PGAdmin container/install_pgsql-single-task.yml</label></div>
 <div class="tabbed-content">
@@ -426,33 +461,22 @@
 <a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">    </span><span class="c1"># Ansible Lightspeed used natural language prompt and added state: started and enabled: true module arguments based on Start and enable... in the Ansible task description.</span><span class="w"></span>
 <a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">    </span><span class="c1"># - name: Start and enable postgresql service</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
-<details class="note">
-<summary>CLICK TO EXPAND — HOW TO CREATE NEW <code>YAML</code> FILES</summary>
-<p><strong>Note:</strong> You need to copy and paste the contents of the <code>demo_install_pgsql.yml</code> file into a <strong>New File...</strong> within the <em>same</em> Lightspeed project directory that was used for the previous lab modules in order for the VS Code extension to engage.</p>
-<p>To create a new YAML Playbook within a VS Code environment:</p>
-<p><strong>a.</strong> Copy the contents of the Playbook to clipboard using the button in the top-right corner of the lab guide code block.</p>
-<p><a class="glightbox" href="../_attachments/figure18.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure18.png" width="400" /></a></p>
-<p><strong>b.</strong> Return to your VS Code environment. In the top-left corner of the interface, with your Ansible Lightspeed folder selected, click the <strong>New File...</strong> button.</p>
-<p><a class="glightbox" href="../_attachments/figure19.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure19.png" width="400" /></a></p>
-<p><strong>c.</strong> Name the file to a description of your choosing, ending with <code>.yml</code> as the filetype. Set it to <code>CustomPlaybook.yml</code>, for example. Save it to one of the directories in the <code>ansible-wca-demo-kit</code> folder.</p>
-<p><strong>d.</strong> Paste the clipboard contents into the YAML file and follow along with the suggestions below.</p>
-</details>
 <hr />
 <ol start="4">
-<li>Within your VS Code environment, attempt to generate code for the task on <strong>Line 7</strong>. The resulting code should look like the following:</li>
+<li>Generate a code recommendation for the task on <strong>Line 7</strong>. The resulting code should look like the following:</li>
 </ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install postgresql-server</span><span class="w"></span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">ansible.builtin.package</span><span class="p">:</span><span class="w"></span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgresql-server</span><span class="w"></span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span><span class="w"></span>
 </code></pre></div>
-<p>Pay attention to the code attribution details associated with this recommendation, which will be appearing in the panel at the bottom of the VS Code interface once the code recommendation is finalized. You will need to <strong>accept</strong> the AI-generated code suggestions (using the <span class="keys"><kbd class="key-tab">Tab</kbd></span> key) <em>before</em> the content source matching tab will populate with details about the code's origins.</p>
+<p>Pay attention to the code attribution details associated with this recommendation, which will be appearing under the <code>Ansible</code> tab at the bottom of the VS Code interface once the code recommendation is finalized. You will need to <strong>accept</strong> the AI-generated code suggestions (using the <span class="keys"><kbd class="key-tab">Tab</kbd></span> key) <em>before</em> the <code>Ansible</code> content source matching tab will populate with details about the code's origins.</p>
 <hr />
 <p><a class="glightbox" href="../_attachments/contentmatching3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/contentmatching3.png" width="600" /></a></p>
 <p><a class="glightbox" href="../_attachments/contentmatching4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/contentmatching4.png" width="600" /></a></p>
 <p><a class="glightbox" href="../_attachments/contentmatching5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/contentmatching5.png" width="600" /></a></p>
 <hr />
-<p>The three most likely content sources used in training the <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> model— which produced the AI-generated code recommendations —are listed within the <code>Ansible: Lightspeed Training Matches</code> tab.</p>
+<p>The three most likely content sources used in training the WCA model— which produced the AI-generated code recommendations —are listed within the <code>Ansible</code> tab. Recall from earlier that these code attribution suggestions are created using a <strong>k-NN</strong>  algorithm that searches <strong>Ansible Galaxy</strong> repositories for the nearest related content to the AI-generated code suggestions.</p>
 <p>Clicking the arrow icon to the left of each attribution will expand further details about the source. Information about the <code>URL</code>, <code>Path</code>, <code>Data Source</code>, <code>License</code>, <code>Ansible Type</code>, and <code>Score</code> are displayed (where available) under each listing. Red Hat-certified and maintained collections, as well as contributors to open source projects on Ansible Galaxy, are the primary sources for Ansible Lightspeed model training and are the content sources you are most likely to see matched to AI-generated code recommendations.</p>
 <p><br/></p>
 <p><a class="glightbox" href="../_attachments/contentmatching6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/contentmatching6.png" width="600" /></a></p>
@@ -461,6 +485,7 @@
 <hr />
 <h1 id="_4"></h1>
 <h1 id="post-processing-of-task-descriptions-and-yaml-file-contents-helps-generate-contextually-aware-accurate-ansible-content-suggestions"><strong>Post-processing</strong> of Task descriptions and YAML file contents helps generate contextually aware, accurate Ansible content suggestions.</h1>
+<h1 id="_5"></h1>
 <hr />
 <p><a class="glightbox" href="../_attachments/figure39.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/figure39.png" /></a></p>
 <p>Another element of code generation that WCA excels at is understanding <strong>context</strong> within the Playbook it is executing against. If a variable or attribute is defined earlier within that Playbook, it will be recalled and referenced— where it makes sense to do so —in the generation of subsequent lines of code. You may have noticed this already in your experimentations with AI-generated code suggestions.</p>
