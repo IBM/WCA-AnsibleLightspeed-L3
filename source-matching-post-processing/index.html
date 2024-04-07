@@ -472,12 +472,23 @@
 <h1 id="_5"></h1>
 <hr />
 <p><a class="glightbox" href="../_attachments/figure39.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/figure39.png" /></a></p>
-<p>Another element of code generation that WCA excels at is understanding <strong>context</strong> within the Playbook it is executing against. If a variable or attribute is defined earlier within that Playbook, it will be recalled and referenced— where it makes sense to do so —in the generation of subsequent lines of code. You may have noticed this already in your experimentations with AI-generated code suggestions.</p>
-<p>However, one way to make this feature quite obvious is to take a previously-generated block of Task code, update the value assigned to a named variable <em>earlier</em> in the Playbook, and then regenerate the Task code block. In theory, the newly-generated Task block will use the updated variable name (and differ from how the code block was originally generated).</p>
+<p>Another element of code generation that WCA excels at is understanding <strong>context</strong> within the Playbook it is executing against. If a variable or attribute is defined earlier within that Playbook, it will be recalled and referenced— where it makes sense to do so —in the generation of subsequent lines of code. You may have already noticed these <em>post-processing capabilities</em>* in your experimentations with WCA-generated code suggestions.</p>
+<p>However, one way to make this feature quite obvious is to take a previously-generated block of Ansible Task code, update the value assigned to a named variable <em>earlier</em> in the Playbook, and then regenerate the Task code block. In theory, the newly-generated Task block will use the updated variable name (and differ from how the code block was originally generated).</p>
 <hr />
 <ol start="5">
 <li>
-<p>Test out this theory by first examining <strong>Line 26</strong> and <strong>Line 33</strong> of the following <code>demo_provision_ec2_instance.yml</code> Playbook.</p>
+<p>Create a <strong>New File...</strong> YAML Playbook named <code>demo_provision_ec2_instance.yml</code> anywhere within the <code>/ansible-wca-demo-kit/</code> directory.</p>
+<ul>
+<li>
+<p>You may save the Playbook in the root of the folder or any of the subdirectories</p>
+</li>
+<li>
+<p>Be sure to reference the expandable tooltips below for instructions on how to perform these operations and how to configure the Playbook language for use with WCA</p>
+</li>
+<li>
+<p><strong>Copy and paste</strong> the following code block into the <code>demo_provision_ec2_instance.yml</code> Playbook and then save the file</p>
+</li>
+</ul>
 <details class="quote">
 <summary>HOW TO CREATE NEW <code>YAML</code> PLAYBOOKS</summary>
 <p><strong>Note:</strong> You need to copy and paste the contents of the Playbook into a <strong>New File...</strong> within the <em>same</em> Lightspeed project directory that was used for the previous lab modules in order for the VS Code extension to engage.</p>
@@ -615,70 +626,50 @@
 <a id="__codelineno-2-46" name="__codelineno-2-46"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Provision t3.micro instance using ec2_instance var</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 <hr />
-<p><em>Note: for convenience, the Playbook Tasks (<code>- name:</code>) have been un-commented within this lab guide. You will need to un-comment these Tasks within the cloned GitHub repository files in order to make them visible to WCA for code generation.</em></p>
+<ol start="8">
+<li>
+<p>Let's begin by first examining <strong>Line 26</strong> and <strong>Line 33</strong> of the <code>demo_provision_ec2_instance.yml</code> Playbook to understand better what purposes they serve.</p>
 <p><code>TASK 1</code> (Line 26) and <code>TASK 2</code> (Line 33) are responsible for gathering information about a network subnet that is to be provisioned and then creating a virtual private cloud (VPC) definition based on those details.</p>
-<hr />
-<ol start="6">
-<li>Generated an AI-suggested code block for <code>TASK 1</code> (Line 26) by un-commenting the line, placing the cursor at the end of the line, hitting <code>RETURN</code>, and then confirming with <span class="keys"><kbd class="key-tab">Tab</kbd></span>. Afterwards, generate an AI-suggested code block for <code>TASK 2</code>.</li>
+</li>
 </ol>
+<hr />
+<ol start="9">
+<li>
+<p>Generate suggested code for <code>TASK 1</code> (Line 26) by un-commenting the line, placing the cursor at the end of the line, hitting <span class="keys"><kbd class="key-enter">Enter</kbd></span>, and then confirming with <span class="keys"><kbd class="key-tab">Tab</kbd></span>. Afterwards, generate code for <code>TASK 2</code> as well.</p>
 <ul>
 <li>
-<p>The first round of AI-generated code for the task on <strong>Line 26</strong> produces a code block with a <code>register: subnet_info</code> line — the result of which is to assign this VPC definition to a variable <code>subnet_info</code>. Nothing terribly complicated or surprising about that.</p>
+<p>The first round of WCA-generated code for the task on <strong>Line 26</strong> produces a code block with a <code>register: subnet_info</code> line, the result of which is to assign this VPC definition to a variable <code>subnet_info</code>. Nothing terribly complicated or surprising about that.</p>
 </li>
 <li>
-<p>The AI-generated code that follows for the task on <strong>Line 33</strong> recommends a code block with <code>vpc_subnet_id: "{ { subnet_info.subnets[0].subnet_id } }"</code> as the value associated with the VPC's subnet ID. Critically, the variable <code>subnet_info</code> that was generated in the previous Task is also referenced in the second Task. This demonstrates the contextual awareness of WCA in action.</p>
+<p>The WCA-generated code that follows for the task on <strong>Line 33</strong> recommends a code block with <code>vpc_subnet_id: "{ { subnet_info.subnets[0].subnet_id } }"</code> as the value associated with the VPC's subnet ID. Critically, the variable <code>subnet_info</code> that was generated in the previous Task is also referenced in the second Task. This demonstrates the contextual awareness of WCA in action.</p>
+</li>
+</ul>
 <p><br/>
 <a class="glightbox" href="../_attachments/figure40.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure40.png" width="600" /></a></p>
 <p>Now try <strong>changing</strong> the name of the variable that was generated from <code>TASK 1</code> on <strong>Line 26</strong> and observing how the <code>TASK 2</code> block on <strong>Line 33</strong> is altered after deleting the previously-generated <code>TASK 2</code> content and <strong>re-generating</strong> the code block.</p>
 </li>
-</ul>
+</ol>
 <hr />
-<ol start="7">
+<ol start="10">
 <li>
 <p>Change the name of variable <code>subnet_info</code> instead to <code>subnet_name</code>, delete the code block recommendations under <strong>Line 33</strong>, and then regenerate the task on <strong>Line 33</strong>.</p>
+<ul>
+<li>
+<p>You will immediately notice that the new block of task code references the variable <code>subnet_name</code> that was modified just a moment ago.</p>
+</li>
+<li>
+<p>Once again, WCA has generated code suggestions that take into account the altered context and variables of the Playbook.</p>
+</li>
+<li>
+<p>Try adjusting other variables within the Playbook and test how these modifications impact the generation of later blocks of Task code in the Playbook.</p>
+</li>
+</ul>
 <p><br/>
 <a class="glightbox" href="../_attachments/figure41.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure41.png" width="600" /></a></p>
-<p>You will immediately notice that the new block of task code references the variable <code>subnet_name</code> that was modified just a moment ago. Once again, WCA has generated code suggestions that take into account the altered context and variables of the Playbook.</p>
-<p>Try adjusting other variables within the Playbook and test how these modifications impact the generation of later blocks of Task code in the Playbook.</p>
 </li>
 </ol>
 <hr />
 <h1 id="next-steps">Next steps</h1>
-<p>Before continuing, it's worth reading up on how the WCA extension within VS Code collects data for training and improvement purposes — something known as <strong>telemetry data collection</strong>. It is something to be mindful of before creating your own customized Playbooks or supplying your own code for testing purposes. </p>
-<details class="quote">
-<summary>CLICK TO EXPAND — TELEMETRY DATA COLLECTION</summary>
-<p>IBM and Red Hat strongly advocate for and put into practice full transparency about what content is collected— what is known as "<strong>telemetry data</strong>" —to improve the quality of service for AI offerings such as <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em>.</p>
-<p>The service automatically collects recommendations, usage telemetry, and Ansible Playbook state through automated events. <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> telemetry is used to improve the service over time. Telemetry data that is collected will be shared with Red Hat and IBM. Clients can opt out of this data sharing by disabling (within VS Code) the <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> setting in the Ansible VS Code extension. Opting-out of telemetry data sharing does not remove telemetry data already sent to Red Hat and IBM.</p>
-<p>The telemetry data shared with Red Hat and IBM are selected to be anonymized where applicable and as unobtrusive as possible. Metrics collected include the following:</p>
-<ul>
-<li>
-<p><strong>Recommendation accepted/rejected</strong>: Captured to indicate whether an AI-generated content suggestion was accepted by the user to include in the actively developed Playbook.</p>
-</li>
-<li>
-<p><strong>Task prompt</strong>: The contents of the name property (ie. the natural language prompted by the user) of the task used to request a recommendation from <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em>.</p>
-</li>
-<li>
-<p><strong>Playbook/Role context</strong>: The contents of a Playbook file that exist prior to the task prompt used in the current recommendation. This is used to provide additional context for a recommendation — in addition to what the natural language task prompt provides. Potentially sensitive information is first removed before collection as telemetry data.</p>
-</li>
-<li>
-<p><strong>Playbook/Role state</strong>: This data point is captured at various stages, before and after, the AI-generated recommendation is presented to the user. "State" encompasses the contents of an Ansible Playbook. This is captured to help the service understand what components of a recommendation were valuable (or not) once a recommendation is provided.</p>
-</li>
-<li>
-<p><strong>Anonymized document Uniform Resource Identifier (URI)</strong>: Used to determine the kind of Ansible document (Playbook, Role, or so on).</p>
-</li>
-<li>
-<p><strong>Request and response timestamps</strong>: Captured in UTC format.</p>
-</li>
-<li>
-<p><strong>Anonymized user ID</strong>: Captured at (~/.redhat/anonymousid).</p>
-</li>
-<li>
-<p><strong>Anonymized suggestion ID</strong>: Automatically generated session ID associated with service request.</p>
-</li>
-</ul>
-<p>Telemetry data may be kept indefinitely for product improvement. Users are not able to request that their telemetry be purged. Clients may disable the Ansible Lightspeed service to prevent further telemetry from being sent to the service. Red Hat and IBM do not claim any copyright or other intellectual property rights to the suggestions generated by <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em>.</p>
-<p>Additional details can be located within the Terms of Service for the offering: <a href="https://docs.ai.ansible.redhat.com/tos/" target="_blank">https://docs.ai.ansible.redhat.com/tos/</a></p>
-</details>
 <p>In the next section, you will begin experimentating with customized Ansible Playbooks and testing how changes to Ansible Task natural language descriptions impacts the recommended code produced by WCA.</p>
 
 
