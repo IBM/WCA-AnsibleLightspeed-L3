@@ -461,7 +461,7 @@
 <hr />
 <ol start="6">
 <li>
-<p>Drilling down into the <code>URL</code> field will redirect your web browser back to the precise collections and sources on Ansible Galaxy from which the code recommendations were derived. Here you can learn much richer details about the status of the project, any associated open source repositories involved (such as GitHub), contributions and activities ongoing with the code base, the author(s) involved, and many more intricacies.</p>
+<p>Drilling down into the <code>URL</code> field will redirect your web browser back to the precise collections and sources on <strong>Ansible Galaxy</strong> from which the code recommendations were derived. Here you can learn much richer details about the status of the project, any associated open source repositories involved (such as GitHub), contributions and activities ongoing with the code base, the author(s) involved, and many more intricacies.</p>
 <p><br/>
 <a class="glightbox" href="../_attachments/contentmatching6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/contentmatching6.png" width="600" /></a></p>
 </li>
@@ -627,15 +627,12 @@
 </code></pre></div></td></tr></table></div>
 <hr />
 <ol start="8">
-<li>
-<p>Let's begin by first examining <strong>Line 26</strong> and <strong>Line 33</strong> of the <code>demo_provision_ec2_instance.yml</code> Playbook to understand better what purposes they serve.</p>
-<p><code>TASK 1</code> (Line 26) and <code>TASK 2</code> (Line 33) are responsible for gathering information about a network subnet that is to be provisioned and then creating a virtual private cloud (VPC) definition based on those details.</p>
-</li>
+<li><code>TASK 1</code> (<strong>Line 26</strong>) and <code>TASK 2</code> (<strong>Line 33</strong>) are responsible for gathering information about a network subnet that is to be provisioned and then creating a virtual private cloud (VPC) definition based on those details.</li>
 </ol>
 <hr />
 <ol start="9">
 <li>
-<p>Generate suggested code for <code>TASK 1</code> (Line 26) by un-commenting the line, placing the cursor at the end of the line, hitting <span class="keys"><kbd class="key-enter">Enter</kbd></span>, and then confirming with <span class="keys"><kbd class="key-tab">Tab</kbd></span>. Afterwards, generate code for <code>TASK 2</code> as well.</p>
+<p>Generate suggested code for <code>TASK 1</code> (<strong>Line 26</strong>) by un-commenting the line, placing the cursor at the end of the line, hitting <span class="keys"><kbd class="key-enter">Enter</kbd></span>, and then confirming with <span class="keys"><kbd class="key-tab">Tab</kbd></span>. Afterwards, perform the same steps to generate code for <code>TASK 2</code> as well.</p>
 <ul>
 <li>
 <p>The first round of WCA-generated code for the task on <strong>Line 26</strong> produces a code block with a <code>register: subnet_info</code> line, the result of which is to assign this VPC definition to a variable <code>subnet_info</code>. Nothing terribly complicated or surprising about that.</p>
@@ -646,10 +643,10 @@
 </ul>
 <p><br/>
 <a class="glightbox" href="../_attachments/figure40.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure40.png" width="600" /></a></p>
-<p>Now try <strong>changing</strong> the name of the variable that was generated from <code>TASK 1</code> on <strong>Line 26</strong> and observing how the <code>TASK 2</code> block on <strong>Line 33</strong> is altered after deleting the previously-generated <code>TASK 2</code> content and <strong>re-generating</strong> the code block.</p>
 </li>
 </ol>
 <hr />
+<p>Now try <em>changing</em> the name of the variable that was generated from <code>TASK 1</code> on <strong>Line 26</strong> and observing how the <code>TASK 2</code> block on <strong>Line 33</strong> is altered after deleting the previously-generated <code>TASK 2</code> content and <strong>re-generating</strong> the code block.</p>
 <ol start="10">
 <li>
 <p>Change the name of variable <code>subnet_info</code> instead to <code>subnet_name</code>, delete the code block recommendations under <strong>Line 33</strong>, and then regenerate the task on <strong>Line 33</strong>.</p>
