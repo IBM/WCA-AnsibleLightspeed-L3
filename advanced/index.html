@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#use-wca-to-generate-code-with-the-template-playbook-then-compare-against-the-solution-playbook-to-evaluate-the-results" class="md-skip">
           Skip to content
         </a>
       
@@ -391,19 +391,20 @@
 <ul>
 <li>The <code>SOLUTION.yml</code> Playbook contains the complete set of Ansible Playbook instructions needed to fully deploy a live EC2 VPC instance on AWS and host a WordPress application within that environment. You will need to replace certain variables (indicated by comments in the code) with details specific to your personal AWS account and environment. Afterwards, you can— and are encouraged to —execute the Playbook with Ansible and deploy a <strong>live</strong>, at-cost instance to your personal AWS account.</li>
 </ul>
+<p><br/></p>
 <p>Once the two YAML files have been downloaded to your local machine, open them with VS Code and follow along with the instructions below.</p>
+<hr />
 <details class="quote">
 <summary>DOWNLOAD .yml FILES TO DESKTOP</summary>
-</details>
 <p>You can easily downlod the <code>TEMPLATE</code> and <code>SOLUTION</code> <em>.yml</em> files to your local machine.</p>
 <p><br/>
-  <a class="glightbox" href="../_attachments/figure25.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure25.png" width="400" /></a></p>
+<a class="glightbox" href="../_attachments/figure25.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure25.png" width="400" /></a></p>
 <p><a class="glightbox" href="../_attachments/figure26.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure26.png" width="400" /></a>
-  <br/></p>
+<br/></p>
 <p>Navigate to the GitHub links provided (above) and click the <strong>Download raw file</strong> button.</p>
+</details>
 <details class="quote">
 <summary>HOW TO CREATE NEW <code>YAML</code> PLAYBOOKS</summary>
-</details>
 <p><strong>Note:</strong> You need to copy and paste the contents of the Playbook into a <strong>New File...</strong> within the <em>same</em> Lightspeed project directory that was used for the previous lab modules in order for the VS Code extension to engage.</p>
 <p>To create a new YAML Playbook within a VS Code environment:</p>
 <p><strong>a.</strong> Copy the contents of the Playbook to clipboard using the button in the top-right corner of the lab guide code block.</p>
@@ -412,13 +413,13 @@
 <p><a class="glightbox" href="../_attachments/figure19.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure19.png" width="400" /></a></p>
 <p><strong>c.</strong> Name the file to a description of your choosing, ending with <code>.yml</code> as the filetype. Set it to <code>CustomPlaybook.yml</code>, for example. Save it to one of the directories in the <code>ansible-wca-demo-kit</code> folder.</p>
 <p><strong>d.</strong> Paste the clipboard contents into the YAML file and follow along with the suggestions below.</p>
+</details>
 <details class="quote">
 <summary>COPY AND PASTE CODE WITHIN THE VM</summary>
-</details>
 <p>Information "copied" to your local machine's clipboard cannot be "pasted" directly into the virtual machine (VM) environment or VS Code. If you wish to copy and paste instructions directly from the lab documentation, it is recommended that you open the GitHub instructions <strong>inside</strong> the VM's web browser (Firefox). This will allow you to copy instructions to the VM's clipboard and paste instructions inside the VS Code editor.</p>
+</details>
 <details class="quote">
 <summary>ANSIBLE LIGHTSPEED IS MISSING OR CODE RECOMMENDATIONS ARE NOT GENERATING</summary>
-</details>
 <p>Ansible Lightspeed and WCA will only generate code recommendations for <em>Ansible Playbooks</em> and <em>YAML</em> files. VS Code will typically auto-detect the programming language of the document you're working with, but on occassion you may need to manually specify the language. Even if working with a YAML file, you'll still need to specify the language mode as <code>Ansible</code> for the Lightspeed plugin to engage.</p>
 <p>To set the language mode correctly:</p>
 <ul>
@@ -436,11 +437,12 @@
 </li>
 </ul>
 <p><br/>
-  <a class="glightbox" href="../_attachments/troubleshooting-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-2.png" width="600" /></a></p>
+<a class="glightbox" href="../_attachments/troubleshooting-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-2.png" width="600" /></a></p>
 <p><a class="glightbox" href="../_attachments/troubleshooting-3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-3.png" width="600" /></a></p>
-<h1 id="_1"></h1>
+</details>
+<hr />
 <h1 id="use-wca-to-generate-code-with-the-template-playbook-then-compare-against-the-solution-playbook-to-evaluate-the-results">Use WCA to <strong>generate code with the TEMPLATE Playbook</strong>, then compare against the SOLUTION Playbook to evaluate the results</h1>
-<h1 id="_2"></h1>
+<h1 id="_1"></h1>
 <p>In the steps ahead, you will use WCA's AI-generated code suggestions to populate the contents of Tasks within the <code>TEMPLATE.yml</code> Playbook. There are 14 Tasks in total and we will examine them each in sequence.</p>
 <p>For each Task, a tabbed code snippet is provided within this lab documentation to make it easy for you to toggle between the <code>TEMPLATE</code> (the Task prior to AI-generated code suggestions) and the proper <code>SOLUTION</code> (the Task as it should be written for a successful deployment to AWS).</p>
 <p>Compare the AI-generated code suggestions you receive in VS Code with the expected <code>SOLUTION</code> code. You <em>will</em> find that there are occassional discrepancies and variables that need to be adjusted. Generative AI can save you tremendous amounts of time and effort by automating the creation of powerful blocks of code— as you will observe in generating these tasks —but it still requires a degree of human supervision and double-checking. However, the time saved with hands on keyboard is enormous and the potential for the future is boundless.</p>
@@ -876,7 +878,7 @@
 <p><strong>Business Partners</strong> should follow the <a href="https://ibm.github.io/WCA-AnsibleLightspeed-L3/Lab/1-Evaluation/" target="_blank">learning plan links</a> on IBM Training to complete a multiple-choice examination for Level 3 credit.</p>
 </div>
 <hr />
-<h1 id="_3"></h1>
+<h1 id="_2"></h1>
 <h1 id="to-deploy-a-live-amazon-ec2-instance-and-wordpress-application-on-aws-follow-along-with-the-steps-below">To deploy a <strong>live</strong> Amazon EC2 instance and WordPress application on AWS, follow along with the steps below.</h1>
 <hr />
 <ol start="18">
@@ -1042,7 +1044,7 @@ Wait for the installation to conclude and then retry the instructions from Step 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>chmod 400 filename.pem
 </code></pre></div>
 <hr />
-<h1 id="_4"></h1>
+<h1 id="_3"></h1>
 <h1 id="executing-the-ansible-playbook">Executing the Ansible Playbook</h1>
 <hr />
 <p>At last, you are ready to execute the Playbook and use Ansible automation to deploy both an Amazon EC2 instance and a WordPress web application.</p>
@@ -1067,7 +1069,7 @@ Wait for the installation to conclude and then retry the instructions from Step 
 </ol>
 <p><a class="glightbox" href="../_attachments/figure34.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure34.png" width="600" /></a></p>
 <hr />
-<h1 id="_5"></h1>
+<h1 id="_4"></h1>
 <h1 id="cleaning-up-and-conclusion">Cleaning up and conclusion</h1>
 <hr />
 <p>Once you are ready to retire your environment, you will need to return to the AWS Dashboard to terminate the EC2 instance and hosted WordPress application.</p>
