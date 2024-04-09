@@ -546,7 +546,7 @@
 <hr />
 <ol start="2">
 <li>
-<p><strong>CUSTOM PLAYBOOK #1</strong> contains two sets of tasks:</p>
+<p><code>CUSTOM PLAYBOOK #1</code> contains two sets of tasks:</p>
 <div class="admonition warning">
 <p><em>Note:</em> the line numbers below reference the <code>TEMPLATE</code> Playbook.*</p>
 </div>
@@ -573,11 +573,11 @@
 <ul>
 <li>
 <p>Two tabs are presented below:</p>
-</li>
-<li>
-<p><code>AI-GENERATED CODE</code> shows the output from running WCA's generative AI capabilities on <strong>Line 12</strong> of the unmodified <code>TEMPLATE</code> Playbook.</p>
-</li>
+<ul>
+<li><code>AI-GENERATED CODE</code> shows the output from running WCA's generative AI capabilities on <strong>Line 12</strong> of the unmodified <code>TEMPLATE</code> Playbook.</li>
 <li><code>SOLUTION CODE</code> shows the expected (correct) code for performing the task that was written by a human programmer. In theory, the AI-generated code <em>should</em> be as good— or even superior to —the manually-written solution code. </li>
+</ul>
+</li>
 </ul>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">AI-GENERATED CODE</label><label for="__tabbed_2_2">SOLUTION CODE</label></div>
 <div class="tabbed-content">
@@ -609,8 +609,8 @@
 </ol>
 <hr />
 <ol start="5">
-<li>As you can see, the AI-generated code in the first tab misses the mark in a few areas. In fact, it appears to have misunderstood the task in quite a few ways:</li>
-</ol>
+<li>
+<p>As you can see, the AI-generated code in the first tab misses the mark in a few areas. In fact, it appears to have misunderstood the task in quite a few ways:</p>
 <ul>
 <li>
 <p>There is no corresponding value to <code>_content_</code> that can be located within the Ansible Playbook, at least not any which you (the author) have defined ahead of time. Such a result is unexpected and does not match the intention of writing an Apache configuration file according to best practices.</p>
@@ -620,6 +620,8 @@
 </li>
 </ul>
 <p>In general, the more ambiguous the Task description given, the greater the likelihood that WCA will misinterpret the author's intent and suggest unwanted Ansible automation jobs. To help disambiguate our intention, Playbook authors must use more precise natural language terms and descriptions.</p>
+</li>
+</ol>
 <hr />
 <ol start="3">
 <li>Let's slightly modify the Task description. Try revising the Task <code>-name: ...</code> description to the following, hit <span class="keys"><kbd class="key-enter">Enter</kbd></span>, and accept the generated results with the <span class="keys"><kbd class="key-tab">Tab</kbd></span> key:</li>
