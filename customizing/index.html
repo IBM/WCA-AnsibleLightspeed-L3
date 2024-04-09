@@ -350,7 +350,8 @@
 <h1 id="_1"></h1>
 <p>In this section, you will experiment with customized Ansible Playbooks and test how changes made to an Ansible Task's natural language descriptions can impact the recommended code produced by <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> (<strong>WCA</strong>).</p>
 <div class="admonition note">
-<p class="admonition-title">UNPREDICTABLE RESULTS FROM GENERATIVE AI &amp; LLMs<p>A consequence of using generative AI and Large Language Models (LLMs) is that the recommended code output of these systems will never be 100% consistent for each and every execution. For this reason, LLMs are referred to as "non-deterministic" systems — as opposed to "deterministic" systems. This is both a strength and weakness of LLMs. As you will observe in this module, even a slight modification to the Task description or the smallest change to how a Playbook is structured— the descriptions used, the variables set, and so on —will influence AI-generated code recommendations.</p>
+<p class="admonition-title">UNPREDICTABLE RESULTS FROM GENERATIVE AI &amp; LLMs</p>
+<p>A consequence of using generative AI and Large Language Models (LLMs) is that the recommended code output of these systems will never be 100% consistent for each and every execution. For this reason, LLMs are referred to as "non-deterministic" systems — as opposed to "deterministic" systems. This is both a strength and weakness of LLMs. As you will observe in this module, even a slight modification to the Task description or the smallest change to how a Playbook is structured— the descriptions used, the variables set, and so on —will influence AI-generated code recommendations.</p>
 <p>The iterative process that you will go through in this module can be viewed in two different ways:</p>
 <ol>
 <li>
@@ -360,7 +361,6 @@
 <p>Human feedback and <strong>humans-in-the-loop</strong> are essential to these formative stages of generative AI. As offerings like WCA mature, the natural language processing capabilities of the service will continue to be refined and improved. Additional packages, functions, and training data from Ansible Galaxy (as well as other sources) are continuously being added to the product's Foundation Models, which will in turn continually improve the AI-generated code recommendations made to users. Feedback can be directly supplied via the WCA extension for VS Code and <a href="https://docs.ai.ansible.redhat.com/contributing/#ansible-galaxy" target="_blank">additional ways to support model training are documented online</a>.</p>
 </li>
 </ol>
-</p>
 </div>
 <p>The take-away here is that <strong>your results may vary</strong>: they may differ from the <code>SOLUTION</code> code presented in the examples below. Keep this in mind as you work through the examples in this section and understand that it is not a bug, but rather a consequence of working with generative AI in general.</p>
 <p>The precision with which a Playbook author describes the automation Task in natural language will determine the accuracy and effectiveness of WCA's generated code recommendations.</p>
