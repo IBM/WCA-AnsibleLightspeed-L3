@@ -546,9 +546,9 @@
 <hr />
 <ol start="2">
 <li>
-<p><code>CUSTOM PLAYBOOK #1</code> contains two sets of tasks:</p>
+<p>The template <code>CUSTOM PLAYBOOK #1</code> contains two sets of tasks:</p>
 <div class="admonition warning">
-<p><em>Note:</em> the line numbers below reference the <code>TEMPLATE</code> Playbook.*</p>
+<p><strong>Note:</strong> the line numbers below reference the <code>TEMPLATE</code> Playbook.</p>
 </div>
 <ul>
 <li>
@@ -616,13 +616,16 @@
 <hr />
 <ol start="5">
 <li>
-<p>As you can see, the AI-generated code in the first tab misses the mark in a few areas. In fact, it appears to have misunderstood the task in quite a few ways:</p>
+<p>As you can see, the <code>AI-GENERATED CODE</code> recommendations satisfy some of the requests, but also miss the mark in a few areas. When compared to the <code>SOLUTION CODE</code> tab:</p>
 <ul>
 <li>
-<p>There is no corresponding value to <code>_content_</code> that can be located within the Ansible Playbook, at least not any which you (the author) have defined ahead of time. Such a result is unexpected and does not match the intention of writing an Apache configuration file according to best practices.</p>
+<p>Both tabs appropriately utilize the <code>ansible.builtin.template:</code> Collectio, which for this request is absolutely correct. <em>Interesting fact</em>: earlier (circa 2023) versions of WCA produced code recommendations that <em>did not</em> align with the solution, for the same task description. Instead, the recommendation was for the <code>ansible.builtin.copy:</code> Collection to invoke <code>content: "{{ _content_ }}"</code>, which is not correct. This speaks to the iterative and continuously improving capabilities of the WCA and IBM Granite models.</p>
 </li>
 <li>
-<p>Similarly, the destination has been inferred differently and the access permissions that should have been applied to the config file (again - according to Red Hat best practices) are missing altogether.</p>
+<p><code>AI-GENERATED CODE</code> recommended including statements that explicitly set <code>owner: root</code> and <code>group: root</code>, which are both appropriate when permissions are set to <code>mode: '0644</code>. While not strictly necessary, these additional statements arguably are an <em>improvement</em> over the <code>SOLUTION CODE</code> results. It's also worth noting that the request to write the apache config file did not explicitly request <code>mode: '0644</code> in the natural language description, but WCA nevertheless recommended it as this is a best practice for deploying Apache webservers.</p>
+</li>
+<li>
+<p>The <code>src</code> and <code>dest</code> attributes are not in agreement across the <code>AI-GENERATED CODE</code> and <code>SOLUTION CODE</code> tabs. This is an area for improvement. The natural language description wasn't precise about these details; therefore, this is an area where more detailed instructions could better steer the recommendations WCA returns back with. </p>
 </li>
 </ul>
 <p>In general, the more ambiguous the Task description given, the greater the likelihood that WCA will misinterpret the author's intent and suggest unwanted Ansible automation jobs. To help disambiguate our intention, Playbook authors must use more precise natural language terms and descriptions.</p>
