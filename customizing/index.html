@@ -350,7 +350,7 @@
 <h1 id="_1"></h1>
 <p>In this section, you will experiment with customized Ansible Playbooks and test how changes made to an Ansible Task's natural language descriptions can impact the recommended code produced by <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> (<strong>WCA</strong>).</p>
 <div class="admonition note">
-<p class="admonition-title">UNPREDICTABLE RESULTS FROM GENERATIVE AI AND LLMs</p>
+<p class="admonition-title">UNPREDICTABLE RESULTS FROM GENERATIVE AI &amp; LLMs</p>
 <p>A consequence of using generative AI and Large Language Models (LLMs) is that the recommended code output of these systems will never be 100% consistent for each and every execution. For this reason, LLMs are referred to as "non-deterministic" systems — as opposed to "deterministic" systems. This is both a strength and weakness of LLMs. As you will observe in this module, even a slight modification to the Task description or the smallest change to how a Playbook is structured— the descriptions used, the variables set, and so on —will influence AI-generated code recommendations.</p>
 <p>The iterative process that you will go through in this module can be viewed in two different ways:</p>
 <ol>
@@ -547,7 +547,7 @@
 <ol start="2">
 <li>
 <p><strong>CUSTOM PLAYBOOK #1</strong> contains two sets of tasks:</p>
-<div class="admonition quote">
+<div class="admonition warning">
 <p><em>Note:</em> the line numbers below reference the <code>TEMPLATE</code> Playbook.*</p>
 </div>
 <ul>
@@ -568,17 +568,19 @@
 </ol>
 <hr />
 <ol start="4">
-<li>Place your cursor at the end of <strong>Line 12</strong> and press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to generate WCA-recommended code for the task. Accept the recommendation by pressing <span class="keys"><kbd class="key-tab">Tab</kbd></span>.</li>
-</ol>
+<li>
+<p>Place your cursor at the end of <strong>Line 12</strong> and press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to generate WCA-recommended code for the task. Accept the recommendation by pressing <span class="keys"><kbd class="key-tab">Tab</kbd></span>.</p>
 <ul>
 <li>
 <p>Two tabs are presented below:</p>
-<ul>
-<li><code>AI-GENERATED CODE</code> shows the output from running WCA's generative AI capabilities on an unmodified version of this Playbook (the action just performed in <em>Step 4</em>).</li>
+</li>
+<li>
+<p><code>AI-GENERATED CODE</code> shows the output from running WCA's generative AI capabilities on an unmodified version of this Playbook (the action just performed in <em>Step 4</em>).</p>
+</li>
 <li><code>SOLUTION CODE</code> shows the expected Task code that was written by a human programmer to perform the same task. In theory, the AI-generated code <em>should</em> be as good— or even superior to —the manually-written solution code. </li>
 </ul>
 </li>
-</ul>
+</ol>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">AI-GENERATED CODE</label><label for="__tabbed_2_2">SOLUTION CODE</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
