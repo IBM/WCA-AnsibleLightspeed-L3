@@ -17,7 +17,7 @@
     
     
       
-        <title>Customizing Tasks - IBM watsonx Code Assistant for Red Hat Ansible Lightspeed - Technical Sales Level 3</title>
+        <title>Prompt Tuning and Model Customization - IBM watsonx Code Assistant for Red Hat Ansible Lightspeed - Technical Sales Level 3</title>
       
     
     
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Customizing Tasks
+              Prompt Tuning and Model Customization
             
           </span>
         </div>
@@ -277,7 +277,7 @@
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Customizing Tasks
+        Prompt Tuning and Model Customization
       </a>
       
     </li>
@@ -619,13 +619,13 @@
 <p>As you can see, the <code>AI-GENERATED CODE</code> recommendations satisfy some of the requests, but also miss the mark in a few areas. When compared to the <code>SOLUTION CODE</code> tab:</p>
 <ul>
 <li>
-<p>Both tabs appropriately utilize the <code>ansible.builtin.template:</code> Collectio, which for this request is absolutely correct. <em>Interesting fact</em>: earlier (circa 2023) versions of WCA produced code recommendations that <em>did not</em> align with the solution, for the same task description. Instead, the recommendation was for the <code>ansible.builtin.copy:</code> Collection to invoke <code>content: "{{ _content_ }}"</code>, which is not correct. This speaks to the iterative and continuously improving capabilities of the WCA and IBM Granite models.</p>
+<p>Both tabs appropriately utilize the <code>ansible.builtin.template:</code> Collectio, which for this request is absolutely correct. <em>Interesting fact</em>: earlier (circa 2023) versions of WCA produced code recommendations that <em>did not</em> align with the solution, for the same task description. Instead, the recommendation was for the <code>ansible.builtin.copy:</code> Collection to invoke <code>content: "{{ _content_ }}"</code>, which is not correct. This speaks to the continuously improving capabilities of the WCA and IBM Granite models.</p>
 </li>
 <li>
 <p><code>AI-GENERATED CODE</code> recommended including statements that explicitly set <code>owner: root</code> and <code>group: root</code>, which are both appropriate when permissions are set to <code>mode: '0644</code>. While not strictly necessary, these additional statements arguably are an <em>improvement</em> over the <code>SOLUTION CODE</code> results. It's also worth noting that the request to write the apache config file did not explicitly request <code>mode: '0644</code> in the natural language description, but WCA nevertheless recommended it as this is a best practice for deploying Apache webservers.</p>
 </li>
 <li>
-<p>The <code>src</code> and <code>dest</code> attributes are not in agreement across the <code>AI-GENERATED CODE</code> and <code>SOLUTION CODE</code> tabs. This is an area for improvement. The natural language description wasn't precise about these details; therefore, this is an area where more detailed instructions could better steer the recommendations WCA returns back with. </p>
+<p>The <code>src:</code> and <code>dest:</code> attributes are not in agreement across the <code>AI-GENERATED CODE</code> and <code>SOLUTION CODE</code> tabs. This is an area for improvement. The natural language description wasn't precise about these details; therefore, this is an opportunity where more detailed instructions could better steer the recommendations WCA returns back with. </p>
 </li>
 </ul>
 <p>In general, the more ambiguous the Task description given, the greater the likelihood that WCA will misinterpret the author's intent and suggest unwanted Ansible automation jobs. To help disambiguate our intention, Playbook authors must use more precise natural language terms and descriptions.</p>
