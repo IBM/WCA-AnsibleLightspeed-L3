@@ -420,7 +420,6 @@
 </details>
 </li>
 </ul>
-<p><strong><code>CUSTOM PLAYBOOK #1</code></strong></p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">TEMPLATE</label><label for="__tabbed_1_2">SOLUTION</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -545,28 +544,38 @@
 </div>
 <hr />
 <ol start="2">
-<li><strong>CUSTOM PLAYBOOK #1</strong> contains two sets of tasks:
-<em>Note: line numbers reference the <code>TEMPLATE</code> Playbook.</em> </li>
+<li><strong>CUSTOM PLAYBOOK #1</strong> contains two sets of tasks:</li>
 </ol>
+<p>!!! quote ""
+      <em>Note:</em> the line numbers below reference the <code>TEMPLATE</code> Playbook.*</p>
 <ul>
 <li>
-<p>Task 1 (<strong>Lines 5-12</strong>) checks whether or not web server software is up to date and runs the update if necessary.</p>
+<p><code>TASK 1</code> (<strong>Lines 5-12</strong>) checks whether or not web server software is up to date and runs the update if necessary</p>
 </li>
 <li>
-<p>Task 2 (<strong>Lines 15-22</strong>) checks whether or not database server software is up to date and runs the update if necessary.</p>
+<p><code>Task 2</code> (<strong>Lines 15-22</strong>) checks whether or not database server software is up to date and runs the update if necessary</p>
 </li>
 </ul>
 <hr />
-<p>Consider the task on <strong>Line 12</strong>, which prompts Ansible to create ("write") a configuration file for an Apache webserver:
+<ol start="3">
+<li>Examine the task on <strong>Line 12</strong>, which prompts Ansible to create ("write") a configuration file for an Apache webserver:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file</span><span class="w"></span>
-</code></pre></div></p>
-<ol start="2">
-<li><strong>Generate</strong> AI-recommended code for the task on <strong>Line 12</strong> using the WCA extension for VS Code. Accept the recommendation by pressing <span class="keys"><kbd class="key-tab">Tab</kbd></span> and then follow along with the lab instructions that follow.</li>
+</code></pre></div></li>
 </ol>
 <hr />
-<p>Two tabs are presented below. The first <code>AI-Generated Code</code> tab shows the output from running WCA's generative AI capabilities on an unmodified version of this Playbook (Step 2). The second <code>Solution Code</code> tab shows the expected Task code that was written by a human programmer to perform the same task. In theory, the AI-generated code <em>should</em> be as good— or even superior to —the manually-written solution code. </p>
-<p>Let's examine that theory in practice:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">AI-Generated Code</label><label for="__tabbed_2_2">Solution Code</label></div>
+<ol start="4">
+<li>Place your cursor at the end of <strong>Line 12</strong> and press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to generate WCA-recommended code for the task. Accept the recommendation by pressing <span class="keys"><kbd class="key-tab">Tab</kbd></span>.</li>
+</ol>
+<ul>
+<li>
+<p>Two tabs are presented below:</p>
+<ul>
+<li><code>AI-GENERATED CODE</code> shows the output from running WCA's generative AI capabilities on an unmodified version of this Playbook (the action just performed in <em>Step 4</em>).</li>
+<li><code>SOLUTION CODE</code> shows the expected Task code that was written by a human programmer to perform the same task. In theory, the AI-generated code <em>should</em> be as good— or even superior to —the manually-written solution code. </li>
+</ul>
+</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">AI-GENERATED CODE</label><label for="__tabbed_2_2">SOLUTION CODE</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
@@ -593,8 +602,19 @@
 </div>
 </div>
 <hr />
-<p>As you can see, the AI-generated code in the first tab misses the mark in a few areas. In fact, it appears to have misunderstood the task in quite a few ways. There is no corresponding value to <code>_content_</code> that can be located within the Ansible Playbook, at least not any which you (the author) have defined ahead of time. Such a result is unexpected and does not match the intention of writing an Apache configuration file according to best practices. Similarly, the destination has been inferred differently and the access permissions that should have been applied to the config file (again - according to Red Hat best practices) are missing altogether.</p>
+<ol start="5">
+<li>As you can see, the AI-generated code in the first tab misses the mark in a few areas. In fact, it appears to have misunderstood the task in quite a few ways:</li>
+</ol>
+<ul>
+<li>
+<p>There is no corresponding value to <code>_content_</code> that can be located within the Ansible Playbook, at least not any which you (the author) have defined ahead of time. Such a result is unexpected and does not match the intention of writing an Apache configuration file according to best practices.</p>
+</li>
+<li>
+<p>Similarly, the destination has been inferred differently and the access permissions that should have been applied to the config file (again - according to Red Hat best practices) are missing altogether.</p>
+</li>
+</ul>
 <p>In general, the more ambiguous the Task description given, the greater the likelihood that WCA will misinterpret the author's intent and suggest unwanted Ansible automation jobs. To help disambiguate our intention, Playbook authors must use more precise natural language terms and descriptions.</p>
+<hr />
 <ol start="3">
 <li>Let's slightly modify the Task description. Try revising the Task <code>-name: ...</code> description to the following, hit <span class="keys"><kbd class="key-enter">Enter</kbd></span>, and accept the generated results with the <span class="keys"><kbd class="key-tab">Tab</kbd></span> key:</li>
 </ol>
