@@ -914,10 +914,14 @@
 <li>
 <p>Now it's time to re-write the Playbook for multi-task code generation. The beauty of natural language statements is that your approach can be as terse or verbose as you want. The more verbose and descriptive, the more <em>prescriptive</em> you can be in terms of influencing the AI-generated code recommendations from WCA.</p>
 <p>The topic of <em>"prompt tuning"</em> will be explored in much greater detail in the following module. But for now, try <strong>replacing</strong> the code inside <code>create_ec2_single_multi.yml</code> with the <code>TEMPLATE</code> code block.</p>
-<div class="highlight"><pre><span></span><code>- Place your cursor at the end of **Line 5** (remember not to remove the `#` character) and hit ++return++
-
-- Compare your results to the `SOLUTION` tab and to the result from *Step 13*
-</code></pre></div>
+<ul>
+<li>
+<p>Place your cursor at the end of <strong>Line 5</strong> (remember not to remove the <code>#</code> character) and hit <span class="keys"><kbd class="key-enter">Enter</kbd></span></p>
+</li>
+<li>
+<p>Compare your results to the <code>SOLUTION</code> tab and to the result from <em>Step 13</em></p>
+</li>
+</ul>
 <div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">TEMPLATE</label><label for="__tabbed_8_2">SOLUTION</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1065,12 +1069,12 @@
 <a id="__codelineno-15-65" name="__codelineno-15-65"></a><span class="w">        </span><span class="nt">security_group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo</span><span class="w"></span>
 <a id="__codelineno-15-66" name="__codelineno-15-66"></a><span class="w">    </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ec2</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">TIMEOUT WARNING</p>
 <p>It may take several moments for WCA to process and return code recommendations for a multi-task description as complex as this one. If you receive a time-out warning, try executing the code generation step by pressing <span class="keys"><kbd class="key-enter">Enter</kbd></span> a second time.</p>
-</div>
-</div>
-</div>
 </div>
 </li>
 </ol>
