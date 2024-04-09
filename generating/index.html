@@ -629,7 +629,8 @@
 <li><strong>Execution</strong>: In order to generate AI code recommendations for multi-task descriptions, <strong>Line 12</strong> must <em>stay commented out</em> (the <code>#</code> needs to remain at the start of the line)</li>
 </ul>
 <p><br/></p>
-<p>What is the rationale behind this? When WCA's generative AI capabilities parse <strong>Line 12</strong>, its output will include multiple <code>-name:</code> tasks, each containing potentially multiple lines of instructions, based on how many <code>%</code>-delineated task descriptions are included on the line. Therefore, the way in which the code generation step is executed on <strong>Line 12</strong> is a consequence of the formatting decision. Execution of a code generation step on a commented-out line containing <code>%</code> delineators is recognized by WCA as a unique case that will be acted upon as a multi-task statement.</p>
+<p>What is the rationale behind this? When WCA's generative AI capabilities parse <strong>Line 12</strong>, its output will include multiple <code>-name:</code> tasks, each containing potentially multiple lines of instructions, based on how many <code>%</code>-delineated task descriptions are included on the line.</p>
+<p>Therefore, the way in which the code generation step is executed on <strong>Line 12</strong> is a consequence of the formatting decision. Execution of a code generation step on a commented-out line containing <code>%</code> delineators is recognized by WCA as a unique case that will be acted upon as a multi-task statement.</p>
 </li>
 </ol>
 <hr />
@@ -782,7 +783,8 @@
 <hr />
 <ol start="10">
 <li>
-<p>Comparing the two results, the only notable difference between the two approaches are <strong>Lines 27-29</strong> using the <code>SINGLE TASK</code> generative AI approach. Both the <code>SINGLE TASK</code> and <code>MULTI-TASK</code> suggestions for that particular task <em>satisfy</em> the request made by the user. However, whether the single task or multi-task approach resulted in a better code suggestion is up to the judgement of the programmer. 90% of the remaining code was identical between the two approaches and was achieved in far fewer lines of code and typing using the multi-task approach.</p>
+<p>Comparing the two results, the only notable difference between the two approaches are <strong>Lines 27-29</strong> using the <code>SINGLE TASK</code> generative AI approach. Both the <code>SINGLE TASK</code> and <code>MULTI-TASK</code> suggestions for that particular task <em>satisfy</em> the request made by the user.</p>
+<p>However, whether the single task or multi-task approach resulted in a better code suggestion is up to the judgement of the programmer. 90% of the remaining code was identical between the two approaches and was achieved in far fewer lines of code and typing using the multi-task approach.</p>
 <div class="admonition warning">
 <p>The variability of generative AI suggestions is a fascinating topic and one that we will dive more deeply into with the module ahead.</p>
 </div>
@@ -1071,10 +1073,10 @@
 </div>
 </div>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">TIMEOUT WARNING</p>
+<details class="warning">
+<summary>TIMEOUT WARNING</summary>
 <p>It may take several moments for WCA to process and return code recommendations for a multi-task description as complex as this one. If you receive a time-out warning, try executing the code generation step by pressing <span class="keys"><kbd class="key-enter">Enter</kbd></span> a second time.</p>
-</div>
+</details>
 </li>
 </ol>
 <hr />
