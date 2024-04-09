@@ -376,98 +376,58 @@
 </li>
 </ol>
 <hr />
-<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">~/Documents/ansible-wca-demo-kit/install and configure Cockpit using Ansible/install_cockpit_single-task.yml</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block"></div>
-</div>
-</div>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span>
-<span class="normal"><a href="#__codelineno-0-12">12</a></span>
-<span class="normal"><a href="#__codelineno-0-13">13</a></span>
-<span class="normal"><a href="#__codelineno-0-14">14</a></span>
-<span class="normal"><a href="#__codelineno-0-15">15</a></span>
-<span class="normal"><a href="#__codelineno-0-16">16</a></span>
-<span class="normal"><a href="#__codelineno-0-17">17</a></span>
-<span class="normal"><a href="#__codelineno-0-18">18</a></span>
-<span class="normal"><a href="#__codelineno-0-19">19</a></span>
-<span class="normal"><a href="#__codelineno-0-20">20</a></span>
-<span class="normal"><a href="#__codelineno-0-21">21</a></span>
-<span class="normal"><a href="#__codelineno-0-22">22</a></span>
-<span class="normal"><a href="#__codelineno-0-23">23</a></span>
-<span class="normal"><a href="#__codelineno-0-24">24</a></span>
-<span class="normal"><a href="#__codelineno-0-25">25</a></span>
-<span class="normal"><a href="#__codelineno-0-26">26</a></span>
-<span class="normal"><a href="#__codelineno-0-27">27</a></span>
-<span class="normal"><a href="#__codelineno-0-28">28</a></span>
-<span class="normal"><a href="#__codelineno-0-29">29</a></span>
-<span class="normal"><a href="#__codelineno-0-30">30</a></span>
-<span class="normal"><a href="#__codelineno-0-31">31</a></span>
-<span class="normal"><a href="#__codelineno-0-32">32</a></span>
-<span class="normal"><a href="#__codelineno-0-33">33</a></span>
-<span class="normal"><a href="#__codelineno-0-34">34</a></span>
-<span class="normal"><a href="#__codelineno-0-35">35</a></span>
-<span class="normal"><a href="#__codelineno-0-36">36</a></span>
-<span class="normal"><a href="#__codelineno-0-37">37</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nn">---</span><span class="w"></span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install and configure Cockpit</span><span class="w"></span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rhel</span><span class="w"></span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">  </span><span class="c1"># module_defaults:</span><span class="w"></span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">  </span><span class="c1">#   ansible.builtin.service:</span><span class="w"></span>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">  </span><span class="c1">#     enabled: true</span><span class="w"></span>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">  </span><span class="c1">#     state: started</span><span class="w"></span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">        </span><span class="c1"># TASK 1</span><span class="w"></span>
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">        </span><span class="c1"># # 1a. Uncomment task description below and generate a task suggestion.</span><span class="w"></span>
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">        </span><span class="c1"># #     Note - The suggestion included Ansible best practices by using Fully Qualified Collection name.</span><span class="w"></span>
-<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">    </span><span class="c1"># - name: Install cockpit package</span><span class="w"></span>
-<a id="__codelineno-0-16" name="__codelineno-0-16"></a>
-<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">        </span><span class="c1"># TASK 2</span><span class="w"></span>
-<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">        </span><span class="c1"># # 2a. Uncomment task description below and generate a task suggestion.</span><span class="w"></span>
-<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">        </span><span class="c1"># #     Note - Ansible Lightspeed used &quot;ansible.builtin.template&quot; module based on the &quot;.j2&quot; file extension.</span><span class="w"></span>
-<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="w">        </span><span class="c1"># #     Note - The suggestion set the file permissions (&quot;0644&quot;), owner, and group based on Ansible best practices.</span><span class="w"></span>
-<a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="w">    </span><span class="c1"># - name: Copy cockpit.conf.j2 to /etc/cockpit</span><span class="w"></span>
-<a id="__codelineno-0-22" name="__codelineno-0-22"></a>
-<a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="w">        </span><span class="c1"># TASK 3</span><span class="w"></span>
-<a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="w">        </span><span class="c1"># # 3a. Uncomment task description below and generate a task suggestion.</span><span class="w"></span>
-<a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="w">        </span><span class="c1"># #     Note - Ansible Lightspeed used the generic &quot;Start and enable service&quot; prompt</span><span class="w"></span>
-<a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="w">        </span><span class="c1"># #            and full Playbook context to infer the recommendation should start the &quot;cockpit&quot; service.</span><span class="w"></span>
-<a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="w">        </span><span class="c1"># # 3b. Uncomment the &quot;module_defaults&quot; section at the top of the Playbook.</span><span class="w"></span>
-<a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="w">        </span><span class="c1"># # 3c. Clear current task suggestion and request updated suggestion.</span><span class="w"></span>
-<a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="w">        </span><span class="c1"># #     Note - Ansible Lightspeed used the full Playbook context and evaluated the &quot;module_defaults&quot;</span><span class="w"></span>
-<a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="w">        </span><span class="c1"># #            when generating a suggestion.</span><span class="w"></span>
-<a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="w">        </span><span class="c1"># #            The updated suggestion no longer includes &quot;enabled:&quot; and &quot;state:&quot; arguments.</span><span class="w"></span>
-<a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="w">    </span><span class="c1"># - name: Start and enable service</span><span class="w"></span>
-<a id="__codelineno-0-33" name="__codelineno-0-33"></a>
-<a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="w">        </span><span class="c1"># TASK 4</span><span class="w"></span>
-<a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="w">        </span><span class="c1"># # 4a. Uncomment task description below and generate an Ansible Playbook task suggestion.</span><span class="w"></span>
-<a id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="w">        </span><span class="c1"># # 4b. Save the Playbook.</span><span class="w"></span>
-<a id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="w">    </span><span class="c1"># - name: Wait 15 seconds port 9090</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight"><pre><span></span><code>=== &quot;~/Documents/ansible-wca-demo-kit/install and configure Cockpit using Ansible/install_cockpit_single-task.yml&quot;
+
+``` yaml linenums=&quot;1&quot;
+---
+- name: Install and configure Cockpit
+hosts: rhel
+become: true
+
+# module_defaults:
+#   ansible.builtin.service:
+#     enabled: true
+#     state: started
+
+tasks:
+        # TASK 1
+        # # 1a. Uncomment task description below and generate a task suggestion.
+        # #     Note - The suggestion included Ansible best practices by using Fully Qualified Collection name.
+    # - name: Install cockpit package
+
+        # TASK 2
+        # # 2a. Uncomment task description below and generate a task suggestion.
+        # #     Note - Ansible Lightspeed used &quot;ansible.builtin.template&quot; module based on the &quot;.j2&quot; file extension.
+        # #     Note - The suggestion set the file permissions (&quot;0644&quot;), owner, and group based on Ansible best practices.
+    # - name: Copy cockpit.conf.j2 to /etc/cockpit
+
+        # TASK 3
+        # # 3a. Uncomment task description below and generate a task suggestion.
+        # #     Note - Ansible Lightspeed used the generic &quot;Start and enable service&quot; prompt
+        # #            and full Playbook context to infer the recommendation should start the &quot;cockpit&quot; service.
+        # # 3b. Uncomment the &quot;module_defaults&quot; section at the top of the Playbook.
+        # # 3c. Clear current task suggestion and request updated suggestion.
+        # #     Note - Ansible Lightspeed used the full Playbook context and evaluated the &quot;module_defaults&quot;
+        # #            when generating a suggestion.
+        # #            The updated suggestion no longer includes &quot;enabled:&quot; and &quot;state:&quot; arguments.
+    # - name: Start and enable service
+
+        # TASK 4
+        # # 4a. Uncomment task description below and generate an Ansible Playbook task suggestion.
+        # # 4b. Save the Playbook.
+    # - name: Wait 15 seconds port 9090
+
+```
+</code></pre></div>
 <hr />
-<p>The <code>install_cockpit_single-task.yml</code> Playbook code above warrants some explanation before we move on with making AI-generated modifications to it:</p>
-<ul>
-<li>
-<p><strong>Line 2</strong> essentially marks the beginning of the Playbook instructions, the purpose of which is to automate the process of installing and configuring <a href="https://www.redhat.com/en/blog/automate-rhel-web-console-deployments-cockpit-and-certificate-rhel-system-roles" target="_blank">Cockpit</a> for Red Hat Ansible.</p>
-</li>
-<li>
-<p><strong>Lines 3-4</strong> define variables that will remain static throughout the remainder of the Playbook. These variables will be referenced by the AI-generated code suggestions at a later stage. This is a key capability of the offering and one which you will explire in much finer details later on in this module.</p>
-</li>
-<li>
-<p><strong>Lines 6-9</strong> are variables which have been <em>commented out</em> and therefore are invisible to the execution of the Ansible script <strong>and</strong> not examined by WCA for context when generating code recommendations. You will experiment with how removing the <code>#</code> comment blocks impacts the recommendations of task block code. "Uncommenting" these lines of code will make them viable for execution and these lines will afterwards be considered as valid Playbook "context" for AI code generation.</p>
-</li>
-</ul>
+<div class="highlight"><pre><span></span><code>The `install_cockpit_single-task.yml` Playbook code above warrants some explanation before we move on with making AI-generated modifications to it:
+
+- **Line 2** essentially marks the beginning of the Playbook instructions, the purpose of which is to automate the process of installing and configuring &lt;a href=&quot;https://www.redhat.com/en/blog/automate-rhel-web-console-deployments-cockpit-and-certificate-rhel-system-roles&quot; target=&quot;_blank&quot;&gt;Cockpit&lt;/a&gt; for Red Hat Ansible.
+
+- **Lines 3-4** define variables that will remain static throughout the remainder of the Playbook. These variables will be referenced by the AI-generated code suggestions at a later stage. This is a key capability of the offering and one which you will explire in much finer details later on in this module.
+
+- **Lines 6-9** are variables which have been *commented out* and therefore are invisible to the execution of the Ansible script **and** not examined by WCA for context when generating code recommendations. You will experiment with how removing the `#` comment blocks impacts the recommendations of task block code. &quot;Uncommenting&quot; these lines of code will make them viable for execution and these lines will afterwards be considered as valid Playbook &quot;context&quot; for AI code generation.
+</code></pre></div>
 <hr />
 <ol start="2">
 <li>
@@ -523,7 +483,7 @@
 <ol start="5">
 <li>
 <p>Hit <span class="keys"><kbd class="key-tab">Tab</kbd></span> to accept the suggested code and then compare with the <code>SOLUTION</code> tab below.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">TEMPLATE</label><label for="__tabbed_2_2">SOLUTION</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">TEMPLATE</label><label for="__tabbed_1_2">SOLUTION</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># TASK 1</span><span class="w"></span>
@@ -553,7 +513,7 @@
 <li>Hit <span class="keys"><kbd class="key-enter">Enter</kbd></span> to generate the task code recommendation and accept the AI-suggested code (without modifications) by pressing <span class="keys"><kbd class="key-tab">Tab</kbd></span></li>
 <li>Compare your results with the <code>SOLUTION</code> tab below</li>
 </ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">TEMPLATE</label><label for="__tabbed_3_2">SOLUTION</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">TEMPLATE</label><label for="__tabbed_2_2">SOLUTION</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># TASK 2</span><span class="w"></span>
@@ -582,14 +542,16 @@
 <hr />
 <h1 id="_3"></h1>
 <h1 id="generating-code-for-multi-task-ansible-operations">Generating code for multi-task Ansible operations</h1>
-<p>Up to this point, we've kept a narrow aperture on AI-generated task suggestions — examining and experimenting with generating Ansible code task by task, one at a time. However, a powerful WCA feature is the ability to combine multiple task descriptions into a single natural language prompt; in turn, WCA is able to parse that instruction, decompose the instruction into discrete Ansible Task parts, and return a complete code recommendation for achieving the author's intended goal.</p>
-<p>Synatically, multiple tasks are combined into a single natural language expression through the use of ampersand (<code>%</code>) characters. Simply write out all the automation task descriptions on a single line, separating each description with a <code>%</code> character.</p>
+<div class="highlight"><pre><span></span><code>Up to this point, we&#39;ve kept a narrow aperture on AI-generated task suggestions — examining and experimenting with generating Ansible code task by task, one at a time. However, a powerful WCA feature is the ability to combine multiple task descriptions into a single natural language prompt; in turn, WCA is able to parse that instruction, decompose the instruction into discrete Ansible Task parts, and return a complete code recommendation for achieving the author&#39;s intended goal.
+
+Synatically, multiple tasks are combined into a single natural language expression through the use of ampersand (`%`) characters. Simply write out all the automation task descriptions on a single line, separating each description with a `%` character.
+</code></pre></div>
 <hr />
 <ol start="7">
 <li>
 <p>To illustrate, let's look at a multi-task Ansible Playbook: <code>install_cockpit_multi-task.yml</code></p>
 <p>The contents of this Playbook should look familiar to you already: it is essentially the same Playbook examined in <em>Steps 1-6</em> (<code>install_cockpit_single-task.yml</code>), re-written in an equivalent multi-task expression. Each of the Task descriptions from the previous Playbook have been consolidated into a single description on <strong>Line 12</strong>, separated by <code>%</code> characters.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">~/Documents/ansible-wca-demo-kit/install and configure Cockpit using Ansible/install_cockpit_multi-task.yml</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">~/Documents/ansible-wca-demo-kit/install and configure Cockpit using Ansible/install_cockpit_multi-task.yml</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block"></div>
 </div>
@@ -636,9 +598,8 @@
 <ol start="9">
 <li>
 <p>Place your cursor at the end of <strong>Line 12</strong>, and without removing the <code>#</code> character, press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute the code generation step. Be aware that generating code for multi-task descriptions will take longer compared to a single task.</p>
-<p><br/></p>
 <p>Compare the <code>MULTI-TASK</code> solution tab with the <code>SINGLE TASK</code> solution (copied over from <em>Step 6</em>). How did the multi-task code generation fare compared to the single task approach?</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">MULTI-TASK</label><label for="__tabbed_5_2">SINGLE TASK</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">MULTI-TASK</label><label for="__tabbed_4_2">SINGLE TASK</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
@@ -838,7 +799,7 @@
 <a class="glightbox" href="../_attachments/troubleshooting-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-2.png" width="600" /></a></p>
 <p><a class="glightbox" href="../_attachments/troubleshooting-3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-3.png" width="600" /></a></p>
 </details>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">~/Documents/ansible-wca-demo-kit/create_ec2_single_multi.yml</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">~/Documents/ansible-wca-demo-kit/create_ec2_single_multi.yml</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block"></div>
 </div>
@@ -865,7 +826,7 @@
 <ol start="13">
 <li>
 <p>Your workspace Playbook should look identical to the <code>TEMPLATE</code> tab below. Place your cursor at the end of the newly-created <strong>Line 5</strong> and hit <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute single task code generation. Compare your results to the <code>SOLUTION</code> tab. Record your results to a notepad so that you can compare the results later.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">TEMPLATE</label><label for="__tabbed_7_2">SOLUTION</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">TEMPLATE</label><label for="__tabbed_6_2">SOLUTION</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
@@ -922,7 +883,7 @@
 <p>Compare your results to the <code>SOLUTION</code> tab and to the result from <em>Step 13</em></p>
 </li>
 </ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">TEMPLATE</label><label for="__tabbed_8_2">SOLUTION</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">TEMPLATE</label><label for="__tabbed_7_2">SOLUTION</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
