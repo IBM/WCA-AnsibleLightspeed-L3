@@ -759,14 +759,44 @@
 <hr />
 <ol start="12">
 <li>
-<p>Let's use your organization's private Ansible data set to customize the <em>IBM Granite</em> base model: a process known as <strong>model tuning</strong>.</p>
+<p>Let's use your organization's private Ansible data set to customize the <em>IBM Granite</em> base model: a process known as <strong>model tuning</strong>. To do so, you will need to provide a pointer to the customized <em>Model ID</em> within VS Code, which will override the standard WCA (<em>IBM Granite</em>) base model recommendations.</p>
+<ul>
+<li>
+<p>Look for Ansible under the <em>Installed</em> services in the <strong>Extensions</strong> panel.</p>
+</li>
+<li>
+<p>Click the <strong>Manage</strong> ("cogwheel") icon located just to the right of the Ansible tile</p>
+</li>
+<li>
+<p>From the drop-down options, click <strong>Extension Settings</strong><sup>[A]</sup></p>
+</li>
+<li>
+<p>Within the search bar at the top of the panel, add the text <code>Model</code> to filter the results<sup>[B]</sup></p>
+</li>
+<li>
+<p>Copy and paste the <strong>Model ID</strong> value below into the empty <code>Ansible &gt; Lightspeed: Model ID Override</code> field<sup>[C]</sup></p>
+</li>
+<li>
+<p>Changes to <em>Settings</em> are automatically saved and applied – click the <code>X</code> button in the top-left corner of the panel's tab</p>
+</li>
+</ul>
 <div class="admonition warning">
 <p><strong>Model ID</strong>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>9abec313-9543-4aa7-b385-47fb6df7800e&lt;|sepofid|&gt;602a23bb-d2cc-42be-a52b-5941f03f65c2
-</code></pre></div></p>
+```
+9abec313-9543-4aa7-b385-47fb6df7800e&lt;|sepofid|&gt;602a23bb-d2cc-42be-a52b-5941f03f65c2</p>
 </div>
+<p><br/>
+<a class="glightbox" href="../_attachments/setuptroubleshoot-4b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-4b.png" width="600" /></a></p>
 </li>
 </ol>
+<hr />
+<div class="highlight"><pre><span></span><code>!!! warning &quot;&quot;
+
+    **Model ID**:
+    ```
+    9abec313-9543-4aa7-b385-47fb6df7800e&lt;|sepofid|&gt;602a23bb-d2cc-42be-a52b-5941f03f65c2
+    ```
+</code></pre></div>
 <hr />
 <h1 id="_3"></h1>
 <h1 id="next-steps">Next steps</h1>
