@@ -971,25 +971,28 @@ Wait for the installation to conclude and then retry the instructions from Step 
 <li>
 <p>Under <strong>Permissions Policies</strong>, search the table for the <code>AdministratorAccess</code> policy and <strong>enable</strong> that policy. You may receive warnings against doing so — ignore those for now.</p>
 </li>
-</ul>
+<li>
 <p>Continue following the prompts until the User has been created.</p>
+</li>
+</ul>
 <p><a class="glightbox" href="../_attachments/figure29.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure29.png" width="600" /></a></p>
 </li>
 </ol>
 <hr />
 <ol start="24">
-<li>
-<p>Once the User has been created, your web browser will reopen the User panel of the IAM tool. Here you can see various details about the User, including their <strong>Security Credentials</strong> and any keys associated with the User. This section will be empty given that you have only just now created the User.</p>
-</li>
+<li>Once the User has been created, your web browser will reopen the User panel of the IAM tool. Here you can see various details about the User, including their <strong>Security Credentials</strong> and any keys associated with the User. This section will be empty given that you have only just now created the User.</li>
+</ol>
+<hr />
+<ol start="25">
 <li>
 <p>Drill down into the <strong>Access Keys</strong> category and click the <strong>Create Access Key</strong> button located below the (empty) table.</p>
+<p><a class="glightbox" href="../_attachments/figure30.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure30.png" width="600" /></a></p>
 </li>
 </ol>
-<p><a class="glightbox" href="../_attachments/figure30.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure30.png" width="600" /></a></p>
 <hr />
 <ol start="26">
-<li>A secret access key will be created and the web browser will reload to show you details about that key. <strong>RECORD THIS INFORMATION</strong> to a notepad. Details about the secret access key can only be viewed or downloaded at the time the key is created (now). It cannot be recovered afterwards. However, if you lose your key details, all is not lost — you can always create a new secret access key at a later time.</li>
-</ol>
+<li>
+<p>A secret access key will be created and the web browser will reload to show you details about that key. <strong>Record this information</strong> to a notepad. Details about the secret access key can only be viewed or downloaded at the time the key is created (now). It cannot be recovered afterwards. However, if you lose your key details, all is not lost — you can always create a new secret access key at a later time.</p>
 <ul>
 <li>
 <p>Record the <code>Access Key</code>, which will be used to replace the <code>&lt;PLACEHOLDER&gt;</code> value assigned to <code>aws_access_key</code> in <strong>Step 2</strong> and <strong>Step 15</strong> of this lab guide.</p>
@@ -998,12 +1001,22 @@ Wait for the installation to conclude and then retry the instructions from Step 
 <p>Record the <code>Secret Access Key</code>, which will replace the <code>&lt;PLACEHOLDER&gt;</code> value assigned to <code>aws_secret_key</code> in <strong>Step 2</strong> and <strong>Step 15</strong> of this lab guide.</p>
 </li>
 </ul>
-<ol start="27">
-<li>Take note at this time as well about the <strong>Region</strong> in which your AWS account is located. You can easily look up this information by examining the URL in your web browser address bar, as shown below (<code>us-east-1</code>).</li>
+</li>
 </ol>
+<hr />
+<ol start="27">
+<li>
+<p>Take note at this time as well about the <strong>Region</strong> in which your AWS account is located.</p>
+<ul>
+<li>
+<p>You can easily look up this information by examining the URL in your web browser address bar, as shown below (<code>us-east-1</code>).</p>
+</li>
+<li>
+<p><strong>Record</strong> the region's name, as it will replace the <code>region</code> value assigned to the Playbook.</p>
+</li>
+</ul>
 <p><br/>
-  <a class="glightbox" href="../_attachments/figure31.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure31.png" width="400" /></a></p>
-<p><strong>RECORD</strong> the region's name, as it will replace the <code>region</code> value assigned to the Playbook.</p>
+<a class="glightbox" href="../_attachments/figure31.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure31.png" width="400" /></a></p>
 <div class="admonition warning">
 <p class="admonition-title">PLAYBOOK MODIFICATIONS REQUIRED</p>
 <p>Replace the <code>&lt;PLACEHOLDER&gt;</code> values for variables <code>aws_access_key</code> and <code>aws_secret_key</code> with the <code>Access Key</code> and <code>Secret Access Key</code>, respectively.</p>
@@ -1025,20 +1038,23 @@ Wait for the installation to conclude and then retry the instructions from Step 
 </li>
 </ul>
 </div>
+</li>
+</ol>
 <hr />
 <ol start="28">
-<li>
-<p>Next, you'll need to create an SSH <strong>Key Pair</strong> with authorization to interact with (and ultimately deploy) Amazon EC2 instances. Return to the search bar at the top of the AWS interface and enter <code>EC2</code>. Drill down into the <strong>Amazon EC2</strong> service page from the results.</p>
-</li>
-<li>
-<p>From the left-hand navigation bar, drill down into the <strong>Network &amp; Security</strong> &gt; <strong>Key Pairs</strong> tab.</p>
-</li>
-<li>
-<p>Click the orange <strong>Create key pair</strong> button in the top-right of the page.</p>
-</li>
-<li>
-<p>A configuration tool will ask for additional information about the Key Pair:</p>
-</li>
+<li>Next, you'll need to create an SSH <strong>Key Pair</strong> with authorization to interact with (and ultimately deploy) Amazon EC2 instances. Return to the search bar at the top of the AWS interface and enter <code>EC2</code>. Drill down into the <strong>Amazon EC2</strong> service page from the results.</li>
+</ol>
+<hr />
+<ol start="29">
+<li>From the left-hand navigation bar, drill down into the <strong>Network &amp; Security</strong> &gt; <strong>Key Pairs</strong> tab.</li>
+</ol>
+<hr />
+<ol start="30">
+<li>Click the orange <strong>Create key pair</strong> button in the top-right of the page.</li>
+</ol>
+<hr />
+<ol start="31">
+<li>A configuration tool will ask for additional information about the Key Pair:</li>
 </ol>
 <ul>
 <li>
