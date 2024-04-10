@@ -368,15 +368,14 @@
 </ul>
 <p>Ansible Playbooks to support this demo were prepared ahead of time in a public GitHub repository and are available for your use at the links below.</p>
 <hr />
+<div class="admonition warning">
 <p><strong>TEMPLATE (<code>.yml</code>)</strong>: <a href="https://github.com/bienko/WCA-Lightspeed-L3/blob/main/TEMPLATE.yml" target="_blank">https://github.com/bienko/WCA-Lightspeed-L3/blob/main/TEMPLATE.yml</a></p>
-<ul>
-<li>The <code>TEMPLATE.yml</code> Playbook contains the skeleton of the application you will ultimately build. Playbook structure, key variables, Task descriptions, and comments are provided. Use the generative AI capabilities of WCA to fill out the details of the various Ansible Tasks, then compare the results with the <code>SOLUTION.yml</code> file below.</li>
-</ul>
+</div>
+<p>The <code>TEMPLATE.yml</code> Playbook contains the skeleton of the application you will ultimately build. Playbook structure, key variables, Task descriptions, and comments are provided. Use the generative AI capabilities of WCA to fill out the details of the various Ansible Tasks, then compare the results with the <code>SOLUTION.yml</code> file below.</p>
+<div class="admonition warning">
 <p><strong>SOLUTION (<code>.yml</code>)</strong>: <a href="https://github.com/bienko/WCA-Lightspeed-L3/blob/main/SOLUTION.yml" target="_blank">https://github.com/bienko/WCA-Lightspeed-L3/blob/main/SOLUTION.yml</a></p>
-<ul>
-<li>The <code>SOLUTION.yml</code> Playbook contains the complete set of Ansible Playbook instructions needed to fully deploy a live EC2 VPC instance on AWS and host a WordPress application within that environment. You will need to replace certain variables (indicated by comments in the code) with details specific to your personal AWS account and environment. Afterwards, you can— and are encouraged to —execute the Playbook with Ansible and deploy a <strong>live</strong>, at-cost instance to your personal AWS account.</li>
-</ul>
-<p><br/></p>
+</div>
+<p>The <code>SOLUTION.yml</code> Playbook contains the complete set of Ansible Playbook instructions needed to fully deploy a live EC2 VPC instance on AWS and host a WordPress application within that environment. You will need to replace certain variables (indicated by comments in the code) with details specific to your personal AWS account and environment. Afterwards, you can— and are encouraged to —execute the Playbook with Ansible and deploy a <strong>live</strong>, at-cost instance to your personal AWS account.</p>
 <p>Once the two YAML files have been downloaded to your local machine, open them with VS Code and follow along with the instructions below.</p>
 <hr />
 <details class="quote">
@@ -471,7 +470,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">TAGS</p>
-<p>One element of AI-generated Task code that you may find yourself frequently needing to update are tags and other naming conventions, such as the <code>register: wordpress_vpc</code> pair in <strong>TASK 1</strong>. While the Ansible Lightspeed extension will remember the context of variables that are <em>already</em> named within the Playbook, it will struggle with how to name <em>new</em> variables — like <code>wordpress_vpc</code>. Take note, however, that as you generate code for the other Tasks in the Playbook that <code>wordpress_vpc</code> will be recalled and referenced.</p>
+<p>One element of AI-generated Task code that you may find yourself frequently needing to update are tags and other naming conventions, such as the <code>register: wordpress_vpc</code> pair in <code>TASK 1</code>. While the Ansible Lightspeed extension will remember the context of variables that are <em>already</em> named within the Playbook, it will struggle with how to name <em>new</em> variables — like <code>wordpress_vpc</code>. Take note, however, that as you generate code for the other Tasks in the Playbook that <code>wordpress_vpc</code> will be recalled and referenced.</p>
 </div>
 </li>
 </ol>
