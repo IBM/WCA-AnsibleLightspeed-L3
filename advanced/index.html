@@ -897,18 +897,18 @@
 <p>The authors of your lab guide recommend doing so by executing the following instructions in a Terminal window (macOS), or equivalent steps using <a href="https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3" target="_blank">PowerShell</a> (Windows)</p>
 </li>
 <li>
-<p>Follow the prompts until you receive confirmation that Ansible is installed and available locally</p>
+<p>Follow the prompts until you receive confirmation that Ansible is installed</p>
 </li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>brew install ansible
 </code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">MISSING HOMEBREW?</p>
+<details class="warning">
+<summary><code>HOMEBREW</code> IS MISSING</summary>
 <p>If you do not have the Homebrew package manager ("brew") installed in a macOS environment, execute the following instruction inside a Terminal console:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;
 </code></pre></div>
 Wait for the installation to conclude and then retry the instructions from Step 18.</p>
-</div>
+</details>
 </li>
 </ol>
 <hr />
@@ -930,24 +930,28 @@ Wait for the installation to conclude and then retry the instructions from Step 
 </ol>
 <hr />
 <ol start="20">
-<li>With a registered AWS account, you next need to navigate from the AWS dashboard into the <strong>Identity and Access Management (IAM)</strong> tool. You can search for this using the <strong>Search</strong> bar at the top of the screen and entering <code>IAM</code>.</li>
-</ol>
+<li>
+<p>With a registered AWS account, you next need to navigate from the AWS dashboard into the <strong>Identity and Access Management (IAM)</strong> tool. You can search for this using the <strong>Search</strong> bar at the top of the screen and entering <code>IAM</code>.</p>
 <p><br/>
-  <a class="glightbox" href="../_attachments/figure27.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure27.png" width="600" /></a></p>
+<a class="glightbox" href="../_attachments/figure27.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure27.png" width="600" /></a></p>
+</li>
+</ol>
 <hr />
 <ol start="21">
 <li>Once inside the IAM tool, look along the left-side of the interface and drill down into <strong>Users</strong>.</li>
 </ol>
 <hr />
 <ol start="22">
-<li>Click the <strong>Create User</strong> orange button located in the top-right corner of the interface.</li>
-</ol>
+<li>
+<p>Click the <strong>Create User</strong> orange button located in the top-right corner of the interface.</p>
 <p><br/>
-  <a class="glightbox" href="../_attachments/figure28.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure28.png" width="600" /></a></p>
+<a class="glightbox" href="../_attachments/figure28.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure28.png" width="600" /></a></p>
+</li>
+</ol>
 <hr />
 <ol start="23">
-<li>Within the <strong>Create User</strong> panel, specify your user details and permissions.</li>
-</ol>
+<li>
+<p>Within the <strong>Create User</strong> panel, specify your user details and permissions.</p>
 <ul>
 <li>
 <p>Set <code>Username</code> to a name of your choosing.</p>
@@ -970,6 +974,8 @@ Wait for the installation to conclude and then retry the instructions from Step 
 </ul>
 <p>Continue following the prompts until the User has been created.</p>
 <p><a class="glightbox" href="../_attachments/figure29.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure29.png" width="600" /></a></p>
+</li>
+</ol>
 <hr />
 <ol start="24">
 <li>
