@@ -437,12 +437,15 @@
 </ol>
 <hr />
 <ol start="2">
-<li>Scroll down <strong>MODULE 1</strong> (Line 4) and take note of the comments, as well as the <code>&lt;PLACEHOLDER&gt;</code> values. If you wish to fully deploy this environment to AWS, you will need to register for an AWS account, create an IAM (Identity Access Management) user, and associate an SSH key with the necessary permissions to access the account. These values will then be substituted in your code for the <code>aws_access_key</code> and <code>aws_secret_key</code> variables.</li>
-</ol>
+<li>
+<p>Scroll down <code>MODULE 1</code> (<strong>Line 4</strong>) and take note of the comments, as well as the <code>&lt;PLACEHOLDER&gt;</code> values. If you wish to fully deploy this environment to AWS, you will need to register for an AWS account, create an IAM (Identity Access Management) user, and associate an SSH key with the necessary permissions to access the account. These values will then be substituted in your code for the <code>aws_access_key</code> and <code>aws_secret_key</code> variables.</p>
 <p>Instructions on how to sign up for AWS and create those keys will be included at the end of this module, and you will be reminded at that time to update these variables. However, for now, let's focus on generating the Ansible Tasks.</p>
-<ol start="3">
-<li>Continue scrolling down until you reach <strong>TASK 1</strong> (Line 18) for the creation of a virtual private cloud (VPC) named 'wordpress'. Generate the Task code within VS Code and compare your results with the <code>SOLUTION</code> tab.</li>
+</li>
 </ol>
+<hr />
+<ol start="3">
+<li>
+<p>Continue scrolling down until you reach <code>TASK 1</code> (<strong>Line 18</strong>) for the creation of a virtual private cloud (VPC) named 'wordpress'. Generate the Task code within VS Code and compare your results with the <code>SOLUTION</code> tab.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">TEMPLATE</label><label for="__tabbed_1_2">SOLUTION</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -466,14 +469,24 @@
 </div>
 </div>
 </div>
-<div class="admonition tip">
+<div class="admonition note">
 <p class="admonition-title">TAGS</p>
 <p>One element of AI-generated Task code that you may find yourself frequently needing to update are tags and other naming conventions, such as the <code>register: wordpress_vpc</code> pair in <strong>TASK 1</strong>. While the Ansible Lightspeed extension will remember the context of variables that are <em>already</em> named within the Playbook, it will struggle with how to name <em>new</em> variables — like <code>wordpress_vpc</code>. Take note, however, that as you generate code for the other Tasks in the Playbook that <code>wordpress_vpc</code> will be recalled and referenced.</p>
 </div>
+</li>
+</ol>
 <hr />
 <ol start="4">
-<li>After validating the previous code block, continue scrolling down until you reach <strong>TASK 2</strong> (Line 23) for the creation of a security group which allows network traffic over SSH and HTTP/s. Generate, evaluate, and refine the Task code as needed.</li>
-</ol>
+<li>
+<p>After validating the previous code block, continue scrolling down until you reach <code>TASK 2</code> (<strong>Line 23</strong>) for the creation of a security group which allows network traffic over SSH and HTTP/s. Generate, evaluate, and refine the Task code as needed.</p>
+<ul>
+<li>
+<p>Notice that the <code>wordpress_vpc</code> attribute which was registered in <code>TASK 2</code> has been referenced in the creation of the <code>vpc_id</code> in <code>TASK 3</code></p>
+</li>
+<li>
+<p>Ignore the additional space between adjacent <code>{``{</code> characters that are included in <code>SOLUTION</code> code tabs — these are included only to allow rendering of the code block in GitHub and are not intended as part of the finalized code</p>
+</li>
+</ul>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">TEMPLATE</label><label for="__tabbed_2_2">SOLUTION</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -511,10 +524,9 @@
 </div>
 </div>
 <hr />
-<p>Notice that the <code>wordpress_vpc</code> attribute which was registered in TASK 2 has been referenced in the creation of the <code>vpc_id</code> in TASK 3. Ignore the additional space between adjacent <code>{``{</code> characters that are included in SOLUTION code tabs — these are included only to allow rendering of the code block in GitHub and are not intended as part of the finalized code.</p>
-<ol start="5">
-<li>Continue scrolling down until you reach <strong>TASK 3</strong> (Line 28) for the creation of an internet gateway for the wordpress VPC. Generate, evaluate, and refine the Task code as needed.</li>
-</ol>
+</li>
+<li>
+<p>Continue scrolling down until you reach <code>TASK 3</code> (<strong>Line 28</strong>) for the creation of an internet gateway for the wordpress VPC. Generate, evaluate, and refine the Task code as needed.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">TEMPLATE</label><label for="__tabbed_3_2">SOLUTION</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -536,9 +548,9 @@
 </div>
 </div>
 <hr />
-<ol start="6">
-<li>Continue down to <strong>TASK 4</strong> (Line 32) for the creation of an AWS network subnet for the WordPress VPC.</li>
-</ol>
+</li>
+<li>
+<p>Continue down to <code>TASK 4</code> (<strong>Line 32</strong>) for the creation of an AWS network subnet for the WordPress VPC.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">TEMPLATE</label><label for="__tabbed_4_2">SOLUTION</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -561,9 +573,9 @@
 </div>
 </div>
 <hr />
-<ol start="7">
-<li>Continue down to <strong>TASK 5</strong> (Line 36) for the creation of a routing table associated with wordpress VPC's subnet and internet gateway.</li>
-</ol>
+</li>
+<li>
+<p>Continue down to <code>TASK 5</code> (<strong>Line 36</strong>) for the creation of a routing table associated with wordpress VPC's subnet and internet gateway.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">TEMPLATE</label><label for="__tabbed_5_2">SOLUTION</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -593,10 +605,20 @@
 </div>
 </div>
 <hr />
+</li>
+</ol>
 <p>As you can observe, WCA can be "creative" with its choice of tags and identifiers. You are welcome to adjust these to your liking, or even eliminate them from the Task code altogether. In the majority of cases these tags and identifiers are used for organization and tracking purposes, but not necessarily anything critical to the functioning of the Ansible Playbook or the infrastructure it is automating.</p>
 <ol start="8">
-<li>Continue further down until you reach <strong>TASK 6</strong> (Line 40), which is one of the more consequential steps in the Playbook as it involves the creation of the Amazon EC2 <code>t2.small</code> instance on AWS according to the settings defined in TASKS 1-5.</li>
-</ol>
+<li>
+<p>Continue further down until you reach <code>TASK 6</code> (<strong>Line 40</strong>), which is one of the more consequential steps in the Playbook as it involves the creation of the Amazon EC2 <code>t2.small</code> instance on AWS according to the settings defined in <code>TASKS 1-5</code>.</p>
+<ul>
+<li>
+<p>Note that the <code>image_id</code> and <code>ami</code> values correspond to a specific Amazon Machine Image (ami) for Red Hat Enterprise Linux 9. Hundreds of alternative operating system images are available to select from on AWS, so you may modify this if you so choose; however, for the purposes of deploying WordPress it will make no meaningful difference.</p>
+</li>
+<li>
+<p>The pair <code>key_name: "bienko-key"</code> relates to an EC2 instance key (SSH) that you will need to create before attempting to deploy an EC2 instance via Ansible. Instructions for how to create that key will be given at the end of this module for those who wish to deploy a live environment.</p>
+</li>
+</ul>
 <div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">TEMPLATE</label><label for="__tabbed_6_2">SOLUTION</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -633,11 +655,9 @@
 </div>
 </div>
 <hr />
-<p>Note that the <code>image_id</code> and <code>ami</code> values correspond to a specific Amazon Machine Image (ami) for Red Hat Enterprise Linux 9. Hundreds of alternative operating system images are available to select from on AWS, so you may modify this if you so choose; however, for the purposes of deploying WordPress it will make no meaningful difference.</p>
-<p>The pair <code>key_name: "bienko-key"</code> relates to an EC2 instance key (SSH) that you will need to create before attempting to deploy an EC2 instance via Ansible. Instructions for how to create that key will be given at the end of this module for those who wish to deploy a live environment.</p>
-<ol start="9">
-<li>Continue down to <strong>TASK 7</strong> (Line 48). You will notice that in both the <code>TEMPLATE</code> and <code>SOLUTION</code> versions of the Playbook that this Task is fully defined already. For now, leave this as a hard-coded element within your Playbook and do not attempt to recreate the task with code generation.</li>
-</ol>
+</li>
+<li>
+<p>Continue down to <code>TASK 7</code> (<strong>Line 48</strong>). You will notice that in both the <code>TEMPLATE</code> and <code>SOLUTION</code> versions of the Playbook that this Task is fully defined already. For now, leave this as a hard-coded element within your Playbook and do not attempt to recreate the task with code generation.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">TEMPLATE</label><label for="__tabbed_7_2">SOLUTION</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -672,12 +692,14 @@
 </div>
 <div class="admonition warning">
 <p class="admonition-title">PLAYBOOK MODIFICATIONS REQUIRED</p>
-<p>Although <strong>TASK 7</strong> does not require WCA to generate any code suggestions, it <em>does</em> require the user to modify the value of the <code>ansible_ssh_private_key_file</code> attribute. Set this attribute to the directory path where the private SSH key (<code>.pem</code> file) is located on your local machine. Be sure to include the <code>.pem</code> filetype as part of the value and also ensure you have changed the permissions on the file (using Terminal and executing the <code>chmod 400 bienko-key.pem</code> instruction) before attempting to run the Playbook.</p>
+<p>Although <code>TASK 7</code> does not require WCA to generate any code suggestions, it <em>does</em> require the user to modify the value of the <code>ansible_ssh_private_key_file</code> attribute. Set this attribute to the directory path where the private SSH key (<code>.pem</code> file) is located on your local machine. Be sure to include the <code>.pem</code> filetype as part of the value and also ensure you have changed the permissions on the file (using Terminal and executing the <code>chmod 400 bienko-key.pem</code> instruction) before attempting to run the Playbook.</p>
 </div>
+</li>
+</ol>
 <hr />
 <ol start="10">
-<li>Scrolling further down the Playbook you will "enter" <strong>MODULE B</strong> (Line 60), made up Ansible Tasks concerned with installing and configuring WordPress on the newly-provisioned AWS EC2 (VPC) instance. Locate <strong>TASK 8</strong> (Line 67) which waits for a connection to be established to the EC2 instance before advancing the sequence of automation tasks.</li>
-</ol>
+<li>
+<p>Scrolling further down the Playbook you will find <code>MODULE B</code> (<strong>Line 60</strong>), made up Ansible Tasks concerned with installing and configuring WordPress on the newly-provisioned AWS EC2 (VPC) instance. Locate <code>TASK 8</code> (<strong>Line 67</strong>) which waits for a connection to be established to the EC2 instance before advancing the sequence of automation tasks.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">TEMPLATE</label><label for="__tabbed_8_2">SOLUTION</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -698,8 +720,10 @@
 </div>
 </div>
 <hr />
-<ol start="11">
-<li>Next, continue further down the Playbook and locate <strong>TASK 9</strong> (Line 71) which commences installation of the necessary drivers and services on Amazon EC2 once a connection to the instance has been established.</li>
+</li>
+<li>
+<p>Next, continue further down the Playbook and locate <strong>TASK 9</strong> (Line 71) which commences installation of the necessary drivers and services on Amazon EC2 once a connection to the instance has been established.</p>
+</li>
 </ol>
 <div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">TEMPLATE</label><label for="__tabbed_9_2">SOLUTION</label></div>
 <div class="tabbed-content">
