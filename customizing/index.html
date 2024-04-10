@@ -669,7 +669,7 @@
 <h1 id="_2"></h1>
 <h1 id="model-customization">Model customization</h1>
 <p>Since every organization is different, WCA allows users to customize the AI model output to your organization's unique Ansible Playbooks. This allows for personalized code recommendations that are a better fit to your business' unique needs and more accurate to programming standards set within your organization.</p>
-<p>In this scenario, your organization has its own set of Ansible Playbooks that leverage your preferred public cloud provider that uses specific Ansible Modules to manage Red Hat OpenShift clusters.</p>
+<p>In this scenario, your organization has its own set of Ansible Playbooks that leverage your preferred public cloud provider that uses specific Ansible Modules to manage OpenShift clusters.</p>
 <hr />
 <ol start="10">
 <li>
@@ -692,6 +692,28 @@
 </div>
 </div>
 </div>
+<details class="warning">
+<summary>ANSIBLE LIGHTSPEED IS MISSING OR CODE RECOMMENDATIONS ARE NOT GENERATING</summary>
+<p>Ansible Lightspeed and WCA will only generate code recommendations for <em>Ansible Playbooks</em> and <em>YAML</em> files. VS Code will typically auto-detect the programming language of the document you're working with, but on occassion you may need to manually specify the language. Even if working with a YAML file, you'll still need to specify the language mode as <code>Ansible</code> for the Lightspeed plugin to engage.</p>
+<p>To set the language mode correctly:</p>
+<ul>
+<li>
+<p>In the bottom-right corner of the VS Code interface, hover over the <strong>Select Language Mode</strong> toggle<sup>[A]</sup></p>
+</li>
+<li>
+<p>A console will appear at the top of VS Code with a drop-down list of options<sup>[B]</sup></p>
+</li>
+<li>
+<p>Click <code>Ansible</code> from the suggested languages, or enter the text yourself and hit <span class="keys"><kbd class="key-enter">Enter</kbd></span></p>
+</li>
+<li>
+<p>Confirm that the Select Language Mode toggle in the bottom-right corner displays <code>Ansible</code></p>
+</li>
+</ul>
+<p><br/>
+<a class="glightbox" href="../_attachments/troubleshooting-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-2.png" width="600" /></a></p>
+<p><a class="glightbox" href="../_attachments/troubleshooting-3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-3.png" width="600" /></a></p>
+</details>
 </li>
 </ol>
 <hr />
@@ -732,28 +754,6 @@
 </div>
 </div>
 </div>
-<details class="warning">
-<summary>ANSIBLE LIGHTSPEED IS MISSING OR CODE RECOMMENDATIONS ARE NOT GENERATING</summary>
-<p>Ansible Lightspeed and WCA will only generate code recommendations for <em>Ansible Playbooks</em> and <em>YAML</em> files. VS Code will typically auto-detect the programming language of the document you're working with, but on occassion you may need to manually specify the language. Even if working with a YAML file, you'll still need to specify the language mode as <code>Ansible</code> for the Lightspeed plugin to engage.</p>
-<p>To set the language mode correctly:</p>
-<ul>
-<li>
-<p>In the bottom-right corner of the VS Code interface, hover over the <strong>Select Language Mode</strong> toggle<sup>[A]</sup></p>
-</li>
-<li>
-<p>A console will appear at the top of VS Code with a drop-down list of options<sup>[B]</sup></p>
-</li>
-<li>
-<p>Click <code>Ansible</code> from the suggested languages, or enter the text yourself and hit <span class="keys"><kbd class="key-enter">Enter</kbd></span></p>
-</li>
-<li>
-<p>Confirm that the Select Language Mode toggle in the bottom-right corner displays <code>Ansible</code></p>
-</li>
-</ul>
-<p><br/>
-<a class="glightbox" href="../_attachments/troubleshooting-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-2.png" width="600" /></a></p>
-<p><a class="glightbox" href="../_attachments/troubleshooting-3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-3.png" width="600" /></a></p>
-</details>
 </li>
 </ol>
 <hr />
