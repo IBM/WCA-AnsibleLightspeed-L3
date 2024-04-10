@@ -697,28 +697,6 @@
 <ol start="11">
 <li>
 <p>Before performing any model tuning tasks, try generating code recommendations for the OpenShift cluster creation task by placing your cursor at the end of <strong>Line 6</strong>, hitting <span class="keys"><kbd class="key-enter">Enter</kbd></span>, and then accepting the default recommendations by hitting <span class="keys"><kbd class="key-tab">Tab</kbd></span>. The resulting code recommendations— displayed below —represent the standard, unmodified output from WCA's <em>IBM Granite</em> models.</p>
-<details class="quote">
-<summary>ANSIBLE LIGHTSPEED IS MISSING OR CODE RECOMMENDATIONS ARE NOT GENERATING</summary>
-<p>Ansible Lightspeed and WCA will only generate code recommendations for <em>Ansible Playbooks</em> and <em>YAML</em> files. VS Code will typically auto-detect the programming language of the document you're working with, but on occassion you may need to manually specify the language. Even if working with a YAML file, you'll still need to specify the language mode as <code>Ansible</code> for the Lightspeed plugin to engage.</p>
-<p>To set the language mode correctly:</p>
-<ul>
-<li>
-<p>In the bottom-right corner of the VS Code interface, hover over the <strong>Select Language Mode</strong> toggle<sup>[A]</sup></p>
-</li>
-<li>
-<p>A console will appear at the top of VS Code with a drop-down list of options<sup>[B]</sup></p>
-</li>
-<li>
-<p>Click <code>Ansible</code> from the suggested languages, or enter the text yourself and hit <span class="keys"><kbd class="key-enter">Enter</kbd></span></p>
-</li>
-<li>
-<p>Confirm that the Select Language Mode toggle in the bottom-right corner displays <code>Ansible</code></p>
-</li>
-</ul>
-<p><br/>
-<a class="glightbox" href="../_attachments/troubleshooting-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-2.png" width="600" /></a></p>
-<p><a class="glightbox" href="../_attachments/troubleshooting-3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-3.png" width="600" /></a></p>
-</details>
 <div class="tabbed-set tabbed-alternate" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">STANDARD <em>IBM GRANITE</em> MODEL RECOMMENDATIONS</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -745,6 +723,28 @@
 </div>
 </div>
 </div>
+<details class="warning">
+<summary>ANSIBLE LIGHTSPEED IS MISSING OR CODE RECOMMENDATIONS ARE NOT GENERATING</summary>
+<p>Ansible Lightspeed and WCA will only generate code recommendations for <em>Ansible Playbooks</em> and <em>YAML</em> files. VS Code will typically auto-detect the programming language of the document you're working with, but on occassion you may need to manually specify the language. Even if working with a YAML file, you'll still need to specify the language mode as <code>Ansible</code> for the Lightspeed plugin to engage.</p>
+<p>To set the language mode correctly:</p>
+<ul>
+<li>
+<p>In the bottom-right corner of the VS Code interface, hover over the <strong>Select Language Mode</strong> toggle<sup>[A]</sup></p>
+</li>
+<li>
+<p>A console will appear at the top of VS Code with a drop-down list of options<sup>[B]</sup></p>
+</li>
+<li>
+<p>Click <code>Ansible</code> from the suggested languages, or enter the text yourself and hit <span class="keys"><kbd class="key-enter">Enter</kbd></span></p>
+</li>
+<li>
+<p>Confirm that the Select Language Mode toggle in the bottom-right corner displays <code>Ansible</code></p>
+</li>
+</ul>
+<p><br/>
+<a class="glightbox" href="../_attachments/troubleshooting-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-2.png" width="600" /></a></p>
+<p><a class="glightbox" href="../_attachments/troubleshooting-3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-3.png" width="600" /></a></p>
+</details>
 </li>
 </ol>
 <hr />
@@ -756,7 +756,7 @@
 <h1 id="next-steps">Next steps</h1>
 <p>That concludes the hands-on components to this Level 3 course, but your learning and experimentation doesn't need to end here. </p>
 <p>The next <strong>OPTIONAL</strong> module will allow you craft a fully-functional Ansible Playbook for the automated deployment of an Amazon EC2 instance and WordPress application — deployable from your local machine into a live AWS environment. IBM technical sellers and business partners are <strong>NOT</strong> required to complete this section to receive Level 3 accreditation. However, it is highly recommended by the authors that you attempt the material, given the tremendous demonstration value it provides for clients.</p>
-<p>Otherwise, you are welcome to conclude the hands-on component at this point and follow the <a href="https://ibm.github.io/WCA-AnsibleLightspeed-L3/Lab/1-Evaluation/" target="_blank">Level 3 accreditation</a> steps (depending on your role).</p>
+<p>Otherwise, you are welcome to conclude the hands-on component at this point and follow the <a href="https://ibm.github.io/WCA-AnsibleLightspeed-L3/evaluation/" target="_blank">Level 3 accreditation</a> steps (depending on your role).</p>
 
 
 
