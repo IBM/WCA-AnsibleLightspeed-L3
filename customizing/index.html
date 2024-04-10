@@ -757,6 +757,39 @@
 </li>
 </ol>
 <hr />
+<div class="admonition quote">
+<p>The process of building Ansible training data and tuning customized models for generative AI is a time-consuming one. For example, the model tuning employed in the steps ahead for the creation of an OpenShift cluster according to an enterprise organization's specific Ansible automation standards takes approximately <strong>4 hours</strong> to configure and train.</p>
+<p>Given the scope and time available for this hands-on training, <strong>participants will not be manually creating the training data or training models themselves.</strong> Instead, you will utilize a prepared customized model (<code>Model ID</code>) and experiment in <em>Step 12</em> onwards with how the customized model impacts WCA's code recommendations.</p>
+<p>In preparation for model tuning, an organization or user can transform their existing Playbooks into training data for <strong>IBM watsonx</strong> using the open-source <strong><a href="https://github.com/ansible/ansible-content-parser" target="_blank">Ansible Parser Tool</a></strong>. The tooling analyzes Ansible Playbooks and generates a single <strong>JSONL</strong> (<code>ftdata.jsonl</code> formatted) file that can be uploaded to WCA's model tuning studio for developing customized AI models.</p>
+<div class="highlight"><pre><span></span><code>- The process of calibrating and running the Ansible Parser Tool is time-consuming and potentially quite complex, depending on the scope of Playbooks that an organization wishes to analyze and prepare for model tuning. This falls outside the scope of the hands-on material for this training.
+
+- For the purposes of demonstration, a preconfigured `openshift-tune-micro.jsonl` was used for the model tuning example.
+</code></pre></div>
+<p>With the Ansible training data prepared, the <strong>IBM watsonx Code Assistant</strong> on IBM Cloud service was configured to execute a new <strong>Model Tuning</strong> experiment.</p>
+<div class="highlight"><pre><span></span><code>- WCA provides a guided, graphical user experience^[A]^ to streamline the model tuning and customization process
+
+- **Tuning experiment name**^[B]^ set to `Tuning Experiment` and the selection confirmed by clicking **Create tuning experiment**^[C]^
+
+- The prepared `openshift-tune-micro.jsonl` training data prepared by the Ansible Parser Tool is uploaded into WCA^[D]^
+
+- A summary of metrics— including parameters for sampling and Ansible modules —are displayed within the model tuning wizard before **Start tuning**^[E]^ is selected to kick off the model tuning operating
+
+- Model tuning for these particular metrics and parameters takes approximately 4 hours to complete
+
+&lt;br/&gt;
+
+![](_attachments/tuning2.png){: loading=lazy width=&quot;600&quot;}
+
+![](_attachments/tuning3.png){: loading=lazy width=&quot;600&quot;}
+
+![](_attachments/tuning4.png){: loading=lazy width=&quot;600&quot;}
+
+![](_attachments/tuning5.png){: loading=lazy width=&quot;600&quot;}
+
+![](_attachments/tuning6.png){: loading=lazy width=&quot;600&quot;}
+</code></pre></div>
+</div>
+<hr />
 <ol start="12">
 <li>
 <p>Let's use your organization's private Ansible data set to customize the <em>IBM Granite</em> base model: a process known as <strong>model tuning</strong>. To do so, you will need to provide a pointer to the customized <em>Model ID</em> within VS Code, which will override the standard WCA (<em>IBM Granite</em>) base model recommendations.</p>
@@ -786,6 +819,10 @@
 <p><a class="glightbox" href="../_attachments/tuning1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/tuning1.png" width="600" /></a></p>
 </li>
 </ol>
+<hr />
+<p>With the tuned model, WCA will recommend code using modules, functions, and other details specific to your organization's private IT environment.
+Let's regenerate code recommendations for the same task on <strong>Line 6</strong> to study how WCA returns new and improved content recommendations.</p>
+<p>Using the tuned Model ID, WCA has returned a recommendation to use the <code>ibm.cloudcollection.ibm_container_cluster</code> Module for the IBM Cloud, instead of the standard <code>ansible.builtin.command</code> Module from <em>Step 11</em>.</p>
 <hr />
 <h1 id="_3"></h1>
 <h1 id="next-steps">Next steps</h1>
