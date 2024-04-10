@@ -634,7 +634,8 @@
 <hr />
 <ol start="6">
 <li>
-<p>Delete the WCA-suggested lines of code from <em>Step 4</em> from the Playbook. Re-write the description on <strong>Line 12</strong> to the following code block, then press <span class="keys"><kbd class="key-enter">Enter</kbd></span> and <span class="keys"><kbd class="key-tab">Tab</kbd></span> to accept the new WCA code recommendations.</p>
+<p>Delete the WCA-suggested lines of code from <em>Step 4</em> from the Playbook.</p>
+<p>Re-write the description on <strong>Line 12</strong> to the following code block, then press <span class="keys"><kbd class="key-enter">Enter</kbd></span> and <span class="keys"><kbd class="key-tab">Tab</kbd></span> to accept the new WCA code recommendations. Take note of the much more precise language used to describe the <code>src:</code> and <code>dest:</code> attributes.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file where src equals httpd.j2 and dest equals httpd.config</span><span class="w"></span>
 </code></pre></div>
 </li>
@@ -643,6 +644,14 @@
 <ol start="7">
 <li>
 <p>The resulting WCA-recommended code should be similar to the <code>AI-GENERATED CODE</code> tab below. When compared to the <code>SOLUTION CODE</code> tab:</p>
+<ul>
+<li>
+<p>The <code>src: httpd.j2</code> recommendation in the <code>AI-GENERATED CODE</code> tab is an exact match to the natural language description set in <em>Step 6</em>, and only slightly different (in terms of the directory path used) to the <code>src: /srv/httpd.j2</code> variable in the <code>SOLUTION CODE</code> tab.</p>
+</li>
+<li>
+<p>The <code>dest: /etc/httpd/conf/httpd.conf</code> recommendation in the <code>AI-GENERATER CODE</code> tab, unfortunately, still deviates from the <code>httpd.config</code> (not the same as <code>httpd.conf</code>) destination that was requested in the natural language description. Close, but still far from exact and not matching our specifications. However, it's a vast improvement over the <code>dest: /etc/apache2/sites-available/000-default.conf</code> destination that was recommended as a result of <em>Step 4</em>'s more ambiguous task description.</p>
+</li>
+</ul>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">AI-GENERATED CODE</label><label for="__tabbed_3_2">SOLUTION CODE</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
