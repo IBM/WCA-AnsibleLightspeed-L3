@@ -604,10 +604,12 @@
 </div>
 </div>
 </div>
-<hr />
+<div class="admonition note">
+<p>WCA can be "creative" with its choice of tags and identifiers. You are welcome to adjust these to your liking, or even eliminate them from the Task code altogether. In the majority of cases these tags and identifiers are used for organization and tracking purposes, but not necessarily anything critical to the functioning of the Ansible Playbook or the infrastructure it is automating.</p>
+</div>
 </li>
 </ol>
-<p>As you can observe, WCA can be "creative" with its choice of tags and identifiers. You are welcome to adjust these to your liking, or even eliminate them from the Task code altogether. In the majority of cases these tags and identifiers are used for organization and tracking purposes, but not necessarily anything critical to the functioning of the Ansible Playbook or the infrastructure it is automating.</p>
+<hr />
 <ol start="8">
 <li>
 <p>Continue further down until you reach <code>TASK 6</code> (<strong>Line 40</strong>), which is one of the more consequential steps in the Playbook as it involves the creation of the Amazon EC2 <code>t2.small</code> instance on AWS according to the settings defined in <code>TASKS 1-5</code>.</p>
@@ -722,9 +724,7 @@
 <hr />
 </li>
 <li>
-<p>Next, continue further down the Playbook and locate <strong>TASK 9</strong> (Line 71) which commences installation of the necessary drivers and services on Amazon EC2 once a connection to the instance has been established.</p>
-</li>
-</ol>
+<p>Next, continue further down the Playbook and locate <code>TASK 9</code> (<strong>Line 71</strong>) which commences installation of the necessary drivers and services on Amazon EC2 once a connection to the instance has been established.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">TEMPLATE</label><label for="__tabbed_9_2">SOLUTION</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -749,9 +749,9 @@
 </div>
 </div>
 <hr />
-<ol start="12">
-<li>Scroll down further until you locate <strong>TASK 10</strong> (Line 75) which is responsible for downloading and decompressing (unarchiving) WordPress installation contents onto the EC2 instance.</li>
-</ol>
+</li>
+<li>
+<p>Scroll down further until you locate <code>TASK 10</code> (<strong>Line 75</strong>) which is responsible for downloading and decompressing (unarchiving) WordPress installation contents onto the EC2 instance.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">TEMPLATE</label><label for="__tabbed_10_2">SOLUTION</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -774,9 +774,9 @@
 </div>
 </div>
 <hr />
-<ol start="13">
-<li>Afterwards, locate <strong>TASK 11</strong> (Line 79) which sets the ownership attributes for the WordPress environment on Amazon EC2 and prepares it for hosting via Apache webserver.</li>
-</ol>
+</li>
+<li>
+<p>Afterwards, locate <code>TASK 11</code> (<strong>Line 79</strong>) which sets the ownership attributes for the WordPress environment on Amazon EC2 and prepares it for hosting via Apache webserver.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">TEMPLATE</label><label for="__tabbed_11_2">SOLUTION</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -799,9 +799,9 @@
 </div>
 </div>
 <hr />
-<ol start="14">
-<li>Further down the Playbook, locate <strong>TASK 12</strong> (Line 83) which deploys the services installed in TASK 9.</li>
-</ol>
+</li>
+<li>
+<p>Further down the Playbook, locate <code>TASK 12</code> (<strong>Line 83</strong>) which deploys the services installed in <code>TASK 9</code>.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">TEMPLATE</label><label for="__tabbed_12_2">SOLUTION</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -827,14 +827,15 @@
 </div>
 </div>
 <hr />
-<ol start="15">
-<li>
-<p><strong>MODULE C</strong> (Line 87) of the Playbook covers the final set of operations. It is responsible for ensuring that WordPress is deployed on the newly-provisioned AWS EC2 (VPC) instance and that the WordPress web page is accessible to the user. As you did previously in Step 2, you will need to replace the <code>&lt;PLACEHOLDER&gt;</code> values and <code>region</code> details on Lines 96-98 if you want to fully deploy this application into a live AWS environment.</p>
 </li>
 <li>
-<p>Locate <strong>TASK 13</strong> (Line 101) which is responsible for gathering facts about AWS EC2 (VPC) instance and the deployed WordPress application that is running atop of it.</p>
+<p><code>MODULE C</code> (<strong>Line 87</strong>) of the Playbook covers the final set of operations. It is responsible for ensuring that WordPress is deployed on the newly-provisioned AWS EC2 (VPC) instance and that the WordPress web page is accessible to the user. As you did previously in <em>Step 2</em>, you will need to replace the <code>&lt;PLACEHOLDER&gt;</code> values and <code>region</code> details on Lines 96-98 if you want to fully deploy this application into a live AWS environment.</p>
 </li>
 </ol>
+<hr />
+<ol start="16">
+<li>
+<p>Locate <code>TASK 13</code> (<strong>Line 101</strong>) which is responsible for gathering facts about AWS EC2 (VPC) instance and the deployed WordPress application that is running atop of it.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">TEMPLATE</label><label for="__tabbed_13_2">SOLUTION</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -857,9 +858,9 @@
 </div>
 </div>
 <hr />
-<ol start="17">
-<li>Finally, you have arrived at the final step in the Playbook configuration: <strong>TASK 14</strong> (Line 105), which is responsible for hosting the WordPress web app and making it accessible to users.</li>
-</ol>
+</li>
+<li>
+<p>Finally, you have arrived at the final step in the Playbook configuration: <code>TASK 14</code> (<strong>Line 105</strong>), which is responsible for hosting the WordPress web app and making it accessible to users.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">TEMPLATE</label><label for="__tabbed_14_2">SOLUTION</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -879,20 +880,26 @@
 </div>
 </div>
 <hr />
-<p>Congratulations on making it this far! At this stage, your Playbook is ready for execution. However, there are still some preparation that you need to do before this Playbook can be used to automate deployment of the WordPress application into a live Amazon EC2 environment.</p>
-<p>If you wish to go ahead with the deployment (<strong>RECOMMENDED</strong>) on your personal AWS account, follow along with lab guide steps. Otherwise, you are welcome to conclude the hands-on component here and follow the <a href="https://ibm.github.io/WCA-AnsibleLightspeed-L3/Lab/1-Evaluation/" target="_blank">Level 3 skills evaluation</a> steps (depending on your role).</p>
-<div class="admonition warning">
-<p class="admonition-title">LEVEL 3 CREDIT</p>
-<p><strong>IBMers</strong> should take the time now to prepare for and record their <a href="https://ibm.github.io/WCA-AnsibleLightspeed-L3/Lab/1-Evaluation//" target="_blank">Stand &amp; Deliver</a> presentations for Level 3 credit. Be sure to follow the evaluation criteria that is outlined in this documentation.</p>
-<p><strong>Business Partners</strong> should follow the <a href="https://ibm.github.io/WCA-AnsibleLightspeed-L3/Lab/1-Evaluation/" target="_blank">learning plan links</a> on IBM Training to complete a multiple-choice examination for Level 3 credit.</p>
-</div>
-<hr />
-<h1 id="_2"></h1>
+</li>
+</ol>
 <h1 id="to-deploy-a-live-amazon-ec2-instance-and-wordpress-application-on-aws-follow-along-with-the-steps-below">To deploy a <strong>live</strong> Amazon EC2 instance and WordPress application on AWS, follow along with the steps below.</h1>
+<h1 id="_2"></h1>
+<p>Congratulations on making it this far! At this stage, your Playbook is ready for execution. However, there are still some preparation that you need to do before this Playbook can be used to automate deployment of the WordPress application into a live Amazon EC2 environment.</p>
 <hr />
 <ol start="18">
-<li>In order to execute the Ansible Playbook on your local machine, you will need to install Ansible locally. Red Hat provides <a href="https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html" target="_blank">extensive online documentation</a> for how to go about installing Ansible. The authors of your lab guide recommend doing so by executing the following instructions in a Terminal window (macOS), or equivalent steps using <a href="https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3" target="_blank">PowerShell</a> (Windows):</li>
-</ol>
+<li>
+<p>In order to execute the Ansible Playbook on your local machine, you will need to install Ansible locally.</p>
+<ul>
+<li>
+<p>Red Hat provides <a href="https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html" target="_blank">extensive online documentation</a> for how to go about installing Ansible</p>
+</li>
+<li>
+<p>The authors of your lab guide recommend doing so by executing the following instructions in a Terminal window (macOS), or equivalent steps using <a href="https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3" target="_blank">PowerShell</a> (Windows)</p>
+</li>
+<li>
+<p>Follow the prompts until you receive confirmation that Ansible is installed and available locally</p>
+</li>
+</ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>brew install ansible
 </code></pre></div>
 <div class="admonition tip">
@@ -902,12 +909,25 @@
 </code></pre></div>
 Wait for the installation to conclude and then retry the instructions from Step 18.</p>
 </div>
-<p>Follow the prompts until you receive confirmation that Ansible is installed and available locally.</p>
+</li>
+</ol>
 <hr />
 <ol start="19">
-<li>If you have not registered for an AWS account previously, you need to do so now before advancing. You will need to supply a personal credit card for billing expenses. If you have an existing Amazon account, your AWS account can be linked to that profile if you so choose.</li>
-</ol>
+<li>
+<p>If you have not registered for an AWS account previously, you need to do so now before advancing.</p>
+<ul>
+<li>
+<p>You will need to supply a personal credit card for billing expenses</p>
+</li>
+<li>
+<p>If you have an existing Amazon account, your AWS account can be linked to that profile if you so choose</p>
+</li>
+</ul>
+<div class="admonition warning">
 <p><strong>AWS Registration</strong>: <a href="https://aws.amazon.com/resources/create-account/" target="_blank">https://aws.amazon.com/resources/create-account/</a></p>
+</div>
+</li>
+</ol>
 <hr />
 <ol start="20">
 <li>With a registered AWS account, you next need to navigate from the AWS dashboard into the <strong>Identity and Access Management (IAM)</strong> tool. You can search for this using the <strong>Search</strong> bar at the top of the screen and entering <code>IAM</code>.</li>
@@ -916,12 +936,11 @@ Wait for the installation to conclude and then retry the instructions from Step 
   <a class="glightbox" href="../_attachments/figure27.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure27.png" width="600" /></a></p>
 <hr />
 <ol start="21">
-<li>
-<p>Once inside the IAM tool, look along the left-side of the interface and drill down into <strong>Users</strong>.</p>
-</li>
-<li>
-<p>Click the <strong>Create User</strong> orange button located in the top-right corner of the interface.</p>
-</li>
+<li>Once inside the IAM tool, look along the left-side of the interface and drill down into <strong>Users</strong>.</li>
+</ol>
+<hr />
+<ol start="22">
+<li>Click the <strong>Create User</strong> orange button located in the top-right corner of the interface.</li>
 </ol>
 <p><br/>
   <a class="glightbox" href="../_attachments/figure28.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure28.png" width="600" /></a></p>
