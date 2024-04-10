@@ -756,8 +756,15 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">DATA PREPARATION &amp; MODEL TRAINING</p>
-<p>The process of building Ansible training data and tuning customized models for generative AI is a time-consuming one. For example, the model tuning employed in the steps ahead for the creation of an OpenShift cluster according to an enterprise organization's specific Ansible automation standards takes approximately <strong>4 hours</strong> to train.</p>
 <p>Given the scope and time available for this hands-on training, <strong>participants will not be manually creating the training data or training models themselves.</strong> Instead, you will utilize a prepared customized model (<code>Model ID</code>) and experiment in <em>Step 12</em> onwards with how the customized model impacts WCA's code recommendations.</p>
+<ul>
+<li>
+<p>The process of building Ansible training data and tuning customized models for generative AI is a time-consuming one. </p>
+</li>
+<li>
+<p>For example, the model tuning employed in the steps ahead for the creation of an OpenShift cluster according to an enterprise organization's specific Ansible automation standards takes approximately <strong>4 hours</strong> to train.</p>
+</li>
+</ul>
 <p>In preparation for model tuning, an organization or user can transform their existing Playbooks into training data for <strong>IBM watsonx</strong> using the open-source <strong><a href="https://github.com/ansible/ansible-content-parser" target="_blank">Ansible Parser Tool</a></strong>. The tooling analyzes Ansible Playbooks and generates a single <strong>JSONL</strong> (<code>ftdata.jsonl</code> formatted) file that can be uploaded to WCA's model tuning studio for developing customized AI models.</p>
 <ul>
 <li>
@@ -767,7 +774,24 @@
 <p>For the purposes of demonstration, a preconfigured <code>openshift-tune-micro.jsonl</code> was used for the model tuning example.</p>
 </li>
 </ul>
-<p>With the Ansible training data prepared, the <strong>IBM watsonx Code Assistant</strong> on IBM Cloud service was configured to execute a new <strong>Model Tuning</strong> experiment.</p>
+<p>With the Ansible training data prepared, the <em>IBM watsonx Code Assistant</em> on IBM Cloud service was configured to execute a new model tuning experiment.</p>
+<ul>
+<li>
+<p>WCA provides a graphical user experience<sup>[A]</sup> to streamline the model tuning and customization process</p>
+</li>
+<li>
+<p><strong>Tuning experiment name</strong><sup>[B]</sup> set to <code>Tuning Experiment</code> and confirmed with <strong>Create tuning experiment</strong><sup>[C]</sup></p>
+</li>
+<li>
+<p>The <code>openshift-tune-micro.jsonl</code> training data from Ansible Parser Tool is uploaded into WCA<sup>[D]</sup></p>
+</li>
+<li>
+<p>A summary of metrics— including parameters for sampling and Ansible modules —are displayed within the model tuning wizard before <strong>Start tuning</strong><sup>[E]</sup> is selected to kick off the model tuning operating</p>
+</li>
+<li>
+<p>Model tuning for these particular metrics and parameters takes approximately <strong>4 hours</strong> to complete</p>
+</li>
+</ul>
 <details class="quote">
 <summary>CLICK TO EXPAND — ACCOMPANYING SCREENSHOTS</summary>
 <p><br/></p>
@@ -777,23 +801,6 @@
 <p><a class="glightbox" href="../_attachments/tuning5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/tuning5.png" width="600" /></a></p>
 <p><a class="glightbox" href="../_attachments/tuning6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/tuning6.png" width="600" /></a></p>
 </details>
-<ul>
-<li>
-<p>WCA provides a guided, graphical user experience<sup>[A]</sup> to streamline the model tuning and customization process</p>
-</li>
-<li>
-<p><strong>Tuning experiment name</strong><sup>[B]</sup> set to <code>Tuning Experiment</code> and confirmed by clicking <strong>Create tuning experiment</strong><sup>[C]</sup></p>
-</li>
-<li>
-<p>The prepared <code>openshift-tune-micro.jsonl</code> training data from Ansible Parser Tool is uploaded into WCA<sup>[D]</sup></p>
-</li>
-<li>
-<p>A summary of metrics— including parameters for sampling and Ansible modules —are displayed within the model tuning wizard before <strong>Start tuning</strong><sup>[E]</sup> is selected to kick off the model tuning operating</p>
-</li>
-<li>
-<p>Model tuning for these particular metrics and parameters takes approximately 4 hours to complete</p>
-</li>
-</ul>
 </div>
 </li>
 </ol>
