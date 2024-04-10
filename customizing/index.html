@@ -653,6 +653,9 @@
 <li>
 <p>The <code>dest: /etc/httpd/conf/httpd.conf</code> recommendation in the <code>AI-GENERATER CODE</code> tab, unfortunately, still deviates from the <code>httpd.config</code> (not the same as <code>httpd.conf</code>) destination that was requested in the natural language description. Close, but still far from exact and not matching our specifications. However, it's a vast improvement over the <code>dest: /etc/apache2/sites-available/000-default.conf</code> destination that was recommended as a result of <em>Step 4</em>'s more ambiguous task description.</p>
 </li>
+<li>
+<p>Perplexingly, the <code>mode: '0644'</code> recommendation that was made previously in <em>Step 4</em> has been left out of the suggested task code. We can speculate as to why— perhaps the more precise natural language description made in <em>Step 6</em> prompted WCA to only generate code for exactly what was specified —but the "black box" nature of generative AI means that we cannot know for certain. Perhaps with another, even more precise iteration the <code>AI-GENERATED CODE</code> will match the <code>SOLUTION CODE</code>?</p>
+</li>
 </ul>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">AI-GENERATED CODE</label><label for="__tabbed_3_2">SOLUTION CODE</label></div>
 <div class="tabbed-content">
@@ -683,23 +686,36 @@
 </li>
 </ol>
 <hr />
-<ol start="3">
-<li>Let's slightly modify the Task description. Try revising the Task <code>-name: ...</code> description to the following, hit <span class="keys"><kbd class="key-enter">Enter</kbd></span>, and accept the generated results with the <span class="keys"><kbd class="key-tab">Tab</kbd></span> key:</li>
-</ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file with mode 0644</span><span class="w"></span>
+<ol start="8">
+<li>
+<p>Iterate on the lessons learned in <em>Step 7</em> and modify the task description to include more details on the permissions applied to the Apache webserver.</p>
+<ul>
+<li>
+<p>Delete the WCA-suggested lines of code from <em>Step 6</em> from the Playbook.</p>
+</li>
+<li>
+<p>Re-write the description on <strong>Line 12</strong> to the following code block, then press <span class="keys"><kbd class="key-enter">Enter</kbd></span> and <span class="keys"><kbd class="key-tab">Tab</kbd></span> to accept the new WCA code recommendations. Take note of the much more precise language used to describe the <code>mode:</code> attribute.</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file where src equals httpd.j2 and dest equals httpd.config and mode equals 0644</span><span class="w"></span>
 </code></pre></div>
-<p>Compare how the AI-generated code suggestions match (or don't) the expected code solution:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">AI-Generated Code</label><label for="__tabbed_4_2">Solution Code</label></div>
+</li>
+</ol>
+<hr />
+<ol start="9">
+<li>
+<p>The code</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">AI-GENERATED CODE</label><label for="__tabbed_4_2">SOLUTION CODE</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
 <span class="normal"><a href="#__codelineno-9-2">2</a></span>
 <span class="normal"><a href="#__codelineno-9-3">3</a></span>
 <span class="normal"><a href="#__codelineno-9-4">4</a></span>
-<span class="normal"><a href="#__codelineno-9-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file with mode 0644</span><span class="w"></span>
-<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="w">  </span><span class="nt">ansible.builtin.copy</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="w">    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/httpd/conf/httpd.conf</span><span class="w"></span>
-<a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="w">    </span><span class="nt">content</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Alias</span><span class="nv"> </span><span class="s">/</span><span class="nv">       </span><span class="s">/var/www/html/\n\n&lt;Directory</span><span class="nv"> </span><span class="s">/var/www/html/\&quot;&gt;\n</span><span class="nv">  </span><span class="s">&lt;Files&gt;\n\\</span><span class="nv">   </span><span class="s">&amp;2\n</span><span class="nv">    </span><span class="s">&amp;1\n</span><span class="nv">    </span><span class="s">&lt;/Files&gt;\n</span><span class="nv">    </span><span class="s">&lt;/Directory&gt;\n&lt;/Dispatcher&gt;\n&quot;</span><span class="w"></span>
+<span class="normal"><a href="#__codelineno-9-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file where src equals httpd.j2 and dest equals httpd.config and mode equals 0644</span><span class="w"></span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="w">  </span><span class="nt">ansible.builtin.template</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="w">    </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">httpd.j2</span><span class="w"></span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="w">    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/httpd/conf/httpd.conf</span><span class="w"></span>
 <a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="w">    </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;0644&#39;</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 </div>
@@ -717,25 +733,27 @@
 </div>
 </div>
 </div>
-<hr />
-<p>The output is closer to the <code>SOLUTION</code> on the latest iteration, but still out of alignment in some aspects. The AI-generated code suggestions now correctly include the <code>0644</code> read/write/execute permissions that were requested. However, an incorrect destination was suggested (instead of a source) and the <code>content</code> field is a mismatch to the request entirely. One other observation is that the suggested code is invoking the <code>ansible.builtin.copy</code>
-package, instead of the expected <code>ansible.builtin.template</code> package.</p>
-<ol start="4">
-<li>What happens if we adjust the Task's natural language description to explicitly invoke the <code>.template</code> package? Adjust the Task description to the following and then re-generate the code block using WCA:</li>
+</li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file using mode 0644 from template</span><span class="w"></span>
+<hr />
+<ol start="3">
+<li>Let's slightly modify the Task description. Try revising the Task <code>-name: ...</code> description to the following, hit <span class="keys"><kbd class="key-enter">Enter</kbd></span>, and accept the generated results with the <span class="keys"><kbd class="key-tab">Tab</kbd></span> key:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file with mode 0644</span><span class="w"></span>
 </code></pre></div>
-<p>Once again, compare the AI-generated code suggestions to the expected code solution:</p>
+<p>Compare how the AI-generated code suggestions match (or don't) the expected code solution:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">AI-Generated Code</label><label for="__tabbed_5_2">Solution Code</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
 <span class="normal"><a href="#__codelineno-12-2">2</a></span>
 <span class="normal"><a href="#__codelineno-12-3">3</a></span>
-<span class="normal"><a href="#__codelineno-12-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file using mode 0644 from template</span><span class="w"></span>
+<span class="normal"><a href="#__codelineno-12-4">4</a></span>
+<span class="normal"><a href="#__codelineno-12-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file with mode 0644</span><span class="w"></span>
 <a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="w">  </span><span class="nt">ansible.builtin.copy</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="w">    </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/home/ano-user/automation/ansible/templates/httpd.j2</span><span class="w"></span>
-<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="w">    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/httpd/conf/httpd.conf</span><span class="w"></span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="w">    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/httpd/conf/httpd.conf</span><span class="w"></span>
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="w">    </span><span class="nt">content</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Alias</span><span class="nv"> </span><span class="s">/</span><span class="nv">       </span><span class="s">/var/www/html/\n\n&lt;Directory</span><span class="nv"> </span><span class="s">/var/www/html/\&quot;&gt;\n</span><span class="nv">  </span><span class="s">&lt;Files&gt;\n\\</span><span class="nv">   </span><span class="s">&amp;2\n</span><span class="nv">    </span><span class="s">&amp;1\n</span><span class="nv">    </span><span class="s">&lt;/Files&gt;\n</span><span class="nv">    </span><span class="s">&lt;/Directory&gt;\n&lt;/Dispatcher&gt;\n&quot;</span><span class="w"></span>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="w">    </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;0644&#39;</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -748,6 +766,41 @@ package, instead of the expected <code>ansible.builtin.template</code> package.<
 <a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="w">    </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/srv/httpd.j2</span><span class="w"></span>
 <a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="w">    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/httpd.config</span><span class="w"></span>
 <a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="w">    </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0644&quot;</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<hr />
+<p>The output is closer to the <code>SOLUTION</code> on the latest iteration, but still out of alignment in some aspects. The AI-generated code suggestions now correctly include the <code>0644</code> read/write/execute permissions that were requested. However, an incorrect destination was suggested (instead of a source) and the <code>content</code> field is a mismatch to the request entirely. One other observation is that the suggested code is invoking the <code>ansible.builtin.copy</code>
+package, instead of the expected <code>ansible.builtin.template</code> package.</p>
+<ol start="4">
+<li>What happens if we adjust the Task's natural language description to explicitly invoke the <code>.template</code> package? Adjust the Task description to the following and then re-generate the code block using WCA:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file using mode 0644 from template</span><span class="w"></span>
+</code></pre></div>
+<p>Once again, compare the AI-generated code suggestions to the expected code solution:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">AI-Generated Code</label><label for="__tabbed_6_2">Solution Code</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
+<span class="normal"><a href="#__codelineno-15-2">2</a></span>
+<span class="normal"><a href="#__codelineno-15-3">3</a></span>
+<span class="normal"><a href="#__codelineno-15-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file using mode 0644 from template</span><span class="w"></span>
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="w">  </span><span class="nt">ansible.builtin.copy</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="w">    </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/home/ano-user/automation/ansible/templates/httpd.j2</span><span class="w"></span>
+<a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="w">    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/httpd/conf/httpd.conf</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
+<span class="normal"><a href="#__codelineno-16-2">2</a></span>
+<span class="normal"><a href="#__codelineno-16-3">3</a></span>
+<span class="normal"><a href="#__codelineno-16-4">4</a></span>
+<span class="normal"><a href="#__codelineno-16-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file</span><span class="w"></span>
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="w">  </span><span class="nt">ansible.builtin.template</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="w">    </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/srv/httpd.j2</span><span class="w"></span>
+<a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="w">    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/httpd.config</span><span class="w"></span>
+<a id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="w">    </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0644&quot;</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -769,37 +822,37 @@ package, instead of the expected <code>ansible.builtin.template</code> package.<
 <ol start="5">
 <li>Once again, adjust the natural language description of the Task to the following and then re-generate the code block using WCA:</li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file using mode=&#39;0644&#39; from template</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file using mode=&#39;0644&#39; from template</span><span class="w"></span>
 </code></pre></div>
 <p>Compare the AI-generated code suggestions to the expected code solution:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">AI-Generated Code</label><label for="__tabbed_6_2">Solution Code</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">AI-Generated Code</label><label for="__tabbed_7_2">Solution Code</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
-<span class="normal"><a href="#__codelineno-15-2">2</a></span>
-<span class="normal"><a href="#__codelineno-15-3">3</a></span>
-<span class="normal"><a href="#__codelineno-15-4">4</a></span>
-<span class="normal"><a href="#__codelineno-15-5">5</a></span>
-<span class="normal"><a href="#__codelineno-15-6">6</a></span>
-<span class="normal"><a href="#__codelineno-15-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file using mode=&#39;0644&#39; from template</span><span class="w"></span>
-<a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="w">  </span><span class="nt">ansible.builtin.template</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="w">    </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">httpd.j2</span><span class="w"></span>
-<a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="w">    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/httpd/conf/httpd.conf</span><span class="w"></span>
-<a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
-<a id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="w">    </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
-<a id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="w">    </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;0644&#39;</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span>
+<span class="normal"><a href="#__codelineno-18-2">2</a></span>
+<span class="normal"><a href="#__codelineno-18-3">3</a></span>
+<span class="normal"><a href="#__codelineno-18-4">4</a></span>
+<span class="normal"><a href="#__codelineno-18-5">5</a></span>
+<span class="normal"><a href="#__codelineno-18-6">6</a></span>
+<span class="normal"><a href="#__codelineno-18-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file using mode=&#39;0644&#39; from template</span><span class="w"></span>
+<a id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="w">  </span><span class="nt">ansible.builtin.template</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="w">    </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">httpd.j2</span><span class="w"></span>
+<a id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="w">    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/httpd/conf/httpd.conf</span><span class="w"></span>
+<a id="__codelineno-18-5" name="__codelineno-18-5"></a><span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
+<a id="__codelineno-18-6" name="__codelineno-18-6"></a><span class="w">    </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
+<a id="__codelineno-18-7" name="__codelineno-18-7"></a><span class="w">    </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;0644&#39;</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
-<span class="normal"><a href="#__codelineno-16-2">2</a></span>
-<span class="normal"><a href="#__codelineno-16-3">3</a></span>
-<span class="normal"><a href="#__codelineno-16-4">4</a></span>
-<span class="normal"><a href="#__codelineno-16-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file</span><span class="w"></span>
-<a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="w">  </span><span class="nt">ansible.builtin.template</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="w">    </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/srv/httpd.j2</span><span class="w"></span>
-<a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="w">    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/httpd.config</span><span class="w"></span>
-<a id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="w">    </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0644&quot;</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span>
+<span class="normal"><a href="#__codelineno-19-2">2</a></span>
+<span class="normal"><a href="#__codelineno-19-3">3</a></span>
+<span class="normal"><a href="#__codelineno-19-4">4</a></span>
+<span class="normal"><a href="#__codelineno-19-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file</span><span class="w"></span>
+<a id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="w">  </span><span class="nt">ansible.builtin.template</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="w">    </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/srv/httpd.j2</span><span class="w"></span>
+<a id="__codelineno-19-4" name="__codelineno-19-4"></a><span class="w">    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/httpd.config</span><span class="w"></span>
+<a id="__codelineno-19-5" name="__codelineno-19-5"></a><span class="w">    </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0644&quot;</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
