@@ -352,13 +352,16 @@
 <div class="admonition note">
 <p class="admonition-title">UNPREDICTABLE RESULTS FROM GENERATIVE AI &amp; LLMs</p>
 <p>A consequence of using generative AI and Large Language Models (LLMs) is that the recommended code output of these systems will never be 100% consistent for each and every execution. For this reason, LLMs are referred to as "non-deterministic" systems — as opposed to "deterministic" systems. This is both a strength and weakness of LLMs. As you will observe in this module, even a slight modification to the Task description or the smallest change to how a Playbook is structured— the descriptions used, the variables set, and so on —will influence AI-generated code recommendations.</p>
-<p>The iterative process that you will go through in this module can be viewed in two different ways:</p>
+<p>The iterative process that you will go through in this module can be viewed in three different ways:</p>
 <ol>
 <li>
 <p>On the one hand, it shows the sensitivity of generative AI models to even the most nuanced change in <strong>natural language prompts</strong> — for good or bad. generative AI can produce tremendous work and that output is further guided along by best practices built-in from Red Hat and IBM. But in the end, the AI can only infer user intent from the natural language descriptions supplied to it. The more clearly a user defines their Task descriptions and intent, the more likely that WCA will correctly generate code which mirrors that intent; conversely, the less precise those descriptions are, the more likely WCA will misinterpret and miss the mark. Precision <em>is</em> key to the disambiguation of natural language prompts.</p>
 </li>
 <li>
 <p>Human feedback and <strong>humans-in-the-loop</strong> are essential to these formative stages of generative AI. As offerings like WCA mature, the natural language processing capabilities of the service will continue to be refined and improved. Additional packages, functions, and training data from Ansible Galaxy (as well as other sources) are continuously being added to the product's Foundation Models, which will in turn continually improve the AI-generated code recommendations made to users. Feedback can be directly supplied via the WCA extension for VS Code and <a href="https://docs.ai.ansible.redhat.com/contributing/#ansible-galaxy" target="_blank">additional ways to support model training are documented online</a>.</p>
+</li>
+<li>
+<p>By using the <strong>Model Tuning</strong> capabilities built into IBM watsonx Code Assistant, organizations and users are able to customize the recommendations produced by generative AI, tuning a domain-specific LLM with the organization's <em>own</em> Ansible Playbooks. The content and code recommendations that WCA suggests can be tailored to an organization's standards, best practices, and programming styles. These capabilities will be explored later in this module.</p>
 </li>
 </ol>
 </div>
