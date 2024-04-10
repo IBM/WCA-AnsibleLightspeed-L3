@@ -668,7 +668,8 @@
 <hr />
 <h1 id="_2"></h1>
 <h1 id="model-customization">Model customization</h1>
-<p>INTRO TO THE MODEL SECTION — TBD</p>
+<p>Since every organization is different, WCA allows users to customize the AI model output to your organization's unique Ansible Playbooks. This allows for personalized code recommendations that are a better fit to your business' unique needs and more accurate to programming standards set within your organization.</p>
+<p>In this scenario, your organization has its own set of Ansible Playbooks that leverage your preferred public cloud provider that uses specific Ansible Modules to manage Red Hat OpenShift clusters.</p>
 <hr />
 <ol start="10">
 <li>
@@ -697,6 +698,14 @@
 <ol start="11">
 <li>
 <p>Before performing any model tuning tasks, try generating code recommendations for the OpenShift cluster creation task by placing your cursor at the end of <strong>Line 6</strong>, hitting <span class="keys"><kbd class="key-enter">Enter</kbd></span>, and then accepting the default recommendations by hitting <span class="keys"><kbd class="key-tab">Tab</kbd></span>. The resulting code recommendations— displayed below —represent the standard, unmodified output from WCA's <em>IBM Granite</em> models.</p>
+<ul>
+<li>
+<p>When using the standard <em>IBM Granite</em> model recommendations, it recommends making use of the <code>ansible.builtin.command</code> Ansible Module — which is a standard, best-practice way to perform these types of deployments.</p>
+</li>
+<li>
+<p>However, <em>your</em> particular organization (and the public cloud provider you use) might require the use of different Ansible Modules. The following steps will explore how to tailor WCA-generated code blocks to the unique needs of your business.</p>
+</li>
+</ul>
 <div class="tabbed-set tabbed-alternate" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">STANDARD <em>IBM GRANITE</em> MODEL RECOMMENDATIONS</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -749,7 +758,7 @@
 </ol>
 <hr />
 <ol start="12">
-<li>And</li>
+<li>Let's use your organization's private Ansible data set to customize the <em>IBM Granite</em> base model: a process known as <strong>model tuning</strong>.</li>
 </ol>
 <hr />
 <h1 id="_3"></h1>
