@@ -903,7 +903,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>brew install ansible
 </code></pre></div>
 <details class="warning">
-<summary><code>HOMEBREW</code> IS MISSING</summary>
+<summary><code>HOMEBREW</code> IS MISSING — CLICK TO EXPAND</summary>
 <p>If you do not have the Homebrew package manager ("brew") installed in a macOS environment, execute the following instruction inside a Terminal console:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;
 </code></pre></div>
@@ -963,7 +963,7 @@ Wait for the installation to conclude and then retry the instructions from Step 
 <p>Under <strong>Set Permissions</strong> &gt; <strong>Permission Options</strong>, select the <code>Add user to group</code> tile.</p>
 </li>
 <li>
-<p>Click the <strong>Set permissions boundary - <em>optional</em></strong> tile to expand additional permission options.</p>
+<p>Click the <strong>Set permissions boundary - <em>optional</em></strong> tile to expand permission options.</p>
 </li>
 <li>
 <p>Toggle the checkmark next to the <strong>Use a permissions boundary to control the maximum permissions</strong> option.</p>
@@ -1054,25 +1054,29 @@ Wait for the installation to conclude and then retry the instructions from Step 
 </ol>
 <hr />
 <ol start="31">
-<li>A configuration tool will ask for additional information about the Key Pair:</li>
-</ol>
+<li>
+<p>A configuration tool will ask for additional information about the Key Pair:</p>
 <ul>
 <li>
-<p><code>Name</code> can be set to a value of your choosing</p>
+<p><strong>Name</strong> can be set to a value of your choosing</p>
 </li>
 <li>
-<p><code>Key pair type</code> set to <strong>RSA</strong></p>
+<p><strong>Key pair type</strong> set to <code>RSA</code></p>
 </li>
 <li>
-<p><code>Private key file format</code> set to <strong>.pem</strong></p>
+<p><strong>Private key file format</strong> set to <code>.pem</code></p>
+</li>
+<li>
+<p>When satisfied, click the orange <strong>Create key pair</strong> button</p>
 </li>
 </ul>
-<p>When satisfied, click the orange <strong>Create key pair</strong> button.</p>
 <p><a class="glightbox" href="../_attachments/figure32.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure32.png" width="600" /></a></p>
+</li>
+</ol>
 <hr />
 <ol start="32">
-<li>The web browser will redirect to a page where you can view details about the newly-created Key Pair for EC2. <strong>Download</strong> the <code>.pem</code> file to your local device, preferably to the same directory that your <code>TEMPLATE.yml</code> and <code>SOLUTION.yml</code> Playbooks are located within.</li>
-</ol>
+<li>
+<p>The web browser will redirect to a page where you can view details about the newly-created Key Pair for EC2. <strong>Download</strong> the <code>.pem</code> file to your local device, preferably to the same directory that your <code>TEMPLATE.yml</code> and <code>SOLUTION.yml</code> Playbooks are located within.</p>
 <div class="admonition warning">
 <p class="admonition-title">PLAYBOOK MODIFICATIONS REQUIRED</p>
 <p>The value of <code>ansible_ssh_private_key_file</code> must be updated within your Playbooks to account for the full path to the <code>.pem</code> file on your local machine. If you save the Key Pair file to the same directory that your Ansible Playbooks are located within, you do not need to qualify the value with anything more than the name of the file (<code>bienko-key.pem</code>). If it is saved in a <em>different</em> directory, you will need to spell out the full path + file name.</p>
@@ -1086,73 +1090,116 @@ Wait for the installation to conclude and then retry the instructions from Step 
 </li>
 </ul>
 </div>
+</li>
+</ol>
 <hr />
 <ol start="33">
-<li>It is necessary to adjust the permissions assigned to the Key Pair file (on your local machine) before attempting to connect via Ansible to AWS. Open a Terminal console on your local machine and navigate (<code>cd</code>) to the directory in which the Key Pair file is saved.</li>
-</ol>
+<li>
+<p>It is necessary to adjust the permissions assigned to the Key Pair file (on your local machine) before attempting to connect via Ansible to AWS.</p>
+<ul>
+<li>
+<p>Open a Terminal console on your local machine and navigate (<code>cd</code>) to the directory in which the Key Pair file is saved.</p>
+</li>
+<li>
 <p>Execute the following to adjust the permissions assigned to the <code>.pem</code> file:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>chmod 400 filename.pem
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>chmod <span class="m">400</span> filename.pem
 </code></pre></div>
-<hr />
-<h1 id="_3"></h1>
-<h1 id="executing-the-ansible-playbook">Executing the Ansible Playbook</h1>
-<hr />
-<p>At last, you are ready to execute the Playbook and use Ansible automation to deploy both an Amazon EC2 instance and a WordPress web application.</p>
-<ol start="34">
-<li>With the Terminal console, navigate to the directory (<code>cd</code>) where both the Ansible Playbook and your <code>KeyPair.pem</code> file are located. You may use either the <code>TEMPLATE.yml</code> Playbook that you customized or the <code>SOLUTION.yml</code> Playbook for executing the Ansible automation tasks. Regardless of the Playbook being used, you must modify the Playbook with the necessary AWS security and account credentials information.</li>
+</li>
 </ol>
+<hr />
+<h1 id="executing-the-ansible-playbook">Executing the Ansible Playbook</h1>
+<h1 id="_3"></h1>
+<p>At last, you are ready to execute the Playbook and use Ansible automation to deploy both an Amazon EC2 instance and a WordPress web application.</p>
+<hr />
+<ol start="34">
+<li>
+<p>With the Terminal console, navigate to the directory (<code>cd</code>) where both the Ansible Playbook and your <code>KeyPair.pem</code> file are located.</p>
+<ul>
+<li>
+<p>You may use either the <code>TEMPLATE.yml</code> Playbook that you customized or the <code>SOLUTION.yml</code> Playbook for executing the Ansible automation tasks.</p>
+</li>
+<li>
+<p>Regardless of the Playbook being used, you must modify the Playbook with the necessary AWS security and account credentials information.</p>
+</li>
+<li>
 <p>When ready, execute the following instruction with the Terminal console:</p>
+</li>
+</ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>ansible-playbook TEMPLATE.yml
 </code></pre></div>
+</li>
+</ol>
+<hr />
 <ol start="35">
-<li>Monitor the console's output as the Ansible Playbook iterates across each of the Tasks customized earlier. A fantastic feature of Ansible's automation is that if any of the Tasks should fail, the steps involved in that Task can be re-tried in subsequent runs; likewise, Tasks which executed successfully won't be repeated, but are validated and skipped instead.</li>
+<li>
+<p>Monitor the console's output as the Ansible Playbook iterates across each of the Tasks customized earlier. A fantastic feature of Ansible's automation is that if any of the Tasks should fail, the steps involved in that Task can be re-tried in subsequent runs; likewise, Tasks which executed successfully won't be repeated, but are validated and skipped instead.</p>
+<ul>
+<li>
+<p>If you encounter errors during the litany of automation tasks, return to the Playbook and attempt to debug the issue. Re-issue the instruction in <em>Step 34</em> to console to attempt the Ansible Playbook execution again.</p>
+</li>
+<li>
+<p>Continue iterating in this manner until all 14 Tasks have been successfully executed.</p>
+</li>
+</ul>
+</li>
 </ol>
-<p>If you encounter errors during the litany of automation tasks, return to the Playbook and attempt to debug the issue. Re-issue the instruction in Step 34 to console to attempt the Ansible Playbook execution again. Continue iterating in this manner until all 14 Tasks have been successfully executed.</p>
+<hr />
 <ol start="36">
-<li>After successfully deploying the Amazon EC2 environment and instantiating a WordPress application, the console will return a URL to the Terminal's output as part of Task 14's <code>[debug]</code> instruction. Copy the URL to clipboard and then paste it into your web browser to access the WordPress application.</li>
-</ol>
+<li>
+<p>After successfully deploying the Amazon EC2 environment and instantiating a WordPress application, the console will return a URL to the Terminal's output as part of <code>TASK 14</code>'s <code>[debug]</code> instruction. Copy the URL to clipboard and then paste it into your web browser to access the WordPress application.</p>
 <p><br/>
-  <a class="glightbox" href="../_attachments/figure33.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure33.png" width="600" /></a></p>
+<a class="glightbox" href="../_attachments/figure33.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure33.png" width="600" /></a></p>
+</li>
+</ol>
 <hr />
 <ol start="37">
-<li>If your web browser loads the quick-start page for WordPress, you have successfully deployed the application and its supporting EC2 environment — entirely using Generative AI and Ansible automation. <strong>Well done!</strong></li>
+<li>
+<p>If your web browser loads the quick-start page for WordPress, you have successfully deployed the application and its supporting EC2 environment — entirely using Generative AI and Ansible automation. <strong>Well done!</strong></p>
+<p><br/>
+<a class="glightbox" href="../_attachments/figure34.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure34.png" width="600" /></a></p>
+</li>
 </ol>
-<p><a class="glightbox" href="../_attachments/figure34.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure34.png" width="600" /></a></p>
 <hr />
-<h1 id="_4"></h1>
 <h1 id="cleaning-up-and-conclusion">Cleaning up and conclusion</h1>
-<hr />
+<h1 id="_4"></h1>
 <p>Once you are ready to retire your environment, you will need to return to the AWS Dashboard to terminate the EC2 instance and hosted WordPress application.</p>
 <div class="admonition warning">
 <p class="admonition-title">COSTS</p>
 <p>It is essential that you terminate and deprovision the EC2 instance at the conclusion of the hands on lab. Otherwise, your personal AWS account will continue to be billed for as long as the resources are provisioned.</p>
 </div>
+<hr />
 <ol start="38">
-<li>
-<p>You can monitor your Amazon EC2 instance from the EC2 dashboard. At the top of the page, locate the <strong>Resources</strong> table and drill down into the <strong>Instances (running)</strong> tab.</p>
-</li>
+<li>You can monitor your Amazon EC2 instance from the EC2 dashboard. At the top of the page, locate the <strong>Resources</strong> table and drill down into the <strong>Instances (running)</strong> tab.</li>
+</ol>
+<hr />
+<ol start="39">
 <li>
 <p>Details about your EC2 environment are summarized within the <strong>Instances</strong> table. Click the name of your EC2's <code>Instance ID</code> to expose additional details and management options.</p>
+<p><br/>
+<a class="glightbox" href="../_attachments/figure35.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure35.png" width="600" /></a></p>
 </li>
 </ol>
-<p><a class="glightbox" href="../_attachments/figure35.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure35.png" width="600" /></a></p>
 <hr />
 <ol start="40">
-<li>In the top-right corner of the interface, click the <strong>Instance state</strong> button and select <strong>Terminate instance</strong> from the drop-down menu.</li>
-</ol>
+<li>
+<p>In the top-right corner of the interface, click the <strong>Instance state</strong> button and select <strong>Terminate instance</strong> from the drop-down menu.</p>
 <p><br/>
-  <a class="glightbox" href="../_attachments/figure36.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure36.png" width="400" /></a></p>
+<a class="glightbox" href="../_attachments/figure36.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure36.png" width="400" /></a></p>
+</li>
+</ol>
 <hr />
 <ol start="41">
-<li>
-<p>Confirm the deprovisioning request by clicking the orange <strong>Terminate</strong> button. All storage associated with the EC2 instance will automatically be deleted. Terminating an instance cannot be undone once underway.</p>
-</li>
-<li>
-<p>It is recommended that you delete all of the <strong>Security Groups</strong> (3 total) and <strong>Key Pairs</strong> (1 total) associated with the EC2 instance. To do so, return to the EC2 Dashboard and follow a similar procedure to Steps 38-41.</p>
-</li>
-<li>
-<p>Search for <code>IAM</code> in the AWS taskbar to return to the <strong>Identity Access Management</strong> panel. If you wish to further secure your AWS account, delete all unwanted users or consider reducing the user's privilege from AdministratorAccess to a more restrictive class.</p>
-</li>
+<li>Confirm the deprovisioning request by clicking the orange <strong>Terminate</strong> button. All storage associated with the EC2 instance will automatically be deleted. Terminating an instance cannot be undone once underway.</li>
+</ol>
+<hr />
+<ol start="42">
+<li>It is recommended that you delete all of the <strong>Security Groups</strong> (3 total) and <strong>Key Pairs</strong> (1 total) associated with the EC2 instance. To do so, return to the EC2 Dashboard and follow a similar procedure to Steps 38-41.</li>
+</ol>
+<hr />
+<ol start="43">
+<li>Search for <code>IAM</code> in the AWS taskbar to return to the <strong>Identity Access Management</strong> panel. If you wish to further secure your AWS account, delete all unwanted users or consider reducing the user's privilege from AdministratorAccess to a more restrictive class.</li>
 </ol>
 <hr />
 <p>That concludes the hands-on components to this Level 3 course, but your learning and experimentation doesn't need to end here. Continue to experiment with generating Tasks for Ansible Playbooks. If you have worked extensively with Ansible previously, try recreating Tasks you've written previously from old Playbooks using generative AI — just be careful not to use confidential or sensitive information as part of those tests. See if you can spot the differences or improvements made from the AI-generated code recommendations.</p>
