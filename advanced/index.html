@@ -363,14 +363,14 @@
 <p>The deployment of the environments will be conducted entirely using Red Hat Ansible automation, executed on your local machine, and deployed to AWS cloud.</p>
 </li>
 <li>
-<p>The generation of the Ansible Tasks and code required to automate these deployments will be created using the Generative AI capabilities of the WCA extension for VS Code.</p>
+<p>The generation of the Ansible Tasks and code required to automate these deployments will be created using the generative AI capabilities of the WCA extension for VS Code.</p>
 </li>
 </ul>
 <p>Ansible Playbooks to support this demo were prepared ahead of time in a public GitHub repository and are available for your use at the links below.</p>
 <hr />
 <p><strong>TEMPLATE (<code>.yml</code>)</strong>: <a href="https://github.com/bienko/WCA-Lightspeed-L3/blob/main/TEMPLATE.yml" target="_blank">https://github.com/bienko/WCA-Lightspeed-L3/blob/main/TEMPLATE.yml</a></p>
 <ul>
-<li>The <code>TEMPLATE.yml</code> Playbook contains the skeleton of the application you will ultimately build. Playbook structure, key variables, Task descriptions, and comments are provided. Use the Generative AI capabilities of WCA to fill out the details of the various Ansible Tasks, then compare the results with the <code>SOLUTION.yml</code> file below.</li>
+<li>The <code>TEMPLATE.yml</code> Playbook contains the skeleton of the application you will ultimately build. Playbook structure, key variables, Task descriptions, and comments are provided. Use the generative AI capabilities of WCA to fill out the details of the various Ansible Tasks, then compare the results with the <code>SOLUTION.yml</code> file below.</li>
 </ul>
 <p><strong>SOLUTION (<code>.yml</code>)</strong>: <a href="https://github.com/bienko/WCA-Lightspeed-L3/blob/main/SOLUTION.yml" target="_blank">https://github.com/bienko/WCA-Lightspeed-L3/blob/main/SOLUTION.yml</a></p>
 <ul>
@@ -430,7 +430,7 @@
 <h1 id="_1"></h1>
 <p>In the steps ahead, you will use WCA's AI-generated code suggestions to populate the contents of Tasks within the <code>TEMPLATE.yml</code> Playbook. There are 14 Tasks in total and we will examine them each in sequence.</p>
 <p>For each Task, a tabbed code snippet is provided within this lab documentation to make it easy for you to toggle between the <code>TEMPLATE</code> (the Task prior to AI-generated code suggestions) and the proper <code>SOLUTION</code> (the Task as it should be written for a successful deployment to AWS).</p>
-<p>Compare the AI-generated code suggestions you receive in VS Code with the expected <code>SOLUTION</code> code. You <em>will</em> find that there are occassional discrepancies and variables that need to be adjusted. Generative AI can save you tremendous amounts of time and effort by automating the creation of powerful blocks of code— as you will observe in generating these tasks —but it still requires a degree of human supervision and double-checking. However, the time saved with hands on keyboard is enormous and the potential for the future is boundless.</p>
+<p>Compare the AI-generated code suggestions you receive in VS Code with the expected <code>SOLUTION</code> code. You <em>will</em> find that there are occassional discrepancies and variables that need to be adjusted. Generative AI can save users tremendous amounts of time and effort by automating the creation of powerful blocks of code— as you will observe in generating these tasks —but it still requires a degree of human supervision and double-checking. However, the time saved with hands on keyboard is enormous and the potential for the future is boundless.</p>
 <hr />
 <ol>
 <li>Open the <code>TEMPLATE.yml</code> Playbook in VS Code and ensure that the Ansible Lightspeed extension is active.</li>
@@ -829,7 +829,7 @@
 <hr />
 </li>
 <li>
-<p><code>MODULE C</code> (<strong>Line 87</strong>) of the Playbook covers the final set of operations. It is responsible for ensuring that WordPress is deployed on the newly-provisioned AWS EC2 (VPC) instance and that the WordPress web page is accessible to the user. As you did previously in <em>Step 2</em>, you will need to replace the <code>&lt;PLACEHOLDER&gt;</code> values and <code>region</code> details on Lines 96-98 if you want to fully deploy this application into a live AWS environment.</p>
+<p><code>MODULE C</code> (<strong>Line 87</strong>) of the Playbook covers the final set of operations. It is responsible for ensuring that WordPress is deployed on the newly-provisioned AWS EC2 (VPC) instance and that the WordPress web page is accessible to the user. As you did previously in <em>Step 2</em>, you will need to replace the <code>&lt;PLACEHOLDER&gt;</code> values and <code>region</code> details on <strong>Lines 96-98</strong> if you want to fully deploy this application into a live AWS environment.</p>
 </li>
 </ol>
 <hr />
@@ -914,7 +914,7 @@ Wait for the installation to conclude and then retry the instructions from Step 
 <hr />
 <ol start="19">
 <li>
-<p>If you have not registered for an AWS account previously, you need to do so now before advancing.</p>
+<p>If you have not registered for an AWS account previously, you need to do so now.</p>
 <ul>
 <li>
 <p>You will need to supply a personal credit card for billing expenses</p>
@@ -986,7 +986,8 @@ Wait for the installation to conclude and then retry the instructions from Step 
 <ol start="25">
 <li>
 <p>Drill down into the <strong>Access Keys</strong> category and click the <strong>Create Access Key</strong> button located below the (empty) table.</p>
-<p><a class="glightbox" href="../_attachments/figure30.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure30.png" width="600" /></a></p>
+<p><br/>
+<a class="glightbox" href="../_attachments/figure30.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure30.png" width="600" /></a></p>
 </li>
 </ol>
 <hr />
@@ -995,10 +996,10 @@ Wait for the installation to conclude and then retry the instructions from Step 
 <p>A secret access key will be created and the web browser will reload to show you details about that key. <strong>Record this information</strong> to a notepad. Details about the secret access key can only be viewed or downloaded at the time the key is created (now). It cannot be recovered afterwards. However, if you lose your key details, all is not lost — you can always create a new secret access key at a later time.</p>
 <ul>
 <li>
-<p>Record the <code>Access Key</code>, which will be used to replace the <code>&lt;PLACEHOLDER&gt;</code> value assigned to <code>aws_access_key</code> in <strong>Step 2</strong> and <strong>Step 15</strong> of this lab guide.</p>
+<p>Record the <code>Access Key</code>, which will be used to replace the <code>&lt;PLACEHOLDER&gt;</code> value assigned to <code>aws_access_key</code> in <em>Step 2</em> and <em>Step 15</em> of this lab guide.</p>
 </li>
 <li>
-<p>Record the <code>Secret Access Key</code>, which will replace the <code>&lt;PLACEHOLDER&gt;</code> value assigned to <code>aws_secret_key</code> in <strong>Step 2</strong> and <strong>Step 15</strong> of this lab guide.</p>
+<p>Record the <code>Secret Access Key</code>, which will replace the <code>&lt;PLACEHOLDER&gt;</code> value assigned to <code>aws_secret_key</code> in <em>Step 2</em> and <em>Step 15</em> of this lab guide.</p>
 </li>
 </ul>
 </li>
@@ -1083,10 +1084,10 @@ Wait for the installation to conclude and then retry the instructions from Step 
 <p>Update the value of <code>ansible_ssh_private_key_file</code> in the following locations:</p>
 <ul>
 <li>
-<p>Line 58 of the <code>TEMPLATE.yml</code> Playbook</p>
+<p><strong>Line 58</strong> of the <code>TEMPLATE.yml</code> Playbook</p>
 </li>
 <li>
-<p>Line 113 of the <code>SOLUTION.yml</code> Playbook</p>
+<p><strong>Line 113</strong> of the <code>SOLUTION.yml</code> Playbook</p>
 </li>
 </ul>
 </div>
@@ -1156,7 +1157,7 @@ Wait for the installation to conclude and then retry the instructions from Step 
 <hr />
 <ol start="37">
 <li>
-<p>If your web browser loads the quick-start page for WordPress, you have successfully deployed the application and its supporting EC2 environment — entirely using Generative AI and Ansible automation. <strong>Well done!</strong></p>
+<p>If your web browser loads the quick-start page for WordPress, you have successfully deployed the application and its supporting EC2 environment — entirely using generative AI and Ansible automation. <strong>Well done!</strong></p>
 <p><br/>
 <a class="glightbox" href="../_attachments/figure34.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/figure34.png" width="600" /></a></p>
 </li>
@@ -1164,11 +1165,11 @@ Wait for the installation to conclude and then retry the instructions from Step 
 <hr />
 <h1 id="cleaning-up-and-conclusion">Cleaning up and conclusion</h1>
 <h1 id="_4"></h1>
-<p>Once you are ready to retire your environment, you will need to return to the AWS Dashboard to terminate the EC2 instance and hosted WordPress application.</p>
 <div class="admonition warning">
 <p class="admonition-title">COSTS</p>
 <p>It is essential that you terminate and deprovision the EC2 instance at the conclusion of the hands on lab. Otherwise, your personal AWS account will continue to be billed for as long as the resources are provisioned.</p>
 </div>
+<p>Once you are ready to retire your environment, you will need to return to the AWS Dashboard to terminate the EC2 instance and hosted WordPress application.</p>
 <hr />
 <ol start="38">
 <li>You can monitor your Amazon EC2 instance from the EC2 dashboard. At the top of the page, locate the <strong>Resources</strong> table and drill down into the <strong>Instances (running)</strong> tab.</li>
@@ -1195,7 +1196,7 @@ Wait for the installation to conclude and then retry the instructions from Step 
 </ol>
 <hr />
 <ol start="42">
-<li>It is recommended that you delete all of the <strong>Security Groups</strong> (3 total) and <strong>Key Pairs</strong> (1 total) associated with the EC2 instance. To do so, return to the EC2 Dashboard and follow a similar procedure to Steps 38-41.</li>
+<li>It is recommended that you delete all of the <strong>Security Groups</strong> (3 total) and <strong>Key Pairs</strong> (1 total) associated with the EC2 instance. To do so, return to the EC2 Dashboard and follow a similar procedure to <em>Steps 38-41</em>.</li>
 </ol>
 <hr />
 <ol start="43">
