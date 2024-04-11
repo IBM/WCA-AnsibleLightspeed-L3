@@ -807,7 +807,7 @@
 <hr />
 <ol start="12">
 <li>
-<p>Let's use your organization's private Ansible data set to customize the <em>IBM Granite</em> base model: a process known as <strong>model tuning</strong>. To do so, you will need to provide a pointer to the customized <em>Model ID</em> within VS Code, which will override the standard WCA (<em>IBM Granite</em>) base model recommendations.</p>
+<p>To override the <em>IBM Granite</em> base model recommendations, you must provide a pointer to a customized <em>Model ID</em> (prepared and hosted earlier on WCA) using the VS Code extension.</p>
 <div class="admonition warning">
 <p><strong>Model ID</strong>:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>9abec313-9543-4aa7-b385-47fb6df7800e&lt;|sepofid|&gt;602a23bb-d2cc-42be-a52b-5941f03f65c2
@@ -835,9 +835,52 @@
 </li>
 </ol>
 <hr />
-<p>With the tuned model, WCA will recommend code using modules, functions, and other details specific to your organization's private IT environment.
-Let's regenerate code recommendations for the same task on <strong>Line 6</strong> to study how WCA returns new and improved content recommendations.</p>
-<p>Using the tuned Model ID, WCA has returned a recommendation to use the <code>ibm.cloudcollection.ibm_container_cluster</code> Module for the IBM Cloud, instead of the standard <code>ansible.builtin.command</code> Module from <em>Step 11</em>.</p>
+<ol start="13">
+<li>
+<p>With the tuned model, WCA will recommend code using modules, functions, and other details specific to your organization's private IT environment.</p>
+<ul>
+<li>
+<p>Return to the <code>tuning-example.yml</code> Playbook from <em>Step 10</em> and <span class="keys"><kbd class="key-delete">Del</kbd></span> the code recommendations generated in <em>Step 11</em></p>
+</li>
+<li>
+<p>Regenerate code recommendations for the task on <strong>Line 6</strong> by hitting <span class="keys"><kbd class="key-enter">Enter</kbd></span> and then <span class="keys"><kbd class="key-tab">Tab</kbd></span></p>
+</li>
+<li>
+<p>Observe how the tuned <em>Model ID</em> has modified WCA's code recommendations by toggling between the <code>TUNED MODEL</code> and <code>STANDARD MODEL</code> tabs below</p>
+</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">TUNED MODEL</label><label for="__tabbed_7_2">STANDARD MODEL</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
+<span class="normal"><a href="#__codelineno-13-2">2</a></span>
+<span class="normal"><a href="#__codelineno-13-3">3</a></span>
+<span class="normal"><a href="#__codelineno-13-4">4</a></span>
+<span class="normal"><a href="#__codelineno-13-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file where src equals httpd.j2 and dest equals httpd.config and mode equals 0644</span><span class="w"></span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="w">  </span><span class="nt">ansible.builtin.template</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="w">    </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">httpd.j2</span><span class="w"></span>
+<a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="w">    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/httpd/conf/httpd.conf</span><span class="w"></span>
+<a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="w">    </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;0644&#39;</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
+<span class="normal"><a href="#__codelineno-14-2">2</a></span>
+<span class="normal"><a href="#__codelineno-14-3">3</a></span>
+<span class="normal"><a href="#__codelineno-14-4">4</a></span>
+<span class="normal"><a href="#__codelineno-14-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file</span><span class="w"></span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="w">  </span><span class="nt">ansible.builtin.template</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="w">    </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/srv/httpd.j2</span><span class="w"></span>
+<a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="w">    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/httpd.config</span><span class="w"></span>
+<a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="w">    </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0644&quot;</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</li>
+</ol>
+<hr />
+<p>Using the tuned <em>Model ID</em>, WCA has returned a recommendation to use the <code>ibm.cloudcollection.ibm_container_cluster</code> Module for the IBM Cloud, instead of the standard <code>ansible.builtin.command</code> Module from <em>Step 11</em>. This more accurately conforms to the organization's Ansible automation standards and requirements.</p>
 <hr />
 <h1 id="_3"></h1>
 <h1 id="next-steps">Next steps</h1>
