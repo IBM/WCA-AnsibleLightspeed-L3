@@ -340,17 +340,17 @@
 <p>The iterative process that you will go through in this module can be viewed in three different ways:</p>
 <ol>
 <li>
-<p>On the one hand, it shows the sensitivity of generative AI models to even the most nuanced change in <strong>natural language prompts</strong> — for good or bad. generative AI can produce tremendous work and that output is further guided along by best practices built-in from Red Hat and IBM. But in the end, the AI can only infer user intent from the natural language descriptions supplied to it. The more clearly a user defines their Task descriptions and intent, the more likely that WCA will correctly generate code which mirrors that intent; conversely, the less precise those descriptions are, the more likely WCA will misinterpret and miss the mark. Precision <em>is</em> key to the disambiguation of natural language prompts.</p>
+<p>On the one hand, it shows the sensitivity of generative AI models to even the most nuanced change in <strong>natural language prompts</strong> — for good or bad. Generative AI can produce tremendous work and that output is further guided along by best practices built-in from Red Hat and IBM. But in the end, the AI can only infer user intent from the natural language descriptions supplied to it. The more clearly a user defines their Task descriptions and intent, the more likely that WCA will correctly generate code which mirrors that intent; conversely, the less precise those descriptions are, the more likely WCA will misinterpret and miss the mark. Precision <em>is</em> key for the disambiguation of natural language prompts.</p>
 </li>
 <li>
 <p>Human feedback and <strong>humans-in-the-loop</strong> are essential to these formative stages of generative AI. As offerings like WCA mature, the natural language processing capabilities of the service will continue to be refined and improved. Additional packages, functions, and training data from Ansible Galaxy (as well as other sources) are continuously being added to the product's Foundation Models, which will in turn continually improve the AI-generated code recommendations made to users. Feedback can be directly supplied via the WCA extension for VS Code and <a href="https://docs.ai.ansible.redhat.com/contributing/#ansible-galaxy" target="_blank">additional ways to support model training are documented online</a>.</p>
 </li>
 <li>
-<p>By using the <strong>Model Tuning</strong> capabilities built into <em>IBM watsonx Code Assistant</em> organizations and users are able to customize the recommendations produced by generative AI, tuning a domain-specific LLM with the organization's <em>own</em> Ansible Playbooks. The content and code recommendations that WCA suggests can be tailored to an organization's standards, best practices, and programming styles. These capabilities will be explored later in this module.</p>
+<p>By using the <strong>Model Tuning</strong> capabilities built into <em>IBM watsonx Code Assistant</em>, organizations and users are able to customize the recommendations produced by generative AI, tuning a domain-specific LLM with the organization's <em>own</em> Ansible Playbooks. The content and code recommendations that WCA suggests can be tailored to an organization's standards, best practices, and programming styles. These capabilities will be explored later in this module.</p>
 </li>
 </ol>
 </div>
-<p>The take-away here is that <strong>your results may vary</strong>: they may differ from the <code>SOLUTION</code> code presented in the examples below. Keep this in mind as you work through the examples in this section and understand that it is not a bug, but rather a consequence of working with generative AI in general.</p>
+<p>The take-away here is that <strong>your results may vary</strong>: they may differ from the <code>SOLUTION</code> code presented in the steps below. Keep this in mind as you work through the examples in this section and understand that it is not a bug, but rather a consequence of working with generative AI in general.</p>
 <p>The precision with which a Playbook author describes the automation Task in natural language will determine the accuracy and effectiveness of WCA's generated code recommendations.</p>
 <hr />
 <ol>
@@ -526,13 +526,13 @@
 <p>As you can see, the <code>AI-GENERATED CODE</code> recommendations satisfy some of the requests, but also miss the mark in a few areas. When compared to the <code>SOLUTION CODE</code> tab:</p>
 <ul>
 <li>
-<p>Both tabs appropriately utilize the <code>ansible.builtin.template:</code> Collectio, which for this request is absolutely correct. <em>Interesting fact</em>: earlier (circa 2023) versions of WCA produced code recommendations that <em>did not</em> align with the solution, for the same task description. Instead, the recommendation was for the <code>ansible.builtin.copy:</code> Collection to invoke <code>content: "{{ _content_ }}"</code>, which is not correct. This speaks to the continuously improving capabilities of the WCA and IBM Granite models.</p>
+<p>Both tabs appropriately utilize the <code>ansible.builtin.template</code> Module, which for this request is absolutely correct. <strong>Interesting fact:</strong> earlier (circa 2023) versions of WCA produced code recommendations for the <em>same task</em> as this one, which <em>did not</em> align with the expected solution. Instead, the recommendation was for the <code>ansible.builtin.copy:</code> Module to invoke <code>content: "{{ _content_ }}"</code>, which is not correct. This speaks to the continuously improving capabilities of the WCA and IBM Granite models.</p>
 </li>
 <li>
-<p><code>AI-GENERATED CODE</code> recommended including statements that explicitly set <code>owner: root</code> and <code>group: root</code>, which are both appropriate when permissions are set to <code>mode: '0644</code>. While not strictly necessary, these additional statements arguably are an <em>improvement</em> over the <code>SOLUTION CODE</code> results. It's also worth noting that the request to write the apache config file did not explicitly request <code>mode: '0644</code> in the natural language description, but WCA nevertheless recommended it as this is a best practice for deploying Apache webservers.</p>
+<p><code>AI-GENERATED CODE</code> recommended including statements that explicitly set <code>owner: root</code> and <code>group: root</code>, which are both appropriate when permissions are set to <code>mode: '0644'</code>. While not strictly necessary, these additional statements arguably are an <em>improvement</em> over the <code>SOLUTION CODE</code> results. It's also worth noting that the request to write the apache config file did not explicitly request <code>mode: '0644'</code> in the natural language description, but WCA nevertheless recommended it (post-processing) as this is a best practice for deploying Apache webservers.</p>
 </li>
 <li>
-<p>The <code>src:</code> and <code>dest:</code> attributes are not in agreement across the <code>AI-GENERATED CODE</code> and <code>SOLUTION CODE</code> tabs. This is an area for improvement. The natural language description wasn't precise about these details; therefore, this is an opportunity where more detailed and verbose instructions could better steer the recommendations WCA returns back with. </p>
+<p>The <code>src</code> and <code>dest</code> variables are not in agreement across the <code>AI-GENERATED CODE</code> and <code>SOLUTION CODE</code> tabs. This is an area for improvement. The natural language description wasn't precise about these details; therefore, this is an opportunity where more detailed and verbose instructions could better steer the recommendations WCA returns back with. </p>
 </li>
 </ul>
 <div class="admonition warning">
@@ -544,7 +544,7 @@
 <ol start="6">
 <li>
 <p>Delete the WCA-suggested lines of code from <em>Step 4</em> from the Playbook.</p>
-<p>Re-write the description on <strong>Line 12</strong> to the following code block, then press <span class="keys"><kbd class="key-enter">Enter</kbd></span> and <span class="keys"><kbd class="key-tab">Tab</kbd></span> to accept the new WCA code recommendations. Take note of the much more precise language used to describe the <code>src:</code> and <code>dest:</code> attributes.</p>
+<p>Re-write the description on <strong>Line 12</strong> to the following code block, then press <span class="keys"><kbd class="key-enter">Enter</kbd></span> and <span class="keys"><kbd class="key-tab">Tab</kbd></span> to accept the new WCA code recommendations. Take note of the much more precise language used to describe the <code>src</code> and <code>dest</code> variables.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file where src equals httpd.j2 and dest equals httpd.config</span><span class="w"></span>
 </code></pre></div>
 </li>
@@ -601,7 +601,7 @@
 <p>Delete the WCA-suggested lines of code from <em>Step 6</em> from the Playbook.</p>
 </li>
 <li>
-<p>Re-write the description on <strong>Line 12</strong> to the following code block, then press <span class="keys"><kbd class="key-enter">Enter</kbd></span> and <span class="keys"><kbd class="key-tab">Tab</kbd></span> to accept the new WCA code recommendations. Take note of the much more precise language used to describe the <code>mode:</code> attribute.</p>
+<p>Re-write the description on <strong>Line 12</strong> to the following code block, then press <span class="keys"><kbd class="key-enter">Enter</kbd></span> and <span class="keys"><kbd class="key-tab">Tab</kbd></span> to accept the new WCA code recommendations. Take note of the much more precise language used to describe the <code>mode</code> variable.</p>
 </li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file where src equals httpd.j2 and dest equals httpd.config and mode equals 0644</span><span class="w"></span>
@@ -653,8 +653,8 @@
 <hr />
 <h1 id="_2"></h1>
 <h1 id="model-customization">Model customization</h1>
-<p>Since every organization is different, WCA allows users to customize the AI model output to your organization's unique Ansible Playbooks. This allows for personalized code recommendations that are a better fit to your business' unique needs and more accurate to programming standards set within your organization.</p>
-<p>In this scenario, your organization has its own set of Ansible Playbooks that leverage your preferred public cloud provider that uses specific Ansible Modules to manage OpenShift clusters.</p>
+<p>Since every organization is different, WCA allows users to customize the AI model output to your organization's unique Ansible Playbooks. This allows for personalized code recommendations that are a better fit to your business' unique needs and more reflective of the programming standards set within your organization.</p>
+<p>In this scenario, your organization has its own set of Ansible Playbooks that leverage your preferred cloud provider, that uses specific Ansible Modules to manage OpenShift clusters.</p>
 <hr />
 <ol start="10">
 <li>
@@ -704,7 +704,7 @@
 <hr />
 <ol start="11">
 <li>
-<p>Before performing any model tuning tasks, try generating code recommendations for the OpenShift cluster creation task by placing your cursor at the end of <strong>Line 6</strong>, hitting <span class="keys"><kbd class="key-enter">Enter</kbd></span>, and then accepting the default recommendations by hitting <span class="keys"><kbd class="key-tab">Tab</kbd></span>. The resulting code recommendations— displayed below —represent the standard, unmodified output from WCA's <em>IBM Granite</em> models.</p>
+<p>Before performing any model tuning tasks, try generating code recommendations for the OpenShift cluster creation task by placing your cursor at the end of <strong>Line 6</strong>, hitting <span class="keys"><kbd class="key-enter">Enter</kbd></span>, and then accepting the default recommendations by hitting <span class="keys"><kbd class="key-tab">Tab</kbd></span>. The resulting code recommendations— displayed below —represent the standard, unmodified output from WCA's <em>IBM Granite</em> base models.</p>
 <ul>
 <li>
 <p>When using the standard <em>IBM Granite</em> model recommendations, it recommends making use of the <code>ansible.builtin.command</code> Ansible Module — which is a standard, best-practice way to perform these types of deployments.</p>
@@ -741,7 +741,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">DATA PREPARATION &amp; MODEL TRAINING</p>
-<p>Given the scope and time available for this hands-on training, <strong>participants will not be manually creating the training data or training models themselves.</strong> Instead, you will utilize a prepared customized model (<code>Model ID</code>) and experiment in <em>Step 12</em> onwards with how the customized model impacts WCA's code recommendations.</p>
+<p>Given the scope and time available for this hands-on training, <strong>participants will not be manually creating the training data or training models themselves.</strong> Instead, you will utilize a prepared customized model (<code>Model ID</code>) and experiment from <em>Step 12</em> and onwards with how the tuned <code>Model ID</code> impacts WCA's code recommendations.</p>
 <ul>
 <li>
 <p>The process of building Ansible training data and tuning customized models for generative AI is potentially a complex and time-consuming one. </p>
@@ -750,7 +750,7 @@
 <p>For example, the model tuning employed in the steps ahead for the creation of an OpenShift cluster according to an enterprise organization's specific standards requires approximately <strong>4 hours</strong> to train and generate a customized AI model.</p>
 </li>
 </ul>
-<p>In preparation for model tuning, an organization or user can transform their existing Playbooks into training data for <strong>IBM watsonx</strong> using the open-source <strong><a href="https://github.com/ansible/ansible-content-parser" target="_blank">Ansible Parser Tool</a></strong>. The tooling analyzes Ansible Playbooks and generates a single <strong>JSONL</strong> (<code>ftdata.jsonl</code> formatted) file that can be uploaded to WCA's model tuning studio for developing customized AI models.</p>
+<p>In preparation for model tuning, an organization or user can transform their existing Playbooks into training data for WCA using the open-source <strong><a href="https://github.com/ansible/ansible-content-parser" target="_blank">Ansible Parser Tool</a></strong>. The tooling analyzes Ansible Playbooks and generates a single <strong>JSONL</strong> (<code>ftdata.jsonl</code> formatted) file that can be uploaded to WCA's model tuning studio for developing customized AI models.</p>
 <ul>
 <li>
 <p>The process of calibrating and running the Ansible Parser Tool is time-consuming and potentially quite complex, depending on the scope of Playbooks that an organization wishes to analyze and prepare for model tuning. This falls outside the scope of the hands-on material for this training.</p>
@@ -759,7 +759,7 @@
 <p>For the purposes of demonstration, a preconfigured <code>openshift-tune-micro.jsonl</code> was used for the model tuning example.</p>
 </li>
 </ul>
-<p>With the Ansible training data prepared, the <em>IBM watsonx Code Assistant</em> on IBM Cloud service was configured to execute a new model tuning experiment:</p>
+<p>With the Ansible training data prepared, the <em>IBM watsonx Code Assistant</em> on IBM Cloud service was configured to execute a new model tuning experiment.</p>
 <ul>
 <li>
 <p>WCA provides a graphical user experience<sup>[A]</sup> to streamline the model tuning and customization process</p>
@@ -774,7 +774,7 @@
 <p>A summary of metrics— including parameters for sampling and Ansible modules —are displayed within the model tuning wizard before <strong>Start tuning</strong><sup>[E]</sup> is selected to kick off the model tuning operating</p>
 </li>
 <li>
-<p>After the tuning operation has ended, a training loss graph reveals how accurate the model's predictions are over the training data set over the course of multiple tuning cycles</p>
+<p>After the tuning operation has ended, a training loss graph reveals how accurate the model's predictions are over the training data set, across multiple tuning cycles</p>
 </li>
 <li>
 <p>As the number of tuning cycles increase, the training loss rating will tend to decrease</p>

@@ -334,12 +334,12 @@
 <h1 id="content-source-matching-and-attribution">Content source matching and attribution</h1>
 <h1 id="_1"></h1>
 <p>At this point, you should now be well acquianted with <em>Ansible Tasks</em> and <em>Playbooks</em>. Ansible Playbooks are comprised of multiple Tasks — which you have been using <em>IBM watsonx Code Assistant's</em> (<strong>WCA</strong>) generative AI capabilities to define and expand upon.</p>
-<p>If a Playbook contains multiple "tasks" that together achieve some singular goal or purpose, you may want to group these tasks into a single reusable unit. for example, a string of "tasks" might provision infrastructure for separate development, test, and production clusters from a major cloud vendor. Patterns for automating endpoints from these vendors can be codified into <strong>Ansible Modules</strong>, which are supported by Red Hat and the Ansible community writ large.</p>
+<p>If a Playbook contains multiple "tasks" that together achieve some singular goal or purpose, you may want to group these tasks into a single reusable unit. For example, a string of "tasks" might provision infrastructure for separate development, test, and production clusters from a major cloud vendor. Patterns for automating endpoints from these vendors can be codified into <strong>Ansible Modules</strong>, which are supported by Red Hat and the Ansible community writ large.</p>
 <p>And finally, collections of Playbooks and Modules can be organized into "blueprints" for automation tasks that are frequently used together to achieve some goal; a goal which you might want to make repeatable or shareable with other teams within your business. These blueprints are referred to as <strong>Ansible Roles</strong>. They provide a structured way to organize tasks, templates, files, and variables, and are available to drop directly into Ansible Playbooks. Roles make it possible to easily manage and set up complex automation tasks, essentially providing a rubric to streamline automation projects.</p>
 <h1 id="_2"></h1>
 <h1 id="collectively-these-playbooks-modules-and-roles-form-a-comprehensive-ecosystem-of-business-and-community-driven-support-for-patterning-automation-to-work-with-the-broadest-range-of-vendors-technologies-and-clouds">Collectively, these Playbooks, Modules, and Roles form a <strong>comprehensive ecosystem of business and community-driven support</strong> for patterning automation to work with the broadest range of vendors, technologies, and clouds.</h1>
 <h1 id="_3"></h1>
-<p><strong><a href="https://galaxy.ansible.com" target="_blank">Ansible Galaxy</a></strong> is a Red Hat-curated, community-driven repository for <em>Ansible Roles</em>. Via communities such as Galaxy, thousands of Roles are available for Ansible users to use within their own Playbooks. Ansible Galaxy is also central to how generative AI code recommendations from WCA are attributed back to original content sources and authors.</p>
+<p><strong><a href="https://galaxy.ansible.com" target="_blank">Ansible Galaxy</a></strong> is a Red Hat-curated, community-driven repository for <em>Ansible Roles</em>. Via communities such as Galaxy, thousands of Roles are available for Ansible users to leverage within their own Playbooks. Ansible Galaxy is also key to how generative AI code recommendations from WCA are attributed back to original content sources and authors.</p>
 <hr />
 <p><a class="glightbox" href="../_attachments/figure38.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/figure38.png" /></a></p>
 <hr />
@@ -427,13 +427,13 @@
 <p>You will need to <strong>accept</strong> the AI-generated code suggestions (using the <span class="keys"><kbd class="key-tab">Tab</kbd></span> key) <em>before</em> the <code>Ansible</code> content source matching tab will provide details about the code's origins.</p>
 </li>
 </ul>
-</li>
-</ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install postgresql-server</span><span class="w"></span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">ansible.builtin.package</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">ansible.builtin.package</span><span class="p">:</span><span class="w"></span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgresql-server</span><span class="w"></span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span><span class="w"></span>
 </code></pre></div>
+</li>
+</ol>
 <hr />
 <ol start="5">
 <li>
@@ -457,7 +457,7 @@
 <h1 id="_5"></h1>
 <hr />
 <p><a class="glightbox" href="../_attachments/figure39.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/figure39.png" /></a></p>
-<p>Another element of code generation that WCA excels at is understanding <strong>context</strong> within the Playbook it is executing against. If a variable or attribute is defined earlier within that Playbook, it will be recalled and referenced— where it makes sense to do so —in the generation of subsequent lines of code. You may have already noticed these <em>post-processing capabilities</em>* in your experimentations with WCA-generated code suggestions.</p>
+<p>Another element of code generation that WCA excels at is understanding <strong>context</strong> within the Playbook it is executing against. If a variable or attribute is defined earlier within that Playbook, it will be recalled and referenced— where it makes sense to do so —in the generation of subsequent lines of code. You may have already noticed these <strong>post-processing capabilities</strong> in your experimentations with WCA-generated code suggestions.</p>
 <p>However, one way to make this feature quite obvious is to take a previously-generated block of Ansible Task code, update the value assigned to a named variable <em>earlier</em> in the Playbook, and then regenerate the Task code block. In theory, the newly-generated Task block will use the updated variable name (and differ from how the code block was originally generated).</p>
 <hr />
 <ol start="7">
@@ -623,7 +623,7 @@
 <p>The first round of WCA-generated code for the task on <strong>Line 26</strong> produces a code block<sup>[A]</sup> with a <code>register: subnet_info</code> line, the result of which is to assign this VPC definition to a variable <code>subnet_info</code>. Nothing terribly complicated or surprising about that.</p>
 </li>
 <li>
-<p>The WCA-generated code that follows for the task on <strong>Line 38</strong> (previously <em>Line 33</em> in the raw template) recommends a code block<sup>[B]</sup> with <code>vpc_subnet_id: "{ { subnet_info.subnets[0].subnet_id } }"</code> as the value associated with the VPC's subnet ID. Critically, the variable <code>subnet_info</code> that was generated in the previous Task is also referenced in the second Task. This demonstrates the contextual awareness of WCA in action.</p>
+<p>The WCA-generated code that follows for the task on <strong>Line 38</strong> (previously <em>Line 33</em> in the raw template) recommends a code block<sup>[B]</sup> with <code>vpc_subnet_id: "{ { subnet_info.subnets[0].subnet_id } }"</code> as the value associated with the VPC's subnet ID. Critically, the variable <code>subnet_info</code> that was generated in the previous Task<sup>[A]</sup> is also referenced in the second Task. This demonstrates the contextual awareness of WCA in action.</p>
 </li>
 </ul>
 <p><br/>
