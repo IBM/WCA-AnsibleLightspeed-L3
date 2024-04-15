@@ -590,7 +590,7 @@
 <h1 id="_3"></h1>
 <h1 id="generating-code-for-multi-task-ansible-operations">Generating code for multi-task Ansible operations</h1>
 <p>Up to this point, we've kept a narrow aperture on AI-generated recommendations for single tasks — examining and experimenting with generating Ansible code task by task, one at a time. However, a powerful WCA feature is the ability to combine multiple task descriptions into a single natural language prompt; in turn, WCA is able to parse that instruction, decompose the instruction into discrete Ansible Task parts, and return a complete code recommendation for achieving the author's intended goal.</p>
-<p>Synatically, multiple tasks are combined into a single natural language expression through the use of <strong>ampersand</strong> (<code>%</code>) characters. Simply write out all the automation task descriptions on a single line, separating each description with a <code>%</code> character. The line must also <em>begin</em> with a <code>#</code> character for reasons that will be explained shortly.</p>
+<p>Syntactically, multiple tasks are combined into a single natural language expression through the use of <strong>ampersand</strong> (<code>&amp;</code>) characters. Simply write out all the automation task descriptions on a single line, separating each description with a <code>&amp;</code> character. The line must also <em>begin</em> with a <code>#</code> character for reasons that will be explained shortly.</p>
 <hr />
 <ol start="7">
 <li>
@@ -600,7 +600,7 @@
 <p>The contents of this Playbook should look familiar to you already: it is essentially the same Playbook examined in <em>Steps 1-6</em> (<code>install_cockpit_single-task.yml</code>), re-written in an equivalent multi-task expression</p>
 </li>
 <li>
-<p>Each of the Task descriptions from the previous Playbook have been consolidated into a single description on <strong>Line 12</strong>, separated by <code>%</code> characters</p>
+<p>Each of the Task descriptions from the previous Playbook have been consolidated into a single description on <strong>Line 12</strong>, separated by <code>&amp;</code> characters</p>
 </li>
 </ul>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">~/Documents/ansible-wca-demo-kit/install and configure Cockpit using Ansible/install_cockpit_multi-task.yml</label></div>
@@ -643,8 +643,8 @@
 <li><em>Execution</em>: In order to generate AI code recommendations for multi-task descriptions, <strong>Line 12</strong> must <em>stay commented out</em> (the <code>#</code> needs to remain at the start of the line)</li>
 </ul>
 <p><br/></p>
-<p>What is the rationale behind this? When WCA's generative AI capabilities parse <strong>Line 12</strong>, its output will include multiple <code>-name:</code> tasks, each containing potentially multiple lines of instructions, based on how many <code>%</code>-delineated task descriptions are included on the line.</p>
-<p>Therefore, the way in which the code generation step is executed on <strong>Line 12</strong> is a consequence of the formatting decision. Execution of a code generation step on a commented-out (<code>#</code>) line containing <code>%</code> delineators is recognized by WCA as a unique case that will be acted upon as a multi-task statement.</p>
+<p>What is the rationale behind this? When WCA's generative AI capabilities parse <strong>Line 12</strong>, its output will include multiple <code>-name:</code> tasks, each containing potentially multiple lines of instructions, based on how many <code>&amp;</code>-delineated task descriptions are included on the line.</p>
+<p>Therefore, the way in which the code generation step is executed on <strong>Line 12</strong> is a consequence of the formatting decision. Execution of a code generation step on a commented-out (<code>#</code>) line containing <code>&amp;</code> delineators is recognized by WCA as a unique case that will be acted upon as a multi-task statement.</p>
 </li>
 </ol>
 <hr />
