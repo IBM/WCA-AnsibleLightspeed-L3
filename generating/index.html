@@ -335,7 +335,7 @@
 <h1 id="_1"></h1>
 <p>An <strong>Ansible Task</strong> is a statement in Ansible's automation script (the YAML-based Playbooks you will be working with) that declares a single action to be executed. This might be installing a package, copying a file, or shutting down a service on a remote machine. Each <em>Task</em> represents an idempotent operation (an action that can be repeated multiple times and deliver the same result every time) that aligns the remote managed node to the specified state. Idempotent operations also ensure consistency across multiple executions, guaranteeing the same steps are taken on each execution of the task.</p>
 <p>At the time of publication, <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> (<strong>WCA</strong>) will only generate code for <strong>Ansible Tasks</strong>, including both <em>single task</em> and <em>multi-task</em> automation.</p>
-<p>Once you have learned the fundamentals of generating Task code blocks, you'll be ready to shape and tailor the AI-generated code recommendations using WCA's model tuning capabilities.</p>
+<p>After you have learned the fundamentals of generating Ansible Task code blocks, you'll be ready to shape and tailor the AI-generated code recommendations using WCA's model tuning capabilities.</p>
 <hr />
 <p><a class="glightbox" href="../_attachments/lightspeed.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/lightspeed.gif" /></a></p>
 <hr />
@@ -461,7 +461,7 @@
 </code></pre></div>
 <p>Pay attention to the indentation and characters used on <strong>Line 15</strong>, which in sequence from left to right are as follows:</p>
 <ul>
-<li>begins with a <span class="keys"><kbd class="key-tab">Tab</kbd></span> indentation</li>
+<li>begins with <span class="keys"><kbd class="key-tab">Tab</kbd></span> (or <span class="keys"><kbd class="key-space">Space</kbd></span> whitespaces) for indentation</li>
 <li>a <code>#</code> character to "comment out" the line contents</li>
 <li>a whitespace <span class="keys"><kbd class="key-space">Space</kbd></span> character</li>
 <li><code>- name:</code> which signifies the start of a Task definition</li>
@@ -469,7 +469,7 @@
 </ul>
 <div class="admonition note">
 <p class="admonition-title">INDENTATION LEVELS AND WHITESPACE</p>
-<p>Similarly to Python, Ansible and YAML-based Playbooks are very sensitive to whitespacing and indentation. Indentations (such as the <span class="keys"><kbd class="key-tab">Tab</kbd></span> in this example) denote different hierarchies and code nesting levels within the YAML structure.</p>
+<p>Similar to Python, Ansible and YAML-based Playbooks are very sensitive to whitespacing and indentation. Indentations (such as the <span class="keys"><kbd class="key-tab">Tab</kbd></span> in this example) denote different hierarchies and code nesting levels within the YAML structure.</p>
 <p>You may use <span class="keys"><kbd class="key-space">Space</kbd></span> instead of <span class="keys"><kbd class="key-tab">Tab</kbd></span> if you prefer, but be sure to <strong>use indentations consistently</strong>: choose to use either <span class="keys"><kbd class="key-tab">Tab</kbd></span> or <span class="keys"><kbd class="key-space">Space</kbd></span> for indenting lines of code, and do not interchange between the two.</p>
 </div>
 </li>

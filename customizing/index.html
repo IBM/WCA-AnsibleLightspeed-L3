@@ -351,7 +351,7 @@
 </ol>
 </div>
 <p>The take-away here is that <strong>your results may vary</strong>: they may differ from the <code>SOLUTION</code> code presented in the steps below. Keep this in mind as you work through the examples in this section and understand that it is not a bug, but rather a consequence of working with generative AI in general.</p>
-<p>The precision with which a Playbook author describes the automation Task in natural language will determine the accuracy and effectiveness of WCA's generated code recommendations.</p>
+<p>The precision with which a Playbook author describes Ansible Tasks in natural language will determine the accuracy and effectiveness of WCA's generated code recommendations.</p>
 <hr />
 <ol>
 <li>
@@ -459,10 +459,10 @@
 <p>The template <code>CUSTOM PLAYBOOK #1</code> contains two sets of tasks:</p>
 <ul>
 <li>
-<p><code>TASK 1</code> (<strong>Lines 5-12</strong>) checks whether or not web server software is up to date and runs the update if necessary</p>
+<p><code>TASK 1</code> (<strong>Lines 5-12</strong>) checks if the web server software is up to date and runs an update if necessary</p>
 </li>
 <li>
-<p><code>TASK 2</code> (<strong>Lines 15-22</strong>) checks whether or not database server software is up to date and runs the update if necessary</p>
+<p><code>TASK 2</code> (<strong>Lines 15-22</strong>) checks if the database server software is up to date and runs an update if necessary</p>
 </li>
 </ul>
 </li>
@@ -544,7 +544,14 @@
 <ol start="6">
 <li>
 <p>Delete the WCA-suggested lines of code from <em>Step 4</em> from the Playbook.</p>
-<p>Re-write the description on <strong>Line 12</strong> to the following code block, then press <span class="keys"><kbd class="key-enter">Enter</kbd></span> and <span class="keys"><kbd class="key-tab">Tab</kbd></span> to accept the new WCA code recommendations. Take note of the much more precise language used to describe the <code>src</code> and <code>dest</code> variables.</p>
+<ul>
+<li>
+<p>Rewrite the description on <strong>Line 12</strong> to the following code block, then press <span class="keys"><kbd class="key-enter">Enter</kbd></span> and <span class="keys"><kbd class="key-tab">Tab</kbd></span> to accept the new WCA code recommendations</p>
+</li>
+<li>
+<p>Take note of the much more precise language used to describe the <code>src</code> and <code>dest</code> variables</p>
+</li>
+</ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Write the apache config file where src equals httpd.j2 and dest equals httpd.config</span><span class="w"></span>
 </code></pre></div>
 </li>
@@ -704,7 +711,7 @@
 <hr />
 <ol start="11">
 <li>
-<p>Before performing any model tuning tasks, try generating code recommendations for the OpenShift cluster creation task by placing your cursor at the end of <strong>Line 6</strong>, hitting <span class="keys"><kbd class="key-enter">Enter</kbd></span>, and then accepting the default recommendations by hitting <span class="keys"><kbd class="key-tab">Tab</kbd></span>. The resulting code recommendations— displayed below —represent the standard, unmodified output from WCA's <em>IBM Granite</em> base models.</p>
+<p>Before performing any model tuning tasks, try generating code recommendations for the OpenShift cluster creation task by placing your cursor at the end of <strong>Line 6</strong>, pressing <span class="keys"><kbd class="key-enter">Enter</kbd></span>, and then accepting the default recommendations by pressing <span class="keys"><kbd class="key-tab">Tab</kbd></span>. The resulting code recommendations— displayed below —represent the standard, unmodified output from WCA's <em>IBM Granite</em> base models.</p>
 <ul>
 <li>
 <p>When using the standard <em>IBM Granite</em> model recommendations, it recommends making use of the <code>ansible.builtin.command</code> Ansible Module — which is a standard, best-practice way to perform these types of deployments.</p>
@@ -750,10 +757,10 @@
 <p>For example, the model tuning employed in the steps ahead for the creation of an OpenShift cluster according to an enterprise organization's specific standards requires approximately <strong>4 hours</strong> to train and generate a customized AI model.</p>
 </li>
 </ul>
-<p>In preparation for model tuning, an organization or user can transform their existing Playbooks into training data for WCA using the open-source <strong><a href="https://github.com/ansible/ansible-content-parser" target="_blank">Ansible Parser Tool</a></strong>. The tooling analyzes Ansible Playbooks and generates a single <strong>JSONL</strong> (<code>ftdata.jsonl</code> formatted) file that can be uploaded to WCA's model tuning studio for developing customized AI models.</p>
+<p>In preparation for model tuning, an organization or user can transform their existing Playbooks into training data for WCA using the open-source <strong><a href="https://github.com/ansible/ansible-content-parser" target="_blank">Ansible Parser Tool</a></strong>. The tool analyzes Ansible Playbooks and generates a single <strong>JSONL</strong> (<code>ftdata.jsonl</code> formatted) file that can be uploaded to WCA's model tuning studio for developing customized AI models.</p>
 <ul>
 <li>
-<p>The process of calibrating and running the Ansible Parser Tool is time-consuming and potentially quite complex, depending on the scope of Playbooks that an organization wishes to analyze and prepare for model tuning. This falls outside the scope of the hands-on material for this training.</p>
+<p>The process of calibrating and running the Ansible Parser Tool is time-consuming and potentially complex, depending on the scope of Playbooks that an organization wishes to analyze and prepare for model tuning. This falls outside the scope of the hands-on material for this training.</p>
 </li>
 <li>
 <p>For the purposes of demonstration, a preconfigured <code>openshift-tune-micro.jsonl</code> was used for the model tuning example.</p>
@@ -910,7 +917,7 @@
 <p>Using the tuned <em>Model ID</em>, WCA has returned a recommendation to use the <code>ibm.cloudcollection.ibm_container_cluster</code> Module for the IBM Cloud, instead of the standard <code>ansible.builtin.command</code> Module from <em>Step 11</em>. This more accurately conforms to the organization's Ansible automation standards and requirements.</p>
 <div class="admonition warning">
 <p class="admonition-title">REMOVE THE CUSTOMIZED <em>MODEL ID</em> WHEN FINISHED</p>
-<p>Remember to <strong>clear</strong> the <code>Ansible &gt; Lightspeed: Model ID Override</code> in the <em>Extension Settings</em> once you have completed <em>Step 13</em>, otherwise all subsequent code generation requests made to WCA will be produced using the customized AI model.</p>
+<p>Remember to <strong>clear</strong> the <code>Ansible &gt; Lightspeed: Model ID Override</code> in the <em>Extension Settings</em> after you have completed <em>Step 13</em>, otherwise all subsequent code generation requests made to WCA will be produced using the customized AI model.</p>
 </div>
 <hr />
 <h1 id="_3"></h1>
