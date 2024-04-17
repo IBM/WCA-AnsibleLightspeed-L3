@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#content-source-matching-and-attribution" class="md-skip">
           Skip to content
         </a>
       
@@ -335,15 +335,15 @@
 <div class="admonition quote">
 <p><strong>Christopher Bienko</strong> (<em>IBM, Learning Content Development</em>) demonstrates key elements of the <code>Content Source Matching and Post-Processing</code> module.</p>
 </div>
-<h1 id="_1"></h1>
+<p><br/></p>
 <h1 id="content-source-matching-and-attribution">Content source matching and attribution</h1>
-<h1 id="_2"></h1>
+<h1 id="_1"></h1>
 <p>At this point, you should now be well acquainted with <em>Ansible Tasks</em> and <em>Playbooks</em>. Ansible Playbooks are comprised of multiple Tasks — which you have been using <em>IBM watsonx Code Assistant's</em> (<strong>WCA</strong>) generative AI capabilities to define and expand upon.</p>
 <p>If a Playbook contains multiple "tasks" that together achieve some singular goal or purpose, you might want to group these tasks into a single reusable unit. For example, a string of "tasks" might provision infrastructure for separate development, test, and production clusters from a major cloud vendor. Patterns for automating endpoints from these vendors can be codified into <strong>Ansible Modules</strong>, which are supported by Red Hat and the Ansible community writ large.</p>
 <p>And finally, collections of Playbooks and Modules can be organized into "blueprints" for automation tasks that are frequently used together to achieve some goal; a goal which you might want to make repeatable or shareable with other teams within your business. These blueprints are referred to as <strong>Ansible Roles</strong>. They provide a structured way to organize tasks, templates, files, and variables, and are available to drop directly into Ansible Playbooks. Roles make it possible to easily manage and set up complex automation tasks, essentially providing a rubric to streamline automation projects.</p>
-<h1 id="_3"></h1>
+<h1 id="_2"></h1>
 <h1 id="collectively-these-playbooks-modules-and-roles-form-a-comprehensive-ecosystem-of-business-and-community-driven-support-for-patterning-automation-to-work-with-the-broadest-range-of-vendors-technologies-and-clouds">Collectively, these Playbooks, Modules, and Roles form a <strong>comprehensive ecosystem of business and community-driven support</strong> for patterning automation to work with the broadest range of vendors, technologies, and clouds.</h1>
-<h1 id="_4"></h1>
+<h1 id="_3"></h1>
 <p><strong><a href="https://galaxy.ansible.com" target="_blank">Ansible Galaxy</a></strong> is a Red Hat-curated, community-driven repository for <em>Ansible Roles</em>. Via communities such as Galaxy, thousands of Roles are available for Ansible users to leverage within their own Playbooks. Ansible Galaxy is also key to how generative AI code recommendations from WCA are attributed back to original content sources and authors.</p>
 <hr />
 <p><a class="glightbox" href="../_attachments/figure38.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/figure38.png" /></a></p>
@@ -457,9 +457,9 @@
 </li>
 </ol>
 <hr />
-<h1 id="_5"></h1>
+<h1 id="_4"></h1>
 <h1 id="post-processing-of-task-descriptions-and-yaml-file-contents-helps-generate-contextually-aware-accurate-ansible-content-suggestions"><strong>Post-processing</strong> of Task descriptions and YAML file contents helps generate contextually aware, accurate Ansible content suggestions.</h1>
-<h1 id="_6"></h1>
+<h1 id="_5"></h1>
 <hr />
 <p><a class="glightbox" href="../_attachments/figure39.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/figure39.png" /></a></p>
 <p>Another element of code generation that WCA excels at is understanding <strong>context</strong> within the Playbook it is executing against. If a variable or attribute is defined earlier within that Playbook, it will be recalled and referenced— where it makes sense to do so —in the generation of subsequent lines of code. You may have already noticed these <strong>post-processing capabilities</strong> in your experimentations with WCA-generated code suggestions.</p>
