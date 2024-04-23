@@ -510,7 +510,25 @@
 </li>
 </ul>
 <details class="quote">
-<summary>ANSIBLE LIGHTSPEED IS MISSING OR CODE RECOMMENDATIONS ARE NOT GENERATING</summary>
+<summary>FAILED TO CONNECT TO THE SERVER / <code>"YOU DON'T HAVE ACCESS TO IBM WATSONX..."</code></summary>
+<p>This warning will occur when the Ansible plugin for VS Code needs to be re-authenticated with WCA. It can occur after an extended period of inactivity or a system restart. For example, if your lab environment is running inside a VM, pausing or restarting the VM may produce this error.</p>
+<p>To re-authenticate:</p>
+<ul>
+<li>
+<p><strong>Sign out</strong> from the <em>VS Code</em> application by clicking the User icon<sup>[A]</sup> in the bottom-left corner of the interface, hover over your username, and then click <strong>Sign Out</strong><sup>[B]</sup></p>
+</li>
+<li>
+<p><strong>If you are running this environment inside a virtual machine (VM)</strong>, closing and restarting the VM <em>will not</em> resolve the issue — you must sign out from the <em>VS Code</em> application, not the VM</p>
+</li>
+<li>
+<p>Once logged out, follow from <em>Step 7</em> of the <em>Setup &amp; Troubleshooting</em> to re-authenticate with WCA</p>
+</li>
+</ul>
+<p><br/>
+<a class="glightbox" href="../_attachments/troubleshooting-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-1.png" width="600" /></a></p>
+</details>
+<details class="quote">
+<summary>CODE RECOMMENDATIONS ARE NOT GENERATING</summary>
 <p>Ansible Lightspeed and WCA will only generate code recommendations for <em>Ansible Playbooks</em> and <em>YAML</em> files. VS Code will typically auto-detect the programming language of the document you're working with, but on occassion you may need to manually specify the language. Even if working with a YAML file, you'll still need to specify the language mode as <code>Ansible</code> for the Lightspeed plugin to engage.</p>
 <p>To set the language mode correctly:</p>
 <ul>
@@ -531,6 +549,21 @@
 <a class="glightbox" href="../_attachments/troubleshooting-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-2.png" width="600" /></a></p>
 <p><a class="glightbox" href="../_attachments/troubleshooting-3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-3.png" width="600" /></a></p>
 </details>
+<details class="quote">
+<summary><code>"ANSIBLE-LINT IS NOT AVAILABLE."</code></summary>
+<p><code>ansible-lint</code> checks Playbooks for practices and behavior that could potentially be improved and can fix some of the most common ones for you. It will constantly check your Ansible syntax as you type and provide recommendations for how to improve it.</p>
+<ul>
+<li>
+<p>You can safely <strong>ignore</strong> this error if it occurs during the lab exercises</p>
+</li>
+<li>
+<p>If you wish to install <code>ansible-lint</code> on your local machine, execute the following instruction within a Terminal console:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python3 -m pip install --upgrade --user ansible-lint
+</code></pre></div>
+<p><a class="glightbox" href="../_attachments/troubleshooting-4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-4.png" width="600" /></a></p>
+</li>
+</ul>
+</details>
 </li>
 </ol>
 <hr />
@@ -540,16 +573,16 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">TEMPLATE</label><label for="__tabbed_2_2">SOLUTION</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># TASK 1</span><span class="w"></span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install cockpit package</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># TASK 1</span><span class="w"></span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install cockpit package</span><span class="w"></span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># TASK 1</span><span class="w"></span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install cockpit package</span><span class="w"></span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">ansible.builtin.package</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cockpit</span><span class="w"></span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># TASK 1</span><span class="w"></span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install cockpit package</span><span class="w"></span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nt">ansible.builtin.package</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cockpit</span><span class="w"></span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span><span class="w"></span>
 </code></pre></div>
 </div>
 </div>
@@ -570,19 +603,19 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">TEMPLATE</label><label for="__tabbed_3_2">SOLUTION</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># TASK 2</span><span class="w"></span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Copy cockpit.conf.j2 to /etc/cockpit</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># TASK 2</span><span class="w"></span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Copy cockpit.conf.j2 to /etc/cockpit</span><span class="w"></span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># TASK 2</span><span class="w"></span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Copy cockpit.conf.j2 to /etc/cockpit</span><span class="w"></span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nt">ansible.builtin.template</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cockpit.conf.j2</span><span class="w"></span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/cockpit/cockpit.conf</span><span class="w"></span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;0644&#39;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># TASK 2</span><span class="w"></span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Copy cockpit.conf.j2 to /etc/cockpit</span><span class="w"></span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nt">ansible.builtin.template</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cockpit.conf.j2</span><span class="w"></span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/cockpit/cockpit.conf</span><span class="w"></span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">    </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">    </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;0644&#39;</span><span class="w"></span>
 </code></pre></div>
 </div>
 </div>
@@ -613,29 +646,29 @@
 <div class="tabbed-block"></div>
 </div>
 </div>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-7-10">10</a></span>
-<span class="normal"><a href="#__codelineno-7-11">11</a></span>
-<span class="normal"><a href="#__codelineno-7-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="nn">---</span><span class="w"></span>
-<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install and configure Cockpit</span><span class="w"></span>
-<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rhel</span><span class="w"></span>
-<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
-<a id="__codelineno-7-5" name="__codelineno-7-5"></a>
-<a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="nt">module_defaults</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="w">    </span><span class="nt">ansible.builtin.service</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
-<a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">started</span><span class="w"></span>
-<a id="__codelineno-7-10" name="__codelineno-7-10"></a>
-<a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="nt">tasks</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="w">    </span><span class="c1"># Install cockpit package &amp; Copy cockpit.conf.j2 to /etc/cockpit &amp; Start and enable service &amp; Wait 15 seconds port 9090</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-8-10">10</a></span>
+<span class="normal"><a href="#__codelineno-8-11">11</a></span>
+<span class="normal"><a href="#__codelineno-8-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="nn">---</span><span class="w"></span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install and configure Cockpit</span><span class="w"></span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rhel</span><span class="w"></span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="nt">module_defaults</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="w">    </span><span class="nt">ansible.builtin.service</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">started</span><span class="w"></span>
+<a id="__codelineno-8-10" name="__codelineno-8-10"></a>
+<a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="nt">tasks</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="w">    </span><span class="c1"># Install cockpit package &amp; Copy cockpit.conf.j2 to /etc/cockpit &amp; Start and enable service &amp; Wait 15 seconds port 9090</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 </li>
 </ol>
@@ -659,72 +692,6 @@
 <p>Compare the <code>MULTI-TASK</code> solution tab with the <code>SINGLE TASK</code> solution (copied over from <em>Step 6</em>). How did the multi-task code generation fare compared to the single task approach?</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">MULTI-TASK</label><label for="__tabbed_5_2">SINGLE TASK</label></div>
 <div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-8-10">10</a></span>
-<span class="normal"><a href="#__codelineno-8-11">11</a></span>
-<span class="normal"><a href="#__codelineno-8-12">12</a></span>
-<span class="normal"><a href="#__codelineno-8-13">13</a></span>
-<span class="normal"><a href="#__codelineno-8-14">14</a></span>
-<span class="normal"><a href="#__codelineno-8-15">15</a></span>
-<span class="normal"><a href="#__codelineno-8-16">16</a></span>
-<span class="normal"><a href="#__codelineno-8-17">17</a></span>
-<span class="normal"><a href="#__codelineno-8-18">18</a></span>
-<span class="normal"><a href="#__codelineno-8-19">19</a></span>
-<span class="normal"><a href="#__codelineno-8-20">20</a></span>
-<span class="normal"><a href="#__codelineno-8-21">21</a></span>
-<span class="normal"><a href="#__codelineno-8-22">22</a></span>
-<span class="normal"><a href="#__codelineno-8-23">23</a></span>
-<span class="normal"><a href="#__codelineno-8-24">24</a></span>
-<span class="normal"><a href="#__codelineno-8-25">25</a></span>
-<span class="normal"><a href="#__codelineno-8-26">26</a></span>
-<span class="normal"><a href="#__codelineno-8-27">27</a></span>
-<span class="normal"><a href="#__codelineno-8-28">28</a></span>
-<span class="normal"><a href="#__codelineno-8-29">29</a></span>
-<span class="normal"><a href="#__codelineno-8-30">30</a></span>
-<span class="normal"><a href="#__codelineno-8-31">31</a></span>
-<span class="normal"><a href="#__codelineno-8-32">32</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="nn">---</span><span class="w"></span>
-<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install and configure Cockpit</span><span class="w"></span>
-<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rhel</span><span class="w"></span>
-<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
-<a id="__codelineno-8-5" name="__codelineno-8-5"></a>
-<a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="nt">module_defaults</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="w">    </span><span class="nt">ansible.builtin.service</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
-<a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">started</span><span class="w"></span>
-<a id="__codelineno-8-10" name="__codelineno-8-10"></a>
-<a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="nt">tasks</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install cockpit package</span><span class="w"></span>
-<a id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="w">    </span><span class="nt">ansible.builtin.package</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cockpit</span><span class="w"></span>
-<a id="__codelineno-8-15" name="__codelineno-8-15"></a><span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span><span class="w"></span>
-<a id="__codelineno-8-16" name="__codelineno-8-16"></a>
-<a id="__codelineno-8-17" name="__codelineno-8-17"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Copy cockpit.conf.j2 to /etc/cockpit</span><span class="w"></span>
-<a id="__codelineno-8-18" name="__codelineno-8-18"></a><span class="w">    </span><span class="nt">ansible.builtin.template</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-8-19" name="__codelineno-8-19"></a><span class="w">        </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cockpit.conf.j2</span><span class="w"></span>
-<a id="__codelineno-8-20" name="__codelineno-8-20"></a><span class="w">        </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/cockpit/cockpit.conf</span><span class="w"></span>
-<a id="__codelineno-8-21" name="__codelineno-8-21"></a><span class="w">        </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
-<a id="__codelineno-8-22" name="__codelineno-8-22"></a><span class="w">        </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
-<a id="__codelineno-8-23" name="__codelineno-8-23"></a><span class="w">        </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;0644&#39;</span><span class="w"></span>
-<a id="__codelineno-8-24" name="__codelineno-8-24"></a>
-<a id="__codelineno-8-25" name="__codelineno-8-25"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Start and enable service</span><span class="w"></span>
-<a id="__codelineno-8-26" name="__codelineno-8-26"></a><span class="w">    </span><span class="nt">ansible.builtin.service</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-8-27" name="__codelineno-8-27"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cockpit.socket</span><span class="w"></span>
-<a id="__codelineno-8-28" name="__codelineno-8-28"></a>
-<a id="__codelineno-8-29" name="__codelineno-8-29"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Wait 15 seconds port 9090</span><span class="w"></span>
-<a id="__codelineno-8-30" name="__codelineno-8-30"></a><span class="w">    </span><span class="nt">ansible.builtin.wait_for</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-8-31" name="__codelineno-8-31"></a><span class="w">        </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9090</span><span class="w"></span>
-<a id="__codelineno-8-32" name="__codelineno-8-32"></a><span class="w">        </span><span class="nt">delay</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">15</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
-</div>
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
@@ -757,9 +724,7 @@
 <span class="normal"><a href="#__codelineno-9-29">29</a></span>
 <span class="normal"><a href="#__codelineno-9-30">30</a></span>
 <span class="normal"><a href="#__codelineno-9-31">31</a></span>
-<span class="normal"><a href="#__codelineno-9-32">32</a></span>
-<span class="normal"><a href="#__codelineno-9-33">33</a></span>
-<span class="normal"><a href="#__codelineno-9-34">34</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="nn">---</span><span class="w"></span>
+<span class="normal"><a href="#__codelineno-9-32">32</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="nn">---</span><span class="w"></span>
 <a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install and configure Cockpit</span><span class="w"></span>
 <a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rhel</span><span class="w"></span>
 <a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
@@ -785,14 +750,82 @@
 <a id="__codelineno-9-24" name="__codelineno-9-24"></a>
 <a id="__codelineno-9-25" name="__codelineno-9-25"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Start and enable service</span><span class="w"></span>
 <a id="__codelineno-9-26" name="__codelineno-9-26"></a><span class="w">    </span><span class="nt">ansible.builtin.service</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-9-27" name="__codelineno-9-27"></a><span class="hll"><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cockpit</span><span class="w"></span>
-</span><a id="__codelineno-9-28" name="__codelineno-9-28"></a><span class="hll"><span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">started</span><span class="w"></span>
-</span><a id="__codelineno-9-29" name="__codelineno-9-29"></a><span class="hll"><span class="w">        </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
-</span><a id="__codelineno-9-30" name="__codelineno-9-30"></a>
-<a id="__codelineno-9-31" name="__codelineno-9-31"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Wait 15 seconds port 9090</span><span class="w"></span>
-<a id="__codelineno-9-32" name="__codelineno-9-32"></a><span class="w">    </span><span class="nt">ansible.builtin.wait_for</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-9-33" name="__codelineno-9-33"></a><span class="w">        </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9090</span><span class="w"></span>
-<a id="__codelineno-9-34" name="__codelineno-9-34"></a><span class="w">        </span><span class="nt">delay</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">15</span><span class="w"></span>
+<a id="__codelineno-9-27" name="__codelineno-9-27"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cockpit.socket</span><span class="w"></span>
+<a id="__codelineno-9-28" name="__codelineno-9-28"></a>
+<a id="__codelineno-9-29" name="__codelineno-9-29"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Wait 15 seconds port 9090</span><span class="w"></span>
+<a id="__codelineno-9-30" name="__codelineno-9-30"></a><span class="w">    </span><span class="nt">ansible.builtin.wait_for</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-9-31" name="__codelineno-9-31"></a><span class="w">        </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9090</span><span class="w"></span>
+<a id="__codelineno-9-32" name="__codelineno-9-32"></a><span class="w">        </span><span class="nt">delay</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">15</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-10-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-10-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-10-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-10-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-10-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-10-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-10-10">10</a></span>
+<span class="normal"><a href="#__codelineno-10-11">11</a></span>
+<span class="normal"><a href="#__codelineno-10-12">12</a></span>
+<span class="normal"><a href="#__codelineno-10-13">13</a></span>
+<span class="normal"><a href="#__codelineno-10-14">14</a></span>
+<span class="normal"><a href="#__codelineno-10-15">15</a></span>
+<span class="normal"><a href="#__codelineno-10-16">16</a></span>
+<span class="normal"><a href="#__codelineno-10-17">17</a></span>
+<span class="normal"><a href="#__codelineno-10-18">18</a></span>
+<span class="normal"><a href="#__codelineno-10-19">19</a></span>
+<span class="normal"><a href="#__codelineno-10-20">20</a></span>
+<span class="normal"><a href="#__codelineno-10-21">21</a></span>
+<span class="normal"><a href="#__codelineno-10-22">22</a></span>
+<span class="normal"><a href="#__codelineno-10-23">23</a></span>
+<span class="normal"><a href="#__codelineno-10-24">24</a></span>
+<span class="normal"><a href="#__codelineno-10-25">25</a></span>
+<span class="normal"><a href="#__codelineno-10-26">26</a></span>
+<span class="normal"><a href="#__codelineno-10-27">27</a></span>
+<span class="normal"><a href="#__codelineno-10-28">28</a></span>
+<span class="normal"><a href="#__codelineno-10-29">29</a></span>
+<span class="normal"><a href="#__codelineno-10-30">30</a></span>
+<span class="normal"><a href="#__codelineno-10-31">31</a></span>
+<span class="normal"><a href="#__codelineno-10-32">32</a></span>
+<span class="normal"><a href="#__codelineno-10-33">33</a></span>
+<span class="normal"><a href="#__codelineno-10-34">34</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="nn">---</span><span class="w"></span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install and configure Cockpit</span><span class="w"></span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rhel</span><span class="w"></span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a>
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="nt">module_defaults</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="w">    </span><span class="nt">ansible.builtin.service</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">started</span><span class="w"></span>
+<a id="__codelineno-10-10" name="__codelineno-10-10"></a>
+<a id="__codelineno-10-11" name="__codelineno-10-11"></a><span class="nt">tasks</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-10-12" name="__codelineno-10-12"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install cockpit package</span><span class="w"></span>
+<a id="__codelineno-10-13" name="__codelineno-10-13"></a><span class="w">    </span><span class="nt">ansible.builtin.package</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-10-14" name="__codelineno-10-14"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cockpit</span><span class="w"></span>
+<a id="__codelineno-10-15" name="__codelineno-10-15"></a><span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span><span class="w"></span>
+<a id="__codelineno-10-16" name="__codelineno-10-16"></a>
+<a id="__codelineno-10-17" name="__codelineno-10-17"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Copy cockpit.conf.j2 to /etc/cockpit</span><span class="w"></span>
+<a id="__codelineno-10-18" name="__codelineno-10-18"></a><span class="w">    </span><span class="nt">ansible.builtin.template</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-10-19" name="__codelineno-10-19"></a><span class="w">        </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cockpit.conf.j2</span><span class="w"></span>
+<a id="__codelineno-10-20" name="__codelineno-10-20"></a><span class="w">        </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/cockpit/cockpit.conf</span><span class="w"></span>
+<a id="__codelineno-10-21" name="__codelineno-10-21"></a><span class="w">        </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
+<a id="__codelineno-10-22" name="__codelineno-10-22"></a><span class="w">        </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
+<a id="__codelineno-10-23" name="__codelineno-10-23"></a><span class="w">        </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;0644&#39;</span><span class="w"></span>
+<a id="__codelineno-10-24" name="__codelineno-10-24"></a>
+<a id="__codelineno-10-25" name="__codelineno-10-25"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Start and enable service</span><span class="w"></span>
+<a id="__codelineno-10-26" name="__codelineno-10-26"></a><span class="w">    </span><span class="nt">ansible.builtin.service</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-10-27" name="__codelineno-10-27"></a><span class="hll"><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cockpit</span><span class="w"></span>
+</span><a id="__codelineno-10-28" name="__codelineno-10-28"></a><span class="hll"><span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">started</span><span class="w"></span>
+</span><a id="__codelineno-10-29" name="__codelineno-10-29"></a><span class="hll"><span class="w">        </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+</span><a id="__codelineno-10-30" name="__codelineno-10-30"></a>
+<a id="__codelineno-10-31" name="__codelineno-10-31"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Wait 15 seconds port 9090</span><span class="w"></span>
+<a id="__codelineno-10-32" name="__codelineno-10-32"></a><span class="w">    </span><span class="nt">ansible.builtin.wait_for</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-10-33" name="__codelineno-10-33"></a><span class="w">        </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9090</span><span class="w"></span>
+<a id="__codelineno-10-34" name="__codelineno-10-34"></a><span class="w">        </span><span class="nt">delay</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">15</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -863,13 +896,13 @@
 <div class="tabbed-block"></div>
 </div>
 </div>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
-<span class="normal"><a href="#__codelineno-10-2">2</a></span>
-<span class="normal"><a href="#__codelineno-10-3">3</a></span>
-<span class="normal"><a href="#__codelineno-10-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="nn">---</span><span class="w"></span>
-<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Provision an EC2 instance</span><span class="w"></span>
-<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">all</span><span class="w"></span>
-<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span>
+<span class="normal"><a href="#__codelineno-11-3">3</a></span>
+<span class="normal"><a href="#__codelineno-11-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="nn">---</span><span class="w"></span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Provision an EC2 instance</span><span class="w"></span>
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">all</span><span class="w"></span>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 </li>
 </ol>
@@ -877,7 +910,7 @@
 <ol start="12">
 <li>
 <p>First, configure the Playbook for single task generation by adding the following code snippet into <strong>Line 5</strong> (remembering to properly indent with <span class="keys"><kbd class="key-tab">Tab</kbd></span> or <span class="keys"><kbd class="key-space">Space</kbd></span> characters):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">create vpc named demo</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">create vpc named demo</span><span class="w"></span>
 </code></pre></div>
 </li>
 </ol>
@@ -888,41 +921,41 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">TEMPLATE</label><label for="__tabbed_7_2">SOLUTION</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
-<span class="normal"><a href="#__codelineno-12-2">2</a></span>
-<span class="normal"><a href="#__codelineno-12-3">3</a></span>
-<span class="normal"><a href="#__codelineno-12-4">4</a></span>
-<span class="normal"><a href="#__codelineno-12-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="nn">---</span><span class="w"></span>
-<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Provision an EC2 instance</span><span class="w"></span>
-<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">all</span><span class="w"></span>
-<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">create vpc named demo</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-13-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-13-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-13-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-13-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-13-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-13-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-13-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-13-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-13-10">10</a></span>
-<span class="normal"><a href="#__codelineno-13-11">11</a></span>
-<span class="normal"><a href="#__codelineno-13-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="nn">---</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
+<span class="normal"><a href="#__codelineno-13-2">2</a></span>
+<span class="normal"><a href="#__codelineno-13-3">3</a></span>
+<span class="normal"><a href="#__codelineno-13-4">4</a></span>
+<span class="normal"><a href="#__codelineno-13-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="nn">---</span><span class="w"></span>
 <a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Provision an EC2 instance</span><span class="w"></span>
 <a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">all</span><span class="w"></span>
 <a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w"></span>
 <a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">create vpc named demo</span><span class="w"></span>
-<a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">amazon.aws.ec2_vpc_net</span><span class="p p-Indicator">:</span><span class="w"></span>
-<a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="w">            </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo</span><span class="w"></span>
-<a id="__codelineno-13-8" name="__codelineno-13-8"></a><span class="w">            </span><span class="nt">cidr_block</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.0.0.80/16</span><span class="w"></span>
-<a id="__codelineno-13-9" name="__codelineno-13-9"></a><span class="w">            </span><span class="nt">tags</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-13-10" name="__codelineno-13-10"></a><span class="w">              </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo</span><span class="w"></span>
-<a id="__codelineno-13-11" name="__codelineno-13-11"></a><span class="w">            </span><span class="nt">tenancy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span><span class="w"></span>
-<a id="__codelineno-13-12" name="__codelineno-13-12"></a><span class="w">          </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vpc</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-14-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-14-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-14-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-14-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-14-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-14-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-14-10">10</a></span>
+<span class="normal"><a href="#__codelineno-14-11">11</a></span>
+<span class="normal"><a href="#__codelineno-14-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="nn">---</span><span class="w"></span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Provision an EC2 instance</span><span class="w"></span>
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">all</span><span class="w"></span>
+<a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">create vpc named demo</span><span class="w"></span>
+<a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">amazon.aws.ec2_vpc_net</span><span class="p p-Indicator">:</span><span class="w"></span>
+<a id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="w">            </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo</span><span class="w"></span>
+<a id="__codelineno-14-8" name="__codelineno-14-8"></a><span class="w">            </span><span class="nt">cidr_block</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.0.0.80/16</span><span class="w"></span>
+<a id="__codelineno-14-9" name="__codelineno-14-9"></a><span class="w">            </span><span class="nt">tags</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-14-10" name="__codelineno-14-10"></a><span class="w">              </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo</span><span class="w"></span>
+<a id="__codelineno-14-11" name="__codelineno-14-11"></a><span class="w">            </span><span class="nt">tenancy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span><span class="w"></span>
+<a id="__codelineno-14-12" name="__codelineno-14-12"></a><span class="w">          </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vpc</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -948,149 +981,149 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">TEMPLATE</label><label for="__tabbed_8_2">SOLUTION</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
-<span class="normal"><a href="#__codelineno-14-2">2</a></span>
-<span class="normal"><a href="#__codelineno-14-3">3</a></span>
-<span class="normal"><a href="#__codelineno-14-4">4</a></span>
-<span class="normal"><a href="#__codelineno-14-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="nn">---</span><span class="w"></span>
-<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Provision an EC2 instance</span><span class="w"></span>
-<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">all</span><span class="w"></span>
-<a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="w">        </span><span class="c1"># create vpc named demo &amp; create security group for demo vpc and allow ssh and http &amp; create internet gateway named demogateway for demo vpc &amp; create subnet named demosubnet in demo vpc &amp; create route table for subnet demosubnet and gateway demogateway &amp; create t2.small ec2 instance in subnet demosubnet</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-15-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-15-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-15-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-15-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-15-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-15-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-15-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-15-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-15-10">10</a></span>
-<span class="normal"><a href="#__codelineno-15-11">11</a></span>
-<span class="normal"><a href="#__codelineno-15-12">12</a></span>
-<span class="normal"><a href="#__codelineno-15-13">13</a></span>
-<span class="normal"><a href="#__codelineno-15-14">14</a></span>
-<span class="normal"><a href="#__codelineno-15-15">15</a></span>
-<span class="normal"><a href="#__codelineno-15-16">16</a></span>
-<span class="normal"><a href="#__codelineno-15-17">17</a></span>
-<span class="normal"><a href="#__codelineno-15-18">18</a></span>
-<span class="normal"><a href="#__codelineno-15-19">19</a></span>
-<span class="normal"><a href="#__codelineno-15-20">20</a></span>
-<span class="normal"><a href="#__codelineno-15-21">21</a></span>
-<span class="normal"><a href="#__codelineno-15-22">22</a></span>
-<span class="normal"><a href="#__codelineno-15-23">23</a></span>
-<span class="normal"><a href="#__codelineno-15-24">24</a></span>
-<span class="normal"><a href="#__codelineno-15-25">25</a></span>
-<span class="normal"><a href="#__codelineno-15-26">26</a></span>
-<span class="normal"><a href="#__codelineno-15-27">27</a></span>
-<span class="normal"><a href="#__codelineno-15-28">28</a></span>
-<span class="normal"><a href="#__codelineno-15-29">29</a></span>
-<span class="normal"><a href="#__codelineno-15-30">30</a></span>
-<span class="normal"><a href="#__codelineno-15-31">31</a></span>
-<span class="normal"><a href="#__codelineno-15-32">32</a></span>
-<span class="normal"><a href="#__codelineno-15-33">33</a></span>
-<span class="normal"><a href="#__codelineno-15-34">34</a></span>
-<span class="normal"><a href="#__codelineno-15-35">35</a></span>
-<span class="normal"><a href="#__codelineno-15-36">36</a></span>
-<span class="normal"><a href="#__codelineno-15-37">37</a></span>
-<span class="normal"><a href="#__codelineno-15-38">38</a></span>
-<span class="normal"><a href="#__codelineno-15-39">39</a></span>
-<span class="normal"><a href="#__codelineno-15-40">40</a></span>
-<span class="normal"><a href="#__codelineno-15-41">41</a></span>
-<span class="normal"><a href="#__codelineno-15-42">42</a></span>
-<span class="normal"><a href="#__codelineno-15-43">43</a></span>
-<span class="normal"><a href="#__codelineno-15-44">44</a></span>
-<span class="normal"><a href="#__codelineno-15-45">45</a></span>
-<span class="normal"><a href="#__codelineno-15-46">46</a></span>
-<span class="normal"><a href="#__codelineno-15-47">47</a></span>
-<span class="normal"><a href="#__codelineno-15-48">48</a></span>
-<span class="normal"><a href="#__codelineno-15-49">49</a></span>
-<span class="normal"><a href="#__codelineno-15-50">50</a></span>
-<span class="normal"><a href="#__codelineno-15-51">51</a></span>
-<span class="normal"><a href="#__codelineno-15-52">52</a></span>
-<span class="normal"><a href="#__codelineno-15-53">53</a></span>
-<span class="normal"><a href="#__codelineno-15-54">54</a></span>
-<span class="normal"><a href="#__codelineno-15-55">55</a></span>
-<span class="normal"><a href="#__codelineno-15-56">56</a></span>
-<span class="normal"><a href="#__codelineno-15-57">57</a></span>
-<span class="normal"><a href="#__codelineno-15-58">58</a></span>
-<span class="normal"><a href="#__codelineno-15-59">59</a></span>
-<span class="normal"><a href="#__codelineno-15-60">60</a></span>
-<span class="normal"><a href="#__codelineno-15-61">61</a></span>
-<span class="normal"><a href="#__codelineno-15-62">62</a></span>
-<span class="normal"><a href="#__codelineno-15-63">63</a></span>
-<span class="normal"><a href="#__codelineno-15-64">64</a></span>
-<span class="normal"><a href="#__codelineno-15-65">65</a></span>
-<span class="normal"><a href="#__codelineno-15-66">66</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="nn">---</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
+<span class="normal"><a href="#__codelineno-15-2">2</a></span>
+<span class="normal"><a href="#__codelineno-15-3">3</a></span>
+<span class="normal"><a href="#__codelineno-15-4">4</a></span>
+<span class="normal"><a href="#__codelineno-15-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="nn">---</span><span class="w"></span>
 <a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Provision an EC2 instance</span><span class="w"></span>
 <a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">all</span><span class="w"></span>
 <a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w"></span>
 <a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="w">        </span><span class="c1"># create vpc named demo &amp; create security group for demo vpc and allow ssh and http &amp; create internet gateway named demogateway for demo vpc &amp; create subnet named demosubnet in demo vpc &amp; create route table for subnet demosubnet and gateway demogateway &amp; create t2.small ec2 instance in subnet demosubnet</span><span class="w"></span>
-<a id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create vpc named demo</span><span class="w"></span>
-<a id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="w">          </span><span class="nt">amazon.aws.ec2_vpc_net</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-15-8" name="__codelineno-15-8"></a><span class="w">            </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo</span><span class="w"></span>
-<a id="__codelineno-15-9" name="__codelineno-15-9"></a><span class="w">            </span><span class="nt">cidr_block</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.0.0.80/16</span><span class="w"></span>
-<a id="__codelineno-15-10" name="__codelineno-15-10"></a><span class="w">            </span><span class="nt">tags</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-15-11" name="__codelineno-15-11"></a><span class="w">              </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo</span><span class="w"></span>
-<a id="__codelineno-15-12" name="__codelineno-15-12"></a><span class="w">            </span><span class="nt">tenancy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span><span class="w"></span>
-<a id="__codelineno-15-13" name="__codelineno-15-13"></a><span class="w">          </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vpc</span><span class="w"></span>
-<a id="__codelineno-15-14" name="__codelineno-15-14"></a>
-<a id="__codelineno-15-15" name="__codelineno-15-15"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create security group for demo vpc and allow ssh and http</span><span class="w"></span>
-<a id="__codelineno-15-16" name="__codelineno-15-16"></a><span class="w">          </span><span class="nt">amazon.aws.ec2_security_group</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-15-17" name="__codelineno-15-17"></a><span class="w">            </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo</span><span class="w"></span>
-<a id="__codelineno-15-18" name="__codelineno-15-18"></a><span class="w">            </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo security group</span><span class="w"></span>
-<a id="__codelineno-15-19" name="__codelineno-15-19"></a><span class="w">            </span><span class="nt">vpc_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{</span><span class="nv"> </span><span class="s">vpc.vpc.id</span><span class="nv"> </span><span class="s">}&quot;</span><span class="w"></span>
-<a id="__codelineno-15-20" name="__codelineno-15-20"></a><span class="w">            </span><span class="nt">rules</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-15-21" name="__codelineno-15-21"></a><span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">proto</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tcp</span><span class="w"></span>
-<a id="__codelineno-15-22" name="__codelineno-15-22"></a><span class="w">                </span><span class="nt">from_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">22</span><span class="w"></span>
-<a id="__codelineno-15-23" name="__codelineno-15-23"></a><span class="w">                </span><span class="nt">to_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">22</span><span class="w"></span>
-<a id="__codelineno-15-24" name="__codelineno-15-24"></a><span class="w">                </span><span class="nt">cidr_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0.0.0/0</span><span class="w"></span>
-<a id="__codelineno-15-25" name="__codelineno-15-25"></a><span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">proto</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tcp</span><span class="w"></span>
-<a id="__codelineno-15-26" name="__codelineno-15-26"></a><span class="w">                </span><span class="nt">from_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span><span class="w"></span>
-<a id="__codelineno-15-27" name="__codelineno-15-27"></a><span class="w">                </span><span class="nt">to_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span><span class="w"></span>
-<a id="__codelineno-15-28" name="__codelineno-15-28"></a><span class="w">                </span><span class="nt">cidr_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0.0.0/0</span><span class="w"></span>
-<a id="__codelineno-15-29" name="__codelineno-15-29"></a><span class="w">          </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sg</span><span class="w"></span>
-<a id="__codelineno-15-30" name="__codelineno-15-30"></a>
-<a id="__codelineno-15-31" name="__codelineno-15-31"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create internet gateway named demogateway for demo vpc</span><span class="w"></span>
-<a id="__codelineno-15-32" name="__codelineno-15-32"></a><span class="w">          </span><span class="nt">amazon.aws.ec2_vpc_igw</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-15-33" name="__codelineno-15-33"></a><span class="w">            </span><span class="nt">vpc_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{</span><span class="nv"> </span><span class="s">vpc.vpc.id</span><span class="nv"> </span><span class="s">}&quot;</span><span class="w"></span>
-<a id="__codelineno-15-34" name="__codelineno-15-34"></a><span class="w">            </span><span class="nt">tags</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-15-35" name="__codelineno-15-35"></a><span class="w">              </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demogateway</span><span class="w"></span>
-<a id="__codelineno-15-36" name="__codelineno-15-36"></a><span class="w">          </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">igw</span><span class="w"></span>
-<a id="__codelineno-15-37" name="__codelineno-15-37"></a>
-<a id="__codelineno-15-38" name="__codelineno-15-38"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create subnet named demosubnet in demo vpc</span><span class="w"></span>
-<a id="__codelineno-15-39" name="__codelineno-15-39"></a><span class="w">          </span><span class="nt">amazon.aws.ec2_vpc_subnet</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-15-40" name="__codelineno-15-40"></a><span class="w">            </span><span class="nt">cidr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.0.0.80/24</span><span class="w"></span>
-<a id="__codelineno-15-41" name="__codelineno-15-41"></a><span class="w">            </span><span class="nt">vpc_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{</span><span class="nv"> </span><span class="s">vpc.vpc.id</span><span class="nv"> </span><span class="s">}&quot;</span><span class="w"></span>
-<a id="__codelineno-15-42" name="__codelineno-15-42"></a><span class="w">            </span><span class="nt">tags</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-15-43" name="__codelineno-15-43"></a><span class="w">              </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demosubnet</span><span class="w"></span>
-<a id="__codelineno-15-44" name="__codelineno-15-44"></a><span class="w">          </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">subnet</span><span class="w"></span>
-<a id="__codelineno-15-45" name="__codelineno-15-45"></a>
-<a id="__codelineno-15-46" name="__codelineno-15-46"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create route table for subnet demosubnet and gateway demogateway</span><span class="w"></span>
-<a id="__codelineno-15-47" name="__codelineno-15-47"></a><span class="w">          </span><span class="nt">amazon.aws.ec2_vpc_route_table</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-15-48" name="__codelineno-15-48"></a><span class="w">            </span><span class="nt">vpc_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{</span><span class="nv"> </span><span class="s">vpc.vpc.id</span><span class="nv"> </span><span class="s">}&quot;</span><span class="w"></span>
-<a id="__codelineno-15-49" name="__codelineno-15-49"></a><span class="w">            </span><span class="nt">tags</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-15-50" name="__codelineno-15-50"></a><span class="w">              </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demosubnet</span><span class="w"></span>
-<a id="__codelineno-15-51" name="__codelineno-15-51"></a><span class="w">            </span><span class="nt">subnets</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-15-52" name="__codelineno-15-52"></a><span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;{</span><span class="nv"> </span><span class="s">subnet.subnet.id</span><span class="nv"> </span><span class="s">}&quot;</span><span class="w"></span>
-<a id="__codelineno-15-53" name="__codelineno-15-53"></a><span class="w">            </span><span class="nt">routes</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-15-54" name="__codelineno-15-54"></a><span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0.0.0/0</span><span class="w"></span>
-<a id="__codelineno-15-55" name="__codelineno-15-55"></a><span class="w">                </span><span class="nt">gateway_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{</span><span class="nv"> </span><span class="s">igw.gateway_id</span><span class="nv"> </span><span class="s">}&quot;</span><span class="w"></span>
-<a id="__codelineno-15-56" name="__codelineno-15-56"></a><span class="w">          </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">route_table</span><span class="w"></span>
-<a id="__codelineno-15-57" name="__codelineno-15-57"></a>
-<a id="__codelineno-15-58" name="__codelineno-15-58"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create t2.small ec2 instance in subnet demosubnet</span><span class="w"></span>
-<a id="__codelineno-15-59" name="__codelineno-15-59"></a><span class="w">          </span><span class="nt">amazon.aws.ec2_instance</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-15-60" name="__codelineno-15-60"></a><span class="w">            </span><span class="nt">key_name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{</span><span class="nv"> </span><span class="s">_key_name_</span><span class="nv"> </span><span class="s">}&quot;</span><span class="w"></span>
-<a id="__codelineno-15-61" name="__codelineno-15-61"></a><span class="w">            </span><span class="nt">instance_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">t2.small</span><span class="w"></span>
-<a id="__codelineno-15-62" name="__codelineno-15-62"></a><span class="w">            </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{</span><span class="nv"> </span><span class="s">_image_</span><span class="nv"> </span><span class="s">}&quot;</span><span class="w"></span>
-<a id="__codelineno-15-63" name="__codelineno-15-63"></a><span class="w">            </span><span class="nt">wait</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
-<a id="__codelineno-15-64" name="__codelineno-15-64"></a><span class="w">            </span><span class="nt">vpc_subnet_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{</span><span class="nv"> </span><span class="s">subnet.subnet.id</span><span class="nv"> </span><span class="s">}&quot;</span><span class="w"></span>
-<a id="__codelineno-15-65" name="__codelineno-15-65"></a><span class="w">            </span><span class="nt">security_group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo</span><span class="w"></span>
-<a id="__codelineno-15-66" name="__codelineno-15-66"></a><span class="w">          </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ec2</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-16-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-16-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-16-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-16-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-16-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-16-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-16-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-16-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-16-10">10</a></span>
+<span class="normal"><a href="#__codelineno-16-11">11</a></span>
+<span class="normal"><a href="#__codelineno-16-12">12</a></span>
+<span class="normal"><a href="#__codelineno-16-13">13</a></span>
+<span class="normal"><a href="#__codelineno-16-14">14</a></span>
+<span class="normal"><a href="#__codelineno-16-15">15</a></span>
+<span class="normal"><a href="#__codelineno-16-16">16</a></span>
+<span class="normal"><a href="#__codelineno-16-17">17</a></span>
+<span class="normal"><a href="#__codelineno-16-18">18</a></span>
+<span class="normal"><a href="#__codelineno-16-19">19</a></span>
+<span class="normal"><a href="#__codelineno-16-20">20</a></span>
+<span class="normal"><a href="#__codelineno-16-21">21</a></span>
+<span class="normal"><a href="#__codelineno-16-22">22</a></span>
+<span class="normal"><a href="#__codelineno-16-23">23</a></span>
+<span class="normal"><a href="#__codelineno-16-24">24</a></span>
+<span class="normal"><a href="#__codelineno-16-25">25</a></span>
+<span class="normal"><a href="#__codelineno-16-26">26</a></span>
+<span class="normal"><a href="#__codelineno-16-27">27</a></span>
+<span class="normal"><a href="#__codelineno-16-28">28</a></span>
+<span class="normal"><a href="#__codelineno-16-29">29</a></span>
+<span class="normal"><a href="#__codelineno-16-30">30</a></span>
+<span class="normal"><a href="#__codelineno-16-31">31</a></span>
+<span class="normal"><a href="#__codelineno-16-32">32</a></span>
+<span class="normal"><a href="#__codelineno-16-33">33</a></span>
+<span class="normal"><a href="#__codelineno-16-34">34</a></span>
+<span class="normal"><a href="#__codelineno-16-35">35</a></span>
+<span class="normal"><a href="#__codelineno-16-36">36</a></span>
+<span class="normal"><a href="#__codelineno-16-37">37</a></span>
+<span class="normal"><a href="#__codelineno-16-38">38</a></span>
+<span class="normal"><a href="#__codelineno-16-39">39</a></span>
+<span class="normal"><a href="#__codelineno-16-40">40</a></span>
+<span class="normal"><a href="#__codelineno-16-41">41</a></span>
+<span class="normal"><a href="#__codelineno-16-42">42</a></span>
+<span class="normal"><a href="#__codelineno-16-43">43</a></span>
+<span class="normal"><a href="#__codelineno-16-44">44</a></span>
+<span class="normal"><a href="#__codelineno-16-45">45</a></span>
+<span class="normal"><a href="#__codelineno-16-46">46</a></span>
+<span class="normal"><a href="#__codelineno-16-47">47</a></span>
+<span class="normal"><a href="#__codelineno-16-48">48</a></span>
+<span class="normal"><a href="#__codelineno-16-49">49</a></span>
+<span class="normal"><a href="#__codelineno-16-50">50</a></span>
+<span class="normal"><a href="#__codelineno-16-51">51</a></span>
+<span class="normal"><a href="#__codelineno-16-52">52</a></span>
+<span class="normal"><a href="#__codelineno-16-53">53</a></span>
+<span class="normal"><a href="#__codelineno-16-54">54</a></span>
+<span class="normal"><a href="#__codelineno-16-55">55</a></span>
+<span class="normal"><a href="#__codelineno-16-56">56</a></span>
+<span class="normal"><a href="#__codelineno-16-57">57</a></span>
+<span class="normal"><a href="#__codelineno-16-58">58</a></span>
+<span class="normal"><a href="#__codelineno-16-59">59</a></span>
+<span class="normal"><a href="#__codelineno-16-60">60</a></span>
+<span class="normal"><a href="#__codelineno-16-61">61</a></span>
+<span class="normal"><a href="#__codelineno-16-62">62</a></span>
+<span class="normal"><a href="#__codelineno-16-63">63</a></span>
+<span class="normal"><a href="#__codelineno-16-64">64</a></span>
+<span class="normal"><a href="#__codelineno-16-65">65</a></span>
+<span class="normal"><a href="#__codelineno-16-66">66</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="nn">---</span><span class="w"></span>
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Provision an EC2 instance</span><span class="w"></span>
+<a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">all</span><span class="w"></span>
+<a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="w">        </span><span class="c1"># create vpc named demo &amp; create security group for demo vpc and allow ssh and http &amp; create internet gateway named demogateway for demo vpc &amp; create subnet named demosubnet in demo vpc &amp; create route table for subnet demosubnet and gateway demogateway &amp; create t2.small ec2 instance in subnet demosubnet</span><span class="w"></span>
+<a id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create vpc named demo</span><span class="w"></span>
+<a id="__codelineno-16-7" name="__codelineno-16-7"></a><span class="w">          </span><span class="nt">amazon.aws.ec2_vpc_net</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-16-8" name="__codelineno-16-8"></a><span class="w">            </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo</span><span class="w"></span>
+<a id="__codelineno-16-9" name="__codelineno-16-9"></a><span class="w">            </span><span class="nt">cidr_block</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.0.0.80/16</span><span class="w"></span>
+<a id="__codelineno-16-10" name="__codelineno-16-10"></a><span class="w">            </span><span class="nt">tags</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-16-11" name="__codelineno-16-11"></a><span class="w">              </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo</span><span class="w"></span>
+<a id="__codelineno-16-12" name="__codelineno-16-12"></a><span class="w">            </span><span class="nt">tenancy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span><span class="w"></span>
+<a id="__codelineno-16-13" name="__codelineno-16-13"></a><span class="w">          </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vpc</span><span class="w"></span>
+<a id="__codelineno-16-14" name="__codelineno-16-14"></a>
+<a id="__codelineno-16-15" name="__codelineno-16-15"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create security group for demo vpc and allow ssh and http</span><span class="w"></span>
+<a id="__codelineno-16-16" name="__codelineno-16-16"></a><span class="w">          </span><span class="nt">amazon.aws.ec2_security_group</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-16-17" name="__codelineno-16-17"></a><span class="w">            </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo</span><span class="w"></span>
+<a id="__codelineno-16-18" name="__codelineno-16-18"></a><span class="w">            </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo security group</span><span class="w"></span>
+<a id="__codelineno-16-19" name="__codelineno-16-19"></a><span class="w">            </span><span class="nt">vpc_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{</span><span class="nv"> </span><span class="s">vpc.vpc.id</span><span class="nv"> </span><span class="s">}&quot;</span><span class="w"></span>
+<a id="__codelineno-16-20" name="__codelineno-16-20"></a><span class="w">            </span><span class="nt">rules</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-16-21" name="__codelineno-16-21"></a><span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">proto</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tcp</span><span class="w"></span>
+<a id="__codelineno-16-22" name="__codelineno-16-22"></a><span class="w">                </span><span class="nt">from_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">22</span><span class="w"></span>
+<a id="__codelineno-16-23" name="__codelineno-16-23"></a><span class="w">                </span><span class="nt">to_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">22</span><span class="w"></span>
+<a id="__codelineno-16-24" name="__codelineno-16-24"></a><span class="w">                </span><span class="nt">cidr_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0.0.0/0</span><span class="w"></span>
+<a id="__codelineno-16-25" name="__codelineno-16-25"></a><span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">proto</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tcp</span><span class="w"></span>
+<a id="__codelineno-16-26" name="__codelineno-16-26"></a><span class="w">                </span><span class="nt">from_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span><span class="w"></span>
+<a id="__codelineno-16-27" name="__codelineno-16-27"></a><span class="w">                </span><span class="nt">to_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span><span class="w"></span>
+<a id="__codelineno-16-28" name="__codelineno-16-28"></a><span class="w">                </span><span class="nt">cidr_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0.0.0/0</span><span class="w"></span>
+<a id="__codelineno-16-29" name="__codelineno-16-29"></a><span class="w">          </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sg</span><span class="w"></span>
+<a id="__codelineno-16-30" name="__codelineno-16-30"></a>
+<a id="__codelineno-16-31" name="__codelineno-16-31"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create internet gateway named demogateway for demo vpc</span><span class="w"></span>
+<a id="__codelineno-16-32" name="__codelineno-16-32"></a><span class="w">          </span><span class="nt">amazon.aws.ec2_vpc_igw</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-16-33" name="__codelineno-16-33"></a><span class="w">            </span><span class="nt">vpc_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{</span><span class="nv"> </span><span class="s">vpc.vpc.id</span><span class="nv"> </span><span class="s">}&quot;</span><span class="w"></span>
+<a id="__codelineno-16-34" name="__codelineno-16-34"></a><span class="w">            </span><span class="nt">tags</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-16-35" name="__codelineno-16-35"></a><span class="w">              </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demogateway</span><span class="w"></span>
+<a id="__codelineno-16-36" name="__codelineno-16-36"></a><span class="w">          </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">igw</span><span class="w"></span>
+<a id="__codelineno-16-37" name="__codelineno-16-37"></a>
+<a id="__codelineno-16-38" name="__codelineno-16-38"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create subnet named demosubnet in demo vpc</span><span class="w"></span>
+<a id="__codelineno-16-39" name="__codelineno-16-39"></a><span class="w">          </span><span class="nt">amazon.aws.ec2_vpc_subnet</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-16-40" name="__codelineno-16-40"></a><span class="w">            </span><span class="nt">cidr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.0.0.80/24</span><span class="w"></span>
+<a id="__codelineno-16-41" name="__codelineno-16-41"></a><span class="w">            </span><span class="nt">vpc_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{</span><span class="nv"> </span><span class="s">vpc.vpc.id</span><span class="nv"> </span><span class="s">}&quot;</span><span class="w"></span>
+<a id="__codelineno-16-42" name="__codelineno-16-42"></a><span class="w">            </span><span class="nt">tags</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-16-43" name="__codelineno-16-43"></a><span class="w">              </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demosubnet</span><span class="w"></span>
+<a id="__codelineno-16-44" name="__codelineno-16-44"></a><span class="w">          </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">subnet</span><span class="w"></span>
+<a id="__codelineno-16-45" name="__codelineno-16-45"></a>
+<a id="__codelineno-16-46" name="__codelineno-16-46"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create route table for subnet demosubnet and gateway demogateway</span><span class="w"></span>
+<a id="__codelineno-16-47" name="__codelineno-16-47"></a><span class="w">          </span><span class="nt">amazon.aws.ec2_vpc_route_table</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-16-48" name="__codelineno-16-48"></a><span class="w">            </span><span class="nt">vpc_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{</span><span class="nv"> </span><span class="s">vpc.vpc.id</span><span class="nv"> </span><span class="s">}&quot;</span><span class="w"></span>
+<a id="__codelineno-16-49" name="__codelineno-16-49"></a><span class="w">            </span><span class="nt">tags</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-16-50" name="__codelineno-16-50"></a><span class="w">              </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demosubnet</span><span class="w"></span>
+<a id="__codelineno-16-51" name="__codelineno-16-51"></a><span class="w">            </span><span class="nt">subnets</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-16-52" name="__codelineno-16-52"></a><span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;{</span><span class="nv"> </span><span class="s">subnet.subnet.id</span><span class="nv"> </span><span class="s">}&quot;</span><span class="w"></span>
+<a id="__codelineno-16-53" name="__codelineno-16-53"></a><span class="w">            </span><span class="nt">routes</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-16-54" name="__codelineno-16-54"></a><span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0.0.0/0</span><span class="w"></span>
+<a id="__codelineno-16-55" name="__codelineno-16-55"></a><span class="w">                </span><span class="nt">gateway_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{</span><span class="nv"> </span><span class="s">igw.gateway_id</span><span class="nv"> </span><span class="s">}&quot;</span><span class="w"></span>
+<a id="__codelineno-16-56" name="__codelineno-16-56"></a><span class="w">          </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">route_table</span><span class="w"></span>
+<a id="__codelineno-16-57" name="__codelineno-16-57"></a>
+<a id="__codelineno-16-58" name="__codelineno-16-58"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create t2.small ec2 instance in subnet demosubnet</span><span class="w"></span>
+<a id="__codelineno-16-59" name="__codelineno-16-59"></a><span class="w">          </span><span class="nt">amazon.aws.ec2_instance</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-16-60" name="__codelineno-16-60"></a><span class="w">            </span><span class="nt">key_name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{</span><span class="nv"> </span><span class="s">_key_name_</span><span class="nv"> </span><span class="s">}&quot;</span><span class="w"></span>
+<a id="__codelineno-16-61" name="__codelineno-16-61"></a><span class="w">            </span><span class="nt">instance_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">t2.small</span><span class="w"></span>
+<a id="__codelineno-16-62" name="__codelineno-16-62"></a><span class="w">            </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{</span><span class="nv"> </span><span class="s">_image_</span><span class="nv"> </span><span class="s">}&quot;</span><span class="w"></span>
+<a id="__codelineno-16-63" name="__codelineno-16-63"></a><span class="w">            </span><span class="nt">wait</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<a id="__codelineno-16-64" name="__codelineno-16-64"></a><span class="w">            </span><span class="nt">vpc_subnet_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{</span><span class="nv"> </span><span class="s">subnet.subnet.id</span><span class="nv"> </span><span class="s">}&quot;</span><span class="w"></span>
+<a id="__codelineno-16-65" name="__codelineno-16-65"></a><span class="w">            </span><span class="nt">security_group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo</span><span class="w"></span>
+<a id="__codelineno-16-66" name="__codelineno-16-66"></a><span class="w">          </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ec2</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>

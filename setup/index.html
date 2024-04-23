@@ -625,7 +625,7 @@ At this stage, the hands-on environment has been fully configured.</p>
 <a class="glightbox" href="../_attachments/troubleshooting-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-1.png" width="600" /></a></p>
 </details>
 <details class="quote">
-<summary>ANSIBLE LIGHTSPEED IS MISSING OR CODE RECOMMENDATIONS ARE NOT GENERATING</summary>
+<summary>CODE RECOMMENDATIONS ARE NOT GENERATING</summary>
 <p>Ansible Lightspeed and WCA will only generate code recommendations for <em>Ansible Playbooks</em> and <em>YAML</em> files. VS Code will typically auto-detect the programming language of the document you're working with, but on occassion you may need to manually specify the language. Even if working with a YAML file, you'll still need to specify the language mode as <code>Ansible</code> for the Lightspeed plugin to engage.</p>
 <p>To set the language mode correctly:</p>
 <ul>
@@ -647,11 +647,19 @@ At this stage, the hands-on environment has been fully configured.</p>
 <p><a class="glightbox" href="../_attachments/troubleshooting-3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-3.png" width="600" /></a></p>
 </details>
 <details class="quote">
-<summary>ANSIBLE-LINT IS NOT AVAILABLE</summary>
-<p><code>ansible-lint</code> checks playbooks for practices and behavior that could potentially be improved and can fix some of the most common ones for you. It will constantly check your Ansible syntax as you type and provide recommendations for how to improve it.</p>
-<p>You can safely <strong>ignore</strong> this error if it occurs during the lab exercises.</p>
-<p><br/>
-<a class="glightbox" href="../_attachments/troubleshooting-4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-4.png" width="600" /></a></p>
+<summary><code>"ANSIBLE-LINT IS NOT AVAILABLE."</code></summary>
+<p><code>ansible-lint</code> checks Playbooks for practices and behavior that could potentially be improved and can fix some of the most common ones for you. It will constantly check your Ansible syntax as you type and provide recommendations for how to improve it.</p>
+<ul>
+<li>
+<p>You can safely <strong>ignore</strong> this error if it occurs during the lab exercises</p>
+</li>
+<li>
+<p>If you wish to install <code>ansible-lint</code> on your local machine, execute the following instruction within a Terminal console:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python3 -m pip install --upgrade --user ansible-lint
+</code></pre></div>
+<p><a class="glightbox" href="../_attachments/troubleshooting-4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-4.png" width="600" /></a></p>
+</li>
+</ul>
 </details>
 <details class="quote">
 <summary>RED <em>ANSIBLE</em> ICON ALONG BOTTOM-RIGHT INTERFACE</summary>
