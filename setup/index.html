@@ -875,6 +875,213 @@ At this stage, the hands-on environment has been fully configured.</p>
 </li>
 </ol>
 <hr />
+<h1 id="installation-of-visual-studio-code-and-extensions">Installation of Visual Studio Code and Extensions</h1>
+<h1 id="_4"></h1>
+<p>Before getting started with <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> (<strong>WCA</strong>), you will first setup <em>Visual Studio Code</em> (commonly referred to as <strong>VS Code</strong>) on a local machine. This will provide an integrated development environment for experimenting with WCA's generative AI capabilities.</p>
+<hr />
+<ol start="7">
+<li>
+<p>Download the latest <strong>Stable Build</strong><sup>[A]</sup> release of VS Code available for your machine's operating system using the link below.</p>
+<div class="admonition warning">
+<p><strong>Download</strong>: <a href="https://code.visualstudio.com" target="_blank">https://code.visualstudio.com</a></p>
+</div>
+<p>Follow along with the installer wizard steps and continue with the hands-on lab instructions once VS Code is running on your local machine.</p>
+<p><br/></p>
+<div class="admonition note inline end">
+<p class="admonition-title">FULLSCREEN IMAGES</p>
+<p>Click on any of the screenshots within this documentation to enlarge the image.</p>
+</div>
+<p><a class="glightbox" href="../_attachments/setuptroubleshoot-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-1.png" width="450" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="8">
+<li>
+<p>Launch the VS Code application and take note of the sidebar along the left-side.</p>
+<ul>
+<li>
+<p>Click the <strong>Extensions</strong> icon<sup>[A]</sup> to open the marketplace of services and open source technologies that can be integrated with VS Code</p>
+</li>
+<li>
+<p>If you have used VS Code previously, extensions that have already been integrated with the environment will be listed along the left side</p>
+</li>
+</ul>
+<p><br/>
+<a class="glightbox" href="../_attachments/setuptroubleshoot-2a.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-2a.png" width="600" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="9">
+<li>
+<p>At the top of the <strong>Extensions</strong> panel is a search bar:</p>
+<ul>
+<li>
+<p>Type <code>Ansible</code> into the search bar<sup>[A]</sup> and then hit <span class="keys"><kbd class="key-enter">Enter</kbd></span></p>
+</li>
+<li>
+<p>Click the blue <strong>Install</strong> button<sup>[B]</sup> for the official <em>Ansible</em> extension for VS Code, published by <em>Red Hat</em> (blue checkmark)</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">INSTALLATION PROMPTS</p>
+<p>You might receive two different prompts during the installation process:</p>
+<ul>
+<li>
+<p><code>Do you trust the authors of the files in this workspace?</code>: select <strong>Trust Workspace &amp; Install</strong></p>
+</li>
+<li>
+<p><code>Do you want to allow untrusted files in this window?</code>: select <strong>Open</strong></p>
+</li>
+<li>
+<p>Installation of the Ansible extension for VS Code should only take a moment — an <em>Extension:Ansible</em> welcome panel will open when it is finished</p>
+</li>
+</ul>
+</div>
+<p><br/>
+<a class="glightbox" href="../_attachments/setuptroubleshoot-3a.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-3a.png" width="600" /></a></p>
+<p><a class="glightbox" href="../_attachments/setuptroubleshoot-3b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-3b.png" width="600" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="10">
+<li>
+<p>Once the Ansible extension has been integrated with VS Code, close any <em>Welcome</em> tabs that open and look for Ansible under the <em>Installed</em> services in the <strong>Extensions</strong> panel.</p>
+<ul>
+<li>
+<p>Click the <strong>Manage</strong> ("cogwheel") icon located just to the right of the Ansible tile</p>
+</li>
+<li>
+<p>From the drop-down options, click <strong>Extension Settings</strong><sup>[A]</sup></p>
+</li>
+<li>
+<p>If <strong>Extension Settings</strong> is not available from the drop-down menu, try right-clicking on the Ansible extension tile instead</p>
+</li>
+</ul>
+<p><br/>
+<a class="glightbox" href="../_attachments/setuptroubleshoot-4b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-4b.png" width="600" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="11">
+<li>
+<p><em>Settings</em> for the Ansible extension will be displayed within a new panel.</p>
+<ul>
+<li>
+<p>Ensure that <strong>User</strong><sup>[A]</sup> is selected at the top of the panel — do not edit <em>Workspace</em></p>
+</li>
+<li>
+<p>Using the search bar<sup>[B]</sup> at the top of the panel, add the text <code>Lightspeed</code> to filter the available options</p>
+</li>
+<li>
+<p><strong>Check</strong> the option for <code>Ansible &gt; Lightspeed</code><sup>[C]</sup> </p>
+</li>
+<li>
+<p><strong>Check</strong> the option for <code>Ansible &gt; Lightspeed: Suggestions</code><sup>[D]</sup></p>
+</li>
+<li>
+<p><strong>Check</strong> the option for <code>Ansible &gt; Lightspeed: Disable Content Suggestion Header</code><sup>[E]</sup></p>
+</li>
+<li>
+<p>Changes to <em>Settings</em> are automatically saved and applied – click the <code>X</code> button in the top-left corner of the panel's tab</p>
+</li>
+</ul>
+<p><br/>
+<a class="glightbox" href="../_attachments/setuptroubleshoot-5a.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-5a.png" width="600" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="12">
+<li>
+<p>Click the <strong>Ansible</strong> plugin<sup>[A]</sup> (denoted by the <code>A</code> logo) on the left-hand side of the interface.</p>
+<ul>
+<li>
+<p>Two panels will open along the left side of the interface</p>
+</li>
+<li>
+<p>Within the <em>Ansible Lightspeed Login</em> panel, click the blue <strong>Connect</strong> button<sup>[B]</sup></p>
+</li>
+<li>
+<p><code>The extension Ansible wants to sign in using Ansible Lightspeed</code>: click <strong>Allow</strong><sup>[C]</sup></p>
+</li>
+<li>
+<p><code>Do you want Code to open the external website?</code>: click <strong>Open</strong><sup>[D]</sup></p>
+</li>
+</ul>
+<p><br/>
+<a class="glightbox" href="../_attachments/setuptroubleshoot-7a.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-7a.png" width="600" /></a></p>
+<p><a class="glightbox" href="../_attachments/setuptroubleshoot-7b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-7b.png" width="600" /></a></p>
+<p><a class="glightbox" href="../_attachments/setuptroubleshoot-7c.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-7c.png" width="600" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="13">
+<li>
+<p>A web browser will load with the header <code>Log in to Ansible Lightspeed with IBM watsonx Code Assistant</code> — this is where you will supply your registration details recorded in <em>Step 5</em> in order to authenticate the VS Code plugin with WCA.</p>
+<ul>
+<li>
+<p>Click the <strong>Log in with Red Hat</strong> button<sup>[A]</sup></p>
+</li>
+<li>
+<p>If you had previously logged in to Red Hat with your browser, you might not be asked again for those credentials</p>
+</li>
+<li>
+<p>If you <em>are</em> asked to provide a <code>Username</code> and <code>Password</code>, supply the values recorded in <em>Step 5</em> of this module</p>
+</li>
+</ul>
+<p><br/>
+<a class="glightbox" href="../_attachments/setuptroubleshoot-8a.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-8a.png" width="600" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="14">
+<li>
+<p>After logging in with Red Hat, the web browser will display the prompt to <code>Authorize Ansible Lightspeed for VS Code</code>.</p>
+<ul>
+<li>
+<p>Click <strong>Authorize</strong><sup>[A]</sup></p>
+</li>
+<li>
+<p><code>Do you want to allow this website to open Visual Studio Code?</code>: click <strong>Allow</strong><sup>[B]</sup></p>
+</li>
+<li>
+<p><code>Allow Ansible extension to open this URI?</code>: click <strong>Open</strong><sup>[C]</sup></p>
+</li>
+</ul>
+<p><br/>
+<a class="glightbox" href="../_attachments/setuptroubleshoot-9a.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-9a.png" width="600" /></a></p>
+<p><a class="glightbox" href="../_attachments/setuptroubleshoot-9b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-9b.png" width="600" /></a></p>
+<p><a class="glightbox" href="../_attachments/setuptroubleshoot-9c.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-9c.png" width="600" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="15">
+<li>
+<p>At this stage, the Ansible extension for VS Code is now authenticated and connected to <em>IBM watsonx Code Assistant</em>.</p>
+<ul>
+<li>
+<p>Verify<sup>[A]</sup> that the environment is logged in as your unique <code>Username</code> and that the <code>User Type: Licensed</code></p>
+</li>
+<li>
+<p>A notification pop-up will also appear in the bottom-right corner of the VS Code interface confirming the successful login</p>
+</li>
+</ul>
+<p><br/>
+<a class="glightbox" href="../_attachments/setuptroubleshoot-10.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-10.png" width="600" /></a></p>
+<details class="warning">
+<summary>CLICK TO EXPAND — FAILURE TO LOGIN OR TIMED OUT</summary>
+<ul>
+<li>
+<p>If the authentication procedure in <em>Steps 12-14</em> takes too long, activation of the plugin will be "timed out" and the VS Code environment will display an error message<sup>[B]</sup> in the bottom-right corner</p>
+</li>
+<li>
+<p>Click the <strong>Connect</strong><sup>[C]</sup> button as shown and repeat <em>Steps 12-14</em> as before; the login process should run smoother (and faster) on the second attempt</p>
+<p><br/>
+<a class="glightbox" href="../_attachments/setup26.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup26.png" width="600" /></a></p>
+</li>
+</ul>
+</details>
+</li>
+</ol>
 
 
 
