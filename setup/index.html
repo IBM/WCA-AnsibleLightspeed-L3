@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#request-an-ibm-technology-zone-environment" class="md-skip">
           Skip to content
         </a>
       
@@ -331,16 +331,9 @@
                 
 
 
-<div class="admonition note">
-<p>As of <strong>March 11, 2024</strong>, previous versions of the <em>Technology Preview</em> have been discontinued by IBM and Red Hat.</p>
-<p>Via the <strong>IBM Technology Zone</strong>, IBM technical sellers and business partners can reserve a "Jumpbox" Linux virtual machine (VM) with VS Code and <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> pre-installed. Minor setup and replication of sample code is still required.</p>
-</div>
-<p><br/></p>
-<p>Before getting started with <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> (<strong>WCA</strong>), an environment must be reserved and deployed via the <em>IBM Technology Zone</em> (<strong>ITZ</strong>).</p>
-<p>These environments be reserved for learning and client demonstration purposes at no-charge. Some further configuration of these environments will be required after deployment.</p>
-<hr />
-<h1 id="_1"></h1>
 <h1 id="request-an-ibm-technology-zone-environment">Request an IBM Technology Zone environment</h1>
+<h1 id="_1"></h1>
+<p>Before getting started with <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> (<strong>WCA</strong>), an environment must be reserved and deployed via the <em>IBM Technology Zone</em> (<strong>ITZ</strong>).</p>
 <p>You will require access to the ITZ in order to reserve your environment and complete the lab. If you do not yet have access or an account with the ITZ, <a href="https://techzone.ibm.com/" target="_blank">you will need to register for one</a>.</p>
 <hr />
 <ol>
@@ -762,6 +755,70 @@ At this stage, the hands-on environment has been fully configured.</p>
 <h1 id="_3"></h1>
 <h1 id="next-steps">Next steps</h1>
 <p>The following section will cover the fundamentals of AI-recommended code generation for Ansible Tasks.</p>
+<hr />
+<ol>
+<li>
+<p>Follow the IBM Technology Zone link below and select the <strong>Request a Red Hat Account</strong><sup>[A]</sup> tile:</p>
+<div class="admonition warning">
+<p><strong>URL:</strong> <a href="https://techzone.ibm.com/collection/ibm-watson-x-code-assistant-for-ansible-lightspeed/environments" target="_blank">https://techzone.ibm.com/collection/ibm-watson-x-code-assistant-for-ansible-lightspeed/environments</a></p>
+</div>
+<p><br/></p>
+<div class="admonition note inline end">
+<p class="admonition-title">FULLSCREEN IMAGES</p>
+<p>Click on any of the screenshots within this documentation to enlarge the image.</p>
+</div>
+<p><a class="glightbox" href="../_attachments/setupAAP-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setupAAP-1.png" width="450" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="2">
+<li>
+<p>From the <em>Single environment reservation options</em>, select <strong>Reserve now</strong><sup>[A]</sup>.</p>
+<p><br/>
+<a class="glightbox" href="../_attachments/setup2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup2.png" width="600" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="3">
+<li>
+<p>Supply additional details about your ITZ reservation request:</p>
+<ul>
+<li>
+<p><strong>Name</strong><sup>[A]</sup>: Give your reservation a unique name.</p>
+</li>
+<li>
+<p><strong>Purpose</strong><sup>[B]</sup>: Set to <code>Practice / Self-Education</code> and affirm that customer data will not be used with the environment. If you are replicating this hands-on demonstration with a client, you must select Customer Demo and supply a sales opportunity number.</p>
+</li>
+<li>
+<p><strong>Purpose Description</strong><sup>[C]</sup>: Provide a brief summary of how the environment will be used.</p>
+</li>
+<li>
+<p><strong>Preferred Geography</strong><sup>[D]</sup>: Select the data center region that is closest to your location.</p>
+</li>
+<li>
+<p><strong>End Date &amp; Time</strong><sup>[E]</sup>: Select a time and date for when the reservation will expire. The recommended amount is 2 days, although it is possible to finish the hands-on demonstration within a few hours. Additional time extensions are available.</p>
+</li>
+</ul>
+<p>When satisfied, verify that you agree to the <em>Terms and Conditions</em> for the environment and finalize your reservation request by clicking <strong>Submit</strong><sup>[F]</sup>.</p>
+<p><br/></p>
+<div class="admonition note inline end">
+<p class="admonition-title">PROVISIONING TIMES</p>
+<p>Reservations take approximately <strong>15-30 minutes</strong> to complete from the time that you click submit. If you navigate to the <strong><a href="https://techzone.ibm.com/my/reservations" target="_blank">My Reservations</a></strong> tab of the ITZ, you can monitor the progress of your reservation. Wait for the ITZ reservation to be marked as <em>"Ready"</em> before attempting to start the lab.</p>
+</div>
+<p><a class="glightbox" href="../_attachments/setupAAP-3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setupAAP-3.png" width="400" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="4">
+<li>
+<p>When the Red Hat account request has been processed by IBM Technology Zone, you will receive a <strong>pair</strong> of emails: one from ITZ and a second from Red Hat.</p>
+<p>a. <code>Reservation Ready on IBM Technology Zone</code> : You can ignore the contents of this email, as the relevant account and licensing information are contained in the Red Hat email. Confirm that the ITZ email states that <strong>Status Update: Ready</strong><sup>[A]</sup>.</p>
+<p>b. <code>Red Hat Login Email Verification</code> : This email, addressed from a <code>no-reply@redhat.com</code> account, contains the resources necessary for accessing your uniquely-generated Red Hat credentials. The lab guide steps that follow will instruct you on how to set those up and how to use them for accessing your <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> entitlements inside VS Code.</p>
+<p><br/>
+<a class="glightbox" href="../_attachments/setupAAP-4a.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setupAAP-4a.png" width="600" /></a></p>
+<p><a class="glightbox" href="../_attachments/setupAAP-4b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setupAAP-4b.png" width="600" /></a></p>
+</li>
+</ol>
 
 
 
