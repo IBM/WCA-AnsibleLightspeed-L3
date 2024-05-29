@@ -599,124 +599,13 @@
 </ol>
 <hr />
 <h1 id="_3"></h1>
-<h1 id="installation-of-visual-studio-code-and-extensions">Installation of Visual Studio Code and Extensions</h1>
+<h1 id="authorizing-vs-code-with-wca">Authorizing VS Code with WCA</h1>
 <h1 id="_4"></h1>
-<p>Before getting started with <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> (<strong>WCA</strong>), you will first setup <em>Visual Studio Code</em> (commonly referred to as <strong>VS Code</strong>) on a local machine. This will provide an integrated development environment for experimenting with WCA's generative AI capabilities.</p>
+<p>Now you must authorize the VS Code environment for use with WCA, using the Red Hat account details that were generated for you in <em>Steps 5-6</em>.</p>
 <hr />
-<ol start="7">
+<ol start="15">
 <li>
-<p>Download the latest <strong>Stable Build</strong><sup>[A]</sup> release of VS Code available for your machine's operating system using the link below.</p>
-<div class="admonition warning">
-<p><strong>Download</strong>: <a href="https://code.visualstudio.com" target="_blank">https://code.visualstudio.com</a></p>
-</div>
-<p>Follow along with the installer wizard steps and continue with the hands-on lab instructions once VS Code is running on your local machine.</p>
-<p><br/></p>
-<div class="admonition note inline end">
-<p class="admonition-title">FULLSCREEN IMAGES</p>
-<p>Click on any of the screenshots within this documentation to enlarge the image.</p>
-</div>
-<p><a class="glightbox" href="../_attachments/setuptroubleshoot-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-1.png" width="450" /></a></p>
-</li>
-</ol>
-<hr />
-<ol start="8">
-<li>
-<p>Launch the VS Code application and take note of the sidebar along the left-side.</p>
-<ul>
-<li>
-<p>Click the <strong>Extensions</strong> icon<sup>[A]</sup> to open the marketplace of services and open source technologies that can be integrated with VS Code</p>
-</li>
-<li>
-<p>If you have used VS Code previously, extensions that have already been integrated with the environment will be listed along the left side</p>
-</li>
-</ul>
-<p><br/>
-<a class="glightbox" href="../_attachments/setuptroubleshoot-2a.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-2a.png" width="600" /></a></p>
-</li>
-</ol>
-<hr />
-<ol start="9">
-<li>
-<p>At the top of the <strong>Extensions</strong> panel is a search bar:</p>
-<ul>
-<li>
-<p>Type <code>Ansible</code> into the search bar<sup>[A]</sup> and then hit <span class="keys"><kbd class="key-enter">Enter</kbd></span></p>
-</li>
-<li>
-<p>Click the blue <strong>Install</strong> button<sup>[B]</sup> for the official <em>Ansible</em> extension for VS Code, published by <em>Red Hat</em> (blue checkmark)</p>
-</li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">INSTALLATION PROMPTS</p>
-<p>You might receive two different prompts during the installation process:</p>
-<ul>
-<li>
-<p><code>Do you trust the authors of the files in this workspace?</code>: select <strong>Trust Workspace &amp; Install</strong></p>
-</li>
-<li>
-<p><code>Do you want to allow untrusted files in this window?</code>: select <strong>Open</strong></p>
-</li>
-<li>
-<p>Installation of the Ansible extension for VS Code should only take a moment — an <em>Extension:Ansible</em> welcome panel will open when it is finished</p>
-</li>
-</ul>
-</div>
-<p><br/>
-<a class="glightbox" href="../_attachments/setuptroubleshoot-3a.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-3a.png" width="600" /></a></p>
-<p><a class="glightbox" href="../_attachments/setuptroubleshoot-3b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-3b.png" width="600" /></a></p>
-</li>
-</ol>
-<hr />
-<ol start="10">
-<li>
-<p>Once the Ansible extension has been integrated with VS Code, close any <em>Welcome</em> tabs that open and look for Ansible under the <em>Installed</em> services in the <strong>Extensions</strong> panel.</p>
-<ul>
-<li>
-<p>Click the <strong>Manage</strong> ("cogwheel") icon located just to the right of the Ansible tile</p>
-</li>
-<li>
-<p>From the drop-down options, click <strong>Extension Settings</strong><sup>[A]</sup></p>
-</li>
-<li>
-<p>If <strong>Extension Settings</strong> is not available from the drop-down menu, try right-clicking on the Ansible extension tile instead</p>
-</li>
-</ul>
-<p><br/>
-<a class="glightbox" href="../_attachments/setuptroubleshoot-4b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-4b.png" width="600" /></a></p>
-</li>
-</ol>
-<hr />
-<ol start="11">
-<li>
-<p><em>Settings</em> for the Ansible extension will be displayed within a new panel.</p>
-<ul>
-<li>
-<p>Ensure that <strong>User</strong><sup>[A]</sup> is selected at the top of the panel — do not edit <em>Workspace</em></p>
-</li>
-<li>
-<p>Using the search bar<sup>[B]</sup> at the top of the panel, add the text <code>Lightspeed</code> to filter the available options</p>
-</li>
-<li>
-<p><strong>Check</strong> the option for <code>Ansible &gt; Lightspeed</code><sup>[C]</sup> </p>
-</li>
-<li>
-<p><strong>Check</strong> the option for <code>Ansible &gt; Lightspeed: Suggestions</code><sup>[D]</sup></p>
-</li>
-<li>
-<p><strong>Check</strong> the option for <code>Ansible &gt; Lightspeed: Disable Content Suggestion Header</code><sup>[E]</sup></p>
-</li>
-<li>
-<p>Changes to <em>Settings</em> are automatically saved and applied – click the <code>X</code> button in the top-left corner of the panel's tab</p>
-</li>
-</ul>
-<p><br/>
-<a class="glightbox" href="../_attachments/setuptroubleshoot-5a.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-5a.png" width="600" /></a></p>
-</li>
-</ol>
-<hr />
-<ol start="12">
-<li>
-<p>Click the <strong>Ansible</strong> plugin<sup>[A]</sup> (denoted by the <code>A</code> logo) on the left-hand side of the interface.</p>
+<p>Within your VS Code environment click the <strong>Ansible</strong> plugin<sup>[A]</sup> (denoted by the <code>A</code> logo) on the left-hand side of the interface.</p>
 <ul>
 <li>
 <p>Two panels will open along the left side of the interface</p>
@@ -738,26 +627,55 @@
 </li>
 </ol>
 <hr />
-<ol start="13">
+<ol start="16">
 <li>
-<p>A web browser will load with the header <code>Log in to Ansible Lightspeed with IBM watsonx Code Assistant</code> — this is where you will supply your registration details recorded in <em>Step 5</em> in order to authenticate the VS Code plugin with WCA.</p>
+<p>A web browser will load with the header <code>Log in to Ansible Lightspeed with IBM watsonx Code Assistant</code> — this is where you will supply your registration details recorded in <em>Step 6</em> in order to authenticate the VS Code plugin with WCA.</p>
 <ul>
 <li>
-<p>Click the <strong>Log in with Red Hat</strong> button<sup>[A]</sup></p>
+<p>Click the <strong>Log in with Red Hat</strong> button</p>
 </li>
 <li>
-<p>If you had previously logged in to Red Hat with your browser, you might not be asked again for those credentials</p>
+<p>Provide the <code>Username</code> and <code>Password</code> recorded in <em>Step 6</em> of this module</p>
 </li>
 <li>
-<p>If you <em>are</em> asked to provide a <code>Username</code> and <code>Password</code>, supply the values recorded in <em>Step 5</em> of this module</p>
+<p>Click <strong>Submit</strong> to continue</p>
+</li>
+<li>
+<p>When prompted for <strong>We need a little more information</strong>, set <strong>Job Role</strong> to <code>Student</code></p>
+</li>
+<li>
+<p>Click the <strong>Submit</strong> button to finalize your account activation</p>
 </li>
 </ul>
+<div class="admonition quote">
+<p class="admonition-title">COPY AND PASTE INSTRUCTIONS INTO A VIRTUAL MACHINE</p>
+<p>As you are running the lab environment inside a virtual machine (VM), it is not possible to "paste" lab instructions or information from your local machine's clipboard directly into the VM. Instead, you may use the <strong>Send Text</strong> feature located in the top-center of the VM interface.</p>
+<ul>
+<li>
+<p>Place your cursor within the VM where you wish to paste instructions or text from the clipboard</p>
+</li>
+<li>
+<p>Click the <strong>Send Text</strong> icon<sup>[A]</sup> to open a pop-up window.</p>
+</li>
+<li>
+<p>Paste your local machine's clipboard contents into the input field<sup>[B]</sup></p>
+</li>
+<li>
+<p>Click the <code>Send Text</code> button<sup>[C]</sup> to the right of the input field to "paste" the contents into the VM</p>
+</li>
+<li>
+<p>Click the <code>X</code> icon<sup>[D]</sup> to close the pop-up window</p>
+</li>
+</ul>
+<p>If you wish to copy and paste instructions directly from the lab documentation, it is recommended that you open the GitHub instructions <strong>inside</strong> the VM's web browser (Firefox). This will allow you to copy instructions to the VM's clipboard and paste instructions inside the VS Code editor.</p>
 <p><br/>
-<a class="glightbox" href="../_attachments/setuptroubleshoot-8a.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-8a.png" width="600" /></a></p>
+<a class="glightbox" href="../_attachments/client-copypaste1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/client-copypaste1.png" width="500" /></a></p>
+<p><a class="glightbox" href="../_attachments/client-copypaste2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/client-copypaste2.png" width="500" /></a></p>
+</div>
 </li>
 </ol>
 <hr />
-<ol start="14">
+<ol start="17">
 <li>
 <p>After logging in with Red Hat, the web browser will display the prompt to <code>Authorize Ansible Lightspeed for VS Code</code>.</p>
 <ul>
@@ -765,10 +683,7 @@
 <p>Click <strong>Authorize</strong><sup>[A]</sup></p>
 </li>
 <li>
-<p><code>Do you want to allow this website to open Visual Studio Code?</code>: click <strong>Allow</strong><sup>[B]</sup></p>
-</li>
-<li>
-<p><code>Allow Ansible extension to open this URI?</code>: click <strong>Open</strong><sup>[C]</sup></p>
+<p><code>Allow this site to open the vscode link with Visual Studio Code - URL Handler?</code>: click <strong>Open URL</strong></p>
 </li>
 </ul>
 <p><br/>
@@ -778,7 +693,7 @@
 </li>
 </ol>
 <hr />
-<ol start="15">
+<ol start="18">
 <li>
 <p>At this stage, the Ansible extension for VS Code is now authenticated and connected to <em>IBM watsonx Code Assistant</em>.</p>
 <ul>
@@ -795,10 +710,10 @@
 <summary>CLICK TO EXPAND — FAILURE TO LOGIN OR TIMED OUT</summary>
 <ul>
 <li>
-<p>If the authentication procedure in <em>Steps 12-14</em> takes too long, activation of the plugin will be "timed out" and the VS Code environment will display an error message<sup>[B]</sup> in the bottom-right corner</p>
+<p>If the authentication procedure in <em>Steps 15-17</em> takes too long, activation of the plugin will be "timed out" and the VS Code environment will display an error message<sup>[B]</sup> in the bottom-right corner</p>
 </li>
 <li>
-<p>Click the <strong>Connect</strong><sup>[C]</sup> button as shown and repeat <em>Steps 12-14</em> as before; the login process should run smoother (and faster) on the second attempt</p>
+<p>Click the <strong>Connect</strong><sup>[C]</sup> button as shown and repeat <em>Steps 15-17</em> as before; the login process should run smoother (and faster) on the second attempt</p>
 <p><br/>
 <a class="glightbox" href="../_attachments/setup26.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup26.png" width="600" /></a></p>
 </li>
@@ -808,179 +723,6 @@
 </ol>
 <hr />
 <h1 id="_5"></h1>
-<h1 id="preparing-the-ansible-playbook-materials">Preparing the Ansible Playbook materials</h1>
-<p>To begin experimenting with WCA's generative AI capabilities, you will first need access to some Ansible Playbooks to generate Tasks with. Playbook templates have already been prepared ahead of time for this training so that you can get straight to work.</p>
-<hr />
-<ol start="16">
-<li>
-<p>Click the <strong>Explorer</strong> button at the top of the left-hand VS Code interface. Depending on your VS Code environment, the Explorer tab will look one of two ways. <strong>Click to expand</strong> whichever one of the two options best describes your situation and follow the instructions.</p>
-<details class="tip">
-<summary>I AM NEW TO <em>VS CODE</em></summary>
-<p>If you are working within a new installation of VS Code, the <strong>Explorer</strong> tab<sup>[A]</sup> will display <code>NO FOLDER OPENED</code> and give options to either <em>Open Folder</em> or <em>Clone Repository</em>. You must specify the public GitHub repository from which to <code>clone</code> the Ansible Playbook templates into the local (VS Code) environment. A <code>clone</code> request in GitHub is essentially a request to replicate code from the cloud-hosted repository into the local environment.</p>
-<details class="warning">
-<summary><code>GIT NOT INSTALLED</code> — CLICK TO EXPAND</summary>
-<p>If your machine has not used <strong><a href="https://git-scm.com" target="_blank">Git</a></strong> previously, you may be prompted by VS Code to install it before attempting a <code>clone</code> request. This is more commonplace on Windows operating systems, but some MacOS users may need to install Git as well. The following instructions will guide you through the process:</p>
-<ul>
-<li>
-<p>With the VS Code application open, click the <strong>Source Control</strong><sup>[A]</sup> tab from the left-hand interface and then click <strong>Download Git</strong><sup>[B]</sup>.</p>
-</li>
-<li>
-<p>A web browser will open to the <a href="https://git-scm.com" target="_blank">git-scm.com</a> Downloads page. </p>
-<ul>
-<li>
-<p><strong>Download</strong><sup>[C]</sup> the version recommended for your machine's particular operating system.</p>
-</li>
-<li>
-<p>The recommended version will be displayed first at the top of the list. </p>
-</li>
-<li>
-<p>Execute the installer on your machine and follow along with the prompts to finish installing Git. Accept the license agreement and accept the default values on each page.</p>
-</li>
-</ul>
-</li>
-<li>
-<p>Return to VS Code and once again click the <strong>Source Control</strong><sup>[D]</sup> tab, then click the blue <strong>Initialize Repository</strong><sup>[E]</sup> button.</p>
-</li>
-<li>
-<p>From the top of the <strong>Source Control</strong> tab, click the three dots <code>...</code><sup>[F]</sup> icon to expand a drop-down menu of options. Click on the <strong>Clone</strong><sup>[G]</sup> option.</p>
-</li>
-<li>
-<p>Follow the instructions for the remainder of this section to clone the <code>ansible-wca-demo-kit</code> repository to your local machine<sup>[H]</sup>.</p>
-</li>
-</ul>
-<p><br/>
-<a class="glightbox" href="../_attachments/setupgit1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setupgit1.png" width="500" /></a></p>
-<p><a class="glightbox" href="../_attachments/setupgit2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setupgit2.png" width="500" /></a></p>
-<p><a class="glightbox" href="../_attachments/setupgit3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setupgit3.png" width="500" /></a></p>
-<p><a class="glightbox" href="../_attachments/setupgit4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setupgit4.png" width="500" /></a></p>
-<p><a class="glightbox" href="../_attachments/setupgit5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setupgit5.png" width="500" /></a></p>
-</details>
-<ul>
-<li>
-<p>Click the <strong>Clone Repository</strong> button<sup>[B]</sup>, which will open an executable console<sup>[C]</sup> at the top of VS Code</p>
-</li>
-<li>
-<p>You must specify the public GitHub repository from which to "clone" the Ansible Playbook templates into the local (VS Code) environment</p>
-<p>Enter following GitHub repository address into the console and hit <span class="keys"><kbd class="key-enter">Enter</kbd></span> to confirm:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>https://github.com/chetan-hireholi/ansible-wca-demo-kit
-</code></pre></div>
-</li>
-<li>
-<p>If prompted <code>Would you like to open the cloned repository?</code>: click <strong>Open</strong><sup>[D]</sup></p>
-</li>
-<li>
-<p>If prompted <code>Do you trust the authors of the files in this folder?</code>: click <strong>Yes, I trust the authors</strong><sup>[E]</sup></p>
-</li>
-</ul>
-<p><br/>
-<a class="glightbox" href="../_attachments/setuptroubleshoot-11a.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-11a.png" width="600" /></a></p>
-<p><a class="glightbox" href="../_attachments/setuptroubleshoot-11b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-11b.png" width="600" /></a></p>
-<p><a class="glightbox" href="../_attachments/setuptroubleshoot-11c.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-11c.png" width="600" /></a></p>
-<p><a class="glightbox" href="../_attachments/setuptroubleshoot-11d.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-11d.png" width="600" /></a></p>
-</details>
-<details class="note">
-<summary>I HAVE USED <em>VS CODE</em> BEFORE</summary>
-<p>If you have worked with VS Code before and have added projects or folders to the environment previously, those folders (and their contents) will be displayed within the <strong>Explorer</strong> tab. However, you still need to clone (replicate) the Ansible Playbook templates from GitHub to a folder on your local machine. A <code>clone</code> request in GitHub is essentially a request to replicate code from the cloud-hosted repository into the local environment.</p>
-<details class="warning">
-<summary><code>GIT NOT INSTALLED</code> — CLICK TO EXPAND</summary>
-<p>If your machine has not used <strong><a href="https://git-scm.com" target="_blank">Git</a></strong> previously, you may be prompted by VS Code to install it before attempting a <code>clone</code> request. This is more commonplace on Windows operating systems, but some MacOS users may need to install Git as well. The following instructions will guide you through the process:</p>
-<ul>
-<li>
-<p>With the VS Code application open, click the <strong>Source Control</strong><sup>[A]</sup> tab from the left-hand interface and then click <strong>Download Git</strong><sup>[B]</sup>.</p>
-</li>
-<li>
-<p>A web browser will open to the <a href="https://git-scm.com" target="_blank">git-scm.com</a> Downloads page. </p>
-<ul>
-<li>
-<p><strong>Download</strong><sup>[C]</sup> the version recommended for your machine's particular operating system.</p>
-</li>
-<li>
-<p>The recommended version will be displayed first at the top of the list. </p>
-</li>
-<li>
-<p>Execute the installer on your machine and follow along with the prompts to finish installing Git. Accept the license agreement and accept the default values on each page.</p>
-</li>
-</ul>
-</li>
-<li>
-<p>Return to VS Code and once again click the <strong>Source Control</strong><sup>[D]</sup> tab, then click the blue <strong>Initialize Repository</strong><sup>[E]</sup> button.</p>
-</li>
-<li>
-<p>From the top of the <strong>Source Control</strong> tab, click the three dots <code>...</code><sup>[F]</sup> icon to expand a drop-down menu of options. Click on the <strong>Clone</strong><sup>[G]</sup> option.</p>
-</li>
-<li>
-<p>Follow the instructions for the remainder of this section to clone the <code>ansible-wca-demo-kit</code> repository to your local machine<sup>[H]</sup>.</p>
-</li>
-</ul>
-<p><br/>
-<a class="glightbox" href="../_attachments/setupgit1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setupgit1.png" width="500" /></a></p>
-<p><a class="glightbox" href="../_attachments/setupgit2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setupgit2.png" width="500" /></a></p>
-<p><a class="glightbox" href="../_attachments/setupgit3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setupgit3.png" width="500" /></a></p>
-<p><a class="glightbox" href="../_attachments/setupgit4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setupgit4.png" width="500" /></a></p>
-<p><a class="glightbox" href="../_attachments/setupgit5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setupgit5.png" width="500" /></a></p>
-</details>
-<ul>
-<li>
-<p>To perform a <code>clone</code> request with VS Code, perform the following action (depending on your OS):</p>
-<ol>
-<li>
-<p><strong>Windows</strong>: Press <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-p">P</kbd></span> to open an executable console at the top of VS Code</p>
-</li>
-<li>
-<p><strong>macOS</strong>: Press <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-p">P</kbd></span> to open an executable console at the top of VS Code</p>
-</li>
-</ol>
-</li>
-<li>
-<p>Enter following command into the console and hit <span class="keys"><kbd class="key-enter">Enter</kbd></span> to confirm:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git:clone
-</code></pre></div>
-</li>
-<li>
-<p>Next, specify the public repository from which to clone the Ansible Playbook templates. Enter following GitHub repository address into the console and hit <span class="keys"><kbd class="key-enter">Enter</kbd></span> to confirm:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>https://github.com/chetan-hireholi/ansible-wca-demo-kit
-</code></pre></div>
-</li>
-</ul>
-</details>
-<div class="admonition warning">
-<p>Regardless of whether you are new to VS Code or have used VS Code previously, the remainder of the steps in the <em>Setup &amp; Troubleshooting</em> module are the same.</p>
-</div>
-</li>
-</ol>
-<hr />
-<ol start="17">
-<li>
-<p>Confirm that the working directory<sup>[A]</sup> is now set to <code>ansible-wca-demo-kit</code> and that it contains files similar to those listed in the screenshot below.</p>
-<p><br/>
-<a class="glightbox" href="../_attachments/setup13.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup13.png" width="600" /></a></p>
-</li>
-</ol>
-<hr />
-<ol start="18">
-<li>
-<p>As a final step, verify that you have access to the latest demo code by performing the following <code>git fetch</code> and <code>git pull</code> commands:</p>
-<ul>
-<li>
-<p>From the top of the VM interface, drill down into <strong>View</strong> and then <strong>Command Palette</strong><sup>[A]</sup></p>
-</li>
-<li>
-<p>Into the pop-up console<sup>[B]</sup>, type <code>git fetch</code>, hit <span class="keys"><kbd class="key-enter">Enter</kbd></span>, and wait patiently for the operation to finish (no responses will be prompted to screen if no updates to the code repository were necessary)</p>
-</li>
-<li>
-<p>Open the console once again, type <code>git pull</code>, and then hit <span class="keys"><kbd class="key-enter">Enter</kbd></span></p>
-</li>
-<li>
-<p>At this stage, the hands-on environment has been fully configured</p>
-</li>
-</ul>
-<p><br/>
-<a class="glightbox" href="../_attachments/setup19a.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup19a.png" width="600" /></a></p>
-<p><a class="glightbox" href="../_attachments/setup19b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup19b.png" width="600" /></a></p>
-</li>
-</ol>
-<hr />
-<h1 id="_6"></h1>
 <h1 id="troubleshooting-and-support">Troubleshooting and support</h1>
 <div class="admonition note">
 <p>If you require assistance or run into issues with the hands-on lab, help is available.</p>
@@ -1099,7 +841,7 @@
 <ol start="7">
 <li>Supply the following password and click <strong>Send Credentials</strong>: </li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>IBMDem0s!
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>IBMDem0s!
 </code></pre></div>
 <hr />
 <ol start="8">
@@ -1299,7 +1041,7 @@ As you settle in to the environment and begin your training, you may encounter u
 </li>
 <li>
 <p>If you wish to install <code>ansible-lint</code> on your local machine, execute the following instruction within a Terminal console:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>python3 -m pip install --upgrade --user ansible-lint
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python3 -m pip install --upgrade --user ansible-lint
 </code></pre></div>
 <p><a class="glightbox" href="../_attachments/troubleshooting-4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-4.png" width="600" /></a></p>
 </li>
@@ -1399,11 +1141,11 @@ As you settle in to the environment and begin your training, you may encounter u
 </details>
 <details class="quote">
 <summary>COPY AND PASTE INSTRUCTIONS INTO A VIRTUAL MACHINE</summary>
-<p>If you are running the lab environment inside a virtual machine (VM), it might not be possible to "paste" lab instructions from your local machine's clipboard directly into the VM.</p>
+<p>As you are running the lab environment inside a virtual machine (VM), it is not be possible to "paste" lab instructions from your local machine's clipboard directly into the VM.</p>
 <p>If you wish to copy and paste instructions directly from the lab documentation, it is recommended that you open the GitHub instructions <strong>inside</strong> the VM's web browser (Firefox). This will allow you to copy instructions to the VM's clipboard and paste instructions inside the VS Code editor.</p>
 </details>
 <hr />
-<h1 id="_7"></h1>
+<h1 id="_6"></h1>
 <h1 id="next-steps">Next steps</h1>
 <p>The following section will cover the fundamentals of AI-recommended code generation for Ansible Tasks.</p>
 
