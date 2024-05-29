@@ -346,7 +346,7 @@
 </ul>
 </div>
 <h1 id="_1"></h1>
-<h1 id="reserving-a-lab-environment">Reserving a lab environment</h1>
+<h1 id="reserving-lab-environments">Reserving lab environments</h1>
 <h1 id="_2"></h1>
 <p>Before getting started with <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> (<strong>WCA</strong>), an environment must be reserved and deployed via the <em>IBM Technology Zone</em> (<strong>ITZ</strong>).</p>
 <p>You will require access to the ITZ in order to reserve your environment and complete the lab. If you do not yet have access or an account with the ITZ, <a href="https://techzone.ibm.com/" target="_blank">you will need to register for one</a>.</p>
@@ -477,6 +477,81 @@
 </div>
 <p><br/>
 <a class="glightbox" href="../_attachments/setuptroubleshoot-6b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-6b.png" width="600" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="7">
+<li>
+<p>Now you must request your second ITZ environment, this time for the virtualized machine (VM) environment. Return to the IBM Technology Zone reservation link below and select <strong>WCA for Ansible Essentials Plan: Visual Studio Desktop 1.3</strong><sup>[A]</sup>:</p>
+<div class="admonition warning">
+<p><strong>URL:</strong> <a href="https://techzone.ibm.com/collection/ibm-watson-x-code-assistant-for-ansible-lightspeed/environments" target="_blank">https://techzone.ibm.com/collection/ibm-watson-x-code-assistant-for-ansible-lightspeed/environments</a></p>
+</div>
+<p><br/>
+<a class="glightbox" href="_attachments/newvm-setup-step7.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="_attachments/newvm-setup-step7.png" width="450" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="8">
+<li>From the <em>Single environment reservation options</em>, select <strong>Reserve now</strong><sup>[A]</sup>.</li>
+</ol>
+<hr />
+<ol start="9">
+<li>
+<p>Supply additional details about your ITZ reservation request:</p>
+<ul>
+<li>
+<p><strong>Name</strong><sup>[A]</sup>: Give your reservation a unique name.</p>
+</li>
+<li>
+<p><strong>Purpose</strong><sup>[B]</sup>: Set to <code>Education</code> and affirm that customer data will not be used with the environment. If you are replicating this hands-on demonstration with a client, you must select Customer Demo and supply a sales opportunity number.</p>
+</li>
+<li>
+<p><strong>Purpose Description</strong><sup>[C]</sup>: Provide a brief summary of how the environment will be used.</p>
+</li>
+<li>
+<p><strong>Preferred Geography</strong><sup>[D]</sup>: Select <code>any - AMERICAS - any region - any datacenter</code></p>
+</li>
+<li>
+<p><strong>End Date &amp; Time</strong><sup>[E]</sup>: Select a time and date for when the reservation will expire. The recommended amount is 2 days, although it is possible to finish the hands-on demonstration within a few hours. Additional time extensions are available.</p>
+</li>
+<li>
+<p><strong>VPN Access</strong>: Set to <code>Disabled</code></p>
+</li>
+</ul>
+<p>When satisfied, verify that you agree to the <em>Terms and Conditions</em> for the environment and finalize your reservation request by clicking <strong>Submit</strong><sup>[F]</sup>.</p>
+<p><br/></p>
+<div class="admonition note inline end">
+<p class="admonition-title">PROVISIONING TIMES</p>
+<p>Red Hat account creation take approximately <strong>15-30 minutes</strong> to complete from the time that you click submit. If you navigate to the <strong><a href="https://techzone.ibm.com/my/reservations" target="_blank">My Reservations</a></strong> tab of the ITZ, you can monitor the progress of your reservation. Wait for the ITZ reservation to be marked as <em>"Ready"</em> before attempting to start the lab.</p>
+</div>
+<p><a class="glightbox" href="_attachments/newvm-setup-step9.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="_attachments/newvm-setup-step9.png" width="400" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="10">
+<li>
+<p>Once the ITZ reservation has been marked as <em>"Ready"</em>, access connection details for the environment by either clicking the shortcut in the ITZ email or by drilling down into the <strong>My Reservations</strong> tab<sup>[A]</sup> on the ITZ web portal.</p>
+<p><br/>
+<a class="glightbox" href="_attachments/newvm-setup-step10.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="_attachments/newvm-setup-step10.png" width="400" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="11">
+<li>
+<p>Scroll down to the bottom of the reservation page and click the blue <strong>VM Remote Console</strong> button<sup>[A]</sup> to launch the VM interface.</p>
+<p><br/>
+<a class="glightbox" href="_attachments/newvm-setup-step11.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="_attachments/newvm-setup-step11.png" width="400" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="12">
+<li>
+<p>Left-click on the welcome screen to open the login panel.</p>
+<p>Enter the following password and then hit +return+:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>IBMDem0s!
+</code></pre></div></p>
+<p><br/>
+<a class="glightbox" href="_attachments/newvm-setup-step12.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="_attachments/newvm-setup-step12.png" width="400" /></a></p>
 </li>
 </ol>
 <hr />
@@ -744,7 +819,7 @@
 <li>
 <p>You must specify the public GitHub repository from which to "clone" the Ansible Playbook templates into the local (VS Code) environment</p>
 <p>Enter following GitHub repository address into the console and hit <span class="keys"><kbd class="key-enter">Enter</kbd></span> to confirm:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>https://github.com/chetan-hireholi/ansible-wca-demo-kit
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>https://github.com/chetan-hireholi/ansible-wca-demo-kit
 </code></pre></div>
 </li>
 <li>
@@ -815,12 +890,12 @@
 </li>
 <li>
 <p>Enter following command into the console and hit <span class="keys"><kbd class="key-enter">Enter</kbd></span> to confirm:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git:clone
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git:clone
 </code></pre></div>
 </li>
 <li>
 <p>Next, specify the public repository from which to clone the Ansible Playbook templates. Enter following GitHub repository address into the console and hit <span class="keys"><kbd class="key-enter">Enter</kbd></span> to confirm:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>https://github.com/chetan-hireholi/ansible-wca-demo-kit
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>https://github.com/chetan-hireholi/ansible-wca-demo-kit
 </code></pre></div>
 </li>
 </ul>
@@ -981,7 +1056,7 @@
 <ol start="7">
 <li>Supply the following password and click <strong>Send Credentials</strong>: </li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>IBMDem0s!
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>IBMDem0s!
 </code></pre></div>
 <hr />
 <ol start="8">
@@ -1181,7 +1256,7 @@ As you settle in to the environment and begin your training, you may encounter u
 </li>
 <li>
 <p>If you wish to install <code>ansible-lint</code> on your local machine, execute the following instruction within a Terminal console:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>python3 -m pip install --upgrade --user ansible-lint
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>python3 -m pip install --upgrade --user ansible-lint
 </code></pre></div>
 <p><a class="glightbox" href="../_attachments/troubleshooting-4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-4.png" width="600" /></a></p>
 </li>
