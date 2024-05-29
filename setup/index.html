@@ -346,7 +346,7 @@
 </ul>
 </div>
 <h1 id="_1"></h1>
-<h1 id="reserving-lab-environments">Reserving lab environments</h1>
+<h1 id="reserving-the-lab-environments">Reserving the lab environments</h1>
 <h1 id="_2"></h1>
 <p>Before getting started with <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> (<strong>WCA</strong>), an environment must be reserved and deployed via the <em>IBM Technology Zone</em> (<strong>ITZ</strong>).</p>
 <p>You will require access to the ITZ in order to reserve your environment and complete the lab. If you do not yet have access or an account with the ITZ, <a href="https://techzone.ibm.com/" target="_blank">you will need to register for one</a>.</p>
@@ -492,7 +492,7 @@
 </ol>
 <hr />
 <ol start="8">
-<li>From the <em>Single environment reservation options</em>, select <strong>Reserve now</strong><sup>[A]</sup>.</li>
+<li>From the <em>Single environment reservation options</em>, select <strong>Reserve now</strong>.</li>
 </ol>
 <hr />
 <ol start="9">
@@ -599,7 +599,7 @@
 </ol>
 <hr />
 <h1 id="_3"></h1>
-<h1 id="authorizing-vs-code-with-wca">Authorizing VS Code with WCA</h1>
+<h1 id="authorizing-vs-code-for-use-with-wca">Authorizing VS Code for use with WCA</h1>
 <h1 id="_4"></h1>
 <p>Now you must authorize the VS Code environment for use with WCA, using the Red Hat account details that were generated for you in <em>Steps 5-6</em>.</p>
 <hr />
@@ -649,28 +649,8 @@
 </ul>
 <div class="admonition quote">
 <p class="admonition-title">COPY AND PASTE INSTRUCTIONS INTO A VIRTUAL MACHINE</p>
-<p>As you are running the lab environment inside a virtual machine (VM), it is not possible to "paste" lab instructions or information from your local machine's clipboard directly into the VM. Instead, you may use the <strong>Send Text</strong> feature located in the top-center of the VM interface.</p>
-<ul>
-<li>
-<p>Place your cursor within the VM where you wish to paste instructions or text from the clipboard</p>
-</li>
-<li>
-<p>Click the <strong>Send Text</strong> icon<sup>[A]</sup> to open a pop-up window.</p>
-</li>
-<li>
-<p>Paste your local machine's clipboard contents into the input field<sup>[B]</sup></p>
-</li>
-<li>
-<p>Click the <code>Send Text</code> button<sup>[C]</sup> to the right of the input field to "paste" the contents into the VM</p>
-</li>
-<li>
-<p>Click the <code>X</code> icon<sup>[D]</sup> to close the pop-up window</p>
-</li>
-</ul>
+<p>As you are running the lab environment inside a virtual machine (VM), it is not possible to "paste" lab instructions or information from your local machine's clipboard directly into the VM.</p>
 <p>If you wish to copy and paste instructions directly from the lab documentation, it is recommended that you open the GitHub instructions <strong>inside</strong> the VM's web browser (Firefox). This will allow you to copy instructions to the VM's clipboard and paste instructions inside the VS Code editor.</p>
-<p><br/>
-<a class="glightbox" href="../_attachments/client-copypaste1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/client-copypaste1.png" width="500" /></a></p>
-<p><a class="glightbox" href="../_attachments/client-copypaste2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/client-copypaste2.png" width="500" /></a></p>
 </div>
 </li>
 </ol>
@@ -738,257 +718,6 @@
 </li>
 </ul>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">UNABLE TO INSTALL <em>VS CODE</em> LOCALLY — REQUIRE A VIRTUAL MACHINE</p>
-<p>Due to security or regulatory constraints, certain IBM clients or individuals enrolled in this training may be unable to install software (such as VS Code) on their local machines. As an alternative, IBM Technology Zone is able to provision a virtual machine environment that can be reserved at no-charge for completing the hands-on training. Click to expand the instructions embedded below for how to setup the virtual machine environment. Note that the documentation's instructions remain the same for the other modules, regardless of whether you are using a "local" or "virtualized" VS Code environment — although the "local" option is the preferred option.</p>
-<details class="quote">
-<summary>CLICK TO EXPAND INSTRUCTIONS FOR REQUESTING A VM</summary>
-<ol>
-<li>
-<p>Follow the link below and select the <strong>WCA for Ansible Essentials Plan: Visual Studio Desktop 1.3</strong><sup>[A]</sup> (or later) tile:</p>
-<div class="admonition warning">
-<p><strong>URL:</strong> <a href="https://techzone.ibm.com/collection/ibm-watson-x-code-assistant-for-ansible-lightspeed/environments" target="_blank">https://techzone.ibm.com/collection/ibm-watson-x-code-assistant-for-ansible-lightspeed/environments</a></p>
-</div>
-<p><br/></p>
-<div class="admonition note inline end">
-<p class="admonition-title">FULLSCREEN IMAGES</p>
-<p>Click on any of the screenshots within this documentation to enlarge the image.</p>
-</div>
-<p><a class="glightbox" href="../_attachments/setup1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup1.png" width="400" /></a></p>
-</li>
-</ol>
-<hr />
-<ol start="2">
-<li>
-<p>From the <em>Single environment reservation options</em>, select <strong>Reserve now</strong><sup>[A]</sup>.</p>
-<p><br/>
-<a class="glightbox" href="../_attachments/setup2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup2.png" width="600" /></a></p>
-</li>
-</ol>
-<hr />
-<ol start="3">
-<li>
-<p>Supply additional details about your ITZ reservation request:</p>
-<ul>
-<li>
-<p><strong>Name</strong><sup>[A]</sup>: Give your reservation a unique name.</p>
-</li>
-<li>
-<p><strong>Purpose</strong><sup>[B]</sup>: Set to <code>Practice / Self-Education</code> and affirm that customer data will not be used with the environment. If you are replicating this hands-on demonstration with a client, you must select Customer Demo and supply a sales opportunity number.</p>
-</li>
-<li>
-<p><strong>Purpose Description</strong><sup>[C]</sup>: Provide a brief summary of how the environment will be used.</p>
-</li>
-<li>
-<p><strong>Preferred Geography</strong><sup>[D]</sup>: Select the data center region that is closest to your location.</p>
-</li>
-<li>
-<p><strong>End Date &amp; Time</strong><sup>[E]</sup>: Select a time and date for when the reservation will expire. The recommended amount is 2 days, although it is possible to finish the hands-on demonstration within a few hours. Additional time extensions are available.</p>
-</li>
-</ul>
-<p>When satisfied, verify that you agree to the <em>Terms and Conditions</em> for the environment and finalize your reservation request by clicking <strong>Submit</strong><sup>[F]</sup>.</p>
-<p><br/></p>
-<div class="admonition note inline end">
-<p class="admonition-title">PROVISIONING TIMES</p>
-<p>Reservations take approximately <strong>15-30 minutes</strong> to complete from the time that you click submit. If you navigate to the <strong><a href="https://techzone.ibm.com/my/reservations" target="_blank">My Reservations</a></strong> tab of the ITZ, you can monitor the progress of your reservation. Wait for the ITZ reservation to be marked as <em>"Ready"</em> before attempting to start the lab.</p>
-</div>
-<p><a class="glightbox" href="../_attachments/setup3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup3.png" width="400" /></a></p>
-</li>
-</ol>
-<hr />
-<ol start="4">
-<li>
-<p>When the ITZ environment is ready to go, you will receive an email to your inbox (similar to the screenshot below). Click the blue <strong>View My Reservations</strong> at the bottom of the email to open a page with more details about the environment. </p>
-<p>Alternatively, you can click the <a href="https://techzone.ibm.com/my/reservations" target="_blank">My Reservations</a><sup>[A]</sup> tab from the ITZ home page to drill down into your environment's details.</p>
-<p><br/>
-<a class="glightbox" href="../_attachments/setup4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup4.png" width="400" /></a></p>
-</li>
-</ol>
-<hr />
-<ol start="5">
-<li>
-<p>Near the top of the page, under <em>Published Services</em>, click the <strong>noVNC</strong><sup>[A]</sup> link to access the virtual machine.</p>
-<p><br/>
-<a class="glightbox" href="../_attachments/setup5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup5.png" width="600" /></a></p>
-</li>
-</ol>
-<hr />
-<ol start="6">
-<li>
-<p>A new tab will open within your web browser for the VM environment.</p>
-<ul>
-<li>
-<p>It is recommended that Firefox be used for optimal performance</p>
-</li>
-<li>
-<p>Along the left-side edge of the page, click the <strong>Cog</strong><sup>[A]</sup> icon</p>
-</li>
-<li>
-<p>From the pop-up menu, click <strong>Scaling Mode</strong> and then select <strong>Remote Resizing</strong></p>
-</li>
-<li>
-<p>The VM window will now be properly scaled to the size of your browser window</p>
-</li>
-<li>
-<p>Click the <strong>Connect</strong><sup>[B]</sup> button to continue with authentication</p>
-</li>
-</ul>
-<p><br/>
-<a class="glightbox" href="../_attachments/setup6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup6.png" width="600" /></a></p>
-</li>
-</ol>
-<hr />
-<ol start="7">
-<li>Supply the following password and click <strong>Send Credentials</strong>: </li>
-</ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>IBMDem0s!
-</code></pre></div>
-<hr />
-<ol start="8">
-<li>
-<p>Once you have successfully authenticated, click the <strong>Activities</strong><sup>[A]</sup> button in the top-left corner of the interface to pull open the list of available applications from the bottom of the screen.</p>
-<p>Click the <strong>Visual Studio Code</strong><sup>[B]</sup> application shortcut at the bottom of the desktop to start up the service.</p>
-<p>If you wish to copy and paste instructions directly from the lab documentation into the virtual machine (VM), it is recommended that you open the GitHub instructions <strong>inside</strong> the VM's web browser (Firefox). This will allow you to copy instructions to the VM's clipboard and paste instructions inside the VS Code editor.</p>
-<p>You may access the web browser at any time by clicking the <strong>Activities</strong><sup>[A]</sup> button and then launching <strong>Firefox</strong><sup>[C]</sup>, as shown.</p>
-<p><br/></p>
-<p><a class="glightbox" href="../_attachments/setup8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup8.png" width="600" /></a></p>
-<div class="admonition note">
-<p>Visual Studio (VS) Code is a code editor built on open source technology that is free to use and published by Microsoft. Distributions are available for both Windows and macOS operating systems.</p>
-</div>
-</li>
-</ol>
-<hr />
-<ol start="9">
-<li>
-<p>VS Code will load and then present you with an <em>Authentication Required</em> splash screen.</p>
-<ul>
-<li>
-<p>Enter the same password<sup>[A]</sup> used to log into the VM: <code>IBMDem0s!</code></p>
-</li>
-<li>
-<p>Click <strong>Unlock</strong><sup>[B]</sup></p>
-</li>
-</ul>
-<p><a class="glightbox" href="../_attachments/setup9.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup9.png" width="600" /></a></p>
-</li>
-</ol>
-<hr />
-<ol start="10">
-<li>
-<p>If this is your first time logging into the VM, you must authenticate and activate the Ansible Lightspeed extension for VS Code.</p>
-<p>Click the <strong>Ansible</strong><sup>[A]</sup> extension (denoted by the large <code>A</code> icon) from the left-hand interface open expose details about the Ansible plug-in.</p>
-<p><br/>
-<a class="glightbox" href="../_attachments/setup10.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup10.png" width="600" /></a></p>
-</li>
-</ol>
-<hr />
-<ol start="11">
-<li>
-<p>In the bottom-right corner of the interface<sup>[A]</sup>, you may receieve a notification stating that <code>You must be logged in to use the Ansible Lightspeed</code>, which confirms that the Ansible Lightspeed service still needs to be activated for this VM environment.</p>
-<p>Additionally, along the left-hand side of the interface<sup>[B]</sup>, you will also receive a welcome notice attached to the <code>Ansible Lightspeed Login</code> panel.</p>
-<ul>
-<li>
-<p>Click either the <strong>Connect</strong><sup>[C]</sup> or <strong>Login</strong> buttons to proceed with authentication and activation of the plugin</p>
-</li>
-<li>
-<p>When prompted with <code>The extension Ansible wants to sign in using Ansible Lightspeed</code>, click <strong>Allow</strong><sup>[D]</sup> </p>
-</li>
-</ul>
-<p><br/>
-<a class="glightbox" href="../_attachments/setup20.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup20.png" width="600" /></a></p>
-<p><a class="glightbox" href="../_attachments/setup21.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup21.png" width="600" /></a></p>
-</li>
-</ol>
-<hr />
-<ol start="12">
-<li>
-<p>Firefox web browser will open within the VM and redirect to a Red Hat authentication page, as shown below.</p>
-<ul>
-<li>
-<p>Click <strong>Log in with Red Hat</strong><sup>[A]</sup></p>
-</li>
-<li>
-<p>Note that the page load may be sluggish or slow — please be patient and give it a few moments before retrying this step</p>
-</li>
-</ul>
-<p><br/>
-<a class="glightbox" href="../_attachments/setup22.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup22.png" width="600" /></a></p>
-</li>
-</ol>
-<hr />
-<ol start="13">
-<li>
-<p>The VM environment already has access credentials saved to Firefox's keychain. Use the stored username and password to authenticate the Ansible Lightspeed plugin with Red Hat.</p>
-<ul>
-<li>
-<p>For the <strong>Red Hat login or email</strong><sup>[A]</sup> field, enter <code>ibm-wxca-demo-user</code></p>
-</li>
-<li>
-<p>For the <strong>Password</strong><sup>[B]</sup> field, enter <code>IBMDem0s!</code></p>
-</li>
-<li>
-<p>Log in when ready</p>
-</li>
-</ul>
-<p><br/>
-<a class="glightbox" href="../_attachments/setup23.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup23.png" width="600" /></a></p>
-<p><a class="glightbox" href="../_attachments/setup24.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup24.png" width="600" /></a></p>
-</li>
-</ol>
-<hr />
-<ol start="14">
-<li>
-<p>A pop-up notification will ask to <code>Authorize Ansible Lightspeed for VS Code</code>. Click <strong>Authorize</strong><sup>[A]</sup> to proceed.</p>
-<p><a class="glightbox" href="../_attachments/setup25.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup25.png" width="600" /></a></p>
-<details class="warning">
-<summary>CLICK TO EXPAND — FAILURE TO LOGIN OR TIMED OUT</summary>
-<p>If the authentication procedure in <em>Steps 11-14</em> takes too long (over 60 seconds), activation of the plugin will be "timed out" and the VS Code environment will display an error message<sup>[B]</sup> in the bottom-right corner.</p>
-<p>Click the <strong>Connect</strong><sup>[C]</sup> button as shown and repeat <em>Steps 11-14</em> as before. The login process should run smoother (and faster) on the second attempt.</p>
-<p><a class="glightbox" href="../_attachments/setup26.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup26.png" width="600" /></a></p>
-</details>
-</li>
-</ol>
-<hr />
-<ol start="15">
-<li>
-<p>Verify<sup>[A]</sup> that the environment is logged in as <code>wca-ibm-demo-user</code> and that the <code>User Type: Licensed</code>.</p>
-<p><br/>
-<a class="glightbox" href="../_attachments/setup11.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup11.png" width="600" /></a></p>
-</li>
-</ol>
-<hr />
-<ol start="16">
-<li>
-<p>Click the <strong>Explorer</strong><sup>[A]</sup> button (as shown) in the top-left corner of the interface.</p>
-<p>Confirm that the working directory is set to <code>ansible-wca-demo-kit</code> and that it contains files similar to those listed in the screenshot below.</p>
-<p><br/>
-<a class="glightbox" href="../_attachments/setup13.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup13.png" width="600" /></a></p>
-</li>
-</ol>
-<hr />
-<ol start="17">
-<li>
-<p>As a final step, verify that the VM has access to the latest demo code by performing the following <code>git fetch</code> and <code>git pull</code> commands:</p>
-<ul>
-<li>
-<p>From the top of the VM interface, drill down into <strong>View</strong> and then <strong>Command Palette</strong><sup>[A]</sup></p>
-</li>
-<li>
-<p>Into the pop-up console<sup>[B]</sup>, type <code>git fetch</code>, then hit <code>Return</code>, and wait patiently for the operation to finish</p>
-</li>
-<li>
-<p>Open the console once again, type <code>git pull</code>, and then hit <code>Return</code> (no responses will be prompted to screen if no updates to the code repository were necessary)</p>
-</li>
-</ul>
-<p><br/>
-<a class="glightbox" href="../_attachments/setup19a.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup19a.png" width="600" /></a></p>
-<p><a class="glightbox" href="../_attachments/setup19b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup19b.png" width="600" /></a></p>
-</li>
-</ol>
-<p><br/>
-At this stage, the hands-on environment has been fully configured.</p>
-</details>
-</div>
 <p><br/>
 As you settle in to the environment and begin your training, you may encounter unexpected warnings or errors. Many of these can be safely ignored or can be easily rectified. This section will serve as a running list of frequently asked questions and troubleshooting techniques. Click on any of the following topics for additional details.</p>
 <hr />
@@ -1041,7 +770,7 @@ As you settle in to the environment and begin your training, you may encounter u
 </li>
 <li>
 <p>If you wish to install <code>ansible-lint</code> on your local machine, execute the following instruction within a Terminal console:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python3 -m pip install --upgrade --user ansible-lint
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python3 -m pip install --upgrade --user ansible-lint
 </code></pre></div>
 <p><a class="glightbox" href="../_attachments/troubleshooting-4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-4.png" width="600" /></a></p>
 </li>
