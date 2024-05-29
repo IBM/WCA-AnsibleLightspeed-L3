@@ -487,7 +487,7 @@
 <p><strong>URL:</strong> <a href="https://techzone.ibm.com/collection/ibm-watson-x-code-assistant-for-ansible-lightspeed/environments" target="_blank">https://techzone.ibm.com/collection/ibm-watson-x-code-assistant-for-ansible-lightspeed/environments</a></p>
 </div>
 <p><br/>
-<a class="glightbox" href="_attachments/newvm-setup-step7.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="_attachments/newvm-setup-step7.png" width="450" /></a></p>
+<a class="glightbox" href="../_attachments/newvm-setup-step7.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/newvm-setup-step7.png" width="450" /></a></p>
 </li>
 </ol>
 <hr />
@@ -515,16 +515,16 @@
 <p><strong>End Date &amp; Time</strong><sup>[E]</sup>: Select a time and date for when the reservation will expire. The recommended amount is 2 days, although it is possible to finish the hands-on demonstration within a few hours. Additional time extensions are available.</p>
 </li>
 <li>
-<p><strong>VPN Access</strong>: Set to <code>Disabled</code></p>
+<p><strong>VPN Access</strong><sup>[F]</sup>: Set to <code>Disabled</code></p>
 </li>
 </ul>
-<p>When satisfied, verify that you agree to the <em>Terms and Conditions</em> for the environment and finalize your reservation request by clicking <strong>Submit</strong><sup>[F]</sup>.</p>
+<p>When satisfied, verify that you agree to the <em>Terms and Conditions</em> for the environment and finalize your reservation request by clicking <strong>Submit</strong><sup>[G]</sup>.</p>
 <p><br/></p>
 <div class="admonition note inline end">
 <p class="admonition-title">PROVISIONING TIMES</p>
 <p>Red Hat account creation take approximately <strong>15-30 minutes</strong> to complete from the time that you click submit. If you navigate to the <strong><a href="https://techzone.ibm.com/my/reservations" target="_blank">My Reservations</a></strong> tab of the ITZ, you can monitor the progress of your reservation. Wait for the ITZ reservation to be marked as <em>"Ready"</em> before attempting to start the lab.</p>
 </div>
-<p><a class="glightbox" href="_attachments/newvm-setup-step9.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="_attachments/newvm-setup-step9.png" width="400" /></a></p>
+<p><a class="glightbox" href="../_attachments/newvm-setup-step9.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/newvm-setup-step9.png" width="400" /></a></p>
 </li>
 </ol>
 <hr />
@@ -532,7 +532,7 @@
 <li>
 <p>Once the ITZ reservation has been marked as <em>"Ready"</em>, access connection details for the environment by either clicking the shortcut in the ITZ email or by drilling down into the <strong>My Reservations</strong> tab<sup>[A]</sup> on the ITZ web portal.</p>
 <p><br/>
-<a class="glightbox" href="_attachments/newvm-setup-step10.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="_attachments/newvm-setup-step10.png" width="400" /></a></p>
+<a class="glightbox" href="../_attachments/newvm-setup-step10.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/newvm-setup-step10.png" width="400" /></a></p>
 </li>
 </ol>
 <hr />
@@ -540,18 +540,61 @@
 <li>
 <p>Scroll down to the bottom of the reservation page and click the blue <strong>VM Remote Console</strong> button<sup>[A]</sup> to launch the VM interface.</p>
 <p><br/>
-<a class="glightbox" href="_attachments/newvm-setup-step11.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="_attachments/newvm-setup-step11.png" width="400" /></a></p>
+<a class="glightbox" href="../_attachments/newvm-setup-step11.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/newvm-setup-step11.png" width="400" /></a></p>
 </li>
 </ol>
 <hr />
 <ol start="12">
 <li>
-<p>Left-click on the welcome screen to open the login panel.</p>
-<p>Enter the following password and then hit <span class="keys"><kbd class="key-enter">Enter</kbd></span>:
+<p>Select the <code>techzone</code><sup>[A]</sup> login when prompted.</p>
+<ul>
+<li>
+<p>Supply the following for the password:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>IBMDem0s!
-</code></pre></div></p>
+</code></pre></div>
+</li>
+<li>
+<p>Hit <span class="keys"><kbd class="key-enter">Enter</kbd></span> to complete the VM login</p>
+</li>
+</ul>
 <p><br/>
-<a class="glightbox" href="_attachments/newvm-setup-step12.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="_attachments/newvm-setup-step12.png" width="400" /></a></p>
+<a class="glightbox" href="../_attachments/client-setup2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/client-setup2.png" width="600" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="13">
+<li>
+<p>Once you have successfully authenticated, click the <strong>Activities</strong><sup>[A]</sup> button in the top-left corner of the interface to pull open the list of available applications from the bottom of the screen.</p>
+<ul>
+<li>
+<p>Click the <strong>Visual Studio Code</strong><sup>[B]</sup> application shortcut at the bottom of the desktop to start up the service.</p>
+</li>
+<li>
+<p>If you wish to copy and paste instructions directly from the lab documentation into the virtual machine (VM), it is recommended that you open the GitHub instructions <strong>inside</strong> the VM's web browser (Firefox). This will allow you to copy instructions to the VM's clipboard and paste instructions inside the VS Code editor.</p>
+</li>
+<li>
+<p>You may access the web browser at any time by clicking the <strong>Activities</strong><sup>[A]</sup> button and then launching <strong>Firefox</strong><sup>[C]</sup>, as shown.</p>
+</li>
+</ul>
+<p><br/></p>
+<p><a class="glightbox" href="../_attachments/setup8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup8.png" width="600" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="14">
+<li>
+<p>VS Code will load and then present you with an <em>Authentication Required</em> splash screen.</p>
+<ul>
+<li>
+<p>Enter the same password<sup>[A]</sup> used to log into the VM:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>IBMDem0s!
+</code></pre></div>
+</li>
+<li>
+<p>Click <strong>Unlock</strong><sup>[B]</sup></p>
+</li>
+</ul>
+<p><a class="glightbox" href="../_attachments/setup9.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setup9.png" width="600" /></a></p>
 </li>
 </ol>
 <hr />
@@ -819,7 +862,7 @@
 <li>
 <p>You must specify the public GitHub repository from which to "clone" the Ansible Playbook templates into the local (VS Code) environment</p>
 <p>Enter following GitHub repository address into the console and hit <span class="keys"><kbd class="key-enter">Enter</kbd></span> to confirm:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>https://github.com/chetan-hireholi/ansible-wca-demo-kit
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>https://github.com/chetan-hireholi/ansible-wca-demo-kit
 </code></pre></div>
 </li>
 <li>
@@ -890,12 +933,12 @@
 </li>
 <li>
 <p>Enter following command into the console and hit <span class="keys"><kbd class="key-enter">Enter</kbd></span> to confirm:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git:clone
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git:clone
 </code></pre></div>
 </li>
 <li>
 <p>Next, specify the public repository from which to clone the Ansible Playbook templates. Enter following GitHub repository address into the console and hit <span class="keys"><kbd class="key-enter">Enter</kbd></span> to confirm:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>https://github.com/chetan-hireholi/ansible-wca-demo-kit
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>https://github.com/chetan-hireholi/ansible-wca-demo-kit
 </code></pre></div>
 </li>
 </ul>
@@ -1056,7 +1099,7 @@
 <ol start="7">
 <li>Supply the following password and click <strong>Send Credentials</strong>: </li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>IBMDem0s!
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>IBMDem0s!
 </code></pre></div>
 <hr />
 <ol start="8">
@@ -1256,7 +1299,7 @@ As you settle in to the environment and begin your training, you may encounter u
 </li>
 <li>
 <p>If you wish to install <code>ansible-lint</code> on your local machine, execute the following instruction within a Terminal console:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>python3 -m pip install --upgrade --user ansible-lint
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>python3 -m pip install --upgrade --user ansible-lint
 </code></pre></div>
 <p><a class="glightbox" href="../_attachments/troubleshooting-4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/troubleshooting-4.png" width="600" /></a></p>
 </li>
