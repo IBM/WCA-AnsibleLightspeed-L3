@@ -1,0 +1,61 @@
+# Project info
+site_name: IBM watsonx Code Assistant for Red Hat Ansible Lightspeed - Technical Sales Level 3
+site_description: IBM watsonx Code Assistant for Red Hat Ansible Lightspeed - Technical Sales Level 3
+site_author: Christopher Bienko (cdbienko@us.ibm.com)
+copyright: Copyright &copy; 2023-2024 IBM
+
+# Repository
+repo_name: IBM/WCA-AnsibleLightspeed-L3
+#repo_url: https://github.com/IBM/WCA-AnsibleLightspeed-L3
+#edit_uri: edit/master/docs
+docs_dir: docs
+
+
+nav:
+  - Introduction: 'index.md'
+  - Evaluation: 'evaluation.md'
+  - Setup and Troubleshooting: 'setup.md'
+  - Generating Code: 'generating.md'
+  - Content Source Matching and Post-Processing: 'source-matching-post-processing.md'
+  - Task Description Tuning and Model Customization: 'customizing.md'
+  - (OPTIONAL) Deploying a Live AWS EC2 Instance and WordPress Application: 'advanced.md'
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - content.code.annotate
+  palette:
+      scheme: default
+
+plugins:
+    - mkdocs-video:
+        is_video: True
+        video_autoplay: False
+    - macros
+    - search
+    - glightbox
+
+markdown_extensions:
+  - markdown_fenced_code_tabs
+  - sane_lists
+  - pymdownx.details
+  - admonition
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.keys
+  - attr_list
+  - md_in_html
+  - def_list
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
