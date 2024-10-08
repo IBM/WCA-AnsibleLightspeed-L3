@@ -462,42 +462,33 @@
 </ol>
 </div>
 <p><br/></p>
-<p><a class="glightbox" href="_attachments/Intro-Update-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="_attachments/Intro-Update-1.png" /></a></p>
-<p><br/></p>
 <h2 id="iii-watsonx-code-assistant-product-family"><strong>iii. watsonx Code Assistant product family</strong></h2>
 <p>IBM watsonx Code Assistant is the flagship offering in a suite of generative AI code assistant products, which also include offerings for Ansible Automation Platform (IBM watsonx Code Assistant for Red Hat Ansible Lightspeed) and IBM Systems modernization (IBM watsonx Code Assistant for Z).</p>
-<ul>
-<li>
-<p>Accelerates software development tasks with AI-powered capabilities including context-aware code generation, explanation, documentation, translation, and unit test generation. It does so while maintaining the principles of trust, security, and compliance with regards to IBM client's data and intellectual property. Developers and IT Operators can utilize WCA to speed up application modernization efforts and generate Ansible-based automation jobs to rapidly scale out (or scale up) IT environments.</p>
-</li>
-<li>
-<p>Offerings are powered by IBM Granite foundation models that include state-of-the-art large language models designed for code. For offerings such as WCA for Ansible Lightspeed and WCA for Z, bespoke code models— tailored to working with Ansible Automation Platform and COBOL-to-Z use cases, respectively —are invoked. Universally true for all of the watsonx Code Assistant offerings is that they are geared towards helping IT teams create high-quality code using AI-generated recommendations, based on natural language requests or existing source code. These AI models, and the recommendations they generate, are seamlessly integrated via extensions with the world's most popular developer integrated development environments (IDE), including Visual Studio Code and Eclipse.</p>
-</li>
-</ul>
+<p>The solution accelerates software development tasks with AI-powered capabilities including context-aware code generation, explanation, documentation, translation, and unit test generation. It does so while maintaining the principles of trust, security, and compliance with regards to IBM client's data and intellectual property. Developers and IT Operators can utilize WCA to speed up application modernization efforts and generate Ansible-based automation jobs to rapidly scale out (or scale up) IT environments.</p>
+<hr />
+<p><a class="glightbox" href="_attachments/Intro-Update-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="_attachments/Intro-Update-1.png" /></a></p>
+<hr />
+<p>IBM watsonx Code Assistant products are powered by <strong>IBM Granite</strong> foundation models that include state-of-the-art large language models designed for code. For offerings such as WCA for Ansible Lightspeed and WCA for Z, bespoke code models— tailored to working with Ansible Automation Platform and COBOL-to-Z use cases, respectively —are invoked. Universally true for all of the watsonx Code Assistant offerings is that they are geared towards helping IT teams create high-quality code using AI-generated recommendations, based on natural language requests or existing source code. These AI models, and the recommendations they generate, are seamlessly integrated via extensions with the world's most popular developer integrated development environments (IDE), including Visual Studio Code and Eclipse.</p>
 <p>Granite is IBM’s flagship brand of open and proprietary LLMs, spanning multiple modalities. Granite models exist for code, languages, time series, and GeoSpatial — with additional modalities expected in future. </p>
 <hr />
-<div class="admonition quote">
-<p><code>Code Large Language Model</code> (LLM) is a generative AI foundation model for code generation that is based on the IBM Granite model, one of the many foundation models available to <code>IBM watsonx.ai</code> — and then further refined and calibrated for use with specific programming languages like COBOL, Ansible, and others. <code>IBM watsonx Code Assistant</code> is the flagship product for generative AI services, with a variety of options (<code>for Red Hat Ansible Lightspeed</code>, <code>for Z</code>) that are tailored to specific client use cases and business goals.</p>
+<p><a class="glightbox" href="_attachments/Intro-Update-3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="_attachments/Intro-Update-3.png" /></a></p>
+<hr />
+<p>IBM Granite code models are a series of decoder-only models for code generative tasks, trained with code written in 116 different programming languages. The Granite code models family consists of models ranging in size from 3 to 34 billion parameters, in both a base model and instruction-following model variants. These models have a range of uses, from complex application modernization tasks to on-device memory-constrained use cases.</p>
+<p>The larger the block size for a particular language on this chart, the larger percentage of training corpus data of that language was used to train the Granite code model. Languages and formats such as Java, C, JSON, JavaScript, HTML, and PHP are subjects in which the model “Majors” and excels. Other languages such as Ruby, SQL, and Swift could be considered “Minors” where the generalized code model can work with the language, but has less training data to base those recommendations on. These percentages and training data volumes will continue to evolve as the Granite code models mature.</p>
+<div class="admonition tip">
+<p class="admonition-title">WATSONX CODE ASSISTANT vs. WCA FOR ANSIBLE LIGHTSPEED?</p>
+<p>For those familiar with other IBM watsonx Code Assistant offerings— such as WCA for Red Hat Ansible Lightspeed and WCA for Z —the generalized code model approach, as seen here, differs from the specialized code model approach of those two aforementioned offerings.</p>
+<ul>
+<li>
+<p>The <strong>WCA for Ansible Lightspeed</strong> flavor of IBM Granite code models specializes (Majors) only in Ansible Playbooks and YAML</p>
+</li>
+<li>
+<p>Similarly, the IBM Granite code model used by <strong>WCA for Z</strong> specializes in transforming COBOL mainframe code into modernized Java code.</p>
+</li>
+</ul>
+<p>Ansible Playbooks, COBOL, and Java are all supported (Minor) languages for the generalized IBM Granite code models— and therefore are supported by IBM watsonx Code Assistant —but if a client wishes to specialize in those particular languages and frameworks, they would be well advised to utilize the bespoke WCA for Ansible Lightspeed and WCA for Z offerings to do so.</p>
 </div>
 <p><br/></p>
-<h1 id="_2"></h1>
-<h1 id="ibm-watsonx-code-assistant-for-red-hat-ansible-lightspeed-accelerates-playbook-creation-in-ansible-automation-platform-with-generative-ai-powered-content-recommendations"><strong>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</strong> accelerates Playbook creation in Ansible Automation Platform with generative-AI powered content recommendations.</h1>
-<p><strong>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed (WCA)</strong> enables developers and clients across the globe to create Ansible content faster and at a lower cost. The adoption and use of this solution is helping those clients to reduce the overall Ansible learning curve, reduce the IT skills shortage, and helping organizations coalesce around automation as an IT strategic imperative.</p>
-<p>WCA simplifies the process of generating Ansible Playbooks by using natural language inputs in the Ansible Task description. Through capabilities for content source matching, clients gain transparency into the potential sources used in training data for content recommendations, including the author and license. Generation of code, either for individual Ansible Tasks or full Playbooks, can be produced using natural English language statements. Code explanation allows AI to take the guesswork out of what a block of code performs and can rapidly improve the quality (and maintenance) of code by generating documentation in-line.</p>
-<p>Boosting the productivity of workers is a consistent need amongst every organization, so WCA meets automation developers where they work: by integrating AI-content recommendations into their integrated development environment (IDE). WCA also democratizes automation for the masses, enable developers of all skill sets to have access to automation across more lines of business by generating content with natural language and plain English text.</p>
-<p>AI-generated code recommendations are of little value unless they can be tailored to the data and standards of a client's business, and as such WCA provides a "Studio" for model tuning. Clients can further customize the recommendations generated by IBM Granite code models with their existing Ansible Playbook content, for more personalized code recommendations that are similar and fit for immediate use.</p>
-<p><br/></p>
-<div class="admonition note">
-<p class="admonition-title">WHAT ARE PLAYBOOKS?</p>
-<p>Ansible Playbooks instruct Ansible’s automation engine on how to execute tasks in a step-by-step manner. Playbooks defines roles, tasks, handlers, and other configurations; in turn, these attributes allow developers and users to codify complex orchestration scenarios. Conceptually, think of a Playbook as a recipe book for system administration: each recipe (or Playbook) spells out the steps required to achieve a particular system state or to complete a given operation.</p>
-<p>One of the standout features of Ansible Playbooks is that they are <em>idempotent</em>: executing Playbooks multiple times on the same system won't create additional "side effects" (unintended operations or creation of unwanted artifacts) after the first successful run. This ensures consistency and reliability across deployments of the Red Hat Ansible Automation Platform (<strong>AAP</strong>).</p>
-</div>
-<p><br/></p>
-<h1 id="_3"></h1>
-<h1 id="30-faster-time-to-value-observed-in-it-automation-by-adopting-ibm-watsonx-code-assistant-with-red-hat-ansible-lightspeed"><strong>30% faster time to value</strong> observed in IT automation by adopting IBM watsonx Code Assistant with Red Hat Ansible Lightspeed</h1>
-<p>Enterprise clients that are delivering an IT automation practice within their organization can be more efficient, can trust in the accuracy of AI-generated content, and can upskill their teams faster.</p>
-<p>Regarding security— of upmost concern to enterprise organizations —the natural language prompts sent to WCA and the code recommendations returned by WCA are both encrypted (in-transit and at-rest.) The generative AI recommendations are also ephemeral: IBM does not store or retain prompts, recommendations, or code. The prompt is discarded as soon as a recommendation is ready to send back to a client; likewise, that recommendation is never retained by IBM.</p>
-<p>When there is client data submitted by the user to WCA, such as when a client is looking to perform model customization based on their own datasets (something this training will explore in detail), that data is stored directly within a client-owned Cloud Object Storage instance. The data remains accessible only to the client — it is impervious to IBM, Red Hat, or any other user besides the client who owns it.</p>
 <hr />
 <p><a class="glightbox" href="_attachments/Intro-Update-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="_attachments/Intro-Update-2.png" /></a></p>
 <div class="admonition quote">
@@ -516,11 +507,16 @@
 </div>
 <hr />
 <p>Developers and programmers must craft precise, error-free Playbooks which are potentially automating jobs across vast collections of assets or hardware. One of the benefits of automation is being able to perform such tasks at-scale; conversely, this also poses one of the greatest risks of automation — that if things fail, they can fail rapidly and across vast swathes of IT estate. It should come as no surprise, then, that authoring Playbooks often demands technical expertise and a deep understanding of the targeted systems and services which Ansible is to automate.</p>
+<div class="admonition note">
+<p class="admonition-title">WHAT ARE PLAYBOOKS?</p>
+<p>Ansible Playbooks instruct Ansible’s automation engine on how to execute tasks in a step-by-step manner. Playbooks defines roles, tasks, handlers, and other configurations; in turn, these attributes allow developers and users to codify complex orchestration scenarios. Conceptually, think of a Playbook as a recipe book for system administration: each recipe (or Playbook) spells out the steps required to achieve a particular system state or to complete a given operation.</p>
+<p>One of the standout features of Ansible Playbooks is that they are <em>idempotent</em>: executing Playbooks multiple times on the same system won't create additional "side effects" (unintended operations or creation of unwanted artifacts) after the first successful run. This ensures consistency and reliability across deployments of the Red Hat Ansible Automation Platform (<strong>AAP</strong>).</p>
+</div>
 <p>Generative AI has recently demonstrated proficiency in creating syntactically correct and contextually relevant application code in a variety of programming languages. For example, if trained on a large dataset of Ansible Playbooks, generative AI models can be fine-tuned to understand the nuances of Playbook syntax and structure. An enterprise organization with dozens or hundreds of Playbooks within their IT estate today would have a rich corpus of training data on-hand that could be used to fine-tune AI models that are tailored to the automation needs and programming style or standards of that particular company. </p>
 <p>As you will see throughout the hands-on training material, generative AI models provide a natural language prompt to users which in turn is understood and translated by the AI models into the necessary Ansible Task code. For example, a user might describe a desired system state in plain language ("I want a Playbook to install and start the Apache web server") and the model will generate the appropriate Ansible Tasks for a Playbook.</p>
 <p>All of this is achieved without physically writing code or requiring much programming expertise. Not only does this speed up the automation process by cutting the time needed to author Playbooks, but it also democratizes access to automation in general. Even those within a company with limited Ansible or programming expertise will be able to produce effective Playbooks. There are plenty of caveats of course, and thorough validation and testing of AI-generated code will be needed before being put into production. However, the productivity gains and broadening of skillsets within an organization can be tremendous. And as a whole, generative AI brings the original goals of Red Hat Ansible Automation Platform (the democratization of automation for everything) that much closer to a reality.</p>
 <p><br/></p>
-<h1 id="_4"></h1>
+<h1 id="_2"></h1>
 <h1 id="the-material-covered-for-this-hands-on-training-is-intended-to-prepare-ibm-sellers-and-business-partners-with-the-skills-necessary-to-create-ansible-automation-tasks-using-the-generative-ai-capabilities-of-wca"><strong>The material covered for this hands-on training</strong> is intended to prepare IBM sellers and business partners with the skills necessary to create Ansible automation tasks using the generative AI capabilities of WCA</h1>
 <p>The curriculum will leverage WCA's generative AI code recommendations for automating cloud-based and infrastructure-based automation tasks. In-depth explanations accompanying Ansible Playbook templates will also explain:</p>
 <ul>
@@ -546,7 +542,7 @@
 </ul>
 </div>
 <hr />
-<h1 id="_5"></h1>
+<h1 id="_3"></h1>
 <h1 id="next-steps">Next steps</h1>
 <p>The module ahead will outline the evaluation criteria for IBM sellers and business partners. Afterwards, you will setup your local environment with the necessary pre-requisites for getting started with the hands-on material.</p>
 
