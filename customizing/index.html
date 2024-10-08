@@ -301,8 +301,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#fine-tuning-natural-language-prompts" class="md-nav__link">
-    Fine-tuning natural language prompts
+  <a href="#fine-tuning-task-prompts" class="md-nav__link">
+    Fine-tuning task prompts
   </a>
   
 </li>
@@ -371,8 +371,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#fine-tuning-natural-language-prompts" class="md-nav__link">
-    Fine-tuning natural language prompts
+  <a href="#fine-tuning-task-prompts" class="md-nav__link">
+    Fine-tuning task prompts
   </a>
   
 </li>
@@ -411,7 +411,7 @@
 <p>Christopher Bienko <em>(Principal, IBM Global Sales Enablement)</em> demonstrates key elements of the <code>Task Description Tuning and Model Customization</code> module. <em>[15 min]</em></p>
 </div>
 <p><br/></p>
-<h2 id="fine-tuning-natural-language-prompts"><strong>Fine-tuning natural language prompts</strong></h2>
+<h2 id="fine-tuning-task-prompts"><strong>Fine-tuning task prompts</strong></h2>
 <p>In this section, you will experiment with customized Ansible Playbooks and test how changes made to an Ansible Task's natural language descriptions can impact the recommended code produced by <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> (<strong>WCA</strong>).</p>
 <div class="admonition note">
 <p class="admonition-title">UNPREDICTABLE RESULTS FROM GENERATIVE AI &amp; LLMs</p>
@@ -612,7 +612,7 @@
 </li>
 <li>
 <p>The <code>src</code> and <code>dest</code> variables are not in agreement across the <code>AI-GENERATED CODE</code> and <code>SOLUTION CODE</code> tabs. This is an area for improvement. The natural language description wasn't precise about these details; therefore, this is an opportunity where more detailed and verbose instructions could better steer the recommendations WCA returns back with. </p>
-<div class="admonition warning">
+<div class="admonition note">
 <p>In general, <strong>the more ambiguous the Task description, the greater the likelihood that WCA will misinterpret the author's intent</strong> and suggest unwanted Ansible automation jobs. To help disambiguate our intention, Playbook authors should use more precise natural language terms and descriptions.</p>
 </div>
 </li>
