@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#generating-code-with-ibm-watsonx-code-assistant-for-red-hat-ansible-lightspeed" class="md-skip">
+        <a href="#_1" class="md-skip">
           Skip to content
         </a>
       
@@ -246,9 +246,61 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Generating Code
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Generating Code
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#generating-code-with-ibm-watsonx-code-assistant-for-red-hat-ansible-lightspeed" class="md-nav__link">
+    Generating Code with IBM watsonx Code Assistant for Red Hat Ansible Lightspeed
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#single-task-ansible-operations" class="md-nav__link">
+    Single task Ansible operations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-task-ansible-operations" class="md-nav__link">
+    Multi-task Ansible operations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    Next steps
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -319,6 +371,42 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#generating-code-with-ibm-watsonx-code-assistant-for-red-hat-ansible-lightspeed" class="md-nav__link">
+    Generating Code with IBM watsonx Code Assistant for Red Hat Ansible Lightspeed
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#single-task-ansible-operations" class="md-nav__link">
+    Single task Ansible operations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-task-ansible-operations" class="md-nav__link">
+    Multi-task Ansible operations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    Next steps
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -331,21 +419,20 @@
                 
 
 
+<h1 id="_1"></h1>
 <p><div class="video-container"><video style="position: relative; width: 100%; height: 22.172vw" controls  ><source src="../_videos/generating.mp4" type="video/mp4" /></video></div></p>
 <div class="admonition quote">
 <p><strong>Christopher Bienko</strong> (<em>IBM, Learning Content Development</em>) demonstrates key elements and hands-on components of the <code>Generating Code</code> module. <em>[10 min]</em></p>
 </div>
 <p><br/></p>
-<h1 id="generating-code-with-ibm-watsonx-code-assistant-for-red-hat-ansible-lightspeed">Generating Code with IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</h1>
-<h1 id="_1"></h1>
+<h2 id="generating-code-with-ibm-watsonx-code-assistant-for-red-hat-ansible-lightspeed"><strong>Generating Code with IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</strong></h2>
 <p>An <strong>Ansible Task</strong> is a statement in Ansible's automation script (the YAML-based Playbooks you will be working with) that declares a single action to be executed. This might be installing a package, copying a file, or shutting down a service on a remote machine. Each <em>Task</em> represents an idempotent operation (an action that can be repeated multiple times and deliver the same result every time) that aligns the remote managed node to the specified state. Idempotent operations also ensure consistency across multiple executions, guaranteeing the same steps are taken on each execution of the task.</p>
 <p>At the time of publication, <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> (<strong>WCA</strong>) will only generate code for <strong>Ansible Tasks</strong>, including both <em>single task</em> and <em>multi-task</em> automation.</p>
 <p>After you have learned the fundamentals of generating Ansible Task code blocks, you'll be ready to shape and tailor the AI-generated code recommendations using WCA's model tuning capabilities.</p>
 <hr />
 <p><a class="glightbox" href="../_attachments/lightspeed.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/lightspeed.gif" /></a></p>
 <hr />
-<h1 id="_2"></h1>
-<h1 id="generating-code-for-single-task-ansible-operations">Generating code for single task Ansible operations</h1>
+<h2 id="single-task-ansible-operations"><strong>Single task Ansible operations</strong></h2>
 <p>The process of creating AI-generated <strong>code recommendations</strong> is as simple as modifying the natural language (plain English) Task descriptions of an action that is to be executed, which always start with <code>- name:</code> and are followed by some description of the task to be performed. Ansible Tasks are often preceded with some <code>#</code> comments or documentation. After the natural language description of the automation Task has been set by the user, WCA handles the rest.</p>
 <p>WCA is also capable of generating multiple Ansible Tasks from more complex natural language descriptions— what is referred to as <strong>multi-task</strong> code generation —which you will experiment with later in this module. However, to get started, let's begin with the basics of generating code for <strong>single task</strong> use cases.</p>
 <hr />
@@ -625,8 +712,7 @@
 </li>
 </ol>
 <hr />
-<h1 id="_3"></h1>
-<h1 id="generating-code-for-multi-task-ansible-operations">Generating code for multi-task Ansible operations</h1>
+<h2 id="multi-task-ansible-operations"><strong>Multi-task Ansible operations</strong></h2>
 <p>Up to this point, we've kept a narrow aperture on AI-generated recommendations for single tasks — examining and experimenting with generating Ansible code task by task, one at a time. However, a powerful WCA feature is the ability to combine multiple task descriptions into a single natural language prompt; in turn, WCA is able to parse that instruction, decompose the instruction into discrete Ansible Task parts, and return a complete code recommendation for achieving the author's intended goal.</p>
 <p>Syntactically, multiple tasks are combined into a single natural language expression through the use of <strong>ampersand</strong> (<code>&amp;</code>) characters. Simply write out all the automation task descriptions on a single line, separating each description with a <code>&amp;</code> character. The line must also <em>begin</em> with a <code>#</code> character for reasons that will be explained shortly.</p>
 <hr />
@@ -1135,8 +1221,7 @@
 </li>
 </ol>
 <hr />
-<h1 id="_4"></h1>
-<h1 id="next-steps">Next steps</h1>
+<h2 id="next-steps"><strong>Next steps</strong></h2>
 <p>The following module will examine in detail WCA's post-processing and content source attribution capabilities.</p>
 
 
