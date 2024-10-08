@@ -539,15 +539,12 @@
 </ol>
 <hr />
 <ol start="6">
-<li>
-<p>Drilling down into the <code>URL</code> field will redirect your web browser back to the precise collections and sources on <strong>Ansible Galaxy</strong> from which the code recommendations were derived. Here you can learn much richer details about the status of the project, any associated open source repositories involved (such as GitHub), contributions and activities ongoing with the code base, the author(s) involved, and many more intricacies.</p>
-<p><br/>
-<a class="glightbox" href="../_attachments/contentmatching6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/contentmatching6.png" width="600" /></a></p>
-</li>
+<li>Drilling down into the <code>URL</code> field will redirect your web browser back to the precise collections and sources on <strong>Ansible Galaxy</strong> from which the code recommendations were derived. Here you can learn much richer details about the status of the project, any associated open source repositories involved (such as GitHub), contributions and activities ongoing with the code base, the author(s) involved, and many more intricacies.</li>
 </ol>
 <hr />
-<p><a class="glightbox" href="../_attachments/figure39.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/figure39.png" /></a></p>
-<p><br/></p>
+<div class="highlight"><pre><span></span><code>![](_attachments/figure39.png)
+&lt;br/&gt;
+</code></pre></div>
 <h2 id="post-processing-capabilities"><strong>Post-processing capabilities</strong></h2>
 <p>Another element of code generation that WCA excels at is understanding <strong>context</strong> within the Playbook it is executing against. If a variable or attribute is defined earlier within that Playbook, it will be recalled and referenced— where it makes sense to do so —in the generation of subsequent lines of code. You may have already noticed these <strong>post-processing capabilities</strong> in your experimentations with WCA-generated code suggestions. Post-processing of Task descriptions and YAML file contents helps generate contextually aware, accurate Ansible content suggestions.</p>
 <p>However, one way to make this feature quite obvious is to take a previously-generated block of Ansible Task code, update the value assigned to a named variable <em>earlier</em> in the Playbook, and then regenerate the Task code block. In theory, the newly-generated Task block will use the updated variable name (and differ from how the code block was originally generated).</p>
