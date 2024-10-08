@@ -524,19 +524,20 @@
 <p>The <strong>WCA for Ansible Lightspeed</strong> flavor of IBM Granite code models specializes (Majors) only in Ansible Playbooks and YAML</p>
 </li>
 <li>
-<p>Similarly, the IBM Granite code model used by <strong>WCA for Z</strong> specializes in transforming COBOL mainframe code into modernized Java code.</p>
+<p>Similarly, the IBM Granite code model used by <strong>WCA for Z</strong> specializes in transforming COBOL mainframe code into modernized Java code</p>
 </li>
 </ul>
 <p>Ansible Playbooks, COBOL, and Java are all supported (Minor) languages for the generalized IBM Granite code models— and therefore are supported by IBM watsonx Code Assistant —but if a client wishes to specialize in those particular languages and frameworks, they would be well advised to utilize the bespoke WCA for Ansible Lightspeed and WCA for Z offerings to do so.</p>
 </div>
 <p><br/></p>
 <h2 id="iv-solution-architecture-of-ibm-watsonx-code-assistant-for-red-hat-ansible-lightspeed"><strong>iv. Solution architecture of IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</strong></h2>
-<p><strong>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</strong> (henceforth referred to shorthand as <strong>WCA</strong>) meets developers where they are: with a rich plugin via the Ansible Visual Studio (VS) Code Extension, where developers input their prompts directly in the code editor. Prompts are sent to the Ansible Lightspeed service, and the service sends a suggestion back (a completion) that’s powered by the IBM watsonx Code Assistant Granite code models. </p>
+<p><strong>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</strong> (<strong>WCA</strong>) meets developers where they are: with a rich plugin via VS Code extensions, where developers input their prompts directly in the code editor. Prompts are sent to the Ansible Lightspeed service, and the service sends a suggestion back (a <em>completion</em>) that’s powered by the IBM watsonx Code Assistant Granite code models. </p>
 <p>It is important to note that all data in transit is encrypted and ephemeral so users can be confident and have trust in the security of the service during this exchange. In terms of data security, client Ansible playbooks and customized models that they may potentially have are stored in client-owned Cloud Object Storage (COS) and are not shared with IBM, Red Hat, or any other clients.</p>
 <hr />
 <p><a class="glightbox" href="_attachments/Intro-Update-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="_attachments/Intro-Update-2.png" /></a></p>
-<hr />
+<div class="admonition quote">
 <p>In order to utilize the product, a client must have an existing license for Red Hat Ansible Automation Platform (the ”red tile” component in the center of the diagram), as well as a license for IBM watsonx Code Assistant for Red Hat Ansible Lightspeed (the “blue tile” on the right of the diagram).</p>
+</div>
 <p>Generative AI has recently demonstrated proficiency in creating syntactically correct and contextually relevant application code in a variety of programming languages. For example, if trained on a large dataset of Ansible Playbooks, generative AI models can be fine-tuned to understand the nuances of Playbook syntax and structure. An enterprise organization with dozens or hundreds of Playbooks within their IT estate today would have a rich corpus of training data on-hand that could be used to fine-tune AI models that are tailored to the automation needs and programming style or standards of that particular company. </p>
 <div class="admonition note">
 <p class="admonition-title">WHAT ARE PLAYBOOKS?</p>
