@@ -286,29 +286,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduction-to-wca-content-source-matching-and-post-processing-capabilities" class="md-nav__link">
-    Introduction to WCA content source matching and post-processing capabilities
+  <a href="#i-introduction-to-wca-content-source-matching-and-post-processing-capabilities" class="md-nav__link">
+    i. Introduction to WCA content source matching and post-processing capabilities
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#content-source-matching" class="md-nav__link">
-    Content source matching
+  <a href="#ii-content-source-matching" class="md-nav__link">
+    ii. Content source matching
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#post-processing-capabilities" class="md-nav__link">
-    Post-processing capabilities
+  <a href="#iii-post-processing-capabilities" class="md-nav__link">
+    iii. Post-processing capabilities
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    Next steps
+  <a href="#iv-next-steps" class="md-nav__link">
+    iv. Next steps
   </a>
   
 </li>
@@ -378,29 +378,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduction-to-wca-content-source-matching-and-post-processing-capabilities" class="md-nav__link">
-    Introduction to WCA content source matching and post-processing capabilities
+  <a href="#i-introduction-to-wca-content-source-matching-and-post-processing-capabilities" class="md-nav__link">
+    i. Introduction to WCA content source matching and post-processing capabilities
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#content-source-matching" class="md-nav__link">
-    Content source matching
+  <a href="#ii-content-source-matching" class="md-nav__link">
+    ii. Content source matching
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#post-processing-capabilities" class="md-nav__link">
-    Post-processing capabilities
+  <a href="#iii-post-processing-capabilities" class="md-nav__link">
+    iii. Post-processing capabilities
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    Next steps
+  <a href="#iv-next-steps" class="md-nav__link">
+    iv. Next steps
   </a>
   
 </li>
@@ -424,7 +424,7 @@
 <div class="admonition quote">
 <p>Christopher Bienko <em>(Principal, IBM Global Sales Enablement)</em> demonstrates key elements of the <code>Content Source Matching and Post-Processing</code> module. <em>[10 min]</em></p>
 </div>
-<h2 id="introduction-to-wca-content-source-matching-and-post-processing-capabilities"><strong>Introduction to WCA content source matching and post-processing capabilities</strong></h2>
+<h2 id="i-introduction-to-wca-content-source-matching-and-post-processing-capabilities"><strong>i. Introduction to WCA content source matching and post-processing capabilities</strong></h2>
 <p>At this point, you should now be well acquainted with <em>Ansible Tasks</em> and <em>Playbooks</em>. Ansible Playbooks are comprised of multiple Tasks — which you have been using <em>IBM watsonx Code Assistant's</em> (<strong>WCA</strong>) generative AI capabilities to define and expand upon.</p>
 <p>If a Playbook contains multiple "tasks" that together achieve some singular goal or purpose, you might want to group these tasks into a single reusable unit. For example, a string of "tasks" might provision infrastructure for separate development, test, and production clusters from a major cloud vendor. Patterns for automating endpoints from these vendors can be codified into <strong>Ansible Modules</strong>, which are supported by Red Hat and the Ansible community writ large.</p>
 <p>And finally, collections of Playbooks and Modules can be organized into "blueprints" for automation tasks that are frequently used together to achieve some goal; a goal which you might want to make repeatable or shareable with other teams within your business. These blueprints are referred to as <strong>Ansible Roles</strong>. They provide a structured way to organize tasks, templates, files, and variables, and are available to drop directly into Ansible Playbooks. Roles make it possible to easily manage and set up complex automation tasks, essentially providing a rubric to streamline automation projects.</p>
@@ -435,7 +435,7 @@
 <hr />
 <p><a class="glightbox" href="../_attachments/figure38.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/figure38.png" /></a></p>
 <hr />
-<h2 id="content-source-matching"><strong>Content source matching</strong></h2>
+<h2 id="ii-content-source-matching"><strong>ii. Content source matching</strong></h2>
 <p>A powerful capability within WCA is <strong>Content Source Matching</strong> (often referred to as "code explainability"), which attempts to match AI-generated code suggestions to the training data and sources that were utilized in generating the suggested Task code.</p>
 <p>These code attribution suggestions are created using a <strong>k-NN</strong> (<a href="https://www.ibm.com/topics/knn#:~:text=Next%20steps-,K%2DNearest%20Neighbors%20Algorithm,of%20an%20individual%20data%20point." target="_blank">K-Nearest Neighbors</a>) algorithm that examines <strong>Ansible Galaxy</strong> and training data repositories in search of the nearest related content to the AI-generated code suggestions.</p>
 <ol>
@@ -544,7 +544,7 @@
 <hr />
 <p><a class="glightbox" href="../_attachments/figure39.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/figure39.png" /></a></p>
 <hr />
-<h2 id="post-processing-capabilities"><strong>Post-processing capabilities</strong></h2>
+<h2 id="iii-post-processing-capabilities"><strong>iii. Post-processing capabilities</strong></h2>
 <p>Another element of code generation that WCA excels at is understanding <strong>context</strong> within the Playbook it is executing against. If a variable or attribute is defined earlier within that Playbook, it will be recalled and referenced— where it makes sense to do so —in the generation of subsequent lines of code. You may have already noticed these <strong>post-processing capabilities</strong> in your experimentations with WCA-generated code suggestions. Post-processing of Task descriptions and YAML file contents helps generate contextually aware, accurate Ansible content suggestions.</p>
 <p>However, one way to make this feature quite obvious is to take a previously-generated block of Ansible Task code, update the value assigned to a named variable <em>earlier</em> in the Playbook, and then regenerate the Task code block. In theory, the newly-generated Task block will use the updated variable name (and differ from how the code block was originally generated).</p>
 <hr />
@@ -738,7 +738,7 @@
 </li>
 </ol>
 <hr />
-<h2 id="next-steps"><strong>Next steps</strong></h2>
+<h2 id="iv-next-steps"><strong>iv. Next steps</strong></h2>
 <p>In the next section, you will begin experimenting with customized Ansible Playbooks and testing how changes to Ansible Task natural language descriptions impacts the recommended code produced by WCA.</p>
 
 
