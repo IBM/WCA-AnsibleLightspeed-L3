@@ -240,8 +240,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#iii-watsonx-code-assistant-product-family" class="md-nav__link">
-    iii. watsonx Code Assistant product family
+  <a href="#iii-introducing-the-ibm-watsonx-code-assistant-product-family" class="md-nav__link">
+    iii. Introducing the IBM watsonx Code Assistant product family
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iv-solution-architecture-of-ibm-watsonx-code-assistant-for-red-hat-ansible-lightspeed" class="md-nav__link">
+    iv. Solution architecture of IBM watsonx Code Assistant for Red Hat Ansible Lightspeed
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v-lab-objectives" class="md-nav__link">
+    v. Lab objectives
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vi-next-steps" class="md-nav__link">
+    vi. Next steps
   </a>
   
 </li>
@@ -385,8 +406,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#iii-watsonx-code-assistant-product-family" class="md-nav__link">
-    iii. watsonx Code Assistant product family
+  <a href="#iii-introducing-the-ibm-watsonx-code-assistant-product-family" class="md-nav__link">
+    iii. Introducing the IBM watsonx Code Assistant product family
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iv-solution-architecture-of-ibm-watsonx-code-assistant-for-red-hat-ansible-lightspeed" class="md-nav__link">
+    iv. Solution architecture of IBM watsonx Code Assistant for Red Hat Ansible Lightspeed
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v-lab-objectives" class="md-nav__link">
+    v. Lab objectives
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vi-next-steps" class="md-nav__link">
+    vi. Next steps
   </a>
   
 </li>
@@ -437,7 +479,6 @@
 <p>Following the debut of OpenAI's ChatGPT, the marketplace has been awash with competing large language model (LLM) and generative AI-based assists. It's one thing to train and deploy an LLM; it's another thing entirely to make it applicable and tangibly beneficial for business.</p>
 <p>What separates IBM watsonx Code Assistant (WCA) offerings from competing vendors in the marketplace? The design and implementation of WCA is purposely built to assist, using generative AI, software and code lifecycle management.</p>
 <p>In short, generative AI-assisted code lifecycle management helps to achieve what large language models cannot achieve on their own. It is what distinguished WCA from other code assistants in the marketplace today.</p>
-<hr />
 <p><a class="glightbox" href="_attachments/Intro-Update-4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="_attachments/Intro-Update-4.png" /></a></p>
 <div class="admonition quote">
 <ol>
@@ -462,7 +503,7 @@
 </ol>
 </div>
 <p><br/></p>
-<h2 id="iii-watsonx-code-assistant-product-family"><strong>iii. watsonx Code Assistant product family</strong></h2>
+<h2 id="iii-introducing-the-ibm-watsonx-code-assistant-product-family"><strong>iii. Introducing the IBM watsonx Code Assistant product family</strong></h2>
 <p>IBM watsonx Code Assistant is the flagship offering in a suite of generative AI code assistant products, which also include offerings for Ansible Automation Platform (IBM watsonx Code Assistant for Red Hat Ansible Lightspeed) and IBM Systems modernization (IBM watsonx Code Assistant for Z).</p>
 <p>The solution accelerates software development tasks with AI-powered capabilities including context-aware code generation, explanation, documentation, translation, and unit test generation. It does so while maintaining the principles of trust, security, and compliance with regards to IBM client's data and intellectual property. Developers and IT Operators can utilize WCA to speed up application modernization efforts and generate Ansible-based automation jobs to rapidly scale out (or scale up) IT environments.</p>
 <hr />
@@ -475,7 +516,7 @@
 <hr />
 <p>IBM Granite code models are a series of decoder-only models for code generative tasks, trained with code written in 116 different programming languages. The Granite code models family consists of models ranging in size from 3 to 34 billion parameters, in both a base model and instruction-following model variants. These models have a range of uses, from complex application modernization tasks to on-device memory-constrained use cases.</p>
 <p>The larger the block size for a particular language on this chart, the larger percentage of training corpus data of that language was used to train the Granite code model. Languages and formats such as Java, C, JSON, JavaScript, HTML, and PHP are subjects in which the model “Majors” and excels. Other languages such as Ruby, SQL, and Swift could be considered “Minors” where the generalized code model can work with the language, but has less training data to base those recommendations on. These percentages and training data volumes will continue to evolve as the Granite code models mature.</p>
-<div class="admonition tip">
+<div class="admonition note">
 <p class="admonition-title">WATSONX CODE ASSISTANT vs. WCA FOR ANSIBLE LIGHTSPEED?</p>
 <p>For those familiar with other IBM watsonx Code Assistant offerings— such as WCA for Red Hat Ansible Lightspeed and WCA for Z —the generalized code model approach, as seen here, differs from the specialized code model approach of those two aforementioned offerings.</p>
 <ul>
@@ -489,36 +530,24 @@
 <p>Ansible Playbooks, COBOL, and Java are all supported (Minor) languages for the generalized IBM Granite code models— and therefore are supported by IBM watsonx Code Assistant —but if a client wishes to specialize in those particular languages and frameworks, they would be well advised to utilize the bespoke WCA for Ansible Lightspeed and WCA for Z offerings to do so.</p>
 </div>
 <p><br/></p>
+<h2 id="iv-solution-architecture-of-ibm-watsonx-code-assistant-for-red-hat-ansible-lightspeed"><strong>iv. Solution architecture of IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</strong></h2>
+<p><strong>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</strong> (henceforth referred to shorthand as <strong>WCA</strong>) meets developers where they are: with a rich plugin via the Ansible Visual Studio (VS) Code Extension, where developers input their prompts directly in the code editor. Prompts are sent to the Ansible Lightspeed service, and the service sends a suggestion back (a completion) that’s powered by the IBM watsonx Code Assistant Granite code models. </p>
+<p>It is important to note that all data in transit is encrypted and ephemeral so users can be confident and have trust in the security of the service during this exchange. In terms of data security, client Ansible playbooks and customized models that they may potentially have are stored in client-owned Cloud Object Storage (COS) and are not shared with IBM, Red Hat, or any other clients.</p>
 <hr />
 <p><a class="glightbox" href="_attachments/Intro-Update-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="_attachments/Intro-Update-2.png" /></a></p>
-<div class="admonition quote">
-<p>There are three core components to the hands-on training environment:</p>
-<ol>
-<li>
-<p><code>Visual Studio Code</code> (VS Code) running on your local machine, connected via VS Code Extensions to...</p>
-</li>
-<li>
-<p><code>Ansible Automation Platform</code> (AAP) running on the Red Hat cloud, licensed for use with Red Hat Ansible Lightspeed and integrated with...</p>
-</li>
-<li>
-<p><code>IBM watsonx Code Assistant</code> (WCA) running on IBM Cloud, providing generative AI and model customization</p>
-</li>
-</ol>
-</div>
 <hr />
-<p>Developers and programmers must craft precise, error-free Playbooks which are potentially automating jobs across vast collections of assets or hardware. One of the benefits of automation is being able to perform such tasks at-scale; conversely, this also poses one of the greatest risks of automation — that if things fail, they can fail rapidly and across vast swathes of IT estate. It should come as no surprise, then, that authoring Playbooks often demands technical expertise and a deep understanding of the targeted systems and services which Ansible is to automate.</p>
+<p>In order to utilize the product, a client must have an existing license for Red Hat Ansible Automation Platform (the ”red tile” component in the center of the diagram), as well as a license for IBM watsonx Code Assistant for Red Hat Ansible Lightspeed (the “blue tile” on the right of the diagram).</p>
+<p>Generative AI has recently demonstrated proficiency in creating syntactically correct and contextually relevant application code in a variety of programming languages. For example, if trained on a large dataset of Ansible Playbooks, generative AI models can be fine-tuned to understand the nuances of Playbook syntax and structure. An enterprise organization with dozens or hundreds of Playbooks within their IT estate today would have a rich corpus of training data on-hand that could be used to fine-tune AI models that are tailored to the automation needs and programming style or standards of that particular company. </p>
 <div class="admonition note">
 <p class="admonition-title">WHAT ARE PLAYBOOKS?</p>
 <p>Ansible Playbooks instruct Ansible’s automation engine on how to execute tasks in a step-by-step manner. Playbooks defines roles, tasks, handlers, and other configurations; in turn, these attributes allow developers and users to codify complex orchestration scenarios. Conceptually, think of a Playbook as a recipe book for system administration: each recipe (or Playbook) spells out the steps required to achieve a particular system state or to complete a given operation.</p>
 <p>One of the standout features of Ansible Playbooks is that they are <em>idempotent</em>: executing Playbooks multiple times on the same system won't create additional "side effects" (unintended operations or creation of unwanted artifacts) after the first successful run. This ensures consistency and reliability across deployments of the Red Hat Ansible Automation Platform (<strong>AAP</strong>).</p>
 </div>
-<p>Generative AI has recently demonstrated proficiency in creating syntactically correct and contextually relevant application code in a variety of programming languages. For example, if trained on a large dataset of Ansible Playbooks, generative AI models can be fine-tuned to understand the nuances of Playbook syntax and structure. An enterprise organization with dozens or hundreds of Playbooks within their IT estate today would have a rich corpus of training data on-hand that could be used to fine-tune AI models that are tailored to the automation needs and programming style or standards of that particular company. </p>
 <p>As you will see throughout the hands-on training material, generative AI models provide a natural language prompt to users which in turn is understood and translated by the AI models into the necessary Ansible Task code. For example, a user might describe a desired system state in plain language ("I want a Playbook to install and start the Apache web server") and the model will generate the appropriate Ansible Tasks for a Playbook.</p>
 <p>All of this is achieved without physically writing code or requiring much programming expertise. Not only does this speed up the automation process by cutting the time needed to author Playbooks, but it also democratizes access to automation in general. Even those within a company with limited Ansible or programming expertise will be able to produce effective Playbooks. There are plenty of caveats of course, and thorough validation and testing of AI-generated code will be needed before being put into production. However, the productivity gains and broadening of skillsets within an organization can be tremendous. And as a whole, generative AI brings the original goals of Red Hat Ansible Automation Platform (the democratization of automation for everything) that much closer to a reality.</p>
-<p><br/></p>
-<h1 id="_2"></h1>
-<h1 id="the-material-covered-for-this-hands-on-training-is-intended-to-prepare-ibm-sellers-and-business-partners-with-the-skills-necessary-to-create-ansible-automation-tasks-using-the-generative-ai-capabilities-of-wca"><strong>The material covered for this hands-on training</strong> is intended to prepare IBM sellers and business partners with the skills necessary to create Ansible automation tasks using the generative AI capabilities of WCA</h1>
-<p>The curriculum will leverage WCA's generative AI code recommendations for automating cloud-based and infrastructure-based automation tasks. In-depth explanations accompanying Ansible Playbook templates will also explain:</p>
+<hr />
+<h2 id="v-lab-objectives"><strong>v. Lab objectives</strong></h2>
+<p>The material covered for this hands-on training is intended to prepare IBM sellers and business partners with the skills necessary to create Ansible automation tasks using the generative AI capabilities of WCA. The curriculum will leverage WCA's generative AI code recommendations for automating cloud-based and infrastructure-based automation tasks. In-depth explanations accompanying Ansible Playbook templates will also explain:</p>
 <ul>
 <li>
 <p>How WCA uses <strong>natural language prompts</strong>, as well as Ansible Playbook contents, to generate contextually-aware Task code recommendations</p>
@@ -542,8 +571,7 @@
 </ul>
 </div>
 <hr />
-<h1 id="_3"></h1>
-<h1 id="next-steps">Next steps</h1>
+<h2 id="vi-next-steps"><strong>vi. Next steps</strong></h2>
 <p>The module ahead will outline the evaluation criteria for IBM sellers and business partners. Afterwards, you will setup your local environment with the necessary pre-requisites for getting started with the hands-on material.</p>
 
 
