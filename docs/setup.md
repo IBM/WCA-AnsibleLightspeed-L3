@@ -1,3 +1,5 @@
+#
+
 !!! note ""
     If you require assistance or run into issues with the hands-on lab, help is available.
 
@@ -7,9 +9,9 @@
 
     - **Product questions:** For questions related to IBM watsonx Code Assistant capabilities, sales opportunities, roadmap, and other such matters, open a thread on the <a href="https://ibm.enterprise.slack.com/archives/C059NKPUCP9" target="_blank">#watsonx-code-assistant</a> Slack channel.
 
-#
-# Reserving the lab environments
-#
+    Frequently asked questions and troubleshooting steps are <a href="https://ibm.github.io/WCA-AnsibleLightspeed-L3/setup/#troubleshooting-and-support" target="_blank">documented below</a>.
+
+## **i. Reserving the lab environments**
 
 Before getting started with *IBM watsonx Code Assistant for Red Hat Ansible Lightspeed* (**WCA**), an environment must be reserved and deployed via the *IBM Technology Zone* (**ITZ**).
 
@@ -49,15 +51,13 @@ Follow along with the instructions below to request and configure these environm
 
 3. Supply additional details about your ITZ reservation request:
 
-    - **Name**^[A]^: Give your reservation a unique name.
-
-    - **Purpose**^[B]^: Set to `Education` and affirm that customer data will not be used with the environment. If you are replicating this hands-on demonstration with a client, you must select Customer Demo and supply a sales opportunity number.
-
-    - **Purpose Description**^[C]^: Provide a brief summary of how the environment will be used.
-
-    - **Preferred Geography**^[D]^: Select `skip-scheduler - AMERICAS - us-south-region - us-south-1 datacenter`
-
-    - **End Date & Time**^[E]^: Select a time and date for when the reservation will expire. The recommended amount is 2 days, although it is possible to finish the hands-on demonstration within a few hours. Additional time extensions are available.
+    | Field                             | Value                                                                                                                                                                                                                           |
+    | --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+    | `Name`                            | ^[A]^ Give your reservation a unique name.                                                                                                                                                                                      |
+    | `Purpose`                         | ^[B]^ If reserving for L3 training, select *Education*. If delivering a PoC, select *Pilot* and provide a Sales opportunity number.                                                                                             |
+    | `Describe`                        | ^[C]^ If reserving for L3, enter *WCA for Ansible Lightspeed training*. If delivering a PoC, enter the PoC and client details.                                                                                                  |
+    | `Preferred Geography`             | ^[D]^ Select the region and data center geographically closest to your location.                                                                                                                                                |
+    | `End Date & Time`                 | ^[E]^ Select a time and date for when the reservation will expire. The recommended amount is 2 days, although it is possible to finish the hands-on demonstration within a few hours. Additional time extensions are available. |
 
     When satisfied, verify that you agree to the *Terms and Conditions* for the environment and finalize your reservation request by clicking **Submit**^[F]^.
 
@@ -132,17 +132,14 @@ Follow along with the instructions below to request and configure these environm
 
 9. Supply additional details about your ITZ reservation request:
 
-    - **Name**^[A]^: Give your reservation a unique name.
-
-    - **Purpose**^[B]^: Set to `Education` and affirm that customer data will not be used with the environment. If you are replicating this hands-on demonstration with a client, you must select Customer Demo and supply a sales opportunity number.
-
-    - **Purpose Description**^[C]^: Provide a brief summary of how the environment will be used.
-
-    - **Preferred Geography**^[D]^: Select `any - AMERICAS - any region - any datacenter`
-
-    - **End Date & Time**^[E]^: Select a time and date for when the reservation will expire. The recommended amount is 2 days, although it is possible to finish the hands-on demonstration within a few hours. Additional time extensions are available.
-
-    - **VPN Access**^[F]^: Set to `Disabled`
+    | Field                             | Value                                                                                                                                                                                                                           |
+    | --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+    | `Name`                            | ^[A]^ Give your reservation a unique name.                                                                                                                                                                                      |
+    | `Purpose`                         | ^[B]^ If reserving for L3 training, select *Education*. If delivering a PoC, select *Pilot* and provide a Sales opportunity number.                                                                                             |
+    | `Describe`                        | ^[C]^ If reserving for L3, enter *WCA for Ansible Lightspeed training*. If delivering a PoC, enter the PoC and client details.                                                                                                  |
+    | `Preferred Geography`             | ^[D]^ Select the region and data center geographically closest to your location.                                                                                                                                                |
+    | `End Date & Time`                 | ^[E]^ Select a time and date for when the reservation will expire. The recommended amount is 2 days, although it is possible to finish the hands-on demonstration within a few hours. Additional time extensions are available. |
+    | `VPN Access`                      | ^[F]^ Set to `Disabled`                                                                                                                                                                                                         |
 
     When satisfied, verify that you agree to the *Terms and Conditions* for the environment and finalize your reservation request by clicking **Submit**^[G]^.
 
@@ -155,6 +152,8 @@ Follow along with the instructions below to request and configure these environm
     ![](_attachments/newvm-setup-step9.png){: loading=lazy width="400"}
 
 ---
+
+## **ii. Accessing the VM**
 
 10. Once the ITZ reservation has been marked as *"Ready"*, access connection details for the environment by either clicking the shortcut in the ITZ email or by drilling down into the **My Reservations** tab^[A]^ on the ITZ web portal.
 
@@ -213,13 +212,9 @@ Follow along with the instructions below to request and configure these environm
 
 ---
 
-#
-# Authorizing VS Code for use with WCA
-#
+## **iii. Authorizing VS Code with WCA**
 
 Now you must authorize the VS Code environment for use with WCA, using the Red Hat account details that were generated for you in *Steps 5-6*.
-
----
 
 15. Within your VS Code environment click the **Ansible** plugin^[A]^ (denoted by the `A` logo) on the left-hand side of the interface.
 
@@ -294,8 +289,22 @@ Now you must authorize the VS Code environment for use with WCA, using the Red H
 
 ---
 
-#
-# Troubleshooting and support
+## **iv. [OPTIONAL] Download demo assets to local machine**
+
+19. If you wish to complete the hands-on lab using a local installation of VS Code (instead of using the provided Virtual Machine), you may do so — but you'll need to clone (download) the accompanying demo assets first. To do so, first install the <a href="https://cli.github.com/" target="_blank">GitHub CLI</a> library.
+
+    Execute the following command within a Terminal console to clone (via `git`) the supporting demo assets repository (`ansible-wca-demo-kit.git`) to your local machine:
+
+    !!! warning ""
+        ``` bash
+        git clone https://github.com/chetan-hireholi/ansible-wca-demo-kit
+        ```
+
+    Open the local `ansible-wca-demo-kit` folder within VS Code to access the demo assets for the remaining sections of the lab.
+
+---
+
+## **v. Troubleshooting and support**
 
 !!! note ""
     If you require assistance or run into issues with the hands-on lab, help is available.
@@ -447,7 +456,6 @@ As you settle in to the environment and begin your training, you may encounter u
 
 ---
 
-#
-# Next steps
+## **vi. Next steps**
 
 The following section will cover the fundamentals of AI-recommended code generation for Ansible Tasks.

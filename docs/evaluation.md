@@ -1,5 +1,6 @@
-# Evaluation Criteria for IBM Technical Sellers and Business Partners
 #
+
+## **i. Evaluation Criteria for IBM Technical Sellers and Business Partners**
 
 To receive a Level 3 badge (*Generative AI for Code with watsonx Code Assistant Technical Sales Intermediate*), IBMers and Business Partners must demonstrate mastery of the skills learned throughout the various modules of these hands-on labs and coursework. Level 3 skills requirements— and the way participants will be evaluated —differs depending on job role.
 
@@ -23,8 +24,7 @@ Take note that any materials marked as `OPTIONAL` are **not** evaluated for Leve
 
 ---
 
-#
-# **IBMer** Stand & Deliver Assessment
+## **ii. *IBMer* Stand & Deliver Assessment**
 
 ---
 
@@ -58,8 +58,7 @@ IBM Technical Sellers need to include **all** six of the following elements in t
 
 ---
 
-#
-# **Business Partner** Quiz Assessment
+## **iii. *Business Partner* Quiz Assessment**
 
 ---
 
@@ -69,13 +68,12 @@ IBM Technical Sellers need to include **all** six of the following elements in t
         
         <a href="https://learn.ibm.com/mod/subcourse/view.php?id=284786" target="_blank">https://learn.ibm.com/mod/subcourse/view.php?id=284786</a>
 
-The skills evaluation quiz consists of multiple choice questions, with four possible responses (and only one correct answer) for each question. The quiz questions will ask you about on-screen text or descriptions that come up as you work through the lab guide. Participants must pass the quiz with a grade of 80% or higher.
+The skills evaluation quiz **only applies to business partners** – IBMers must record a <a href="https://ibm.github.io/WCA-AnsibleLightspeed-L3/evaluation/#ibmer-stand-deliver-assessment" target="_blank">Stand & Deliver</a>. The quiz consists of multiple choice questions, with four possible responses (and only one correct answer) for each question. The quiz questions will ask you about on-screen text or descriptions that come up as you work through the lab guide. Participants must pass the quiz with a grade of 80% or higher.
 
 Answers to the quiz can only be determined by carefully following the instructions of the hands-on lab. Sections of the lab marked as `OPTIONAL` will **not** be tested on as part of the quiz.
 
 ---
 
-#
-# Next steps
+## **iv. Next steps**
 
 In the following section, you will prepare your hands-on lab environment with the necessary services and configurations.

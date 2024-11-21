@@ -1,11 +1,12 @@
+#
+
 ![type:video](./_videos/generating.mp4)
 !!! quote ""
-    **Christopher Bienko** (*IBM, Learning Content Development*) demonstrates key elements and hands-on components of the `Generating Code` module. *[10 min]*
+    Christopher Bienko *(Principal, IBM Global Sales Enablement)* demonstrates key elements and hands-on components of the `Generating Code` module. *[10 min]*
 
 <br/>
 
-# Generating Code with IBM watsonx Code Assistant for Red Hat Ansible Lightspeed
-#
+## **i. Generating Code with IBM watsonx Code Assistant for Red Hat Ansible Lightspeed**
 
 An **Ansible Task** is a statement in Ansible's automation script (the YAML-based Playbooks you will be working with) that declares a single action to be executed. This might be installing a package, copying a file, or shutting down a service on a remote machine. Each *Task* represents an idempotent operation (an action that can be repeated multiple times and deliver the same result every time) that aligns the remote managed node to the specified state. Idempotent operations also ensure consistency across multiple executions, guaranteeing the same steps are taken on each execution of the task.
     
@@ -19,8 +20,7 @@ After you have learned the fundamentals of generating Ansible Task code blocks, 
 
 ---
 
-#
-# Generating code for single task Ansible operations
+## **ii. Single task Ansible operations**
 
 The process of creating AI-generated **code recommendations** is as simple as modifying the natural language (plain English) Task descriptions of an action that is to be executed, which always start with `- name:` and are followed by some description of the task to be performed. Ansible Tasks are often preceded with some `#` comments or documentation. After the natural language description of the automation Task has been set by the user, WCA handles the rest.
 
@@ -247,8 +247,7 @@ The `install_cockpit_single-task.yml` Playbook code above warrants some explanat
 
 ---
 
-#
-# Generating code for multi-task Ansible operations
+## **iii. Multi-task Ansible operations**
 
 Up to this point, we've kept a narrow aperture on AI-generated recommendations for single tasks — examining and experimenting with generating Ansible code task by task, one at a time. However, a powerful WCA feature is the ability to combine multiple task descriptions into a single natural language prompt; in turn, WCA is able to parse that instruction, decompose the instruction into discrete Ansible Task parts, and return a complete code recommendation for achieving the author's intended goal.
 
@@ -578,7 +577,6 @@ Syntactically, multiple tasks are combined into a single natural language expres
 
 ---
 
-#
-# Next steps
+## **iv. Next steps**
 
 The following module will examine in detail WCA's post-processing and content source attribution capabilities.

@@ -1,11 +1,12 @@
+#
+
 ![type:video](./_videos/customizing.mp4)
 !!! quote ""
-    **Christopher Bienko** (*IBM, Learning Content Development*) demonstrates key elements of the `Task Description Tuning and Model Customization` module. *[15 min]*
+    Christopher Bienko *(Principal, IBM Global Sales Enablement)* demonstrates key elements of the `Task Description Tuning and Model Customization` module. *[15 min]*
 
 <br/>
 
-# Precision is key for the disambiguation of natural language prompts
-#
+## **i. Fine-tuning task prompts**
 
 In this section, you will experiment with customized Ansible Playbooks and test how changes made to an Ansible Task's natural language descriptions can impact the recommended code produced by *IBM watsonx Code Assistant for Red Hat Ansible Lightspeed* (**WCA**).
 
@@ -125,27 +126,27 @@ The precision with which a Playbook author describes Ansible Tasks in natural la
   
     - ```SOLUTION CODE``` shows the expected (correct) code for performing the task that was written by a human programmer. In theory, the AI-generated code *should* be as good— or even superior to —the manually-written solution code. 
 
-    === "AI-GENERATED CODE"
+        === "AI-GENERATED CODE"
 
-        ``` yaml linenums="1"
-        - name: Write the apache config file
-          ansible.builtin.template:
-            src: templates/apache.conf.j2
-            dest: /etc/apache2/sites-available/000-default.conf
-            owner: root
-            group: root
-            mode: '0644'
-        ```
+            ``` yaml linenums="1"
+            - name: Write the apache config file
+            ansible.builtin.template:
+                src: templates/apache.conf.j2
+                dest: /etc/apache2/sites-available/000-default.conf
+                owner: root
+                group: root
+                mode: '0644'
+            ```
 
-    === "SOLUTION CODE"
+        === "SOLUTION CODE"
 
-        ``` yaml linenums="1"
-        - name: Write the apache config file
-          ansible.builtin.template:
-            src: /srv/httpd.j2
-            dest: /etc/httpd.config
-            mode: "0644"
-        ```
+            ``` yaml linenums="1"
+            - name: Write the apache config file
+            ansible.builtin.template:
+                src: /srv/httpd.j2
+                dest: /etc/httpd.config
+                mode: "0644"
+            ```
 
 ---
 
@@ -157,8 +158,8 @@ The precision with which a Playbook author describes Ansible Tasks in natural la
 
     - The `src` and `dest` variables are not in agreement across the `AI-GENERATED CODE` and `SOLUTION CODE` tabs. This is an area for improvement. The natural language description wasn't precise about these details; therefore, this is an opportunity where more detailed and verbose instructions could better steer the recommendations WCA returns back with. 
 
-    !!! warning ""
-        In general, **the more ambiguous the Task description, the greater the likelihood that WCA will misinterpret the author's intent** and suggest unwanted Ansible automation jobs. To help disambiguate our intention, Playbook authors should use more precise natural language terms and descriptions.
+        !!! note ""
+            In general, **the more ambiguous the Task description, the greater the likelihood that WCA will misinterpret the author's intent** and suggest unwanted Ansible automation jobs. To help disambiguate our intention, Playbook authors should use more precise natural language terms and descriptions.
 
 ---
 
@@ -168,9 +169,9 @@ The precision with which a Playbook author describes Ansible Tasks in natural la
     
     - Take note of the much more precise language used to describe the `src` and `dest` variables
 
-    ``` yaml
-    - name: Write the apache config file where src equals httpd.j2 and dest equals httpd.config
-    ```
+        ``` yaml
+        - name: Write the apache config file where src equals httpd.j2 and dest equals httpd.config
+        ```
 
 ---
 
@@ -182,24 +183,24 @@ The precision with which a Playbook author describes Ansible Tasks in natural la
 
     - Perplexingly, the `mode: '0644'` recommendation that was made previously in *Step 4* has been left out of the suggested task code. We can speculate as to why— perhaps the more precise natural language description made in *Step 6* prompted WCA to only generate code for exactly what was specified —but the "black box" nature of generative AI means that we cannot know for certain. Perhaps with another, even more precise iteration the `AI-GENERATED CODE` will match the `SOLUTION CODE`?
 
-    === "AI-GENERATED CODE"
+        === "AI-GENERATED CODE"
 
-        ``` yaml linenums="1"
-        - name: Write the apache config file where src equals httpd.j2 and dest equals httpd.config
-          ansible.builtin.template:
-            src: httpd.j2
-            dest: /etc/httpd/conf/httpd.conf
-        ```
+            ``` yaml linenums="1"
+            - name: Write the apache config file where src equals httpd.j2 and dest equals httpd.config
+            ansible.builtin.template:
+                src: httpd.j2
+                dest: /etc/httpd/conf/httpd.conf
+            ```
 
-    === "SOLUTION CODE"
+        === "SOLUTION CODE"
 
-        ``` yaml linenums="1"
-        - name: Write the apache config file
-          ansible.builtin.template:
-            src: /srv/httpd.j2
-            dest: /etc/httpd.config
-            mode: "0644"
-        ```
+            ``` yaml linenums="1"
+            - name: Write the apache config file
+            ansible.builtin.template:
+                src: /srv/httpd.j2
+                dest: /etc/httpd.config
+                mode: "0644"
+            ```
 
 ---
 
@@ -209,9 +210,9 @@ The precision with which a Playbook author describes Ansible Tasks in natural la
 
     - Re-write the description on **Line 12** to the following code block, then press ++return++ and ++tab++ to accept the new WCA code recommendations. Take note of the much more precise language used to describe the `mode` variable.
 
-    ``` yaml
-    - name: Write the apache config file where src equals httpd.j2 and dest equals httpd.config and mode equals 0644
-    ```
+        ``` yaml
+        - name: Write the apache config file where src equals httpd.j2 and dest equals httpd.config and mode equals 0644
+        ```
 
 ---
 
@@ -221,31 +222,30 @@ The precision with which a Playbook author describes Ansible Tasks in natural la
 
     - With only a few iterations and by disambiguating the natural language description of the Ansible Task to be performed, the code recommendations produced by WCA have been markedly improved.
 
-    === "AI-GENERATED CODE"
+        === "AI-GENERATED CODE"
 
-        ``` yaml linenums="1"
-        - name: Write the apache config file where src equals httpd.j2 and dest equals httpd.config and mode equals 0644
-          ansible.builtin.template:
-            src: httpd.j2
-            dest: /etc/httpd/conf/httpd.conf
-            mode: '0644'
-        ```
+            ``` yaml linenums="1"
+            - name: Write the apache config file where src equals httpd.j2 and dest equals httpd.config and mode equals 0644
+            ansible.builtin.template:
+                src: httpd.j2
+                dest: /etc/httpd/conf/httpd.conf
+                mode: '0644'
+            ```
 
-    === "SOLUTION CODE"
+        === "SOLUTION CODE"
 
-        ``` yaml linenums="1"
-        - name: Write the apache config file
-          ansible.builtin.template:
-            src: /srv/httpd.j2
-            dest: /etc/httpd.config
-            mode: "0644"
-        ```
+            ``` yaml linenums="1"
+            - name: Write the apache config file
+            ansible.builtin.template:
+                src: /srv/httpd.j2
+                dest: /etc/httpd.config
+                mode: "0644"
+            ```
 
 
 ---
 
-#
-# Model customization
+## **ii. Model customization**
 
 Since every organization is different, WCA allows users to customize the AI model output to your organization's unique Ansible Playbooks. This allows for personalized code recommendations that are a better fit to your business' unique needs and more reflective of the programming standards set within your organization.
 
@@ -253,9 +253,9 @@ In this scenario, your organization has its own set of Ansible Playbooks that le
 
 ---
 
-10. Open the `tuning-example.yml` Playbook located within the `Model Customization` subdirectory of the hands-on lab templates. The full directory address, as well as the Playbook code, are encapsulated in the following code block.
+10. Open the `create-openshift-cluster-ibm-cloud.yml` Playbook located within the `Model Customization` subdirectory of the hands-on lab templates. The full directory address, as well as the Playbook code, are encapsulated in the following code block.
 
-    === "~/ansible-wca-demo-kit/Model Customization/tuning-example.yml"
+    === "~/ansible-wca-demo-kit/Model Customization/create-openshift-cluster-ibm-cloud.yml"
 
         ``` yaml linenums="1"
         ---
@@ -353,13 +353,13 @@ In this scenario, your organization has its own set of Ansible Playbooks that le
 
 ---
 
-12. To override the *IBM Granite* base model recommendations, you must provide a pointer to a customized *Model ID* (prepared and hosted earlier on WCA) using the VS Code extension.
+12. To **override** the *IBM Granite* base model recommendations, you must provide a pointer to a customized *Model ID* (prepared and hosted earlier on WCA) using the VS Code extension.
 
     !!! warning ""
 
-        **Model ID**:
+        **Custom Model ID**:
         ```
-        479b0ed4-5592-46a9-bdce-52ad38948070<|sepofid|>7d783e5e-ea77-4dc9-a684-a2257f4eac43
+        b48e3c52-6135-408b-9a1e-8bcc75a47d32<|sepofid|>480ace2b-c58b-4930-b566-674ad6974851
         ```
 
     - Look for Ansible under the *Installed* services in the **Extensions** panel.
@@ -372,9 +372,9 @@ In this scenario, your organization has its own set of Ansible Playbooks that le
 
     - Copy and paste the **Model ID** value (above) into the empty `Ansible > Lightspeed: Model ID Override` field^[C]^, then click the `X` in the top-left corner of the panel to save and exit *Extension Settings*
 
-    ![](_attachments/setuptroubleshoot-4b.png){: loading=lazy width="600"}
+        ![](_attachments/setuptroubleshoot-4b.png){: loading=lazy width="600"}
 
-    ![](_attachments/tuning1.png){: loading=lazy width="600"}
+        ![](_attachments/tuning1.png){: loading=lazy width="600"}
 
 ---
 
@@ -386,43 +386,43 @@ In this scenario, your organization has its own set of Ansible Playbooks that le
     
     - Observe how the tuned *Model ID* has modified WCA's code recommendations by toggling between the `TUNED MODEL` and `STANDARD MODEL` tabs below
 
-    === "TUNED MODEL"
+        === "TUNED MODEL"
 
-        ``` yaml linenums="1"
-        ---
-        - name: Deploy infrastructure
-          hosts: all
-        
-          tasks:
-            - name: Create an OpenShift cluster
-              register: cluster_create_output
-              when: cluster_output.rc != 0
-              ibm.cloudcollection.ibm_container_cluster:
-                name: test_cluster
-                datacenter: "{{ datacenter }}"
-                machine_type: "{{ machine_type }}"
-                hardware: "{{ hardware }}"
-                kube_version: 4.14_openshift
-                public_vlan_id: "{{ public_vlan_id }}"
-                private_vlan_id: "{{ private_vlan_id }}"
-                default_pool_size: "{{ default_worker_pool_size }}"
-                entitlement: "{{ entitlement }}"
-        ```
+            ``` yaml linenums="1"
+            ---
+            - name: Deploy infrastructure
+            hosts: all
+            
+            tasks:
+                - name: Create an OpenShift cluster
+                register: cluster_create_output
+                when: cluster_output.rc != 0
+                ibm.cloudcollection.ibm_container_cluster:
+                    name: test_cluster
+                    datacenter: "{{ datacenter }}"
+                    machine_type: "{{ machine_type }}"
+                    hardware: "{{ hardware }}"
+                    kube_version: 4.14_openshift
+                    public_vlan_id: "{{ public_vlan_id }}"
+                    private_vlan_id: "{{ private_vlan_id }}"
+                    default_pool_size: "{{ default_worker_pool_size }}"
+                    entitlement: "{{ entitlement }}"
+            ```
 
-    === "STANDARD MODEL"
+        === "STANDARD MODEL"
 
-        ``` yaml linenums="1"
-        ---
-        - name: Deploy infrastructure
-          hosts: all
-        
-          tasks:
-            - name: Create an OpenShift cluster
-              ansible.builtin.command: oadm create-cluster --wait=false --name=openshift-cluster
-              register: oadm_create_cluster
-              changed_when: "'created' in oadm_create_cluster.stdout"
-              failed_when: "'already exists' not in oadm_create_cluster.stdout"
-        ```
+            ``` yaml linenums="1"
+            ---
+            - name: Deploy infrastructure
+            hosts: all
+            
+            tasks:
+                - name: Create an OpenShift cluster
+                ansible.builtin.command: oadm create-cluster --wait=false --name=openshift-cluster
+                register: oadm_create_cluster
+                changed_when: "'created' in oadm_create_cluster.stdout"
+                failed_when: "'already exists' not in oadm_create_cluster.stdout"
+            ```
 
 ---
 
@@ -434,11 +434,10 @@ Using the tuned *Model ID*, WCA has returned a recommendation to use the `ibm.cl
 
 ---
 
-#
-# Next steps
+## **iii. Conclusion**
 
 That concludes the hands-on components to this Level 3 course, but your learning and experimentation doesn't need to end here. 
 
-The next **OPTIONAL** module will allow you craft a fully-functional Ansible Playbook for the automated deployment of an Amazon EC2 instance and WordPress application — deployable from your local machine into a live AWS environment. IBM technical sellers and business partners are **NOT** required to complete this section to receive Level 3 accreditation. However, it is highly recommended by the authors that you attempt the material, given the tremendous demonstration value it provides for clients.
+The <a href="https://ibm.github.io/WCA-AnsibleLightspeed-L3/advanced/" target="_blank">**OPTIONAL** module</a> which follows teaches you how to craft a fully-functional Ansible Playbook for the automated deployment of an Amazon EC2 instance and WordPress application — deployable from your local machine into a live AWS environment. IBM technical sellers and business partners are **NOT** required to complete this section to receive Level 3 accreditation. However, it is highly recommended by the authors that you attempt the material, given the tremendous demonstration value it provides for clients.
 
 Otherwise, you are welcome to conclude the hands-on component at this point and follow the <a href="https://ibm.github.io/WCA-AnsibleLightspeed-L3/evaluation/" target="_blank">Level 3 accreditation</a> steps (depending on your role).
