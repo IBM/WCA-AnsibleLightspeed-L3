@@ -411,13 +411,12 @@
 </div>
 <h2 id="i-generating-code-with-ibm-watsonx-code-assistant-for-red-hat-ansible-lightspeed"><strong>i. Generating Code with IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</strong></h2>
 <p>An <strong>Ansible Task</strong> is a statement in Ansible's automation script (the YAML-based Playbooks you will be working with) that declares a single action to be executed. This might be installing a package, copying a file, or shutting down a service on a remote machine. Each <em>Task</em> represents an idempotent operation (an action that can be repeated multiple times and deliver the same result every time) that aligns the remote managed node to the specified state. Idempotent operations also ensure consistency across multiple executions, guaranteeing the same steps are taken on each execution of the task.</p>
-<p>At the time of publication, <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> (<strong>WCA</strong>) will only generate code for <strong>Ansible Tasks</strong>, including both <em>single task</em> and <em>multi-task</em> automation.</p>
-<p>After you have learned the fundamentals of generating Ansible Task code blocks, you'll be ready to shape and tailor the AI-generated code recommendations using WCA's model tuning capabilities.</p>
+<p>After you have learned the fundamentals of generating Ansible Task code blocks using <em>IBM watsonx Code Assistant for Red Hat Ansible Lightspeed</em> (<strong>WCA</strong>), you'll be ready to shape and tailor the AI-generated code recommendations using WCA's model tuning capabilities.</p>
 <hr />
 <p><a class="glightbox" href="../_attachments/lightspeed.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/lightspeed.gif" /></a></p>
 <hr />
 <h2 id="ii-single-task-ansible-operations"><strong>ii. Single task Ansible operations</strong></h2>
-<p>The process of creating AI-generated <strong>code recommendations</strong> is as simple as modifying the natural language (plain English) Task descriptions of an action that is to be executed, which always start with <code>- name:</code> and are followed by some description of the task to be performed. Ansible Tasks are often preceded with some <code>#</code> comments or documentation. After the natural language description of the automation Task has been set by the user, WCA handles the rest.</p>
+<p>The process of creating AI-generated <strong>code recommendations</strong> is as simple as modifying the natural language (plain English) Task descriptions of an action that is to be executed, which always start with <code>- name:</code> and are followed by some description of the task to be performed. Ansible Tasks are often preceded with the prefix <code>#</code>, indicating developer comments or documentation. After the natural language description of the automation Task has been set by the user, WCA handles the rest.</p>
 <p>WCA is also capable of generating multiple Ansible Tasks from more complex natural language descriptions— what is referred to as <strong>multi-task</strong> code generation —which you will experiment with later in this module. However, to get started, let's begin with the basics of generating code for <strong>single task</strong> use cases.</p>
 <hr />
 <ol>
@@ -538,7 +537,7 @@
 <p>Pay attention to the indentation and characters used on <strong>Line 15</strong>, which in sequence from left to right are as follows:</p>
 <ul>
 <li>begins with <span class="keys"><kbd class="key-tab">Tab</kbd></span> (or <span class="keys"><kbd class="key-space">Space</kbd></span> whitespaces) for indentation</li>
-<li>a <code>#</code> character to "comment out" the line contents</li>
+<li>a <code>#</code> character to "comment out" the line's contents</li>
 <li>a whitespace <span class="keys"><kbd class="key-space">Space</kbd></span> character</li>
 <li><code>- name:</code> which signifies the start of a Task definition</li>
 <li>and finally the natural language description of the Task</li>
@@ -553,14 +552,14 @@
 <hr />
 <ol start="3">
 <li>
-<p>To generate code for <code>TASK 1</code> using WCA, first <strong>uncomment</strong> the line of code (remove <code>#</code> characters from the start of a line).</p>
+<p>To generate code for <code>TASK 1</code>, first <strong>uncomment</strong> the line of code (remove the <code>#</code> character from the start of a line).</p>
 <ul>
 <li>Highlight the line(s) of code you wish to uncomment and then press <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-question">?</kbd></span> for macOS or <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-question">?</kbd></span> for Windows</li>
 <li>You can repeat those keystrokes with the line(s) selected to toggle between commenting or uncommenting lines of code</li>
 <li>
 <p><em>Tip:</em> commented out lines of code in VS Code will appear as green text</p>
 <p><br/></p>
-<p>Afterwards, <strong>Line 15</strong> should look like the following — beginning with a single <span class="keys"><kbd class="key-tab">Tab</kbd></span>:</p>
+<p>Afterwards, <strong>Line 15</strong> should look like the following — beginning with a single <span class="keys"><kbd class="key-tab">Tab</kbd></span></p>
 </li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install cockpit package</span><span class="w"></span>
@@ -748,7 +747,7 @@
 <p>There are two crucial distinctions between <em>single task</em> and <em>multi-task</em> code generation: formatting and execution.</p>
 <ul>
 <li><em>Formatting</em>: Notice that <strong>Line 12</strong> does not begin with <code>-name:</code>, as was the case with single task descriptions</li>
-<li><em>Execution</em>: In order to generate AI code recommendations for multi-task descriptions, <strong>Line 12</strong> must <em>stay commented out</em> (the <code>#</code> needs to remain at the start of the line)</li>
+<li><em>Execution</em>: In order to generate AI code recommendations for multi-task descriptions, <strong>Line 12</strong> must <em>stay commented out</em> (the <code>#</code> <em>must remain</em> at the start of the line)</li>
 </ul>
 <p><br/></p>
 <p>What is the rationale behind this? When WCA's generative AI capabilities parse <strong>Line 12</strong>, its output will include multiple <code>-name:</code> tasks, each containing potentially multiple lines of instructions, based on how many <code>&amp;</code>-delineated task descriptions are included on the line.</p>
@@ -758,7 +757,7 @@
 <hr />
 <ol start="9">
 <li>
-<p>Place your cursor at the end of <strong>Line 12</strong>, and without removing the <code>#</code> character, press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute the code generation step. Be aware that generating code for multi-task descriptions will take longer compared to a single task.</p>
+<p>Place your cursor at the end of <strong>Line 12</strong>, and <em>without</em> removing the <code>#</code> character, press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute the code generation step. Be aware that generating code for multi-task descriptions will take longer compared to a single task.</p>
 <p>Compare the <code>MULTI-TASK</code> solution tab with the <code>SINGLE TASK</code> solution (copied over from <em>Step 6</em>). How did the multi-task code generation fare compared to the single task approach?</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">MULTI-TASK</label><label for="__tabbed_5_2">SINGLE TASK</label></div>
 <div class="tabbed-content">
