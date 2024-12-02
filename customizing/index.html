@@ -406,10 +406,10 @@
 <p>On the one hand, it shows the sensitivity of generative AI models to even the most nuanced change in <strong>natural language prompts</strong> — for good or bad. Generative AI can produce tremendous work and that output is further guided along by best practices built-in from Red Hat and IBM. But in the end, the AI can only infer user intent from the natural language descriptions supplied to it. The more clearly a user defines their Task descriptions and intent, the more likely that WCA will correctly generate code which mirrors that intent; conversely, the less precise those descriptions are, the more likely WCA will misinterpret and miss the mark. Precision <em>is</em> key for the disambiguation of natural language prompts.</p>
 </li>
 <li>
-<p>Human feedback and <strong>humans-in-the-loop</strong> are essential to these formative stages of generative AI. As offerings like WCA mature, the natural language processing capabilities of the service will continue to be refined and improved. Additional packages, functions, and training data from Ansible Galaxy (as well as other sources) are continuously being added to the product's Foundation Models, which will in turn continually improve the AI-generated code recommendations made to users.</p>
+<p>Human feedback and <strong>humans-in-the-loop</strong> are essential to these formative stages of generative AI. As offerings like WCA mature, the natural language processing capabilities of the service will continue to be refined and improved. Additional packages, functions, and training data from Ansible Galaxy (as well as other sources) are continuously being added to IBM Granite's LLMs for code, which will in turn continually improve the AI-generated code recommendations made to users.</p>
 </li>
 <li>
-<p>By using the <strong>Model Tuning</strong> capabilities built into <em>IBM watsonx Code Assistant</em>, organizations and users are able to customize the recommendations produced by generative AI, tuning a domain-specific LLM with the organization's <em>own</em> Ansible Playbooks. The content and code recommendations that WCA suggests can be tailored to an organization's standards, best practices, and programming styles. These capabilities will be explored later in this module.</p>
+<p>By using the <strong>Model Tuning</strong> capabilities built into WCA, organizations and users are able to customize the recommendations produced by the service, tuning a domain-specific LLM with the organization's <em>own</em> Ansible Playbooks. The content and code recommendations that WCA suggests can be tailored to an organization's standards, best practices, and programming styles. These capabilities will be explored later in this module.</p>
 </li>
 </ol>
 </div>
@@ -628,7 +628,7 @@
 <p>The <code>src: httpd.j2</code> recommendation in the <code>AI-GENERATED CODE</code> tab is an exact match to the natural language description set in <em>Step 6</em>, and only slightly different (in terms of the directory path used) to the <code>src: /srv/httpd.j2</code> variable in the <code>SOLUTION CODE</code> tab.</p>
 </li>
 <li>
-<p>The <code>dest: /etc/httpd/conf/httpd.conf</code> recommendation in the <code>AI-GENERATER CODE</code> tab, unfortunately, still deviates from the <code>httpd.config</code> (not the same as <code>httpd.conf</code>) destination that was requested in the natural language description. Close, but still far from exact and not matching our specifications. However, it's a vast improvement over the <code>dest: /etc/apache2/sites-available/000-default.conf</code> destination that was recommended as a result of <em>Step 4</em>'s more ambiguous task description.</p>
+<p>The <code>dest: /etc/httpd/conf/httpd.conf</code> recommendation in the <code>AI-GENERATED CODE</code> tab, unfortunately, still deviates from the <code>httpd.config</code> (not the same as <code>httpd.conf</code>) destination that was requested in the natural language description. Close, but still far from exact and not matching our specifications. However, it's a vast improvement over the <code>dest: /etc/apache2/sites-available/000-default.conf</code> destination that was recommended as a result of <em>Step 4</em>'s more ambiguous task description.</p>
 </li>
 <li>
 <p>Perplexingly, the <code>mode: '0644'</code> recommendation that was made previously in <em>Step 4</em> has been left out of the suggested task code. We can speculate as to why— perhaps the more precise natural language description made in <em>Step 6</em> prompted WCA to only generate code for exactly what was specified —but the "black box" nature of generative AI means that we cannot know for certain. Perhaps with another, even more precise iteration the <code>AI-GENERATED CODE</code> will match the <code>SOLUTION CODE</code>?</p>
@@ -870,7 +870,7 @@
 <p>To <strong>override</strong> the <em>IBM Granite</em> base model recommendations, you must provide a pointer to a customized <em>Model ID</em> (prepared and hosted earlier on WCA) using the VS Code extension.</p>
 <div class="admonition warning">
 <p><strong>Custom Model ID</strong>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>b48e3c52-6135-408b-9a1e-8bcc75a47d32&lt;|sepofid|&gt;480ace2b-c58b-4930-b566-674ad6974851
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>dca38e8f-d98c-44ae-a015-aee0fa4d4360&lt;|sepofid|&gt;069d3e51-c813-407a-94e7-c2c9da414b85
 </code></pre></div></p>
 </div>
 <ul>
@@ -881,13 +881,13 @@
 <p>Click the <strong>Manage</strong> ("cogwheel") icon located just to the right of the Ansible tile</p>
 </li>
 <li>
-<p>From the drop-down options, click <strong>Extension Settings</strong><sup>[A]</sup></p>
+<p>From the drop-down options, click <strong>Settings</strong><sup>[A]</sup></p>
 </li>
 <li>
 <p>Within the search bar at the top of the panel, add the text <code>Model</code> to filter the results<sup>[B]</sup></p>
 </li>
 <li>
-<p>Copy and paste the <strong>Model ID</strong> value (above) into the empty <code>Ansible &gt; Lightspeed: Model ID Override</code> field<sup>[C]</sup>, then click the <code>X</code> in the top-left corner of the panel to save and exit <em>Extension Settings</em></p>
+<p>Copy and paste the <strong>Model ID</strong> value (above) into the empty <code>Ansible &gt; Lightspeed: Model ID Override</code> field<sup>[C]</sup>, then click the <code>X</code> in the top-left corner of the panel to save and exit <em>Settings</em></p>
 <p><a class="glightbox" href="../_attachments/setuptroubleshoot-4b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/setuptroubleshoot-4b.png" width="600" /></a></p>
 <p><a class="glightbox" href="../_attachments/tuning1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" loading="lazy" src="../_attachments/tuning1.png" width="600" /></a></p>
 </li>
@@ -979,7 +979,7 @@
 <p>Using the tuned <em>Model ID</em>, WCA has returned a recommendation to use the <code>ibm.cloudcollection.ibm_container_cluster</code> Module for the IBM Cloud, instead of the standard <code>ansible.builtin.command</code> Module from <em>Step 11</em>. This more accurately conforms to the organization's Ansible automation standards and requirements.</p>
 <div class="admonition warning">
 <p class="admonition-title">REMOVE THE CUSTOMIZED <em>MODEL ID</em> WHEN FINISHED</p>
-<p>Remember to <strong>clear</strong> the <code>Ansible &gt; Lightspeed: Model ID Override</code> in the <em>Extension Settings</em> after you have completed <em>Step 13</em>, otherwise all subsequent code generation requests made to WCA will be produced using the customized AI model.</p>
+<p>Remember to <strong>clear</strong> the <code>Ansible &gt; Lightspeed: Model ID Override</code> in the <em>Settings</em> after you have completed <em>Step 13</em>, otherwise all subsequent code generation requests made to WCA will be produced using the customized AI model.</p>
 </div>
 <hr />
 <h2 id="iii-conclusion"><strong>iii. Conclusion</strong></h2>
