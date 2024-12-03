@@ -10,7 +10,6 @@ repo_name: IBM/WCA-AnsibleLightspeed-L3
 #edit_uri: edit/master/docs
 docs_dir: docs
 
-
 nav:
   - Introduction: 'index.md'
   - Evaluation: 'evaluation.md'
@@ -25,33 +24,36 @@ theme:
     - navigation.instant
     - navigation.tracking
     - content.code.annotate
+    - content.code.copy
+    - content.code.select
+    - navigation.footer
   palette:
       scheme: default
 
 plugins:
-    - mkdocs-video:
-        is_video: True
-        video_autoplay: False
-    - macros
-    - search
-    - glightbox
-    - print-site:
-        add_to_navigation: false
-        print_page_title: 'IBM watsonx Code Assistant for Red Hat Ansible Lightspeed Level 3 Lab Guide'
-        add_print_site_banner: false
-        # Table of contents
-        add_table_of_contents: true
-        toc_title: 'Table of Contents'
-        toc_depth: 6
-        # Content-related
-        add_full_urls: false
-        enumerate_headings: false
-        enumerate_figures: false
-        add_cover_page: true
-        cover_page_template: ""
-        path_to_pdf: ""
-        include_css: true
-        enabled: true
+  - mkdocs-video:
+      is_video: True
+      video_autoplay: False
+  - macros
+  - search
+  - glightbox
+  - print-site:
+      add_to_navigation: false
+      print_page_title: 'IBM watsonx Code Assistant for Red Hat Ansible Lightspeed Level 3 Lab Guide'
+      add_print_site_banner: false
+      # Table of contents
+      add_table_of_contents: false
+      toc_title: 'Table of Contents'
+      toc_depth: 6
+      # Content-related
+      add_full_urls: false
+      enumerate_headings: false
+      enumerate_figures: false
+      add_cover_page: true
+      cover_page_template: ""
+      path_to_pdf: ""
+      include_css: true
+      enabled: true
 
 markdown_extensions:
   - markdown_fenced_code_tabs
