@@ -4,8 +4,6 @@
 !!! quote ""
     Christopher Bienko *(Principal, IBM Global Sales Enablement)* demonstrates key elements of the `Task Description Tuning and Model Customization` module. *[15 min]*
 
-<br/>
-
 ## **i. Fine-tuning task prompts**
 
 In this section, you will experiment with customized Ansible Playbooks and test how changes made to an Ansible Task's natural language descriptions can impact the recommended code produced by *IBM watsonx Code Assistant for Red Hat Ansible Lightspeed* (**WCA**).
@@ -18,9 +16,9 @@ In this section, you will experiment with customized Ansible Playbooks and test 
 
       1. On the one hand, it shows the sensitivity of generative AI models to even the most nuanced change in **natural language prompts** — for good or bad. Generative AI can produce tremendous work and that output is further guided along by best practices built-in from Red Hat and IBM. But in the end, the AI can only infer user intent from the natural language descriptions supplied to it. The more clearly a user defines their Task descriptions and intent, the more likely that WCA will correctly generate code which mirrors that intent; conversely, the less precise those descriptions are, the more likely WCA will misinterpret and miss the mark. Precision *is* key for the disambiguation of natural language prompts.
 
-      2. Human feedback and **humans-in-the-loop** are essential to these formative stages of generative AI. As offerings like WCA mature, the natural language processing capabilities of the service will continue to be refined and improved. Additional packages, functions, and training data from Ansible Galaxy (as well as other sources) are continuously being added to the product's Foundation Models, which will in turn continually improve the AI-generated code recommendations made to users.
+      2. Human feedback and **humans-in-the-loop** are essential to these formative stages of generative AI. As offerings like WCA mature, the natural language processing capabilities of the service will continue to be refined and improved. Additional packages, functions, and training data from Ansible Galaxy (as well as other sources) are continuously being added to IBM Granite's LLMs for code, which will in turn continually improve the AI-generated code recommendations made to users.
 
-      3. By using the **Model Tuning** capabilities built into *IBM watsonx Code Assistant*, organizations and users are able to customize the recommendations produced by generative AI, tuning a domain-specific LLM with the organization's *own* Ansible Playbooks. The content and code recommendations that WCA suggests can be tailored to an organization's standards, best practices, and programming styles. These capabilities will be explored later in this module.
+      3. By using the **Model Tuning** capabilities built into WCA, organizations and users are able to customize the recommendations produced by the service, tuning a domain-specific LLM with the organization's *own* Ansible Playbooks. The content and code recommendations that WCA suggests can be tailored to an organization's standards, best practices, and programming styles. These capabilities will be explored later in this module.
 
 The take-away here is that **your results may vary**: they may differ from the `SOLUTION` code presented in the steps below. Keep this in mind as you work through the examples in this section and understand that it is not a bug, but rather a consequence of working with generative AI in general.
 
@@ -179,7 +177,7 @@ The precision with which a Playbook author describes Ansible Tasks in natural la
 
     - The `src: httpd.j2` recommendation in the `AI-GENERATED CODE` tab is an exact match to the natural language description set in *Step 6*, and only slightly different (in terms of the directory path used) to the `src: /srv/httpd.j2` variable in the `SOLUTION CODE` tab.
 
-    - The `dest: /etc/httpd/conf/httpd.conf` recommendation in the `AI-GENERATER CODE` tab, unfortunately, still deviates from the `httpd.config` (not the same as `httpd.conf`) destination that was requested in the natural language description. Close, but still far from exact and not matching our specifications. However, it's a vast improvement over the `dest: /etc/apache2/sites-available/000-default.conf` destination that was recommended as a result of *Step 4*'s more ambiguous task description.
+    - The `dest: /etc/httpd/conf/httpd.conf` recommendation in the `AI-GENERATED CODE` tab, unfortunately, still deviates from the `httpd.config` (not the same as `httpd.conf`) destination that was requested in the natural language description. Close, but still far from exact and not matching our specifications. However, it's a vast improvement over the `dest: /etc/apache2/sites-available/000-default.conf` destination that was recommended as a result of *Step 4*'s more ambiguous task description.
 
     - Perplexingly, the `mode: '0644'` recommendation that was made previously in *Step 4* has been left out of the suggested task code. We can speculate as to why— perhaps the more precise natural language description made in *Step 6* prompted WCA to only generate code for exactly what was specified —but the "black box" nature of generative AI means that we cannot know for certain. Perhaps with another, even more precise iteration the `AI-GENERATED CODE` will match the `SOLUTION CODE`?
 
@@ -359,18 +357,18 @@ In this scenario, your organization has its own set of Ansible Playbooks that le
 
         **Custom Model ID**:
         ```
-        b48e3c52-6135-408b-9a1e-8bcc75a47d32<|sepofid|>480ace2b-c58b-4930-b566-674ad6974851
+        dca38e8f-d98c-44ae-a015-aee0fa4d4360<|sepofid|>069d3e51-c813-407a-94e7-c2c9da414b85
         ```
 
     - Look for Ansible under the *Installed* services in the **Extensions** panel.
 
     - Click the **Manage** ("cogwheel") icon located just to the right of the Ansible tile
 
-    - From the drop-down options, click **Extension Settings**^[A]^
+    - From the drop-down options, click **Settings**^[A]^
 
     - Within the search bar at the top of the panel, add the text `Model` to filter the results^[B]^
 
-    - Copy and paste the **Model ID** value (above) into the empty `Ansible > Lightspeed: Model ID Override` field^[C]^, then click the `X` in the top-left corner of the panel to save and exit *Extension Settings*
+    - Copy and paste the **Model ID** value (above) into the empty `Ansible > Lightspeed: Model ID Override` field^[C]^, then click the `X` in the top-left corner of the panel to save and exit *Settings*
 
         ![](_attachments/setuptroubleshoot-4b.png){: loading=lazy width="600"}
 
@@ -430,14 +428,10 @@ Using the tuned *Model ID*, WCA has returned a recommendation to use the `ibm.cl
 
 !!! warning "REMOVE THE CUSTOMIZED *MODEL ID* WHEN FINISHED"
 
-    Remember to **clear** the `Ansible > Lightspeed: Model ID Override` in the *Extension Settings* after you have completed *Step 13*, otherwise all subsequent code generation requests made to WCA will be produced using the customized AI model.
+    Remember to **clear** the `Ansible > Lightspeed: Model ID Override` in the *Settings* after you have completed *Step 13*, otherwise all subsequent code generation requests made to WCA will be produced using the customized AI model.
 
 ---
 
 ## **iii. Conclusion**
 
-That concludes the hands-on components to this Level 3 course, but your learning and experimentation doesn't need to end here. 
-
-The <a href="https://ibm.github.io/WCA-AnsibleLightspeed-L3/advanced/" target="_blank">**OPTIONAL** module</a> which follows teaches you how to craft a fully-functional Ansible Playbook for the automated deployment of an Amazon EC2 instance and WordPress application — deployable from your local machine into a live AWS environment. IBM technical sellers and business partners are **NOT** required to complete this section to receive Level 3 accreditation. However, it is highly recommended by the authors that you attempt the material, given the tremendous demonstration value it provides for clients.
-
-Otherwise, you are welcome to conclude the hands-on component at this point and follow the <a href="https://ibm.github.io/WCA-AnsibleLightspeed-L3/evaluation/" target="_blank">Level 3 accreditation</a> steps (depending on your role).
+This concludes the hands-on components of the Level 3 course, but your learning and experimentation doesn't need to end here. Participants are encouraged to follow the <a href="https://ibm.github.io/WCA-AnsibleLightspeed-L3/evaluation/" target="_blank">Level 3 accreditation</a> steps (depending on your role).

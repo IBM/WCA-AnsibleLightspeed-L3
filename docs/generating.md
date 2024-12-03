@@ -4,15 +4,11 @@
 !!! quote ""
     Christopher Bienko *(Principal, IBM Global Sales Enablement)* demonstrates key elements and hands-on components of the `Generating Code` module. *[10 min]*
 
-<br/>
-
 ## **i. Generating Code with IBM watsonx Code Assistant for Red Hat Ansible Lightspeed**
 
 An **Ansible Task** is a statement in Ansible's automation script (the YAML-based Playbooks you will be working with) that declares a single action to be executed. This might be installing a package, copying a file, or shutting down a service on a remote machine. Each *Task* represents an idempotent operation (an action that can be repeated multiple times and deliver the same result every time) that aligns the remote managed node to the specified state. Idempotent operations also ensure consistency across multiple executions, guaranteeing the same steps are taken on each execution of the task.
-    
-At the time of publication, *IBM watsonx Code Assistant for Red Hat Ansible Lightspeed* (**WCA**) will only generate code for **Ansible Tasks**, including both *single task* and *multi-task* automation.
 
-After you have learned the fundamentals of generating Ansible Task code blocks, you'll be ready to shape and tailor the AI-generated code recommendations using WCA's model tuning capabilities.
+After you have learned the fundamentals of generating Ansible Task code blocks using *IBM watsonx Code Assistant for Red Hat Ansible Lightspeed* (**WCA**), you'll be ready to shape and tailor the AI-generated code recommendations using WCA's model tuning capabilities.
 
 ---
 
@@ -22,7 +18,7 @@ After you have learned the fundamentals of generating Ansible Task code blocks, 
 
 ## **ii. Single task Ansible operations**
 
-The process of creating AI-generated **code recommendations** is as simple as modifying the natural language (plain English) Task descriptions of an action that is to be executed, which always start with `- name:` and are followed by some description of the task to be performed. Ansible Tasks are often preceded with some `#` comments or documentation. After the natural language description of the automation Task has been set by the user, WCA handles the rest.
+The process of creating AI-generated **code recommendations** is as simple as modifying the natural language (plain English) Task descriptions of an action that is to be executed, which always start with `- name:` and are followed by some description of the task to be performed. Ansible Tasks are often preceded with the prefix `#`, indicating developer comments or documentation. After the natural language description of the automation Task has been set by the user, WCA handles the rest.
 
 WCA is also capable of generating multiple Ansible Tasks from more complex natural language descriptions— what is referred to as **multi-task** code generation —which you will experiment with later in this module. However, to get started, let's begin with the basics of generating code for **single task** use cases.
 
@@ -106,7 +102,7 @@ The `install_cockpit_single-task.yml` Playbook code above warrants some explanat
     Pay attention to the indentation and characters used on **Line 15**, which in sequence from left to right are as follows:
 
     - begins with ++tab++ (or ++space++ whitespaces) for indentation
-    - a `#` character to "comment out" the line contents
+    - a `#` character to "comment out" the line's contents
     - a whitespace ++space++ character
     - `- name: ` which signifies the start of a Task definition
     - and finally the natural language description of the Task
@@ -119,14 +115,14 @@ The `install_cockpit_single-task.yml` Playbook code above warrants some explanat
 
 ---
 
-3. To generate code for `TASK 1` using WCA, first **uncomment** the line of code (remove `#` characters from the start of a line).
+3. To generate code for `TASK 1`, first **uncomment** the line of code (remove the `#` character from the start of a line).
     - Highlight the line(s) of code you wish to uncomment and then press ++cmd+question++ for macOS or ++ctrl+question++ for Windows
     - You can repeat those keystrokes with the line(s) selected to toggle between commenting or uncommenting lines of code
     - *Tip:* commented out lines of code in VS Code will appear as green text
 
         <br/>
         
-        Afterwards, **Line 15** should look like the following — beginning with a single ++tab++:
+        Afterwards, **Line 15** should look like the following — beginning with a single ++tab++
     
     ``` yaml
         - name: Install cockpit package
@@ -283,7 +279,7 @@ Syntactically, multiple tasks are combined into a single natural language expres
 8. There are two crucial distinctions between *single task* and *multi-task* code generation: formatting and execution.
 
     - *Formatting*: Notice that **Line 12** does not begin with ` -name:`, as was the case with single task descriptions
-    - *Execution*: In order to generate AI code recommendations for multi-task descriptions, **Line 12** must *stay commented out* (the `#` needs to remain at the start of the line)
+    - *Execution*: In order to generate AI code recommendations for multi-task descriptions, **Line 12** must *stay commented out* (the `#` *must remain* at the start of the line)
 
     <br/>
 
@@ -293,7 +289,7 @@ Syntactically, multiple tasks are combined into a single natural language expres
 
 ---
 
-9. Place your cursor at the end of **Line 12**, and without removing the `#` character, press ++return++ to execute the code generation step. Be aware that generating code for multi-task descriptions will take longer compared to a single task.
+9. Place your cursor at the end of **Line 12**, and *without* removing the `#` character, press ++return++ to execute the code generation step. Be aware that generating code for multi-task descriptions will take longer compared to a single task.
 
     Compare the `MULTI-TASK` solution tab with the `SINGLE TASK` solution (copied over from *Step 6*). How did the multi-task code generation fare compared to the single task approach?
 
@@ -579,4 +575,4 @@ Syntactically, multiple tasks are combined into a single natural language expres
 
 ## **iv. Next steps**
 
-The following module will examine in detail WCA's post-processing and content source attribution capabilities.
+In the next section, you will examine in detail WCA's post-processing and content source attribution capabilities.

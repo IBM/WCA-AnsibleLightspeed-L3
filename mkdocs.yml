@@ -18,7 +18,6 @@ nav:
   - Generating Code: 'generating.md'
   - Content Source Matching and Post-Processing: 'source-matching-post-processing.md'
   - Task Description Tuning and Model Customization: 'customizing.md'
-  - (OPTIONAL) Deploying a Live AWS EC2 Instance and WordPress Application: 'advanced.md'
 
 theme:
   name: material

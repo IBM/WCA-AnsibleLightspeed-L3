@@ -42,7 +42,7 @@ These code attribution suggestions are created using a **k-NN** (<a href="https:
     
     - It is under the `Ansible` tab that **content source matching** results will be displayed
 
-    - Other tabs will also displayed for variety of options: `Problems`, `Output`, `Debug Console`, `Terminal`, and `Ports`
+    - Other tabs will also displayed for variety of options: `Output`, `Debug Console`, `Terminal`, `Ports`, and `Comments`
 
         <br/>
         ![](_attachments/contentmatching2.png){: loading=lazy width="600"}
@@ -56,50 +56,52 @@ These code attribution suggestions are created using a **k-NN** (<a href="https:
     ``` yaml linenums="1"
     ---
     - name: Configure Database servers
-    hosts: databases
-    become: true
+      hosts: databases
+      become: true
 
-    tasks:
-        # TASK 1
-        # - name: Install postgresql-server
+      tasks:
+          # TASK 1
+          # - name: Install postgresql-server
 
-        # TASK 2
-        # Ansible Lightspeed used an easy-to-understand natural language prompt and suggested the correct, more complex PostgreSQL CLI command to initiate the database.
-        # Ansible Lightspeed used best practices and kept the task idempotent by including creates: /var/lib/pgsql/data/postgresql.conf in the suggestion.
-        # - name: Run postgresql setup command
+          # TASK 2
+          # Ansible Lightspeed used an easy-to-understand natural language prompt and suggested the correct, more complex PostgreSQL CLI command to initiate the database.
+          # Ansible Lightspeed used best practices and kept the task idempotent by including creates: /var/lib/pgsql/data/postgresql.conf in the suggestion.
+          # - name: Run postgresql setup command
 
-        # TASK 3
-        # Ansible Lightspeed used natural language prompt and added state: started and enabled: true module arguments based on Start and enable... in the Ansible task description.
-        # - name: Start and enable postgresql service
+          # TASK 3
+          # Ansible Lightspeed used natural language prompt and added state: started and enabled: true module arguments based on Start and enable... in the Ansible task description.
+          # - name: Start and enable postgresql service
     ```
 
 ---
 
 4. Generate a code recommendation for the task on **Line 8** by placing your cursor at the end of the line and hitting ++return++.
 
-    - Pay attention to the code attribution details associated with this recommendation, which will be appearing under the `Ansible` tab at the bottom of the VS Code interface once the code recommendation is finalized.
+    - Pay attention to the code attribution details associated with this recommendation, which will be appearing under the `Ansible` tab at the bottom of the VS Code interface once the code recommendation is accepted with ++tab++
 
-    - You will need to **accept** the AI-generated code suggestions (using the ++tab++ key) *before* the `Ansible` content source matching tab will provide details about the code's origins.
+    - You need to **accept** the AI-generated code suggestions (using the ++tab++ key) *before* the `Ansible` content source matching tab will provide details about the code's origins
 
-    ``` yaml
-    - name: Install postgresql-server
-    ansible.builtin.package:
-        name: postgresql-server
-        state: present
-    ```
+        ``` yaml
+        ---
+        - name: Install postgresql-server
+          ansible.builtin.package:
+            name: postgresql-server
+            state: present
+        ```
 
 ---
 
 5. The three most likely content sources used in training the WCA model— which produced the AI-generated code recommendations —are listed within the `Ansible` **tab**^[A]^. Recall from earlier that these code attribution suggestions are created using a **k-NN**  algorithm that searches **Ansible Galaxy** repositories for the nearest related content to the AI-generated code suggestions.
 
-    Clicking the arrow icon to the left of each **attribution**^[B]^ will expand further details about the source. Information about the `URL`, `Path`, `Data Source`, `License`, `Ansible Type`, and `Score` are displayed (where available) under each listing. Red Hat-certified and maintained collections, as well as contributors to open source projects on Ansible Galaxy, are the primary sources for Ansible Lightspeed model training and are the content sources you are most likely to see matched to AI-generated code recommendations.
-
     <br/>
     ![](_attachments/contentmatching5.png){: loading=lazy width="600"}
 
+    <br/>
+    Clicking the arrow icon to the left of each **attribution**^[B]^ will expand further details about the source. Information about the `URL`, `Path`, `Data Source`, `License`, and `Score` are displayed (where available) under each listing. Red Hat-certified and maintained collections, as well as contributors to open source projects on Ansible Galaxy, are the primary sources for Ansible Lightspeed model training and are the content sources you are most likely to see matched to AI-generated code recommendations.
+
 ---
 
-6. Drilling down into the `URL` field will redirect your web browser back to the precise collections and sources on **Ansible Galaxy** from which the code recommendations were derived. Here you can learn much richer details about the status of the project, any associated open source repositories involved (such as GitHub), contributions and activities ongoing with the code base, the author(s) involved, and many more intricacies.
+6. Clicking on the `URL` field will redirect your web browser back to the precise collections and sources on **Ansible Galaxy** from which the code recommendations were derived. Here you can learn much richer details about the status of the project, any associated open source repositories involved (such as GitHub), contributions and activities ongoing with the code base, the author(s) involved, and many more intricacies.
 
 ---
     
@@ -115,7 +117,7 @@ However, one way to make this feature quite obvious is to take a previously-gene
 
 ---
 
-7. Create a **New File...** YAML Playbook named `demo_provision_ec2_instance.yml` anywhere within the `/ansible-wca-demo-kit/` directory.
+7. Using the Explorer tab, create a **New File...** YAML Playbook named `demo_provision_ec2_instance.yml` anywhere within the `/ansible-wca-demo-kit/` directory.
 
     - You may save the Playbook in the root of the folder or any of the subdirectories
     
@@ -168,24 +170,24 @@ However, one way to make this feature quite obvious is to take a previously-gene
     ``` yaml linenums="1"
     ---
     - name: EC2 Cloud Operations
-    hosts: localhost
-    connection: local
-    gather_facts: false
+      hosts: localhost
+      connection: local
+      gather_facts: false
 
-    module_defaults:
+      module_defaults:
         group/aws:
         region: us-east-1
 
-    # vars:
-    #   ec2_instance:
-    #     name: lightspeed-instance-01
-    #     key_name: lightspeed-keypair
-    #     image_id: ami-016eb5d644c333ccb # RHEL 9 us-east-1
-    #     tags:
-    #       function: lightspeed-demo
-    #     security_group: secgroup-lightspeed
+    #  vars:
+    #    ec2_instance:
+    #    name: lightspeed-instance-01
+    #    key_name: lightspeed-keypair
+    #    image_id: ami-016eb5d644c333ccb # RHEL 9 us-east-1
+    #    tags:
+    #      function: lightspeed-demo
+    #    security_group: secgroup-lightspeed
 
-    tasks:
+      tasks:
             # TASK 1
             # # 1a. Uncomment task description below and generate a task suggestion.
             # #     Note - Best practices: The suggestion used the Fully Qualified Collection name.

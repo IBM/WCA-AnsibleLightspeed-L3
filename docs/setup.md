@@ -27,7 +27,7 @@ Follow along with the instructions below to request and configure these environm
 
 ---
 
-1. Click the IBM Technology Zone link below and select **Request a Red Hat Account**^[A]^:
+1. Click the IBM Technology Zone link below. Locate the **Request a Red Hat Account** tile, hover over the **IBM Cloud environment** button with your cursor, and then click **Reserve it**^[A]^:
 
     !!! warning ""
         **URL:** <a href="https://techzone.ibm.com/collection/ibm-watson-x-code-assistant-for-ansible-lightspeed/environments" target="_blank">https://techzone.ibm.com/collection/ibm-watson-x-code-assistant-for-ansible-lightspeed/environments</a>
@@ -51,23 +51,19 @@ Follow along with the instructions below to request and configure these environm
 
 3. Supply additional details about your ITZ reservation request:
 
-    | Field                             | Value                                                                                                                                                                                                                           |
-    | --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-    | `Name`                            | ^[A]^ Give your reservation a unique name.                                                                                                                                                                                      |
-    | `Purpose`                         | ^[B]^ If reserving for L3 training, select *Education*. If delivering a PoC, select *Pilot* and provide a Sales opportunity number.                                                                                             |
-    | `Describe`                        | ^[C]^ If reserving for L3, enter *WCA for Ansible Lightspeed training*. If delivering a PoC, enter the PoC and client details.                                                                                                  |
-    | `Preferred Geography`             | ^[D]^ Select the region and data center geographically closest to your location.                                                                                                                                                |
-    | `End Date & Time`                 | ^[E]^ Select a time and date for when the reservation will expire. The recommended amount is 2 days, although it is possible to finish the hands-on demonstration within a few hours. Additional time extensions are available. |
+    | Field                             | Value                                                                                                                                  |
+    | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+    | `Name`                            | Give your reservation a unique name.                                                                                                   |
+    | `Purpose`                         | If reserving for L3 training, select *Education*. If delivering a PoC, select *Pilot* and provide a Sales Opportunity number.          |
+    | `Describe`                        | If reserving for L3, enter *WCA for Ansible Lightspeed training*. If delivering a PoC, enter the PoC and client details.               |
+    | `Preferred Geography`             | Select the region and data center geographically closest to your location.                                                             |
+    | `End Date and Time`               | Select a time and date for when the reservation will expire.                                                                           |
 
-    When satisfied, verify that you agree to the *Terms and Conditions* for the environment and finalize your reservation request by clicking **Submit**^[F]^.
+    When satisfied, verify that you agree to the *Terms and Conditions* for the environment and finalize your reservation request by clicking **Submit**.
 
-    <br/>
-
-    !!! note inline end "PROVISIONING TIMES"
+    !!! note "PROVISIONING TIMES"
 
         Red Hat account creation take approximately **5-10 minutes** to complete from the time that you click submit. If you navigate to the **<a href="https://techzone.ibm.com/my/reservations" target="_blank">My Reservations</a>** tab of the ITZ, you can monitor the progress of your reservation. Wait for the ITZ reservation to be marked as *"Ready"* before attempting to start the lab.
-
-    ![](_attachments/setupAAP-3.png){: loading=lazy width="400"}
 
 ---
 
@@ -77,10 +73,10 @@ Follow along with the instructions below to request and configure these environm
 
     - `Red Hat Login Email Verification` : This email, addressed from a `no-reply@redhat.com` account^[B]^, contains the resources necessary for accessing your uniquely-generated Red Hat credentials. The lab guide steps that follow will instruct you on how to set those up and how to use them for accessing your *IBM watsonx Code Assistant for Red Hat Ansible Lightspeed* entitlements inside VS Code.
 
-    <br/>
-    ![](_attachments/setupAAP-4a.png){: loading=lazy width="600"}
+        <br/>
+        ![](_attachments/setupAAP-4a.png){: loading=lazy width="600"}
 
-    ![](_attachments/setupAAP-4b.png){: loading=lazy width="600"}
+        ![](_attachments/setupAAP-4b.png){: loading=lazy width="600"}
 
 ---
 
@@ -90,8 +86,8 @@ Follow along with the instructions below to request and configure these environm
 
     - Click the **URL**^[B]^ located within the body of the invitation email to finalize your account registration with Red Hat.
 
-    <br/>
-    ![](_attachments/setupAAP-5.png){: loading=lazy width="600"}
+        <br/>
+        ![](_attachments/setupAAP-5.png){: loading=lazy width="600"}
 
 ---
 
@@ -103,26 +99,32 @@ Follow along with the instructions below to request and configure these environm
 
     - When ready, click **Save**^[B]^ to finalize registration
 
-    !!! note "REGISTRATION IS REQUIRED"
-    
-        - If you already have a personal account with Red Hat, **you must still register for a new account** using the invitation URL provided
+        <br/>
+        ![](_attachments/setuptroubleshoot-6b.png){: loading=lazy width="600"}
 
-        - **Do not** attempt to use a personal Red Hat account in the later steps of the *Setup & Troubleshooting* guide, as that account will not have access to the WCA services needed to perform the training
+        !!! note "REGISTRATION IS REQUIRED"
+        
+            - If you already have a personal account with Red Hat, **you must still register for a new account** using the invitation URL provided
 
-        - Red Hat accounts created for this training will be de-authorized and deleted by IBM Technology Zone after the reservation period has ended
+            - **Do not** attempt to use a personal Red Hat account in the later steps of the *Setup & Troubleshooting* guide, as that account will not have access to the WCA services needed to perform the training
 
-    <br/>
-    ![](_attachments/setuptroubleshoot-6b.png){: loading=lazy width="600"}
+            - Red Hat accounts created for this training will automatically be de-authorized and deleted by IBM Technology Zone after the reservation period has ended
 
 ---
 
-7. Now you must request your second ITZ environment, this time for the virtualized machine (VM) environment. Return to the IBM Technology Zone reservation link below and select **WCA for Ansible Essentials Plan: Visual Studio Desktop 1.4**^[A]^:
+7. Now you must request your second ITZ environment, this time for the virtualized machine (VM) environment. **Open** the IBM Technology Zone reservation link below:
 
     !!! warning ""
         **URL:** <a href="https://techzone.ibm.com/collection/ibm-watson-x-code-assistant-for-ansible-lightspeed/environments" target="_blank">https://techzone.ibm.com/collection/ibm-watson-x-code-assistant-for-ansible-lightspeed/environments</a>
 
-    <br/>
-    ![](_attachments/newvm-setup-step7.png){: loading=lazy width="450"}
+    - Locate the **WCA for Ansible Essentials Plan: Visual Studio Desktop 1.5** tile
+    
+    - Hover over the **IBM Cloud environment** button with your cursor
+    
+    - Click **Reserve it**^[A]^ to continue
+
+        <br/>
+        ![](_attachments/newvm-setup-step7.png){: loading=lazy width="450"}
 
 ---
 
@@ -132,24 +134,21 @@ Follow along with the instructions below to request and configure these environm
 
 9. Supply additional details about your ITZ reservation request:
 
-    | Field                             | Value                                                                                                                                                                                                                           |
-    | --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-    | `Name`                            | ^[A]^ Give your reservation a unique name.                                                                                                                                                                                      |
-    | `Purpose`                         | ^[B]^ If reserving for L3 training, select *Education*. If delivering a PoC, select *Pilot* and provide a Sales opportunity number.                                                                                             |
-    | `Describe`                        | ^[C]^ If reserving for L3, enter *WCA for Ansible Lightspeed training*. If delivering a PoC, enter the PoC and client details.                                                                                                  |
-    | `Preferred Geography`             | ^[D]^ Select the region and data center geographically closest to your location.                                                                                                                                                |
-    | `End Date & Time`                 | ^[E]^ Select a time and date for when the reservation will expire. The recommended amount is 2 days, although it is possible to finish the hands-on demonstration within a few hours. Additional time extensions are available. |
-    | `VPN Access`                      | ^[F]^ Set to `Disabled`                                                                                                                                                                                                         |
+    | Field                             | Value                                                                                                                                  |
+    | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+    | `Name`                            | Give your reservation a unique name.                                                                                                   |
+    | `Purpose`                         | If reserving for L3 training, select *Education*. If delivering a PoC, select *Pilot* and provide a Sales Opportunity number.          |
+    | `Describe`                        | If reserving for L3, enter *WCA for Ansible Lightspeed training*. If delivering a PoC, enter the PoC and client details.               |
+    | `Preferred Geography`             | Select the region and data center geographically closest to your location.                                                             |
+    | `Customer Data`                   | Select *No, I will not be using customer data* if using for education purposes.                                                        |
+    | `End Date and Time`               | Select a time and date for when the reservation will expire.                                                                           |
+    | `VPN Access`                      | Set to *Disabled*.                                                                                                                     |
+ 
+    When satisfied, verify that you agree to the *Terms and Conditions* for the environment and finalize your reservation request by clicking **Submit**.
 
-    When satisfied, verify that you agree to the *Terms and Conditions* for the environment and finalize your reservation request by clicking **Submit**^[G]^.
-
-    <br/>
-
-    !!! note inline end "PROVISIONING TIMES"
+    !!! note "PROVISIONING TIMES"
 
         Red Hat account creation take approximately **15-30 minutes** to complete from the time that you click submit. If you navigate to the **<a href="https://techzone.ibm.com/my/reservations" target="_blank">My Reservations</a>** tab of the ITZ, you can monitor the progress of your reservation. Wait for the ITZ reservation to be marked as *"Ready"* before attempting to start the lab.
-
-    ![](_attachments/newvm-setup-step9.png){: loading=lazy width="400"}
 
 ---
 
@@ -158,7 +157,7 @@ Follow along with the instructions below to request and configure these environm
 10. Once the ITZ reservation has been marked as *"Ready"*, access connection details for the environment by either clicking the shortcut in the ITZ email or by drilling down into the **My Reservations** tab^[A]^ on the ITZ web portal.
 
     <br/>
-    ![](_attachments/newvm-setup-step10.png){: loading=lazy width="400"}
+        ![](_attachments/newvm-setup-step10.png){: loading=lazy width="400"}
 
 ---
 
@@ -179,8 +178,8 @@ Follow along with the instructions below to request and configure these environm
 
     - Hit ++return++ to complete the VM login
 
-    <br/>
-    ![](_attachments/client-setup2.png){: loading=lazy width="600"}
+        <br/>
+        ![](_attachments/client-setup2.png){: loading=lazy width="600"}
 
 ---
 
@@ -192,9 +191,8 @@ Follow along with the instructions below to request and configure these environm
 
     - You may access the web browser at any time by clicking the **Activities**^[A]^ button and then launching **Firefox**^[C]^, as shown.
 
-    <br/>
-
-    ![](_attachments/setup8.png){: loading=lazy width="600"}
+        <br/>
+        ![](_attachments/setup8.png){: loading=lazy width="600"}
 
 ---
 
@@ -208,7 +206,8 @@ Follow along with the instructions below to request and configure these environm
 
     - Click **Unlock**^[B]^
 
-    ![](_attachments/setup9.png){: loading=lazy width="600"}
+        <br/>
+        ![](_attachments/setup9.png){: loading=lazy width="600"}
 
 ---
 
@@ -226,12 +225,12 @@ Now you must authorize the VS Code environment for use with WCA, using the Red H
 
     - `Do you want Code to open the external website?`: click **Open**^[D]^
 
-    <br/>
-    ![](_attachments/setuptroubleshoot-7a.png){: loading=lazy width="600"}
+        <br/>
+        ![](_attachments/setuptroubleshoot-7a.png){: loading=lazy width="600"}
 
-    ![](_attachments/setuptroubleshoot-7b.png){: loading=lazy width="600"}
+        ![](_attachments/setuptroubleshoot-7b.png){: loading=lazy width="600"}
 
-    ![](_attachments/setuptroubleshoot-7c.png){: loading=lazy width="600"}
+        ![](_attachments/setuptroubleshoot-7c.png){: loading=lazy width="600"}
 
 ---
 
@@ -260,12 +259,12 @@ Now you must authorize the VS Code environment for use with WCA, using the Red H
 
     - `Allow this site to open the vscode link with Visual Studio Code - URL Handler?`: click **Open URL**
 
-    <br/>
-    ![](_attachments/setuptroubleshoot-9a.png){: loading=lazy width="600"}
+        <br/>
+        ![](_attachments/setuptroubleshoot-9a.png){: loading=lazy width="600"}
 
-    ![](_attachments/setuptroubleshoot-9b.png){: loading=lazy width="600"}
+        ![](_attachments/setuptroubleshoot-9b.png){: loading=lazy width="600"}
 
-    ![](_attachments/setuptroubleshoot-9c.png){: loading=lazy width="600"}
+        ![](_attachments/setuptroubleshoot-9c.png){: loading=lazy width="600"}
 
 ---
 
@@ -275,17 +274,17 @@ Now you must authorize the VS Code environment for use with WCA, using the Red H
 
     - A notification pop-up will also appear in the bottom-right corner of the VS Code interface confirming the successful login
 
-    <br/>
-    ![](_attachments/setuptroubleshoot-10.png){: loading=lazy width="600"}
+        <br/>
+        ![](_attachments/setuptroubleshoot-10.png){: loading=lazy width="600"}
 
-    ??? warning "CLICK TO EXPAND — FAILURE TO LOGIN OR TIMED OUT"
+        ??? warning "CLICK TO EXPAND — FAILURE TO LOGIN OR TIMED OUT"
 
-        - If the authentication procedure in *Steps 15-17* takes too long, activation of the plugin will be "timed out" and the VS Code environment will display an error message^[B]^ in the bottom-right corner
+            - If the authentication procedure in *Steps 15-17* takes too long, activation of the plugin will be "timed out" and the VS Code environment will display an error message^[B]^ in the bottom-right corner
 
-        - Click the **Connect**^[C]^ button as shown and repeat *Steps 15-17* as before; the login process should run smoother (and faster) on the second attempt
+            - Click the **Connect**^[C]^ button as shown and repeat *Steps 15-17* as before; the login process should run smoother (and faster) on the second attempt
 
-            <br/>
-            ![](_attachments/setup26.png){: loading=lazy width="600"}
+                <br/>
+                ![](_attachments/setup26.png){: loading=lazy width="600"}
 
 ---
 
@@ -293,14 +292,14 @@ Now you must authorize the VS Code environment for use with WCA, using the Red H
 
 19. If you wish to complete the hands-on lab using a local installation of VS Code (instead of using the provided Virtual Machine), you may do so — but you'll need to clone (download) the accompanying demo assets first. To do so, first install the <a href="https://cli.github.com/" target="_blank">GitHub CLI</a> library.
 
-    Execute the following command within a Terminal console to clone (via `git`) the supporting demo assets repository (`ansible-wca-demo-kit.git`) to your local machine:
+    - Execute the following command within a Terminal console to clone (via `git`) the supporting demo assets repository (`ansible-wca-demo-kit.git`) to your local machine:
 
-    !!! warning ""
-        ``` bash
-        git clone https://github.com/chetan-hireholi/ansible-wca-demo-kit
-        ```
+        !!! warning ""
+            ``` bash
+            git clone https://github.com/chetan-hireholi/ansible-wca-demo-kit
+            ```
 
-    Open the local `ansible-wca-demo-kit` folder within VS Code to access the demo assets for the remaining sections of the lab.
+    - Open the local `ansible-wca-demo-kit` folder within VS Code to access the demo assets for the remaining sections of the lab
 
 ---
 
