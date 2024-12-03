@@ -2,7 +2,7 @@
 
 ![type:video](./_videos/generating.mp4)
 !!! quote ""
-    Christopher Bienko *(Principal, IBM Global Sales Enablement)* demonstrates key elements and hands-on components of the `Generating Code` module. *[10 min]*
+    Christopher Bienko *(Principal, IBM Global Sales Enablement)* demonstrates key elements and hands-on components of the `Generating Code` module. *<a href="https://ibm.seismic.com/Link/Content/DCD9HcG7pfXd9GhBDWQJVgM47J4V" target="_blank">[10 min]</a>*
 
 ## **i. Generating Code with IBM watsonx Code Assistant for Red Hat Ansible Lightspeed**
 

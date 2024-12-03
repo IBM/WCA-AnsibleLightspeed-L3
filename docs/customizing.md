@@ -2,7 +2,7 @@
 
 ![type:video](./_videos/customizing.mp4)
 !!! quote ""
-    Christopher Bienko *(Principal, IBM Global Sales Enablement)* demonstrates key elements of the `Task Description Tuning and Model Customization` module. *[15 min]*
+    Christopher Bienko *(Principal, IBM Global Sales Enablement)* demonstrates key elements of the `Task Description Tuning and Model Customization` module. *<a href="https://ibm.seismic.com/Link/Content/DC3jTJ8DXqj32GfHc4PfBDgWFgGB" target="_blank">[15 min]</a>*
 
 ## **i. Fine-tuning task prompts**
 

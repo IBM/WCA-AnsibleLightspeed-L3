@@ -2,7 +2,7 @@
 
 ![type:video](./_videos/2024-introduction.mp4)
 !!! quote ""
-    Christopher Bienko *(Principal, IBM Global Sales Enablement)* introduces IBM watsonx Code Assistant's generative AI capabilities and lays the groundwork for the hands-on training that will follow. *[6 min]*
+    Christopher Bienko *(Principal, IBM Global Sales Enablement)* introduces IBM watsonx Code Assistant's generative AI capabilities and lays the groundwork for the hands-on training that will follow. *<a href="https://ibm.seismic.com/Link/Content/DCVqVqhdqbCbR8FMBpdX36JXGdT3" target="_blank">[6 min]</a>*
 
 <br/>
 

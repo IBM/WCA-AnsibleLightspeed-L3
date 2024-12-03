@@ -2,7 +2,7 @@
 
 ![type:video](./_videos/source-matching-post-processing.mp4)
 !!! quote ""
-    Christopher Bienko *(Principal, IBM Global Sales Enablement)* demonstrates key elements of the `Content Source Matching and Post-Processing` module. *[10 min]*
+    Christopher Bienko *(Principal, IBM Global Sales Enablement)* demonstrates key elements of the `Content Source Matching and Post-Processing` module. *<a href="https://ibm.seismic.com/Link/Content/DCFFHTXJjcj7T8WGHDMRMchGTB33" target="_blank">[10 min]</a>*
 
 ## **i. Why code attribution and post-processing matters for generative AI**
 
