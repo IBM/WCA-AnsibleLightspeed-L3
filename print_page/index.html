@@ -614,7 +614,7 @@
 <p><code>Request a Red Hat Account</code>: responsible for generating unique access credentials for <em>IBM watsonx Code Assistant</em> and <em>Red Hat Ansible Lightspeed</em> authorizations</p>
 </li>
 <li>
-<p><code>WCA for Ansible Essentials Plan - Visual Studio Desktop 1.4</code>: virtualized machine prepared with Visual Studio Code and lab demonstration scripts pre-installed; you will authenticate within this environment using the Red Hat account requested from ITZ</p>
+<p><code>WCA for Ansible Essentials Plan - Visual Studio Desktop 1.5</code>: virtualized machine prepared with Visual Studio Code and lab demonstration scripts pre-installed; you will authenticate within this environment using the Red Hat account requested from ITZ</p>
 </li>
 </ul>
 <p>Follow along with the instructions below to request and configure these environments.</p>
@@ -843,7 +843,7 @@
 <hr />
 <ol start="12">
 <li>
-<p>Select the <code>techzone</code><sup>[A]</sup> login when prompted.</p>
+<p>Select the <code>techzone-vm</code><sup>[A]</sup> login when prompted.</p>
 <ul>
 <li>
 <p>Supply the following for the password:</p>
@@ -2791,7 +2791,7 @@ Clicking the arrow icon to the left of each <strong>attribution</strong><sup>[B]
 <p>To <strong>override</strong> the <em>IBM Granite</em> base model recommendations, you must provide a pointer to a customized <em>Model ID</em> (prepared and hosted earlier on WCA) using the VS Code extension.</p>
 <div class="admonition warning">
 <p><strong>Custom Model ID</strong>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#customizing-__codelineno-12-1"></a>dca38e8f-d98c-44ae-a015-aee0fa4d4360&lt;|sepofid|&gt;069d3e51-c813-407a-94e7-c2c9da414b85
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#customizing-__codelineno-12-1"></a>b66600aa-cf5d-488f-9144-800f99598829&lt;|sepofid|&gt;c8e09d5f-298c-46f5-9af3-805a02d6da8f
 </code></pre></div></p>
 </div>
 <ul>
@@ -2845,27 +2845,21 @@ Clicking the arrow icon to the left of each <strong>attribution</strong><sup>[B]
 <span class="normal"><a href="#customizing-__codelineno-13-12">12</a></span>
 <span class="normal"><a href="#customizing-__codelineno-13-13">13</a></span>
 <span class="normal"><a href="#customizing-__codelineno-13-14">14</a></span>
-<span class="normal"><a href="#customizing-__codelineno-13-15">15</a></span>
-<span class="normal"><a href="#customizing-__codelineno-13-16">16</a></span>
-<span class="normal"><a href="#customizing-__codelineno-13-17">17</a></span>
-<span class="normal"><a href="#customizing-__codelineno-13-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="nn">---</span><span class="w"></span>
-<a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deploy infrastructure</span><span class="w"></span>
-<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">all</span><span class="w"></span>
-<a id="__codelineno-13-4" name="__codelineno-13-4"></a>
-<a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="nt">tasks</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create an OpenShift cluster</span><span class="w"></span>
-<a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="w">    </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cluster_create_output</span><span class="w"></span>
-<a id="__codelineno-13-8" name="__codelineno-13-8"></a><span class="w">    </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cluster_output.rc != 0</span><span class="w"></span>
-<a id="__codelineno-13-9" name="__codelineno-13-9"></a><span class="w">    </span><span class="nt">ibm.cloudcollection.ibm_container_cluster</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-13-10" name="__codelineno-13-10"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test_cluster</span><span class="w"></span>
-<a id="__codelineno-13-11" name="__codelineno-13-11"></a><span class="w">        </span><span class="nt">datacenter</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">datacenter</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
-<a id="__codelineno-13-12" name="__codelineno-13-12"></a><span class="w">        </span><span class="nt">machine_type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">machine_type</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
-<a id="__codelineno-13-13" name="__codelineno-13-13"></a><span class="w">        </span><span class="nt">hardware</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">hardware</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
-<a id="__codelineno-13-14" name="__codelineno-13-14"></a><span class="w">        </span><span class="nt">kube_version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4.14_openshift</span><span class="w"></span>
-<a id="__codelineno-13-15" name="__codelineno-13-15"></a><span class="w">        </span><span class="nt">public_vlan_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">public_vlan_id</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
-<a id="__codelineno-13-16" name="__codelineno-13-16"></a><span class="w">        </span><span class="nt">private_vlan_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">private_vlan_id</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
-<a id="__codelineno-13-17" name="__codelineno-13-17"></a><span class="w">        </span><span class="nt">default_pool_size</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">default_worker_pool_size</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
-<a id="__codelineno-13-18" name="__codelineno-13-18"></a><span class="w">        </span><span class="nt">entitlement</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">entitlement</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
+<span class="normal"><a href="#customizing-__codelineno-13-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="nn">---</span><span class="w"></span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create an OpenShift cluster</span><span class="w"></span>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">community.vmware.vmware_container_cluster</span><span class="p p-Indicator">:</span><span class="w"></span>
+<a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cluster-0001</span><span class="w"></span>
+<a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="w">        </span><span class="nt">zone</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xxxx-xxxx-xxxx</span><span class="w"></span>
+<a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="w">        </span><span class="nt">network</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xxxx-xxxx-xxxx</span><span class="w"></span>
+<a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="w">        </span><span class="nt">os_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Linux</span><span class="w"></span>
+<a id="__codelineno-13-8" name="__codelineno-13-8"></a><span class="w">        </span><span class="nt">datastore</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">datastore-001</span><span class="w"></span>
+<a id="__codelineno-13-9" name="__codelineno-13-9"></a><span class="w">        </span><span class="nt">profile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Standard</span><span class="w"></span>
+<a id="__codelineno-13-10" name="__codelineno-13-10"></a><span class="w">        </span><span class="nt">enable_auto_scaling</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<a id="__codelineno-13-11" name="__codelineno-13-11"></a><span class="w">        </span><span class="nt">enable_ip_forwarding</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<a id="__codelineno-13-12" name="__codelineno-13-12"></a><span class="w">        </span><span class="nt">enable_auto_security_groups</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<a id="__codelineno-13-13" name="__codelineno-13-13"></a><span class="w">  </span><span class="w w-Error">  </span><span class="nt">auto_security_groups</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-13-14" name="__codelineno-13-14"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cluster-001-sg-001</span><span class="w"></span>
+<a id="__codelineno-13-15" name="__codelineno-13-15"></a><span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sg-001</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -2900,7 +2894,7 @@ Clicking the arrow icon to the left of each <strong>attribution</strong><sup>[B]
 <p>Using the tuned <em>Model ID</em>, WCA has returned a recommendation to use the <code>ibm.cloudcollection.ibm_container_cluster</code> Module for the IBM Cloud, instead of the standard <code>ansible.builtin.command</code> Module from <em>Step 11</em>. This more accurately conforms to the organization's Ansible automation standards and requirements.</p>
 <div class="admonition warning">
 <p class="admonition-title">REMOVE THE CUSTOMIZED <em>MODEL ID</em> WHEN FINISHED</p>
-<p>Remember to <strong>clear</strong> the <code>Ansible &gt; Lightspeed: Model ID Override</code> in the <em>Settings</em> after you have completed <em>Step 13</em>, otherwise all subsequent code generation requests made to WCA will be produced using the customized AI model.</p>
+<p>Remember to <strong>clear</strong> the <code>Ansible &gt; Lightspeed: Model ID Override</code> in the <em>Settings</em> after you have completed <em>Step 13</em>, otherwise all subsequent code generation requests made to WCA will be produced using the tuned AI model.</p>
 </div>
 <hr />
 <h2 id="customizing-iii-conclusion"><strong>iii. Conclusion</strong></h2>
