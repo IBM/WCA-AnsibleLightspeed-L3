@@ -21,7 +21,7 @@ There are **TWO** environments that you must reserve from ITZ:
 
 - `Request a Red Hat Account`: responsible for generating unique access credentials for *IBM watsonx Code Assistant* and *Red Hat Ansible Lightspeed* authorizations
             
-- `WCA for Ansible Essentials Plan - Visual Studio Desktop 1.4`: virtualized machine prepared with Visual Studio Code and lab demonstration scripts pre-installed; you will authenticate within this environment using the Red Hat account requested from ITZ
+- `WCA for Ansible Essentials Plan - Visual Studio Desktop 1.5`: virtualized machine prepared with Visual Studio Code and lab demonstration scripts pre-installed; you will authenticate within this environment using the Red Hat account requested from ITZ
 
 Follow along with the instructions below to request and configure these environments.
 
@@ -168,7 +168,7 @@ Follow along with the instructions below to request and configure these environm
 
 ---
 
-12. Select the `techzone`^[A]^ login when prompted.
+12. Select the `techzone-vm`^[A]^ login when prompted.
 
     - Supply the following for the password:
     

@@ -357,7 +357,7 @@ In this scenario, your organization has its own set of Ansible Playbooks that le
 
         **Custom Model ID**:
         ```
-        dca38e8f-d98c-44ae-a015-aee0fa4d4360<|sepofid|>069d3e51-c813-407a-94e7-c2c9da414b85
+        b66600aa-cf5d-488f-9144-800f99598829<|sepofid|>c8e09d5f-298c-46f5-9af3-805a02d6da8f
         ```
 
     - Look for Ansible under the *Installed* services in the **Extensions** panel.
@@ -388,23 +388,20 @@ In this scenario, your organization has its own set of Ansible Playbooks that le
 
             ``` yaml linenums="1"
             ---
-            - name: Deploy infrastructure
-            hosts: all
-            
-            tasks:
-                - name: Create an OpenShift cluster
-                register: cluster_create_output
-                when: cluster_output.rc != 0
-                ibm.cloudcollection.ibm_container_cluster:
-                    name: test_cluster
-                    datacenter: "{{ datacenter }}"
-                    machine_type: "{{ machine_type }}"
-                    hardware: "{{ hardware }}"
-                    kube_version: 4.14_openshift
-                    public_vlan_id: "{{ public_vlan_id }}"
-                    private_vlan_id: "{{ private_vlan_id }}"
-                    default_pool_size: "{{ default_worker_pool_size }}"
-                    entitlement: "{{ entitlement }}"
+            - name: Create an OpenShift cluster
+	            community.vmware.vmware_container_cluster:
+		            name: cluster-0001
+		            zone: xxxx-xxxx-xxxx
+		            network: xxxx-xxxx-xxxx
+		            os_type: Linux
+		            datastore: datastore-001
+		            profile: Standard
+		            enable_auto_scaling: true
+		            enable_ip_forwarding: true
+		            enable_auto_security_groups: true
+		        auto_security_groups:
+			        - name: cluster-001-sg-001
+                        id: sg-001
             ```
 
         === "STANDARD MODEL"
@@ -428,7 +425,7 @@ Using the tuned *Model ID*, WCA has returned a recommendation to use the `ibm.cl
 
 !!! warning "REMOVE THE CUSTOMIZED *MODEL ID* WHEN FINISHED"
 
-    Remember to **clear** the `Ansible > Lightspeed: Model ID Override` in the *Settings* after you have completed *Step 13*, otherwise all subsequent code generation requests made to WCA will be produced using the customized AI model.
+    Remember to **clear** the `Ansible > Lightspeed: Model ID Override` in the *Settings* after you have completed *Step 13*, otherwise all subsequent code generation requests made to WCA will be produced using the tuned AI model.
 
 ---
 
